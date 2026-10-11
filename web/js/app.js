@@ -461,7 +461,14 @@
     } else {
       vista.innerHTML = vistaInicio();
     }
-    $("#titulo-vista").textContent = ruta.startsWith("/obra/") ? "" : titulo;
+    const tit = $("#titulo-vista");
+    if (ruta === "/") {
+      // En el inicio se muestra el logotipo (claro u oscuro según el tema); el h1 accesible ya existe en la vista.
+      tit.innerHTML = '<img class="cabecera__logo cabecera__logo--claro" src="marca/logo-horizontal.svg" alt="La Safoteca">'
+        + '<img class="cabecera__logo cabecera__logo--oscuro" src="marca/logo-horizontal-oscuro.svg" alt="" aria-hidden="true">';
+    } else {
+      tit.textContent = ruta.startsWith("/obra/") ? "" : titulo;
+    }
     document.title = doc;
     pintarTabs(ruta);
     ajustarCabecera();

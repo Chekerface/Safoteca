@@ -171,11 +171,7 @@
    "categoria": null
   },
   {
-   "nombre": "Asesinatos",
-   "categoria": null
-  },
-  {
-   "nombre": "Autolesiones",
+   "nombre": "Autolesión",
    "categoria": null
   },
   {
@@ -311,10 +307,6 @@
    "categoria": null
   },
   {
-   "nombre": "Secuestros",
-   "categoria": null
-  },
-  {
    "nombre": "Sexo Explícito",
    "categoria": null
   },
@@ -332,10 +324,6 @@
   },
   {
    "nombre": "Sin hogar",
-   "categoria": null
-  },
-  {
-   "nombre": "Sindrome de la lesbiana muerta",
    "categoria": null
   },
   {
@@ -360,10 +348,6 @@
   },
   {
    "nombre": "Violencia",
-   "categoria": null
-  },
-  {
-   "nombre": "Violencia.",
    "categoria": null
   },
   {

@@ -4,7 +4,7 @@
    Tipografías del dispositivo: sin descargas y funcionan sin conexión. */
 
 :root {
-  --lila: #9b8abf;            /* color de marca (el de la app original) */
+  --lila: #9c88bb;            /* lila de marca (manual: #9c88bb) */
   --violeta: #5d4a8a;         /* texto de acento y botones sobre fondo claro */
   --tinta: #2a2140;
   --tinta-suave: #5f5675;
@@ -92,6 +92,12 @@ button { cursor: pointer; }
   font: 700 1.375rem/1.1 var(--serif);
   color: var(--violeta);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.cabecera__logo { display: block; height: 2.5rem; width: auto; max-width: 100%; }
+.cabecera__logo--oscuro { display: none; }
+@media (prefers-color-scheme: dark) {
+  .cabecera__logo--claro { display: none; }
+  .cabecera__logo--oscuro { display: block; }
 }
 .cabecera__boton {
   position: relative;
