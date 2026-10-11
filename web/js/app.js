@@ -161,13 +161,12 @@
     const v = visibles();
     if (!E.obras.length) return `<div class="vacio"><p>Todavía no hay obras publicadas.</p></div>`;
     const nov = [...v].filter((o) => o.anio).sort((a, b) => (b.anio_fin || b.anio) - (a.anio_fin || a.anio) || az(a, b)).slice(0, 10);
-    const pel = v.filter((o) => o.tipo === "pelicula" && o.relevancia === "A").sort(az).slice(0, 10);
-    const ser = v.filter((o) => o.tipo === "serie" && o.relevancia === "A").sort(az).slice(0, 10);
+    const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
     const seccion = (id, titulo, lista, href) => (lista.length ? `
       <section class="seccion" aria-labelledby="${id}">
         <div class="seccion__cabecera">
           <h2 class="seccion__titulo" id="${id}">${titulo}</h2>
-          <a class="enlace-suave" href="${href}">Ver todo</a>
+          ${href ? `<a class="enlace-suave" href="${href}">Ver todo</a>` : ""}
         </div>${carrusel(lista)}
       </section>` : "");
     const intro = E.introVista ? "" : `
@@ -179,9 +178,9 @@
         </div>
       </aside>`;
     return `<h1 class="solo-lectores">La Safoteca</h1>${intro}${notaOcultas()}
-      ${seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")}
-      ${seccion("s-peliculas", "Películas imprescindibles", pel, "#/catalogo?tipo=pelicula&rel=A")}
-      ${seccion("s-series", "Series imprescindibles", ser, "#/catalogo?tipo=serie&rel=A")}`;
+      ${grupos.map((g, i) => (g.tipo === "novedades"
+        ? seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")
+        : seccion("s-grupo-" + i, esc(g.titulo), (g.ids || []).map((id) => v.find((o) => o.id === id)).filter(Boolean), ""))).join("")}`;
   }
 
   function vistaCatalogo(f) {
@@ -238,6 +237,8 @@
     const o = E.porId.get(id);
     if (!o) return `<h1 class="solo-lectores">Ficha no encontrada</h1><div class="vacio"><p>No hemos encontrado esta ficha.</p><a class="boton" href="#/catalogo">Ver el catálogo</a></div>`;
     const lugares = o.donde_ver.filter(seguro).map((u) => `<a class="boton boton--claro" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(nombreSitio(u))} ${ICONO.fuera}</a>`).join("");
+    const letterboxd = o.letterboxd && seguro(o.letterboxd)
+      ? `<a class="boton boton--claro" href="${esc(o.letterboxd)}" target="_blank" rel="noopener noreferrer">Ver en Letterboxd ${ICONO.fuera}</a>` : "";
     const info = o.info.filter(seguro).map((u) => `<a class="chip" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join("");
     const nombres = o.avisos.map((a) => a.nombre);
     const evitados = nombres.filter((n) => E.evitar.has(claveAviso(n)));
@@ -283,7 +284,7 @@
             ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}${o.final_feliz ? dato("Final", "Final feliz") : ""}
             ${dato("Reparto", o.actrices.join(", "))}${dato("Dirección", o.directores.join(", "))}
           </dl></section>
-          ${info ? `<section class="bloque"><h2>Más información</h2><div class="chips">${info}</div></section>` : ""}
+          ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
         </div>
       </article>`;
   }
