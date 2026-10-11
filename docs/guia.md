@@ -80,13 +80,27 @@ python tools/exportar_json.py
 Genera `web/data/obras.json` y `web/data/catalogos.json` solo con películas y series **publicadas**.
 No salen ni los estados, ni los alias, ni los correos.
 
+## 4b. Añadir o completar obras con la plantilla
+La plantilla `Plantilla_La_Safoteca.xlsx` (hoja «Obras») es la forma de subir obras nuevas o completar las pendientes. Una fila por obra, con desplegables.
+```bash
+python tools/importar_plantilla.py Plantilla_rellena.xlsx --simular   # solo informa de lo que pasaría
+python tools/importar_plantilla.py Plantilla_rellena.xlsx             # guarda, regenera web/data y hace copia de la BD
+```
+- **Id con valor** = actualiza esa obra. **Id vacío** = busca por tipo + título original (+ año); si existe, la actualiza; si no, crea una nueva.
+- Una casilla vacía **no borra** lo que ya hay. Géneros, temáticas, avisos, actrices, directore y enlaces se sustituyen enteros solo si la fila trae algo.
+- **Revisada = Sí** publica la obra (película o serie) si tiene sinopsis y nivel; si no, avisa y queda como «revisada». Desde la plantilla nunca se despublica nada.
+- Temáticas, avisos o géneros nuevos se crean como «pendiente de revisión».
+- La columna «Letterboxd (enlace)» se guarda en `data/letterboxd.csv` (y el botón sale en la ficha).
+- Las incidencias salen por pantalla y en `informes/incidencias_plantilla.csv`. Las copias de la BD quedan en `data/privado/copias/`.
+- Después: `git add -A`, commit y subir. Si hay pósters nuevos, Actions → «Descargar pósters».
+
 ## 5. Editar mientras no exista el panel
 Instalad **DB Browser for SQLite** (gratuito). Abre `safoteca.db`. Para publicar una obra:
 ```sql
 UPDATE obra SET estado = 'publicada' WHERE id = 123;
 ```
 Si falta la sinopsis o el nivel de relevancia, la base de datos lo rechaza con un mensaje claro.
-Antes de editar, haced copia de `safoteca.db`. Solo una persona a la vez debe tenerla abierta (con una editora a la vez es suficiente; el panel de edición para varias a la vez queda para más adelante). La lista de pendientes (sinopsis, nivel, etc.) se lleva en un Excel aparte que no se sube al repositorio; cuando esté rellena se aplica a la base de datos con el importador o un pequeño script.
+Antes de editar, haced copia de `safoteca.db`. Solo una persona a la vez debe tenerla abierta (con una editora a la vez es suficiente; el panel de edición para varias a la vez queda para más adelante). La lista de pendientes (sinopsis, nivel, etc.) se lleva en un Excel aparte que no se sube al repositorio; cuando esté rellena se aplica con `tools/importar_plantilla.py` (ver 4b).
 
 ## 6. Tu Synology DS114
 - Es un modelo de 2014 con procesador ARM y 512 MB de RAM, y DSM 7.1.1 es su última versión. Lo más probable es que no admita Docker
