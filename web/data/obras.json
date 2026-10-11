@@ -211,7 +211,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "98",
    "generos": [
     "Drama"
    ],
@@ -299,7 +299,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "56",
    "generos": [
     "Romance"
    ],
@@ -2604,7 +2604,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "67",
    "generos": [
     "Drama"
    ],
@@ -3442,7 +3442,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "4",
    "generos": [
     "Drama"
    ],
