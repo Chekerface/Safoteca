@@ -19,7 +19,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "96",
    "generos": [
     "Drama"
    ],
@@ -53,7 +53,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "39",
    "generos": [
     "Drama"
    ],
@@ -106,7 +106,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "38",
    "generos": [
     "Comedia"
    ],
@@ -165,7 +165,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "46",
    "generos": [
     "Comedia"
    ],
@@ -245,7 +245,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "80",
    "generos": [
     "Romance"
    ],
@@ -342,7 +342,7 @@
    "temporadas": "3.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "58",
    "generos": [
     "Drama"
    ],
@@ -384,7 +384,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "79",
    "generos": [
     "Acción"
    ],
@@ -440,7 +440,7 @@
    "temporadas": "Episodio 3x4 \"San Junipero\"",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "88",
    "generos": [
     "Ciencia Ficción"
    ],
@@ -490,7 +490,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "40",
    "generos": [
     "Romance"
    ],
@@ -532,7 +532,7 @@
    "temporadas": "2, 5, 6",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "81",
    "generos": [
     "Comedia Dramática"
    ],
@@ -629,7 +629,7 @@
    "temporadas": "5.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "64",
    "generos": [
     "Comedia"
    ],
@@ -689,7 +689,7 @@
    "temporadas": "4.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "89",
    "generos": [
     "Fantasía"
    ],
@@ -745,7 +745,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "31",
    "generos": [
     "Drama"
    ],
@@ -787,7 +787,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "92",
    "generos": [
     "Drama"
    ],
@@ -835,7 +835,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "51",
    "generos": [
     "Fantasía"
    ],
@@ -883,7 +883,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "57",
    "generos": [
     "Fantasía"
    ],
@@ -921,7 +921,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "3",
    "generos": [
     "Acción"
    ],
@@ -974,7 +974,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "54",
    "generos": [
     "Drama"
    ],
@@ -1076,7 +1076,7 @@
    "temporadas": "Capítulo 1x14 y Temporadas 3 y 4",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "70",
    "generos": [
     "Musical"
    ],
@@ -1137,7 +1137,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "85",
    "generos": [
     "Acción"
    ],
@@ -1223,7 +1223,7 @@
    "temporadas": "2.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "59",
    "generos": [
     "Thriller"
    ],
@@ -1276,7 +1276,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "55",
    "generos": [
     "Acción"
    ],
@@ -1341,7 +1341,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "91",
    "generos": [
     "Drama"
    ],
@@ -1515,7 +1515,7 @@
    "temporadas": "Temporada 3 y 4",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "30",
    "generos": [
     "Acción"
    ],
@@ -1674,7 +1674,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "77",
    "generos": [
     "Drama"
    ],
@@ -1736,7 +1736,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "44",
    "generos": [
     "Musical"
    ],
@@ -1847,7 +1847,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "41",
    "generos": [
     "Drama"
    ],
@@ -2083,7 +2083,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "97",
    "generos": [
     "Comedia"
    ],
@@ -2180,7 +2180,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "84",
    "generos": [
     "Drama"
    ],
@@ -2271,7 +2271,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "68",
    "generos": [
     "Comedia Dramática"
    ],
@@ -2409,7 +2409,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "82",
    "generos": [
     "Drama"
    ],
@@ -2458,7 +2458,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "95",
    "generos": [
     "Comedia"
    ],
@@ -2527,7 +2527,7 @@
    "temporadas": "6.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "76",
    "generos": [
     "Suspense"
    ],
@@ -2653,7 +2653,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "74",
    "generos": [
     "Comedia"
    ],
@@ -2696,7 +2696,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "60",
    "generos": [
     "Ciencia Ficción"
    ],
@@ -2737,7 +2737,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "32",
    "generos": [
     "Ciencia Ficción"
    ],
@@ -2784,7 +2784,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "69",
    "generos": [
     "Suspense"
    ],
@@ -2866,7 +2866,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "33",
    "generos": [
     "Comedia Dramática"
    ],
@@ -2996,7 +2996,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "37",
    "generos": [
     "Ciencia Ficción"
    ],
@@ -3126,7 +3126,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "65",
    "generos": [
     "Drama"
    ],
@@ -3190,7 +3190,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "93",
    "generos": [
     "Drama"
    ],
@@ -3228,7 +3228,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "50",
    "generos": [
     "Fantasía"
    ],
@@ -3372,7 +3372,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "47",
    "generos": [
     "Fantasía"
    ],
@@ -3476,7 +3476,7 @@
    "temporadas": "2.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "71",
    "generos": [
     "Drama"
    ],
@@ -3557,7 +3557,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "34",
    "generos": [
     "Drama"
    ],
@@ -3683,7 +3683,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "61",
    "generos": [
     "Drama"
    ],
@@ -3727,7 +3727,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "42",
    "generos": [
     "Thriller"
    ],
@@ -3786,7 +3786,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "90",
    "generos": [
     "Terror"
    ],
@@ -3832,7 +3832,7 @@
    "temporadas": "2.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "63",
    "generos": [
     "Terror"
    ],
@@ -3874,7 +3874,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "72",
    "generos": [
     "Musical"
    ],
@@ -3941,7 +3941,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "101",
    "generos": [
     "Drama"
    ],
@@ -3983,7 +3983,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "94",
    "generos": [
     "Comedia"
    ],
@@ -4022,7 +4022,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "78",
    "generos": [
     "Romance"
    ],
@@ -4074,7 +4074,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "43",
    "generos": [
     "Fantasía"
    ],
