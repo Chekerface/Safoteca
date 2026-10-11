@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-11T23:23:53+00:00",
+  "generado": "2026-10-11T23:25:17+00:00",
   "total": 282
  },
  "obras": [
@@ -9458,7 +9458,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "302",
    "generos": [
     "Policíaca"
    ],
