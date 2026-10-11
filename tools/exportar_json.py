@@ -57,6 +57,14 @@ def main():
         return None if v is None else bool(v)
 
     obras = []
+    # Enlaces a Letterboxd: data/letterboxd.csv (id,url), que se rellena a mano
+    letterboxd = {}
+    ruta_lb = salida.parent.parent / "data" / "letterboxd.csv"
+    if ruta_lb.exists():
+        with open(ruta_lb, encoding="utf-8-sig", newline="") as f:
+            for fila in csv.DictReader(f):
+                if fila.get("url", "").strip().startswith("http"):
+                    letterboxd[int(fila["id"])] = fila["url"].strip()
     consulta = "SELECT * FROM vista_publicable ORDER BY COALESCE(titulo_es, titulo_original) COLLATE NOCASE"
     for o in db.execute(consulta).fetchall():
         oid = o["id"]
@@ -83,6 +91,7 @@ def main():
             "directores": col(SQL_PERSONAS, oid, "director"),
             "donde_ver": col(SQL_ENLACES, oid, "donde_ver"),
             "info": col(SQL_ENLACES, oid, "info"),
+            "letterboxd": letterboxd.get(oid),
         })
 
     catalogos = {
