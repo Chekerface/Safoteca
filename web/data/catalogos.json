@@ -155,7 +155,27 @@
    "categoria": null
   },
   {
+   "nombre": "Alcoholismo",
+   "categoria": null
+  },
+  {
+   "nombre": "Angustia",
+   "categoria": null
+  },
+  {
+   "nombre": "Ansiedad",
+   "categoria": null
+  },
+  {
+   "nombre": "Asesinato",
+   "categoria": null
+  },
+  {
    "nombre": "Autolesión",
+   "categoria": null
+  },
+  {
+   "nombre": "Bifobia",
    "categoria": null
   },
   {
@@ -175,6 +195,10 @@
    "categoria": null
   },
   {
+   "nombre": "Cuernos",
+   "categoria": null
+  },
+  {
    "nombre": "Delincuencia",
    "categoria": null
   },
@@ -191,6 +215,10 @@
    "categoria": null
   },
   {
+   "nombre": "Drogas",
+   "categoria": null
+  },
+  {
    "nombre": "Drogodependencia",
    "categoria": null
   },
@@ -199,11 +227,27 @@
    "categoria": null
   },
   {
+   "nombre": "Homofobia",
+   "categoria": null
+  },
+  {
+   "nombre": "Lesbofobia",
+   "categoria": null
+  },
+  {
    "nombre": "Madre lgbtfoba",
    "categoria": null
   },
   {
+   "nombre": "Maltrato",
+   "categoria": null
+  },
+  {
    "nombre": "Maltrato animal",
+   "categoria": null
+  },
+  {
+   "nombre": "Manipulación",
    "categoria": null
   },
   {
@@ -255,11 +299,23 @@
    "categoria": null
   },
   {
+   "nombre": "Sangre/gore",
+   "categoria": null
+  },
+  {
    "nombre": "Secuestro",
    "categoria": null
   },
   {
+   "nombre": "Sexo Explícito",
+   "categoria": null
+  },
+  {
    "nombre": "Sexualización",
+   "categoria": null
+  },
+  {
+   "nombre": "Sexualizado",
    "categoria": null
   },
   {
@@ -275,84 +331,28 @@
    "categoria": null
   },
   {
+   "nombre": "Síndrome de la lesbiana muerta",
+   "categoria": null
+  },
+  {
    "nombre": "TCA",
+   "categoria": null
+  },
+  {
+   "nombre": "Transfobia",
+   "categoria": null
+  },
+  {
+   "nombre": "Violación",
+   "categoria": null
+  },
+  {
+   "nombre": "Violencia",
    "categoria": null
   },
   {
    "nombre": "Vómitos",
    "categoria": null
-  },
-  {
-   "nombre": "Manipulación",
-   "categoria": "abuso emocional"
-  },
-  {
-   "nombre": "Alcoholismo",
-   "categoria": "adicciones"
-  },
-  {
-   "nombre": "Drogas",
-   "categoria": "adicciones"
-  },
-  {
-   "nombre": "Sexo Explícito",
-   "categoria": "contenido sexual"
-  },
-  {
-   "nombre": "Sexualizado",
-   "categoria": "contenido sexual"
-  },
-  {
-   "nombre": "Bifobia",
-   "categoria": "discriminación"
-  },
-  {
-   "nombre": "Homofobia",
-   "categoria": "discriminación"
-  },
-  {
-   "nombre": "Lesbofobia",
-   "categoria": "discriminación"
-  },
-  {
-   "nombre": "Transfobia",
-   "categoria": "discriminación"
-  },
-  {
-   "nombre": "Cuernos",
-   "categoria": "infidelidad"
-  },
-  {
-   "nombre": "Síndrome de la lesbiana muerta",
-   "categoria": "muerte de personajes LGBT+"
-  },
-  {
-   "nombre": "Angustia",
-   "categoria": "salud mental"
-  },
-  {
-   "nombre": "Ansiedad",
-   "categoria": "salud mental"
-  },
-  {
-   "nombre": "Asesinato",
-   "categoria": "violencia"
-  },
-  {
-   "nombre": "Maltrato",
-   "categoria": "violencia"
-  },
-  {
-   "nombre": "Sangre/gore",
-   "categoria": "violencia"
-  },
-  {
-   "nombre": "Violencia",
-   "categoria": "violencia"
-  },
-  {
-   "nombre": "Violación",
-   "categoria": "violencia sexual"
   }
  ]
 }
