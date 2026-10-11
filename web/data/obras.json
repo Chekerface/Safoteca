@@ -1,0 +1,4107 @@
+{
+ "meta": {
+  "generado": "2026-10-11T18:30:27+00:00",
+  "total": 75
+ },
+ "obras": [
+  {
+   "id": 95,
+   "tipo": "pelicula",
+   "titulo": "1448 love among us",
+   "titulo_original": "1448 love among us",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "Pim está insatisfecha con su novio y cuando decide dejarla para irse a estudiar al extranjero, se asegura de cortar todos los lazos que le unían a él. Al mismo tiempo, entra en su vida otra mujer, Pat. Estas dos mujeres se embarcan en una relación apasionada. Llegan incluso a tener una boda, a la que los padres de Pat se niegan a asistir.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Drama",
+    "Mala con ganas"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Apinya Sakuljaroensuk",
+    "Isabella Lete"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://drama.fandom.com/es/wiki/1448_Love_Among_Us"
+   ]
+  },
+  {
+   "id": 38,
+   "tipo": "pelicula",
+   "titulo": "A Bride for Rip Van Winkle",
+   "titulo_original": "A Bride for Rip Van Winkle",
+   "titulo_latam": null,
+   "pais": "Japón",
+   "anio": 2016,
+   "anio_fin": null,
+   "sinopsis": "Nanami conoce a Tetsuya a través de SNS y decide casarse con él. Pero Nanami no tiene muchos parientes, por lo que decide recurrir a la agencia Nandemo Ya, llevada por Amuro. Ella le pedirá entonces que envíe gente a su boda con el objetivo de fingir que son parientes suyos.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Asia",
+    "Divorcio",
+    "Drama",
+    "Romance",
+    "Soledad",
+    "Thriller"
+   ],
+   "avisos": [
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Cocco",
+    "Gou Ayano",
+    "Gô Jibiki",
+    "Haru Kuroki",
+    "Hideko Hara",
+    "Hyunri",
+    "Sôkô Wada",
+    "Tomoko Mariya"
+   ],
+   "directores": [
+    "Shunji Iwai"
+   ],
+   "donde_ver": [
+    "https://www.peliculasflv.io/pelicula/a-bride-for-rip-van-winkle/"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film167868.html"
+   ]
+  },
+  {
+   "id": 37,
+   "tipo": "pelicula",
+   "titulo": "A date for mad mary",
+   "titulo_original": "A date for mad mary",
+   "titulo_latam": null,
+   "pais": "Irlanda",
+   "anio": 2016,
+   "anio_fin": null,
+   "sinopsis": "La impulsiva Mary regresa a casa tras pasar seis meses encerrada por su implicación en una violenta pelea escolar. Su mejor amiga Charlene se va a casar en tres semanas y Mary necesita encontrar una cita que le acompañe a la boda. Sin embargo no logra encontrar un acompañante adecuado y, lo que es peor, parece que Charlene no quiere pasar tanto tiempo con ella como antes.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Comedia",
+    "Coming of Age",
+    "Drama",
+    "Identidad",
+    "Juventud",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Barbara Brennan",
+    "Charleigh Bailey",
+    "Denise McCormack",
+    "Fionnuala Murphy",
+    "Kelly Byrne",
+    "Kyle Bradley",
+    "Norma Sheahan",
+    "Seána Kerslake",
+    "Shaun Dunne",
+    "Shauna Higgins",
+    "Siobhan Shanahan",
+    "Tara Lee",
+    "Tatiana Ouliankina"
+   ],
+   "directores": [
+    "Darren Thornton"
+   ],
+   "donde_ver": [
+    "https://www.amazon.com/Date-Mad-Mary-Se%C3%A1na-Kerslake/dp/B075MT22P1"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film296146.html"
+   ]
+  },
+  {
+   "id": 45,
+   "tipo": "pelicula",
+   "titulo": "All Cheerleaders Die",
+   "titulo_original": "All Cheerleaders Die",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "Mäddy Killian es una joven rebelde de 17 años del instituto Blackfoot con la misión de hacer caer al capitán del equipo de futbol. Se alistará a un grupo de cheerleaders para conseguir su propósito, pero una serie de trágicos acontecimientos harán que las chicas se vean empujadas a una batalla sobrenatural",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Drama",
+    "Ficción Sobrenatural",
+    "Mala con ganas"
+   ],
+   "avisos": [
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Brooke Butler",
+    "Caitlin Stasey",
+    "Sianoa Smit-McPhee"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film688631.html"
+   ]
+  },
+  {
+   "id": 97,
+   "tipo": "serie",
+   "titulo": "Amar a muerte",
+   "titulo_original": "Amar a muerte",
+   "titulo_latam": null,
+   "pais": "México",
+   "anio": null,
+   "anio_fin": null,
+   "sinopsis": "Amar a muerte se centra en la vida de tres hombres que mueren el mismo día. Sus almas se reencarnan en diferentes cuerpos.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Drama",
+    "Telenovela"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Bárbara López",
+    "Macarena Achaga"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film225204.html"
+   ]
+  },
+  {
+   "id": 79,
+   "tipo": "pelicula",
+   "titulo": "Ammonite",
+   "titulo_original": "Ammonite",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "En la conservadora sociedad británica del siglo XIX, la aclamada pero desconocida buscadora de fósiles Mary Anning trabaja sola en el sur del país. Cuando su fama ya ha quedado en el olvido, se dedica a vender fósiles a los turistas para salir adelante, hasta que un visitante rico le propone a Mary que cuide a su mujer.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "De época",
+    "Drama",
+    "Histórico",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    }
+   ],
+   "actrices": [
+    "Kate Winslet",
+    "Saoirse Ronan"
+   ],
+   "directores": [
+    "Francis Lee"
+   ],
+   "donde_ver": [
+    "https://ver.movistarplus.es/ficha/ammonite?id=1875229"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film597105.html"
+   ]
+  },
+  {
+   "id": 55,
+   "tipo": "pelicula",
+   "titulo": "Asagao to Kase-san",
+   "titulo_original": "Asagao to Kase-san",
+   "titulo_latam": null,
+   "pais": "Japan",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Yui Yamada es una estudiante tímida que disfruta trabajar el jardín de su escuela; una de sus compañeras, Tomoka Kase, es una chica atlética y un poco masculina, ambas se hacen amigas y comienzan una relación sentimental, la historia sigue a la pareja lidiando con distintas facetas y retos en su relación junto con su vida escolar.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amor",
+    "Anime",
+    "Diferencia de altura",
+    "Drama",
+    "Escuela",
+    "Final Feliz",
+    "Heartwarming",
+    "Pareja Sana",
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [],
+   "directores": [
+    "Takuya Sato"
+   ],
+   "donde_ver": [
+    "https://animeonline.ninja/pelicula/asagao-to-kase-san/"
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt7456468/?ref_=nv_sr_srsg_0"
+   ]
+  },
+  {
+   "id": 57,
+   "tipo": "serie",
+   "titulo": "Atypical",
+   "titulo_original": "Atypical",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Sam, un chico de 18 años que roza el autismo, emprende un viaje para encontrarse a sí mismo, conocer el amor, la independencia y desafiar a su familia.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": "3.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Autismo",
+    "Comedia",
+    "Drama",
+    "Familia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    }
+   ],
+   "actrices": [
+    "Brigette Lundy-Paine",
+    "Fivel Stewart"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film234251.html"
+   ]
+  },
+  {
+   "id": 78,
+   "tipo": "pelicula",
+   "titulo": "Atómica",
+   "titulo_original": "Atomic Blonde",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Una espía británica de alto nivel del MI6 se traslada a Berlín tras la caída del muro para acabar con una red de espionaje que asesinó a un agente encubierto por razones misteriosas.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Espionaje",
+    "Suspense"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Sangre/gore",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": "muerte de personajes LGBT+"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Charlize Theron",
+    "Sofia Boutella"
+   ],
+   "directores": [
+    "David Leitch"
+   ],
+   "donde_ver": [
+    "https://rakuten.tv/es/movies/atomica"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film802281.html"
+   ]
+  },
+  {
+   "id": 87,
+   "tipo": "serie",
+   "titulo": "Black Mirror (3x4)",
+   "titulo_original": "Black Mirror (3x4)",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2011,
+   "anio_fin": null,
+   "sinopsis": "Serie antológica que muestra el lado oscuro de la tecnología y cómo esta afecta y puede alterar nuestra vida, a veces con consecuencias tan impredecibles como aterradoras. El episodio sáfico es el 4º de la 3ª temporada.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": "Episodio 3x4 \"San Junipero\"",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Ciencia Ficción",
+    "Comedia Negra",
+    "Drama",
+    "Ficción Sobrenatural",
+    "Suspense",
+    "Terror"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Gugu Mbatha-Raw",
+    "Mackenzie Davis"
+   ],
+   "directores": [
+    "Charlie Brooker",
+    "Owen Harris"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film800295.html"
+   ]
+  },
+  {
+   "id": 39,
+   "tipo": "pelicula",
+   "titulo": "Blue",
+   "titulo_original": "Blue",
+   "titulo_latam": null,
+   "pais": "Japón",
+   "anio": 2001,
+   "anio_fin": null,
+   "sinopsis": "Una colegiala introvertida se enamora y comienza una relación con una de sus compañeras de clase. Ambientada en una pequeña ciudad costera de Japón",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Asia",
+    "Coming of Age",
+    "Drama",
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Asami Imajuku",
+    "Manami Konishi",
+    "Mikako Ichikawa"
+   ],
+   "directores": [
+    "Hiroshi Ando"
+   ],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=AibU0-U5wVI"
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt0326773/?ref_=tt_mv_close"
+   ]
+  },
+  {
+   "id": 80,
+   "tipo": "serie",
+   "titulo": "Bojack Horseman",
+   "titulo_original": "Bojack Horseman",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "BoJack Horseman gira en torno a un caballo humanoide, BoJack, adicto al alcohol y nostálgico de su pasado más glorioso, que se ocupa de sus crisis personales con la ayuda de su compañero humano Todd, su biógrafa Diane, y su agente y examante Princess Caroline.",
+   "edad": "16",
+   "relevancia": "C",
+   "temporadas": "2, 5, 6",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia Dramática"
+   ],
+   "tematicas": [
+    "Alcoholismo",
+    "Amistad",
+    "Animación",
+    "Comedia Dramática",
+    "Comedia Negra",
+    "Drogodependencia",
+    "Espectáculo",
+    "Furry"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Drogas",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Gordofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "TCA",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Anjelica Huston",
+    "Issa Rae",
+    "Maria Bamford",
+    "Wanda Sykes"
+   ],
+   "directores": [
+    "Raphael Bob-Waksberg"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.sensacine.com/series/serie-17140/"
+   ]
+  },
+  {
+   "id": 63,
+   "tipo": "serie",
+   "titulo": "Brooklyn Nine-Nine",
+   "titulo_original": "Brooklyn Nine-Nine",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "Los detectives Jake Peralta, Amy Santiago, Charles Boyle, Rosa Diaz, Norman Scully, Michael Hitchcock y el sargento Terry Jeffords son unos policías talentosos sin preocupaciones y con el mejor registro de arrestos, hasta que llega a la estación policial el nuevo jefe Raymond Holt.",
+   "edad": "13",
+   "relevancia": "B",
+   "temporadas": "5.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Comedia",
+    "Delincuencia",
+    "Policiaca"
+   ],
+   "avisos": [
+    {
+     "nombre": "Gordofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfoba",
+     "categoria": null
+    },
+    {
+     "nombre": "Padre lgbtfobo",
+     "categoria": null
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "TCA",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Stephanie Beatriz"
+   ],
+   "directores": [
+    "Dan Goor",
+    "Micahel Shur"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://es.wikipedia.org/wiki/Brooklyn_Nine-Nine"
+   ]
+  },
+  {
+   "id": 88,
+   "tipo": "serie",
+   "titulo": "Buffy, cazavampiros",
+   "titulo_original": "Buffy the Vampire Slayer",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 1997,
+   "anio_fin": null,
+   "sinopsis": "La joven Buffy y su madre se mudan desde Los Ángeles a la localidad de Sunnydale. En el subsuelo del pueblo se encuentra La Boca del Infierno, por lo que Sunnydale es frecuentado por vampiros y otros demonios, a los que Buffy tendrá que eliminar por su destino de Cazadora, con ayuda de sus nuevos amigos Willow y Xander, y el Guardián Giles.",
+   "edad": "13",
+   "relevancia": "A",
+   "temporadas": "4.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Drama",
+    "Fantasía",
+    "Ficción Sobrenatural",
+    "Juventud",
+    "Sobrenatural",
+    "Superheroinas",
+    "Terror",
+    "Tragedia",
+    "Vampiros"
+   ],
+   "avisos": [
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": "muerte de personajes LGBT+"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Alyson Hannigan",
+    "Amber Benson",
+    "Iyari Limon"
+   ],
+   "directores": [
+    "Joss Whedon"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film611043.html"
+   ]
+  },
+  {
+   "id": 30,
+   "tipo": "pelicula",
+   "titulo": "Canción de amor",
+   "titulo_original": "Lovesong",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2016,
+   "anio_fin": null,
+   "sinopsis": "Totalmente desatendida por su marido, Sarah se embarca en un improvisado viaje por carretera en compañía de su hija y su mejor amiga, Mindy. A lo largo del camino, la relación entre las dos amigas se intensifica antes de que las circunstancias las separaran. Años más tarde, Sarah intenta reconstruir su relación en los días previos a la boda de Mindy.",
+   "edad": "13",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Drama",
+    "Juventud",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    }
+   ],
+   "actrices": [
+    "Jena Malone",
+    "Riley Keough"
+   ],
+   "directores": [
+    "Kim So-yong"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film104039.html"
+   ]
+  },
+  {
+   "id": 91,
+   "tipo": "pelicula",
+   "titulo": "Carol",
+   "titulo_original": "Carol",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2015,
+   "anio_fin": null,
+   "sinopsis": "Therese Belivet, una joven dependienta de una tienda de Manhattan aspirante a fotógrafa conoce un día a Carol Aird, una mujer elegante y sofisticada que se encuentra atrapada en un matrimonio infeliz. Entre ellas surge una atracción inmediata, cada vez más intensa y profunda, que cambiará sus vidas para siempre.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "De época",
+    "Drama",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Cate Blanchett",
+    "Rooney Mara",
+    "Sarah Paulson"
+   ],
+   "directores": [
+    "Todd Haynes"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film584711.html"
+   ]
+  },
+  {
+   "id": 50,
+   "tipo": "serie",
+   "titulo": "Casa Búho",
+   "titulo_original": "The Owl House",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "Luz es una adolescente segura de sí misma que se topa accidentalmente con un portal al Reino de los Demonios. Allí se hace amiga de una bruja rebelde, Eda, y un adorable y pequeño guerrero, King. A pesar de no tener habilidades mágicas, Luz persigue su sueño de convertirse en bruja sirviendo como aprendiz de Eda en Owl House.",
+   "edad": "TP",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Animación",
+    "Aventura",
+    "Bisexualidad",
+    "Brujas",
+    "Enemies to Lovers",
+    "Escuela",
+    "Family Friendly",
+    "Fantasía",
+    "Misterio",
+    "Pareja Idiota",
+    "Subtexto"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Mae Whitman",
+    "Sarah-Nicole Robles"
+   ],
+   "directores": [
+    "Dana Terrace"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film629844.html"
+   ]
+  },
+  {
+   "id": 56,
+   "tipo": "serie",
+   "titulo": "Charmed",
+   "titulo_original": "Charmed",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Reboot de la serie original que se centra en tres hermanas de una ciudad universitaria que descubren que son brujas.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Brujería",
+    "Drama",
+    "Fantasía",
+    "Magia"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Ellen Tamaki",
+    "Melonie Diaz"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://es.hboespana.com/series/embrujadas/f66ed00a-db2b-4d09-9719-04e396e1ac93"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film692403.html"
+   ]
+  },
+  {
+   "id": 3,
+   "tipo": "serie",
+   "titulo": "Chicago Fire (Temporada 1-3)",
+   "titulo_original": "Chicago Fire (Temporada 1-3)",
+   "titulo_latam": "Chicago en Llamas",
+   "pais": "EE.UU.",
+   "anio": 2012,
+   "anio_fin": null,
+   "sinopsis": "11 Temporadas. Los protagonistas son los valientes hombres y mujeres que trabajan en el Departamento de Bomberos de Chicago, en concreto los que forman parte del destacamento de bomberos 51.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Bomberos",
+    "Drama"
+   ],
+   "avisos": [
+    {
+     "nombre": "Bifobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": "muerte de personajes LGBT+"
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    }
+   ],
+   "actrices": [
+    "Lauren German"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/region/eu/detail/0QX2KXVCB7ILS6GY7NSXYTN3TN/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B078KS24CC&qid=1624716876"
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt2261391/?ref_=ttfc_fc_tt"
+   ]
+  },
+  {
+   "id": 53,
+   "tipo": "serie",
+   "titulo": "Citrus",
+   "titulo_original": "Citrus",
+   "titulo_latam": null,
+   "pais": "Japan",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Yuzu es una chica alegre y activa que se traslada a la ciudad junto a su madre con la intención de echarse novio y vivir la vida en un nuevo instituto. Sin embargo, todos sus planes se verán frustrados y terminará asistiendo a un colegio sólo de chicas. Allí conocerá a Mei, la seria y fría Presidenta del Consejo de Estudiantes que además resulta ser su hermanastra. Yuzu y Mei tendrán que convivir juntas, aunque en el proceso puede que comiencen a despertar en ellas sentimientos prohibidos.",
+   "edad": "14",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amor",
+    "Anime",
+    "Celos",
+    "Drama",
+    "Enemies to Lovers",
+    "Erotismo",
+    "Escuela",
+    "NSFW",
+    "Romance",
+    "Roomates",
+    "Sexualidad"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Pareja Tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Pseudoincesto",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Takeo Takahashi"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film172344.html"
+   ]
+  },
+  {
+   "id": 34,
+   "tipo": "pelicula",
+   "titulo": "Conquista a medias",
+   "titulo_original": "The half of it",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "En esta versión moderna de la historia de \"Cyrano\", una tímida estudiante llamada Ellie ayuda a un deportista del instituto a intentar conquistar a la chica de la que ambos están enamorados.",
+   "edad": "13",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Comedia",
+    "Coming of Age",
+    "Drama",
+    "Identidad",
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Alexxis Lemire",
+    "Becky Ann Baker",
+    "Catherine Curtin",
+    "Daniel Diemer",
+    "Enrique Murciano",
+    "Leah Lewis",
+    "Wolfgang Novogratz"
+   ],
+   "directores": [
+    "Alice Wu"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film830834.html"
+   ]
+  },
+  {
+   "id": 69,
+   "tipo": "serie",
+   "titulo": "Crazy Ex-Girlfriend",
+   "titulo_original": "Crazy Ex-Girlfriend",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2015,
+   "anio_fin": null,
+   "sinopsis": "Rebecca Bunch es una joven abogada de éxito que da un giro brusco a su vida para buscar el amor, abandona su trabajo en Nueva York y se muda a un pequeño pueblo de California para intentar reconquistar a Josh, un amor de verano de la infancia al que no veía desde hacía diez años y que pasa bastante de ella.",
+   "edad": "16",
+   "relevancia": "C",
+   "temporadas": "Capítulo 1x14 y Temporadas 3 y 4",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Musical"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Comedia",
+    "Familia",
+    "Musical",
+    "Salud Mental"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Emma Willmann",
+    "Esther Povitsky",
+    "Gabrielle Ruiz"
+   ],
+   "directores": [
+    "Aline Brosh McKenna",
+    "Rachel Bloom"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/80066227"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film950648.html"
+   ]
+  },
+  {
+   "id": 84,
+   "tipo": "serie",
+   "titulo": "Cross Ange: Tenshi to Ryū no Rondo",
+   "titulo_original": "Cross Ange: Tenshi to Ryū no Rondo",
+   "titulo_latam": null,
+   "pais": "Japón",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "La protagonista de la serie es la primera princesa del Imperio de Misurugi, Angelise. Es una querida gobernante del imperio hasta que un día se descubre que en realidad es una \"Norma\", una de las escasas personas del mundo que no pueden usar la tecnología de Mana y son tratadas más como cosas que como seres humanos. Ahora que lo ha perdido todo, Ange se aisla en una isla remota. Allí conoce a un grupo de mujeres Norma que pasan sus días luchando contra unos dragones que han llegado para invadir el planeta.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Animación",
+    "Ciencia Ficción",
+    "Fantástico",
+    "Robots"
+   ],
+   "avisos": [
+    {
+     "nombre": "Sexualización",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film498042.html"
+   ]
+  },
+  {
+   "id": 108,
+   "tipo": "pelicula",
+   "titulo": "D.E.B.S. (Espías en acción)",
+   "titulo_original": "D.E.B.S",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2005,
+   "anio_fin": null,
+   "sinopsis": "Lucy Diamond, la atractiva jefa de un grupo criminal, ha vuelto a Estados Unidos, y el D.E.B.S., un grupo de espías formado por chicas de instituto, le siguen la pista. Pero cuando su agente más importante, Amy Bradshaw, desaparece misteriosamente tras enfrentarse cara a cara con la delincuente, el D.E.B.S. comienza a buscar el escondite de Lucy, sin sospechar que quizá Amy no quiera ser rescatada.",
+   "edad": "13",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amistad",
+    "Amor",
+    "Comedia",
+    "Cutre",
+    "Drama",
+    "Enemies to Lovers",
+    "Final Feliz",
+    "Heartwarming",
+    "Juventud",
+    "Pareja Sana",
+    "Romance",
+    "Salir del Armario"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Jordana Brewster",
+    "Sara Foster"
+   ],
+   "directores": [
+    "Angela Robinson"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film509085.html"
+   ]
+  },
+  {
+   "id": 58,
+   "tipo": "serie",
+   "titulo": "Dark",
+   "titulo_original": "Dark",
+   "titulo_latam": null,
+   "pais": "Alemania",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Tras la desaparición de un joven, cuatro familias desesperadas tratan de entender lo ocurrido a medida que van desvelando un retorcido misterio que abarca tres décadas...",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": "2.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Thriller"
+   ],
+   "tematicas": [
+    "Ciencia Ficción",
+    "Desapariciones",
+    "Drama",
+    "Secuestros",
+    "Sobrenatural",
+    "Suspense",
+    "Thriller",
+    "Viajes en el tiempo"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinatos",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Secuestros",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Antje Traue",
+    "Luise Heyer"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film103430.html"
+   ]
+  },
+  {
+   "id": 54,
+   "tipo": "serie",
+   "titulo": "Destiny of the Shrine Maiden",
+   "titulo_original": "Kannazuki no Miko",
+   "titulo_latam": null,
+   "pais": "Japan",
+   "anio": 2004,
+   "anio_fin": null,
+   "sinopsis": "Himeko Kurusugawa es una chica del montón, amiga de la infancia del chico popular de la escuela, Souma Oogami, y amiga en secreto también de la chica más popular y adinerada, Chikane Himemiya. En el decimosexto cumpleaños de las dos, el sol se oscurece y aparece el dios maligno Orochi, a cuyas ocho cabezas tendrán que enfrentar con ayuda de la familia Oogami, para que no destruya el mundo.",
+   "edad": "14",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Anime",
+    "Bisexualidad",
+    "Desamor",
+    "Diferencia de altura",
+    "Drama",
+    "Escuela",
+    "Ficción Sobrenatural",
+    "Final Feliz",
+    "Friends to Lovers",
+    "NSFW",
+    "Romance",
+    "Sobrenatural",
+    "Tragedia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Tetsuya Yanagisawa"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film140422.html"
+   ]
+  },
+  {
+   "id": 90,
+   "tipo": "pelicula",
+   "titulo": "Disobedience",
+   "titulo_original": "Disobedience",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Una mujer que se crió en una familia ortodoxa judía regresa a su hogar con motivo de la muerte de su padre, un rabino. La controversia no tardará en aparecer cuando se reencuentra con una vieja amiga por la que siente atracción.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "Drama",
+    "Identidad",
+    "Religión",
+    "Represión",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Rachel McAdams",
+    "Rachel Weisz"
+   ],
+   "directores": [
+    "Sebastián Lelio"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film833233.html"
+   ]
+  },
+  {
+   "id": 51,
+   "tipo": "serie",
+   "titulo": "El príncipe dragón",
+   "titulo_original": "The Dragon Prince",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Dos príncipes humanos forjan un peculiar vínculo con la asesina elfa que debía acabar con ellos y emprenden una épica aventura para detener la guerra entre sus reinos.",
+   "edad": "7",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Animación",
+    "Aventura",
+    "Enemies to Lovers",
+    "Family Friendly",
+    "Fantasía",
+    "Juventud"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    }
+   ],
+   "actrices": [
+    "Rena Anakwe"
+   ],
+   "directores": [
+    "Aaron Ehasz",
+    "Justin Richmond"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film667689.html"
+   ]
+  },
+  {
+   "id": 35,
+   "tipo": "pelicula",
+   "titulo": "Elisa y Marcela",
+   "titulo_original": "Elisa y Marcela",
+   "titulo_latam": null,
+   "pais": "España",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "En 1885, Elisa y Marcela se conocen en la escuela donde trabajan. Lo que comienza como una gran amistad termina en una relación amorosa que tienen que vivir a escondidas. Los padres de Marcela sospechan de esta relación y la enviarán al extranjero unos años. A su vuelta, el reencuentro con Elisa es mágico y deciden tener una vida en común.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "De época",
+    "Discriminación fuerte",
+    "Drama",
+    "Lesbofobia",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Maltrato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Padre lgbtfobo",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    }
+   ],
+   "actrices": [
+    "Elena Seijo",
+    "Francesc Orella",
+    "Greta Fernández",
+    "Jorge Suquet",
+    "Lluís Homar",
+    "Luisa Merelas",
+    "Manolo Solo",
+    "Manuel Lourenzo",
+    "María Pujalte",
+    "Milo Taboada",
+    "Natalia de Molina",
+    "Sara Casasnovas",
+    "Tamar Novas"
+   ],
+   "directores": [
+    "Isabel Coixet"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film490217.html"
+   ]
+  },
+  {
+   "id": 29,
+   "tipo": "serie",
+   "titulo": "Estación 19",
+   "titulo_original": "Station 19",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Spin off de Anatomía de Grey. Sigue las vidas de las y los bomberos de la estación 19 en Seattle, Washington",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": "Temporada 3 y 4",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Bisexual",
+    "Bomberos",
+    "Drama",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Padre lgtbfobo",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Danielle Savre",
+    "Stefania Spampinato"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-es/series/estacion-19/3de52zcRJZGt"
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt7053188/?ref_=tt_mv_close"
+   ]
+  },
+  {
+   "id": 74,
+   "tipo": "serie",
+   "titulo": "Euphoria",
+   "titulo_original": "Euphoria",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Euphoria es una reflexión sobre la adolescencia a través de un grupo de estudiantes de instituto que tienen que hacer frente a temas recurrentes de su edad como las drogas, el sexo, la violencia, los problemas de identidad, los traumas, las redes sociales, el amor y la amistad.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Drama",
+    "Drogodependencia",
+    "Identidad",
+    "Salud Mental",
+    "Sexualidad",
+    "Soledad",
+    "Trans"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso animal",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Autolesiones",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Drogas",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Gordofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfoba",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Pareja Tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Sexualizado",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Hunter Schafer",
+    "Zendaya"
+   ],
+   "directores": [
+    "Sam Levinson"
+   ],
+   "donde_ver": [
+    "https://es.hboespana.com/series/euphoria/47b2dc30-bfdb-433a-a8cd-9a2f5c2adf8a?utm_source=affiliate&utm_medium=cpa&utm_campaign=400165&awc=17045_1625671816_075e8dc710e5ac6e205dee7a17adbfe1"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film607741.html"
+   ]
+  },
+  {
+   "id": 76,
+   "tipo": "serie",
+   "titulo": "Gentleman Jack",
+   "titulo_original": "Gentleman Jack",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Una dramatización de la vida de la pionera LGBT+ Anne Lister, que regresa a Halifax, West Yorkshire en 1832, decidida a transformar el destino de su descolorida casa ancestral Shibden Hall.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "De época",
+    "Drama",
+    "Histórico",
+    "Lesbianismo"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Autolesiones",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    }
+   ],
+   "actrices": [
+    "Sophie Rundle",
+    "Suranne Jones"
+   ],
+   "directores": [
+    "Sally Wainwright"
+   ],
+   "donde_ver": [
+    "https://es.hboespana.com/series/gentleman-jack/72f82bc6-1527-4194-a3a6-fd562ad1fabf/season-1/65e68bc5-16ef-4a82-9b5e-c7f9998283f1"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film246811.html"
+   ]
+  },
+  {
+   "id": 43,
+   "tipo": "pelicula",
+   "titulo": "Girltrash: All Night Long",
+   "titulo_original": "Girltrash: All Night Long",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "La historia de cinco chicas y una noche épica. Las chicas encontrarán el amor, la lujuria, las peleas de chicas, el rock and roll y un montón de chicas de hermandad drogadas.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Musical"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Bajo presupuesto",
+    "Casanova",
+    "Comedia",
+    "Final Feliz",
+    "Heartwarming",
+    "Musical"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Daniel Grody",
+    "Erin Kelly",
+    "Gabrielle Christian",
+    "Joanna Canton",
+    "Johnny Dunn",
+    "Lisa Rieffel",
+    "Mandy Musgrave",
+    "Michelle Lombardo",
+    "Rebecca Creskoff",
+    "Rose Rollins",
+    "Theron Cook",
+    "Timothy 'Ice' Byrd"
+   ],
+   "directores": [
+    "Alexandra Kondracke"
+   ],
+   "donde_ver": [],
+   "info": []
+  },
+  {
+   "id": 52,
+   "tipo": "serie",
+   "titulo": "Harley Quinn",
+   "titulo_original": "Harley Quinn",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Sigue las aventuras de Harley Quinn después de separarse del Joker, y de cómo recibió la ayuda de Poison Ivy y de otros villanos para finalmente unirse a la Legión del Mal.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Acción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amistad",
+    "Amor",
+    "Animación",
+    "Asesinato",
+    "Aventura",
+    "Bisexualidad",
+    "Comedia",
+    "Delincuencia",
+    "Desamor",
+    "Friends to Lovers",
+    "NSFW",
+    "Pandilla",
+    "Prisión",
+    "Sobrenatural",
+    "Superheroinas"
+   ],
+   "avisos": [
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Kaley Cuoco",
+    "Lake Bell"
+   ],
+   "directores": [
+    "Dean Lorey",
+    "Justin Halpern",
+    "Patrick Schumacker"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film865627.html"
+   ]
+  },
+  {
+   "id": 40,
+   "tipo": "serie",
+   "titulo": "Harlots",
+   "titulo_original": "Harlots",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "3 Temporadas. Cuenta desde una nueva perspectiva el negocio de la prostitución en el Londres del siglo XVIII.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "De época",
+    "Drama",
+    "Prostitución"
+   ],
+   "avisos": [
+    {
+     "nombre": "Prostitución",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    }
+   ],
+   "actrices": [
+    "Jessica Brown-Findlay",
+    "Jordon Stevens",
+    "Kate Fleetwood",
+    "Liv Tyler",
+    "Rosalind Eleazar"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.filmin.es/serie/harlots-cortesanas"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film496090.html"
+   ]
+  },
+  {
+   "id": 48,
+   "tipo": "serie",
+   "titulo": "Hora de aventuras",
+   "titulo_original": "Adventure Time!",
+   "titulo_latam": "Hora de aventura",
+   "pais": "EE.UU.",
+   "anio": 2010,
+   "anio_fin": null,
+   "sinopsis": "Sigue las aventuras del Finn y su mejor amigo y hermano Jake, un perro con poderes mágicos con los que puede cambiar de forma y aumentar o encoger su tamaño. Viven en la Tierra de Ooo, un entorno lleno de personajes surrealistas y animales que hablan, donde la magia y la alta tecnología se unen para crear extraños y nuevos artefactos. Pero la realidad sobre la Tierra de Ooo esconde secretos oscuros..",
+   "edad": "TP",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Animación",
+    "Aventura",
+    "Bisexualidad",
+    "Distopía",
+    "Familia",
+    "Family Friendly",
+    "Fantasía",
+    "Ficción Sobrenatural",
+    "Final Feliz",
+    "Friends to Lovers",
+    "Sobrenatural",
+    "Subtexto",
+    "WTF?!"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Hynden Walch",
+    "Olivia Olson"
+   ],
+   "directores": [
+    "Pendleton Ward"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film646609.html"
+   ]
+  },
+  {
+   "id": 61,
+   "tipo": "serie",
+   "titulo": "Humans",
+   "titulo_original": "Humans",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2015,
+   "anio_fin": null,
+   "sinopsis": "En un futuro no lejano, el último gadget de cualquier familia es un \"Synth\", un robot de alta tecnología similar a un sirviente en vivo. Con la esperanza de mejorar sus vidas en el día a día, una familia muy ocupada de los suburbios compra uno, pero descubre que compartir la vida con una máquina puede tener consecuencias escalofriantes. Remake de la serie sueca de 2012 \"Real Humans\".",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": "2.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Ciencia Ficción",
+    "Drama",
+    "Robots"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Bella Dayne",
+    "Emily Berrington"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/Humans/0JGKWZQ0IUKP7I1BST98X393M1"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film474140.html"
+   ]
+  },
+  {
+   "id": 98,
+   "tipo": "serie",
+   "titulo": "Héroes",
+   "titulo_original": "Héroes",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2006,
+   "anio_fin": null,
+   "sinopsis": "Un grupo de personas normales se ve, de la noche a la mañana, dotada de increíbles poderes.",
+   "edad": null,
+   "relevancia": "C",
+   "temporadas": "4.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Ciencia Ficción",
+    "Ficción Sobrenatural",
+    "Super Héroes",
+    "Viajes en el tiempo"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Hayden Panettiere",
+    "Madeline Zima"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/Heroes/0U45NX2009092D2UEMXMPPZ05K"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film601390.html"
+   ]
+  },
+  {
+   "id": 1,
+   "tipo": "pelicula",
+   "titulo": "Intersect",
+   "titulo_original": "Intersect",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2009,
+   "anio_fin": null,
+   "sinopsis": "Victoria se va de excursión con su padre y la nueva novia éste.",
+   "edad": "13",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Bajo presupuesto",
+    "Drama",
+    "Mala con ganas"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Sexualizado",
+     "categoria": "contenido sexual"
+    }
+   ],
+   "actrices": [
+    "Troian Bellisario",
+    "Yvonne Zima"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://vimeo.com/43876576"
+   ],
+   "info": []
+  },
+  {
+   "id": 96,
+   "tipo": "pelicula",
+   "titulo": "Kajillionaire",
+   "titulo_original": "Kajillionaire",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "Theresa y Robert son dos estafadores profesionales que llevan 26 años formando a su única hija, Old Dolio, para timar, estafar y robar a cada oportunidad que se le presente. Durante un golpe mal planificado y a la desesperada, la familia convence a una desconocida para que se una a su siguiente fraude, algo que sin duda acabará poniendo patas arriba todo su mundo.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Comedia Negra",
+    "Crimen"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Evan Rachel Wood",
+    "Gina Rodriguez"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film494004.html"
+   ]
+  },
+  {
+   "id": 85,
+   "tipo": "serie",
+   "titulo": "Killing Eve",
+   "titulo_original": "Killing Eve",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Una asesina y una detective se enfrentan en una persecución a nivel internacional en la que ambas mujeres se obsesionarán la una con la otra. Por un lado está Villanelle (Jodie Comer), una asesina psicópata sumida en el lujo de su profesión, y por otro lado, Eve Polastri (Sandra Oh), una agente del MI6. Cansada y aburrida de pasarse los días sentada en su escritorio, la perspicaz criminóloga Eve busca más acción en su vida profesional y un día se encuentra al mando de un grupo secreto cuyo objetivo es dar caza a Villanelle.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Thriller"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Comedia Negra",
+    "Crimen",
+    "Drama",
+    "Espionaje",
+    "Sicaria",
+    "Thriller"
+   ],
+   "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinatos",
+     "categoria": null
+    },
+    {
+     "nombre": "Obsesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Relaciones perjudiciales",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Jodie Comer",
+    "Sandra Oh"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://es.hboespana.com/series/killing-eve/7a7dc4ae-549d-481b-b7d8-46ef02981745"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film423899.html"
+   ]
+  },
+  {
+   "id": 83,
+   "tipo": "pelicula",
+   "titulo": "Kiss Me",
+   "titulo_original": "Kyss Mig",
+   "titulo_latam": null,
+   "pais": "Suecia",
+   "anio": 2011,
+   "anio_fin": null,
+   "sinopsis": "Dos chicas treintañeras se conocen cuando el padre de Mia va a casarse con la madre de Frida y éstos celebran una fiesta de compromiso.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Drama",
+    "Familia",
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Frida Liv Mjönes",
+    "Ruth Vega Fernández"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film564166.html"
+   ]
+  },
+  {
+   "id": 72,
+   "tipo": "pelicula",
+   "titulo": "La estación de la felicidad",
+   "titulo_original": "Happiest Season",
+   "titulo_latam": "Feliz Novedad",
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "Una comedia romántica navideña que muestra la situación y los sentimientos que surgen al querer al mismo tiempo que tu familia te acepte, ser fiel a uno mismo e intentar no arruinar la Navidad.",
+   "edad": "7",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia Dramática"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Drama",
+    "Familia",
+    "Romance",
+    "Salir del Armario"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Discriminación Leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    }
+   ],
+   "actrices": [
+    "Alison Brie",
+    "Aubrey Plaza",
+    "Kristen Stewart",
+    "Mckenzie Davis"
+   ],
+   "directores": [
+    "Clea DuVall"
+   ],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/amzn1.dv.gti.5cbaf178-b4c8-fe0d-bb65-1ea582728db9"
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt8522006/?ref_=tt_mv_close"
+   ]
+  },
+  {
+   "id": 67,
+   "tipo": "pelicula",
+   "titulo": "La favorita",
+   "titulo_original": "The Favourite",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "A principios del s. XVIII Inglaterra está en guerra con Francia y la enfermiza reina Anne delega sus responsabilidades en su amiga íntima Lady Sarah. La llegada de una sirvienta dotada de un talento especial, Abigail, pone en peligro la posición de Sarah.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia Dramática"
+   ],
+   "tematicas": [
+    "Celos",
+    "Comedia Dramática",
+    "Comedia Negra",
+    "De época",
+    "Histórico"
+   ],
+   "avisos": [
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Maltrato animal",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Emma Stone",
+    "Olivia Colman",
+    "Rachel Weisz"
+   ],
+   "directores": [
+    "Yorgos Lanthimos"
+   ],
+   "donde_ver": [
+    "https://www.disneyplus.com/movies/the-favourite/1doIy5dHq9ZY?irclickid=Ut8xPnVvdxyLR%3A3SfUwr31IaUkB3SCy1h001Wc0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch%20GmbH-707638"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film625500.html"
+   ]
+  },
+  {
+   "id": 47,
+   "tipo": "serie",
+   "titulo": "La leyenda de Korra",
+   "titulo_original": "The Legend of Korra",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2012,
+   "anio_fin": null,
+   "sinopsis": "La serie se desarrolla en el mismo mundo ficticio de Avatar: la leyenda de Aang. La serie está ambientada setenta años después de la caída del Señor del Fuego Ozai. El nuevo Avatar es una adolescente de diecisiete años llamada Korra, proveniente de la Tribu Agua del Sur. Domina el agua control, tierra control y fuego control, sin embargo, en un principio no fue capaz de realizar aire control debido a la nula conexión con su parte espiritual y debido a que sus entrenamientos de aire se retrasaron a causa de Tenzin, el hijo del anterior avatar (Aang).",
+   "edad": "TP",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Animación",
+    "Aventura",
+    "Bisexualidad",
+    "Family Friendly",
+    "Fantasía",
+    "Final Feliz",
+    "Friends to Lovers",
+    "Juventud",
+    "Pareja Sana",
+    "Política",
+    "Sobrenatural",
+    "Subtexto"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Janet Varney",
+    "Seychelle Gabriel"
+   ],
+   "directores": [
+    "Bryan Konietzko",
+    "Michael Dante DiMartino"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.imdb.com/title/tt1695360/?ref_=fn_al_tt_1"
+   ]
+  },
+  {
+   "id": 81,
+   "tipo": "pelicula",
+   "titulo": "La madre del blues",
+   "titulo_original": "Ma Rainey's Black Bottom",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "En 1927, las tensiones aumentan cuando la Madre del Blues y su banda se reúnen en un estudio de grabación de Chicago.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Afroamericanos",
+    "Biográfico",
+    "Drama",
+    "Música",
+    "Racismo",
+    "Teatro"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Taylour Paige",
+    "Viola Davis"
+   ],
+   "directores": [
+    "George C. Wolfe"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film569007.html"
+   ]
+  },
+  {
+   "id": 94,
+   "tipo": "serie",
+   "titulo": "Las estrellas",
+   "titulo_original": "Las estrellas",
+   "titulo_latam": null,
+   "pais": "Argentina",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "La trama gira alrededor de cinco hermanas apellidadas Estrella, de tres madres distintas: Lucía, Virginia, Florencia, Carla y Miranda. Con el fallecimiento del padre, la herencia y un hotel boutique las juntará, y desde ese momento quedarán marcadas para siempre. Las hermanas deberán convivir y relacionarse entre todas, pese a las diferencias, y el amor cumplirá un rol fundamental.",
+   "edad": "13",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Telenovela"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Julieta Nair Calvo",
+    "Violeta Urtizberea"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film892393.html"
+   ]
+  },
+  {
+   "id": 44,
+   "tipo": "pelicula",
+   "titulo": "Lez Bomb",
+   "titulo_original": "Lez Bomb",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Cuenta la historia de Lauren, una joven mujer que decide salir del armario y presentar su novia ante la familia el día de acción de gracias.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Drama",
+    "Día de Acción de Gracias",
+    "Familia",
+    "Salir del Armario"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Caitlin Mehner",
+    "Jenna Laurenzo"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": []
+  },
+  {
+   "id": 75,
+   "tipo": "serie",
+   "titulo": "Line of Duty",
+   "titulo_original": "Line of Duty",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2012,
+   "anio_fin": null,
+   "sinopsis": "Después de negarse a encubrir un error policial, el detective Steve Arnott es transferido a una unidad de lucha contra la corrupción.",
+   "edad": "16",
+   "relevancia": "C",
+   "temporadas": "6.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Suspense"
+   ],
+   "tematicas": [
+    "Delincuencia",
+    "Drama",
+    "Policiaca",
+    "Suspense"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Pareja Tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Anneika Rose",
+    "Kelly Macdonald"
+   ],
+   "directores": [
+    "Jed Mercurio"
+   ],
+   "donde_ver": [
+    "https://ver.movistarplus.es/ficha/line-of-duty/?id=1294309&mediaType=FOTOV&profile=anonimo&mode=VODRU7D&version=7.1&tlsStream=true&mdrm=true&network=yomvi"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film661747.html"
+   ]
+  },
+  {
+   "id": 66,
+   "tipo": "serie",
+   "titulo": "Little Voice",
+   "titulo_original": "Little Voice",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "Bess King es una artista de un talento único que lucha por cumplir sus sueños en Nueva York mientras experimenta el rechazo, el amor y hace frente a complicados problemas familiares.",
+   "edad": "12",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Drama",
+    "Familia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Capacitismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    }
+   ],
+   "actrices": [
+    "Shalini Bathina"
+   ],
+   "directores": [
+    "Jessie Nelson",
+    "Sara Bareilles"
+   ],
+   "donde_ver": [
+    "https://tv.apple.com/es/show/little-voice/umc.cmc.4x932osv992wjjdq7ce12za2r"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film248229.html"
+   ]
+  },
+  {
+   "id": 73,
+   "tipo": "pelicula",
+   "titulo": "Los Mitchell contra las máquinas",
+   "titulo_original": "The Mitchells vs. the Machines",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2021,
+   "anio_fin": null,
+   "sinopsis": "Un apocalipsis robótico pone freno a su viaje por carretera a través del país. Ahora, el futuro de la humanidad depende de los Mitchell: la familia más rarita del mundo",
+   "edad": "7",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Animación",
+    "Comedia",
+    "Coming of Age",
+    "Familia",
+    "Family Friendly",
+    "Identidad",
+    "Subtexto"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Abbi Jacobson"
+   ],
+   "directores": [
+    "Jeff Rowe",
+    "Michael Rianda"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/81399614"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film209397.html"
+   ]
+  },
+  {
+   "id": 59,
+   "tipo": "serie",
+   "titulo": "Marvel Runaways",
+   "titulo_original": "Marvel Runaways",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "La historia de seis jóvenes muy diferentes entre sí y que apenas se pueden soportar pero deben unirse contra sus padres villanos.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Ciencia Ficción",
+    "Comic",
+    "Drama",
+    "Superheroinas",
+    "Superhéroes"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Lyrica Okano",
+    "Virginia Gardner"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://es.hboespana.com/series/marvels-runaways/fcb7a7d2-8455-4b8c-a32f-7d4f393c8b0b"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film469463.html"
+   ]
+  },
+  {
+   "id": 31,
+   "tipo": "serie",
+   "titulo": "Motherland: Fort salem",
+   "titulo_original": "Motherland: Fort salem",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "2 Temporadas. Cuenta la historia de 3 jóvenes brujas que ingresan en el ejército de Estados Unidos donde entrenarán sus poderes para luchar.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Brujas",
+    "Ciencia Ficción",
+    "Drama",
+    "Fantasía",
+    "Militarismo",
+    "Terrorismo"
+   ],
+   "avisos": [
+    {
+     "nombre": "Mentiras y Engaño",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Amalia Holm",
+    "Taylor Hickson"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/0OFMNBD4ZNAP65AL7LEA774KJA/ref=atv_sr_fle_c_Tn74RA__1_1_1?pageTypeIdSource=ASIN&language=es_ES&sr=1-1&pageTypeId=B087M5RSWF&qid=1624575056"
+   ],
+   "info": []
+  },
+  {
+   "id": 68,
+   "tipo": "serie",
+   "titulo": "Mr Robot",
+   "titulo_original": "Mr Robot",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2015,
+   "anio_fin": null,
+   "sinopsis": "Elliot es un joven programador que trabaja como técnico de ciberseguridad durante el día y como hacker por la noche. Elliot se encuentra en una encrucijada cuando el misterioso líder de un grupo oculto de hackers le recluta para destruir a la empresa que le pagan por proteger.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Suspense"
+   ],
+   "tematicas": [
+    "Anticapitalista",
+    "Drama",
+    "Drogodependencia",
+    "Soledad",
+    "Suspense"
+   ],
+   "avisos": [
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Drogas",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Carly Chaikin",
+    "Grace Gummer"
+   ],
+   "directores": [
+    "Sam Esmail"
+   ],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/0RZED4V5SOLKXX2U04B6XONCIM/ref=atv_dl_rdr?tag=justesejhd-21"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film993489.html"
+   ]
+  },
+  {
+   "id": 32,
+   "tipo": "serie",
+   "titulo": "Orange is the new black",
+   "titulo_original": "Orange is the new black",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": 2019,
+   "sinopsis": "Piper Chapman,una mujer de Connecticut con una vida estable a punto de casarse, es detenida a raíz de un delito de drogas que cometió hace una década: en aquellos días llevó un maletín con droga para Alex Vause, una traficante y antigua amante de Piper. Tras el juicio, es enviada a prisión de mujeres en Litchfield, Nueva York. Allí convivirá con un grupo variopinto de internas.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia Dramática"
+   ],
+   "tematicas": [
+    "Afroamericanos",
+    "Amistad",
+    "Amor",
+    "Bisexualidad",
+    "Butch",
+    "Comedia Dramática",
+    "Feminismo",
+    "Prisión",
+    "Trans"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Bifobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación fuerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Transfobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Violación",
+     "categoria": "violencia sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Danielle Brooks",
+    "Jason Biggs",
+    "Kate Mulgrew",
+    "Laura Prepon",
+    "Laverne Cox",
+    "Michael Harney",
+    "Michelle Hurst",
+    "Natasha Lyonne",
+    "Nick Sandow",
+    "Pablo Schreiber",
+    "Taryn Manning",
+    "Taylor Schilling",
+    "Uzo Aduba"
+   ],
+   "directores": [
+    "Andrew McCarthy",
+    "Constantine Makris",
+    "Jenji Kohan",
+    "Jodie Foster",
+    "Matthew Penn",
+    "Michael Trim",
+    "Phil Abraham",
+    "Uta Briesewitz"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film233858.html"
+   ]
+  },
+  {
+   "id": 36,
+   "tipo": "pelicula",
+   "titulo": "Paradise Hills",
+   "titulo_original": "Paradise Hills",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Paradise Hills es un internado de lujo donde familias acomodadas mandan a sus hijas para que sean entrenadas y educadas para ser mujeres perfectas. Uma es enviada allí y pronto descubrirá que la residencia oculta un oscuro secreto.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Ciencia Ficción",
+    "Coming of Age",
+    "Distopía"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Drogas",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Arnaud Valois",
+    "Awkwafina",
+    "Daniel Horvath",
+    "Danielle Macdonald",
+    "Eiza González",
+    "Emma Roberts",
+    "Gary Anthony Stennette",
+    "Hunter Tremayne",
+    "Jeremy Irvine",
+    "Johnny Melville",
+    "Julius Cotter",
+    "Liliana Cabal",
+    "Milla Jovovich"
+   ],
+   "directores": [
+    "Alice Waddington"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film836199.html"
+   ]
+  },
+  {
+   "id": 65,
+   "tipo": "pelicula",
+   "titulo": "Pride/Orgullo",
+   "titulo_original": "Pride",
+   "titulo_latam": "Pride: orgullo y esperanza",
+   "pais": "Reino Unido",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "En el verano de 1984, siendo primera ministra Margaret Thatcher, el Sindicato Nacional de Mineros (NUM) convoca una huelga. Durante la manifestación del Orgullo Gay en Londres, un grupo de lesbianas y gays se dedica a recaudar fondos para ayudar a las familias de los trabajadores, pero el sindicato no acepta el dinero. El grupo decide entonces ponerse en contacto directo con los mineros y van a un pueblecito de Gales.",
+   "edad": "7",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia Dramática"
+   ],
+   "tematicas": [
+    "Comedia Dramática",
+    "Histórico",
+    "Militancia",
+    "Movimiento por los Derechos civiles"
+   ],
+   "avisos": [
+    {
+     "nombre": "Discriminación Leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Madre lgbtfoba",
+     "categoria": null
+    },
+    {
+     "nombre": "Padre lgbtfobo",
+     "categoria": null
+    },
+    {
+     "nombre": "Sida",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Faye Marsay",
+    "Jessie Cave",
+    "Karina Fernandez"
+   ],
+   "directores": [
+    "Matthew Warchus"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/pride?utm_source=justwatch"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film412425.html"
+   ]
+  },
+  {
+   "id": 64,
+   "tipo": "pelicula",
+   "titulo": "Rent",
+   "titulo_original": "Rent",
+   "titulo_latam": "Rent: Vidas extremas",
+   "pais": "EE.UU.",
+   "anio": 2005,
+   "anio_fin": null,
+   "sinopsis": "Narra la historia de un grupo de jóvenes bohemios que tratan de abrirse camino en la vida en el día a día del barrio de East Village, en Nueva York. Estos amigos se esfuerzan por alcanzar el éxito y la aceptación, mientras soportan los obstáculos de la pobreza, la enfermedad y la epidemia del SIDA.",
+   "edad": "13",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Celos",
+    "Drama",
+    "Drogodependencia",
+    "Musical",
+    "Sexualidad",
+    "Tragedia",
+    "Travestismo"
+   ],
+   "avisos": [
+    {
+     "nombre": "Drogas",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Pareja Tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sida",
+     "categoria": null
+    },
+    {
+     "nombre": "Sin hogar",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Idina Menzel",
+    "Tracie Thoms"
+   ],
+   "directores": [
+    "Chris Columbus"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film961786.html"
+   ]
+  },
+  {
+   "id": 92,
+   "tipo": "pelicula",
+   "titulo": "Retrato de una mujer en llamas",
+   "titulo_original": "Portrait de la Jeune Fille en Feu",
+   "titulo_latam": null,
+   "pais": "Francia",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Marianne es una pintora que recibe un encargo muy especial: retratar a Héloïse que acaba de salir del convento y va a casarse. Este retrato de bodas tiene que realizarse sin que ella lo sepa, por lo que Marianne la investigará a diario.",
+   "edad": "7",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "De época",
+    "Drama",
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Adèle Haenel",
+    "Noémie Merlant"
+   ],
+   "directores": [
+    "Céline Sciamma"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film218131.html"
+   ]
+  },
+  {
+   "id": 49,
+   "tipo": "serie",
+   "titulo": "RWBY",
+   "titulo_original": "RWBY",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "La historia tiene lugar en el mundo de Remnant, que está plagado de fuerzas sobrenaturales y de criaturas extrañas conocidas como las \"Grimm\". Antes de los acontecimientos que tienen lugar en la serie, la humanidad libró una intensa lucha contra esta raza antes de conocer un misterioso elemento mágico denominado \"Dust\", que les permitó acabar rápidamente con ella. Las protagonistas son cuatro chicas conocidas como 'Cazadoras' que luchan contra los Grimm mientras son entrenadas en una academia especial donde forjan una amistad única.",
+   "edad": "13",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amistad",
+    "Animación",
+    "Aventura",
+    "Bajo presupuesto",
+    "Bisexualidad",
+    "Escuela",
+    "Familia",
+    "Fantasía",
+    "Fascismo",
+    "Ficción Sobrenatural",
+    "Friends to Lovers",
+    "Juventud",
+    "Militancia",
+    "Misterio",
+    "Movimiento por los Derechos civiles",
+    "Política",
+    "Represión",
+    "Roomates",
+    "Sobrenatural",
+    "Subtexto",
+    "Superheroinas",
+    "Supporting Dad",
+    "Terrorismo",
+    "Tragedia",
+    "Trans"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Arryn Zech",
+    "Barbara Dunkelman"
+   ],
+   "directores": [
+    "Monty Oum"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film826469.html"
+   ]
+  },
+  {
+   "id": 86,
+   "tipo": "serie",
+   "titulo": "Sense8",
+   "titulo_original": "Sense8",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2015,
+   "anio_fin": null,
+   "sinopsis": "Narra la historia de ocho personas de diferentes partes del mundo que, tras una trágica muerte, se encuentran emocional y mentalmente conectados.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Acción",
+    "Ciencia Ficción",
+    "Drama",
+    "Ficción Sobrenatural",
+    "Identidad",
+    "Juventud",
+    "Misterio",
+    "Sexualidad",
+    "Sobrenatural",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    }
+   ],
+   "actrices": [
+    "Freema Agyeman",
+    "Jamie Clayton"
+   ],
+   "directores": [
+    "Hermanas Wachowski",
+    "J. Michael Straczynski"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film235499.html"
+   ]
+  },
+  {
+   "id": 46,
+   "tipo": "serie",
+   "titulo": "She-Ra y las princesas del poder",
+   "titulo_original": "She-Ra and the princesses of power",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "She-Ra y las princesas del poder es una serie animada que gira en torno a una joven huérfana llamada Adora. Después de encontrar una espada mágica se convierte en la guerrera mítica She-Ra, la legendaria princesa del poder. She-Ra se une a un grupo de princesas mágicas para combatir en la última batalla contra los monstruos invasores de Hordak. Todo ello, para liberar a su tierra (Eternia) de la malvada tiranía de Hordak. Además, en este camino encontrará nuevas amistades y una familia.",
+   "edad": "7",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Acción",
+    "Adolescencia",
+    "Amigas de la infancia",
+    "Amistad",
+    "Amor",
+    "Animación",
+    "Aventura",
+    "Bisexualidad",
+    "Butch",
+    "Celos",
+    "Enemies to Lovers",
+    "Family Friendly",
+    "Fantasía",
+    "Final Feliz",
+    "Friends to Lovers",
+    "Furry",
+    "Heartwarming",
+    "Juventud",
+    "Pareja Idiota",
+    "Sobrenatural",
+    "Superheroinas"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    }
+   ],
+   "actrices": [
+    "AJ Michalka",
+    "Aimee Carrero",
+    "Krystal Joy Brown",
+    "Noelle Stevenson"
+   ],
+   "directores": [
+    "Noelle Stevenson"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.imdb.com/title/tt7745956/?ref_=nv_sr_srsg_0"
+   ]
+  },
+  {
+   "id": 4,
+   "tipo": "serie",
+   "titulo": "Siberia (1x04)",
+   "titulo_original": "Siberia (1x04)",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "11 episodios. Dieciséis concursantes se dirigen al misterioso territorio de Tunguska, en Siberia, donde ocurren muchas cosas extrañas. Ninguno de ellos sabe que en 1908 cayó el meteorito más raro y devastador de la historia moderna.",
+   "edad": null,
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Cutre",
+    "Drama",
+    "Mala con ganas",
+    "PseudoReality Show",
+    "Supervivencia"
+   ],
+   "avisos": [],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [
+    "https://www.dailymotion.com/video/x11gi3k"
+   ],
+   "info": []
+  },
+  {
+   "id": 70,
+   "tipo": "serie",
+   "titulo": "Skam España",
+   "titulo_original": "Skam España",
+   "titulo_latam": null,
+   "pais": "España",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Skam sigue el día a día de un grupo de jóvenes de 16 años de un instituto y su relación con sus sentimientos, el amor, el sexo y el paso al mundo adulto.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": "2.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Bisexualidad",
+    "Feminismo",
+    "Identidad",
+    "Religión",
+    "Sexualidad"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    },
+    {
+     "nombre": "Discriminación fuerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación Leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": "abuso emocional"
+    },
+    {
+     "nombre": "Pareja Tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Irene Ferreiro García",
+    "Rizha"
+   ],
+   "directores": [
+    "Begoña Álvarez Rojas"
+   ],
+   "donde_ver": [
+    "https://skamespana.movistarplus.es/capitulos/"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film596452.html"
+   ]
+  },
+  {
+   "id": 33,
+   "tipo": "serie",
+   "titulo": "Skins (Temporadas 3 y 4)",
+   "titulo_original": "Skins (Temporadas 3 y 4)",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2007,
+   "anio_fin": 2013,
+   "sinopsis": "La serie muestra la vida de un grupo de adolescentes y las complejas situaciones que deben enfrentar en los años de juventud. Se tocan temas como los desórdenes de personalidad y de alimentación, las enfermedades mentales, los problemas familiares, la homosexualidad, etc.",
+   "edad": "18",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Comedia",
+    "Drama",
+    "Escuela",
+    "Homofobia",
+    "Identidad"
+   ],
+   "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": "adicciones"
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Drogodependencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Sindrome de la lesbiana muerta",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "April Pearson",
+    "Dev Patel",
+    "Freya Mavor",
+    "Hannah Murray",
+    "Jack O'Connell",
+    "Joe Dempsie",
+    "Kaya Scodelario",
+    "Laya Lewis",
+    "Lily Loveless",
+    "Mike Bailey",
+    "Nicholas Hoult",
+    "Ollie Barbieri",
+    "Will Merrick"
+   ],
+   "directores": [
+    "Adam Smith",
+    "Bryan Elsley",
+    "Jamie Brittain"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film556666.html"
+   ]
+  },
+  {
+   "id": 82,
+   "tipo": "serie",
+   "titulo": "Steven Universe",
+   "titulo_original": "Steven Universe",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "Narra la historia de un niño llamado Steven, que vive en el pueblo ficticio de Beach City junto a tres guerreras alienígenas con superpoderes: Garnet, Amatista y Perla. A lo largo de los episodios, Steven aprenderá a controlar los poderes de su gema de cuarzo y ayudará al resto de gemas en las misiones para defender a la humanidad.",
+   "edad": "TP",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Aventura"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amistad",
+    "Animación",
+    "Aventura",
+    "Comedia",
+    "Día a día",
+    "Family Friendly",
+    "Identidad",
+    "Infancia",
+    "Superheroinas"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Charlyne Yi",
+    "Deedee Magno",
+    "Erica Luttrell",
+    "Estelle"
+   ],
+   "directores": [
+    "Rebecca Sugar"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.imdb.com/title/tt3061046/"
+   ]
+  },
+  {
+   "id": 60,
+   "tipo": "serie",
+   "titulo": "The Bold Type",
+   "titulo_original": "The Bold Type",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Serie sobre las extravagantes vidas y amores de las responsables de una revista femenina global, Scarlet.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Drama",
+    "Feminismo",
+    "Moda",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    }
+   ],
+   "actrices": [
+    "Aisha Dee",
+    "Nikohl Boosheri"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/Bold-Type/0RQY677JW1DEAGZEZYL9TKUMOG?_encoding=UTF8&language=es_ES"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film538230.html"
+   ]
+  },
+  {
+   "id": 41,
+   "tipo": "pelicula",
+   "titulo": "The handmaiden",
+   "titulo_original": "The handmaiden",
+   "titulo_latam": null,
+   "pais": "Corea del Sur",
+   "anio": 2016,
+   "anio_fin": null,
+   "sinopsis": "Corea, década de 1930, durante la colonización japonesa. Una joven, Sookee, es contratada como criada de una rica mujer japonesa, Hideko, que vive recluida en una gran mansión bajo la influencia de un tirano. Sookee guarda un secreto, y con la ayuda de un estafador que se hace pasar por un conde japonés, planea algo para Hideko.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Thriller"
+   ],
+   "tematicas": [
+    "Drama",
+    "Final Feliz",
+    "Romance",
+    "Suspense",
+    "Thriller"
+   ],
+   "avisos": [
+    {
+     "nombre": "Maltrato",
+     "categoria": "violencia"
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": "contenido sexual"
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": "violencia"
+    }
+   ],
+   "actrices": [
+    "Cho Jin-woong",
+    "Ha Jung-woo",
+    "Kim Hae-sook",
+    "Kim Min-hee",
+    "Kim Tae-ri",
+    "Lee Dong-hwi",
+    "Lee Yong-nyeo",
+    "Moon So-ri",
+    "Yoo Min-chae"
+   ],
+   "directores": [
+    "Park Chan-wook"
+   ],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film948449.html"
+   ]
+  },
+  {
+   "id": 89,
+   "tipo": "serie",
+   "titulo": "The Haunting of Bly Manor",
+   "titulo_original": "The Haunting of Bly Manor",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "La historia presenta a Dani, una joven que huye de su pasado en Estados Unidos y acepta el trabajo que nadie ha querido por meses: cuidar de Miles y Flora, dos niños que quedaron huérfanos y están a cargo de su tío Henry.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Terror"
+   ],
+   "tematicas": [
+    "Años 80",
+    "Drama",
+    "Fantasmas",
+    "Intriga",
+    "Miedo",
+    "Sobrenatural",
+    "Terror"
+   ],
+   "avisos": [
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": "muerte de personajes LGBT+"
+    }
+   ],
+   "actrices": [
+    "Amelia Eve",
+    "Victoria Pedretti"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/81237854"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film886031.html"
+   ]
+  },
+  {
+   "id": 62,
+   "tipo": "serie",
+   "titulo": "The Order",
+   "titulo_original": "The Order",
+   "titulo_latam": null,
+   "pais": "Canadá",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Un joven estudiante que desea vengar la muerte de su madre realiza un pacto con una orden secreta y se ve involucrado en una lucha entre hombres lobo y magos que hacen uso de la magia negra.",
+   "edad": null,
+   "relevancia": "B",
+   "temporadas": "2.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Terror"
+   ],
+   "tematicas": [
+    "Brujas",
+    "Comedia",
+    "Fantasía",
+    "Hombres lobo",
+    "Terror"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Anesha Bailey",
+    "Devery Jacobs"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film299957.html"
+   ]
+  },
+  {
+   "id": 71,
+   "tipo": "pelicula",
+   "titulo": "The Prom",
+   "titulo_original": "The Prom",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2020,
+   "anio_fin": null,
+   "sinopsis": "Una chica de Indiana no puede ir a su graduación porque quiere ir con su novia, y un grupo de actores de Broadway acude a su rescate.",
+   "edad": "TP",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Musical"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Comedia",
+    "Drama",
+    "Familia",
+    "Musical",
+    "Prom",
+    "Salir del Armario"
+   ],
+   "avisos": [
+    {
+     "nombre": "Bullying",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación Leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    },
+    {
+     "nombre": "Madre lgbtfoba",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Andrew Rannells",
+    "Ariana DeBose",
+    "Jo Ellen Pellman",
+    "Meryl Streep",
+    "Nicole Kidman"
+   ],
+   "directores": [
+    "Ryan Murphy"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/81079914"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film545046.html"
+   ]
+  },
+  {
+   "id": 100,
+   "tipo": "pelicula",
+   "titulo": "Un monstruo en mi puerta",
+   "titulo_original": "Doheeya",
+   "titulo_latam": null,
+   "pais": "Corea del Sur",
+   "anio": 2014,
+   "anio_fin": null,
+   "sinopsis": "Después de un accidente, Young-nam, joven agente de policía de Seúl, es enviada a un pueblito costero. Desde que llega, conoce a una adolescente poco expresiva que la intriga. En su nuevo entorno, Young-nam conoce al padrastro de Dohee, un hombre violento y alcohólico que explota a los trabajadores inmigrantes.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Crimen",
+    "Drama",
+    "Psicológico"
+   ],
+   "avisos": [
+    {
+     "nombre": "Lesbofobia",
+     "categoria": "discriminación"
+    }
+   ],
+   "actrices": [
+    "Doona Bae",
+    "Jang Hee-jin"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/Un-monstruo-en-mi-puerta/0M7J595TI52HNLDL1Z0SO0R5JP"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film808206.html"
+   ]
+  },
+  {
+   "id": 93,
+   "tipo": "serie",
+   "titulo": "Vecinos en guerra",
+   "titulo_original": "Vecinos en guerra",
+   "titulo_latam": null,
+   "pais": "Argentina",
+   "anio": 2013,
+   "anio_fin": null,
+   "sinopsis": "Mercedes es una ama de casa que veinte años atrás formó parte de un grupo de estafadores, junto a Ciro y Alex, quien se convirtió en su primer amor. Un robo fracasó y el grupo se disolvió. Mercedes, con una identidad cambiada, comenzó una nueva vida lejos de las estafas, y contrajo matrimonio con Rafael que no sabe nada sobre su pasado.",
+   "edad": "13",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Telenovela"
+   ],
+   "avisos": [
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    }
+   ],
+   "actrices": [
+    "Natalie Pérez",
+    "Sabrina Fogolini"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film294343.html"
+   ]
+  },
+  {
+   "id": 77,
+   "tipo": "pelicula",
+   "titulo": "Vita & Virginia",
+   "titulo_original": "Vita & Virginia",
+   "titulo_latam": null,
+   "pais": "Reino Unido",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "La escritora Virginia Wolf conoce a la también escritora Vita Sackville-West en Londres en la década de 1920. A pesar de que ambas están casadas, entre ellas nace una pasión que la moral de la época prohíbe.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Celos",
+    "De época",
+    "Drama",
+    "Histórico",
+    "Romance",
+    "Salud Mental"
+   ],
+   "avisos": [
+    {
+     "nombre": "Ansiedad",
+     "categoria": "salud mental"
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": "infidelidad"
+    }
+   ],
+   "actrices": [
+    "Elizabeth Debicki",
+    "Gemma Arterton"
+   ],
+   "directores": [
+    "Chanya Button"
+   ],
+   "donde_ver": [
+    "https://rakuten.tv/es/movies/vita-virginia"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film331948.html"
+   ]
+  },
+  {
+   "id": 42,
+   "tipo": "serie",
+   "titulo": "Wynonna Earp",
+   "titulo_original": "Wynonna Earp",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2016,
+   "anio_fin": null,
+   "sinopsis": "Cuenta la historia de Wynonnna, hija del famoso policía Wyatt Earp.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Drama",
+    "Fantasía",
+    "Fantasía Oscura",
+    "Ficción Sobrenatural",
+    "Intriga",
+    "Thriller",
+    "Western"
+   ],
+   "avisos": [
+    {
+     "nombre": "Violencia.",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Dominique Provost-Chalkley.",
+    "Katherine Barrell"
+   ],
+   "directores": [],
+   "donde_ver": [],
+   "info": [
+    "https://www.filmaffinity.com/es/film619365.html"
+   ]
+  }
+ ]
+}

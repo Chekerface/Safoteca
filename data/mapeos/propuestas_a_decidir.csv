@@ -1,0 +1,11 @@
+tabla,variante,propuesta,motivo
+generos,Horror,Terror,"Parecen sinónimos; 'Terror' es el del catálogo oficial"
+generos,Fantástico,Fantasía,"Suena igual; confirmar"
+generos,Intriga,Suspense,"Posible sinónimo"
+generos,Humor,Comedia,"Posible sinónimo"
+generos,Autobiografía,Biográfico,"Posible sinónimo"
+generos,Porno,,"No está en el catálogo oficial: decidir si se mantiene como género o como aviso de contenido"
+generos,Documental,,"No está en el catálogo oficial: ¿se añade?"
+generos,Deportes,,"No está en el catálogo oficial: ¿se añade?"
+generos,Distopía,Ciencia Ficción,"Podría ser temática en vez de género"
+generos,Costumbrismo,Día a Día,"Posible sinónimo; viene de la hoja de cómics"

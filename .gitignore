@@ -1,0 +1,9 @@
+# Datos privados: nunca se suben a GitHub
+data/privado/
+*.xlsx
+*.db
+*.sqlite
+originales/
+informes/
+.venv/
+__pycache__/

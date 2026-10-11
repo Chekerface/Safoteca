@@ -1,0 +1,374 @@
+{
+ "generos": [
+  "Acción",
+  "Aventura",
+  "Ciencia Ficción",
+  "Comedia",
+  "Comedia Dramática",
+  "Drama",
+  "Fantasía",
+  "Musical",
+  "Romance",
+  "Suspense",
+  "Terror",
+  "Thriller"
+ ],
+ "tematicas": [
+  "Acción",
+  "Adolescencia",
+  "Afroamericanos",
+  "Alcoholismo",
+  "Amigas de la infancia",
+  "Amistad",
+  "Amor",
+  "Animación",
+  "Anime",
+  "Anticapitalista",
+  "Asesinato",
+  "Asia",
+  "Autismo",
+  "Aventura",
+  "Años 80",
+  "Bajo presupuesto",
+  "Biográfico",
+  "Bisexual",
+  "Bisexualidad",
+  "Bomberos",
+  "Brujas",
+  "Brujería",
+  "Butch",
+  "Casanova",
+  "Celos",
+  "Ciencia Ficción",
+  "Comedia",
+  "Comedia Dramática",
+  "Comedia Negra",
+  "Comic",
+  "Coming of Age",
+  "Crimen",
+  "Cutre",
+  "De época",
+  "Delincuencia",
+  "Desamor",
+  "Desapariciones",
+  "Diferencia de altura",
+  "Discriminación fuerte",
+  "Distopía",
+  "Divorcio",
+  "Drama",
+  "Drogodependencia",
+  "Día a día",
+  "Día de Acción de Gracias",
+  "Enemies to Lovers",
+  "Erotismo",
+  "Escuela",
+  "Espectáculo",
+  "Espionaje",
+  "Familia",
+  "Family Friendly",
+  "Fantasmas",
+  "Fantasía",
+  "Fantasía Oscura",
+  "Fantástico",
+  "Fascismo",
+  "Feminismo",
+  "Ficción Sobrenatural",
+  "Final Feliz",
+  "Friends to Lovers",
+  "Furry",
+  "Heartwarming",
+  "Histórico",
+  "Hombres lobo",
+  "Homofobia",
+  "Identidad",
+  "Infancia",
+  "Intriga",
+  "Juventud",
+  "Lesbianismo",
+  "Lesbofobia",
+  "Magia",
+  "Mala con ganas",
+  "Miedo",
+  "Militancia",
+  "Militarismo",
+  "Misterio",
+  "Moda",
+  "Movimiento por los Derechos civiles",
+  "Musical",
+  "Música",
+  "NSFW",
+  "Pandilla",
+  "Pareja Idiota",
+  "Pareja Sana",
+  "Policiaca",
+  "Política",
+  "Prisión",
+  "Prom",
+  "Prostitución",
+  "PseudoReality Show",
+  "Psicológico",
+  "Racismo",
+  "Religión",
+  "Represión",
+  "Robots",
+  "Romance",
+  "Roomates",
+  "Salir del Armario",
+  "Salud Mental",
+  "Secuestros",
+  "Sexualidad",
+  "Sicaria",
+  "Sobrenatural",
+  "Soledad",
+  "Subtexto",
+  "Super Héroes",
+  "Superheroinas",
+  "Superhéroes",
+  "Supervivencia",
+  "Supporting Dad",
+  "Suspense",
+  "Teatro",
+  "Telenovela",
+  "Terror",
+  "Terrorismo",
+  "Thriller",
+  "Tragedia",
+  "Trans",
+  "Travestismo",
+  "Vampiros",
+  "Viajes en el tiempo",
+  "Vida adulta",
+  "Western",
+  "WTF?!"
+ ],
+ "avisos": [
+  {
+   "nombre": "Abuso animal",
+   "categoria": null
+  },
+  {
+   "nombre": "Acoso",
+   "categoria": null
+  },
+  {
+   "nombre": "Alcohol",
+   "categoria": null
+  },
+  {
+   "nombre": "Asesinatos",
+   "categoria": null
+  },
+  {
+   "nombre": "Bullying",
+   "categoria": null
+  },
+  {
+   "nombre": "Cancelada",
+   "categoria": null
+  },
+  {
+   "nombre": "Capacitismo",
+   "categoria": null
+  },
+  {
+   "nombre": "Chantaje",
+   "categoria": null
+  },
+  {
+   "nombre": "Delincuencia",
+   "categoria": null
+  },
+  {
+   "nombre": "Diferencia de edad",
+   "categoria": null
+  },
+  {
+   "nombre": "Discriminación fuerte",
+   "categoria": null
+  },
+  {
+   "nombre": "Discriminación Leve",
+   "categoria": null
+  },
+  {
+   "nombre": "Drogodependencia",
+   "categoria": null
+  },
+  {
+   "nombre": "Gordofobia",
+   "categoria": null
+  },
+  {
+   "nombre": "Madre lgbtfoba",
+   "categoria": null
+  },
+  {
+   "nombre": "Maltrato animal",
+   "categoria": null
+  },
+  {
+   "nombre": "Mentiras y Engaño",
+   "categoria": null
+  },
+  {
+   "nombre": "Obsesión",
+   "categoria": null
+  },
+  {
+   "nombre": "Padre lgbtfobo",
+   "categoria": null
+  },
+  {
+   "nombre": "Padre lgtbfobo",
+   "categoria": null
+  },
+  {
+   "nombre": "Pareja Tóxica",
+   "categoria": null
+  },
+  {
+   "nombre": "Prostitución",
+   "categoria": null
+  },
+  {
+   "nombre": "Pseudoincesto",
+   "categoria": null
+  },
+  {
+   "nombre": "Psicópata",
+   "categoria": null
+  },
+  {
+   "nombre": "Racismo",
+   "categoria": null
+  },
+  {
+   "nombre": "Relaciones perjudiciales",
+   "categoria": null
+  },
+  {
+   "nombre": "Religión",
+   "categoria": null
+  },
+  {
+   "nombre": "Sangre",
+   "categoria": null
+  },
+  {
+   "nombre": "Secuestro",
+   "categoria": null
+  },
+  {
+   "nombre": "Secuestros",
+   "categoria": null
+  },
+  {
+   "nombre": "Sexualización",
+   "categoria": null
+  },
+  {
+   "nombre": "Sida",
+   "categoria": null
+  },
+  {
+   "nombre": "Sin hogar",
+   "categoria": null
+  },
+  {
+   "nombre": "Sindrome de la lesbiana muerta",
+   "categoria": null
+  },
+  {
+   "nombre": "Suicidio",
+   "categoria": null
+  },
+  {
+   "nombre": "TCA",
+   "categoria": null
+  },
+  {
+   "nombre": "Violencia.",
+   "categoria": null
+  },
+  {
+   "nombre": "Vómitos",
+   "categoria": null
+  },
+  {
+   "nombre": "Manipulación",
+   "categoria": "abuso emocional"
+  },
+  {
+   "nombre": "Alcoholismo",
+   "categoria": "adicciones"
+  },
+  {
+   "nombre": "Drogas",
+   "categoria": "adicciones"
+  },
+  {
+   "nombre": "Sexo Explícito",
+   "categoria": "contenido sexual"
+  },
+  {
+   "nombre": "Sexualizado",
+   "categoria": "contenido sexual"
+  },
+  {
+   "nombre": "Bifobia",
+   "categoria": "discriminación"
+  },
+  {
+   "nombre": "Homofobia",
+   "categoria": "discriminación"
+  },
+  {
+   "nombre": "Lesbofobia",
+   "categoria": "discriminación"
+  },
+  {
+   "nombre": "Transfobia",
+   "categoria": "discriminación"
+  },
+  {
+   "nombre": "Cuernos",
+   "categoria": "infidelidad"
+  },
+  {
+   "nombre": "Síndrome de la lesbiana muerta",
+   "categoria": "muerte de personajes LGBT+"
+  },
+  {
+   "nombre": "Angustia",
+   "categoria": "salud mental"
+  },
+  {
+   "nombre": "Ansiedad",
+   "categoria": "salud mental"
+  },
+  {
+   "nombre": "Autolesiones",
+   "categoria": "salud mental"
+  },
+  {
+   "nombre": "Asesinato",
+   "categoria": "violencia"
+  },
+  {
+   "nombre": "Maltrato",
+   "categoria": "violencia"
+  },
+  {
+   "nombre": "Sangre/gore",
+   "categoria": "violencia"
+  },
+  {
+   "nombre": "Violencia",
+   "categoria": "violencia"
+  },
+  {
+   "nombre": "Violación",
+   "categoria": "violencia sexual"
+  }
+ ]
+}
