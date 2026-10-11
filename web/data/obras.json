@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-11T22:00:38+00:00",
+  "generado": "2026-10-11T22:08:08+00:00",
   "total": 75
  },
  "obras": [
@@ -346,7 +346,7 @@
    "sinopsis": "Sam, un chico de 18 años que roza el autismo, emprende un viaje para encontrarse a sí mismo, conocer el amor, la independencia y desafiar a su familia.",
    "edad": null,
    "relevancia": "A",
-   "temporadas": "3.0",
+   "temporadas": "3",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "58",
@@ -638,7 +638,7 @@
    "sinopsis": "Los detectives Jake Peralta, Amy Santiago, Charles Boyle, Rosa Diaz, Norman Scully, Michael Hitchcock y el sargento Terry Jeffords son unos policías talentosos sin preocupaciones y con el mejor registro de arrestos, hasta que llega a la estación policial el nuevo jefe Raymond Holt.",
    "edad": "13",
    "relevancia": "B",
-   "temporadas": "5.0",
+   "temporadas": "5",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "64",
@@ -699,7 +699,7 @@
    "sinopsis": "La joven Buffy y su madre se mudan desde Los Ángeles a la localidad de Sunnydale. En el subsuelo del pueblo se encuentra La Boca del Infierno, por lo que Sunnydale es frecuentado por vampiros y otros demonios, a los que Buffy tendrá que eliminar por su destino de Cazadora, con ayuda de sus nuevos amigos Willow y Xander, y el Guardián Giles.",
    "edad": "13",
    "relevancia": "A",
-   "temporadas": "4.0",
+   "temporadas": "4",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "89",
@@ -882,45 +882,6 @@
    "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film629844.html"
-   ],
-   "letterboxd": null
-  },
-  {
-   "id": 57,
-   "tipo": "serie",
-   "titulo": "Charmed",
-   "titulo_original": "Charmed",
-   "titulo_latam": null,
-   "pais": "EE.UU.",
-   "anio": 2018,
-   "anio_fin": null,
-   "sinopsis": "Reboot de la serie original que se centra en tres hermanas de una ciudad universitaria que descubren que son brujas.",
-   "edad": null,
-   "relevancia": "A",
-   "temporadas": null,
-   "disponible_espana": true,
-   "final_feliz": null,
-   "poster": "57",
-   "generos": [
-    "Fantasía"
-   ],
-   "tematicas": [
-    "Brujería",
-    "Drama",
-    "Fantasía",
-    "Magia"
-   ],
-   "avisos": [],
-   "actrices": [
-    "Ellen Tamaki",
-    "Melonie Diaz"
-   ],
-   "directores": [],
-   "donde_ver": [
-    "https://es.hboespana.com/series/embrujadas/f66ed00a-db2b-4d09-9719-04e396e1ac93"
-   ],
-   "info": [
-    "https://www.filmaffinity.com/es/film692403.html"
    ],
    "letterboxd": null
   },
@@ -1216,7 +1177,7 @@
     "Juventud",
     "Pareja Sana",
     "Romance",
-    "Salir del Armario"
+    "Salir del armario"
    ],
    "avisos": [],
    "actrices": [
@@ -1244,7 +1205,7 @@
    "sinopsis": "Tras la desaparición de un joven, cuatro familias desesperadas tratan de entender lo ocurrido a medida que van desvelando un retorcido misterio que abarca tres décadas...",
    "edad": null,
    "relevancia": "B",
-   "temporadas": "2.0",
+   "temporadas": "2",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "59",
@@ -1526,6 +1487,45 @@
    "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film490217.html"
+   ],
+   "letterboxd": null
+  },
+  {
+   "id": 57,
+   "tipo": "serie",
+   "titulo": "Embrujadas",
+   "titulo_original": "Charmed",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Reboot de la serie original que se centra en tres hermanas de una ciudad universitaria que descubren que son brujas.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "57",
+   "generos": [
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Brujería",
+    "Drama",
+    "Fantasía",
+    "Magia"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Ellen Tamaki",
+    "Melonie Diaz"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://es.hboespana.com/series/embrujadas/f66ed00a-db2b-4d09-9719-04e396e1ac93"
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film692403.html"
    ],
    "letterboxd": null
   },
@@ -1988,7 +1988,7 @@
    "sinopsis": "En un futuro no lejano, el último gadget de cualquier familia es un \"Synth\", un robot de alta tecnología similar a un sirviente en vivo. Con la esperanza de mejorar sus vidas en el día a día, una familia muy ocupada de los suburbios compra uno, pero descubre que compartir la vida con una máquina puede tener consecuencias escalofriantes. Remake de la serie sueca de 2012 \"Real Humans\".",
    "edad": null,
    "relevancia": "B",
-   "temporadas": "2.0",
+   "temporadas": "2",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "62",
@@ -2035,7 +2035,7 @@
    "sinopsis": "Un grupo de personas normales se ve, de la noche a la mañana, dotada de increíbles poderes.",
    "edad": null,
    "relevancia": "C",
-   "temporadas": "4.0",
+   "temporadas": "4",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "99",
@@ -2266,7 +2266,7 @@
     "Drama",
     "Familia",
     "Romance",
-    "Salir del Armario"
+    "Salir del armario"
    ],
    "avisos": [
     {
@@ -2548,7 +2548,7 @@
     "Drama",
     "Día de Acción de Gracias",
     "Familia",
-    "Salir del Armario"
+    "Salir del armario"
    ],
    "avisos": [],
    "actrices": [
@@ -2572,7 +2572,7 @@
    "sinopsis": "Después de negarse a encubrir un error policial, el detective Steve Arnott es transferido a una unidad de lucha contra la corrupción.",
    "edad": "16",
    "relevancia": "C",
-   "temporadas": "6.0",
+   "temporadas": "6",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "76",
@@ -3536,7 +3536,7 @@
    "sinopsis": "Skam sigue el día a día de un grupo de jóvenes de 16 años de un instituto y su relación con sus sentimientos, el amor, el sexo y el paso al mundo adulto.",
    "edad": "16",
    "relevancia": "A",
-   "temporadas": "2.0",
+   "temporadas": "2",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "71",
@@ -3898,7 +3898,7 @@
    "sinopsis": "Un joven estudiante que desea vengar la muerte de su madre realiza un pacto con una orden secreta y se ve involucrado en una lucha entre hombres lobo y magos que hacen uso de la magia negra.",
    "edad": null,
    "relevancia": "B",
-   "temporadas": "2.0",
+   "temporadas": "2",
    "disponible_espana": true,
    "final_feliz": null,
    "poster": "63",
@@ -3955,7 +3955,7 @@
     "Familia",
     "Musical",
     "Prom",
-    "Salir del Armario"
+    "Salir del armario"
    ],
    "avisos": [
     {
