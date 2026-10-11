@@ -43,10 +43,15 @@ variante,canonico
 Thriler,Thriller
 ```
 Si `canonico` queda vacío, la etiqueta se **elimina**. Después reimportad con `--forzar`.
-`data/mapeos/propuestas_a_decidir.csv` son sugerencias mías que **no se aplican solas**: decidid en equipo.
 
-**Categorías de los avisos** (violencia, discriminación, muerte de personajes LGBT+...): `data/mapeos/avisos_categorias.csv`
-(la columna `variante` es el aviso y `canonico` su categoría). Es una propuesta inicial: revisadla.
+**Avisos de contenido:** se mantienen tal cual están en el Excel, con todo su detalle ("Violación", "Acoso sexual",
+"Síndrome de la lesbiana muerta"...), porque cada persona debe poder saber con precisión qué va a encontrar.
+No se agrupan en categorías ni se fusionan. La única excepción técnica es que dos avisos que solo se diferencian en
+mayúsculas o minúsculas ("Asesinato" y "asesinato") cuentan como el mismo, para que el filtro no los muestre duplicados.
+Los avisos que se parecen pero no son idénticos ("Asesinato" y "Asesinatos") se conservan por separado.
+
+**Géneros:** se aplican solo las unificaciones que el equipo ha aprobado (`data/mapeos/generos.csv`). El resto de
+valores se mantiene como en el Excel. Las decisiones están anotadas en `data/mapeos/propuestas_a_decidir.csv`.
 
 ## 3. Imágenes
 ```bash
