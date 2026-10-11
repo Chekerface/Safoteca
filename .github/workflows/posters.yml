@@ -1,0 +1,50 @@
+# Descarga los pósters desde los servidores de GitHub (que sí tienen acceso a internet),
+# los optimiza y los guarda en web/img/. Se lanza a mano:
+#   pestaña Actions → "Descargar pósters" → Run workflow
+name: Descargar pósters
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write   # guardar las imágenes en el repositorio
+  actions: write    # lanzar después la publicación de la web
+
+concurrency:
+  group: posters
+  cancel-in-progress: false
+
+jobs:
+  posters:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests Pillow
+      - name: Descargar y optimizar
+        run: python tools/posters_ci.py --pausa 1
+      - name: Resumen
+        run: |
+          echo "### Pósters con problemas (los que no salen aquí se han descargado bien)" >> "$GITHUB_STEP_SUMMARY"
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import csv
+          for r in csv.DictReader(open("data/posters_informe.csv", encoding="utf-8-sig")):
+              if r["estado"] != "ok":
+                  print(f"- {r['titulo']} (id {r['id']}): {r['estado']} - {r['detalle']}")
+          PY
+      - name: Guardar en el repositorio y publicar la web
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git config user.name "safoteca-bot"
+          git config user.email "safoteca-bot@users.noreply.github.com"
+          git add web/img web/data data/posters_informe.csv
+          if git diff --cached --quiet; then
+            echo "Nada nuevo que guardar."
+          else
+            git commit -m "Añadir pósters descargados automáticamente"
+            git push
+            gh workflow run pages.yml --ref "${{ github.ref_name }}"
+          fi
