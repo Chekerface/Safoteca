@@ -2,9 +2,13 @@
 window.SAFOTECA_CONFIG = {
   nombre: "La Safoteca",
   lema: "Series y películas con representación lésbica y bisexual, con avisos de contenido para que decidas qué quieres ver.",
-  // Explicación del nivel de relevancia. Si se deja vacío, no se muestra nada.
-  // Ejemplo: A: "La historia gira en torno a personajes lésbicos o bisexuales."
-  textoRelevancia: { A: "", B: "", C: "" },
+  // Nivel de relevancia: importancia y explicitud del lesbianismo dentro de la obra.
+  // Si una letra se deja vacía, no se muestra su explicación.
+  textoRelevancia: {
+    A: "Protagonista y relevante para la historia.",
+    B: "Personaje principal pero no relevante, o personaje secundario con cierta relevancia para la historia.",
+    C: "Subtexto, o no tiene gran importancia, o ningún romance."
+  },
   // Opcional: enlace o correo para sugerencias (por ejemplo "mailto:..." o una URL).
   contacto: ""
 };

@@ -1,11 +1,11 @@
 {
  "meta": {
-  "generado": "2026-10-11T18:30:27+00:00",
+  "generado": "2026-10-11T20:23:26+00:00",
   "total": 75
  },
  "obras": [
   {
-   "id": 95,
+   "id": 96,
    "tipo": "pelicula",
    "titulo": "1448 love among us",
    "titulo_original": "1448 love among us",
@@ -39,7 +39,7 @@
    ]
   },
   {
-   "id": 38,
+   "id": 39,
    "tipo": "pelicula",
    "titulo": "A Bride for Rip Van Winkle",
    "titulo_original": "A Bride for Rip Van Winkle",
@@ -85,14 +85,14 @@
     "Shunji Iwai"
    ],
    "donde_ver": [
-    "https://www.peliculasflv.io/pelicula/a-bride-for-rip-van-winkle/"
+    "https://www.Películasflv.io/Película/a-bride-for-rip-van-winkle/"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film167868.html"
    ]
   },
   {
-   "id": 37,
+   "id": 38,
    "tipo": "pelicula",
    "titulo": "A date for mad mary",
    "titulo_original": "A date for mad mary",
@@ -151,7 +151,7 @@
    ]
   },
   {
-   "id": 45,
+   "id": 46,
    "tipo": "pelicula",
    "titulo": "All Cheerleaders Die",
    "titulo_original": "All Cheerleaders Die",
@@ -197,7 +197,7 @@
    ]
   },
   {
-   "id": 97,
+   "id": 98,
    "tipo": "serie",
    "titulo": "Amar a muerte",
    "titulo_original": "Amar a muerte",
@@ -231,7 +231,7 @@
    ]
   },
   {
-   "id": 79,
+   "id": 80,
    "tipo": "pelicula",
    "titulo": "Ammonite",
    "titulo_original": "Ammonite",
@@ -285,7 +285,7 @@
    ]
   },
   {
-   "id": 55,
+   "id": 56,
    "tipo": "pelicula",
    "titulo": "Asagao to Kase-san",
    "titulo_original": "Asagao to Kase-san",
@@ -321,14 +321,14 @@
     "Takuya Sato"
    ],
    "donde_ver": [
-    "https://animeonline.ninja/pelicula/asagao-to-kase-san/"
+    "https://animeonline.ninja/Película/asagao-to-kase-san/"
    ],
    "info": [
     "https://www.imdb.com/title/tt7456468/?ref_=nv_sr_srsg_0"
    ]
   },
   {
-   "id": 57,
+   "id": 58,
    "tipo": "serie",
    "titulo": "Atypical",
    "titulo_original": "Atypical",
@@ -370,7 +370,7 @@
    ]
   },
   {
-   "id": 78,
+   "id": 79,
    "tipo": "pelicula",
    "titulo": "Atómica",
    "titulo_original": "Atomic Blonde",
@@ -426,7 +426,7 @@
    ]
   },
   {
-   "id": 87,
+   "id": 88,
    "tipo": "serie",
    "titulo": "Black Mirror (3x4)",
    "titulo_original": "Black Mirror (3x4)",
@@ -476,7 +476,7 @@
    ]
   },
   {
-   "id": 39,
+   "id": 40,
    "tipo": "pelicula",
    "titulo": "Blue",
    "titulo_original": "Blue",
@@ -518,7 +518,7 @@
    ]
   },
   {
-   "id": 80,
+   "id": 81,
    "tipo": "serie",
    "titulo": "Bojack Horseman",
    "titulo_original": "Bojack Horseman",
@@ -615,7 +615,7 @@
    ]
   },
   {
-   "id": 63,
+   "id": 64,
    "tipo": "serie",
    "titulo": "Brooklyn Nine-Nine",
    "titulo_original": "Brooklyn Nine-Nine",
@@ -675,7 +675,7 @@
    ]
   },
   {
-   "id": 88,
+   "id": 89,
    "tipo": "serie",
    "titulo": "Buffy, cazavampiros",
    "titulo_original": "Buffy the Vampire Slayer",
@@ -731,7 +731,7 @@
    ]
   },
   {
-   "id": 30,
+   "id": 31,
    "tipo": "pelicula",
    "titulo": "Canción de amor",
    "titulo_original": "Lovesong",
@@ -773,7 +773,7 @@
    ]
   },
   {
-   "id": 91,
+   "id": 92,
    "tipo": "pelicula",
    "titulo": "Carol",
    "titulo_original": "Carol",
@@ -821,7 +821,7 @@
    ]
   },
   {
-   "id": 50,
+   "id": 51,
    "tipo": "serie",
    "titulo": "Casa Búho",
    "titulo_original": "The Owl House",
@@ -869,7 +869,7 @@
    ]
   },
   {
-   "id": 56,
+   "id": 57,
    "tipo": "serie",
    "titulo": "Charmed",
    "titulo_original": "Charmed",
@@ -960,7 +960,7 @@
    ]
   },
   {
-   "id": 53,
+   "id": 54,
    "tipo": "serie",
    "titulo": "Citrus",
    "titulo_original": "Citrus",
@@ -1016,7 +1016,7 @@
    ]
   },
   {
-   "id": 34,
+   "id": 35,
    "tipo": "pelicula",
    "titulo": "Conquista a medias",
    "titulo_original": "The half of it",
@@ -1062,7 +1062,7 @@
    ]
   },
   {
-   "id": 69,
+   "id": 70,
    "tipo": "serie",
    "titulo": "Crazy Ex-Girlfriend",
    "titulo_original": "Crazy Ex-Girlfriend",
@@ -1123,7 +1123,7 @@
    ]
   },
   {
-   "id": 84,
+   "id": 85,
    "tipo": "serie",
    "titulo": "Cross Ange: Tenshi to Ryū no Rondo",
    "titulo_original": "Cross Ange: Tenshi to Ryū no Rondo",
@@ -1162,7 +1162,7 @@
    ]
   },
   {
-   "id": 108,
+   "id": 109,
    "tipo": "pelicula",
    "titulo": "D.E.B.S. (Espías en acción)",
    "titulo_original": "D.E.B.S",
@@ -1209,7 +1209,7 @@
    ]
   },
   {
-   "id": 58,
+   "id": 59,
    "tipo": "serie",
    "titulo": "Dark",
    "titulo_original": "Dark",
@@ -1239,15 +1239,15 @@
    ],
    "avisos": [
     {
-     "nombre": "Asesinatos",
-     "categoria": null
+     "nombre": "Asesinato",
+     "categoria": "violencia"
     },
     {
      "nombre": "Cuernos",
      "categoria": "infidelidad"
     },
     {
-     "nombre": "Secuestros",
+     "nombre": "Secuestro",
      "categoria": null
     }
    ],
@@ -1262,7 +1262,7 @@
    ]
   },
   {
-   "id": 54,
+   "id": 55,
    "tipo": "serie",
    "titulo": "Destiny of the Shrine Maiden",
    "titulo_original": "Kannazuki no Miko",
@@ -1327,7 +1327,7 @@
    ]
   },
   {
-   "id": 90,
+   "id": 91,
    "tipo": "pelicula",
    "titulo": "Disobedience",
    "titulo_original": "Disobedience",
@@ -1388,7 +1388,7 @@
    ]
   },
   {
-   "id": 51,
+   "id": 52,
    "tipo": "serie",
    "titulo": "El príncipe dragón",
    "titulo_original": "The Dragon Prince",
@@ -1437,7 +1437,7 @@
    ]
   },
   {
-   "id": 35,
+   "id": 36,
    "tipo": "pelicula",
    "titulo": "Elisa y Marcela",
    "titulo_original": "Elisa y Marcela",
@@ -1501,7 +1501,7 @@
    ]
   },
   {
-   "id": 29,
+   "id": 30,
    "tipo": "serie",
    "titulo": "Estación 19",
    "titulo_original": "Station 19",
@@ -1549,7 +1549,7 @@
    ]
   },
   {
-   "id": 74,
+   "id": 75,
    "tipo": "serie",
    "titulo": "Euphoria",
    "titulo_original": "Euphoria",
@@ -1593,8 +1593,8 @@
      "categoria": "salud mental"
     },
     {
-     "nombre": "Autolesiones",
-     "categoria": "salud mental"
+     "nombre": "Autolesión",
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
@@ -1660,7 +1660,7 @@
    ]
   },
   {
-   "id": 76,
+   "id": 77,
    "tipo": "serie",
    "titulo": "Gentleman Jack",
    "titulo_original": "Gentleman Jack",
@@ -1695,8 +1695,8 @@
      "categoria": "salud mental"
     },
     {
-     "nombre": "Autolesiones",
-     "categoria": "salud mental"
+     "nombre": "Autolesión",
+     "categoria": null
     },
     {
      "nombre": "Lesbofobia",
@@ -1722,7 +1722,7 @@
    ]
   },
   {
-   "id": 43,
+   "id": 44,
    "tipo": "pelicula",
    "titulo": "Girltrash: All Night Long",
    "titulo_original": "Girltrash: All Night Long",
@@ -1772,7 +1772,7 @@
    "info": []
   },
   {
-   "id": 52,
+   "id": 53,
    "tipo": "serie",
    "titulo": "Harley Quinn",
    "titulo_original": "Harley Quinn",
@@ -1784,7 +1784,7 @@
    "edad": "18",
    "relevancia": "A",
    "temporadas": null,
-   "disponible_espana": null,
+   "disponible_espana": true,
    "final_feliz": null,
    "poster": null,
    "generos": [
@@ -1833,7 +1833,7 @@
    ]
   },
   {
-   "id": 40,
+   "id": 41,
    "tipo": "serie",
    "titulo": "Harlots",
    "titulo_original": "Harlots",
@@ -1882,7 +1882,7 @@
    ]
   },
   {
-   "id": 48,
+   "id": 49,
    "tipo": "serie",
    "titulo": "Hora de aventuras",
    "titulo_original": "Adventure Time!",
@@ -1941,7 +1941,7 @@
    ]
   },
   {
-   "id": 61,
+   "id": 62,
    "tipo": "serie",
    "titulo": "Humans",
    "titulo_original": "Humans",
@@ -1987,7 +1987,7 @@
    ]
   },
   {
-   "id": 98,
+   "id": 99,
    "tipo": "serie",
    "titulo": "Héroes",
    "titulo_original": "Héroes",
@@ -2069,7 +2069,7 @@
    "info": []
   },
   {
-   "id": 96,
+   "id": 97,
    "tipo": "pelicula",
    "titulo": "Kajillionaire",
    "titulo_original": "Kajillionaire",
@@ -2104,7 +2104,7 @@
    ]
   },
   {
-   "id": 85,
+   "id": 86,
    "tipo": "serie",
    "titulo": "Killing Eve",
    "titulo_original": "Killing Eve",
@@ -2137,8 +2137,8 @@
      "categoria": null
     },
     {
-     "nombre": "Asesinatos",
-     "categoria": null
+     "nombre": "Asesinato",
+     "categoria": "violencia"
     },
     {
      "nombre": "Obsesión",
@@ -2166,7 +2166,7 @@
    ]
   },
   {
-   "id": 83,
+   "id": 84,
    "tipo": "pelicula",
    "titulo": "Kiss Me",
    "titulo_original": "Kyss Mig",
@@ -2201,7 +2201,7 @@
    ]
   },
   {
-   "id": 72,
+   "id": 73,
    "tipo": "pelicula",
    "titulo": "La estación de la felicidad",
    "titulo_original": "Happiest Season",
@@ -2257,7 +2257,7 @@
    ]
   },
   {
-   "id": 67,
+   "id": 68,
    "tipo": "pelicula",
    "titulo": "La favorita",
    "titulo_original": "The Favourite",
@@ -2328,7 +2328,7 @@
    ]
   },
   {
-   "id": 47,
+   "id": 48,
    "tipo": "serie",
    "titulo": "La leyenda de Korra",
    "titulo_original": "The Legend of Korra",
@@ -2395,7 +2395,7 @@
    ]
   },
   {
-   "id": 81,
+   "id": 82,
    "tipo": "pelicula",
    "titulo": "La madre del blues",
    "titulo_original": "Ma Rainey's Black Bottom",
@@ -2444,7 +2444,7 @@
    ]
   },
   {
-   "id": 94,
+   "id": 95,
    "tipo": "serie",
    "titulo": "Las estrellas",
    "titulo_original": "Las estrellas",
@@ -2478,7 +2478,7 @@
    ]
   },
   {
-   "id": 44,
+   "id": 45,
    "tipo": "pelicula",
    "titulo": "Lez Bomb",
    "titulo_original": "Lez Bomb",
@@ -2513,7 +2513,7 @@
    "info": []
   },
   {
-   "id": 75,
+   "id": 76,
    "tipo": "serie",
    "titulo": "Line of Duty",
    "titulo_original": "Line of Duty",
@@ -2590,7 +2590,7 @@
    ]
   },
   {
-   "id": 66,
+   "id": 67,
    "tipo": "serie",
    "titulo": "Little Voice",
    "titulo_original": "Little Voice",
@@ -2639,7 +2639,7 @@
    ]
   },
   {
-   "id": 73,
+   "id": 74,
    "tipo": "pelicula",
    "titulo": "Los Mitchell contra las máquinas",
    "titulo_original": "The Mitchells vs. the Machines",
@@ -2682,7 +2682,7 @@
    ]
   },
   {
-   "id": 59,
+   "id": 60,
    "tipo": "serie",
    "titulo": "Marvel Runaways",
    "titulo_original": "Marvel Runaways",
@@ -2723,7 +2723,7 @@
    ]
   },
   {
-   "id": 31,
+   "id": 32,
    "tipo": "serie",
    "titulo": "Motherland: Fort salem",
    "titulo_original": "Motherland: Fort salem",
@@ -2770,7 +2770,7 @@
    "info": []
   },
   {
-   "id": 68,
+   "id": 69,
    "tipo": "serie",
    "titulo": "Mr Robot",
    "titulo_original": "Mr Robot",
@@ -2852,7 +2852,7 @@
    ]
   },
   {
-   "id": 32,
+   "id": 33,
    "tipo": "serie",
    "titulo": "Orange is the new black",
    "titulo_original": "Orange is the new black",
@@ -2982,7 +2982,7 @@
    ]
   },
   {
-   "id": 36,
+   "id": 37,
    "tipo": "pelicula",
    "titulo": "Paradise Hills",
    "titulo_original": "Paradise Hills",
@@ -3050,7 +3050,7 @@
    ]
   },
   {
-   "id": 65,
+   "id": 66,
    "tipo": "pelicula",
    "titulo": "Pride/Orgullo",
    "titulo_original": "Pride",
@@ -3105,14 +3105,14 @@
     "Matthew Warchus"
    ],
    "donde_ver": [
-    "https://www.filmin.es/pelicula/pride?utm_source=justwatch"
+    "https://www.filmin.es/Película/pride?utm_source=justwatch"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film412425.html"
    ]
   },
   {
-   "id": 64,
+   "id": 65,
    "tipo": "pelicula",
    "titulo": "Rent",
    "titulo_original": "Rent",
@@ -3176,7 +3176,7 @@
    ]
   },
   {
-   "id": 92,
+   "id": 93,
    "tipo": "pelicula",
    "titulo": "Retrato de una mujer en llamas",
    "titulo_original": "Portrait de la Jeune Fille en Feu",
@@ -3214,7 +3214,7 @@
    ]
   },
   {
-   "id": 49,
+   "id": 50,
    "tipo": "serie",
    "titulo": "RWBY",
    "titulo_original": "RWBY",
@@ -3308,7 +3308,7 @@
    ]
   },
   {
-   "id": 86,
+   "id": 87,
    "tipo": "serie",
    "titulo": "Sense8",
    "titulo_original": "Sense8",
@@ -3358,7 +3358,7 @@
    ]
   },
   {
-   "id": 46,
+   "id": 47,
    "tipo": "serie",
    "titulo": "She-Ra y las princesas del poder",
    "titulo_original": "She-Ra and the princesses of power",
@@ -3462,7 +3462,7 @@
    "info": []
   },
   {
-   "id": 70,
+   "id": 71,
    "tipo": "serie",
    "titulo": "Skam España",
    "titulo_original": "Skam España",
@@ -3543,7 +3543,7 @@
    ]
   },
   {
-   "id": 33,
+   "id": 34,
    "tipo": "serie",
    "titulo": "Skins (Temporadas 3 y 4)",
    "titulo_original": "Skins (Temporadas 3 y 4)",
@@ -3593,8 +3593,8 @@
      "categoria": "discriminación"
     },
     {
-     "nombre": "Sindrome de la lesbiana muerta",
-     "categoria": null
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": "muerte de personajes LGBT+"
     }
    ],
    "actrices": [
@@ -3623,7 +3623,7 @@
    ]
   },
   {
-   "id": 82,
+   "id": 83,
    "tipo": "serie",
    "titulo": "Steven Universe",
    "titulo_original": "Steven Universe",
@@ -3669,7 +3669,7 @@
    ]
   },
   {
-   "id": 60,
+   "id": 61,
    "tipo": "serie",
    "titulo": "The Bold Type",
    "titulo_original": "The Bold Type",
@@ -3713,7 +3713,7 @@
    ]
   },
   {
-   "id": 41,
+   "id": 42,
    "tipo": "pelicula",
    "titulo": "The handmaiden",
    "titulo_original": "The handmaiden",
@@ -3772,7 +3772,7 @@
    ]
   },
   {
-   "id": 89,
+   "id": 90,
    "tipo": "serie",
    "titulo": "The Haunting of Bly Manor",
    "titulo_original": "The Haunting of Bly Manor",
@@ -3818,7 +3818,7 @@
    ]
   },
   {
-   "id": 62,
+   "id": 63,
    "tipo": "serie",
    "titulo": "The Order",
    "titulo_original": "The Order",
@@ -3860,7 +3860,7 @@
    ]
   },
   {
-   "id": 71,
+   "id": 72,
    "tipo": "pelicula",
    "titulo": "The Prom",
    "titulo_original": "The Prom",
@@ -3927,7 +3927,7 @@
    ]
   },
   {
-   "id": 100,
+   "id": 101,
    "tipo": "pelicula",
    "titulo": "Un monstruo en mi puerta",
    "titulo_original": "Doheeya",
@@ -3969,7 +3969,7 @@
    ]
   },
   {
-   "id": 93,
+   "id": 94,
    "tipo": "serie",
    "titulo": "Vecinos en guerra",
    "titulo_original": "Vecinos en guerra",
@@ -4008,7 +4008,7 @@
    ]
   },
   {
-   "id": 77,
+   "id": 78,
    "tipo": "pelicula",
    "titulo": "Vita & Virginia",
    "titulo_original": "Vita & Virginia",
@@ -4060,7 +4060,7 @@
    ]
   },
   {
-   "id": 42,
+   "id": 43,
    "tipo": "serie",
    "titulo": "Wynonna Earp",
    "titulo_original": "Wynonna Earp",
@@ -4089,8 +4089,8 @@
    ],
    "avisos": [
     {
-     "nombre": "Violencia.",
-     "categoria": null
+     "nombre": "Violencia",
+     "categoria": "violencia"
     }
    ],
    "actrices": [

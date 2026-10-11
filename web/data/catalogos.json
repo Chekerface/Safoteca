@@ -155,7 +155,7 @@
    "categoria": null
   },
   {
-   "nombre": "Asesinatos",
+   "nombre": "Autolesión",
    "categoria": null
   },
   {
@@ -259,10 +259,6 @@
    "categoria": null
   },
   {
-   "nombre": "Secuestros",
-   "categoria": null
-  },
-  {
    "nombre": "Sexualización",
    "categoria": null
   },
@@ -275,19 +271,11 @@
    "categoria": null
   },
   {
-   "nombre": "Sindrome de la lesbiana muerta",
-   "categoria": null
-  },
-  {
    "nombre": "Suicidio",
    "categoria": null
   },
   {
    "nombre": "TCA",
-   "categoria": null
-  },
-  {
-   "nombre": "Violencia.",
    "categoria": null
   },
   {
@@ -344,10 +332,6 @@
   },
   {
    "nombre": "Ansiedad",
-   "categoria": "salud mental"
-  },
-  {
-   "nombre": "Autolesiones",
    "categoria": "salud mental"
   },
   {

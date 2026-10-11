@@ -81,7 +81,7 @@ Instalad **DB Browser for SQLite** (gratuito). Abre `safoteca.db`. Para publicar
 UPDATE obra SET estado = 'publicada' WHERE id = 123;
 ```
 Si falta la sinopsis o el nivel de relevancia, la base de datos lo rechaza con un mensaje claro.
-Antes de editar, haced copia de `safoteca.db`. Solo una persona a la vez debe tenerla abierta.
+Antes de editar, haced copia de `safoteca.db`. Solo una persona a la vez debe tenerla abierta (con una editora a la vez es suficiente; el panel de edición para varias a la vez queda para más adelante). La lista de pendientes (sinopsis, nivel, etc.) se lleva en un Excel aparte que no se sube al repositorio; cuando esté rellena se aplica a la base de datos con el importador o un pequeño script.
 
 ## 6. Tu Synology DS114
 - Es un modelo de 2014 con procesador ARM y 512 MB de RAM, y DSM 7.1.1 es su última versión. Lo más probable es que no admita Docker
@@ -117,10 +117,11 @@ y abre http://localhost:8000. Para probarla en el móvil, usa la dirección de t
 **Personalizar sin tocar código** (`web/config.js`): el lema y la explicación de los niveles A, B y C. Mientras esa
 explicación esté vacía, no se muestra nada.
 
-**Logo y tipografías:** el icono actual es una lira genérica (`web/icons/lira.svg`). Para usar el logo de La Safoteca,
-sustituid los PNG de `web/icons/` por vuestros archivos con los mismos nombres. La web usa tipografías del dispositivo
-(sin descargas). Si queréis tipografías propias, añadid los archivos `.woff2` a `web/fonts/` y declaradlas con
-`@font-face` en `web/css/estilos.css`.
+**Logo y tipografías:** el logotipo y el búholira están en `web/marca/` (versiones clara y oscura, tal como los
+diseñasteis). Los iconos de la app (`web/icons/`) se generan con el búholira en blanco sobre el lila `#9c88bb`:
+`python tools/generar_iconos.py`. La tipografía del logotipo (Bicycle) va dentro del propio SVG; el resto de la web usa
+tipografías del dispositivo (sin descargas). Si queréis tipografías propias, añadid los archivos `.woff2` a
+`web/fonts/` y declaradlas con `@font-face` en `web/css/estilos.css`.
 
 ## 9. Publicar y actualizar la web
 **Primera vez:** en GitHub, *Settings → Pages → Build and deployment → Source: GitHub Actions*. A partir de ahí, cada
