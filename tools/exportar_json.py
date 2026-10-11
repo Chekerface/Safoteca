@@ -8,7 +8,7 @@ Uso:
     python tools/exportar_json.py
 Genera web/data/obras.json y web/data/catalogos.json
 """
-import argparse, json, sqlite3
+import argparse, csv, json, sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -75,7 +75,7 @@ def main():
             "temporadas": o["temporada_aparicion"],
             "disponible_espana": booleano(o["disponible_espana"]),
             "final_feliz": booleano(o["final_feliz"]),
-            "poster": o["poster_archivo"],  # nombre base: img/<poster>_300.webp e img/<poster>_600.webp
+            "poster": o["poster_archivo"] or (str(oid) if (salida.parent / "img" / f"{oid}_300.webp").exists() else None),  # nombre base: img/<poster>_300.webp e img/<poster>_600.webp
             "generos": col(SQL_GENEROS, oid),
             "tematicas": col(SQL_TEMATICAS, oid),
             "avisos": avisos(SQL_AVISOS, oid),
@@ -94,7 +94,18 @@ def main():
     (salida / "obras.json").write_text(
         json.dumps({"meta": meta, "obras": obras}, ensure_ascii=False, indent=1), encoding="utf-8")
     (salida / "catalogos.json").write_text(json.dumps(catalogos, ensure_ascii=False, indent=1), encoding="utf-8")
-    print(f"Exportadas {len(obras)} obras -> {salida}")
+    # Lista pública de enlaces de póster de las obras publicadas: la usa GitHub Actions para descargarlos
+    # (tools/posters_ci.py). Solo id, título y enlace de la imagen; nada privado.
+    filas = db.execute(
+        "SELECT id, COALESCE(titulo_es, titulo_original), poster_origen FROM obra "
+        "WHERE id IN (SELECT id FROM vista_publicable) AND poster_origen IS NOT NULL AND poster_origen <> '' ORDER BY id").fetchall()
+    destino = salida.parent.parent / "data" / "posters.csv"
+    destino.parent.mkdir(parents=True, exist_ok=True)
+    with open(destino, "w", encoding="utf-8", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["id", "titulo", "url"])
+        w.writerows([tuple(r) for r in filas])
+    print(f"Exportadas {len(obras)} obras -> {salida}  ({len(filas)} pósters en {destino.name})")
 
 
 if __name__ == "__main__":

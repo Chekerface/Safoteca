@@ -133,6 +133,11 @@ tipografías del dispositivo (sin descargas). Si queréis tipografías propias, 
 cambio en `web/` que llegue a `main` se publica solo (pestaña *Actions* para ver el progreso). La dirección será
 `https://chekerface.github.io/Safoteca/`.
 
+**Pósters sin usar Python en tu ordenador:** en GitHub, pestaña *Actions → Descargar pósters → Run workflow*.
+GitHub descarga las imágenes de `data/posters.csv`, las optimiza, las guarda en `web/img/` y vuelve a publicar la web.
+El resultado (qué enlaces han fallado) queda en `data/posters_informe.csv`. Para un póster que falla, subid la imagen
+a `web/img/originales/<id>.jpg` y lanzad el botón otra vez. `data/posters.csv` se regenera con `tools/exportar_json.py`.
+
 **Cada vez que cambiéis datos** (con la base de datos ya como fuente de verdad):
 ```bash
 python tools/descargar_imagenes.py      # solo si hay obras nuevas
