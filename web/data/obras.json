@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-11T22:41:53+00:00",
+  "generado": "2026-10-11T23:10:25+00:00",
   "total": 282
  },
  "obras": [
@@ -1148,7 +1148,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "111",
    "generos": [
     "Romance"
    ],
@@ -2752,7 +2752,7 @@
    "temporadas": "1",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "278",
    "generos": [
     "Drama"
    ],
@@ -3508,7 +3508,7 @@
    "temporadas": "5",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "258",
    "generos": [
     "Telenovela"
    ],
@@ -3763,7 +3763,7 @@
    "temporadas": "2",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "270",
    "generos": [
     "Romance"
    ],
@@ -4175,7 +4175,7 @@
    "temporadas": "3",
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "217",
    "generos": [
     "Thriller"
    ],
@@ -5050,7 +5050,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "286",
    "generos": [
     "Comedia"
    ],
@@ -5350,7 +5350,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "253",
    "generos": [
     "Romance"
    ],
@@ -7517,7 +7517,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "252",
    "generos": [
     "Reality"
    ],
@@ -7821,7 +7821,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "145",
    "generos": [
     "Fantástico"
    ],
@@ -9147,7 +9147,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "125",
    "generos": [
     "Drama"
    ],
@@ -9537,7 +9537,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "177",
    "generos": [
     "Drama"
    ],
@@ -9664,7 +9664,7 @@
    "temporadas": "Episodio 6",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "218",
    "generos": [
     "Terror"
    ],
@@ -9949,7 +9949,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "127",
    "generos": [
     "Drama"
    ],
@@ -10405,7 +10405,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "134",
    "generos": [
     "Aventura"
    ],
@@ -11842,7 +11842,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "236",
    "generos": [
     "Drama"
    ],
@@ -12047,7 +12047,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "295",
    "generos": [
     "Drama"
    ],
@@ -12218,7 +12218,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "178",
    "generos": [
     "Comedia"
    ],
@@ -13088,7 +13088,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "294",
    "generos": [
     "Romance"
    ],
@@ -13482,7 +13482,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "164",
    "generos": [
     "Comedia"
    ],
@@ -15032,7 +15032,7 @@
    "temporadas": "Episodio 5x18 y Temporada 7",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "108",
    "generos": [
     "Fantasía"
    ],
