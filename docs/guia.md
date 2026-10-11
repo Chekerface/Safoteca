@@ -95,7 +95,45 @@ Antes de editar, haced copia de `safoteca.db`. Solo una persona a la vez debe te
 el Excel ni `revisoras.csv` (contienen correos) en la lista de archivos. El repositorio público debe contener solo
 código, `data/mapeos/` y `web/`.
 
-## Pendiente (siguientes pasos)
-1. Web PWA (pantallas de inicio, listado, favoritos, ficha y filtros) que lea `web/data/*.json`.
-2. Panel de edición para el equipo (en vez de DB Browser).
-3. Despliegue en GitHub Pages.
+## 8. La web
+La web está en `web/` y no necesita instalar nada: son archivos estáticos que leen `web/data/*.json`.
+
+**Verla en tu ordenador** (desde la carpeta del proyecto):
+```bash
+python -m http.server -d web 8000
+```
+y abre http://localhost:8000. Para probarla en el móvil, usa la dirección de tu ordenador en la red local.
+
+**Qué hace:**
+- **Inicio:** Novedades (las más recientes), Películas imprescindibles y Series imprescindibles (nivel A).
+- **Series y películas:** búsqueda por título o actriz (sin distinguir tildes), filtros por tipo, nivel, género, temática y edad máxima.
+- **Ficha:** los avisos de contenido están ocultos hasta que la persona los pide. En Ajustes puede mostrarlos siempre.
+- **Qué prefiero evitar:** la persona elige avisos y las obras que los tienen desaparecen de todas las listas, sin decir cuáles son.
+  Evitar un aviso ignora mayúsculas, tildes y puntuación, así que "Sindrome de la lesbiana muerta." cuenta como
+  "Síndrome de la lesbiana muerta". Las etiquetas se muestran siempre tal cual están en la base de datos.
+- **Favoritos y preferencias:** se guardan solo en el dispositivo (sin cuentas ni servidor).
+- **Sin conexión:** se puede instalar en el móvil y funciona sin internet tras la primera visita.
+
+**Personalizar sin tocar código** (`web/config.js`): el lema y la explicación de los niveles A, B y C. Mientras esa
+explicación esté vacía, no se muestra nada.
+
+**Logo y tipografías:** el icono actual es una lira genérica (`web/icons/lira.svg`). Para usar el logo de La Safoteca,
+sustituid los PNG de `web/icons/` por vuestros archivos con los mismos nombres. La web usa tipografías del dispositivo
+(sin descargas). Si queréis tipografías propias, añadid los archivos `.woff2` a `web/fonts/` y declaradlas con
+`@font-face` en `web/css/estilos.css`.
+
+## 9. Publicar y actualizar la web
+**Primera vez:** en GitHub, *Settings → Pages → Build and deployment → Source: GitHub Actions*. A partir de ahí, cada
+cambio en `web/` que llegue a `main` se publica solo (pestaña *Actions* para ver el progreso). La dirección será
+`https://chekerface.github.io/Safoteca/`.
+
+**Cada vez que cambiéis datos** (con la base de datos ya como fuente de verdad):
+```bash
+python tools/descargar_imagenes.py      # solo si hay obras nuevas
+python tools/exportar_json.py
+git checkout -b actualizar-datos
+git add web
+git commit -m "Actualizar catálogo"
+git push -u origin actualizar-datos     # y abrid el PR en GitHub
+```
+Al fusionar el PR, la web se actualiza. Quien ya la tenga abierta verá los datos nuevos la siguiente vez que la abra con conexión.

@@ -29,7 +29,10 @@ Excel de Glide (una sola vez) → importar_excel.py → safoteca.db (SQLite)
 | `data/mapeos/` | CSV editables para unificar géneros, temáticas y avisos |
 | `data/privado/` | **No se sube a GitHub.** Aquí va el Excel |
 | `informes/` | Resultados de cada ejecución (qué hay que revisar) |
-| `web/` | La web estática (datos e imágenes generados) |
+| `web/` | La web (PWA estática): código, datos e imágenes generados |
+| `.github/workflows/` | Publicación automática en GitHub Pages |
 | `docs/guia.md` | Guía paso a paso |
+
+La web incluye búsqueda, filtros, favoritos, avisos de contenido ocultables y una opción para evitar avisos concretos.
 
 Empieza por [`docs/guia.md`](docs/guia.md).
