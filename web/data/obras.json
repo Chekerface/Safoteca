@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-11T18:30:27+00:00",
+  "generado": "2026-10-11T18:51:56+00:00",
   "total": 75
  },
  "obras": [
@@ -122,7 +122,7 @@
    "avisos": [
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -178,11 +178,11 @@
    "avisos": [
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -259,7 +259,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Diferencia de edad",
@@ -267,7 +267,7 @@
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -356,7 +356,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -396,19 +396,19 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Sangre/gore",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Síndrome de la lesbiana muerta",
-     "categoria": "muerte de personajes LGBT+"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -455,11 +455,11 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -553,15 +553,15 @@
     },
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Drogas",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Gordofobia",
@@ -569,15 +569,15 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Maltrato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Secuestro",
@@ -593,11 +593,11 @@
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -710,11 +710,11 @@
    "avisos": [
     {
      "nombre": "Síndrome de la lesbiana muerta",
-     "categoria": "muerte de personajes LGBT+"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -757,7 +757,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -800,7 +800,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Diferencia de edad",
@@ -933,19 +933,19 @@
    "avisos": [
     {
      "nombre": "Bifobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Síndrome de la lesbiana muerta",
-     "categoria": "muerte de personajes LGBT+"
+     "categoria": null
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -995,7 +995,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Pareja Tóxica",
@@ -1091,15 +1091,15 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Suicidio",
@@ -1244,7 +1244,7 @@
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Secuestros",
@@ -1302,19 +1302,19 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [],
@@ -1356,19 +1356,19 @@
    "avisos": [
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Vómitos",
@@ -1421,7 +1421,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -1466,7 +1466,7 @@
    "avisos": [
     {
      "nombre": "Maltrato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Padre lgbtfobo",
@@ -1474,7 +1474,7 @@
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -1529,7 +1529,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Padre lgtbfobo",
@@ -1586,23 +1586,23 @@
     },
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Autolesiones",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Drogas",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Gordofobia",
@@ -1614,11 +1614,11 @@
     },
     {
      "nombre": "Maltrato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Pareja Tóxica",
@@ -1626,11 +1626,11 @@
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Sexualizado",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Suicidio",
@@ -1638,7 +1638,7 @@
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Vómitos",
@@ -1688,23 +1688,23 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Autolesiones",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -1811,11 +1811,11 @@
    "avisos": [
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -1863,7 +1863,7 @@
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -1921,7 +1921,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Secuestro",
@@ -2051,11 +2051,11 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Sexualizado",
-     "categoria": "contenido sexual"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2229,7 +2229,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Discriminación Leve",
@@ -2237,7 +2237,7 @@
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2285,11 +2285,11 @@
    "avisos": [
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Maltrato animal",
@@ -2297,15 +2297,15 @@
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Vómitos",
@@ -2366,7 +2366,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Chantaje",
@@ -2374,11 +2374,11 @@
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2424,7 +2424,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Racismo",
@@ -2540,7 +2540,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Chantaje",
@@ -2548,11 +2548,11 @@
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Pareja Tóxica",
@@ -2572,7 +2572,7 @@
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2621,7 +2621,7 @@
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2798,15 +2798,15 @@
    "avisos": [
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Drogas",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Sangre",
@@ -2818,7 +2818,7 @@
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Suicidio",
@@ -2826,11 +2826,11 @@
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Vómitos",
@@ -2884,19 +2884,19 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Asesinato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Bifobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Chantaje",
@@ -2904,7 +2904,7 @@
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Delincuencia",
@@ -2920,15 +2920,15 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Maltrato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Racismo",
@@ -2936,19 +2936,19 @@
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Transfobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Violación",
-     "categoria": "violencia sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3011,19 +3011,19 @@
    "avisos": [
     {
      "nombre": "Asesinato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Drogas",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3081,7 +3081,7 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Madre lgbtfoba",
@@ -3144,11 +3144,11 @@
    "avisos": [
     {
      "nombre": "Drogas",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Pareja Tóxica",
@@ -3264,15 +3264,15 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Asesinato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Chantaje",
@@ -3280,7 +3280,7 @@
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Racismo",
@@ -3292,7 +3292,7 @@
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3341,7 +3341,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3402,7 +3402,7 @@
    "avisos": [
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Chantaje",
@@ -3410,7 +3410,7 @@
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3493,11 +3493,11 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     },
     {
      "nombre": "Discriminación fuerte",
@@ -3509,11 +3509,11 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Manipulación",
-     "categoria": "abuso emocional"
+     "categoria": null
     },
     {
      "nombre": "Pareja Tóxica",
@@ -3574,15 +3574,15 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
-     "categoria": "adicciones"
+     "categoria": null
     },
     {
      "nombre": "Angustia",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Asesinato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Drogodependencia",
@@ -3590,7 +3590,7 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Sindrome de la lesbiana muerta",
@@ -3697,7 +3697,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3741,15 +3741,15 @@
    "avisos": [
     {
      "nombre": "Maltrato",
-     "categoria": "violencia"
+     "categoria": null
     },
     {
      "nombre": "Sexo Explícito",
-     "categoria": "contenido sexual"
+     "categoria": null
     },
     {
      "nombre": "Violencia",
-     "categoria": "violencia"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3802,7 +3802,7 @@
    "avisos": [
     {
      "nombre": "Síndrome de la lesbiana muerta",
-     "categoria": "muerte de personajes LGBT+"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3898,7 +3898,7 @@
     },
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     },
     {
      "nombre": "Madre lgbtfoba",
@@ -3953,7 +3953,7 @@
    "avisos": [
     {
      "nombre": "Lesbofobia",
-     "categoria": "discriminación"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -3994,7 +3994,7 @@
    "avisos": [
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     }
    ],
    "actrices": [
@@ -4038,11 +4038,11 @@
    "avisos": [
     {
      "nombre": "Ansiedad",
-     "categoria": "salud mental"
+     "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": "infidelidad"
+     "categoria": null
     }
    ],
    "actrices": [
