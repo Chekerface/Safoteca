@@ -122,6 +122,7 @@ class Importador:
         self.generos_oficiales = set()
         self.tw_tags = {}  # nombre.lower() -> (es_tw, descripcion)
         self.uso = {"genero": Counter(), "tematica": Counter(), "aviso": Counter()}
+        self.letterboxd = {}  # id -> (título, url) leído de la columna «Link a Letterboxd»
 
     def inc(self, hoja, fila, obra, campo, valor, problema):
         self.incidencias.append([hoja, fila, obra or "", campo, valor if valor is not None else "", problema])
@@ -308,6 +309,9 @@ class Importador:
             if not d["sinopsis"]:
                 self.inc(hoja, n, titulo, "sinopsis", None, "vacío")
             oid = self.insertar_obra(d)
+            lb = limpio(f.get("Link a Letterboxd"))
+            if lb and "letterboxd.com" in lb.lower():
+                self.letterboxd[oid] = (titulo, lb.replace("http://", "https://", 1))
             self.vincular_lista(oid, f.get("Género"), "genero", "obra_genero", "genero_id", self.map_gen, self.generos_oficiales)
             self.vincular_lista(oid, f.get("Temática"), "tematica", "obra_tematica", "tematica_id", self.map_tem)
             self.vincular_lista(oid, f.get("TW"), "aviso", "obra_aviso", "aviso_id", self.map_avi)
@@ -479,6 +483,14 @@ def main():
     imp.unificar_mayusculas()
     db.commit()
     imp.escribir_informes()
+    if imp.letterboxd:
+        ruta = RAIZ / "data" / "letterboxd.csv"
+        with open(ruta, "w", encoding="utf-8", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["id", "titulo", "url"])
+            for oid in sorted(imp.letterboxd):
+                w.writerow([oid, *imp.letterboxd[oid]])
+        print(f"  Letterboxd: {len(imp.letterboxd)} enlaces -> data/letterboxd.csv")
 
     print("\n=== Importación terminada ===")
     for k, v in resumen.items():
