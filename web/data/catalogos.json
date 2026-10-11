@@ -1,34 +1,63 @@
 {
  "generos": [
   "Acción",
+  "Animación",
   "Aventura",
+  "Biográfico",
   "Ciencia Ficción",
   "Comedia",
   "Comedia Dramática",
+  "Comedia romántica",
+  "Deportes",
+  "Documental",
   "Drama",
   "Fantasía",
+  "Fantástico",
+  "Horror",
+  "Intriga",
   "Musical",
+  "Policíaca",
+  "Reality",
   "Romance",
   "Suspense",
+  "Telenovela",
   "Terror",
   "Thriller"
  ],
  "tematicas": [
+  "Aborto",
   "Acción",
+  "Aceptación de la sexualidad",
+  "Acoso",
   "Adolescencia",
+  "Adolescentes",
+  "Adopción",
+  "Adorabilidad Absoluta",
   "Afroamericanos",
+  "Ajedrez",
   "Alcoholismo",
   "Amigas de la infancia",
   "Amistad",
   "Amor",
+  "Amor de juventud",
+  "Anacronismos",
+  "Angustia",
   "Animación",
   "Anime",
   "Anticapitalista",
   "Asesinato",
+  "Asesinatos en Serie",
   "Asia",
   "Autismo",
   "Aventura",
+  "Aventuras",
+  "Años 30",
+  "Años 40",
+  "Años 50",
+  "Años 60",
+  "Años 70",
   "Años 80",
+  "Años 90",
   "Bajo presupuesto",
   "Biográfico",
   "Bisexual",
@@ -36,36 +65,68 @@
   "Bomberos",
   "Brujas",
   "Brujería",
+  "Bullying",
   "Butch",
   "Casanova",
+  "Cazadores",
   "Celos",
+  "Chantaje",
+  "China",
   "Ciencia Ficción",
+  "Cine independiente USA",
+  "Cine negro",
   "Comedia",
+  "Comedia absurda",
+  "Comedia de Enredo",
+  "Comedia de situación",
   "Comedia Dramática",
+  "Comedia Española",
+  "Comedia juvenil",
   "Comedia Negra",
-  "Comic",
-  "Coming of Age",
+  "Comedia romántica",
+  "Comedia sexual",
+  "Comida",
+  "Coming of age",
   "Crimen",
   "Cutre",
+  "Cómic",
+  "DC",
   "De época",
   "Delincuencia",
+  "Deporte",
+  "Deportes",
   "Desamor",
   "Desapariciones",
   "Diferencia de altura",
+  "Diferencia de edad",
   "Discriminación fuerte",
   "Distopía",
   "Divorcio",
+  "Documental",
   "Drama",
+  "Drama Adolescente",
+  "Drama médico",
+  "Drama psicológico",
+  "Drogas",
   "Drogodependencia",
   "Día a día",
   "Día de Acción de Gracias",
+  "Efectos especiales malos",
+  "Embarazo adolescente",
   "Enemies to Lovers",
+  "Enfermedad",
+  "Episodio musical",
   "Erotismo",
+  "Erótico",
+  "Escocia",
   "Escuela",
+  "Espacio",
   "Espectáculo",
   "Espionaje",
+  "Fake dating",
   "Familia",
   "Family Friendly",
+  "Fanfic",
   "Fantasmas",
   "Fantasía",
   "Fantasía Oscura",
@@ -76,70 +137,151 @@
   "Final Feliz",
   "Friends to Lovers",
   "Furry",
+  "Futuro postapocalíptico",
+  "Gran empresa",
+  "Guerra",
+  "Guerra Fría",
+  "Hacker",
+  "Halloween",
   "Heartwarming",
   "Histórico",
   "Hombres lobo",
   "Homofobia",
+  "Homosexualidad",
+  "Horror",
+  "Hospital",
+  "Humor negro",
   "Identidad",
+  "Inclusión",
+  "India",
+  "Inexactitud histórica",
   "Infancia",
+  "Instituto",
+  "Intercambio de parejas",
+  "Internet",
   "Intriga",
+  "IRA",
+  "Irlanda",
+  "Irlanda del Norte",
+  "Juvenil",
   "Juventud",
   "Lesbianismo",
   "Lesbofobia",
+  "Literatura",
+  "Los 80",
+  "Los 90",
+  "Machismo",
+  "Mafia",
   "Magia",
   "Mala con ganas",
+  "Maternidad",
+  "Matrimonio",
+  "Mercenarios",
   "Miedo",
   "Militancia",
   "Militarismo",
   "Misterio",
+  "Mitología retocada",
+  "Mitos del Amor Romántico",
   "Moda",
+  "Monstruos",
   "Movimiento por los Derechos civiles",
+  "Mujeres adultas",
   "Musical",
+  "Muñecos",
   "Música",
+  "Navidad",
+  "No binarie",
+  "No heartwarming",
   "NSFW",
+  "Pandemia",
   "Pandilla",
+  "Pareja",
   "Pareja Idiota",
   "Pareja Sana",
-  "Policiaca",
+  "Pareja tóxica",
+  "Piratas",
+  "Poliamor",
+  "Policía",
+  "Policíaca",
+  "Policíaco",
   "Política",
+  "Postapocalíptico",
   "Prisión",
   "Prom",
   "Prostitución",
+  "Protagonista Idiota",
   "PseudoReality Show",
   "Psicológico",
   "Racismo",
+  "Realeza",
+  "Reality",
+  "Redes Sociales",
+  "Relaciones",
   "Religión",
+  "Remake",
   "Represión",
+  "Riqueza",
+  "Road Movie",
   "Robots",
   "Romance",
   "Roomates",
   "Salir del armario",
   "Salud Mental",
+  "Salvar al mundo",
+  "Sectas",
+  "Secuela",
   "Secuestros",
+  "Serie de antología",
+  "Series que parecen fics",
   "Sexualidad",
   "Sicaria",
+  "Siglo XIX",
+  "Siglo XVII",
+  "Sitcom",
+  "Slasher",
   "Sobrenatural",
   "Soledad",
+  "Sororidad",
+  "Spin-off",
+  "Stand-up",
   "Subtexto",
-  "Super Héroes",
   "Superheroinas",
   "Superhéroes",
   "Supervivencia",
   "Supporting Dad",
+  "Supporting Mom",
+  "Surrealismo",
   "Suspense",
   "Teatro",
   "Telenovela",
   "Terror",
   "Terrorismo",
+  "Thiller Psicológico",
+  "Thriler",
   "Thriller",
+  "Thriller psicológico",
+  "TLP",
   "Tragedia",
   "Trans",
+  "Trastornos mentales",
   "Travestismo",
+  "Triángulo amoroso",
+  "Universidad",
+  "Universos alternativos",
   "Vampiros",
+  "Vecinos",
+  "Vejez",
+  "Venganza",
   "Viajes en el tiempo",
+  "Vida",
   "Vida adulta",
+  "Vida Rural",
+  "Vida Sexual",
+  "Webserie",
   "Western",
-  "WTF?!"
+  "WTF?!",
+  "Épica"
  ],
  "avisos": [
   {
@@ -147,7 +289,19 @@
    "categoria": null
   },
   {
+   "nombre": "Accidente de tráfico",
+   "categoria": null
+  },
+  {
    "nombre": "Acoso",
+   "categoria": null
+  },
+  {
+   "nombre": "Acoso sexual",
+   "categoria": null
+  },
+  {
+   "nombre": "Adicción",
    "categoria": null
   },
   {
@@ -159,11 +313,19 @@
    "categoria": null
   },
   {
+   "nombre": "Alcolismo",
+   "categoria": null
+  },
+  {
    "nombre": "Angustia",
    "categoria": null
   },
   {
    "nombre": "Ansiedad",
+   "categoria": null
+  },
+  {
+   "nombre": "Apropiación cultural",
    "categoria": null
   },
   {
@@ -175,7 +337,19 @@
    "categoria": null
   },
   {
+   "nombre": "BDSM",
+   "categoria": null
+  },
+  {
    "nombre": "Bifobia",
+   "categoria": null
+  },
+  {
+   "nombre": "Body Horror",
+   "categoria": null
+  },
+  {
+   "nombre": "Brutalidad policial",
    "categoria": null
   },
   {
@@ -195,7 +369,35 @@
    "categoria": null
   },
   {
+   "nombre": "Chistes hirientes",
+   "categoria": null
+  },
+  {
+   "nombre": "Consumo de alcohol",
+   "categoria": null
+  },
+  {
+   "nombre": "Consumo de drogas",
+   "categoria": null
+  },
+  {
+   "nombre": "Contenido Cuestionable",
+   "categoria": null
+  },
+  {
+   "nombre": "Cruda",
+   "categoria": null
+  },
+  {
+   "nombre": "Crímenes de guerra",
+   "categoria": null
+  },
+  {
    "nombre": "Cuernos",
+   "categoria": null
+  },
+  {
+   "nombre": "Cáncer",
    "categoria": null
   },
   {
@@ -203,7 +405,19 @@
    "categoria": null
   },
   {
+   "nombre": "Desamor",
+   "categoria": null
+  },
+  {
+   "nombre": "Desnudos",
+   "categoria": null
+  },
+  {
    "nombre": "Diferencia de edad",
+   "categoria": null
+  },
+  {
+   "nombre": "Discriminación",
    "categoria": null
   },
   {
@@ -211,7 +425,7 @@
    "categoria": null
   },
   {
-   "nombre": "Discriminación Leve",
+   "nombre": "Discriminación leve",
    "categoria": null
   },
   {
@@ -223,11 +437,51 @@
    "categoria": null
   },
   {
+   "nombre": "Echar de casa",
+   "categoria": null
+  },
+  {
+   "nombre": "Enfermedad Mental",
+   "categoria": null
+  },
+  {
+   "nombre": "Engaños y Mentiras",
+   "categoria": null
+  },
+  {
+   "nombre": "Erotismo",
+   "categoria": null
+  },
+  {
+   "nombre": "Exotismo",
+   "categoria": null
+  },
+  {
+   "nombre": "Genocidio",
+   "categoria": null
+  },
+  {
    "nombre": "Gordofobia",
    "categoria": null
   },
   {
+   "nombre": "Gore",
+   "categoria": null
+  },
+  {
    "nombre": "Homofobia",
+   "categoria": null
+  },
+  {
+   "nombre": "Homofobia leve",
+   "categoria": null
+  },
+  {
+   "nombre": "Incesto",
+   "categoria": null
+  },
+  {
+   "nombre": "Intento de abuso sexual",
    "categoria": null
   },
   {
@@ -236,6 +490,14 @@
   },
   {
    "nombre": "Madre lgbtfoba",
+   "categoria": null
+  },
+  {
+   "nombre": "Madre lgbtfóbica",
+   "categoria": null
+  },
+  {
+   "nombre": "Madre lgtbófoba",
    "categoria": null
   },
   {
@@ -255,6 +517,14 @@
    "categoria": null
   },
   {
+   "nombre": "Muerte",
+   "categoria": null
+  },
+  {
+   "nombre": "Muerte y Destrucción",
+   "categoria": null
+  },
+  {
    "nombre": "Obsesión",
    "categoria": null
   },
@@ -268,6 +538,14 @@
   },
   {
    "nombre": "Pareja Tóxica",
+   "categoria": null
+  },
+  {
+   "nombre": "Pederastia",
+   "categoria": null
+  },
+  {
+   "nombre": "Plumofobia",
    "categoria": null
   },
   {
@@ -291,7 +569,15 @@
    "categoria": null
   },
   {
+   "nombre": "Relación tóxica",
+   "categoria": null
+  },
+  {
    "nombre": "Religión",
+   "categoria": null
+  },
+  {
+   "nombre": "Ritos extraños",
    "categoria": null
   },
   {
@@ -307,7 +593,15 @@
    "categoria": null
   },
   {
+   "nombre": "Sexo esplícito",
+   "categoria": null
+  },
+  {
    "nombre": "Sexo Explícito",
+   "categoria": null
+  },
+  {
+   "nombre": "Sexo Implícito",
    "categoria": null
   },
   {
@@ -339,6 +633,18 @@
    "categoria": null
   },
   {
+   "nombre": "Tiroteo",
+   "categoria": null
+  },
+  {
+   "nombre": "Tiroteo escolar",
+   "categoria": null
+  },
+  {
+   "nombre": "Tortura",
+   "categoria": null
+  },
+  {
    "nombre": "Transfobia",
    "categoria": null
   },
@@ -348,6 +654,18 @@
   },
   {
    "nombre": "Violencia",
+   "categoria": null
+  },
+  {
+   "nombre": "Violencia de género",
+   "categoria": null
+  },
+  {
+   "nombre": "Violencia explícita",
+   "categoria": null
+  },
+  {
+   "nombre": "Violencia leve",
    "categoria": null
   },
   {
