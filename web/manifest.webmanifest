@@ -1,0 +1,16 @@
+{
+  "name": "La Safoteca",
+  "short_name": "Safoteca",
+  "description": "Series y películas con representación lésbica y bisexual, con avisos de contenido.",
+  "lang": "es",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fbf9fe",
+  "theme_color": "#9b8abf",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

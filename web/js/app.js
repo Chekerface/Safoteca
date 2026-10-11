@@ -1,0 +1,606 @@
+/* La Safoteca · aplicación (sin dependencias, sin servidores)
+   Lee web/data/obras.json y web/data/catalogos.json.
+   Favoritos y preferencias se guardan solo en el dispositivo de cada persona. */
+(() => {
+  "use strict";
+
+  const CFG = window.SAFOTECA_CONFIG || {};
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const norm = (s) => String(s ?? "").normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+  const seguro = (u) => /^https?:\/\//i.test(u);
+
+  // ---------- Almacenamiento local (nunca falla si el navegador lo bloquea) ----------
+  const memoria = {};
+  const guardar = {
+    leer(k, def) {
+      try { const v = localStorage.getItem("safoteca." + k); return v === null ? def : JSON.parse(v); }
+      catch { return k in memoria ? memoria[k] : def; }
+    },
+    escribir(k, v) {
+      memoria[k] = v;
+      try { localStorage.setItem("safoteca." + k, JSON.stringify(v)); } catch { /* sin almacenamiento */ }
+    },
+    borrar() {
+      Object.keys(memoria).forEach((k) => delete memoria[k]);
+      try { Object.keys(localStorage).filter((k) => k.startsWith("safoteca.")).forEach((k) => localStorage.removeItem(k)); } catch { /* nada */ }
+    },
+  };
+
+  // ---------- Estado ----------
+  const E = {
+    obras: [], porId: new Map(), cat: { generos: [], tematicas: [], avisos: [] }, meta: {},
+    favs: new Set(guardar.leer("favs", [])),
+    evitar: new Set(guardar.leer("evitar", [])),
+    verAvisos: guardar.leer("verAvisos", false),
+    introVista: guardar.leer("intro", false),
+    cargado: false, navegado: false, abrirAlCargar: null, evitarCambiado: false, F: null,
+  };
+
+  // ---------- Iconos ----------
+  const svg = (d, extra = "") => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" ${extra}>${d}</svg>`;
+  const ICONO = {
+    menu: svg('<path d="M4 7h16M4 12h16M4 17h16"/>'),
+    atras: svg('<path d="M15 5l-7 7 7 7"/>'),
+    filtro: svg('<path d="M4 5h16l-6.500 8v5.500L10.500 20v-7z"/>'),
+    inicio: svg('<path d="M4 11l8-7 8 7v8.500a1 1 0 0 1-1 1h-4V15H9v5.500H5a1 1 0 0 1-1-1z"/>'),
+    claqueta: svg('<rect x="3" y="9" width="18" height="11" rx="2"/><path d="M3 9l2.500-4.500h4L7 9M9.500 9L12 4.500h4L13.500 9M16 9l2.500-4.500H21"/>'),
+    corazon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.500s-8-4.900-8-11.200A4.600 4.600 0 0 1 12 6.800a4.600 4.600 0 0 1 8 2.500c0 6.300-8 11.200-8 11.200z"/></svg>',
+    fuera: svg('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', 'width="18" height="18"'),
+  };
+
+  // ---------- Utilidades de datos ----------
+  const TIPO = { serie: "Serie", pelicula: "Película", libro: "Libro", comic: "Cómic" };
+  const PLATAFORMAS = {
+    "netflix.com": "Netflix", "primevideo.com": "Prime Video", "amazon.es": "Amazon", "amazon.com": "Amazon",
+    "disneyplus.com": "Disney+", "hbomax.com": "HBO Max", "max.com": "Max", "filmin.es": "Filmin", "filmin.com": "Filmin",
+    "rtve.es": "RTVE Play", "youtube.com": "YouTube", "youtu.be": "YouTube", "vimeo.com": "Vimeo",
+    "tv.apple.com": "Apple TV+", "movistarplus.es": "Movistar Plus+", "atresplayer.com": "Atresplayer",
+    "mitele.es": "Mitele", "crunchyroll.com": "Crunchyroll", "paramountplus.com": "Paramount+", "mubi.com": "MUBI",
+  };
+  const host = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return u; } };
+  const nombreSitio = (u) => {
+    const h = host(u);
+    const k = Object.keys(PLATAFORMAS).find((d) => h === d || h.endsWith("." + d));
+    return k ? PLATAFORMAS[k] : h;
+  };
+  const anios = (o) => (o.anio ? (o.anio_fin ? `${o.anio}–${o.anio_fin}` : `${o.anio}`) : "");
+  const edadNum = (o) => (o.edad == null ? null : o.edad === "TP" ? 0 : parseInt(o.edad, 10));
+  const textoEdad = (o) => (o.edad == null ? "" : o.edad === "TP" ? "Todos los públicos" : `+${o.edad}`);
+  const az = (a, b) => norm(a.titulo).localeCompare(norm(b.titulo), "es");
+
+  // Evitar un aviso ignora mayúsculas, tildes y puntuación ("Sindrome de la lesbiana muerta." cuenta como
+  // "Síndrome de la lesbiana muerta"). Las etiquetas se muestran siempre tal cual están en los datos.
+  const claveAviso = (n) => norm(n).replace(/[^\p{L}\p{N}\s]/gu, "").replace(/\s+/g, " ").trim();
+  const tieneEvitado = (o) => o.avisos.some((a) => E.evitar.has(claveAviso(a.nombre)));
+  const visibles = () => E.obras.filter((o) => !tieneEvitado(o));
+  const ocultas = () => E.obras.length - visibles().length;
+
+  // ---------- Filtros (viven en la dirección: se pueden compartir) ----------
+  const separar = (v) => (v || "").split("|").filter(Boolean);
+  function filtrosDe(p) {
+    return {
+      q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
+      rel: separar(p.get("rel")), edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
+    };
+  }
+  function paramsDe(f) {
+    const p = new URLSearchParams();
+    if (f.q) p.set("q", f.q);
+    if (f.tipo) p.set("tipo", f.tipo);
+    if (f.gen.length) p.set("gen", f.gen.join("|"));
+    if (f.tem.length) p.set("tem", f.tem.join("|"));
+    if (f.rel.length) p.set("rel", f.rel.join("|"));
+    if (f.edad !== "") p.set("edad", f.edad);
+    if (f.orden !== "az") p.set("orden", f.orden);
+    return p.toString();
+  }
+  const activos = (f) => (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + (f.edad !== "" ? 1 : 0);
+
+  function filtrar(f) {
+    const q = norm(f.q).trim();
+    const max = f.edad === "" ? null : Number(f.edad);
+    const r = visibles().filter((o) => {
+      if (f.tipo && o.tipo !== f.tipo) return false;
+      if (f.rel.length && !f.rel.includes(o.relevancia)) return false;
+      if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
+      if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
+      if (max !== null) { const n = edadNum(o); if (n !== null && n > max) return false; }
+      if (q && !o._h.includes(q)) return false;
+      return true;
+    });
+    const orden = {
+      az,
+      recientes: (a, b) => (b.anio || 0) - (a.anio || 0) || az(a, b),
+      relevancia: (a, b) => String(a.relevancia || "Z").localeCompare(String(b.relevancia || "Z")) || az(a, b),
+    }[f.orden] || az;
+    return r.sort(orden);
+  }
+
+  // ---------- Piezas de interfaz ----------
+  function poster(o, grande = false) {
+    const tono = 250 + ((o.id * 47) % 80);
+    if (!o.poster) return `<div class="poster poster--vacio" style="--tono:${tono}"><span>${esc(o.titulo)}</span></div>`;
+    const w = grande ? 600 : 300;
+    return `<img class="poster" src="img/${esc(o.poster)}_${w}.webp" alt="${grande ? "Póster de " + esc(o.titulo) : ""}" width="${w}" height="${w * 1.5}" ${grande ? "" : 'loading="lazy"'} decoding="async" data-tono="${tono}" data-titulo="${esc(o.titulo)}">`;
+  }
+  const tejuelo = (n, grande = false) => (n ? `<span class="tejuelo tejuelo--${esc(n)} ${grande ? "tejuelo--grande" : ""}" role="img" aria-label="Nivel de relevancia ${esc(n)}">${esc(n)}</span>` : "");
+  const corazon = (o) => {
+    const on = E.favs.has(o.id);
+    return `<button class="corazon" type="button" data-fav="${o.id}" aria-pressed="${on}" aria-label="Guardar ${esc(o.titulo)} en favoritos">${ICONO.corazon}</button>`;
+  };
+  const meta = (o) => `<p class="meta"><span>${TIPO[o.tipo] || ""}</span>${o.anio ? `<span>${anios(o)}</span>` : ""}</p>`;
+  const tarjeta = (o) => `
+    <article class="tarjeta">
+      <a class="tarjeta__imagen" href="#/obra/${o.id}" tabindex="-1" aria-hidden="true">${poster(o)}</a>
+      ${tejuelo(o.relevancia)}
+      ${corazon(o)}
+      <h3 class="tarjeta__titulo"><a href="#/obra/${o.id}">${esc(o.titulo)}</a></h3>
+      ${meta(o)}
+    </article>`;
+  const rejilla = (lista) => `<div class="rejilla">${lista.map(tarjeta).join("")}</div>`;
+  const carrusel = (lista) => `<div class="carrusel">${lista.map(tarjeta).join("")}</div>`;
+
+  function notaOcultas() {
+    const n = ocultas();
+    if (!E.evitar.size) return "";
+    return `<p class="nota">Estás evitando ${E.evitar.size === 1 ? "1 aviso" : E.evitar.size + " avisos"}: ${n === 1 ? "hay 1 obra oculta" : "hay " + n + " obras ocultas"}. <button class="enlace-suave boton-texto" type="button" data-accion="abrir-evitar">Cambiar</button></p>`;
+  }
+
+  function toast(texto) {
+    const t = $("#toast");
+    t.textContent = texto;
+    t.classList.add("visible");
+    clearTimeout(toast.id);
+    toast.id = setTimeout(() => t.classList.remove("visible"), 2200);
+  }
+
+  // ---------- Vistas ----------
+  function vistaInicio() {
+    const v = visibles();
+    if (!E.obras.length) return `<div class="vacio"><p>Todavía no hay obras publicadas.</p></div>`;
+    const nov = [...v].filter((o) => o.anio).sort((a, b) => (b.anio_fin || b.anio) - (a.anio_fin || a.anio) || az(a, b)).slice(0, 10);
+    const pel = v.filter((o) => o.tipo === "pelicula" && o.relevancia === "A").sort(az).slice(0, 10);
+    const ser = v.filter((o) => o.tipo === "serie" && o.relevancia === "A").sort(az).slice(0, 10);
+    const seccion = (id, titulo, lista, href) => (lista.length ? `
+      <section class="seccion" aria-labelledby="${id}">
+        <div class="seccion__cabecera">
+          <h2 class="seccion__titulo" id="${id}">${titulo}</h2>
+          <a class="enlace-suave" href="${href}">Ver todo</a>
+        </div>${carrusel(lista)}
+      </section>` : "");
+    const intro = E.introVista ? "" : `
+      <aside class="nota" aria-label="Cómo funcionan los avisos">
+        <p><strong>Los avisos de contenido están ocultos</strong> para no destripar nada. Puedes verlos en cada ficha, mostrarlos siempre o elegir qué prefieres evitar: esas obras no aparecerán en ninguna lista.</p>
+        <div class="acciones">
+          <button class="boton" type="button" data-accion="abrir-evitar">Elegir qué evitar</button>
+          <button class="boton boton--claro" type="button" data-accion="cerrar-intro">Entendido</button>
+        </div>
+      </aside>`;
+    return `<h1 class="solo-lectores">La Safoteca</h1>${intro}${notaOcultas()}
+      ${seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")}
+      ${seccion("s-peliculas", "Películas imprescindibles", pel, "#/catalogo?tipo=pelicula&rel=A")}
+      ${seccion("s-series", "Series imprescindibles", ser, "#/catalogo?tipo=serie&rel=A")}`;
+  }
+
+  function vistaCatalogo(f) {
+    const tipoChip = (valor, texto) => `<button class="chip" type="button" data-tipo="${valor}" aria-pressed="${f.tipo === valor}">${texto}</button>`;
+    return `
+      <h1 class="solo-lectores">Series y películas</h1>
+      <div class="barra">
+        <form role="search" id="form-buscar"><label class="solo-lectores" for="buscar">Buscar por título o actriz</label>
+          <input class="campo" id="buscar" type="search" placeholder="Buscar por título o actriz" value="${esc(f.q)}" autocomplete="off" enterkeyhint="search"></form>
+        <div class="barra__fila">
+          <div class="chips" role="group" aria-label="Tipo">${tipoChip("", "Todo")}${tipoChip("serie", "Series")}${tipoChip("pelicula", "Películas")}</div>
+          <label class="solo-lectores" for="ordenar">Ordenar por</label>
+          <select class="campo campo--ordenar" id="ordenar">
+            <option value="az">A–Z</option><option value="recientes">Más recientes</option><option value="relevancia">Nivel de relevancia</option>
+          </select>
+        </div>
+        <p class="resumen" id="resumen" aria-live="polite"></p>
+      </div>
+      ${notaOcultas()}
+      <div id="resultados"></div>`;
+  }
+
+  function pintarResultados() {
+    const f = E.F;
+    const lista = filtrar(f);
+    const n = lista.length;
+    $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
+    $("#resultados").innerHTML = n ? rejilla(lista) : `
+      <div class="vacio"><p>No hay obras con estos filtros.</p>
+        <button class="boton" type="button" data-accion="quitar-filtros">Quitar filtros</button></div>`;
+    $$('[data-tipo]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tipo === f.tipo)));
+    $("#ordenar").value = f.orden;
+    ajustarCabecera();
+  }
+
+  function sincronizar() {
+    const qs = paramsDe(E.F);
+    history.replaceState(null, "", "#/catalogo" + (qs ? "?" + qs : ""));
+    if (rutaActual().ruta === "/catalogo") pintarResultados();
+  }
+
+  function vistaFavoritos() {
+    const lista = visibles().filter((o) => E.favs.has(o.id)).sort(az);
+    if (!lista.length) {
+      return `<h1 class="solo-lectores">Favoritos</h1><div class="vacio"><p>Aún no has guardado nada. Toca el corazón de una ficha para verla aquí.</p>
+        <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
+        <p class="resumen">Tus favoritos se guardan solo en este dispositivo.</p>`;
+    }
+    return `<h1 class="solo-lectores">Favoritos</h1>${notaOcultas()}
+      <p class="resumen" style="margin-bottom:1rem">${lista.length === 1 ? "1 obra guardada" : lista.length + " obras guardadas"} en este dispositivo.</p>${rejilla(lista)}`;
+  }
+
+  function vistaObra(id) {
+    const o = E.porId.get(id);
+    if (!o) return `<h1 class="solo-lectores">Ficha no encontrada</h1><div class="vacio"><p>No hemos encontrado esta ficha.</p><a class="boton" href="#/catalogo">Ver el catálogo</a></div>`;
+    const lugares = o.donde_ver.filter(seguro).map((u) => `<a class="boton boton--claro" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(nombreSitio(u))} ${ICONO.fuera}</a>`).join("");
+    const info = o.info.filter(seguro).map((u) => `<a class="chip" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join("");
+    const nombres = o.avisos.map((a) => a.nombre);
+    const evitados = nombres.filter((n) => E.evitar.has(claveAviso(n)));
+    const chipLista = (clave, valores) => valores.map((v) => `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(v)}">${esc(v)}</a>`).join("");
+
+    let avisos = `<section class="bloque bloque--avisos" aria-labelledby="t-avisos"><h2 id="t-avisos">Avisos de contenido</h2>`;
+    if (!nombres.length) {
+      avisos += `<p>No hay avisos registrados para esta obra.</p>`;
+    } else {
+      if (evitados.length) avisos += `<p class="nota nota--alerta">Incluye ${evitados.length > 1 ? "avisos que has elegido evitar" : "un aviso que has elegido evitar"}: ${evitados.map(esc).join(", ")}.</p>`;
+      avisos += `<p id="avisos-resumen" ${E.verAvisos ? "hidden" : ""}>Esta ficha tiene ${nombres.length === 1 ? "1 aviso" : nombres.length + " avisos"}. Están ocultos para no destripar la historia.</p>
+        <div id="avisos-contenido" ${E.verAvisos ? "" : "hidden"}><ul class="lista-avisos">${nombres.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>
+        <p style="margin-top:.75rem"><button class="boton boton--claro" type="button" data-accion="alternar-avisos" aria-expanded="${E.verAvisos}" aria-controls="avisos-contenido">${E.verAvisos ? "Ocultar los avisos" : "Ver los avisos"}</button></p>`;
+    }
+    avisos += `</section>`;
+
+    const dato = (k, v) => (v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "");
+    const explica = CFG.textoRelevancia && CFG.textoRelevancia[o.relevancia]
+      ? `<details class="explica"><summary>¿Qué significa el nivel ${esc(o.relevancia)}?</summary><p>${esc(CFG.textoRelevancia[o.relevancia])}</p></details>` : "";
+    const disp = o.disponible_espana === null ? "" : o.disponible_espana ? "Sí" : "No";
+
+    return `
+      <article class="ficha">
+        <div class="ficha__portada">${poster(o, true)}${corazon(o)}</div>
+        <div class="ficha__resto">
+          <header>
+            <h1 class="ficha__titulo">${esc(o.titulo)}</h1>
+            ${o.titulo_original && o.titulo_original !== o.titulo ? `<p class="ficha__original">${esc(o.titulo_original)}</p>` : ""}
+            <div class="ficha__datos">
+              ${tejuelo(o.relevancia, true)}
+              <span>${TIPO[o.tipo] || ""}${o.anio ? " " + anios(o) : ""}</span>
+              ${o.edad != null ? `<span class="edad" title="Edad recomendada">${esc(textoEdad(o))}</span>` : ""}
+            </div>
+            ${explica}
+          </header>
+          ${avisos}
+          ${o.sinopsis ? `<section class="bloque"><h2>Sinopsis</h2><p>${esc(o.sinopsis)}</p></section>` : ""}
+          ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div></section>` : ""}
+          ${o.generos.length || o.tematicas.length ? `<section class="bloque"><h2>Explorar</h2>
+            ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
+            ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
+          <section class="bloque"><h2>Datos</h2><dl class="dato">
+            ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}${o.final_feliz ? dato("Final", "Final feliz") : ""}
+            ${dato("Reparto", o.actrices.join(", "))}${dato("Dirección", o.directores.join(", "))}
+          </dl></section>
+          ${info ? `<section class="bloque"><h2>Más información</h2><div class="chips">${info}</div></section>` : ""}
+        </div>
+      </article>`;
+  }
+
+  function vistaAjustes() {
+    const n = E.evitar.size;
+    const fecha = E.meta.generado ? new Date(E.meta.generado).toLocaleDateString("es-ES", { day: "numeric", month: "long", year: "numeric" }) : "";
+    return `
+      <h1 class="solo-lectores">Ajustes</h1>
+      <div class="ajustes">
+        <section class="bloque" aria-labelledby="a1"><h2 id="a1">Avisos de contenido</h2>
+          <label class="interruptor"><input type="checkbox" id="sw-avisos" role="switch" ${E.verAvisos ? "checked" : ""}>
+            <span class="interruptor__pista" aria-hidden="true"></span>
+            <span>Mostrar los avisos en las fichas<small>Si lo dejas apagado, cada ficha te pregunta antes de enseñarlos.</small></span></label>
+        </section>
+        <section class="bloque" aria-labelledby="a2"><h2 id="a2">Qué prefiero evitar</h2>
+          <p style="margin-bottom:.75rem">Elige los avisos que no quieres encontrarte. Las obras que los tienen desaparecen de todas las listas, sin decirte cuáles son.</p>
+          <p class="resumen" style="margin-bottom:.75rem">${n ? (n === 1 ? "Estás evitando 1 aviso." : `Estás evitando ${n} avisos.`) : "Ahora mismo no evitas ningún aviso."}</p>
+          <button class="boton" type="button" data-accion="abrir-evitar">Elegir avisos a evitar</button>
+        </section>
+        <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
+          <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
+          <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
+        </section>
+        <section class="bloque" aria-labelledby="a4"><h2 id="a4">Sobre ${esc(CFG.nombre || "La Safoteca")}</h2>
+          <p>${esc(CFG.lema || "")}</p>
+          ${E.meta.total ? `<p class="resumen" style="margin-top:.5rem">${E.meta.total} obras${fecha ? ", datos del " + fecha : ""}.</p>` : ""}
+          ${CFG.contacto ? `<p style="margin-top:.75rem"><a class="enlace-suave" href="${esc(CFG.contacto)}">Enviar una sugerencia</a></p>` : ""}
+        </section>
+      </div>`;
+  }
+
+  // ---------- Hoja de filtros y avisos a evitar ----------
+  const hoja = () => $("#hoja");
+
+  function gruposAvisos() {
+    const g = new Map(); // clave -> { etiquetas: Map(nombre -> nº de obras), obras: Set(id) }
+    E.obras.forEach((o) => o.avisos.forEach((a) => {
+      const k = claveAviso(a.nombre);
+      if (!g.has(k)) g.set(k, { etiquetas: new Map(), obras: new Set() });
+      const x = g.get(k);
+      x.etiquetas.set(a.nombre, (x.etiquetas.get(a.nombre) || 0) + 1);
+      x.obras.add(o.id);
+    }));
+    return [...g].map(([k, x]) => ({
+      clave: k, obras: x.obras.size,
+      etiqueta: [...x.etiquetas].sort((p, q) => q[1] - p[1] || q[0].length - p[0].length)[0][0],
+    })).sort((p, q) => norm(p.etiqueta).localeCompare(norm(q.etiqueta), "es"));
+  }
+  function listaAvisos(consulta) {
+    const q = norm(consulta).trim();
+    const items = gruposAvisos().filter((g) => !q || norm(g.etiqueta).includes(q));
+    if (!items.length) return `<p class="resumen">No hay avisos con ese nombre.</p>`;
+    return items.map((g) => `<label class="marca"><input type="checkbox" data-evitar="${esc(g.clave)}" ${E.evitar.has(g.clave) ? "checked" : ""}><span>${esc(g.etiqueta)}</span><span>${g.obras}</span></label>`).join("");
+  }
+  function chipsTematica(consulta) {
+    const q = norm(consulta).trim();
+    const sel = E.F.tem;
+    const frecuencia = new Map();
+    E.obras.forEach((o) => o.tematicas.forEach((t) => frecuencia.set(t, (frecuencia.get(t) || 0) + 1)));
+    let lista = E.cat.tematicas.filter((t) => !sel.includes(t) && (!q || norm(t).includes(q)));
+    lista.sort((a, b) => (frecuencia.get(b) || 0) - (frecuencia.get(a) || 0) || norm(a).localeCompare(norm(b), "es"));
+    const total = lista.length;
+    lista = lista.slice(0, q ? 40 : 16);
+    return [...sel, ...lista].map((t) => `<button class="chip" type="button" data-tem="${esc(t)}" aria-pressed="${sel.includes(t)}">${esc(t)}</button>`).join("")
+      + (total > lista.length ? `<p class="resumen" style="flex-basis:100%">Escribe para buscar entre ${E.cat.tematicas.length} temáticas.</p>` : "");
+  }
+
+  function abrirHoja(modo) {
+    const h = hoja();
+    const soloEvitar = modo === "evitar";
+    const f = E.F || filtrosDe(new URLSearchParams());
+    const grupoEvitar = `
+      <section class="grupo" id="grupo-evitar" aria-labelledby="${soloEvitar ? "hoja-titulo" : "g-evitar"}">
+        ${soloEvitar ? "" : '<h3 id="g-evitar">Qué prefiero evitar</h3>'}
+        <p>Las obras con estos avisos no aparecerán en ninguna lista. No se muestra cuáles son.</p>
+        <label class="solo-lectores" for="buscar-aviso">Buscar un aviso</label>
+        <input class="campo" id="buscar-aviso" type="search" placeholder="Buscar un aviso" autocomplete="off">
+        <div class="lista-marcas" id="lista-avisos">${listaAvisos("")}</div>
+      </section>`;
+    const grupoFiltros = soloEvitar ? "" : `
+      <section class="grupo" aria-labelledby="g-rel"><h3 id="g-rel">Nivel de relevancia</h3>
+        <div class="chips">${["A", "B", "C"].map((n) => `<button class="chip chip--tejuelo" type="button" data-rel="${n}" aria-pressed="${f.rel.includes(n)}" aria-label="Nivel ${n}">${n}</button>`).join("")}</div></section>
+      <section class="grupo" aria-labelledby="g-gen"><h3 id="g-gen">Género</h3>
+        <div class="chips">${E.cat.generos.map((g) => `<button class="chip" type="button" data-gen="${esc(g)}" aria-pressed="${f.gen.includes(g)}">${esc(g)}</button>`).join("")}</div></section>
+      <section class="grupo" aria-labelledby="g-tem"><h3 id="g-tem">Temática</h3>
+        <label class="solo-lectores" for="buscar-tem">Buscar una temática</label>
+        <input class="campo" id="buscar-tem" type="search" placeholder="Buscar una temática" autocomplete="off" style="margin-bottom:.6rem">
+        <div class="chips" id="chips-tem">${chipsTematica("")}</div></section>
+      <section class="grupo" aria-labelledby="g-edad"><h3 id="g-edad">Edad recomendada</h3>
+        <label class="solo-lectores" for="sel-edad">Edad máxima</label>
+        <select class="campo" id="sel-edad">
+          <option value="">Cualquiera</option><option value="0">Todos los públicos</option><option value="7">Hasta 7 años</option>
+          <option value="12">Hasta 12 años</option><option value="14">Hasta 14 años</option><option value="16">Hasta 16 años</option>
+        </select>
+        <p class="resumen" style="margin-top:.5rem">Las obras sin edad indicada se muestran siempre.</p></section>`;
+    h.innerHTML = `
+      <div class="hoja__cabecera"><h2 id="hoja-titulo">${soloEvitar ? "Qué prefiero evitar" : "Filtros"}</h2>
+        <button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
+      <div class="hoja__cuerpo">${grupoFiltros}${grupoEvitar}</div>
+      <div class="hoja__pie">
+        <button class="boton" type="button" data-accion="cerrar-hoja" id="hoja-ver">${soloEvitar ? "Listo" : ""}</button>
+        ${soloEvitar ? "" : '<button class="boton boton--claro" type="button" data-accion="quitar-filtros">Quitar filtros</button>'}
+      </div>`;
+    if (!soloEvitar) $("#sel-edad", h).value = f.edad;
+    h.dataset.modo = modo;
+    actualizarPieHoja();
+    if (!h.open) h.showModal();
+    if (modo === "evitar") { const g = $("#buscar-aviso", h); g && g.focus({ preventScroll: true }); }
+  }
+
+  function actualizarPieHoja() {
+    const h = hoja();
+    if (h.dataset.modo === "evitar") return;
+    const n = filtrar(E.F).length;
+    $("#hoja-ver", h).textContent = n === 1 ? "Ver 1 obra" : `Ver ${n} obras`;
+  }
+
+  function alternar(arr, v) {
+    const i = arr.indexOf(v);
+    if (i >= 0) arr.splice(i, 1); else arr.push(v);
+    return i < 0;
+  }
+
+  // ---------- Enrutado ----------
+  function rutaActual() {
+    const h = location.hash.slice(1) || "/";
+    const [ruta, qs = ""] = h.split("?");
+    return { ruta, p: new URLSearchParams(qs) };
+  }
+
+  function ajustarCabecera() {
+    const { ruta } = rutaActual();
+    const izq = $("#btn-izq");
+    const filtros = $("#btn-filtros");
+    const raiz = ["/", "/catalogo", "/favoritos"].includes(ruta);
+    izq.innerHTML = raiz ? ICONO.menu : ICONO.atras;
+    izq.setAttribute("aria-label", raiz ? "Ajustes" : "Volver");
+    const hayFiltros = ruta === "/" || ruta === "/catalogo";
+    filtros.hidden = !hayFiltros;
+    if (hayFiltros) {
+      const n = (ruta === "/catalogo" && E.F ? activos(E.F) : 0) + (E.evitar.size ? 1 : 0);
+      filtros.innerHTML = ICONO.filtro + (n ? `<span class="insignia" aria-hidden="true">${n}</span>` : "");
+      filtros.setAttribute("aria-label", n ? `Filtros y avisos a evitar, ${n} activos` : "Filtros y avisos a evitar");
+    }
+  }
+
+  function pintarTabs(ruta) {
+    const t = (href, activa, icono, texto) => `<a class="tabs__enlace" href="${href}" ${activa ? 'aria-current="page"' : ""}><span class="tabs__icono">${icono}</span>${texto}</a>`;
+    $("#tabs").innerHTML = t("#/", ruta === "/", ICONO.inicio, "Inicio")
+      + t("#/catalogo", ruta === "/catalogo", ICONO.claqueta, "Series y películas")
+      + t("#/favoritos", ruta === "/favoritos", ICONO.corazon.replace("<svg ", '<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" '), "Favoritos");
+  }
+
+  function pintar(arriba = true) {
+    const { ruta, p } = rutaActual();
+    const vista = $("#vista");
+    let titulo = CFG.nombre || "La Safoteca";
+    let doc = titulo;
+    if (ruta === "/catalogo") {
+      E.F = filtrosDe(p);
+      vista.innerHTML = vistaCatalogo(E.F);
+      titulo = "Series y películas"; doc = titulo + " · " + doc;
+      pintarResultados();
+      if (E.abrirAlCargar) { const m = E.abrirAlCargar; E.abrirAlCargar = null; abrirHoja(m); }
+    } else if (ruta === "/favoritos") {
+      vista.innerHTML = vistaFavoritos(); titulo = "Favoritos"; doc = titulo + " · " + doc;
+    } else if (ruta === "/ajustes") {
+      vista.innerHTML = vistaAjustes(); titulo = "Ajustes"; doc = titulo + " · " + doc;
+    } else if (ruta.startsWith("/obra/")) {
+      const id = parseInt(ruta.split("/")[2], 10);
+      vista.innerHTML = vistaObra(id);
+      const o = E.porId.get(id);
+      titulo = o ? o.titulo : "Ficha"; doc = titulo + " · " + doc;
+    } else {
+      vista.innerHTML = vistaInicio();
+    }
+    $("#titulo-vista").textContent = ruta.startsWith("/obra/") ? "" : titulo;
+    document.title = doc;
+    pintarTabs(ruta);
+    ajustarCabecera();
+    if (arriba) { window.scrollTo(0, 0); vista.focus({ preventScroll: true }); }
+  }
+
+  // ---------- Eventos ----------
+  document.addEventListener("click", (e) => {
+    const fav = e.target.closest("[data-fav]");
+    if (fav) {
+      const id = Number(fav.dataset.fav);
+      const on = !E.favs.has(id);
+      if (on) E.favs.add(id); else E.favs.delete(id);
+      guardar.escribir("favs", [...E.favs]);
+      $$(`[data-fav="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(on)));
+      toast(on ? "Guardado en favoritos" : "Quitado de favoritos");
+      if (rutaActual().ruta === "/favoritos" && !on) { const y = scrollY; pintar(false); scrollTo(0, y); }
+      return;
+    }
+    const tipo = e.target.closest("[data-tipo]");
+    if (tipo && E.F) { E.F.tipo = tipo.dataset.tipo; sincronizar(); if (hoja().open) actualizarPieHoja(); return; }
+
+    const rel = e.target.closest("[data-rel]");
+    if (rel) { alternar(E.F.rel, rel.dataset.rel); rel.setAttribute("aria-pressed", String(E.F.rel.includes(rel.dataset.rel))); sincronizar(); actualizarPieHoja(); return; }
+    const gen = e.target.closest("[data-gen]");
+    if (gen) { alternar(E.F.gen, gen.dataset.gen); gen.setAttribute("aria-pressed", String(E.F.gen.includes(gen.dataset.gen))); sincronizar(); actualizarPieHoja(); return; }
+    const tem = e.target.closest("[data-tem]");
+    if (tem) { alternar(E.F.tem, tem.dataset.tem); sincronizar(); $("#chips-tem").innerHTML = chipsTematica($("#buscar-tem").value); actualizarPieHoja(); return; }
+
+    const acc = e.target.closest("[data-accion]");
+    if (acc) {
+      switch (acc.dataset.accion) {
+        case "abrir-evitar": abrirHoja("evitar"); break;
+        case "cerrar-hoja": hoja().close(); break;
+        case "cerrar-intro": E.introVista = true; guardar.escribir("intro", true); pintar(false); break;
+        case "quitar-filtros":
+          E.F = filtrosDe(new URLSearchParams()); sincronizar();
+          if (hoja().open) abrirHoja("filtros");
+          break;
+        case "alternar-avisos": {
+          const caja = $("#avisos-contenido"); const resumen = $("#avisos-resumen");
+          const mostrar = caja.hidden;
+          caja.hidden = !mostrar; resumen.hidden = mostrar;
+          acc.setAttribute("aria-expanded", String(mostrar));
+          acc.textContent = mostrar ? "Ocultar los avisos" : "Ver los avisos";
+          break;
+        }
+        case "borrar-datos":
+          if (acc.dataset.seguro) {
+            guardar.borrar(); E.favs.clear(); E.evitar.clear(); E.verAvisos = false; E.introVista = false;
+            pintar(false); toast("Datos borrados de este dispositivo");
+          } else {
+            acc.dataset.seguro = "1"; acc.textContent = "Pulsa otra vez para borrar";
+            setTimeout(() => { if (acc.isConnected) { delete acc.dataset.seguro; acc.textContent = "Borrar favoritos y preferencias"; } }, 4000);
+          }
+          break;
+      }
+      return;
+    }
+    if (e.target === hoja()) hoja().close(); // clic fuera de la hoja
+  });
+
+  document.addEventListener("change", (e) => {
+    const t = e.target;
+    if (t.matches("[data-evitar]")) {
+      if (t.checked) E.evitar.add(t.dataset.evitar); else E.evitar.delete(t.dataset.evitar);
+      guardar.escribir("evitar", [...E.evitar]);
+      E.evitarCambiado = true;
+      if (E.F && rutaActual().ruta === "/catalogo") pintarResultados();
+      actualizarPieHoja(); ajustarCabecera();
+    } else if (t.id === "sel-edad") { E.F.edad = t.value; sincronizar(); actualizarPieHoja(); }
+    else if (t.id === "ordenar") { E.F.orden = t.value; sincronizar(); }
+    else if (t.id === "sw-avisos") { E.verAvisos = t.checked; guardar.escribir("verAvisos", t.checked); }
+  });
+
+  let espera;
+  document.addEventListener("input", (e) => {
+    const t = e.target;
+    if (t.id === "buscar") { clearTimeout(espera); espera = setTimeout(() => { E.F.q = t.value.trim(); sincronizar(); }, 150); }
+    else if (t.id === "buscar-aviso") $("#lista-avisos").innerHTML = listaAvisos(t.value);
+    else if (t.id === "buscar-tem") $("#chips-tem").innerHTML = chipsTematica(t.value);
+  });
+  document.addEventListener("submit", (e) => { if (e.target.id === "form-buscar") { e.preventDefault(); document.activeElement.blur(); } });
+
+  // Si una imagen no carga, se muestra el hueco con el título.
+  document.addEventListener("error", (e) => {
+    const img = e.target;
+    if (img.tagName === "IMG" && img.classList.contains("poster")) {
+      const d = document.createElement("div");
+      d.className = "poster poster--vacio";
+      d.style.setProperty("--tono", img.dataset.tono || "270");
+      d.innerHTML = `<span>${esc(img.dataset.titulo || "")}</span>`;
+      img.replaceWith(d);
+    }
+  }, true);
+
+  $("#btn-izq").addEventListener("click", () => {
+    const { ruta } = rutaActual();
+    if (["/", "/catalogo", "/favoritos"].includes(ruta)) location.hash = "#/ajustes";
+    else if (E.navegado) history.back();
+    else location.hash = "#/catalogo";
+  });
+  $("#btn-filtros").addEventListener("click", () => {
+    if (rutaActual().ruta === "/catalogo") abrirHoja("filtros");
+    else { E.abrirAlCargar = "filtros"; location.hash = "#/catalogo"; }
+  });
+  hoja().addEventListener("close", () => {
+    if (E.evitarCambiado) { E.evitarCambiado = false; const y = scrollY; pintar(false); scrollTo(0, y); }
+    else ajustarCabecera();
+  });
+  window.addEventListener("hashchange", () => { if (!E.cargado) return; E.navegado = true; if (hoja().open) hoja().close(); pintar(true); });
+
+  // ---------- Arranque ----------
+  async function cargar() {
+    try {
+      const [a, b] = await Promise.all([fetch("data/obras.json"), fetch("data/catalogos.json")]);
+      if (!a.ok || !b.ok) throw new Error("respuesta no válida");
+      const datos = await a.json();
+      E.cat = await b.json();
+      E.meta = datos.meta || {};
+      E.obras = datos.obras.map((o) => ({
+        ...o,
+        _h: norm([o.titulo, o.titulo_original, o.titulo_latam, ...o.actrices, ...o.directores].filter(Boolean).join(" ")),
+      }));
+      E.porId = new Map(E.obras.map((o) => [o.id, o]));
+      E.cargado = true;
+      pintar(false);
+    } catch {
+      $("#vista").innerHTML = `<div class="vacio"><p>No hemos podido cargar el catálogo. Comprueba tu conexión e inténtalo de nuevo.</p>
+        <button class="boton" type="button" id="reintentar">Reintentar</button></div>`;
+      $("#reintentar").addEventListener("click", () => { $("#vista").innerHTML = '<p class="cargando">Cargando el catálogo…</p>'; cargar(); });
+    }
+  }
+
+  pintarTabs(rutaActual().ruta);
+  ajustarCabecera();
+  cargar();
+
+  if ("serviceWorker" in navigator && location.protocol.startsWith("http")) {
+    window.addEventListener("load", () => navigator.serviceWorker.register("./sw.js").catch(() => { /* sin modo sin conexión */ }));
+  }
+})();
