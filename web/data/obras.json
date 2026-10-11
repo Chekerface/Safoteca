@@ -1030,7 +1030,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "35",
    "generos": [
     "Romance"
    ],
@@ -1176,7 +1176,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": null,
-   "poster": null,
+   "poster": "109",
    "generos": [
     "Comedia"
    ],
@@ -1402,7 +1402,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "52",
    "generos": [
     "Fantasía"
    ],
@@ -1451,7 +1451,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "36",
    "generos": [
     "Drama"
    ],
@@ -1786,7 +1786,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "53",
    "generos": [
     "Acción"
    ],
@@ -1896,7 +1896,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "49",
    "generos": [
     "Fantasía"
    ],
@@ -2001,7 +2001,7 @@
    "temporadas": "4.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "99",
    "generos": [
     "Drama"
    ],
@@ -2039,7 +2039,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "1",
    "generos": [
     "Drama"
    ],
@@ -2342,7 +2342,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "48",
    "generos": [
     "Fantasía"
    ],
@@ -2492,7 +2492,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": null,
-   "poster": null,
+   "poster": "45",
    "generos": [
     "Comedia"
    ],
