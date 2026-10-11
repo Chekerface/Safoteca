@@ -1,5 +1,5 @@
 tabla,variante,propuesta,motivo
-generos,Aventuras,Aventura,"Pendiente de confirmar por el equipo"
+generos,Aventuras,Aventura,"Decidido: se unifica con 'Aventura' (aplicado en generos.csv)"
 generos,Horror,Terror,"Decidido: se mantiene 'Horror' tal cual"
 generos,Fantástico,Fantasía,"Decidido: se mantiene 'Fantástico' tal cual"
 generos,Intriga,Suspense,"Decidido: se mantiene 'Intriga' tal cual"
