@@ -1563,7 +1563,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "75",
    "generos": [
     "Drama"
    ],
@@ -1955,7 +1955,7 @@
    "temporadas": "2.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "62",
    "generos": [
     "Ciencia Ficción"
    ],
@@ -2118,7 +2118,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "86",
    "generos": [
     "Thriller"
    ],
@@ -2215,7 +2215,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "73",
    "generos": [
     "Comedia Dramática"
    ],
@@ -3064,7 +3064,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "66",
    "generos": [
     "Comedia Dramática"
    ],
@@ -3322,7 +3322,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "87",
    "generos": [
     "Drama"
    ],
@@ -3637,7 +3637,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "83",
    "generos": [
     "Aventura"
    ],
