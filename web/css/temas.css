@@ -37,3 +37,24 @@
 }
 /* Franja decorativa fina bajo la cabecera */
 :root[data-tema="halloween"] .cabecera { border-bottom: 3px solid var(--lila); }
+
+/* Halloween: calabazas en la barra superior (solo en el inicio, donde sale el logotipo) */
+:root[data-tema="halloween"] .cabecera:has(.cabecera__logo)::after {
+  content: ""; position: absolute; pointer-events: none;
+  right: .5rem; top: env(safe-area-inset-top); bottom: 0;
+  aspect-ratio: 800 / 260;
+  background: url("../img/tema/calabazas.webp") right bottom / contain no-repeat;
+}
+/* Halloween: telaraña de fondo, a la derecha y por detrás del contenido */
+:root[data-tema="halloween"] body::before {
+  content: ""; position: fixed; z-index: -1; pointer-events: none;
+  top: var(--alto-cabecera); right: 0;
+  width: min(115vw, 760px); aspect-ratio: 740 / 440;
+  background: var(--lila);
+  opacity: .55;
+  -webkit-mask: url("../img/tema/telarana.webp") right top / 100% 100% no-repeat;
+          mask: url("../img/tema/telarana.webp") right top / 100% 100% no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-tema="halloween"] body::before { background: #f1e6dc; opacity: .40; }
+}
