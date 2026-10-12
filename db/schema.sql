@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS obra (
     revisora_alias      TEXT,            -- alias, nunca el correo
     notas_internas      TEXT,
     creada_el           TEXT NOT NULL DEFAULT (datetime('now')),
-    actualizada_el      TEXT NOT NULL DEFAULT (datetime('now'))
+    actualizada_el      TEXT NOT NULL DEFAULT (datetime('now')),
+    publicada_el        TEXT             -- cuándo pasó a 'publicada' (UTC); se rellena sola con un trigger
 );
 
 CREATE INDEX IF NOT EXISTS idx_obra_estado_tipo ON obra (estado, tipo);
@@ -107,6 +108,21 @@ FOR EACH ROW
 WHEN NEW.actualizada_el = OLD.actualizada_el
 BEGIN
     UPDATE obra SET actualizada_el = datetime('now') WHERE id = NEW.id;
+END;
+
+-- Fecha de publicación: se anota sola la primera vez que una obra pasa a 'publicada'.
+CREATE TRIGGER IF NOT EXISTS obra_fecha_publicacion_upd
+AFTER UPDATE OF estado ON obra
+WHEN NEW.estado = 'publicada' AND OLD.estado <> 'publicada'
+BEGIN
+    UPDATE obra SET publicada_el = datetime('now') WHERE id = NEW.id;
+END;
+
+CREATE TRIGGER IF NOT EXISTS obra_fecha_publicacion_ins
+AFTER INSERT ON obra
+WHEN NEW.estado = 'publicada' AND NEW.publicada_el IS NULL
+BEGIN
+    UPDATE obra SET publicada_el = datetime('now') WHERE id = NEW.id;
 END;
 
 -- Lo único que sale a producción: películas y series publicadas ----------------
