@@ -60,8 +60,12 @@ def juntar(f, *claves):
     return ", ".join(p for p in partes if p) or None
 
 
-def grupo(f, prefijo, cuantas, extra):
-    return juntar(f, *[f"{prefijo} {i}" for i in range(1, cuantas + 1)], extra)
+def grupo(f, prefijo, extra):
+    """Une todas las casillas cuya cabecera empieza por el prefijo («Temática 1», «Temática (parte 2 de 4)»…)
+    más la casilla de «otros». Sirve igual para la plantilla y para las respuestas del formulario."""
+    p = norm(prefijo)
+    partes = [limpio(v) for k, v in f.items() if k.startswith(p)] + [limpio(f.get(norm(extra)))]
+    return ", ".join(x for x in partes if x) or None
 
 
 class Plantilla:
@@ -141,7 +145,7 @@ class Plantilla:
             campos["poster_origen"] = imp.poster(poster)
             if not campos["poster_origen"]:
                 self.inc(n, titulo, "Póster", poster, "no es un enlace http(s): se ignora")
-        rev = limpio(f.get("revisore"))
+        rev = limpio(f.get("revisore")) or limpio(f.get("direccion de correo electronico"))
         if rev:
             campos["revisora_alias"] = imp.alias_de(rev) if "@" in rev else rev
         campos = {k: v for k, v in campos.items() if v is not None}
@@ -162,9 +166,9 @@ class Plantilla:
             self.res["actualizadas"].append((oid, titulo))
 
         # --- grupos
-        gen = juntar(f, "Género 1", "Género 2")
-        tem = grupo(f, "Temática", 12, "Otras temáticas (separadas por comas)")
-        avi = grupo(f, "Aviso", 10, "Otros avisos (separados por comas)")
+        gen = grupo(f, "Género", "")
+        tem = grupo(f, "Temática", "Otras temáticas (separadas por comas)")
+        avi = grupo(f, "Aviso", "Otros avisos (separados por comas)")
         if gen:
             self.db.execute("DELETE FROM obra_genero WHERE obra_id=?", (oid,))
             imp.vincular_lista(oid, gen, "genero", "obra_genero", "genero_id", imp.map_gen, self.oficiales["genero"])
@@ -224,9 +228,35 @@ class Plantilla:
                 w.writerow([oid, *filas[oid]])
 
 
-def main():
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+class _Hoja:
+    """Envuelve las filas de un CSV para que se lea igual que una hoja de Excel."""
+    def __init__(self, filas):
+        self.filas = filas
+
+    def iter_rows(self, values_only=True):
+        return iter(self.filas)
+
+
+def abrir_hoja(ruta, exigir_obras):
+    """Plantilla: hoja «Obras». Respuestas de un formulario: la primera hoja (o un .csv)."""
+    if str(ruta).lower().endswith(".csv"):
+        with open(ruta, encoding="utf-8-sig", newline="") as fh:
+            return _Hoja([tuple(r) for r in csv.reader(fh)])
+    wb = openpyxl.load_workbook(ruta, data_only=True, read_only=True)
+    if not exigir_obras:
+        return wb.worksheets[0]
+    hoja = next((w for w in wb.worksheets if w.title.strip().lower() == "obras"), None)
+    if hoja is None:
+        sys.exit("El Excel no tiene una hoja llamada «Obras»: ¿es la plantilla?")
+    return hoja
+
+
+def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extra_args=None):
+    clase = clase or Plantilla
+    ap = argparse.ArgumentParser(description=descripcion or __doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("excel")
+    if extra_args:
+        extra_args(ap)
     ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
     ap.add_argument("--simular", action="store_true", help="no guarda nada: solo muestra qué pasaría")
     ap.add_argument("--sin-exportar", action="store_true", help="no regenera web/data después de guardar")
@@ -235,10 +265,7 @@ def main():
     dbp = Path(a.db)
     if not dbp.exists():
         sys.exit(f"No encuentro la base de datos {dbp}")
-    wb = openpyxl.load_workbook(a.excel, data_only=True, read_only=True)
-    hoja = next((w for w in wb.worksheets if w.title.strip().lower() == "obras"), None)
-    if hoja is None:
-        sys.exit("El Excel no tiene una hoja llamada «Obras»: ¿es la plantilla?")
+    hoja = abrir_hoja(a.excel, clase is Plantilla)
 
     if not a.simular:
         copias = RAIZ / "data" / "privado" / "copias"
@@ -250,7 +277,7 @@ def main():
     db = sqlite3.connect(dbp)
     asegurar_esquema(db)
     db.execute("PRAGMA foreign_keys = ON")
-    pl = Plantilla(db, RAIZ / "informes")
+    pl = clase(db, RAIZ / "informes", a) if clase is not Plantilla else Plantilla(db, RAIZ / "informes")
     n_filas = 0
     for n, f in leer_filas(hoja):
         n_filas += 1
@@ -261,7 +288,7 @@ def main():
             pl.res["omitidas"].append(limpio(f.get("titulo original")))
 
     (RAIZ / "informes").mkdir(exist_ok=True)
-    with open(RAIZ / "informes" / "incidencias_plantilla.csv", "w", encoding="utf-8-sig", newline="") as fh:
+    with open(RAIZ / "informes" / informe, "w", encoding="utf-8-sig", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(["hoja", "fila", "obra", "campo", "valor", "problema"])
         w.writerows(pl.imp.incidencias)

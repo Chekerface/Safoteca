@@ -166,3 +166,13 @@ Al fusionar el PR, la web se actualiza. Quien ya la tenga abierta verá los dato
 ## Comprobación mensual de enlaces
 
 `tools/comprobar_enlaces.py` revisa todos los enlaces de «dónde ver» de `web/data/obras.json` y marca cada uno como OK, ROTO, PIRATA, BLOQUEADO o ERROR. El workflow `.github/workflows/enlaces.yml` lo ejecuta el día 1 de cada mes, guarda el informe completo (`enlaces.csv`) como artefacto de la ejecución y abre una incidencia en GitHub si hay enlaces ROTO o PIRATA. Se puede lanzar a mano desde la pestaña Actions → «Comprobar enlaces» → Run workflow. Los BLOQUEADO (Prime Video, HBO, etc. que no dejan comprobar de forma automática) hay que mirarlos a mano.
+
+## Formulario de Google para añadir obras
+
+Alternativa a la plantilla de Excel para añadir obras sueltas, pensada para todo el equipo.
+
+1. **Crear el formulario (una vez):** abre `tools/formulario/crear_formulario.gs`, entra en <https://script.google.com> → Nuevo proyecto, pega el contenido, elige la función `crearFormulario` y pulsa Ejecutar. En el registro salen el enlace del formulario (para compartir) y el de la hoja de respuestas.
+2. **Cargar las respuestas:** en la hoja de respuestas, Archivo → Descargar → Excel (.xlsx) (o .csv) y ejecuta
+   `python tools/importar_formulario.py respuestas.xlsx --simular` para ver qué pasaría, y sin `--simular` para guardar. Cada fila es una obra, así que se cargan todas de golpe. Con `--publicar` se publican las que tengan sinopsis y nivel de relevancia; sin él entran como borrador.
+3. **Repetidos:** una fila no se importa si la obra ya existe en la base de datos o aparece antes en el mismo archivo (mismo tipo y título original o en España, sin fijarse en mayúsculas, tildes ni signos, y el mismo año si ambos lo tienen), ni si su enlace de Letterboxd ya lo tiene otra obra. Si un enlace de «dónde verla» o el póster ya lo usa otra obra, solo se avisa. El informe queda en `informes/incidencias_formulario.csv`.
+4. **Catálogo nuevo:** si añades géneros, temáticas o avisos, ejecuta `python tools/generar_formulario.py`, pega el script nuevo en el mismo proyecto de Apps Script y ejecuta `actualizarListas`. Las opciones nuevas que alguien escriba en «Otro» entran como pendientes de revisión.

@@ -1,0 +1,104 @@
+/**
+ * La Safoteca · formulario para añadir obras (generado por tools/generar_formulario.py).
+ *
+ * Cómo usarlo (una sola vez):
+ *  1. Entra en https://script.google.com con la cuenta de Google del proyecto y pulsa «Nuevo proyecto».
+ *  2. Borra el código que aparece y pega TODO este archivo. Guarda (icono del disquete).
+ *  3. Arriba, en el desplegable de funciones, elige `crearFormulario` y pulsa «Ejecutar».
+ *     La primera vez Google pide permisos (Formularios, Hojas de cálculo y Drive): acéptalos.
+ *  4. Abajo, en el «Registro de ejecución», salen los enlaces: el del formulario para compartir con el equipo
+ *     y el de la hoja donde se guardan las respuestas.
+ *
+ * Para cargar las respuestas: en la hoja de respuestas, Archivo → Descargar → Microsoft Excel (.xlsx)
+ * y ejecuta `python tools/importar_formulario.py respuestas.xlsx` (con --simular para probar).
+ *
+ * Si cambia el catálogo (géneros, temáticas o avisos nuevos): genera el script otra vez, pégalo y ejecuta
+ * `actualizarListas`: actualiza las opciones del formulario que ya existe, sin perder respuestas.
+ */
+
+var DATOS = __DATOS__;
+
+var TITULO_FORMULARIO = "La Safoteca · Añadir una serie o película";
+var CLAVE_ID = "ID_FORMULARIO";
+
+function crearFormulario() {
+  var f = FormApp.create(TITULO_FORMULARIO);
+  f.setDescription(
+    "Rellena una ficha por cada obra. Solo son obligatorios el tipo, el título original, la sinopsis y el nivel de relevancia. " +
+    "Si no sabes algo, déjalo en blanco. Para añadir varias obras, envía el formulario varias veces.");
+  f.setCollectEmail(true);          // el correo queda como «revisore»
+  f.setAllowResponseEdits(false);
+  f.setProgressBar(true);
+  f.setConfirmationMessage("¡Gracias! La obra se revisará antes de publicarse.");
+
+  f.addMultipleChoiceItem().setTitle("Tipo").setChoiceValues(["Película", "Serie", "Libro", "Cómic"]).setRequired(true);
+  f.addTextItem().setTitle("Título original").setRequired(true)
+    .setHelpText("Tal y como se llama en su idioma original.");
+  f.addTextItem().setTitle("Título en España");
+  f.addTextItem().setTitle("Título en Latinoamérica");
+  f.addTextItem().setTitle("País").setHelpText("Por ejemplo: EE.UU., España, Reino Unido, Corea del Sur…");
+  f.addTextItem().setTitle("Año")
+    .setHelpText("Año de estreno (en series, el de la primera temporada). Vale «2019» o un rango «2013-2019».")
+    .setValidation(FormApp.createTextValidation().setHelpText("Escribe un año de 4 cifras, por ejemplo 2019 o 2013-2019")
+      .requireTextMatchesPattern("^\\s*\\d{4}\\s*([-–]\\s*(\\d{4})?)?\\s*$").build());
+  f.addTextItem().setTitle("Año fin").setHelpText("Solo series que ya han terminado.");
+  f.addParagraphTextItem().setTitle("Sinopsis").setRequired(true);
+  f.addTextItem().setTitle("Temporada de aparición").setHelpText("Solo series: en qué temporadas hay representación. Ej.: «1 y 2».");
+
+  var rel = DATOS.relevancia;
+  f.addMultipleChoiceItem().setTitle("Nivel de relevancia").setRequired(true)
+    .setChoiceValues(["A", "B", "C"])
+    .setHelpText("A: " + rel.A + "\nB: " + rel.B + "\nC: " + rel.C);
+  f.addListItem().setTitle("Edad recomendada")
+    .setChoiceValues(["TP","0","3","6","7","9","11","12","13","14","15","16","17","18"]);
+
+  DATOS.generos.forEach(function (g) {
+    f.addCheckboxItem().setTitle(g.titulo).setChoiceValues(g.opciones).setHelpText("Marca todos los que apliquen.");
+  });
+  f.addTextItem().setTitle("Directore").setHelpText("Si son varies, sepáralos con comas.");
+  f.addParagraphTextItem().setTitle("Actrices (separadas por comas)");
+
+  DATOS.tematicas.forEach(function (g, i) {
+    var it = f.addCheckboxItem().setTitle(g.titulo).setChoiceValues(g.opciones)
+      .setHelpText("Marca todas las que apliquen. Esta parte va " + g.rango + " (orden alfabético).");
+    if (i === DATOS.tematicas.length - 1) it.showOtherOption(true);   // «Otro»: temática nueva, queda pendiente de revisión
+  });
+  DATOS.avisos.forEach(function (g, i) {
+    var it = f.addCheckboxItem().setTitle(g.titulo).setChoiceValues(g.opciones)
+      .setHelpText("Avisos de contenido (TW). Marca todos los que apliquen." + (g.rango ? " Esta parte va " + g.rango + "." : ""));
+    if (i === DATOS.avisos.length - 1) it.showOtherOption(true);
+  });
+
+  f.addMultipleChoiceItem().setTitle("Disponible en España").setChoiceValues(["Sí", "No"]);
+  f.addMultipleChoiceItem().setTitle("Final feliz").setChoiceValues(["Sí", "No"]);
+  f.addParagraphTextItem().setTitle("Dónde verla (enlace)")
+    .setHelpText("Enlace a la ficha en la plataforma (Netflix, Prime, Filmin…). Puedes poner varios, uno por línea. No enlaces webs piratas.");
+  f.addTextItem().setTitle("Enlace informativo").setHelpText("FilmAffinity, IMDb o Wikipedia.");
+  f.addTextItem().setTitle("Póster (enlace de la imagen)").setHelpText("Dirección de una imagen (termina en .jpg, .png o .webp).");
+  f.addTextItem().setTitle("Letterboxd (enlace)").setHelpText("Solo películas.");
+
+  // Hoja de respuestas enlazada
+  var hoja = SpreadsheetApp.create("La Safoteca · Respuestas del formulario");
+  f.setDestination(FormApp.DestinationType.SPREADSHEET, hoja.getId());
+
+  PropertiesService.getScriptProperties().setProperty(CLAVE_ID, f.getId());
+  Logger.log("Formulario (para editar): " + f.getEditUrl());
+  Logger.log("Formulario (para compartir con el equipo): " + f.getPublishedUrl());
+  Logger.log("Hoja de respuestas: " + hoja.getUrl());
+}
+
+/** Actualiza las opciones de géneros, temáticas y avisos del formulario ya creado. */
+function actualizarListas() {
+  var id = PropertiesService.getScriptProperties().getProperty(CLAVE_ID);
+  if (!id) throw new Error("No hay formulario guardado: ejecuta primero crearFormulario.");
+  var f = FormApp.openById(id);
+  var grupos = DATOS.generos.concat(DATOS.tematicas, DATOS.avisos);
+  var cambiados = 0;
+  f.getItems(FormApp.ItemType.CHECKBOX).forEach(function (item) {
+    grupos.forEach(function (g) {
+      if (item.getTitle() === g.titulo) { item.asCheckboxItem().setChoiceValues(g.opciones); cambiados++; }
+    });
+  });
+  Logger.log("Listas actualizadas: " + cambiados + " preguntas.");
+  if (cambiados < grupos.length) Logger.log("Aviso: han cambiado los tramos (títulos) de alguna lista; crea un formulario nuevo con crearFormulario.");
+}
