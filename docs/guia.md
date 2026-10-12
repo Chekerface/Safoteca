@@ -162,3 +162,7 @@ git commit -m "Actualizar catálogo"
 git push -u origin actualizar-datos     # y abrid el PR en GitHub
 ```
 Al fusionar el PR, la web se actualiza. Quien ya la tenga abierta verá los datos nuevos la siguiente vez que la abra con conexión.
+
+## Comprobación mensual de enlaces
+
+`tools/comprobar_enlaces.py` revisa todos los enlaces de «dónde ver» de `web/data/obras.json` y marca cada uno como OK, ROTO, PIRATA, BLOQUEADO o ERROR. El workflow `.github/workflows/enlaces.yml` lo ejecuta el día 1 de cada mes, guarda el informe completo (`enlaces.csv`) como artefacto de la ejecución y abre una incidencia en GitHub si hay enlaces ROTO o PIRATA. Se puede lanzar a mano desde la pestaña Actions → «Comprobar enlaces» → Run workflow. Los BLOQUEADO (Prime Video, HBO, etc. que no dejan comprobar de forma automática) hay que mirarlos a mano.
