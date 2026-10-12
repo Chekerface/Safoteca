@@ -1,9 +1,9 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "safoteca-app-v2";
+const CACHE_APP = "safoteca-app-v3";
 const CACHE_IMG = "safoteca-img";
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
-  "./", "./index.html", "./css/estilos.css", "./js/app.js", "./config.js",
+  "./", "./index.html", "./css/estilos.css", "./css/temas.css", "./js/app.js", "./js/temas.js", "./config.js",
   "./manifest.webmanifest", "./marca/buholira.svg", "./marca/logo-horizontal.svg", "./marca/logo-horizontal-oscuro.svg", "./marca/logo-vertical.svg", "./marca/logo-vertical-oscuro.svg", "./icons/icon-192.png", "./icons/icon-512.png",
   "./data/obras.json", "./data/catalogos.json"
 ];

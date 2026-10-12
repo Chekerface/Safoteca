@@ -19,6 +19,11 @@ window.SAFOTECA_CONFIG = {
     { titulo: "No te romperán el corazón 💖 🛡️", ids: [110, 150, 238, 237, 109, 115] },       // Imagine Me & You, La llamada, Nina's Heavenly Delights, Fried Green Tomatoes, D.E.B.S., But I'm a Cheerleader
     { titulo: "Series a las que darle una oportunidad", ids: [236, 152, 47, 53, 77] }        // South of Nowhere, Dickinson, She-Ra, Harley Quinn, Gentleman Jack
   ],
+  // Temas de temporada: se activan solos entre estas fechas ("MM-DD") y vuelven al aspecto normal al terminar.
+  // Vista previa en cualquier momento: #/?tema=halloween  (y #/?tema=normal para quitarla).
+  temas: [
+    { id: "halloween", desde: "10-15", hasta: "11-02" }
+  ],
   // Opcional: enlace o correo para sugerencias (por ejemplo "mailto:..." o una URL).
   contacto: ""
 };
