@@ -1,0 +1,43 @@
+# Comprueba cada mes los enlaces de «dónde ver» y abre (o actualiza) una incidencia si hay rotos.
+# También se puede lanzar a mano: pestaña Actions → «Comprobar enlaces» → Run workflow.
+name: Comprobar enlaces
+
+on:
+  schedule:
+    - cron: "0 6 1 * *"   # día 1 de cada mes, 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar enlaces
+        id: comprobar
+        run: |
+          set +e
+          python3 tools/comprobar_enlaces.py --salida informes/enlaces.csv | tee resumen.txt
+          echo "codigo=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: informe-enlaces
+          path: informes/enlaces.csv
+      - name: Abrir incidencia si hay enlaces rotos
+        if: steps.comprobar.outputs.codigo != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          {
+            echo "Resultado de la comprobación mensual de enlaces (ROTO o PIRATA):"
+            echo
+            echo '```'
+            cat resumen.txt
+            echo '```'
+            echo
+            echo "El informe completo está en el artefacto «informe-enlaces» de esta ejecución: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          } > cuerpo.md
+          gh issue create --title "Enlaces de streaming rotos ($(date +%Y-%m))" --body-file cuerpo.md
