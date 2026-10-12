@@ -26,6 +26,16 @@ URL_RE = re.compile(r"https?://[^\s,;<>\"']+")
 
 
 # ---------------------------------------------------------------- utilidades
+def asegurar_esquema(db):
+    """Pone al día una base de datos antigua (columna publicada_el y sus triggers). Es seguro repetirlo."""
+    cols = [r[1] for r in db.execute("PRAGMA table_info(obra)")]
+    if cols and "publicada_el" not in cols:
+        db.execute("ALTER TABLE obra ADD COLUMN publicada_el TEXT")
+        db.execute("UPDATE obra SET publicada_el = creada_el WHERE estado = 'publicada'")
+        db.commit()
+    db.executescript((RAIZ / "db" / "schema.sql").read_text(encoding="utf-8"))
+
+
 def limpio(v):
     """Texto sin espacios sobrantes; None si está vacío."""
     if v is None:
@@ -451,9 +461,19 @@ def main():
     a = ap.parse_args()
 
     dbp = Path(a.db)
+    fechas_publicacion = {}  # se conservan al recrear la base de datos (para ordenar «Novedades»)
     if dbp.exists():
         if not a.forzar:
             sys.exit(f"{dbp} ya existe. Usa --forzar para recrearla (se perderán los cambios hechos en ella).")
+        try:
+            old = sqlite3.connect(dbp)
+            asegurar_esquema(old)
+            for tipo, titulo, anio, fecha in old.execute(
+                    "SELECT tipo, lower(titulo_original), anio, publicada_el FROM obra WHERE publicada_el IS NOT NULL"):
+                fechas_publicacion[(tipo, titulo, anio)] = fecha
+            old.close()
+        except sqlite3.Error:
+            pass
         dbp.unlink()
 
     wb = openpyxl.load_workbook(a.excel, data_only=True, read_only=True)
@@ -480,6 +500,9 @@ def main():
                 publicadas += 1
             except sqlite3.IntegrityError as e:
                 imp.inc("Datos", "", titulo, "estado", "revisada", f"no se publica: {e}")
+    for (tipo, titulo, anio), fecha in fechas_publicacion.items():
+        db.execute("UPDATE obra SET publicada_el = ? WHERE estado = 'publicada' AND tipo = ? "
+                   "AND lower(titulo_original) = ? AND anio IS ?", (fecha, tipo, titulo, anio))
     imp.unificar_mayusculas()
     db.commit()
     imp.escribir_informes()

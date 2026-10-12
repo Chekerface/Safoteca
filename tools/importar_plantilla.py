@@ -28,7 +28,7 @@ from pathlib import Path
 import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from importar_excel import Importador, RAIZ, limpio, separar, a_entero  # noqa: E402
+from importar_excel import Importador, RAIZ, limpio, separar, a_entero, asegurar_esquema  # noqa: E402
 
 HOJA = "Plantilla"
 TIPOS = {"pelicula": "pelicula", "película": "pelicula", "serie": "serie", "libro": "libro",
@@ -248,6 +248,7 @@ def main():
         print(f"Copia de seguridad: {copia.relative_to(RAIZ)}")
 
     db = sqlite3.connect(dbp)
+    asegurar_esquema(db)
     db.execute("PRAGMA foreign_keys = ON")
     pl = Plantilla(db, RAIZ / "informes")
     n_filas = 0

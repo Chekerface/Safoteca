@@ -11,6 +11,10 @@ Genera web/data/obras.json y web/data/catalogos.json
 import argparse, csv, json, sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from importar_excel import asegurar_esquema  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 
@@ -43,6 +47,7 @@ def main():
     a = ap.parse_args()
 
     db = sqlite3.connect(a.db)
+    asegurar_esquema(db)
     db.row_factory = sqlite3.Row
     salida = Path(a.salida)
     salida.mkdir(parents=True, exist_ok=True)
@@ -92,6 +97,7 @@ def main():
             "donde_ver": col(SQL_ENLACES, oid, "donde_ver"),
             "info": col(SQL_ENLACES, oid, "info"),
             "letterboxd": letterboxd.get(oid),
+            "publicada": o["publicada_el"],  # fecha UTC de publicación: desempata «Novedades»
         })
 
     catalogos = {
