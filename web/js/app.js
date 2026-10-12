@@ -463,12 +463,18 @@
       vista.innerHTML = vistaInicio();
     }
     const tit = $("#titulo-vista");
-    if (ruta === "/") {
-      // En el inicio se muestra el logotipo (claro u oscuro según el tema); el h1 accesible ya existe en la vista.
+    const pag = $("#titulo-pagina");
+    if (["/", "/catalogo", "/favoritos"].includes(ruta)) {
+      // En las pestañas principales se muestra siempre el logotipo (claro u oscuro según el tema);
+      // en el inicio el h1 accesible ya existe en la vista, y en las otras dos el nombre de la pestaña
+      // va a la derecha, antes del icono de filtros.
       tit.innerHTML = '<img class="cabecera__logo cabecera__logo--claro" src="marca/logo-horizontal.svg" alt="La Safoteca">'
         + '<img class="cabecera__logo cabecera__logo--oscuro" src="marca/logo-horizontal-oscuro.svg" alt="" aria-hidden="true">';
+      pag.hidden = ruta === "/";
+      pag.textContent = ruta === "/" ? "" : titulo;
     } else {
       tit.textContent = ruta.startsWith("/obra/") ? "" : titulo;
+      pag.hidden = true; pag.textContent = "";
     }
     document.title = doc;
     pintarTabs(ruta);

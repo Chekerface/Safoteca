@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-12T10:57:55+00:00",
+  "generado": "2026-10-12T14:32:26+00:00",
   "total": 282
  },
  "obras": [
@@ -1033,6 +1033,10 @@
    "avisos": [
     {
      "nombre": "Bullying",
+     "categoria": null
+    },
+    {
+     "nombre": "Cancelada",
      "categoria": null
     },
     {
@@ -2278,7 +2282,12 @@
     "Pareja Idiota",
     "Subtexto"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Mae Whitman",
     "Sarah-Nicole Robles"
@@ -2570,6 +2579,10 @@
     "Sobrenatural"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Gore",
      "categoria": null
@@ -3329,7 +3342,12 @@
     "Drama",
     "Secuela"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Ana Golja"
    ],
@@ -3695,6 +3713,10 @@
     "Mujeres adultas"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de alcohol",
      "categoria": null
@@ -4114,6 +4136,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     },
@@ -4175,7 +4201,12 @@
     "Fantástico",
     "Magia"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Ellen Tamaki",
     "Melonie Diaz"
@@ -4839,6 +4870,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     },
@@ -5360,6 +5395,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Prostitución",
      "categoria": null
     },
@@ -5747,7 +5786,12 @@
     "Superhéroes",
     "Viajes en el tiempo"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Hayden Panettiere",
     "Madeline Zima"
@@ -7201,6 +7245,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Sangre",
      "categoria": null
     },
@@ -7309,6 +7357,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Sangre",
      "categoria": null
     },
@@ -7409,7 +7461,12 @@
     "Aventuras",
     "Fantasía"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Rosamund Pike",
     "Sophie Okonedo"
@@ -7519,6 +7576,10 @@
     "Universidad"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Engaños y Mentiras",
      "categoria": null
@@ -7673,6 +7734,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Violencia",
      "categoria": null
     }
@@ -7723,6 +7788,10 @@
     "Fantasía"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Chantaje",
      "categoria": null
@@ -7775,7 +7844,12 @@
     "Drama",
     "Enfermedad"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Itsaso Arana",
     "Mónica Miranda"
@@ -7919,6 +7993,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -7978,7 +8056,12 @@
     "Hombres lobo",
     "Vampiros"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Kaylee Bryant",
     "Lulu Antariksa"
@@ -8267,6 +8350,10 @@
     "Familia"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Capacitismo",
      "categoria": null
@@ -9603,7 +9690,12 @@
     "Drama",
     "Superheroinas"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Camila Moreno."
    ],
@@ -9646,6 +9738,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Cuernos",
      "categoria": null
     }
@@ -9686,7 +9782,12 @@
     "Drama",
     "Policíaca"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Tori Anderson",
     "Yasmine Al-Bustami"
@@ -10192,6 +10293,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Violencia leve",
      "categoria": null
     }
@@ -10327,6 +10432,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Drogas",
      "categoria": null
     },
@@ -10428,6 +10537,10 @@
     "Drama"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Cuernos",
      "categoria": null
@@ -11348,6 +11461,10 @@
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Cancelada",
      "categoria": null
     }
    ],
@@ -12389,6 +12506,10 @@
      "categoria": null
     },
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Contenido Cuestionable",
      "categoria": null
     },
@@ -12901,6 +13022,10 @@
     "Trans"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Cuernos",
      "categoria": null
@@ -13432,6 +13557,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     }
@@ -13792,6 +13921,10 @@
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Cuernos",
      "categoria": null
@@ -14391,7 +14524,12 @@
     "Comedia",
     "Drama"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    }
+   ],
    "actrices": [],
    "directores": [],
    "donde_ver": [
@@ -14738,6 +14876,10 @@
     "Western"
    ],
    "avisos": [
+    {
+     "nombre": "Cancelada",
+     "categoria": null
+    },
     {
      "nombre": "Violencia",
      "categoria": null

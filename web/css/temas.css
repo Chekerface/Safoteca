@@ -39,9 +39,9 @@
 :root[data-tema="halloween"] .cabecera { border-bottom: 3px solid var(--lila); }
 
 /* Halloween: calabazas en la barra superior (solo en el inicio, donde sale el logotipo) */
-:root[data-tema="halloween"] .cabecera:has(.cabecera__logo)::after {
+:root[data-tema="halloween"] .cabecera:has(.cabecera__logo):not(:has(.cabecera__pagina:not([hidden])))::after {
   content: ""; position: absolute; pointer-events: none;
-  right: .5rem; top: env(safe-area-inset-top); bottom: 0;
+  right: 3.5rem; top: env(safe-area-inset-top); bottom: 0;
   aspect-ratio: 800 / 260;
   background: url("../img/tema/calabazas.webp") right bottom / contain no-repeat;
 }
