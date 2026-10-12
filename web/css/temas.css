@@ -1,0 +1,39 @@
+/* La Safoteca · temas de temporada
+   Cada tema solo redefine las variables de color de estilos.css: el aspecto normal no se toca.
+   Se activa solo entre las fechas de config.js (js/temas.js pone <html data-tema="...">). */
+
+/* ---------- Halloween 🎃 ---------- */
+:root[data-tema="halloween"] {
+  --lila: #e8731f;
+  --violeta: #a8400a;
+  --tinta: #2b1a12;
+  --tinta-suave: #6b4a36;
+  --papel: #fff6ec;
+  --superficie: #ffffff;
+  --suave: #ffe6cc;
+  --linea: #f0cba5;
+  --boton-fondo: #a8400a;
+  --boton-texto: #ffffff;
+  --alerta-fondo: #f4dcf0;
+  --alerta-texto: #5a1a56;
+  --sombra: 0 1px 2px rgb(43 26 18 / .14), 0 6px 18px rgb(43 26 18 / .10);
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-tema="halloween"] {
+    --lila: #ff8a3d;
+    --violeta: #ffa45c;
+    --tinta: #fdeede;
+    --tinta-suave: #d9bba6;
+    --papel: #130b17;
+    --superficie: #1e1426;
+    --suave: #2c1b35;
+    --linea: #4d3057;
+    --boton-fondo: #ff8a3d;
+    --boton-texto: #1c0f08;
+    --alerta-fondo: #3a1b3a;
+    --alerta-texto: #f6cdf1;
+    --sombra: 0 1px 2px rgb(0 0 0 / .45), 0 6px 18px rgb(0 0 0 / .35);
+  }
+}
+/* Franja decorativa fina bajo la cabecera */
+:root[data-tema="halloween"] .cabecera { border-bottom: 3px solid var(--lila); }
