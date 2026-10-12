@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-10-12T14:32:26+00:00",
-  "total": 282
+  "generado": "2026-10-12T14:40:18+00:00",
+  "total": 281
  },
  "obras": [
   {
@@ -9755,50 +9755,6 @@
     "https://www.movistarplus.es/ficha/ncis-hawai-i-t1?tipo=E&id=2123952"
    ],
    "info": [],
-   "letterboxd": null,
-   "publicada": "2026-10-11 22:17:42"
-  },
-  {
-   "id": 249,
-   "tipo": "serie",
-   "titulo": "NCIS: Hawaii",
-   "titulo_original": "NCIS: Hawaii",
-   "titulo_latam": null,
-   "pais": "EE.UU.",
-   "anio": 2021,
-   "anio_fin": null,
-   "sinopsis": "Jane Tennant, la agente espacial que lidera el grupo de NCIS en Pearl Harbor, resuelve junto a su equipo de especialistas crímenes complejos que atañen a la seguridad nacional y a los militares destinados a Hawái.",
-   "edad": "13",
-   "relevancia": "B",
-   "temporadas": null,
-   "disponible_espana": true,
-   "final_feliz": null,
-   "poster": "249",
-   "generos": [
-    "Policíaca"
-   ],
-   "tematicas": [
-    "Acción",
-    "Drama",
-    "Policíaca"
-   ],
-   "avisos": [
-    {
-     "nombre": "Cancelada",
-     "categoria": null
-    }
-   ],
-   "actrices": [
-    "Tori Anderson",
-    "Yasmine Al-Bustami"
-   ],
-   "directores": [],
-   "donde_ver": [
-    "https://cuevana3.pe/serie/ncis-hawaii"
-   ],
-   "info": [
-    "https://www.imdb.com/title/tt14218674/"
-   ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
   },
