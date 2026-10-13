@@ -24,6 +24,9 @@ window.SAFOTECA_CONFIG = {
   temas: [
     { id: "halloween", desde: "10-15", hasta: "11-02" }
   ],
+  // Botón «avisar de un enlace roto» en las fichas. Se rellena con el bloque que escribe el script
+  // tools/formulario/reportar_enlaces.gs al ejecutarlo; mientras sea null el botón no aparece.
+  reporteEnlaces: null,
   // Opcional: enlace o correo para sugerencias (por ejemplo "mailto:..." o una URL).
   contacto: ""
 };

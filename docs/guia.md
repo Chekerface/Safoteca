@@ -180,3 +180,9 @@ Alternativa a la plantilla de Excel para añadir obras sueltas, pensada para tod
 ## Plataformas y países de «dónde ver»
 
 Al exportar la web, `tools/plataformas.py` lee cada enlace de «dónde ver» y deduce la plataforma y el país con las reglas de `data/plataformas.csv` (dominio, plataforma, país; `auto` = el país va en la ruta, `INT` = sin país). Para añadir una plataforma o corregir un país basta con editar ese CSV y volver a exportar. Lo que no coincide con ninguna regla (webs no oficiales) sale como «Otras». En la web, el filtro «Plataforma» solo muestra por defecto las de España y las que no dependen de un país; el interruptor «Incluir plataformas de otros países» añade las demás, y en la ficha cada enlace lleva el país si no es España.
+
+## Avisos de enlaces rotos (botón de la ficha)
+
+1. **Crear el formulario (una vez):** pega `tools/formulario/reportar_enlaces.gs` en un proyecto nuevo de https://script.google.com y ejecuta `crearFormularioReportes`. En el registro sale un bloque `reporteEnlaces: {...}`: cópialo en `web/config.js` en lugar de `reporteEnlaces: null`. Desde entonces cada enlace de «Dónde ver» lleva una bandera que abre el formulario con la obra y el enlace ya rellenados. El formulario es anónimo.
+2. **Leer los avisos:** descarga la hoja «La Safoteca · Enlaces reportados» como .xlsx o .csv y ejecuta `python tools/leer_reportes.py archivo.xlsx` (con `--comprobar` prueba además cada enlace). Agrupa por enlace, ordena por número de avisos y sugiere: REVISAR (3 o más avisos o la comprobación falla), VER, o RESUELTO (el enlace ya se cambió). Informe en `informes/enlaces_reportados.csv`.
+3. **Corregir:** los enlaces que confirmes se cambian como siempre (plantilla, formulario de altas o a mano).
