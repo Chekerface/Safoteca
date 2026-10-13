@@ -65,6 +65,10 @@
     const k = Object.keys(PLATAFORMAS).find((d) => h === d || h.endsWith("." + d));
     return k ? PLATAFORMAS[k] : h;
   };
+  // Plataformas: el exportador reconoce cada enlace (n = plataforma, p = país de 2 letras o INT, u = enlace).
+  const PAIS = { ES: "España", US: "EE. UU.", GB: "Reino Unido", CA: "Canadá", JP: "Japón", MX: "México", PA: "Panamá", FR: "Francia", DE: "Alemania", IT: "Italia", PT: "Portugal", AR: "Argentina", CO: "Colombia", CL: "Chile", AU: "Australia" };
+  const delPais = (x) => x.p === "ES" || x.p === "INT";            // plataformas que se muestran siempre
+  const clavePlat = (x) => (delPais(x) ? x.n : `${x.n} · ${PAIS[x.p] || x.p}`);
   const anios = (o) => (o.anio ? (o.anio_fin ? `${o.anio}–${o.anio_fin}` : `${o.anio}`) : "");
   const edadNum = (o) => (o.edad == null ? null : o.edad === "TP" ? 0 : parseInt(o.edad, 10));
   const textoEdad = (o) => (o.edad == null ? "" : o.edad === "TP" ? "Todos los públicos" : `+${o.edad}`);
@@ -82,7 +86,8 @@
   function filtrosDe(p) {
     return {
       q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
-      rel: separar(p.get("rel")), edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
+      rel: separar(p.get("rel")), plat: separar(p.get("plat")), otros: p.get("otros") === "1",
+      edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
     };
   }
   function paramsDe(f) {
@@ -92,11 +97,13 @@
     if (f.gen.length) p.set("gen", f.gen.join("|"));
     if (f.tem.length) p.set("tem", f.tem.join("|"));
     if (f.rel.length) p.set("rel", f.rel.join("|"));
+    if (f.plat.length) p.set("plat", f.plat.join("|"));
+    if (f.otros) p.set("otros", "1");
     if (f.edad !== "") p.set("edad", f.edad);
     if (f.orden !== "az") p.set("orden", f.orden);
     return p.toString();
   }
-  const activos = (f) => (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + (f.edad !== "" ? 1 : 0);
+  const activos = (f) => (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + f.plat.length + (f.edad !== "" ? 1 : 0);
 
   function filtrar(f) {
     const q = norm(f.q).trim();
@@ -106,6 +113,7 @@
       if (f.rel.length && !f.rel.includes(o.relevancia)) return false;
       if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
       if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
+      if (f.plat.length && !(o.plataformas || []).some((x) => f.plat.includes(clavePlat(x)) && (f.otros || delPais(x)))) return false;
       if (max !== null) { const n = edadNum(o); if (n !== null && n > max) return false; }
       if (q && !o._h.includes(q)) return false;
       return true;
@@ -236,7 +244,11 @@
   function vistaObra(id) {
     const o = E.porId.get(id);
     if (!o) return `<h1 class="solo-lectores">Ficha no encontrada</h1><div class="vacio"><p>No hemos encontrado esta ficha.</p><a class="boton" href="#/catalogo">Ver el catálogo</a></div>`;
-    const lugares = o.donde_ver.filter(seguro).map((u) => `<a class="boton boton--claro" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(nombreSitio(u))} ${ICONO.fuera}</a>`).join("");
+    const lugares = (o.plataformas || o.donde_ver.map((u) => ({ n: nombreSitio(u), p: "INT", u }))).filter((x) => seguro(x.u)).map((x) => {
+      const pais = x.p === "INT" ? "" : PAIS[x.p] || x.p;
+      return `<a class="boton boton--claro" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer">${esc(x.n)}${pais ? ` <span class="boton__pais${x.p === "ES" ? "" : " boton__pais--fuera"}">${esc(pais)}</span>` : ""} ${ICONO.fuera}</a>`;
+    }).join("");
+    const hayFuera = (o.plataformas || []).some((x) => !delPais(x));
     const letterboxd = o.letterboxd && seguro(o.letterboxd)
       ? `<a class="boton boton--claro" href="${esc(o.letterboxd)}" target="_blank" rel="noopener noreferrer">Ver en Letterboxd ${ICONO.fuera}</a>` : "";
     const info = o.info.filter(seguro).map((u) => `<a class="chip" href="${esc(u)}" target="_blank" rel="noopener noreferrer">${esc(host(u))}</a>`).join("");
@@ -276,7 +288,7 @@
           </header>
           ${avisos}
           ${o.sinopsis ? `<section class="bloque"><h2>Sinopsis</h2><p>${esc(o.sinopsis)}</p></section>` : ""}
-          ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div></section>` : ""}
+          ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div>${hayFuera ? '<p class="resumen" style="margin-top:.5rem">Los enlaces marcados con otro país pueden no estar disponibles en España.</p>' : ""}</section>` : ""}
           ${o.generos.length || o.tematicas.length ? `<section class="bloque"><h2>Explorar</h2>
             ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
             ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
@@ -353,6 +365,18 @@
       + (total > lista.length ? `<p class="resumen" style="flex-basis:100%">Escribe para buscar entre ${E.cat.tematicas.length} temáticas.</p>` : "");
   }
 
+  function chipsPlataforma() {
+    const f = E.F;
+    const cuenta = new Map();
+    visibles().forEach((o) => {
+      const claves = new Set((o.plataformas || []).filter((x) => f.otros || delPais(x)).map(clavePlat));
+      claves.forEach((k) => cuenta.set(k, (cuenta.get(k) || 0) + 1));
+    });
+    f.plat.forEach((k) => { if (!cuenta.has(k)) cuenta.set(k, 0); });
+    const lista = [...cuenta].sort((a, b) => (a[0] === "Otras") - (b[0] === "Otras") || b[1] - a[1] || a[0].localeCompare(b[0], "es"));
+    return lista.map(([k, n]) => `<button class="chip" type="button" data-plat="${esc(k)}" aria-pressed="${f.plat.includes(k)}">${esc(k)} <span class="chip__n">${n}</span></button>`).join("");
+  }
+
   function abrirHoja(modo) {
     const h = hoja();
     const soloEvitar = modo === "evitar";
@@ -374,6 +398,10 @@
         <label class="solo-lectores" for="buscar-tem">Buscar una temática</label>
         <input class="campo" id="buscar-tem" type="search" placeholder="Buscar una temática" autocomplete="off" style="margin-bottom:.6rem">
         <div class="chips" id="chips-tem">${chipsTematica("")}</div></section>
+      <section class="grupo" aria-labelledby="g-plat"><h3 id="g-plat">Plataforma</h3>
+        <div class="chips" id="chips-plat">${chipsPlataforma()}</div>
+        <label class="marca" style="margin-top:.6rem"><input type="checkbox" data-otros ${f.otros ? "checked" : ""}><span>Incluir plataformas de otros países</span></label>
+        <p class="resumen" style="margin-top:.4rem">Por defecto solo salen las de España y las que no dependen de un país. «Otras» agrupa webs no oficiales.</p></section>
       <section class="grupo" aria-labelledby="g-edad"><h3 id="g-edad">Edad recomendada</h3>
         <label class="solo-lectores" for="sel-edad">Edad máxima</label>
         <select class="campo" id="sel-edad">
@@ -502,6 +530,14 @@
     if (rel) { alternar(E.F.rel, rel.dataset.rel); rel.setAttribute("aria-pressed", String(E.F.rel.includes(rel.dataset.rel))); sincronizar(); actualizarPieHoja(); return; }
     const gen = e.target.closest("[data-gen]");
     if (gen) { alternar(E.F.gen, gen.dataset.gen); gen.setAttribute("aria-pressed", String(E.F.gen.includes(gen.dataset.gen))); sincronizar(); actualizarPieHoja(); return; }
+    const otros = e.target.closest("[data-otros]");
+    if (otros) {
+      E.F.otros = otros.checked;
+      if (!otros.checked) E.F.plat = E.F.plat.filter((k) => !k.includes(" · "));
+      sincronizar(); $("#chips-plat").innerHTML = chipsPlataforma(); actualizarPieHoja(); return;
+    }
+    const plat = e.target.closest("[data-plat]");
+    if (plat) { alternar(E.F.plat, plat.dataset.plat); sincronizar(); $("#chips-plat").innerHTML = chipsPlataforma(); actualizarPieHoja(); return; }
     const tem = e.target.closest("[data-tem]");
     if (tem) { alternar(E.F.tem, tem.dataset.tem); sincronizar(); $("#chips-tem").innerHTML = chipsTematica($("#buscar-tem").value); actualizarPieHoja(); return; }
 

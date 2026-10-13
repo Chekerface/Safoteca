@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-13T09:25:02+00:00",
+  "generado": "2026-10-13T09:30:27+00:00",
   "total": 281
  },
  "obras": [
@@ -40,6 +40,13 @@
    ],
    "donde_ver": [
     "https://www.atresplayer.com/series/luimelia/"
+   ],
+   "plataformas": [
+    {
+     "n": "Atresplayer",
+     "p": "ES",
+     "u": "https://www.atresplayer.com/series/luimelia/"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film967041.html"
@@ -95,6 +102,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/sexpact/umc.cmc.6coayadb6a81m7akuleap8ifc"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/sexpact/umc.cmc.6coayadb6a81m7akuleap8ifc"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film368655.html"
    ],
@@ -132,6 +146,13 @@
    "directores": [],
    "donde_ver": [
     "https://seriesgl.com/1448-love-among-us-gl-yuri-sub-espanol/"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://seriesgl.com/1448-love-among-us-gl-yuri-sub-espanol/"
+    }
    ],
    "info": [
     "https://drama.fandom.com/es/wiki/1448_Love_Among_Us"
@@ -172,6 +193,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0PV0Z04ABLV3VKWOBNW7Z2MS20"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0PV0Z04ABLV3VKWOBNW7Z2MS20"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film437966.html"
@@ -237,6 +265,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0N0GVZ870242ELN2BKLYOQS68G/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B083JKK5MY&qid=1653306123"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0N0GVZ870242ELN2BKLYOQS68G/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B083JKK5MY&qid=1653306123"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film736794.html"
    ],
@@ -290,6 +325,7 @@
     "Shunji Iwai"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film167868.html"
    ],
@@ -351,6 +387,13 @@
    "donde_ver": [
     "https://www.amazon.com/Date-Mad-Mary-Se%C3%A1na-Kerslake/dp/B075MT22P1"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/Date-Mad-Mary-Se%C3%A1na-Kerslake/dp/B075MT22P1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film296146.html"
    ],
@@ -393,6 +436,13 @@
    ],
    "donde_ver": [
     "https://tv.apple.com/us/movie/a-new-york-christmas-wedding/umc.cmc.37yl3ynbbwpj6f7cxmauzvo55?l=es"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/a-new-york-christmas-wedding/umc.cmc.37yl3ynbbwpj6f7cxmauzvo55?l=es"
+    }
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/a-new-york-christmas-wedding/",
@@ -438,6 +488,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80209024"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80209024"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film497000.html"
@@ -502,6 +559,13 @@
    "donde_ver": [
     "https://www.rtve.es/alacarta/videos/acacias-38/"
    ],
+   "plataformas": [
+    {
+     "n": "RTVE Play",
+     "p": "ES",
+     "u": "https://www.rtve.es/alacarta/videos/acacias-38/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film629774.html"
    ],
@@ -552,6 +616,13 @@
    "donde_ver": [
     "https://tv.apple.com/us/movie/all-cheerleaders-die/umc.cmc.2u796htlfdb5o6fj5zg3go1ez?l=es"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/all-cheerleaders-die/umc.cmc.2u796htlfdb5o6fj5zg3go1ez?l=es"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film688631.html"
    ],
@@ -590,6 +661,13 @@
    "donde_ver": [
     "https://tv.apple.com/ca/movie/almost-adults/umc.cmc.4xw4z72i23auj5li2qmu8febn"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "CA",
+     "u": "https://tv.apple.com/ca/movie/almost-adults/umc.cmc.4xw4z72i23auj5li2qmu8febn"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film565374.html"
    ],
@@ -626,6 +704,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film225204.html"
    ],
@@ -688,6 +767,13 @@
    "donde_ver": [
     "https://www.atresplayer.com/antena3/series/amar-es-para-siempre/"
    ],
+   "plataformas": [
+    {
+     "n": "Atresplayer",
+     "p": "ES",
+     "u": "https://www.atresplayer.com/antena3/series/amar-es-para-siempre/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film703044.html"
    ],
@@ -726,6 +812,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
+    }
    ],
    "info": [
     "https://es.wikipedia.org/wiki/American_Horror_Stories"
@@ -788,6 +881,13 @@
    "donde_ver": [
     "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
    ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film737581.html"
    ],
@@ -844,6 +944,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/ammonite/umc.cmc.18v3uq9p4iluwarwf3thhzsxw?l=ca"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/ammonite/umc.cmc.18v3uq9p4iluwarwf3thhzsxw?l=ca"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film597105.html"
    ],
@@ -899,6 +1006,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0PHZKDPFY34AP1R0YSQA4KLLTN/ref=atv_dp_season_select_s1"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0PHZKDPFY34AP1R0YSQA4KLLTN/ref=atv_dp_season_select_s1"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film577614.html"
@@ -963,6 +1077,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/Aqu%C3%AD-no-hay-quien-viva/0LY44XATG8MFOQHX4D8ZLCN535"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Aqu%C3%AD-no-hay-quien-viva/0LY44XATG8MFOQHX4D8ZLCN535"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film393232.html"
    ],
@@ -1007,6 +1128,13 @@
    ],
    "donde_ver": [
     "https://animeonline.ninja/pelicula/asagao-to-kase-san/"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://animeonline.ninja/pelicula/asagao-to-kase-san/"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt7456468/?ref_=nv_sr_srsg_0"
@@ -1064,6 +1192,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film979845.html"
    ],
@@ -1109,6 +1238,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80117540"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80117540"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film234251.html"
@@ -1168,6 +1304,13 @@
    "donde_ver": [
     "https://rakuten.tv/es/movies/atomica"
    ],
+   "plataformas": [
+    {
+     "n": "Rakuten TV",
+     "p": "ES",
+     "u": "https://rakuten.tv/es/movies/atomica"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film802281.html"
    ],
@@ -1216,6 +1359,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81435649"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81435649"
+    }
+   ],
    "info": [],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
@@ -1257,6 +1407,13 @@
    "directores": [],
    "donde_ver": [
     "https://youtu.be/F4Hy7ZO_Np4"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtu.be/F4Hy7ZO_Np4"
+    }
    ],
    "info": [
     "https://drama.fandom.com/es/wiki/Bad_Buddy_Series"
@@ -1319,6 +1476,13 @@
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GXn6NpwVG7IBKRwEAAAOo:type:series?camp=googleHBOMAX"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GXn6NpwVG7IBKRwEAAAOo:type:series?camp=googleHBOMAX"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film397275.html"
    ],
@@ -1358,6 +1522,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film867483.html"
    ],
@@ -1411,6 +1576,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/title/70264888"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/70264888"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film800295.html"
@@ -1499,6 +1671,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0O2T6RYBE5PY6F29RLU6TO1UNE/ref=atv_dl_rdr?tag=justesejhd-21"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0O2T6RYBE5PY6F29RLU6TO1UNE/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film957991.html"
    ],
@@ -1542,6 +1721,13 @@
    ],
    "donde_ver": [
     "https://www.youtube.com/watch?v=AibU0-U5wVI"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=AibU0-U5wVI"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt0326773/?ref_=tt_mv_close"
@@ -1591,6 +1777,13 @@
    ],
    "donde_ver": [
     "https://www.filmin.es/pelicula/blue-gate-crossing"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/blue-gate-crossing"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film896969.html"
@@ -1693,6 +1886,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70300800"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70300800"
+    }
+   ],
    "info": [
     "https://www.sensacine.com/series/serie-17140/"
    ],
@@ -1743,6 +1943,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/Bound/0IMQUPXC4INPFTX67LRYWFYZ2L"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Bound/0IMQUPXC4INPFTX67LRYWFYZ2L"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film890820.html"
    ],
@@ -1789,6 +1996,13 @@
    ],
    "donde_ver": [
     "https://www.cinetecagay.com/pelicula/boy-meets-girl-2014-subt-espanol-peliculas-online/"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.cinetecagay.com/pelicula/boy-meets-girl-2014-subt-espanol-peliculas-online/"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film465363.html"
@@ -1854,6 +2068,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70281562"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70281562"
+    }
+   ],
    "info": [
     "https://es.wikipedia.org/wiki/Brooklyn_Nine-Nine"
    ],
@@ -1913,6 +2134,13 @@
    ],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/buffy-cazavampiros/DmJepBrlNiUe"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/series/buffy-cazavampiros/DmJepBrlNiUe"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film611043.html"
@@ -1974,6 +2202,7 @@
     "Jamie Babbit"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/but-im-a-cheerleader/",
    "publicada": "2026-10-11 22:17:42"
@@ -2018,6 +2247,13 @@
    ],
    "donde_ver": [
     "https://tv.apple.com/us/movie/besame-kosher/umc.cmc.2auhexgzov4w0ka6xu8j3x2yj?l=es"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/besame-kosher/umc.cmc.2auhexgzov4w0ka6xu8j3x2yj?l=es"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film158623.html"
@@ -2064,6 +2300,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80098287"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80098287"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film104039.html"
@@ -2116,6 +2359,13 @@
    "donde_ver": [
     "https://www.movistarplus.es/cine/carmen-y-lola/ficha?tipo=E&id=1549015"
    ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://www.movistarplus.es/cine/carmen-y-lola/ficha?tipo=E&id=1549015"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film425269.html"
    ],
@@ -2157,6 +2407,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.youtube.com/playlist?list=PLbvYWjKFvS5rX2yv-k5AJ8oxPoZ9zHcpe"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/playlist?list=PLbvYWjKFvS5rX2yv-k5AJ8oxPoZ9zHcpe"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film697118.html"
@@ -2209,6 +2466,13 @@
    "donde_ver": [
     "https://tv.apple.com/us/movie/carmilla/umc.cmc.7632owz7foe2x3e7gd47xnp2y?l=es"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/carmilla/umc.cmc.7632owz7foe2x3e7gd47xnp2y?l=es"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film999175.html"
    ],
@@ -2260,6 +2524,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/Carol/0IMQRGZDNSD19LFJ91MA85VIVF"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Carol/0IMQRGZDNSD19LFJ91MA85VIVF"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film584711.html"
@@ -2318,6 +2589,13 @@
    "donde_ver": [
     "http://theowlclub.net/"
    ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "http://theowlclub.net/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film629844.html"
    ],
@@ -2360,6 +2638,13 @@
    "directores": [],
    "donde_ver": [
     "https://tv.apple.com/us/show/chasing-life/umc.cmc.6o9ot0d2n7jokuar1w2c4nsi2?l=es"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/show/chasing-life/umc.cmc.6o9ot0d2n7jokuar1w2c4nsi2?l=es"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film973041.html"
@@ -2412,6 +2697,13 @@
    ],
    "donde_ver": [
     "https://www.youtube.com/watch?v=hMjmfyfL_OE"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=hMjmfyfL_OE"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film994802.html"
@@ -2467,6 +2759,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/region/eu/detail/0QX2KXVCB7ILS6GY7NSXYTN3TN/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B078KS24CC&qid=1624716876"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/region/eu/detail/0QX2KXVCB7ILS6GY7NSXYTN3TN/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B078KS24CC&qid=1624716876"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt2261391/?ref_=ttfc_fc_tt"
@@ -2529,6 +2828,13 @@
    "donde_ver": [
     "https://rakuten.tv/es/movies/chloe"
    ],
+   "plataformas": [
+    {
+     "n": "Rakuten TV",
+     "p": "ES",
+     "u": "https://rakuten.tv/es/movies/chloe"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film241386.html"
    ],
@@ -2569,6 +2875,13 @@
    ],
    "donde_ver": [
     "https://tv.apple.com/us/movie/christmas-at-the-ranch/umc.cmc.lcux30sbppe6mdzmxokbb4bk"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/christmas-at-the-ranch/umc.cmc.lcux30sbppe6mdzmxokbb4bk"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film749539.html"
@@ -2636,6 +2949,13 @@
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0P7DSUZ9I0FOBC51LG4JTKY6XI"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0P7DSUZ9I0FOBC51LG4JTKY6XI"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film909397.html"
    ],
@@ -2696,6 +3016,13 @@
    "donde_ver": [
     "https://www.crunchyroll.com/es-es/citrus"
    ],
+   "plataformas": [
+    {
+     "n": "Crunchyroll",
+     "p": "ES",
+     "u": "https://www.crunchyroll.com/es-es/citrus"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film172344.html"
    ],
@@ -2745,6 +3072,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81005150"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81005150"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film830834.html"
@@ -2825,6 +3159,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81261676"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81261676"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt14164234/?ref_=ttkw_kw_tt"
    ],
@@ -2894,6 +3235,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81021245"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81021245"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt11937662/"
    ],
@@ -2957,6 +3305,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80066227"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80066227"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film950648.html"
    ],
@@ -2998,6 +3353,7 @@
    "actrices": [],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film498042.html"
    ],
@@ -3042,6 +3398,7 @@
     "Sammi Cohen"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film242551.html"
    ],
@@ -3092,6 +3449,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0ST7XV2J2AW064A39GPCNM47IT"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0ST7XV2J2AW064A39GPCNM47IT"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film509085.html"
@@ -3150,6 +3514,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80100172"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80100172"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film103430.html"
    ],
@@ -3196,6 +3567,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
@@ -3247,6 +3619,7 @@
     "Bryan Elsley"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film773568.html"
    ],
@@ -3285,6 +3658,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film766252.html"
    ],
@@ -3340,6 +3714,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/de-chica-en-chica"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/de-chica-en-chica"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film944229.html"
    ],
@@ -3382,6 +3763,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80062047"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80062047"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film409270.html"
@@ -3430,6 +3818,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80238565"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80238565"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt7120662/"
@@ -3491,6 +3886,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80213288?source=35"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80213288?source=35"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film727738.html"
@@ -3559,6 +3961,7 @@
     "Tetsuya Yanagisawa"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film140422.html"
    ],
@@ -3600,6 +4003,13 @@
    "directores": [],
    "donde_ver": [
     "https://tv.apple.com/es/show/dickinson/umc.cmc.1ogyy5s2agasxa5qztabrlykn"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/show/dickinson/umc.cmc.1ogyy5s2agasxa5qztabrlykn"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film988714.html"
@@ -3644,6 +4054,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/title/80179394"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80179394"
+    }
    ],
    "info": [
     "https://www.sensacine.com/series/serie-21083/"
@@ -3710,6 +4127,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0TVPB5JM6F1KYCFGN07H07BQHZ/ref=atv_dl_rdr?tag=justesejhd-21"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0TVPB5JM6F1KYCFGN07H07BQHZ/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film833233.html"
    ],
@@ -3763,6 +4187,13 @@
    ],
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GYQU4HwiGn6nCwgEAAAAf:type:series"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GYQU4HwiGn6nCwgEAAAAf:type:series"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film854571.html"
@@ -3823,6 +4254,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80244296"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80244296"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film297186.html"
    ],
@@ -3864,6 +4302,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80115118"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80115118"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film939874.html"
@@ -3933,6 +4378,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/El-Juego-de-las-Llaves/0NLRM4TCQ8NXGY4PCYB3KBWUS4?_encoding=UTF8&language=es_ES"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/El-Juego-de-las-Llaves/0NLRM4TCQ8NXGY4PCYB3KBWUS4?_encoding=UTF8&language=es_ES"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt9863788/"
    ],
@@ -4001,6 +4453,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/el-mundo-que-viene/umc.cmc.781f0is6m1gvm4th7ruw5fdj3"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/el-mundo-que-viene/umc.cmc.781f0is6m1gvm4th7ruw5fdj3"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film210041.html"
    ],
@@ -4053,6 +4512,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/title/80212245"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80212245"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film667689.html"
@@ -4121,6 +4587,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80121387"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80121387"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film490217.html"
@@ -4198,6 +4671,13 @@
    "donde_ver": [
     "https://www.primevideo.com/dp/amzn1.dv.gti.34300bcd-c4e0-4120-80bd-2c1b8a032985?autoplay=0&ref_=atv_cf_strg_wb"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/dp/amzn1.dv.gti.34300bcd-c4e0-4120-80bd-2c1b8a032985?autoplay=0&ref_=atv_cf_strg_wb"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film738959.html"
    ],
@@ -4242,6 +4722,13 @@
    "directores": [],
    "donde_ver": [
     "https://es.hboespana.com/series/embrujadas/f66ed00a-db2b-4d09-9719-04e396e1ac93"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/embrujadas/f66ed00a-db2b-4d09-9719-04e396e1ac93"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film692403.html"
@@ -4292,6 +4779,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/estacion-19/3de52zcRJZGt"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/series/estacion-19/3de52zcRJZGt"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt7053188/?ref_=tt_mv_close"
@@ -4365,6 +4859,13 @@
    ],
    "donde_ver": [
     "https://es.hboespana.com/series/youve-been-tagged/43df8691-0b0c-43f6-ad70-aeb539f6f5e9"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/youve-been-tagged/43df8691-0b0c-43f6-ad70-aeb539f6f5e9"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film782039.html"
@@ -4479,6 +4980,13 @@
    "donde_ver": [
     "https://es.hboespana.com/series/euphoria/47b2dc30-bfdb-433a-a8cd-9a2f5c2adf8a?utm_source=affiliate&utm_medium=cpa&utm_campaign=400165&awc=17045_1625671816_075e8dc710e5ac6e205dee7a17adbfe1"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/euphoria/47b2dc30-bfdb-433a-a8cd-9a2f5c2adf8a?utm_source=affiliate&utm_medium=cpa&utm_campaign=400165&awc=17045_1625671816_075e8dc710e5ac6e205dee7a17adbfe1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film607741.html"
    ],
@@ -4535,6 +5043,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81752024"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81752024"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film502776.html"
@@ -4599,6 +5114,13 @@
    ],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/the-fosters/7Hqh686R8u7X"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/series/the-fosters/7Hqh686R8u7X"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film347798.html"
@@ -4681,6 +5203,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81059720"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81059720"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film877145.html"
    ],
@@ -4732,6 +5261,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/dp/amzn1.dv.gti.bc299285-cead-4ceb-99dc-1639c146ab21"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/dp/amzn1.dv.gti.bc299285-cead-4ceb-99dc-1639c146ab21"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film100880.html"
@@ -4797,6 +5333,7 @@
     "Deepa Mehta"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film611126.html"
    ],
@@ -4853,6 +5390,13 @@
    "directores": [],
    "donde_ver": [
     "https://es.hboespana.com/series/generaion/db567f77-363a-476e-b863-c5abc8cf1555/season-1/547a40a1-6d8b-4181-bdac-75dc932b3c13"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/generaion/db567f77-363a-476e-b863-c5abc8cf1555/season-1/547a40a1-6d8b-4181-bdac-75dc932b3c13"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film153907.html"
@@ -4922,6 +5466,13 @@
    "donde_ver": [
     "https://es.hboespana.com/series/gentleman-jack/72f82bc6-1527-4194-a3a6-fd562ad1fabf/season-1/65e68bc5-16ef-4a82-9b5e-c7f9998283f1"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/gentleman-jack/72f82bc6-1527-4194-a3a6-fd562ad1fabf/season-1/65e68bc5-16ef-4a82-9b5e-c7f9998283f1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film246811.html"
    ],
@@ -4959,6 +5510,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/81025696"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81025696"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film802468.html"
@@ -5015,6 +5573,13 @@
    ],
    "donde_ver": [
     "https://www.amazon.es/dp/B01F466GJS?tag=lesbicanari03-21&linkCode=ogi&th=1&psc=1"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "ES",
+     "u": "https://www.amazon.es/dp/B01F466GJS?tag=lesbicanari03-21&linkCode=ogi&th=1&psc=1"
+    }
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/girltrash-all-night-long/",
@@ -5076,6 +5641,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70143843?trackId=200257859"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70143843?trackId=200257859"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt1327801/"
    ],
@@ -5133,6 +5705,13 @@
    "donde_ver": [
     "https://soyunarcoiris.com/guardando-las-apariencias-2004-online-aqui/"
    ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://soyunarcoiris.com/guardando-las-apariencias-2004-online-aqui/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/ar/film818463.html"
    ],
@@ -5187,6 +5766,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0J83L7X0FGC1WAOPZ9B5DXLJSY"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0J83L7X0FGC1WAOPZ9B5DXLJSY"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film720452.html"
@@ -5243,6 +5829,13 @@
    "donde_ver": [
     "https://play.hbomax.com/series/urn:hbo:series:GYIBToQrPdotpNQEAAAEa?camp=googleHBOMAX&action=play"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/series/urn:hbo:series:GYIBToQrPdotpNQEAAAEa?camp=googleHBOMAX&action=play"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film652981.html"
    ],
@@ -5286,6 +5879,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://en.wikipedia.org/wiki/Hand_aufs_Herz"
    ],
@@ -5322,6 +5916,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail/0O43ITM948NBWNOKIOS31XWVW9/ref=atv_dl_rdr?tag=justesejhd-21"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0O43ITM948NBWNOKIOS31XWVW9/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film273503.html"
@@ -5393,6 +5994,13 @@
    "donde_ver": [
     "http://seriesdesuperheroes.com/"
    ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "http://seriesdesuperheroes.com/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film865627.html"
    ],
@@ -5448,6 +6056,13 @@
    "donde_ver": [
     "https://www.filmin.es/serie/harlots-cortesanas"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/serie/harlots-cortesanas"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film496090.html"
    ],
@@ -5498,6 +6113,7 @@
     "Natasha Arthy"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film410810.html"
    ],
@@ -5553,6 +6169,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81059939"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81059939"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film817757.html"
    ],
@@ -5597,6 +6220,7 @@
     "Kwon Chil In"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://drama.fandom.com/es/wiki/I_Like_It_Hot"
    ],
@@ -5671,6 +6295,7 @@
     "Rebecca Perry Cutter"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film816014.html"
    ],
@@ -5734,6 +6359,13 @@
    "donde_ver": [
     "https://es.hboespana.com/kids/series/hora-de-aventuras/b59e4fbe-a7d5-415f-acd1-493b1d5783af"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/kids/series/hora-de-aventuras/b59e4fbe-a7d5-415f-acd1-493b1d5783af"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film646609.html"
    ],
@@ -5782,6 +6414,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/Humans/0JGKWZQ0IUKP7I1BST98X393M1"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Humans/0JGKWZQ0IUKP7I1BST98X393M1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film474140.html"
    ],
@@ -5827,6 +6466,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail/Heroes/0U45NX2009092D2UEMXMPPZ05K"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Heroes/0U45NX2009092D2UEMXMPPZ05K"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film601390.html"
@@ -5874,6 +6520,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/i-cant-think-straight/umc.cmc.18h9ac7i4aq03lxetga91ib69"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/i-cant-think-straight/umc.cmc.18h9ac7i4aq03lxetga91ib69"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film908407.html"
    ],
@@ -5919,6 +6572,13 @@
    ],
    "donde_ver": [
     "https://tv.apple.com/es/movie/i-care-a-lot/umc.cmc.2ejjoc59j7b4ym1lexewnyafu"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/i-care-a-lot/umc.cmc.2ejjoc59j7b4ym1lexewnyafu"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film997136.html"
@@ -5977,6 +6637,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81346196"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81346196"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film584420.html"
@@ -6042,6 +6709,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/amzn1.dv.gti.15d25b4c-f2d1-41b2-b3ce-7fab35ccaa9d"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/amzn1.dv.gti.15d25b4c-f2d1-41b2-b3ce-7fab35ccaa9d"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film986045.html"
    ],
@@ -6090,6 +6764,13 @@
    "donde_ver": [
     "https://vimeo.com/43876576"
    ],
+   "plataformas": [
+    {
+     "n": "Vimeo",
+     "p": "INT",
+     "u": "https://vimeo.com/43876576"
+    }
+   ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/intersect/",
    "publicada": "2026-10-11 22:17:42"
@@ -6134,6 +6815,13 @@
    ],
    "donde_ver": [
     "https://www.crunchyroll.com/es-es/inugami-san-to-nekoyama-san"
+   ],
+   "plataformas": [
+    {
+     "n": "Crunchyroll",
+     "p": "ES",
+     "u": "https://www.crunchyroll.com/es-es/inugami-san-to-nekoyama-san"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt3658070/?ref_=nv_sr_srsg_4"
@@ -6181,6 +6869,13 @@
    ],
    "donde_ver": [
     "https://www.hbo.com/irma-vep"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO",
+     "p": "US",
+     "u": "https://www.hbo.com/irma-vep"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt13649314/"
@@ -6249,6 +6944,13 @@
    ],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/movies/jennifers-body/7R4j4sTgafrT?irclickid=WcOUBs0Q5xyIWsXSfqTut39BUkBWs9VnlwJh2M0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch%20GmbH-707638"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/movies/jennifers-body/7R4j4sTgafrT?irclickid=WcOUBs0Q5xyIWsXSfqTut39BUkBWs9VnlwJh2M0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch%20GmbH-707638"
+    }
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/jennifers-body/",
@@ -6332,6 +7034,13 @@
    "donde_ver": [
     "https://itunes.apple.com/es/movie/wild-things-diamonds-in-the-rough/id557305100?l=en&ign-mpt=uo%3D4"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://itunes.apple.com/es/movie/wild-things-diamonds-in-the-rough/id557305100?l=en&ign-mpt=uo%3D4"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film297648.html"
    ],
@@ -6370,6 +7079,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0MNPCXOTT3XWCVCHILRDTK1BUH"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0MNPCXOTT3XWCVCHILRDTK1BUH"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film494004.html"
@@ -6435,6 +7151,13 @@
    "donde_ver": [
     "https://es.hboespana.com/series/killing-eve/7a7dc4ae-549d-481b-b7d8-46ef02981745"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/killing-eve/7a7dc4ae-549d-481b-b7d8-46ef02981745"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film423899.html"
    ],
@@ -6473,6 +7196,13 @@
    "directores": [],
    "donde_ver": [
     "https://tv.apple.com/us/movie/besame/umc.cmc.3fzs6or8gi5c1nqasa2bz1fyj?l=es"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/movie/besame/umc.cmc.3fzs6or8gi5c1nqasa2bz1fyj?l=es"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film564166.html"
@@ -6553,6 +7283,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/knife-heart?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/knife-heart?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt6426028/?ref_=fn_al_tt_1"
    ],
@@ -6600,6 +7337,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0IU250P5U5YZMKTD680ETB6J4M/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09MJ6G162&qid=1654609083"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0IU250P5U5YZMKTD680ETB6J4M/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09MJ6G162&qid=1654609083"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film453220.html"
@@ -6658,6 +7402,13 @@
    "donde_ver": [
     "https://www.disneyplus.com/es-es/browse/entity-84fc1672-7df7-454a-b919-4a357c1fa20b"
    ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/browse/entity-84fc1672-7df7-454a-b919-4a357c1fa20b"
+    }
+   ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/battlefield-gender/",
    "publicada": "2026-10-11 22:17:42"
@@ -6713,6 +7464,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81325689"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81325689"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film626221.html"
    ],
@@ -6766,6 +7524,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81334749"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81334749"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film731082.html"
@@ -6826,6 +7591,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81334750"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81334750"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film114869.html"
    ],
@@ -6884,6 +7656,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/amzn1.dv.gti.5cbaf178-b4c8-fe0d-bb65-1ea582728db9"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/amzn1.dv.gti.5cbaf178-b4c8-fe0d-bb65-1ea582728db9"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt8522006/?ref_=tt_mv_close"
@@ -6958,6 +7737,13 @@
    "donde_ver": [
     "https://www.disneyplus.com/movies/the-favourite/1doIy5dHq9ZY?irclickid=Ut8xPnVvdxyLR%3A3SfUwr31IaUkB3SCy1h001Wc0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch%20GmbH-707638"
    ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "INT",
+     "u": "https://www.disneyplus.com/movies/the-favourite/1doIy5dHq9ZY?irclickid=Ut8xPnVvdxyLR%3A3SfUwr31IaUkB3SCy1h001Wc0&irgwc=1&cid=DSS-Affiliate-Impact-Content-JustWatch%20GmbH-707638"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film625500.html"
    ],
@@ -7006,6 +7792,13 @@
    ],
    "donde_ver": [
     "https://www.filmin.es/serie/la-fragancia-del-primer-amor#details"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/serie/la-fragancia-del-primer-amor#details"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film306515.html"
@@ -7078,6 +7871,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80027563"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80027563"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt1695360/?ref_=fn_al_tt_1"
    ],
@@ -7128,6 +7928,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/title/80109193"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80109193"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film592267.html"
@@ -7181,6 +7988,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81100780"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81100780"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film569007.html"
@@ -7246,6 +8060,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/la-maldicion-de-chucky/umc.cmc.2u7k7iq7qgbfob5kjii7wgj8e"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/la-maldicion-de-chucky/umc.cmc.2u7k7iq7qgbfob5kjii7wgj8e"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film952374.html"
    ],
@@ -7301,6 +8122,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80242724"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80242724"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film960969.html"
    ],
@@ -7347,6 +8175,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80211638"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80211638"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film716699.html"
@@ -7415,6 +8250,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81213653"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81213653"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film965535.html"
    ],
@@ -7468,6 +8310,13 @@
    "donde_ver": [
     "https://tv.apple.com/us/show/lost-girl/umc.cmc.f4uqogck6iuy0aelfbfvvw72?l=es"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/show/lost-girl/umc.cmc.f4uqogck6iuy0aelfbfvvw72?l=es"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film947873.html"
    ],
@@ -7512,6 +8361,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0U3073DE9J38JXZ5WLZW5O8MH3/ref=atv_dp_amz_det_c_UTPsmN_1_14/?language=es_ES"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0U3073DE9J38JXZ5WLZW5O8MH3/ref=atv_dp_amz_det_c_UTPsmN_1_14/?language=es_ES"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film113287.html"
@@ -7579,6 +8435,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/la-vida-de-adele?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/la-vida-de-adele?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt2278871/?ref_=ttkw_kw_tt"
    ],
@@ -7632,6 +8495,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.hbomax.com/es/es/series/urn:hbo:series:GYXBzKw3n5aJmOwEAAAAE"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://www.hbomax.com/es/es/series/urn:hbo:series:GYXBzKw3n5aJmOwEAAAAE"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film904340.html"
@@ -7696,6 +8566,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81038963"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81038963"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film165156.html"
    ],
@@ -7733,6 +8610,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film724770.html"
    ],
@@ -7792,6 +8670,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0FLGKC8LLQUBFM0MTMWG0SNTPE/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09HK1FHYX&qid=1651925884"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0FLGKC8LLQUBFM0MTMWG0SNTPE/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09HK1FHYX&qid=1651925884"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt15076878/"
    ],
@@ -7848,6 +8733,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80084164#:~:text=Las%20cr%C3%B3nicas%20de%20Shannara%20%7C%20Netflix"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80084164#:~:text=Las%20cr%C3%B3nicas%20de%20Shannara%20%7C%20Netflix"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt1051220/"
    ],
@@ -7893,6 +8785,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/81189100"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81189100"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film717016.html"
@@ -7955,6 +8854,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81000389"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81000389"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film262148.html"
    ],
@@ -7991,6 +8897,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film892393.html"
    ],
@@ -8062,6 +8969,13 @@
    "donde_ver": [
     "https://tv.apple.com/pa/show/faking-it/umc.cmc.35t3dl85h81a9zks7jk4o0qoe"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "PA",
+     "u": "https://tv.apple.com/pa/show/faking-it/umc.cmc.35t3dl85h81a9zks7jk4o0qoe"
+    }
+   ],
    "info": [],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
@@ -8106,6 +9020,13 @@
    "donde_ver": [
     "https://es.hboespana.com/series/legacies/fbce98f6-f1be-4fcd-8883-0113eaf20ba5"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/legacies/fbce98f6-f1be-4fcd-8883-0113eaf20ba5"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film782124.html"
    ],
@@ -8143,6 +9064,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80201542"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80201542"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film164507.html"
@@ -8200,6 +9128,13 @@
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0O4V98FHHP8IRUMGYRBH490X5O"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0O4V98FHHP8IRUMGYRBH490X5O"
+    }
+   ],
    "info": [
     "https://www.sensacine.com/series/serie-19136/"
    ],
@@ -8241,6 +9176,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/l-bomb/umc.cmc.5xnxj8ux3zt81r2bxogeknlz8"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/l-bomb/umc.cmc.5xnxj8ux3zt81r2bxogeknlz8"
+    }
+   ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/lez-bomb/",
    "publicada": "2026-10-11 22:17:42"
@@ -8278,6 +9220,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail?gti=amzn1.dv.gti.880ed2c8-d06c-4938-bac0-f9a02cdc625a"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.880ed2c8-d06c-4938-bac0-f9a02cdc625a"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film821927.html"
@@ -8358,6 +9307,13 @@
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0S28LVDDBXFLLITX7DTFVB0NHA"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0S28LVDDBXFLLITX7DTFVB0NHA"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film661747.html"
    ],
@@ -8412,6 +9368,13 @@
    ],
    "donde_ver": [
     "https://tv.apple.com/es/show/little-voice/umc.cmc.4x932osv992wjjdq7ce12za2r"
+   ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/show/little-voice/umc.cmc.4x932osv992wjjdq7ce12za2r"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film248229.html"
@@ -8491,6 +9454,13 @@
    "donde_ver": [
     "https://www.amazon.com/Keeps-Alive-Hannah-Emily-Anderson/dp/B07HKQLCW1"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/Keeps-Alive-Hannah-Emily-Anderson/dp/B07HKQLCW1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/ve/film866238.html"
    ],
@@ -8563,6 +9533,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70283264"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70283264"
+    }
+   ],
    "info": [
     "https://www.sensacine.com/series/serie-11871/"
    ],
@@ -8623,6 +9600,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/los-chicos-estan-bien?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/los-chicos-estan-bien?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film519387.html"
    ],
@@ -8681,6 +9665,13 @@
    "donde_ver": [
     "https://www.atresplayer.com/antena3/series/los-hombres-de-paco/"
    ],
+   "plataformas": [
+    {
+     "n": "Atresplayer",
+     "p": "ES",
+     "u": "https://www.atresplayer.com/antena3/series/los-hombres-de-paco/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film467143.html"
    ],
@@ -8725,6 +9716,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81399614"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81399614"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film209397.html"
@@ -8778,6 +9776,13 @@
    ],
    "donde_ver": [
     "https://youtu.be/UlnFJ1YuwN4"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtu.be/UlnFJ1YuwN4"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film421476.html"
@@ -8837,6 +9842,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81342553"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81342553"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film122379.html"
    ],
@@ -8879,6 +9891,13 @@
    "donde_ver": [
     "https://www.amazon.co.jp/gp/video/detail/amzn1.dv.gti.7d7e023f-83e1-42e3-9802-996b30bcc246"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "JP",
+     "u": "https://www.amazon.co.jp/gp/video/detail/amzn1.dv.gti.7d7e023f-83e1-42e3-9802-996b30bcc246"
+    }
+   ],
    "info": [
     "https://drama.fandom.com/es/wiki/Love_My_Life"
    ],
@@ -8919,6 +9938,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.hallmarkchannel.com/love-classified"
+   ],
+   "plataformas": [
+    {
+     "n": "Hallmark",
+     "p": "US",
+     "u": "https://www.hallmarkchannel.com/love-classified"
+    }
    ],
    "info": [
     "https://www.imdb.com/video/vi726582041?playlistId=tt17506016&ref_=tt_ov_vi"
@@ -8986,6 +10012,7 @@
     "Yuu Kou"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt0816393/?ref_=nv_sr_srsg_5"
    ],
@@ -9041,6 +10068,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0ONE3AMWUU71007KAB1ISU1VGH/ref=atv_sr_fle_c_Tn74RA_2_1_2?sr=1-2&pageTypeIdSource=ASIN&pageTypeId=B09W3687J8&qid=1656505429"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0ONE3AMWUU71007KAB1ISU1VGH/ref=atv_sr_fle_c_Tn74RA_2_1_2?sr=1-2&pageTypeIdSource=ASIN&pageTypeId=B09W3687J8&qid=1656505429"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt19848956/fullcredits/?ref_=tt_cl_sm"
    ],
@@ -9089,6 +10123,13 @@
    ],
    "donde_ver": [
     "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.b80d5d9a-0dd4-4de0-94d6-82061927166b"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.b80d5d9a-0dd4-4de0-94d6-82061927166b"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film852523.html"
@@ -9141,6 +10182,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81002483"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81002483"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt11937732/"
    ],
@@ -9183,6 +10231,13 @@
    "directores": [],
    "donde_ver": [
     "https://es.hboespana.com/series/marvels-runaways/fcb7a7d2-8455-4b8c-a32f-7d4f393c8b0b"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/marvels-runaways/fcb7a7d2-8455-4b8c-a32f-7d4f393c8b0b"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film469463.html"
@@ -9229,6 +10284,7 @@
     "Yukihiro Matsushita"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt1163560/?ref_=ttfc_fc_tt"
    ],
@@ -9282,6 +10338,7 @@
     "Donna Deitch"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film465490.html"
    ],
@@ -9335,6 +10392,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://drama.fandom.com/es/wiki/Mendol:_Ikemen_Idol"
    ],
@@ -9426,6 +10484,7 @@
     "Patty Jenkins"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film977091.html"
    ],
@@ -9467,6 +10526,7 @@
     "Lim Dae-hyung"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/moonlit-winter/",
    "publicada": "2026-10-11 22:17:42"
@@ -9515,6 +10575,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail/0OFMNBD4ZNAP65AL7LEA774KJA/ref=atv_sr_fle_c_Tn74RA__1_1_1?pageTypeIdSource=ASIN&language=es_ES&sr=1-1&pageTypeId=B087M5RSWF&qid=1624575056"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0OFMNBD4ZNAP65AL7LEA774KJA/ref=atv_sr_fle_c_Tn74RA__1_1_1?pageTypeIdSource=ASIN&language=es_ES&sr=1-1&pageTypeId=B087M5RSWF&qid=1624575056"
+    }
    ],
    "info": [],
    "letterboxd": null,
@@ -9598,6 +10665,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0RZED4V5SOLKXX2U04B6XONCIM/ref=atv_dl_rdr?tag=justesejhd-21"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0RZED4V5SOLKXX2U04B6XONCIM/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film993489.html"
    ],
@@ -9638,6 +10712,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film798958.html"
    ],
@@ -9697,6 +10772,13 @@
    "donde_ver": [
     "https://play.google.com/store/movies/details/Mulholland_Drive?gl=ES&hl=en&id=vDRw4TsxU_U.P"
    ],
+   "plataformas": [
+    {
+     "n": "Google Play",
+     "p": "INT",
+     "u": "https://play.google.com/store/movies/details/Mulholland_Drive?gl=ES&hl=en&id=vDRw4TsxU_U.P"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film178603.html"
    ],
@@ -9746,6 +10828,13 @@
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0SJCL0TTH3MR2OZKM0TJF8UMB1"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0SJCL0TTH3MR2OZKM0TJF8UMB1"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film548569.html"
    ],
@@ -9794,6 +10883,13 @@
    "donde_ver": [
     "https://www.movistarplus.es/ficha/ncis-hawai-i-t1?tipo=E&id=2123952"
    ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://www.movistarplus.es/ficha/ncis-hawai-i-t1?tipo=E&id=2123952"
+    }
+   ],
    "info": [],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
@@ -9834,6 +10930,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.crunchyroll.com/es-es/watch/G675N5NZR/a-secret-between-girls"
+   ],
+   "plataformas": [
+    {
+     "n": "Crunchyroll",
+     "p": "ES",
+     "u": "https://www.crunchyroll.com/es-es/watch/G675N5NZR/a-secret-between-girls"
+    }
    ],
    "info": [
     "https://naruho.do/es/anime/netsuzou-trap"
@@ -9886,6 +10989,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80241181"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80241181"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt7817340/"
    ],
@@ -9924,6 +11034,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film853287.html"
    ],
@@ -9991,6 +11102,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80233374"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80233374"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt11343600/?ref_=fn_al_tt_1"
    ],
@@ -10028,6 +11146,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80095532"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80095532"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film734390.html"
@@ -10163,6 +11288,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70242311"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70242311"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film233858.html"
    ],
@@ -10213,6 +11345,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/70276033"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/70276033"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film438583.html"
    ],
@@ -10254,6 +11393,13 @@
    ],
    "donde_ver": [
     "https://seriesgl.com/our-love-story-sub-espanol/"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://seriesgl.com/our-love-story-sub-espanol/"
+    }
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/our-love-story/",
@@ -10319,6 +11465,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/dp/amzn1.dv.gti.04d08c86-41ed-4da3-bd1c-90914aeaa972?autoplay=0&ref_=atv_cf_strg_wb"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/dp/amzn1.dv.gti.04d08c86-41ed-4da3-bd1c-90914aeaa972?autoplay=0&ref_=atv_cf_strg_wb"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film512079.html"
@@ -10392,6 +11545,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80223140"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80223140"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film836199.html"
    ],
@@ -10456,6 +11616,13 @@
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GYqM-cQPaAKeUiwEAAAAC:type:series"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GYqM-cQPaAKeUiwEAAAAC:type:series"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film956485.html"
    ],
@@ -10503,6 +11670,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/dp/0QGELM2HOGLBWF6LZUE5SAPW88?ref_=dvm_pds_tit_ES_lb_s_g_mkw_swOV2yRGDKW-dc&mrntrk=pcrid_585689447658_slid__pgrid_134222306059_pgeo_1005411_x__ptid_kwd-1418869973943&gclsrc=aw.ds&&gclid=CjwKCAjwu_mSBhAYEiwA5BBmfzxFMUe9HqsTyBL0MgxkVyv73OCz8f_k0umdmRr7nBYJawZ7WIvR8xoC41QQAvD_BwE"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/dp/0QGELM2HOGLBWF6LZUE5SAPW88?ref_=dvm_pds_tit_ES_lb_s_g_mkw_swOV2yRGDKW-dc&mrntrk=pcrid_585689447658_slid__pgrid_134222306059_pgeo_1005411_x__ptid_kwd-1418869973943&gclsrc=aw.ds&&gclid=CjwKCAjwu_mSBhAYEiwA5BBmfzxFMUe9HqsTyBL0MgxkVyv73OCz8f_k0umdmRr7nBYJawZ7WIvR8xoC41QQAvD_BwE"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film478891.html"
@@ -10570,6 +11744,13 @@
    "donde_ver": [
     "https://es.hboespana.com/series/why-women-kill/d5f6e79a-365e-4897-b142-7dac380bc512"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/why-women-kill/d5f6e79a-365e-4897-b142-7dac380bc512"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film226949.html"
    ],
@@ -10626,6 +11807,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail?gti=amzn1.dv.gti.73f829e1-6d75-479d-98da-d21f57de55cd"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.73f829e1-6d75-479d-98da-d21f57de55cd"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film674963.html"
@@ -10691,6 +11879,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/pride?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/pride?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film412425.html"
    ],
@@ -10739,6 +11934,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80164216"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80164216"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film595523.html"
    ],
@@ -10785,6 +11987,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0IZK4DNGR1KEO998P7M475R1FI/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B08F2VQSPW&qid=1630939893"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0IZK4DNGR1KEO998P7M475R1FI/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B08F2VQSPW&qid=1630939893"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film533952.html"
@@ -10854,6 +12063,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0OSBYJGI69EL41B2OQBB4TA2K9/ref=atv_dl_rdr?tag=justesejhd-21"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0OSBYJGI69EL41B2OQBB4TA2K9/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film961786.html"
    ],
@@ -10895,6 +12111,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail?gti=amzn1.dv.gti.2fd9fbab-4082-4169-913c-32b039ce4125"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail?gti=amzn1.dv.gti.2fd9fbab-4082-4169-913c-32b039ce4125"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film218131.html"
@@ -10948,6 +12171,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/81127150?source=35"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81127150?source=35"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film955152.html"
@@ -11004,6 +12234,7 @@
     "Keizô Kusakawa"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt3396572/?ref_=nv_sr_srsg_0"
    ],
@@ -11051,6 +12282,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80133311"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80133311"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film910593.html"
@@ -11110,6 +12348,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/region/eu/detail/Rosas-rojas/0MNOTZPS7N398CPRVMAA9DJLEV/ref=atv_nb_lcl_es_ES?language=es_ES&ie=UTF8"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/region/eu/detail/Rosas-rojas/0MNOTZPS7N398CPRVMAA9DJLEV/ref=atv_nb_lcl_es_ES?language=es_ES&ie=UTF8"
+    }
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/imagine-me-you/",
@@ -11207,6 +12452,13 @@
    "donde_ver": [
     "https://www.crunchyroll.com/es-es/rwby"
    ],
+   "plataformas": [
+    {
+     "n": "Crunchyroll",
+     "p": "ES",
+     "u": "https://www.crunchyroll.com/es-es/rwby"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film826469.html"
    ],
@@ -11248,6 +12500,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt3198956/?ref_=tt_sims_tt_t_1"
    ],
@@ -11290,6 +12543,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt1515992/?ref_=nv_sr_srsg_0"
    ],
@@ -11358,6 +12612,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80053653"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80053653"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film286333.html"
    ],
@@ -11423,6 +12684,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81001036"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81001036"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt9724628/"
    ],
@@ -11481,6 +12749,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80025744"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80025744"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film235499.html"
    ],
@@ -11526,6 +12801,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film440036.html"
    ],
@@ -11585,6 +12861,13 @@
    "donde_ver": [
     "https://www.rtve.es/play/videos/servir-y-proteger/"
    ],
+   "plataformas": [
+    {
+     "n": "RTVE Play",
+     "p": "ES",
+     "u": "https://www.rtve.es/play/videos/servir-y-proteger/"
+    }
+   ],
    "info": [
     "https://es.wikipedia.org/wiki/Servir_y_proteger"
    ],
@@ -11643,6 +12926,13 @@
    ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80197526"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80197526"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt7767422/"
@@ -11718,6 +13008,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80179762"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80179762"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt7745956/?ref_=nv_sr_srsg_0"
    ],
@@ -11775,6 +13072,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/shiva-baby?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/shiva-baby?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt11317142/?ref_=ttkw_kw_tt"
    ],
@@ -11812,6 +13116,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.dailymotion.com/video/x11gi3k"
+   ],
+   "plataformas": [
+    {
+     "n": "Dailymotion",
+     "p": "INT",
+     "u": "https://www.dailymotion.com/video/x11gi3k"
+    }
    ],
    "info": [],
    "letterboxd": null,
@@ -11893,6 +13204,13 @@
    ],
    "donde_ver": [
     "https://skamespana.movistarplus.es/capitulos/"
+   ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://skamespana.movistarplus.es/capitulos/"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film596452.html"
@@ -11978,6 +13296,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/70140438"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/70140438"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film556666.html"
    ],
@@ -12037,6 +13362,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80105452"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80105452"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film219444.html"
@@ -12099,6 +13431,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80177458"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80177458"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film654725.html"
    ],
@@ -12158,6 +13497,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0R9X4PFA3821FC97JT8HJZBQSE/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B082XJZLHL&qid=1654176001"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0R9X4PFA3821FC97JT8HJZBQSE/ref=atv_sr_fle_c_Tn74RA_1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B082XJZLHL&qid=1654176001"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film123573.html"
@@ -12224,6 +13570,13 @@
    "donde_ver": [
     "https://tv.apple.com/us/show/south-of-nowhere/umc.cmc.3328bbwbxa24zmaa2sxccxols?l=es"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/show/south-of-nowhere/umc.cmc.3328bbwbxa24zmaa2sxccxols?l=es"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film175127.html"
    ],
@@ -12265,6 +13618,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0K6617X6BN6QWRUF6HKI2XPXOL/ref=atv_dl_rdr?tag=justesejhd-21"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0K6617X6BN6QWRUF6HKI2XPXOL/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film768004.html"
@@ -12315,6 +13675,13 @@
    ],
    "donde_ver": [
     "https://www.cartoonnetwork.es/show/steven-universe/videos"
+   ],
+   "plataformas": [
+    {
+     "n": "Cartoon Network",
+     "p": "ES",
+     "u": "https://www.cartoonnetwork.es/show/steven-universe/videos"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt3061046/"
@@ -12368,6 +13735,7 @@
     "Masayuki Sakoi"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt0996275/"
    ],
@@ -12420,6 +13788,13 @@
    "donde_ver": [
     "https://www.youtube.com/playlist?list=PLXcBD1c3lsUj_5EI-qirtIqaWD2nAgCWZ"
    ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/playlist?list=PLXcBD1c3lsUj_5EI-qirtIqaWD2nAgCWZ"
+    }
+   ],
    "info": [
     "https://m.imdb.com/title/tt21652514/?ref_=tt_sims_tt_t_1"
    ],
@@ -12467,6 +13842,7 @@
     "Kenichi Kasai"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film445159.html"
    ],
@@ -12546,6 +13922,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/0TUHE2B58GS0P1GH1500DA4TYV/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09DP19PYM&qid=1634805640"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0TUHE2B58GS0P1GH1500DA4TYV/ref=atv_sr_fle_c_Tn74RA__1_1_1?sr=1-1&pageTypeIdSource=ASIN&pageTypeId=B09DP19PYM&qid=1634805640"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film688965.html"
    ],
@@ -12587,6 +13970,7 @@
    "actrices": [],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://naruho.do/es/anime/tachibanakan-triangle-tv#"
    ],
@@ -12633,6 +14017,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/Bold-Type/0RQY677JW1DEAGZEZYL9TKUMOG?_encoding=UTF8&language=es_ES"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Bold-Type/0RQY677JW1DEAGZEZYL9TKUMOG?_encoding=UTF8&language=es_ES"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film538230.html"
    ],
@@ -12675,6 +14066,13 @@
    ],
    "donde_ver": [
     "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.f2aa3156-76de-497d-b84c-bc9fbef6a4b8"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.f2aa3156-76de-497d-b84c-bc9fbef6a4b8"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film746850.html"
@@ -12722,6 +14120,13 @@
    ],
    "donde_ver": [
     "https://www.primevideo.com/detail/0GN61Z47R4CMSQFFGIS6AMDHKB/ref=atv_dl_rdr?tag=justesejhd-21"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0GN61Z47R4CMSQFFGIS6AMDHKB/ref=atv_dl_rdr?tag=justesejhd-21"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film562976.html"
@@ -12776,6 +14181,13 @@
    ],
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GYc3xuwu2x5rCFgEAAALb:type:feature"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GYc3xuwu2x5rCFgEAAALb:type:feature"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film486577.html"
@@ -12840,6 +14252,13 @@
    "donde_ver": [
     "https://www.rtve.es/play/videos/cine-club-play/doncella/6104904/"
    ],
+   "plataformas": [
+    {
+     "n": "RTVE Play",
+     "p": "ES",
+     "u": "https://www.rtve.es/play/videos/cine-club-play/doncella/6104904/"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film948449.html"
    ],
@@ -12887,6 +14306,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/81237854"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81237854"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film886031.html"
@@ -12995,6 +14421,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film189457.html"
    ],
@@ -13067,6 +14494,13 @@
    "donde_ver": [
     "https://tv.apple.com/us/show/the-l-word-generation-q/umc.cmc.4rxi1zlc98z8be54slmg0886y?l=es"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "US",
+     "u": "https://tv.apple.com/us/show/the-l-word-generation-q/umc.cmc.4rxi1zlc98z8be54slmg0886y?l=es"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film213275.html"
    ],
@@ -13126,6 +14560,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80199029"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80199029"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film731970.html"
    ],
@@ -13171,6 +14612,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80238357"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80238357"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film299957.html"
@@ -13241,6 +14689,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81079914"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81079914"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film545046.html"
    ],
@@ -13281,6 +14736,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80234304"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80234304"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film634805.html"
@@ -13329,6 +14791,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/dp/amzn1.dv.gti.f2b1a379-6082-1b8a-8ac0-b7337ef26eea?autoplay=1&ref_=atv_cf_strg_wb"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/dp/amzn1.dv.gti.f2b1a379-6082-1b8a-8ac0-b7337ef26eea?autoplay=1&ref_=atv_cf_strg_wb"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film750987.html"
@@ -13399,6 +14868,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80028672"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80028672"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film923548.html"
    ],
@@ -13439,6 +14915,13 @@
    "directores": [],
    "donde_ver": [
     "https://es.hboespana.com/series/the-strain/323795e8-1cc3-4d1e-840a-dec15a2bd90a"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/series/the-strain/323795e8-1cc3-4d1e-840a-dec15a2bd90a"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film863644.html"
@@ -13490,6 +14973,13 @@
    "donde_ver": [
     "https://www.youtube.com/playlist?list=PLXcBD1c3lsUj0Y8qHYFqmUhXOnOTl6CP8"
    ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/playlist?list=PLXcBD1c3lsUj0Y8qHYFqmUhXOnOTl6CP8"
+    }
+   ],
    "info": [
     "https://m.imdb.com/title/tt13252208/"
    ],
@@ -13529,6 +15019,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80186863"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80186863"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film884519.html"
@@ -13578,6 +15075,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.amazon.com/The-Wilds-Season-1/dp/B08NLT6PDZ"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/The-Wilds-Season-1/dp/B08NLT6PDZ"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film744228.html"
@@ -13637,6 +15141,13 @@
    "donde_ver": [
     "https://tv.apple.com/es/movie/the-world-unseen/umc.cmc.75mpsnkhpmrvp0kefc96rxo1t"
    ],
+   "plataformas": [
+    {
+     "n": "Apple TV",
+     "p": "ES",
+     "u": "https://tv.apple.com/es/movie/the-world-unseen/umc.cmc.75mpsnkhpmrvp0kefc96rxo1t"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film814687.html"
    ],
@@ -13692,6 +15203,13 @@
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GYaYhtQ2qpIOiiQEAAAAO:type:feature"
    ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GYaYhtQ2qpIOiiQEAAAAO:type:feature"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film223888.html"
    ],
@@ -13745,6 +15263,13 @@
    ],
    "donde_ver": [
     "https://www.filmin.es/pelicula/thelma-y-louise?utm_source=justwatch"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/thelma-y-louise?utm_source=justwatch"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film373151.html"
@@ -13803,6 +15328,13 @@
    "donde_ver": [
     "https://www.amazon.com/dp/B08XXFVVV8"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/dp/B08XXFVVV8"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film150340.html"
    ],
@@ -13847,6 +15379,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.mitele.es/series-online/tierra-de-lobos/"
+   ],
+   "plataformas": [
+    {
+     "n": "Mitele",
+     "p": "ES",
+     "u": "https://www.mitele.es/series-online/tierra-de-lobos/"
+    }
    ],
    "info": [
     "https://www.formulatv.com/series/tierra-de-lobos/"
@@ -13896,6 +15435,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.netflix.com/es/title/80117551"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80117551"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film948280.html"
@@ -13952,6 +15498,13 @@
    ],
    "donde_ver": [
     "https://play.hbomax.com/series/urn:hbo:series:GYW-orArEQblUwwEAAAAG?camp=googleHBOMAX&action=play"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/series/urn:hbo:series:GYW-orArEQblUwwEAAAAG?camp=googleHBOMAX&action=play"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film594981.html"
@@ -14013,6 +15566,13 @@
    "donde_ver": [
     "https://ver.movistarplus.es/ficha?id=22107&origen=GGL"
    ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://ver.movistarplus.es/ficha?id=22107&origen=GGL"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film583147.html"
    ],
@@ -14063,6 +15623,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/tove?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/tove?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt11007444/?ref_=nv_sr_srsg_0"
    ],
@@ -14108,6 +15675,7 @@
     "Maeda Masato"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://drama.fandom.com/es/wiki/Transit_Girls"
    ],
@@ -14148,6 +15716,7 @@
     "Dominic Savage"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.imdb.com/title/tt2065460/"
    ],
@@ -14192,6 +15761,7 @@
     "Kim Jo Kwang Soo"
    ],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://drama.fandom.com/es/wiki/Two_Weddings_and_a_Funeral"
    ],
@@ -14248,6 +15818,13 @@
    "donde_ver": [
     "https://www.netflix.com/title/80103417"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/80103417"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film839570.html"
    ],
@@ -14297,6 +15874,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/un-amor-de-verano?origin=searcher&origin-type=primary"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/un-amor-de-verano?origin=searcher&origin-type=primary"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film433227.html"
    ],
@@ -14341,6 +15925,13 @@
    "donde_ver": [
     "https://www.primevideo.com/detail/Un-monstruo-en-mi-puerta/0M7J595TI52HNLDL1Z0SO0R5JP"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/Un-monstruo-en-mi-puerta/0M7J595TI52HNLDL1Z0SO0R5JP"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film808206.html"
    ],
@@ -14381,6 +15972,13 @@
    ],
    "donde_ver": [
     "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.3eecce14-8dab-4da8-995a-d7c4006e0d46"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.3eecce14-8dab-4da8-995a-d7c4006e0d46"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film562781.html"
@@ -14431,6 +16029,13 @@
    ],
    "donde_ver": [
     "https://es.hboespana.com/movies/unpregnant/"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://es.hboespana.com/movies/unpregnant/"
+    }
    ],
    "info": [
     "https://www.imdb.com/title/tt10556022/"
@@ -14505,6 +16110,13 @@
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0JWI741FJRUHGX8G6J55RHURZT"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0JWI741FJRUHGX8G6J55RHURZT"
+    }
+   ],
    "info": [],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
@@ -14544,6 +16156,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/single-drunk-female/6rWP5Hio5Dy7?distributionPartner=google"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/series/single-drunk-female/6rWP5Hio5Dy7?distributionPartner=google"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film816021.html"
@@ -14586,6 +16205,7 @@
    ],
    "directores": [],
    "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film294343.html"
    ],
@@ -14633,6 +16253,13 @@
    ],
    "donde_ver": [
     "https://ver.movistarplus.es/ficha/vigil-conspiracion-nuclear-t1/episodio-1?id=1842496"
+   ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://ver.movistarplus.es/ficha/vigil-conspiracion-nuclear-t1/episodio-1?id=1842496"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film865762.html"
@@ -14686,6 +16313,13 @@
    ],
    "donde_ver": [
     "https://www.filmin.es/pelicula/violette"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/violette"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film189204.html"
@@ -14741,6 +16375,13 @@
    "donde_ver": [
     "https://rakuten.tv/es/movies/vita-virginia"
    ],
+   "plataformas": [
+    {
+     "n": "Rakuten TV",
+     "p": "ES",
+     "u": "https://rakuten.tv/es/movies/vita-virginia"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film331948.html"
    ],
@@ -14794,6 +16435,13 @@
    ],
    "donde_ver": [
     "https://www.youtube.com/watch?v=3AAg7rrtbPE"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=3AAg7rrtbPE"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film668567.html"
@@ -14851,6 +16499,13 @@
    "donde_ver": [
     "https://www.filmin.es/pelicula/wildland?utm_source=justwatch"
    ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/wildland?utm_source=justwatch"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film691433.html"
    ],
@@ -14902,6 +16557,13 @@
    "directores": [],
    "donde_ver": [
     "https://www.syfy.es/series/wynonna-earp"
+   ],
+   "plataformas": [
+    {
+     "n": "Syfy",
+     "p": "ES",
+     "u": "https://www.syfy.es/series/wynonna-earp"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film619365.html"
@@ -14970,6 +16632,13 @@
    "donde_ver": [
     "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.50a9f6ff-a38f-0f07-e8d4-32da19502f74"
    ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "US",
+     "u": "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.50a9f6ff-a38f-0f07-e8d4-32da19502f74"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt0112230/"
    ],
@@ -15023,6 +16692,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/81392185"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81392185"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film611511.html"
    ],
@@ -15073,6 +16749,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80998427"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80998427"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt6776106/?ref_=nv_sr_srsg_0"
    ],
@@ -15120,6 +16803,13 @@
    ],
    "donde_ver": [
     "https://www.youtube.com/watch?v=yYMzpQW-k6U"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=yYMzpQW-k6U"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film254599.html"
@@ -15170,6 +16860,13 @@
    "donde_ver": [
     "https://www.youtube.com/watch?v=oX01rC5fHcg"
    ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=oX01rC5fHcg"
+    }
+   ],
    "info": [
     "https://drama.fandom.com/es/wiki/Yes_or_No_2.5"
    ],
@@ -15213,6 +16910,13 @@
    ],
    "donde_ver": [
     "https://www.youtube.com/watch?v=6nbOQsaXN5E"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=6nbOQsaXN5E"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film870677.html"
@@ -15268,6 +16972,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80211991"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80211991"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film794893.html"
    ],
@@ -15314,6 +17025,13 @@
    "donde_ver": [
     "https://www.crunchyroll.com/es/yuruyuri"
    ],
+   "plataformas": [
+    {
+     "n": "Crunchyroll",
+     "p": "ES",
+     "u": "https://www.crunchyroll.com/es/yuruyuri"
+    }
+   ],
    "info": [
     "https://www.imdb.com/title/tt2785038/"
    ],
@@ -15351,6 +17069,13 @@
    ],
    "donde_ver": [
     "https://play.hbomax.com/page/urn:hbo:page:GYwz0nwX6vViCmwEAAAhg:type:feature"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "US",
+     "u": "https://play.hbomax.com/page/urn:hbo:page:GYwz0nwX6vViCmwEAAAhg:type:feature"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film678502.html"
@@ -15452,6 +17177,13 @@
    "donde_ver": [
     "https://www.netflix.com/es/title/80200942"
    ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80200942"
+    }
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film204759.html"
    ],
@@ -15500,6 +17232,13 @@
    ],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/erase-una-vez/14p4BXYA2xok"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/series/erase-una-vez/14p4BXYA2xok"
+    }
    ],
    "info": [
     "https://www.filmaffinity.com/es/film229023.html"

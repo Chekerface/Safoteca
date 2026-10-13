@@ -247,6 +247,9 @@ button { cursor: pointer; }
   border: 1.5px solid var(--linea); border-radius: 999px;
   text-decoration: none; font-weight: 600; font-size: 1rem;
 }
+.chip__n { margin-left: .4rem; font-weight: 400; font-size: .875rem; opacity: .7; }
+.boton__pais { font-weight: 400; font-size: .875rem; opacity: .8; margin-left: .15rem; }
+.boton__pais--fuera { font-style: italic; }
 .chip[aria-pressed="true"], .chip[aria-current="true"] {
   background: var(--violeta); border-color: var(--violeta); color: var(--superficie);
 }

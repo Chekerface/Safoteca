@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from importar_excel import asegurar_esquema  # noqa: E402
+from plataformas import reconocer  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
 
@@ -95,6 +96,7 @@ def main():
             "actrices": col(SQL_PERSONAS, oid, "actriz"),
             "directores": col(SQL_PERSONAS, oid, "director"),
             "donde_ver": col(SQL_ENLACES, oid, "donde_ver"),
+            "plataformas": [dict(zip("npu", (*reconocer(u), u))) for u in col(SQL_ENLACES, oid, "donde_ver")],  # n=plataforma, p=país, u=enlace
             "info": col(SQL_ENLACES, oid, "info"),
             "letterboxd": letterboxd.get(oid),
             "publicada": o["publicada_el"],  # fecha UTC de publicación: desempata «Novedades»
