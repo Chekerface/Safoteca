@@ -33,7 +33,7 @@ function crearFormularioReportes() {
   // Enlace de ejemplo rellenado: de ahí se leen los códigos «entry.NNN» de cada pregunta.
   var r = f.createResponse();
   [[id, "ID"], [obra, "OBRA"], [plat, "PLATAFORMA"], [enlace, "ENLACE"]].forEach(function (p) {
-    r.withItemResponse(p[0].asTextItem().createResponse(p[1]));
+    r.withItemResponse(p[0].createResponse(p[1]));
   });
   var url = r.toPrefilledUrl();
   var q = {};
