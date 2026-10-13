@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-13T09:30:27+00:00",
+  "generado": "2026-10-13T18:37:34+00:00",
   "total": 281
  },
  "obras": [
@@ -1615,7 +1615,7 @@
     "Delincuencia",
     "Drama",
     "Histórico",
-    "NSFW",
+    "NTSFW",
     "Piratas",
     "Prostitución",
     "Vida adulta"
@@ -2990,9 +2990,9 @@
     "Enemies to Lovers",
     "Erotismo",
     "Escuela",
-    "NSFW",
+    "NTSFW",
     "Romance",
-    "Roomates",
+    "Roommates",
     "Sexualidad"
    ],
    "avisos": [
@@ -3933,7 +3933,7 @@
     "Ficción Sobrenatural",
     "Final Feliz",
     "Friends to Lovers",
-    "NSFW",
+    "NTSFW",
     "Romance",
     "Sobrenatural",
     "Tragedia"
@@ -5962,7 +5962,7 @@
     "Delincuencia",
     "Desamor",
     "Friends to Lovers",
-    "NSFW",
+    "NTSFW",
     "Pandilla",
     "Prisión",
     "Sobrenatural",
@@ -7235,7 +7235,7 @@
     "De época",
     "Desamor",
     "Drama",
-    "NSFW",
+    "NTSFW",
     "Suspense",
     "Terror"
    ],
@@ -10967,7 +10967,7 @@
     "Drama",
     "Drama médico",
     "Hospital",
-    "Roomates"
+    "Roommates"
    ],
    "avisos": [
     {
@@ -12210,7 +12210,7 @@
     "Anime",
     "Asesinato",
     "No heartwarming",
-    "Roomates",
+    "Roommates",
     "Subtexto",
     "WTF?!"
    ],
@@ -12399,7 +12399,7 @@
     "Movimiento por los Derechos civiles",
     "Política",
     "Represión",
-    "Roomates",
+    "Roommates",
     "Sobrenatural",
     "Subtexto",
     "Superheroinas",
