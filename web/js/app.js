@@ -48,6 +48,8 @@
     inicio: svg('<path d="M4 11l8-7 8 7v8.500a1 1 0 0 1-1 1h-4V15H9v5.500H5a1 1 0 0 1-1-1z"/>'),
     claqueta: svg('<rect x="3" y="9" width="18" height="11" rx="2"/><path d="M3 9l2.500-4.500h4L7 9M9.500 9L12 4.500h4L13.500 9M16 9l2.500-4.500H21"/>'),
     corazon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.500s-8-4.900-8-11.200A4.600 4.600 0 0 1 12 6.800a4.600 4.600 0 0 1 8 2.500c0 6.300-8 11.200-8 11.200z"/></svg>',
+    lupa: svg('<circle cx="11" cy="11" r="6.500"/><path d="M16 16l4.500 4.500"/>'),
+    cerrar: svg('<path d="M6 6l12 12M18 6L6 18"/>'),
     bandera: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>', 'width="18" height="18"'),
     fuera: svg('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', 'width="18" height="18"'),
   };
@@ -105,7 +107,7 @@
     if (f.orden !== "az") p.set("orden", f.orden);
     return p.toString();
   }
-  const activos = (f) => (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + f.plat.length + (f.edad !== "" ? 1 : 0);
+  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + f.plat.length + (f.edad !== "" ? 1 : 0);
 
   function filtrar(f) {
     const q = norm(f.q).trim();
@@ -222,10 +224,20 @@
           <button class="boton boton--claro" type="button" data-accion="cerrar-intro">Entendido</button>
         </div>
       </aside>`;
-    return `<h1 class="solo-lectores">La Safoteca</h1>${intro}${tarjetaCampana()}${notaOcultas()}
+    const buscador = `<form role="search" id="form-buscar-inicio" class="buscador-inicio"><label class="solo-lectores" for="buscar-inicio">Buscar por título o actriz</label>
+      ${campoBuscar({ id: "buscar-inicio", valor: "", formulario: true })}</form>`;
+    return `<h1 class="solo-lectores">La Safoteca</h1>${buscador}${intro}${tarjetaCampana()}${notaOcultas()}
       ${grupos.map((g, i) => (g.tipo === "novedades"
         ? seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")
         : seccion("s-grupo-" + i, esc(g.titulo), (g.ids || []).map((id) => v.find((o) => o.id === id)).filter(Boolean), ""))).join("")}`;
+  }
+
+  // Campo de búsqueda con lupa (Inicio) o con una x para borrar el texto (catálogo).
+  function campoBuscar({ id, valor, formulario }) {
+    const boton = formulario
+      ? `<button class="campo-buscar__boton" type="submit" aria-label="Buscar">${ICONO.lupa}</button>`
+      : `<button class="campo-buscar__boton" type="button" data-accion="borrar-busqueda" aria-label="Borrar la búsqueda" ${valor ? "" : "hidden"}>${ICONO.cerrar}</button>`;
+    return `<div class="campo-buscar"><input class="campo" id="${id}" type="search" placeholder="Buscar por título o actriz" value="${esc(valor)}" autocomplete="off" enterkeyhint="search">${boton}</div>`;
   }
 
   function vistaCatalogo(f) {
@@ -234,7 +246,7 @@
       <h1 class="solo-lectores">Series y películas</h1>
       <div class="barra">
         <form role="search" id="form-buscar"><label class="solo-lectores" for="buscar">Buscar por título o actriz</label>
-          <input class="campo" id="buscar" type="search" placeholder="Buscar por título o actriz" value="${esc(f.q)}" autocomplete="off" enterkeyhint="search"></form>
+          ${campoBuscar({ id: "buscar", valor: f.q })}</form>
         <div class="barra__fila">
           <div class="chips" role="group" aria-label="Tipo">${tipoChip("", "Todo")}${tipoChip("serie", "Series")}${tipoChip("pelicula", "Películas")}</div>
           <label class="solo-lectores" for="ordenar">Ordenar por</label>
@@ -255,7 +267,7 @@
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
     $("#resultados").innerHTML = n ? rejilla(lista) : `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
-        <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">Quitar filtros</button></div>
+        <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
         ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
     $$('[data-tipo]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tipo === f.tipo)));
     $("#ordenar").value = f.orden;
@@ -593,12 +605,19 @@
     const acc = e.target.closest("[data-accion]");
     if (acc) {
       switch (acc.dataset.accion) {
+        case "borrar-busqueda": {
+          clearTimeout(espera); E.F.q = ""; limpiarCampoBusqueda(); sincronizar();
+          const b = $("#buscar"); b && b.focus({ preventScroll: true });
+          break;
+        }
         case "abrir-evitar": abrirHoja("evitar"); break;
         case "cerrar-hoja": hoja().close(); break;
         case "cerrar-campana": { const k = campana(); if (k) { E.campanaCerrada = k.c.id; guardar.escribir("campana", k.c.id); } pintar(false); break; }
         case "cerrar-intro": E.introVista = true; guardar.escribir("intro", true); pintar(false); break;
         case "quitar-filtros":
+          clearTimeout(espera);
           E.F = filtrosDe(new URLSearchParams()); sincronizar();
+          limpiarCampoBusqueda();
           if (hoja().open) abrirHoja("filtros");
           break;
         case "alternar-avisos": {
@@ -638,13 +657,23 @@
   });
 
   let espera;
+  const mostrarBorrar = (campo) => { const b = campo.parentElement.querySelector('[data-accion="borrar-busqueda"]'); if (b) b.hidden = !campo.value; };
+  function limpiarCampoBusqueda() { const c = $("#buscar"); if (c) { c.value = ""; mostrarBorrar(c); } }
   document.addEventListener("input", (e) => {
     const t = e.target;
-    if (t.id === "buscar") { clearTimeout(espera); espera = setTimeout(() => { E.F.q = t.value.trim(); sincronizar(); }, 150); }
+    if (t.id === "buscar") { mostrarBorrar(t); clearTimeout(espera); espera = setTimeout(() => { E.F.q = t.value.trim(); sincronizar(); }, 150); }
     else if (t.id === "buscar-aviso") $("#lista-avisos").innerHTML = listaAvisos(t.value);
     else if (t.id === "buscar-tem") $("#chips-tem").innerHTML = chipsTematica(t.value);
   });
-  document.addEventListener("submit", (e) => { if (e.target.id === "form-buscar") { e.preventDefault(); document.activeElement.blur(); } });
+  document.addEventListener("submit", (e) => {
+    if (e.target.id === "form-buscar") { e.preventDefault(); document.activeElement.blur(); }
+    else if (e.target.id === "form-buscar-inicio") {
+      e.preventDefault();
+      const q = $("#buscar-inicio").value.trim();
+      document.activeElement.blur();
+      location.hash = "#/catalogo" + (q ? "?q=" + encodeURIComponent(q) : "");
+    }
+  });
 
   // Si una imagen no carga, se muestra el hueco con el título.
   document.addEventListener("error", (e) => {

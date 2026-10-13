@@ -261,6 +261,21 @@ button { cursor: pointer; }
 }
 .campo:focus-visible { border-color: var(--violeta); }
 
+.campo-buscar { position: relative; }
+.campo-buscar .campo { padding-right: 3rem; }
+.campo-buscar .campo::-webkit-search-cancel-button { display: none; }
+.campo-buscar__boton {
+  position: absolute; top: 50%; right: .25rem; transform: translateY(-50%);
+  display: inline-grid; place-items: center; width: 2.5rem; height: 2.5rem;
+  color: var(--tinta-suave); border-radius: 10px;
+  background: transparent; border: 0; padding: 0; cursor: pointer;
+}
+.campo-buscar__boton[hidden] { display: none; }
+.campo-buscar__boton:hover { color: var(--violeta); }
+.campo-buscar__boton:focus-visible { outline: 2px solid var(--violeta); outline-offset: -2px; }
+.campo-buscar__boton svg { width: 1.25rem; height: 1.25rem; }
+.buscador-inicio { margin-bottom: 1.25rem; }
+
 .barra { display: grid; gap: .75rem; margin-bottom: 1rem; }
 .barra__fila { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
 .barra__fila .campo--ordenar { width: auto; flex: 0 0 auto; }
