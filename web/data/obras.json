@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-12T14:40:18+00:00",
+  "generado": "2026-10-13T09:25:02+00:00",
   "total": 281
  },
  "obras": [
@@ -92,7 +92,9 @@
    "directores": [
     "Kay Cannon"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/es/movie/sexpact/umc.cmc.6coayadb6a81m7akuleap8ifc"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film368655.html"
    ],
@@ -128,7 +130,9 @@
     "Isabella Lete"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://seriesgl.com/1448-love-among-us-gl-yuri-sub-espanol/"
+   ],
    "info": [
     "https://drama.fandom.com/es/wiki/1448_Love_Among_Us"
    ],
@@ -166,7 +170,9 @@
     "Mark Davis",
     "Noel Clarke"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0PV0Z04ABLV3VKWOBNW7Z2MS20"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film437966.html"
    ],
@@ -283,9 +289,7 @@
    "directores": [
     "Shunji Iwai"
    ],
-   "donde_ver": [
-    "https://www.peliculasflv.io/pelicula/a-bride-for-rip-van-winkle/"
-   ],
+   "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film167868.html"
    ],
@@ -387,7 +391,9 @@
    "directores": [
     "Otoja Abit"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/movie/a-new-york-christmas-wedding/umc.cmc.37yl3ynbbwpj6f7cxmauzvo55?l=es"
+   ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/a-new-york-christmas-wedding/",
    "publicada": "2026-10-11 22:17:42"
@@ -543,7 +549,9 @@
     "Sianoa Smit-McPhee"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/movie/all-cheerleaders-die/umc.cmc.2u796htlfdb5o6fj5zg3go1ez?l=es"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film688631.html"
    ],
@@ -579,7 +587,9 @@
     "Winny Clarke"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/ca/movie/almost-adults/umc.cmc.4xw4z72i23auj5li2qmu8febn"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film565374.html"
    ],
@@ -593,7 +603,7 @@
    "titulo_original": "Amar a muerte",
    "titulo_latam": null,
    "pais": "México",
-   "anio": null,
+   "anio": 2018,
    "anio_fin": null,
    "sinopsis": "Amar a muerte se centra en la vida de tres hombres que mueren el mismo día. Sus almas se reencarnan en diferentes cuerpos.",
    "edad": "13",
@@ -714,7 +724,9 @@
     "Sierra McCormick"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
+   ],
    "info": [
     "https://es.wikipedia.org/wiki/American_Horror_Stories"
    ],
@@ -773,7 +785,9 @@
    "directores": [
     "Liz Friedlander"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-es/browse/entity-04d07a40-2e27-4141-aa47-cef856aeee60"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film737581.html"
    ],
@@ -828,7 +842,7 @@
     "Francis Lee"
    ],
    "donde_ver": [
-    "https://ver.movistarplus.es/ficha/ammonite?id=1875229"
+    "https://tv.apple.com/es/movie/ammonite/umc.cmc.18v3uq9p4iluwarwf3thhzsxw?l=ca"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film597105.html"
@@ -1318,7 +1332,7 @@
    "titulo_original": "Being Erica (1x09)",
    "titulo_latam": null,
    "pais": "Canadá",
-   "anio": 2008,
+   "anio": 2009,
    "anio_fin": null,
    "sinopsis": "Todos nos lo hemos preguntado alguna vez: ¿Qué hubiera pasado si…? Las decisiones pasadas de las que nos arrepentimos ahora, y que ya no podemos cambiar, a veces nos atormentan. Erica Strange se siente exactamente así, con 32 años, con un trabajo que está por debajo de su preparación, soltera y con muchas decisiones erróneas en las que pensar por las noches. Pero ella va a tener la oportunidad con la que muchas veces soñamos: volver al pasado y elegir de forma diferente.",
    "edad": "15",
@@ -1498,7 +1512,7 @@
    "titulo_original": "Blue",
    "titulo_latam": null,
    "pais": "Japón",
-   "anio": 2001,
+   "anio": 2002,
    "anio_fin": null,
    "sinopsis": "Una colegiala introvertida se enamora y comienza una relación con una de sus compañeras de clase. Ambientada en una pequeña ciudad costera de Japón",
    "edad": "15",
@@ -1773,7 +1787,9 @@
    "directores": [
     "Eric Schaeffer"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.cinetecagay.com/pelicula/boy-meets-girl-2014-subt-espanol-peliculas-online/"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film465363.html"
    ],
@@ -2001,7 +2017,7 @@
     "Shirel Peleg"
    ],
    "donde_ver": [
-    "https://ver.movistarplus.es/ficha/besame-kosher?id=1934999"
+    "https://tv.apple.com/us/movie/besame-kosher/umc.cmc.2auhexgzov4w0ka6xu8j3x2yj?l=es"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film158623.html"
@@ -2097,7 +2113,9 @@
    "directores": [
     "Arantxa Echevarria"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.movistarplus.es/cine/carmen-y-lola/ficha?tipo=E&id=1549015"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film425269.html"
    ],
@@ -2188,7 +2206,9 @@
    "directores": [
     "Emily Harris"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/movie/carmilla/umc.cmc.7632owz7foe2x3e7gd47xnp2y?l=es"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film999175.html"
    ],
@@ -2338,7 +2358,9 @@
     "Haley Ramm"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/show/chasing-life/umc.cmc.6o9ot0d2n7jokuar1w2c4nsi2?l=es"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film973041.html"
    ],
@@ -2352,7 +2374,7 @@
    "titulo_original": "Chica busca chica",
    "titulo_latam": null,
    "pais": "España",
-   "anio": 2008,
+   "anio": 2007,
    "anio_fin": null,
    "sinopsis": "Nines, que trabaja como camarera del bar \"Chica Busca Chica\", no tiene donde dormir, y recibe el ofrecimiento de Mónica, que lleva mucho tiempo enamorada de ella. Esa noche, Nines se acuesta con Mónica, pero por la mañana Nines conoce a la mujer de su vida, Carmen, compañera de piso y mejor amiga de Mónica, de la que se enamora irreversiblemente. Nines queda sorprendida al descubrir que Carmen es heterosexual, y ese día prepara la mudanza para convivir con su novio.",
    "edad": "13",
@@ -2388,7 +2410,9 @@
     "Olga Iglesias",
     "Sonia Sebastián"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=hMjmfyfL_OE"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film994802.html"
    ],
@@ -2543,7 +2567,9 @@
    "directores": [
     "Christin Baker"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/movie/christmas-at-the-ranch/umc.cmc.lcux30sbppe6mdzmxokbb4bk"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film749539.html"
    ],
@@ -2607,7 +2633,9 @@
    "directores": [
     "Don Mancini"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0P7DSUZ9I0FOBC51LG4JTKY6XI"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film909397.html"
    ],
@@ -3013,9 +3041,7 @@
    "directores": [
     "Sammi Cohen"
    ],
-   "donde_ver": [
-    "https://mega1080p.org/crush/"
-   ],
+   "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film242551.html"
    ],
@@ -3029,7 +3055,7 @@
    "titulo_original": "D.E.B.S",
    "titulo_latam": null,
    "pais": "EE.UU.",
-   "anio": 2005,
+   "anio": 2004,
    "anio_fin": null,
    "sinopsis": "Lucy Diamond, la atractiva jefa de un grupo criminal, ha vuelto a Estados Unidos, y el D.E.B.S., un grupo de espías formado por chicas de instituto, le siguen la pista. Pero cuando su agente más importante, Amy Bradshaw, desaparece misteriosamente tras enfrentarse cara a cara con la delincuente, el D.E.B.S. comienza a buscar el escondite de Lucy, sin sospechar que quizá Amy no quiera ser rescatada.",
    "edad": "13",
@@ -3064,7 +3090,9 @@
    "directores": [
     "Angela Robinson"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0ST7XV2J2AW064A39GPCNM47IT"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film509085.html"
    ],
@@ -3971,7 +3999,7 @@
     "Mona Fastvold"
    ],
    "donde_ver": [
-    "https://ver.movistarplus.es/ficha/el-mundo-que-viene?id=1882676"
+    "https://tv.apple.com/es/movie/el-mundo-que-viene/umc.cmc.781f0is6m1gvm4th7ruw5fdj3"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film210041.html"
@@ -4506,7 +4534,7 @@
     "Iván Escobar"
    ],
    "donde_ver": [
-    "https://www.starz.com/es/es/series/express/63120"
+    "https://www.netflix.com/es/title/81752024"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film502776.html"
@@ -4702,7 +4730,9 @@
    "directores": [
     "Lukas Moodysson"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/dp/amzn1.dv.gti.bc299285-cead-4ceb-99dc-1639c146ab21"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film100880.html"
    ],
@@ -5156,7 +5186,7 @@
     "Julio Medem"
    ],
    "donde_ver": [
-    "https://ver.flixole.com/watch/54ec1a63-c1a7-4ef4-9113-0d388de38546"
+    "https://www.primevideo.com/detail/0J83L7X0FGC1WAOPZ9B5DXLJSY"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film720452.html"
@@ -5640,9 +5670,7 @@
    "directores": [
     "Rebecca Perry Cutter"
    ],
-   "donde_ver": [
-    "https://www.starz.com/es/es/series/hightown/57463"
-   ],
+   "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film816014.html"
    ],
@@ -5843,7 +5871,9 @@
    "directores": [
     "Shamim Sarif"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/es/movie/i-cant-think-straight/umc.cmc.18h9ac7i4aq03lxetga91ib69"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film908407.html"
    ],
@@ -5888,7 +5918,7 @@
     "J Blakeson"
    ],
    "donde_ver": [
-    "https://www.primevideo.com/search/ref=atv_sr_sug_6?phrase=i%20care%20a%20lot&ie=UTF8"
+    "https://tv.apple.com/es/movie/i-care-a-lot/umc.cmc.2ejjoc59j7b4ym1lexewnyafu"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film997136.html"
@@ -6338,7 +6368,9 @@
     "Gina Rodriguez"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0MNPCXOTT3XWCVCHILRDTK1BUH"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film494004.html"
    ],
@@ -6439,7 +6471,9 @@
     "Ruth Vega Fernández"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/movie/besame/umc.cmc.3fzs6or8gi5c1nqasa2bz1fyj?l=es"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film564166.html"
    ],
@@ -6622,7 +6656,7 @@
     "Valerie Faris"
    ],
    "donde_ver": [
-    "https://www.gnula2.co/pelicula/ver-battle-of-the-sexes/"
+    "https://www.disneyplus.com/es-es/browse/entity-84fc1672-7df7-454a-b919-4a357c1fa20b"
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/battlefield-gender/",
@@ -7431,7 +7465,9 @@
     "Zoie Palmer"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/us/show/lost-girl/umc.cmc.f4uqogck6iuy0aelfbfvvw72?l=es"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film947873.html"
    ],
@@ -7968,7 +8004,7 @@
    "titulo_original": "Faking it",
    "titulo_latam": null,
    "pais": "EE.UU.",
-   "anio": 2013,
+   "anio": 2014,
    "anio_fin": null,
    "sinopsis": "Karma y Amy son dos amigas que para ser populares en su instituto deciden dejar caer la idea de que son una pareja de lesbianas. Debido a que están en un instituto muy liberal y decir abiertamente que son homosexuales las convertirá instantáneamente en populares. Esta aceptación es la razón de continuar con la mentira lo máximo posible, algo que no será tan sencillo.",
    "edad": "15",
@@ -8024,7 +8060,7 @@
     "Carter Covington"
    ],
    "donde_ver": [
-    "https://www.primevideo.com/detail/Faking-It/0GMASDC4419S277BSR3SXO70H6/ref=atv_nb_lcl_es_ES?language=es_ES&ie=UTF8"
+    "https://tv.apple.com/pa/show/faking-it/umc.cmc.35t3dl85h81a9zks7jk4o0qoe"
    ],
    "info": [],
    "letterboxd": null,
@@ -8162,7 +8198,7 @@
     "Greg Berlanti"
    ],
    "donde_ver": [
-    "https://www.hbomax.com/es/es?awc=17045_1654426464_51a299ad4967d1d3bee3216221d0fd8c"
+    "https://www.primevideo.com/-/es/detail/0O4V98FHHP8IRUMGYRBH490X5O"
    ],
    "info": [
     "https://www.sensacine.com/series/serie-19136/"
@@ -8202,7 +8238,9 @@
     "Jenna Laurenzo"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/es/movie/l-bomb/umc.cmc.5xnxj8ux3zt81r2bxogeknlz8"
+   ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/lez-bomb/",
    "publicada": "2026-10-11 22:17:42"
@@ -8238,7 +8276,9 @@
     "Leighton Meester"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail?gti=amzn1.dv.gti.880ed2c8-d06c-4938-bac0-f9a02cdc625a"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film821927.html"
    ],
@@ -8316,7 +8356,7 @@
     "Jed Mercurio"
    ],
    "donde_ver": [
-    "https://ver.movistarplus.es/ficha/line-of-duty/?id=1294309&mediaType=FOTOV&profile=anonimo&mode=VODRU7D&version=7.1&tlsStream=true&mdrm=true&network=yomvi"
+    "https://www.primevideo.com/-/es/detail/0S28LVDDBXFLLITX7DTFVB0NHA"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film661747.html"
@@ -8836,7 +8876,9 @@
    "directores": [
     "Kawano Koji"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.amazon.co.jp/gp/video/detail/amzn1.dv.gti.7d7e023f-83e1-42e3-9802-996b30bcc246"
+   ],
    "info": [
     "https://drama.fandom.com/es/wiki/Love_My_Life"
    ],
@@ -9045,7 +9087,9 @@
    "directores": [
     "Katherine Brooks"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.b80d5d9a-0dd4-4de0-94d6-82061927166b"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film852523.html"
    ],
@@ -9381,9 +9425,7 @@
    "directores": [
     "Patty Jenkins"
    ],
-   "donde_ver": [
-    "https://ver.movistarplus.es/ficha/monster?id=393396"
-   ],
+   "donde_ver": [],
    "info": [
     "https://www.filmaffinity.com/es/film977091.html"
    ],
@@ -9424,9 +9466,7 @@
    "directores": [
     "Lim Dae-hyung"
    ],
-   "donde_ver": [
-    "https://cuevana3.io/40229/yunhui-ege"
-   ],
+   "donde_ver": [],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/moonlit-winter/",
    "publicada": "2026-10-11 22:17:42"
@@ -9704,7 +9744,7 @@
     "Jill Blankenship"
    ],
    "donde_ver": [
-    "https://www.hbomax.com/es/es/series/urn:hbo:series:GYdWHXwBh2xnDwwEAAAAF"
+    "https://www.primevideo.com/-/es/detail/0SJCL0TTH3MR2OZKM0TJF8UMB1"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film548569.html"
@@ -9792,7 +9832,9 @@
    ],
    "actrices": [],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.crunchyroll.com/es-es/watch/G675N5NZR/a-secret-between-girls"
+   ],
    "info": [
     "https://naruho.do/es/anime/netsuzou-trap"
    ],
@@ -10211,7 +10253,7 @@
     "Lee Hyun-ju"
    ],
    "donde_ver": [
-    "http://fdrama.net/watch-online/our-love-story"
+    "https://seriesgl.com/our-love-story-sub-espanol/"
    ],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/our-love-story/",
@@ -10582,7 +10624,9 @@
     "Sasha Pieterse"
    ],
    "directores": [],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail?gti=amzn1.dv.gti.73f829e1-6d75-479d-98da-d21f57de55cd"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film674963.html"
    ],
@@ -10849,7 +10893,9 @@
    "directores": [
     "Céline Sciamma"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.primevideo.com/detail?gti=amzn1.dv.gti.2fd9fbab-4082-4169-913c-32b039ce4125"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film218131.html"
    ],
@@ -11448,7 +11494,7 @@
    "titulo_original": "Breaking the Girls",
    "titulo_latam": null,
    "pais": "EE.UU.",
-   "anio": 2013,
+   "anio": 2012,
    "anio_fin": null,
    "sinopsis": "Dos estudiantes universitarias hacen un pacto para matar cada una al enemigo de la otra.",
    "edad": "18",
@@ -12176,7 +12222,7 @@
    ],
    "directores": [],
    "donde_ver": [
-    "https://hdfull.gg/show/south-of-nowhere/season-1/episode-1"
+    "https://tv.apple.com/us/show/south-of-nowhere/umc.cmc.3328bbwbxa24zmaa2sxccxols?l=es"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film175127.html"
@@ -12600,7 +12646,7 @@
    "titulo_original": "The Carmilla Movie",
    "titulo_latam": null,
    "pais": "Canadá",
-   "anio": 2014,
+   "anio": 2017,
    "anio_fin": null,
    "sinopsis": "Han pasado cinco años desde que Laura y Carmilla vencieron al apocalipsis y Carmilla se convirtió en una auténtica humana mortal. Se instalaron en un acogedor apartamento en el centro de Toronto; Laura continúa afinando sus habilidades de periodismo, mientras que Carmilla se ajusta a un estilo de vida que no es vampiro.",
    "edad": "13",
@@ -12627,7 +12673,9 @@
    "directores": [
     "Spence Maybee"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.f2aa3156-76de-497d-b84c-bc9fbef6a4b8"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film746850.html"
    ],
@@ -12789,7 +12837,9 @@
    "directores": [
     "Park Chan-wook"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.rtve.es/play/videos/cine-club-play/doncella/6104904/"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film948449.html"
    ],
@@ -13015,7 +13065,7 @@
    ],
    "directores": [],
    "donde_ver": [
-    "https://ver.movistarplus.es/ficha/l-generacion-q/?id=1732247&mediaType=FOTOV&profile=anonimo&mode=VODRU7D&version=7.1&tlsStream=true&mdrm=true&network=yomvi"
+    "https://tv.apple.com/us/show/the-l-word-generation-q/umc.cmc.4rxi1zlc98z8be54slmg0886y?l=es"
    ],
    "info": [
     "https://www.filmaffinity.com/es/film213275.html"
@@ -13584,7 +13634,9 @@
    "directores": [
     "Shamim Sarif"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://tv.apple.com/es/movie/the-world-unseen/umc.cmc.75mpsnkhpmrvp0kefc96rxo1t"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film814687.html"
    ],
@@ -13764,7 +13816,7 @@
    "titulo_original": "Tierra de lobos (Temporada 3)",
    "titulo_latam": null,
    "pais": "España",
-   "anio": 2013,
+   "anio": 2010,
    "anio_fin": null,
    "sinopsis": "Una historia ambientada en el siglo XIX que narra la vida de dos hermanos en busca de su padre, pero las buenas intenciones de los Bravo se ven obstaculizadas por el dueño del pueblo Antonio Lobo.",
    "edad": "13",
@@ -14327,7 +14379,9 @@
    "directores": [
     "Lisa Rose Snow"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.3eecce14-8dab-4da8-995a-d7c4006e0d46"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film562781.html"
    ],
@@ -14449,7 +14503,7 @@
     "Kunihiko"
    ],
    "donde_ver": [
-    "https://animeflv.la/anime/shoujo-kakumei-utena/"
+    "https://www.primevideo.com/-/es/detail/0JWI741FJRUHGX8G6J55RHURZT"
    ],
    "info": [],
    "letterboxd": null,
@@ -14913,7 +14967,9 @@
     "Rob Tapert",
     "Sam Raimi"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.amazon.com/gp/video/detail/amzn1.dv.gti.50a9f6ff-a38f-0f07-e8d4-32da19502f74"
+   ],
    "info": [
     "https://www.imdb.com/title/tt0112230/"
    ],
@@ -15062,7 +15118,9 @@
    "directores": [
     "Saratswadee Wongsomphet"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=yYMzpQW-k6U"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film254599.html"
    ],
@@ -15109,7 +15167,9 @@
    "directores": [
     "Saratswadee Wongsomphet"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=oX01rC5fHcg"
+   ],
    "info": [
     "https://drama.fandom.com/es/wiki/Yes_or_No_2.5"
    ],
@@ -15151,7 +15211,9 @@
    "directores": [
     "Saratswadee Wongsomphet"
    ],
-   "donde_ver": [],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=6nbOQsaXN5E"
+   ],
    "info": [
     "https://www.filmaffinity.com/es/film870677.html"
    ],
