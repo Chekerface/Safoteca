@@ -27,6 +27,11 @@ jobs:
       url: ${{ steps.despliegue.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+      - name: Comprobar que config.js y los datos no están rotos
+        run: |
+          node --check web/config.js
+          node --check web/js/app.js
+          python3 -c "import json; json.load(open('web/data/obras.json', encoding='utf-8'))"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
