@@ -47,6 +47,7 @@
     inicio: svg('<path d="M4 11l8-7 8 7v8.500a1 1 0 0 1-1 1h-4V15H9v5.500H5a1 1 0 0 1-1-1z"/>'),
     claqueta: svg('<rect x="3" y="9" width="18" height="11" rx="2"/><path d="M3 9l2.500-4.500h4L7 9M9.500 9L12 4.500h4L13.500 9M16 9l2.500-4.500H21"/>'),
     corazon: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.500s-8-4.900-8-11.200A4.600 4.600 0 0 1 12 6.800a4.600 4.600 0 0 1 8 2.500c0 6.300-8 11.200-8 11.200z"/></svg>',
+    bandera: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>', 'width="18" height="18"'),
     fuera: svg('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', 'width="18" height="18"'),
   };
 
@@ -244,9 +245,17 @@
   function vistaObra(id) {
     const o = E.porId.get(id);
     if (!o) return `<h1 class="solo-lectores">Ficha no encontrada</h1><div class="vacio"><p>No hemos encontrado esta ficha.</p><a class="boton" href="#/catalogo">Ver el catálogo</a></div>`;
+    const rep = CFG.reporteEnlaces;
+    const urlReporte = (x) => {
+      const q = new URLSearchParams({ usp: "pp_url" });
+      q.set(rep.campos.id, String(o.id)); q.set(rep.campos.obra, o.titulo); q.set(rep.campos.plataforma, x.n); q.set(rep.campos.enlace, x.u);
+      return `${rep.url}?${q}`;
+    };
     const lugares = (o.plataformas || o.donde_ver.map((u) => ({ n: nombreSitio(u), p: "INT", u }))).filter((x) => seguro(x.u)).map((x) => {
       const pais = x.p === "INT" ? "" : PAIS[x.p] || x.p;
-      return `<a class="boton boton--claro" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer">${esc(x.n)}${pais ? ` <span class="boton__pais${x.p === "ES" ? "" : " boton__pais--fuera"}">${esc(pais)}</span>` : ""} ${ICONO.fuera}</a>`;
+      const enlace = `<a class="boton boton--claro" href="${esc(x.u)}" target="_blank" rel="noopener noreferrer">${esc(x.n)}${pais ? ` <span class="boton__pais${x.p === "ES" ? "" : " boton__pais--fuera"}">${esc(pais)}</span>` : ""} ${ICONO.fuera}</a>`;
+      if (!(rep && rep.url && rep.campos)) return enlace;
+      return `<span class="enlace-item">${enlace}<a class="reportar" href="${esc(urlReporte(x))}" target="_blank" rel="noopener noreferrer" title="Avisar de que este enlace no funciona" aria-label="Avisar de que el enlace de ${esc(x.n)} no funciona">${ICONO.bandera}</a></span>`;
     }).join("");
     const hayFuera = (o.plataformas || []).some((x) => !delPais(x));
     const letterboxd = o.letterboxd && seguro(o.letterboxd)
@@ -288,7 +297,7 @@
           </header>
           ${avisos}
           ${o.sinopsis ? `<section class="bloque"><h2>Sinopsis</h2><p>${esc(o.sinopsis)}</p></section>` : ""}
-          ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div>${hayFuera ? '<p class="resumen" style="margin-top:.5rem">Los enlaces marcados con otro país pueden no estar disponibles en España.</p>' : ""}</section>` : ""}
+          ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div>${hayFuera ? '<p class="resumen" style="margin-top:.5rem">Los enlaces marcados con otro país pueden no estar disponibles en España.</p>' : ""}${rep && rep.url ? '<p class="resumen" style="margin-top:.5rem">¿Un enlace no funciona? Toca la bandera junto a él para avisarnos.</p>' : ""}</section>` : ""}
           ${o.generos.length || o.tematicas.length ? `<section class="bloque"><h2>Explorar</h2>
             ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
             ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}

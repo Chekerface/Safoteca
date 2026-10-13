@@ -303,6 +303,9 @@ button { cursor: pointer; }
   padding: .3rem .8rem; border-radius: 999px; font-weight: 600; font-size: 1rem;
   background: var(--alerta-fondo); color: var(--alerta-texto);
 }
+.enlace-item { display: inline-flex; align-items: center; gap: .25rem; }
+.reportar { display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; color: var(--tinta-suave); }
+.reportar:hover, .reportar:active { background: var(--suave); color: var(--violeta); }
 .enlaces { display: flex; flex-wrap: wrap; gap: .5rem; }
 .dato { display: grid; grid-template-columns: 8rem 1fr; gap: .25rem 1rem; margin: 0; }
 .dato dt { color: var(--tinta-suave); }
