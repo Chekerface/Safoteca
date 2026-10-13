@@ -24,6 +24,12 @@ window.SAFOTECA_CONFIG = {
   temas: [
     { id: "halloween", desde: "10-15", hasta: "11-02" }
   ],
+  // Formulario público para proponer series y películas. Se usa en la campaña, en Ajustes y cuando una búsqueda no da resultados.
+  formularioAltas: "https://docs.google.com/forms/d/e/1FAIpQLSfX88UDkjQ5l10bq8YWujj9GjdcB_9ogv6FMOpF9M0GUQlWgA/viewform",
+  // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
+  // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).
+  // Para una campaña nueva, cambia "id" (así vuelve a salir a quien cerró la anterior), las fechas y el objetivo.
+  campana: { id: "oct2026", desde: "2026-10-14", hasta: "2026-11-30", objetivo: 25 },
   // Botón «avisar de un enlace roto» en las fichas. Se rellena con el bloque que escribe el script
   // tools/formulario/reportar_enlaces.gs al ejecutarlo; mientras sea null el botón no aparece.
   reporteEnlaces: { url: "https://docs.google.com/forms/d/e/1FAIpQLSd21ZYeq0VawPGXW_RAt1R-Pgg6dCYQZMHxrPwxp0c4lwjfJg/viewform", campos: { id: "entry.1329433313", obra: "entry.1547440425", plataforma: "entry.110345365", enlace: "entry.682423969" }},

@@ -35,6 +35,7 @@
     evitar: new Set(guardar.leer("evitar", [])),
     verAvisos: guardar.leer("verAvisos", false),
     introVista: guardar.leer("intro", false),
+    campanaCerrada: guardar.leer("campana", ""),
     cargado: false, navegado: false, abrirAlCargar: null, evitarCambiado: false, F: null,
   };
 
@@ -165,6 +166,41 @@
     toast.id = setTimeout(() => t.classList.remove("visible"), 2200);
   }
 
+  // ---------- Campaña para ampliar la base de datos ----------
+  const hoyISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
+  function campana() {
+    const c = CFG.campana;
+    if (!c || !CFG.formularioAltas || !seguro(CFG.formularioAltas)) return null;
+    const hoy = hoyISO();
+    if (hoy < c.desde || hoy > c.hasta) return null;
+    const hechas = E.obras.filter((o) => o.publicada && o.publicada.slice(0, 10) >= c.desde).length;
+    return { c, hechas, falta: Math.max(0, c.objetivo - hechas) };
+  }
+  function tarjetaCampana() {
+    const k = campana();
+    if (!k || E.campanaCerrada === k.c.id) return "";
+    const logrado = k.hechas >= k.c.objetivo;
+    const plural = (n) => (n === 1 ? "1 obra nueva" : `${n} obras nuevas`);
+    return `
+      <aside class="campana" aria-labelledby="campana-t">
+        <img class="campana__img" src="${logrado ? "marca/buholira.svg" : "img/campana/cubo.webp"}" alt="" width="96" height="84" decoding="async">
+        <div class="campana__texto">
+          <h2 id="campana-t">${logrado ? "¡Objetivo conseguido!" : "Ayúdanos a descongelar la Safoteca"}</h2>
+          <p>${logrado
+            ? "Gracias a todas las que habéis aportado: la Safoteca ha crecido. Si conoces más series o películas, sigue proponiéndolas."
+            : `Faltan ${plural(k.falta)} para llegar al objetivo. ¿Conoces una serie o película con representación lésbica o bisexual que no esté? Propónla.`}</p>
+          <progress class="campana__barra" max="${k.c.objetivo}" value="${Math.min(k.hechas, k.c.objetivo)}" aria-label="Obras nuevas conseguidas"></progress>
+          <p class="campana__cuenta">${Math.min(k.hechas, k.c.objetivo)} de ${k.c.objetivo} obras nuevas</p>
+          <div class="acciones">
+            <a class="boton" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">Añadir una obra ${ICONO.fuera}</a>
+            <button class="boton boton--claro" type="button" data-accion="cerrar-campana">Ahora no</button>
+          </div>
+        </div>
+      </aside>`;
+  }
+  const enlaceAltas = (texto) => (CFG.formularioAltas && seguro(CFG.formularioAltas)
+    ? `<a class="boton boton--claro" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">${texto} ${ICONO.fuera}</a>` : "");
+
   // ---------- Vistas ----------
   function vistaInicio() {
     const v = visibles();
@@ -186,7 +222,7 @@
           <button class="boton boton--claro" type="button" data-accion="cerrar-intro">Entendido</button>
         </div>
       </aside>`;
-    return `<h1 class="solo-lectores">La Safoteca</h1>${intro}${notaOcultas()}
+    return `<h1 class="solo-lectores">La Safoteca</h1>${intro}${tarjetaCampana()}${notaOcultas()}
       ${grupos.map((g, i) => (g.tipo === "novedades"
         ? seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")
         : seccion("s-grupo-" + i, esc(g.titulo), (g.ids || []).map((id) => v.find((o) => o.id === id)).filter(Boolean), ""))).join("")}`;
@@ -219,7 +255,8 @@
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
     $("#resultados").innerHTML = n ? rejilla(lista) : `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
-        <button class="boton" type="button" data-accion="quitar-filtros">Quitar filtros</button></div>`;
+        <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">Quitar filtros</button></div>
+        ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
     $$('[data-tipo]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tipo === f.tipo)));
     $("#ordenar").value = f.orden;
     ajustarCabecera();
@@ -326,6 +363,9 @@
           <p class="resumen" style="margin-bottom:.75rem">${n ? (n === 1 ? "Estás evitando 1 aviso." : `Estás evitando ${n} avisos.`) : "Ahora mismo no evitas ningún aviso."}</p>
           <button class="boton" type="button" data-accion="abrir-evitar">Elegir avisos a evitar</button>
         </section>
+        ${CFG.formularioAltas ? `<section class="bloque" aria-labelledby="a5"><h2 id="a5">Ayúdanos a crecer</h2>
+          <p style="margin-bottom:.75rem">¿Falta alguna serie o película con representación lésbica o bisexual? Propónla con un formulario y la revisaremos.</p>
+          ${enlaceAltas("Añadir una obra")}</section>` : ""}
         <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
           <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
           <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
@@ -555,6 +595,7 @@
       switch (acc.dataset.accion) {
         case "abrir-evitar": abrirHoja("evitar"); break;
         case "cerrar-hoja": hoja().close(); break;
+        case "cerrar-campana": { const k = campana(); if (k) { E.campanaCerrada = k.c.id; guardar.escribir("campana", k.c.id); } pintar(false); break; }
         case "cerrar-intro": E.introVista = true; guardar.escribir("intro", true); pintar(false); break;
         case "quitar-filtros":
           E.F = filtrosDe(new URLSearchParams()); sincronizar();
