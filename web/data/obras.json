@@ -3142,7 +3142,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": false,
-   "poster": null,
+   "poster": "368",
    "generos": [
     "Drama",
     "Terror"
@@ -4577,7 +4577,7 @@
    "temporadas": "1.0",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "374",
    "generos": [
     "Distopía",
     "Drama"
@@ -8445,7 +8445,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "373",
    "generos": [
     "Drama",
     "Terror"
@@ -8727,7 +8727,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": false,
-   "poster": null,
+   "poster": "377",
    "generos": [
     "Acción",
     "Aventura",
@@ -11012,7 +11012,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "372",
    "generos": [
     "Biográfico",
     "Drama",
@@ -11422,7 +11422,7 @@
    "temporadas": null,
    "disponible_espana": null,
    "final_feliz": false,
-   "poster": null,
+   "poster": "370",
    "generos": [
     "Anime",
     "Drama"
@@ -14254,7 +14254,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "366",
    "generos": [
     "Comedia",
     "Drama"
@@ -15341,7 +15341,7 @@
    "temporadas": "Es la prota",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "376",
    "generos": [
     "Acción",
     "Distopía",
@@ -16325,7 +16325,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "367",
    "generos": [
     "Acción",
     "Ciencia Ficción",
@@ -17443,7 +17443,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "369",
    "generos": [
     "Biográfico",
     "Documental",
@@ -17810,7 +17810,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "371",
    "generos": [
     "Comedia",
     "Horror",
