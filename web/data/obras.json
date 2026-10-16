@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-10-16T14:40:59+00:00",
-  "total": 281
+  "generado": "2026-10-16T15:26:58+00:00",
+  "total": 293
  },
  "obras": [
   {
@@ -893,6 +893,171 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 375,
+   "tipo": "serie",
+   "titulo": "American Horror Story",
+   "titulo_original": "American Horror Story",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2011,
+   "anio_fin": null,
+   "sinopsis": "American Horror Story (a veces abreviada como AHS) es una serie de televisión estadounidense de antología y horror creada por Ryan Murphy y Brad Falchuk para la cadena de cable FX. Cada temporada se concibe como una miniserie autónoma, siguiendo un conjunto diferente de personajes y escenarios, y un argumento con su propio «principio, medio y fin». Algunos elementos de la trama de cada temporada están vagamente inspirados en hechos reales. Muchos actores aparecen en más de una temporada, pero a menudo interpretan un nuevo personaje.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": "2011-02-07 00:00:00",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "375",
+   "generos": [
+    "Horror"
+   ],
+   "tematicas": [
+    "Asesinato",
+    "Crimen",
+    "Horror",
+    "Sobrenatural"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
+    {
+     "nombre": "Abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Body Horror",
+     "categoria": null
+    },
+    {
+     "nombre": "Capacitismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Contenido Cuestionable",
+     "categoria": null
+    },
+    {
+     "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad Mental",
+     "categoria": null
+    },
+    {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Horror corporal",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Ritos extraños",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Tortura",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Ryan Murphy"
+   ],
+   "donde_ver": [],
+   "plataformas": [],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 80,
@@ -2963,6 +3128,87 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 368,
+   "tipo": "pelicula",
+   "titulo": "Cisne Negro",
+   "titulo_original": "Black Swan",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2010,
+   "anio_fin": null,
+   "sinopsis": "Una brillante bailarina que forma parte de una compañía de ballet de Nueva York, vive completamente absorbida por la danza. La presión de su controladora madre y la rivalidad con su compañera Lily le afectarán terriblemente.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": false,
+   "poster": "368",
+   "generos": [
+    "Drama",
+    "Terror"
+   ],
+   "tematicas": [
+    "Drama",
+    "Thiller Psicológico",
+    "Trastornos mentales"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Autolesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Horror corporal",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Relaciones perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "TCA",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Natalie Portman"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-es/browse/entity-0de850bd-a343-4dd7-86c4-c008cdaca86f"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/browse/entity-0de850bd-a343-4dd7-86c4-c008cdaca86f"
+    }
+   ],
+   "info": [],
+   "letterboxd": "https://letterboxd.com/film/black-swan/",
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 54,
    "tipo": "serie",
    "titulo": "Citrus",
@@ -4315,6 +4561,117 @@
    ],
    "letterboxd": "https://letterboxd.com/film/duck-butter/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 374,
+   "tipo": "serie",
+   "titulo": "El cuento de la criada",
+   "titulo_original": "The Handmaid's Tale",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2017,
+   "anio_fin": null,
+   "sinopsis": "Para enfrentarse a una tasa de natalidad en declive, un régimen fundamentalista ha empezado a tratar a las mujeres como propiedades. Como una de las pocas mujeres fértiles que quedan, Defred es una criada, una más de la casta de mujeres forzadas a una servidumbre sexual para intentar repoblar el mundo.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": "1.0",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "374",
+   "generos": [
+    "Distopía",
+    "Drama"
+   ],
+   "tematicas": [
+    "Distopía",
+    "Drama",
+    "Represión"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
+    {
+     "nombre": "Abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Desnudos",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia de género",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-es/browse/entity-565d8976-9d26-4e63-866c-40f8a137ce5f"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "ES",
+     "u": "https://www.disneyplus.com/es-es/browse/entity-565d8976-9d26-4e63-866c-40f8a137ce5f"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 270,
@@ -8074,6 +8431,98 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 373,
+   "tipo": "serie",
+   "titulo": "La Maldición De Hill House",
+   "titulo_original": "The Haunting of Hill House",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "Un grupo de hermanos crece en lo que acaba convirtiéndose en la casa encantada más famosa del país. Ya como adultos, viéndose obligados a reunirse tras una tragedia, la familia tendrá que afrontar los fantasmas del pasado.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "373",
+   "generos": [
+    "Drama",
+    "Terror"
+   ],
+   "tematicas": [
+    "Drama",
+    "Trastornos mentales"
+   ],
+   "avisos": [
+    {
+     "nombre": "Adicción",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Autolesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad Mental",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Mike Flanagan"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/80189221?source=35&fromWatch=true"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/80189221?source=35&fromWatch=true"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 303,
    "tipo": "serie",
    "titulo": "La monja guerrera",
@@ -8262,6 +8711,63 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 377,
+   "tipo": "pelicula",
+   "titulo": "La reina Cristina de Suecia",
+   "titulo_original": "Queen Christina",
+   "titulo_latam": null,
+   "pais": "EE.UU",
+   "anio": 1933,
+   "anio_fin": null,
+   "sinopsis": "Suecia, siglo XVII. Durante la guerra de los Treinta Años (1618-1648) muere, en la batalla de Lutzen, el rey Gustavo Adolfo de Suecia. Hereda el trono su hija Cristina, que desde la infancia se entrega en cuerpo y alma a los problemas de estado, lo que la lleva a renunciar al matrimonio con el principe Carlos Gustavo, héroe nacional y el pretendiente preferido por todos. Sin embargo, Cristina se enamora profundamente de Don Antonio, Conde de Pimentel y embajador del rey de España en Suecia.",
+   "edad": "TP",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": false,
+   "poster": "377",
+   "generos": [
+    "Acción",
+    "Aventura",
+    "Histórico"
+   ],
+   "tematicas": [
+    "Acción",
+    "Histórico",
+    "Realeza",
+    "Siglo XVII"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia leve",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Greta Garbo"
+   ],
+   "directores": [
+    "Rouben mamoulian"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/la-reina-cristina-de-suecia"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/la-reina-cristina-de-suecia"
+    }
+   ],
+   "info": [],
+   "letterboxd": "https://letterboxd.com/film/queen-christina/",
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 22,
@@ -10492,6 +10998,122 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 372,
+   "tipo": "serie",
+   "titulo": "Monstruo: la historia de Lizzie Borden",
+   "titulo_original": "Monster: The Lizzie Borden Story",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "El 4 de agosto de 1892, Andrew y Abby Borden fueron encontrados brutalmente asesinados a hachazos en su casa de Fall River, Massachusetts. Su hija, Lizzie, se convirtió en la principal sospechosa de los asesinatos.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "372",
+   "generos": [
+    "Biográfico",
+    "Drama",
+    "Histórico",
+    "Horror"
+   ],
+   "tematicas": [
+    "Asesinato",
+    "Biográfico",
+    "Crimen",
+    "Entorno familiar negativo",
+    "Histórico",
+    "Horror",
+    "Inexactitud histórica",
+    "Slasher"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
+    {
+     "nombre": "Abuso animal",
+     "categoria": null
+    },
+    {
+     "nombre": "Abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Agresión sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Ryan Murphy"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/82068293"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/82068293"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 125,
    "tipo": "pelicula",
    "titulo": "Moonlit Winter",
@@ -10784,6 +11406,112 @@
    ],
    "letterboxd": "https://letterboxd.com/film/mulholland-drive/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 370,
+   "tipo": "serie",
+   "titulo": "Nana",
+   "titulo_original": "Nana",
+   "titulo_latam": null,
+   "pais": "Japón",
+   "anio": 2006,
+   "anio_fin": null,
+   "sinopsis": "Dos chicas de la misma edad y mismo nombre se conocieron en el tren para ir a Tokio. Sus nombres son NANA. Una de ellas es una chica que quiere ser famosa con su grupo de música y la otra quiere estar con su novio que vive en Tokio. Después de conocerse ellas deciden vivir juntas en Tokio.",
+   "edad": "18",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": false,
+   "poster": "370",
+   "generos": [
+    "Anime",
+    "Drama"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Drama",
+    "Identidad",
+    "Moda",
+    "Relaciones complicadas",
+    "Roommates",
+    "Yuri"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso sexual implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Adicción",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Pederastia",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
+     "categoria": null
+    },
+    {
+     "nombre": "Relación tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia leve",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Ai Yazawa"
+   ],
+   "donde_ver": [],
+   "plataformas": [],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 242,
@@ -13512,6 +14240,84 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 366,
+   "tipo": "pelicula",
+   "titulo": "Sorry, Baby",
+   "titulo_original": "Sorry, Baby",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Algo malo le pasó a Agnes. Pero la vida continúa, al menos para todos a su alrededor. Cuando la visita una querida amiga en vísperas de un momento importante, Agnes empieza a darse cuenta de lo estancada que ha estado y comienza a trabajar en cómo seguir adelante.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "366",
+   "generos": [
+    "Comedia",
+    "Drama"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Salud Mental",
+    "Universidad",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Desnudos",
+     "categoria": null
+    },
+    {
+     "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad Mental",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [
+    "Eva Victor"
+   ],
+   "donde_ver": [
+    "https://www.movistarplus.es/cine/sorry-baby/ficha?tipo=E&id=4271319"
+   ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://www.movistarplus.es/cine/sorry-baby/ficha?tipo=E&id=4271319"
+    }
+   ],
+   "info": [],
+   "letterboxd": "https://letterboxd.com/film/sorry-baby-2025/",
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 236,
    "tipo": "serie",
    "titulo": "South of Nowhere",
@@ -14521,6 +15327,104 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 376,
+   "tipo": "serie",
+   "titulo": "The last of us",
+   "titulo_original": "The last of us",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2023,
+   "anio_fin": null,
+   "sinopsis": "Veinte años después de la destrucción de la civilización moderna a causa de un hongo -el cordyceps- que se adueña del cuerpo de los humanos, uno de los supervivientes, Joel, recibe el encargo de sacar a la joven Ellie de una opresiva zona de cuarentena.",
+   "edad": "16",
+   "relevancia": "B",
+   "temporadas": "Es la prota",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "376",
+   "generos": [
+    "Acción",
+    "Distopía",
+    "Drama"
+   ],
+   "tematicas": [
+    "Distopía",
+    "Familia",
+    "Familia encontrada",
+    "Postapocalíptico",
+    "Zombies"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso animal",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre/gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Tortura",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [
+    "https://www.hbomax.com/es/es/show/93ba22b1-833e-47ba-ae94-8ee7b9eefa9a"
+   ],
+   "plataformas": [
+    {
+     "n": "HBO Max",
+     "p": "ES",
+     "u": "https://www.hbomax.com/es/es/show/93ba22b1-833e-47ba-ae94-8ee7b9eefa9a"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 272,
    "tipo": "serie",
    "titulo": "The One",
@@ -15405,6 +16309,68 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 367,
+   "tipo": "pelicula",
+   "titulo": "Todo en todas partes al mismo tiempo",
+   "titulo_original": "Everything Everywhere All at Once",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2022,
+   "anio_fin": null,
+   "sinopsis": "Una heroína inesperada debe usar sus nuevos poderes para luchar contra los desconcertantes peligros del multiverso y así lograr salvar su mundo.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "367",
+   "generos": [
+    "Acción",
+    "Ciencia Ficción",
+    "Comedia",
+    "Drama"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amor",
+    "Comedia absurda",
+    "Familia",
+    "Salvar al mundo",
+    "Superheroinas",
+    "Universos alternativos",
+    "WTF?!"
+   ],
+   "avisos": [
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfoba",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [
+    "https://www.rtve.es/play/videos/cine-internacional/todo-vez-todas-partes/16994723/"
+   ],
+   "plataformas": [
+    {
+     "n": "RTVE Play",
+     "p": "ES",
+     "u": "https://www.rtve.es/play/videos/cine-internacional/todo-vez-todas-partes/16994723/"
+    }
+   ],
+   "info": [],
+   "letterboxd": "https://letterboxd.com/film/everything-everywhere-all-at-once/",
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 164,
@@ -16463,6 +17429,60 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 369,
+   "tipo": "pelicula",
+   "titulo": "Watermelon Woman",
+   "titulo_original": "Watermelon Woman",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 1996,
+   "anio_fin": null,
+   "sinopsis": "Una lesbiana negra, aspirante a cineasta, investiga la biografía de una actriz negra de los años 40, a quien llamaban la Mujer Sandía",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "369",
+   "generos": [
+    "Biográfico",
+    "Documental",
+    "Romance"
+   ],
+   "tematicas": [
+    "Años 90",
+    "Butch",
+    "Búsqueda de un propósito",
+    "Cine independiente USA",
+    "Identidad",
+    "Lesbianismo",
+    "Lipstick lesbian",
+    "Los 90",
+    "Protagonista lesbiana",
+    "Relaciones complicadas",
+    "Relación de pareja",
+    "Relación interracial"
+   ],
+   "avisos": [],
+   "actrices": [],
+   "directores": [
+    "Cheryl Dunye"
+   ],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0K1GOGBY3F5R17B2O0DB4I8IG9"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0K1GOGBY3F5R17B2O0DB4I8IG9"
+    }
+   ],
+   "info": [],
+   "letterboxd": "https://letterboxd.com/film/the-watermelon-woman/",
+   "publicada": "2026-10-16 15:03:54"
+  },
+  {
    "id": 205,
    "tipo": "pelicula",
    "titulo": "Wildland",
@@ -16774,6 +17794,102 @@
    ],
    "letterboxd": "https://letterboxd.com/film/and-breathe-normally/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 371,
+   "tipo": "serie",
+   "titulo": "Yellowjackets",
+   "titulo_original": "Yellowjackets",
+   "titulo_latam": null,
+   "pais": "EEUU",
+   "anio": 2021,
+   "anio_fin": null,
+   "sinopsis": "Misty, Natalie, Taissa y Shauna son cuatro de las integrantes de un equipo juvenil de fútbol femenino que sobrevivieron, en mitad de la nada, a un accidente de avión; y solo ellas saben qué ocurrió allí hasta que fueron rescatadas. Veinticinco años después, cada una ha construido su propia vida.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "371",
+   "generos": [
+    "Comedia",
+    "Horror",
+    "Suspense",
+    "Tragedia"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Crimen",
+    "Deportes",
+    "Drama psicológico",
+    "Horror corporal",
+    "Terror"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso sexual implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
+     "categoria": null
+    },
+    {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Ritos extraños",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Tortura",
+     "categoria": null
+    }
+   ],
+   "actrices": [],
+   "directores": [],
+   "donde_ver": [
+    "https://www.movistarplus.es/series/yellowjackets/ficha?tipo=E&id=1942999"
+   ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://www.movistarplus.es/series/yellowjackets/ficha?tipo=E&id=1942999"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-16 15:03:54"
   },
   {
    "id": 174,

@@ -2,6 +2,7 @@
  "generos": [
   "Acción",
   "Animación",
+  "Anime",
   "Aventura",
   "Biográfico",
   "Ciencia Ficción",
@@ -9,10 +10,12 @@
   "Comedia Dramática",
   "Comedia romántica",
   "Deportes",
+  "Distopía",
   "Documental",
   "Drama",
   "Fantasía",
   "Fantástico",
+  "Histórico",
   "Horror",
   "Intriga",
   "Musical",
@@ -22,7 +25,8 @@
   "Suspense",
   "Telenovela",
   "Terror",
-  "Thriller"
+  "Thriller",
+  "Tragedia"
  ],
  "tematicas": [
   "Aborto",
@@ -67,6 +71,7 @@
   "Brujería",
   "Bullying",
   "Butch",
+  "Búsqueda de un propósito",
   "Casanova",
   "Cazadores",
   "Celos",
@@ -115,6 +120,7 @@
   "Embarazo adolescente",
   "Enemies to Lovers",
   "Enfermedad",
+  "Entorno familiar negativo",
   "Episodio musical",
   "Erotismo",
   "Erótico",
@@ -125,6 +131,7 @@
   "Espionaje",
   "Fake dating",
   "Familia",
+  "Familia encontrada",
   "Family Friendly",
   "Fanfic",
   "Fantasmas",
@@ -149,6 +156,7 @@
   "Homofobia",
   "Homosexualidad",
   "Horror",
+  "Horror corporal",
   "Hospital",
   "Humor negro",
   "Identidad",
@@ -167,6 +175,7 @@
   "Juventud",
   "Lesbianismo",
   "Lesbofobia",
+  "Lipstick lesbian",
   "Literatura",
   "Los 80",
   "Los 90",
@@ -211,6 +220,7 @@
   "Prom",
   "Prostitución",
   "Protagonista Idiota",
+  "Protagonista lesbiana",
   "PseudoReality Show",
   "Psicológico",
   "Racismo",
@@ -218,6 +228,9 @@
   "Reality",
   "Redes Sociales",
   "Relaciones",
+  "Relaciones complicadas",
+  "Relación de pareja",
+  "Relación interracial",
   "Religión",
   "Remake",
   "Represión",
@@ -281,11 +294,25 @@
   "Webserie",
   "Western",
   "WTF?!",
+  "Yuri",
+  "Zombies",
   "Épica"
  ],
  "avisos": [
   {
+   "nombre": "Abuso",
+   "categoria": null
+  },
+  {
    "nombre": "Abuso animal",
+   "categoria": null
+  },
+  {
+   "nombre": "Abuso sexual",
+   "categoria": null
+  },
+  {
+   "nombre": "Abuso sexual implícito",
    "categoria": null
   },
   {
@@ -297,11 +324,19 @@
    "categoria": null
   },
   {
+   "nombre": "Acoso escolar",
+   "categoria": null
+  },
+  {
    "nombre": "Acoso sexual",
    "categoria": null
   },
   {
    "nombre": "Adicción",
+   "categoria": null
+  },
+  {
+   "nombre": "Agresión sexual",
    "categoria": null
   },
   {
@@ -369,6 +404,10 @@
    "categoria": null
   },
   {
+   "nombre": "Chantaje emocional",
+   "categoria": null
+  },
+  {
    "nombre": "Chistes hirientes",
    "categoria": null
   },
@@ -405,6 +444,10 @@
    "categoria": null
   },
   {
+   "nombre": "Depresión",
+   "categoria": null
+  },
+  {
    "nombre": "Desamor",
    "categoria": null
   },
@@ -434,6 +477,10 @@
   },
   {
    "nombre": "Drogodependencia",
+   "categoria": null
+  },
+  {
+   "nombre": "Duelo",
    "categoria": null
   },
   {
@@ -474,6 +521,14 @@
   },
   {
    "nombre": "Homofobia leve",
+   "categoria": null
+  },
+  {
+   "nombre": "Horror corporal",
+   "categoria": null
+  },
+  {
+   "nombre": "Ideas suicidas",
    "categoria": null
   },
   {
@@ -518,6 +573,10 @@
   },
   {
    "nombre": "Muerte",
+   "categoria": null
+  },
+  {
+   "nombre": "Muerte de personaje importante",
    "categoria": null
   },
   {
