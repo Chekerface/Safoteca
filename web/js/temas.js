@@ -1,6 +1,7 @@
 /* La Safoteca · temas de temporada (p. ej. Halloween).
    Se carga en <head> para que no haya parpadeo. Decide el tema así:
-   1) Vista previa: #/?tema=halloween  (dura mientras la pestaña esté abierta). #/?tema=normal la quita.
+   1) Enlaces cortos: #temanormal (aspecto normal, p. ej. para capturas promocionales) y #temahalloween.
+      También vale #/?tema=halloween o #/?tema=normal. Dura mientras la pestaña esté abierta.
    2) Si no, el tema cuyas fechas incluyan el día de hoy (config.js -> temas). Fuera de fechas, aspecto normal. */
 (function () {
   var cfg = (window.SAFOTECA_CONFIG || {}).temas || [];
@@ -21,6 +22,11 @@
   }
 
   function aplicar() {
+    var corto = /^#tema([\w-]+)$/.exec(location.hash);
+    if (corto) {
+      guardar(corto[1]);
+      try { history.replaceState(null, "", location.pathname + location.search + "#/"); } catch (e) { /* sin historial */ }
+    }
     var m = /[?&]tema=([\w-]+)/.exec(location.hash);
     if (m) guardar(m[1] === "normal" ? "normal" : m[1]);
     var previo = leer();
