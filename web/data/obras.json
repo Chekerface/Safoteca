@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-16T15:03:55+00:00",
+  "generado": "2026-10-16T15:26:58+00:00",
   "total": 293
  },
  "obras": [
@@ -909,7 +909,7 @@
    "temporadas": "2011-02-07 00:00:00",
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "375",
    "generos": [
     "Horror"
    ],
