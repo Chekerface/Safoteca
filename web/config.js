@@ -20,7 +20,7 @@ window.SAFOTECA_CONFIG = {
     { titulo: "Series a las que dar una oportunidad", ids: [236, 152, 47, 53, 77] }        // South of Nowhere, Dickinson, She-Ra, Harley Quinn, Gentleman Jack
   ],
   // Temas de temporada: se activan solos entre estas fechas ("MM-DD") y vuelven al aspecto normal al terminar.
-  // Vista previa en cualquier momento: #/?tema=halloween  (y #/?tema=normal para quitarla).
+  // Vista previa en cualquier momento: lasafoteca.com/#temahalloween  (y /#temanormal para quitarla, p. ej. para capturas).
   temas: [
     { id: "halloween", desde: "10-15", hasta: "11-02" }
   ],
