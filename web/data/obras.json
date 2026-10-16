@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-13T18:39:21+00:00",
+  "generado": "2026-10-16T14:40:59+00:00",
   "total": 281
  },
  "obras": [
@@ -13663,7 +13663,20 @@
     "Infancia",
     "Superheroinas"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Charlyne Yi",
     "Deedee Magno",
