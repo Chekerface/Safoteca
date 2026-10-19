@@ -156,11 +156,14 @@
   const rejilla = (lista) => `<div class="rejilla">${lista.map(tarjeta).join("")}</div>`;
   const carrusel = (lista) => `<div class="carrusel">${lista.map(tarjeta).join("")}</div>`;
 
-  function notaOcultas() {
+  function textoNota() {
     const n = ocultas();
     if (!E.evitar.size) return "";
     return `<p class="nota">Estás evitando ${E.evitar.size === 1 ? "1 aviso" : E.evitar.size + " avisos"}: ${n === 1 ? "hay 1 obra oculta" : "hay " + n + " obras ocultas"}. <button class="enlace-suave boton-texto" type="button" data-accion="abrir-evitar">Cambiar</button></p>`;
   }
+  const notaOcultas = () => `<div class="nota-ocultas">${textoNota()}</div>`;
+  // Pone al día el aviso «Estás evitando…» de la página sin repintarla (también con la hoja de filtros abierta).
+  const refrescarNota = () => $$(".nota-ocultas").forEach((d) => { d.innerHTML = textoNota(); });
 
   function toast(texto) {
     const t = $("#toast");
@@ -633,7 +636,8 @@
           break;
         }
         case "quitar-evitar": {
-          E.evitar.clear(); guardar.escribir("evitar", []); E.evitarCambiado = true;
+          E.evitar.clear(); guardar.escribir("evitar", []); E.evitarCambiado = true; refrescarNota(); ajustarCabecera();
+          if (E.F && rutaActual().ruta === "/catalogo") pintarResultados();
           const campo = $("#buscar-aviso"); $("#lista-avisos").innerHTML = listaAvisos(campo ? campo.value : "");
           break;
         }
@@ -643,8 +647,11 @@
         case "cerrar-intro": E.introVista = true; guardar.escribir("intro", true); pintar(false); break;
         case "quitar-filtros":
           clearTimeout(espera);
-          E.F = filtrosDe(new URLSearchParams()); sincronizar();
+          E.F = filtrosDe(new URLSearchParams());
+          if (E.evitar.size) { E.evitar.clear(); guardar.escribir("evitar", []); }
+          sincronizar();
           limpiarCampoBusqueda();
+          refrescarNota(); ajustarCabecera();
           if (hoja().open) abrirHoja("filtros");
           break;
         case "alternar-avisos": {
@@ -675,7 +682,7 @@
     if (t.matches("[data-evitar]")) {
       if (t.checked) E.evitar.add(t.dataset.evitar); else E.evitar.delete(t.dataset.evitar);
       guardar.escribir("evitar", [...E.evitar]);
-      E.evitarCambiado = true;
+      E.evitarCambiado = true; refrescarNota();
       if (E.F && rutaActual().ruta === "/catalogo") pintarResultados();
       actualizarPieHoja(); ajustarCabecera();
     } else if (t.id === "sel-edad") { E.F.edad = t.value; sincronizar(); actualizarPieHoja(); }
