@@ -426,3 +426,9 @@ details.explica p { margin-top: .5rem; }
 .flotante__panel { width: 100%; max-width: 46rem; padding: .6rem; border-radius: 1rem; background: var(--superficie); box-shadow: 0 4px 18px rgba(0,0,0,.3); border: 1px solid var(--linea); }
 .flotante__panel[hidden] { display: none; }
 @media (prefers-reduced-motion: reduce) { .flotante { transition: none; } }
+
+/* ---- Listas de la usuaria ---- */
+.chips--listas { margin-bottom: 1rem; }
+.acciones--lista { margin-bottom: 1rem; }
+.tarjeta__quitar { display: block; margin-top: .25rem; font-size: .875rem; }
+.ficha__listas { margin: .75rem 0; }
