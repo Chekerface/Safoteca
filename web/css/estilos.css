@@ -415,3 +415,13 @@ details.explica p { margin-top: .5rem; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+
+/* ---- Buscador flotante ---- */
+.flotante { position: fixed; right: 1rem; bottom: calc(var(--alto-tabs) + env(safe-area-inset-bottom) + 1rem); left: 1rem; z-index: 19; display: flex; flex-direction: column; align-items: flex-end; gap: .6rem; pointer-events: none; transition: transform .25s ease, opacity .25s ease; }
+.flotante > * { pointer-events: auto; }
+.flotante--oculto { transform: translateY(calc(100% + 6rem)); opacity: 0; }
+.flotante__boton { width: 3.5rem; height: 3.5rem; border-radius: 50%; border: 0; display: grid; place-items: center; background: var(--violeta); color: #fff; box-shadow: 0 4px 14px rgba(0,0,0,.3); cursor: pointer; }
+.flotante__boton svg { width: 1.6rem; height: 1.6rem; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.flotante__panel { width: 100%; max-width: 46rem; padding: .6rem; border-radius: 1rem; background: var(--superficie); box-shadow: 0 4px 18px rgba(0,0,0,.3); border: 1px solid var(--linea); }
+.flotante__panel[hidden] { display: none; }
+@media (prefers-reduced-motion: reduce) { .flotante { transition: none; } }

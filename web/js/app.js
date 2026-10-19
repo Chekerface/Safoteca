@@ -589,6 +589,7 @@
     document.title = doc;
     pintarTabs(ruta);
     ajustarCabecera();
+    pintarFlotante();
     if (arriba) { window.scrollTo(0, 0); vista.focus({ preventScroll: true }); }
   }
 
@@ -729,6 +730,60 @@
     else ajustarCabecera();
   });
   window.addEventListener("hashchange", () => { if (!E.cargado) return; E.navegado = true; if (hoja().open) hoja().close(); pintar(true); });
+
+
+  // ---------- UAT: buscador flotante (solo en la versión de pruebas) ----------
+  const RAIZ_TABS = ["/", "/catalogo", "/favoritos"];
+  function pintarFlotante() {
+    const { ruta, p } = rutaActual();
+    let f = $("#flotante");
+    if (!RAIZ_TABS.includes(ruta)) { if (f) f.hidden = true; return; }
+    if (!f) {
+      f = document.createElement("div");
+      f.id = "flotante"; f.className = "flotante";
+      f.innerHTML = `<form role="search" id="form-flotante" class="flotante__panel" hidden>
+          <label class="solo-lectores" for="buscar-flotante">Buscar por título o actriz</label>
+          <input class="campo" id="buscar-flotante" type="search" placeholder="Buscar por título o actriz" autocomplete="off" enterkeyhint="search">
+        </form>
+        <button class="flotante__boton" id="btn-flotante" type="button" aria-label="Buscar" aria-expanded="false">${ICONO.lupa}</button>`;
+      document.body.appendChild(f);
+    }
+    f.hidden = false; f.classList.remove("flotante--oculto");
+    const campo = $("#buscar-flotante");
+    campo.value = ruta === "/catalogo" ? (p.get("q") || "") : "";
+  }
+  function abrirFlotante(abrir) {
+    const panel = $("#form-flotante"), btn = $("#btn-flotante");
+    panel.hidden = !abrir; btn.setAttribute("aria-expanded", String(abrir));
+    btn.innerHTML = abrir ? ICONO.cerrar : ICONO.lupa;
+    btn.setAttribute("aria-label", abrir ? "Cerrar búsqueda" : "Buscar");
+    if (abrir) $("#buscar-flotante").focus();
+  }
+  document.addEventListener("click", (e) => {
+    if (e.target.closest("#btn-flotante")) abrirFlotante($("#form-flotante").hidden);
+  });
+  document.addEventListener("input", (e) => {
+    if (e.target.id !== "buscar-flotante" || rutaActual().ruta !== "/catalogo") return;
+    const c = $("#buscar");
+    if (c) { c.value = e.target.value; c.dispatchEvent(new Event("input", { bubbles: true })); }
+  });
+  document.addEventListener("submit", (e) => {
+    if (e.target.id !== "form-flotante") return;
+    e.preventDefault();
+    const q = $("#buscar-flotante").value.trim();
+    document.activeElement.blur();
+    abrirFlotante(false);
+    if (rutaActual().ruta !== "/catalogo") { location.hash = "#/catalogo" + (q ? "?q=" + encodeURIComponent(q) : ""); }
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("#form-flotante") && !$("#form-flotante").hidden) { abrirFlotante(false); $("#btn-flotante").focus(); } });
+  let yPrev = 0;
+  window.addEventListener("scroll", () => {
+    const f = $("#flotante"); if (!f || f.hidden || !$("#form-flotante").hidden) return;
+    const y = scrollY;
+    if (y > yPrev + 8 && y > 120) f.classList.add("flotante--oculto");
+    else if (y < yPrev - 8) f.classList.remove("flotante--oculto");
+    yPrev = y;
+  }, { passive: true });
 
   // ---------- Arranque ----------
   async function cargar() {
