@@ -1,6 +1,6 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "safoteca-app-v8";
-const CACHE_IMG = "safoteca-img";
+const CACHE_APP = "uat-safoteca-app-v1";
+const CACHE_IMG = "uat-safoteca-img";
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
   "./", "./index.html", "./css/estilos.css", "./css/temas.css", "./js/app.js", "./js/temas.js", "./config.js",
@@ -15,7 +15,7 @@ self.addEventListener("install", (e) => {
 self.addEventListener("activate", (e) => {
   e.waitUntil(
     caches.keys()
-      .then((claves) => Promise.all(claves.filter((k) => !ACTUALES.includes(k)).map((k) => caches.delete(k))))
+      .then((claves) => Promise.all(claves.filter((k) => k.startsWith("uat-safoteca-") && !ACTUALES.includes(k)).map((k) => caches.delete(k))))
       .then(() => self.clients.claim())
   );
 });

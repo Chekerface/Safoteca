@@ -32,6 +32,21 @@ jobs:
           node --check web/config.js
           node --check web/js/app.js
           python3 -c "import json; json.load(open('web/data/obras.json', encoding='utf-8'))"
+      - name: Añadir la versión de pruebas (rama uat) en /uat/
+        run: |
+          if git ls-remote --exit-code --heads origin uat >/dev/null 2>&1; then
+            git fetch --depth=1 origin uat
+            mkdir -p /tmp/uat
+            git archive FETCH_HEAD web | tar -x -C /tmp/uat
+            node --check /tmp/uat/web/js/app.js
+            mkdir -p web/uat
+            cp -r /tmp/uat/web/. web/uat/
+            rm -f web/uat/robots.txt
+            printf 'User-agent: *\nDisallow: /uat/\n' > web/robots.txt
+            echo "Versión de pruebas añadida en /uat/"
+          else
+            echo "No hay rama uat: se publica solo la web normal"
+          fi
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
