@@ -643,9 +643,12 @@
         case "cerrar-intro": E.introVista = true; guardar.escribir("intro", true); pintar(false); break;
         case "quitar-filtros":
           clearTimeout(espera);
-          E.F = filtrosDe(new URLSearchParams()); sincronizar();
+          E.F = filtrosDe(new URLSearchParams());
+          if (E.evitar.size) { E.evitar.clear(); guardar.escribir("evitar", []); E.evitarCambiado = !hoja().open; }
+          sincronizar();
           limpiarCampoBusqueda();
           if (hoja().open) abrirHoja("filtros");
+          else if (E.evitarCambiado) { E.evitarCambiado = false; pintar(false); }
           break;
         case "alternar-avisos": {
           const caja = $("#avisos-contenido"); const resumen = $("#avisos-resumen");
