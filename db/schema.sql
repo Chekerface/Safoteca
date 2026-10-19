@@ -66,6 +66,50 @@ CREATE TABLE IF NOT EXISTS obra_aviso    (obra_id INTEGER NOT NULL REFERENCES ob
                                           aviso_id INTEGER NOT NULL REFERENCES aviso(id),
                                           PRIMARY KEY (obra_id, aviso_id));
 
+-- Grupos de etiquetas ----------------------------------------------------
+-- Un subgrupo (hijo) pertenece a un grupo (padre): Racismo -> Discriminación -> Violencia.
+-- Cuando una obra recibe un hijo (por el formulario, un Excel o a mano) recibe sola todos sus grupos
+-- (los directos y los de más arriba). Las vistas *_ancestro calculan esa cadena completa.
+CREATE TABLE IF NOT EXISTS tematica_grupo (hijo_id INTEGER NOT NULL REFERENCES tematica(id) ON DELETE CASCADE,
+                                           padre_id INTEGER NOT NULL REFERENCES tematica(id) ON DELETE CASCADE,
+                                           PRIMARY KEY (hijo_id, padre_id), CHECK (hijo_id <> padre_id));
+CREATE TABLE IF NOT EXISTS aviso_grupo    (hijo_id INTEGER NOT NULL REFERENCES aviso(id) ON DELETE CASCADE,
+                                           padre_id INTEGER NOT NULL REFERENCES aviso(id) ON DELETE CASCADE,
+                                           PRIMARY KEY (hijo_id, padre_id), CHECK (hijo_id <> padre_id));
+
+CREATE VIEW IF NOT EXISTS tematica_ancestro AS
+    WITH RECURSIVE a(hijo_id, padre_id) AS (
+        SELECT hijo_id, padre_id FROM tematica_grupo
+        UNION SELECT a.hijo_id, g.padre_id FROM a JOIN tematica_grupo g ON g.hijo_id = a.padre_id)
+    SELECT hijo_id, padre_id FROM a WHERE hijo_id <> padre_id;
+CREATE VIEW IF NOT EXISTS aviso_ancestro AS
+    WITH RECURSIVE a(hijo_id, padre_id) AS (
+        SELECT hijo_id, padre_id FROM aviso_grupo
+        UNION SELECT a.hijo_id, g.padre_id FROM a JOIN aviso_grupo g ON g.hijo_id = a.padre_id)
+    SELECT hijo_id, padre_id FROM a WHERE hijo_id <> padre_id;
+
+CREATE TRIGGER IF NOT EXISTS obra_tematica_grupos AFTER INSERT ON obra_tematica
+BEGIN
+    INSERT OR IGNORE INTO obra_tematica(obra_id, tematica_id)
+        SELECT NEW.obra_id, padre_id FROM tematica_ancestro WHERE hijo_id = NEW.tematica_id;
+END;
+CREATE TRIGGER IF NOT EXISTS obra_aviso_grupos AFTER INSERT ON obra_aviso
+BEGIN
+    INSERT OR IGNORE INTO obra_aviso(obra_id, aviso_id)
+        SELECT NEW.obra_id, padre_id FROM aviso_ancestro WHERE hijo_id = NEW.aviso_id;
+END;
+-- Si se crea un grupo nuevo, las obras que ya tenían el subgrupo lo reciben también.
+CREATE TRIGGER IF NOT EXISTS tematica_grupo_nuevo AFTER INSERT ON tematica_grupo
+BEGIN
+    INSERT OR IGNORE INTO obra_tematica(obra_id, tematica_id)
+        SELECT obra_id, NEW.padre_id FROM obra_tematica WHERE tematica_id = NEW.hijo_id;
+END;
+CREATE TRIGGER IF NOT EXISTS aviso_grupo_nuevo AFTER INSERT ON aviso_grupo
+BEGIN
+    INSERT OR IGNORE INTO obra_aviso(obra_id, aviso_id)
+        SELECT obra_id, NEW.padre_id FROM obra_aviso WHERE aviso_id = NEW.hijo_id;
+END;
+
 -- Personas y enlaces -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS persona (
     id INTEGER PRIMARY KEY,

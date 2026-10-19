@@ -33,6 +33,7 @@
   "Acción",
   "Aceptación de la sexualidad",
   "Acoso",
+  "Acoso escolar",
   "Adolescencia",
   "Adopción",
   "Adorabilidad Absoluta",
@@ -52,7 +53,7 @@
   "Asesinatos en Serie",
   "Asia",
   "Autismo",
-  "Aventura",
+  "Autodescubrimiento",
   "Aventuras",
   "Años 30",
   "Años 40",
@@ -69,7 +70,6 @@
   "Bomberos",
   "Brujas",
   "Brujería",
-  "Bullying",
   "Butch",
   "Búsqueda de un propósito",
   "Casanova",
@@ -77,21 +77,22 @@
   "Celos",
   "Chantaje",
   "China",
-  "Ciencia Ficción",
+  "Ciencia ficción",
   "Cine independiente USA",
   "Cine negro",
   "Comedia",
   "Comedia absurda",
-  "Comedia de Enredo",
+  "Comedia de enredo",
   "Comedia de situación",
-  "Comedia Dramática",
-  "Comedia Española",
+  "Comedia dramática",
+  "Comedia española",
   "Comedia juvenil",
   "Comedia Negra",
   "Comedia romántica",
   "Comedia sexual",
   "Comida",
   "Coming of age",
+  "Consumo de alcohol",
   "Consumo de drogas",
   "Crimen",
   "Cutre",
@@ -104,12 +105,13 @@
   "Desapariciones",
   "Diferencia de altura",
   "Diferencia de edad",
+  "Discriminación",
   "Discriminación fuerte",
   "Distopía",
   "Divorcio",
   "Documental",
   "Drama",
-  "Drama Adolescente",
+  "Drama adolescente",
   "Drama médico",
   "Drama psicológico",
   "Drogodependencia",
@@ -121,7 +123,6 @@
   "Enfermedad",
   "Entorno familiar negativo",
   "Episodio musical",
-  "Erotismo",
   "Erótico",
   "Escocia",
   "Escuela",
@@ -135,14 +136,13 @@
   "Fanfic",
   "Fantasmas",
   "Fantasía",
-  "Fantasía Oscura",
+  "Fantasía oscura",
   "Fantástico",
   "Fascismo",
   "Feminismo",
   "Ficción Sobrenatural",
-  "Friends to Lovers",
+  "Friends to lovers",
   "Furry",
-  "Futuro postapocalíptico",
   "Gran empresa",
   "Guerra",
   "Guerra Fría",
@@ -381,6 +381,10 @@
    "categoria": null
   },
   {
+   "nombre": "Conductas perjudiciales",
+   "categoria": null
+  },
+  {
    "nombre": "Consumo de alcohol",
    "categoria": null
   },
@@ -390,6 +394,10 @@
   },
   {
    "nombre": "Contenido Cuestionable",
+   "categoria": null
+  },
+  {
+   "nombre": "Crimen",
    "categoria": null
   },
   {
@@ -446,6 +454,10 @@
   },
   {
    "nombre": "Echar de casa",
+   "categoria": null
+  },
+  {
+   "nombre": "Enfermedad",
    "categoria": null
   },
   {
@@ -521,10 +533,6 @@
    "categoria": null
   },
   {
-   "nombre": "Mentiras y Engaño",
-   "categoria": null
-  },
-  {
    "nombre": "Muerte",
    "categoria": null
   },
@@ -541,11 +549,7 @@
    "categoria": null
   },
   {
-   "nombre": "Padre lgbtfobo",
-   "categoria": null
-  },
-  {
-   "nombre": "Padre lgtbfobo",
+   "nombre": "Padre lgbtfóbico",
    "categoria": null
   },
   {
