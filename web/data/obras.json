@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-19T09:23:12+00:00",
+  "generado": "2026-10-19T09:39:30+00:00",
   "total": 293
  },
  "obras": [
@@ -241,7 +241,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     }
    ],
@@ -545,7 +545,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     }
    ],
@@ -1083,11 +1083,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Diferencia de edad",
      "categoria": null
     },
     {
-     "nombre": "Diferencia de edad",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -1148,7 +1148,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -1799,7 +1799,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -1989,6 +1989,7 @@
     "Animación",
     "Comedia Dramática",
     "Comedia Negra",
+    "Consumo de drogas",
     "Drogodependencia",
     "Espectáculo",
     "Furry"
@@ -2007,15 +2008,15 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Gordofobia",
      "categoria": null
     },
     {
      "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -2100,7 +2101,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -2215,7 +2216,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -2362,7 +2363,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -2460,7 +2461,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -2679,11 +2680,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Diferencia de edad",
      "categoria": null
     },
     {
-     "nombre": "Diferencia de edad",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -2915,7 +2916,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -2982,7 +2983,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -3101,7 +3102,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -3183,7 +3184,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -3256,7 +3257,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -3372,7 +3373,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -3384,7 +3385,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -3540,7 +3541,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -3757,7 +3758,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -4359,7 +4360,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -4724,11 +4725,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Homofobia leve",
      "categoria": null
     },
     {
-     "nombre": "Homofobia leve",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -4787,6 +4788,7 @@
     "Amor",
     "De época",
     "Drama",
+    "Lesbiana",
     "Lesbianismo",
     "Represión",
     "Romance",
@@ -4796,7 +4798,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -5139,7 +5141,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -5271,6 +5273,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Consumo de drogas",
     "Drama",
     "Drogodependencia",
     "Identidad",
@@ -5301,15 +5304,15 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Gordofobia",
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Infidelidad",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -5325,7 +5328,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -5401,7 +5404,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -5469,7 +5472,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -5684,11 +5687,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Diferencia de edad",
      "categoria": null
     },
     {
-     "nombre": "Diferencia de edad",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -5815,6 +5818,7 @@
     "De época",
     "Drama",
     "Histórico",
+    "Lesbiana",
     "Lesbianismo"
    ],
    "avisos": [
@@ -6140,7 +6144,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -6198,6 +6202,7 @@
     "Bisexualidad",
     "Comedia",
     "Drama",
+    "Lesbiana",
     "Lesbianismo",
     "Stand-up",
     "Vida adulta"
@@ -6646,9 +6651,9 @@
     "Drama"
    ],
    "tematicas": [
+    "Consumo de drogas",
     "Crimen",
     "Drama",
-    "Drogas",
     "Policíaca"
    ],
    "avisos": [
@@ -6665,11 +6670,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
-     "nombre": "Drogodependencia",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -7019,7 +7024,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -7151,7 +7156,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -7319,7 +7324,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -7399,7 +7404,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -7407,7 +7412,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -7538,7 +7543,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -8108,7 +8113,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -8377,7 +8382,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -8846,7 +8851,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -8964,11 +8969,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
-     "nombre": "Homofobia",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -9393,7 +9398,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     }
    ],
@@ -9499,7 +9504,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     }
    ],
@@ -9825,7 +9830,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -9833,7 +9838,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -10138,11 +10143,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
-     "nombre": "Homofobia",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -10726,7 +10731,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -11008,7 +11013,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -11285,6 +11290,7 @@
    ],
    "tematicas": [
     "Anticapitalista",
+    "Consumo de drogas",
     "Drama",
     "Drogodependencia",
     "Soledad",
@@ -11514,10 +11520,6 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Depresión",
      "categoria": null
     },
@@ -11534,7 +11536,15 @@
      "categoria": null
     },
     {
+     "nombre": "Infidelidad",
+     "categoria": null
+    },
+    {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -11543,10 +11553,6 @@
     },
     {
      "nombre": "Prostitución",
-     "categoria": null
-    },
-    {
-     "nombre": "Relación tóxica",
      "categoria": null
     },
     {
@@ -11658,7 +11664,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -12007,10 +12013,6 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Delincuencia",
      "categoria": null
     },
@@ -12024,6 +12026,10 @@
     },
     {
      "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -12513,7 +12519,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -12521,7 +12527,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -12583,7 +12589,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -12651,7 +12657,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -12819,6 +12825,7 @@
     "Amistad",
     "Amor",
     "Celos",
+    "Consumo de drogas",
     "Drama",
     "Drogodependencia",
     "Musical",
@@ -12836,7 +12843,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -13126,7 +13133,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -13383,7 +13390,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -13700,11 +13707,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
-     "nombre": "Homofobia",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -13848,7 +13855,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -13966,10 +13973,6 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Discriminación fuerte",
      "categoria": null
     },
@@ -13978,11 +13981,15 @@
      "categoria": null
     },
     {
+     "nombre": "Infidelidad",
+     "categoria": null
+    },
+    {
      "nombre": "Manipulación",
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -14142,7 +14149,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -14418,6 +14425,7 @@
    "tematicas": [
     "Adolescencia",
     "Coming of age",
+    "Consumo de drogas",
     "Drama",
     "Drama Adolescente",
     "Drogodependencia",
@@ -14427,11 +14435,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Discriminación leve",
      "categoria": null
     },
     {
-     "nombre": "Discriminación leve",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -14802,7 +14810,7 @@
      "categoria": null
     },
     {
-     "nombre": "Pareja Tóxica",
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -14903,7 +14911,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -15263,7 +15271,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -15362,7 +15370,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -15548,7 +15556,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -15677,7 +15685,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     },
     {
@@ -16124,7 +16132,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -16444,7 +16452,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgbtfoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     }
    ],
@@ -16551,7 +16559,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -16679,7 +16687,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -16931,7 +16939,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -17270,7 +17278,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -17365,17 +17373,18 @@
     "Biográfico",
     "Drama",
     "Feminismo",
+    "Lesbiana",
     "Lesbianismo",
     "Literatura",
     "Soledad"
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
-     "nombre": "Homofobia",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -17436,7 +17445,7 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Infidelidad",
      "categoria": null
     }
    ],
@@ -17488,6 +17497,7 @@
     "Coming of age",
     "Drama",
     "Identidad",
+    "Lesbiana",
     "Lesbianismo",
     "Sexualidad"
    ],
@@ -17551,6 +17561,7 @@
     "Búsqueda de un propósito",
     "Cine independiente USA",
     "Identidad",
+    "Lesbiana",
     "Lesbianismo",
     "Lipstick lesbian",
     "Protagonista lesbiana",
@@ -17853,8 +17864,10 @@
     "Drama"
    ],
    "tematicas": [
+    "Consumo de drogas",
     "Drama",
     "Drogodependencia",
+    "Lesbiana",
     "Lesbianismo"
    ],
    "avisos": [
@@ -17934,10 +17947,6 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Depresión",
      "categoria": null
     },
@@ -17947,6 +17956,10 @@
     },
     {
      "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Infidelidad",
      "categoria": null
     },
     {
@@ -18353,10 +18366,6 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
      "nombre": "Cáncer",
      "categoria": null
     },
@@ -18373,7 +18382,15 @@
      "categoria": null
     },
     {
+     "nombre": "Infidelidad",
+     "categoria": null
+    },
+    {
      "nombre": "Padre lgbtfobo",
+     "categoria": null
+    },
+    {
+     "nombre": "Pareja tóxica",
      "categoria": null
     },
     {
@@ -18382,10 +18399,6 @@
     },
     {
      "nombre": "Racismo",
-     "categoria": null
-    },
-    {
-     "nombre": "Relación tóxica",
      "categoria": null
     },
     {

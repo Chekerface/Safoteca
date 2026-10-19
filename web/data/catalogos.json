@@ -92,6 +92,7 @@
   "Comedia sexual",
   "Comida",
   "Coming of age",
+  "Consumo de drogas",
   "Crimen",
   "Cutre",
   "Cómic",
@@ -111,7 +112,6 @@
   "Drama Adolescente",
   "Drama médico",
   "Drama psicológico",
-  "Drogas",
   "Drogodependencia",
   "Día a día",
   "Día de Acción de Gracias",
@@ -171,6 +171,7 @@
   "Irlanda del Norte",
   "Juvenil",
   "Juventud",
+  "Lesbiana",
   "Lesbianismo",
   "Lesbofobia",
   "Lipstick lesbian",
@@ -401,10 +402,6 @@
    "categoria": null
   },
   {
-   "nombre": "Cuernos",
-   "categoria": null
-  },
-  {
    "nombre": "Cáncer",
    "categoria": null
   },
@@ -497,15 +494,15 @@
    "categoria": null
   },
   {
+   "nombre": "Infidelidad",
+   "categoria": null
+  },
+  {
    "nombre": "Intento de abuso sexual",
    "categoria": null
   },
   {
    "nombre": "Lesbofobia",
-   "categoria": null
-  },
-  {
-   "nombre": "Madre lgbtfoba",
    "categoria": null
   },
   {
@@ -553,7 +550,7 @@
    "categoria": null
   },
   {
-   "nombre": "Pareja Tóxica",
+   "nombre": "Pareja tóxica",
    "categoria": null
   },
   {
@@ -578,10 +575,6 @@
   },
   {
    "nombre": "Racismo",
-   "categoria": null
-  },
-  {
-   "nombre": "Relación tóxica",
    "categoria": null
   },
   {

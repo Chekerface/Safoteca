@@ -63,7 +63,7 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Crimen»",
+   "rango": "de «\"Cosas de chicas\"» a «Costumbrismo»",
    "opciones": [
     "\"Cosas de chicas\"",
     "A fuego lento",
@@ -140,15 +140,16 @@ var DATOS = {
     "Comida",
     "Coming of age",
     "Conspiraciones",
+    "Consumo de drogas",
     "Cosplay",
-    "Costumbrismo",
-    "Crimen"
+    "Costumbrismo"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cutre» a «Horror»",
+   "rango": "de «Crimen» a «Horror»",
    "opciones": [
+    "Crimen",
     "Cutre",
     "Cómic",
     "Cómic de autor",
@@ -177,7 +178,6 @@ var DATOS = {
     "Drama Adolescente",
     "Drama médico",
     "Drama psicológico",
-    "Drogas",
     "Drogodependencia",
     "Día a día",
     "Día de Acción de Gracias",
@@ -231,7 +231,7 @@ var DATOS = {
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Hospital» a «Relaciones complicadas»",
+   "rango": "de «Hospital» a «Relaciones»",
    "opciones": [
     "Hospital",
     "Humor",
@@ -251,6 +251,7 @@ var DATOS = {
     "Irlanda del Norte",
     "Juvenil",
     "Juventud",
+    "Lesbiana",
     "Lesbianismo",
     "Lesbofobia",
     "Lipstick lesbian",
@@ -309,14 +310,14 @@ var DATOS = {
     "Realismo mágico",
     "Reality",
     "Redes Sociales",
-    "Relaciones",
-    "Relaciones complicadas"
+    "Relaciones"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relaciones interpersonales» a «Épica»",
+   "rango": "de «Relaciones complicadas» a «Épica»",
    "opciones": [
+    "Relaciones complicadas",
     "Relaciones interpersonales",
     "Relación de pareja",
     "Relación interracial",
@@ -399,8 +400,8 @@ var DATOS = {
  ],
  "avisos": [
   {
-   "titulo": "Aviso (parte 1 de 2)",
-   "rango": "de «Abuso» a «Hate sex»",
+   "titulo": "Aviso",
+   "rango": "",
    "opciones": [
     "Abuso",
     "Abuso sexual",
@@ -432,7 +433,6 @@ var DATOS = {
     "Contenido Cuestionable",
     "Cruda",
     "Crímenes de guerra",
-    "Cuernos",
     "Cáncer",
     "Delincuencia",
     "Depresión",
@@ -452,13 +452,7 @@ var DATOS = {
     "Genocidio",
     "Gordofobia",
     "Gore",
-    "Hate sex"
-   ]
-  },
-  {
-   "titulo": "Aviso (parte 2 de 2)",
-   "rango": "de «Homofobia» a «Vómitos»",
-   "opciones": [
+    "Hate sex",
     "Homofobia",
     "Homofobia leve",
     "Ideas suicidas",
@@ -467,7 +461,6 @@ var DATOS = {
     "Infidelidad",
     "Intento de abuso sexual",
     "Lesbofobia",
-    "Madre lgbtfoba",
     "Madre lgbtfóbica",
     "Maltrato",
     "Maltrato animal",
@@ -479,14 +472,13 @@ var DATOS = {
     "Obsesión",
     "Padre lgbtfobo",
     "Padre lgtbfobo",
-    "Pareja Tóxica",
+    "Pareja tóxica",
     "Pederastia",
     "Plumofobia",
     "Prostitución",
     "Pseudoincesto",
     "Psicópata",
     "Racismo",
-    "Relación tóxica",
     "Religión",
     "Ritos extraños",
     "Sangre",

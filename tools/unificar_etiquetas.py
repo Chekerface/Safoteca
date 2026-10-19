@@ -50,7 +50,7 @@ OPERACIONES = [
     ("aviso", "unir", "Adicción", "Drogodependencia"),
     ("aviso", "anadir", "Drogodependencia", "Consumo de drogas"),
     ("aviso", "unir", "Horror corporal", "Body Horror"),
-    ("aviso", "unir", "Relaciones perjudiciales", "Pareja Tóxica"),
+    ("aviso", "unir", "Relaciones perjudiciales", "Pareja tóxica"),
     ("aviso", "unir", "Sexo esplícito", "Sexo Explícito"),
     ("aviso", "anadir", "Tiroteo escolar", "Tiroteo"),
     ("aviso", "unir", "Abuso animal", "Maltrato animal"),
@@ -60,6 +60,14 @@ OPERACIONES = [
     ("aviso", "anadir", "Genocidio", "Crímenes de guerra"),
     ("aviso", "anadir", "Ideas suicidas", "Depresión"),
     ("aviso", "unir", "Intento de violación", "Intento de abuso sexual"),
+    # ---- Segunda tanda (respuestas del 19 de octubre)
+    ("tematica", "anadir", "Lesbianismo", "Lesbiana"),
+    ("aviso", "unir", "Madre lgbtfoba", "Madre lgbtfóbica"),
+    ("aviso", "unir", "Relación tóxica", "Pareja tóxica"),
+    ("aviso", "renombrar", "Pareja Tóxica", "Pareja tóxica"),
+    ("tematica", "unir", "Drogas", "Consumo de drogas"),
+    ("tematica", "anadir", "Drogodependencia", "Consumo de drogas"),
+    ("aviso", "unir", "Cuernos", "Infidelidad"),
 ]
 
 TABLAS = {"tematica": "obra_tematica", "aviso": "obra_aviso"}
