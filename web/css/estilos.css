@@ -389,6 +389,8 @@ details.explica p { margin-top: .5rem; }
   border-radius: 10px; cursor: pointer;
 }
 .marca:hover { background: var(--suave); }
+.lista-marcas__titulo { display: flex; align-items: center; justify-content: space-between; gap: .5rem; margin: .5rem .25rem .1rem; color: var(--tinta-suave); font-size: .9375rem; font-weight: 600; }
+.aviso-final { font-weight: 600; }
 .marca input { width: 1.375rem; height: 1.375rem; accent-color: var(--violeta); flex: 0 0 auto; }
 .marca span:last-child { margin-left: auto; color: var(--tinta-suave); font-size: .9375rem; }
 .marca span:nth-child(2) { flex: 1; }

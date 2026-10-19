@@ -147,7 +147,7 @@ var DATOS = {
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Crimen» a «Horror»",
+   "rango": "de «Crimen» a «Hospital»",
    "opciones": [
     "Crimen",
     "Cutre",
@@ -211,7 +211,6 @@ var DATOS = {
     "Fascismo",
     "Feminismo",
     "Ficción Sobrenatural",
-    "Final Feliz",
     "Fluidez de género",
     "Friends to Lovers",
     "Furry",
@@ -226,14 +225,14 @@ var DATOS = {
     "Hombres lobo",
     "Homofobia",
     "Homosexualidad",
-    "Horror"
+    "Horror",
+    "Hospital"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Hospital» a «Relaciones»",
+   "rango": "de «Humor» a «Relaciones complicadas»",
    "opciones": [
-    "Hospital",
     "Humor",
     "Humor negro",
     "Identidad",
@@ -310,14 +309,14 @@ var DATOS = {
     "Realismo mágico",
     "Reality",
     "Redes Sociales",
-    "Relaciones"
+    "Relaciones",
+    "Relaciones complicadas"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relaciones complicadas» a «Épica»",
+   "rango": "de «Relaciones interpersonales» a «Épica»",
    "opciones": [
-    "Relaciones complicadas",
     "Relaciones interpersonales",
     "Relación de pareja",
     "Relación interracial",

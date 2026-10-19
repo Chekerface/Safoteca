@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-19T09:39:30+00:00",
+  "generado": "2026-10-19T10:21:27+00:00",
   "total": 293
  },
  "obras": [
@@ -516,7 +516,7 @@
    "relevancia": "A",
    "temporadas": "5",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "128",
    "generos": [
     "Drama"
@@ -526,7 +526,6 @@
     "De época",
     "Diferencia de edad",
     "Drama",
-    "Final Feliz",
     "Juventud",
     "Pareja",
     "Salir del armario"
@@ -725,7 +724,7 @@
    "relevancia": "A",
    "temporadas": "7, 8",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "129",
    "generos": [
     "Drama"
@@ -734,7 +733,6 @@
     "Amor",
     "De época",
     "Drama",
-    "Final Feliz",
     "Juventud",
     "Pareja",
     "Salir del armario"
@@ -840,7 +838,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "211",
    "generos": [
     "Horror"
@@ -1269,7 +1267,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "56",
    "generos": [
     "Romance"
@@ -1281,7 +1279,6 @@
     "Diferencia de altura",
     "Drama",
     "Escuela",
-    "Final Feliz",
     "Heartwarming",
     "Pareja sana",
     "Romance"
@@ -1435,7 +1432,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "79",
    "generos": [
     "Acción"
@@ -1504,7 +1501,7 @@
    "relevancia": "C",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "111",
    "generos": [
     "Romance"
@@ -1513,7 +1510,6 @@
     "Amigas de la infancia",
     "Amistad",
     "Amor",
-    "Final Feliz",
     "Romance"
    ],
    "avisos": [],
@@ -1777,7 +1773,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "224",
    "generos": [
     "Aventura"
@@ -2269,7 +2265,7 @@
    "relevancia": "A",
    "temporadas": "4",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "89",
    "generos": [
     "Fantasía"
@@ -2336,7 +2332,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "115",
    "generos": [
     "Comedia"
@@ -2346,7 +2342,6 @@
     "Comedia",
     "Coming of age",
     "Enemies to Lovers",
-    "Final Feliz",
     "Romance"
    ],
    "avisos": [
@@ -2609,7 +2604,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "207",
    "generos": [
     "Drama"
@@ -2900,7 +2895,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "3",
    "generos": [
     "Acción"
@@ -3679,7 +3674,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "109",
    "generos": [
     "Comedia"
@@ -3692,7 +3687,6 @@
     "Cutre",
     "Drama",
     "Enemies to Lovers",
-    "Final Feliz",
     "Heartwarming",
     "Juventud",
     "Pareja sana",
@@ -4173,7 +4167,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "55",
    "generos": [
     "Acción"
@@ -4190,7 +4184,6 @@
     "Drama",
     "Escuela",
     "Ficción Sobrenatural",
-    "Final Feliz",
     "Friends to Lovers",
     "NSFW",
     "Romance",
@@ -4779,7 +4772,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "155",
    "generos": [
     "Drama"
@@ -5944,7 +5937,6 @@
     "Bajo presupuesto",
     "Casanova",
     "Comedia",
-    "Final Feliz",
     "Heartwarming",
     "Musical"
    ],
@@ -6724,7 +6716,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "49",
    "generos": [
     "Fantasía"
@@ -6741,7 +6733,6 @@
     "Family Friendly",
     "Fantasía",
     "Ficción Sobrenatural",
-    "Final Feliz",
     "Friends to Lovers",
     "Sobrenatural",
     "Subtexto",
@@ -7378,7 +7369,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "225",
    "generos": [
     "Thriller"
@@ -7632,7 +7623,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "192",
    "generos": [
     "Suspense"
@@ -8231,7 +8222,7 @@
    "relevancia": "C",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "48",
    "generos": [
     "Fantasía"
@@ -8245,7 +8236,6 @@
     "Bisexualidad",
     "Family Friendly",
     "Fantasía",
-    "Final Feliz",
     "Friends to Lovers",
     "Juventud",
     "Pareja sana",
@@ -8427,7 +8417,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "227",
    "generos": [
     "Terror"
@@ -9653,7 +9643,7 @@
    "relevancia": "A",
    "temporadas": "3",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "263",
    "generos": [
     "Ciencia Ficción"
@@ -9666,7 +9656,6 @@
     "Comedia absurda",
     "DC",
     "Enemies to Lovers",
-    "Final Feliz",
     "Heartwarming",
     "Salvar al mundo",
     "Superheroinas",
@@ -10042,7 +10031,7 @@
    "relevancia": "A",
    "temporadas": "2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "264",
    "generos": [
     "Ciencia Ficción"
@@ -10188,7 +10177,7 @@
    "relevancia": "A",
    "temporadas": "5",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "138",
    "generos": [
     "Acción"
@@ -10305,7 +10294,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "238",
    "generos": [
     "Comedia romántica"
@@ -10315,7 +10304,6 @@
     "Comedia romántica",
     "Comida",
     "Escocia",
-    "Final Feliz",
     "India",
     "Música",
     "Romance",
@@ -10527,7 +10515,7 @@
    "relevancia": "B",
    "temporadas": "Episodios 1x8, 1x9 y 1x10",
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "132",
    "generos": [
     "Fantástico"
@@ -10537,7 +10525,6 @@
     "Anime",
     "Drama",
     "Fantástico",
-    "Final Feliz",
     "Intriga",
     "Juventud",
     "Romance",
@@ -11416,7 +11403,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "221",
    "generos": [
     "Intriga"
@@ -13112,7 +13099,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "110",
    "generos": [
     "Romance"
@@ -13122,7 +13109,6 @@
     "Amor",
     "Bisexualidad",
     "Drama",
-    "Final Feliz",
     "Juventud",
     "Pareja sana",
     "Romance",
@@ -13366,7 +13352,7 @@
    "relevancia": "B",
    "temporadas": "1.2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "216",
    "generos": [
     "Terror"
@@ -13756,7 +13742,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "47",
    "generos": [
     "Fantasía"
@@ -13775,7 +13761,6 @@
     "Enemies to Lovers",
     "Family Friendly",
     "Fantasía",
-    "Final Feliz",
     "Friends to Lovers",
     "Furry",
     "Heartwarming",
@@ -14038,7 +14023,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "34",
    "generos": [
     "Drama"
@@ -14137,7 +14122,7 @@
    "relevancia": "C",
    "temporadas": "2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "156",
    "generos": [
     "Drama"
@@ -14272,7 +14257,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "259",
    "generos": [
     "Terror"
@@ -14609,7 +14594,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "105",
    "generos": [
     "Romance"
@@ -14625,7 +14610,6 @@
     "Drama",
     "Día a día",
     "Escuela",
-    "Final Feliz",
     "Romance"
    ],
    "avisos": [],
@@ -15126,7 +15110,6 @@
    ],
    "tematicas": [
     "Drama",
-    "Final Feliz",
     "Romance",
     "Suspense",
     "Thriller"
@@ -15189,7 +15172,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "90",
    "generos": [
     "Terror"
@@ -16247,7 +16230,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "154",
    "generos": [
     "Drama"
@@ -16372,7 +16355,7 @@
    "relevancia": "B",
    "temporadas": "3",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "6",
    "generos": [
     "Aventura"
@@ -16605,7 +16588,7 @@
    "relevancia": "C",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "237",
    "generos": [
     "Drama"
@@ -16861,7 +16844,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "131",
    "generos": [
     "Romance"
@@ -16872,7 +16855,6 @@
     "Comedia",
     "Drama",
     "Familia",
-    "Final Feliz",
     "Matrimonio",
     "Pareja tóxica",
     "Poliamor",
@@ -18449,7 +18431,7 @@
    "relevancia": "A",
    "temporadas": "Episodio 5x18 y Temporada 7",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": true,
    "poster": "108",
    "generos": [
     "Fantasía"
@@ -18458,7 +18440,6 @@
     "Amor",
     "Familia",
     "Fantasía",
-    "Final Feliz",
     "Juventud",
     "Pareja sana",
     "Supporting Dad",

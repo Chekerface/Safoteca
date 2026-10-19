@@ -90,7 +90,7 @@
   function filtrosDe(p) {
     return {
       q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
-      rel: separar(p.get("rel")), plat: separar(p.get("plat")), otros: p.get("otros") === "1",
+      rel: separar(p.get("rel")), final: p.get("final") === "si" ? "si" : "", plat: separar(p.get("plat")), otros: p.get("otros") === "1",
       edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
     };
   }
@@ -101,13 +101,14 @@
     if (f.gen.length) p.set("gen", f.gen.join("|"));
     if (f.tem.length) p.set("tem", f.tem.join("|"));
     if (f.rel.length) p.set("rel", f.rel.join("|"));
+    if (f.final) p.set("final", f.final);
     if (f.plat.length) p.set("plat", f.plat.join("|"));
     if (f.otros) p.set("otros", "1");
     if (f.edad !== "") p.set("edad", f.edad);
     if (f.orden !== "az") p.set("orden", f.orden);
     return p.toString();
   }
-  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + f.plat.length + (f.edad !== "" ? 1 : 0);
+  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + (f.final ? 1 : 0) + f.plat.length + (f.edad !== "" ? 1 : 0);
 
   function filtrar(f) {
     const q = norm(f.q).trim();
@@ -115,6 +116,7 @@
     const r = visibles().filter((o) => {
       if (f.tipo && o.tipo !== f.tipo) return false;
       if (f.rel.length && !f.rel.includes(o.relevancia)) return false;
+      if (f.final && o.final_feliz !== true) return false;
       if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
       if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
       if (f.plat.length && !(o.plataformas || []).some((x) => f.plat.includes(clavePlat(x)) && (f.otros || delPais(x)))) return false;
@@ -314,13 +316,15 @@
     const evitados = nombres.filter((n) => E.evitar.has(claveAviso(n)));
     const chipLista = (clave, valores) => valores.map((v) => `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(v)}">${esc(v)}</a>`).join("");
 
+    const final = o.final_feliz === true ? "Final feliz" : o.final_feliz === false ? "Final no feliz" : "";
+    const totalAvisos = nombres.length + (final ? 1 : 0);
     let avisos = `<section class="bloque bloque--avisos" aria-labelledby="t-avisos"><h2 id="t-avisos">Avisos de contenido</h2>`;
-    if (!nombres.length) {
+    if (!totalAvisos) {
       avisos += `<p>No hay avisos registrados para esta obra.</p>`;
     } else {
       if (evitados.length) avisos += `<p class="nota nota--alerta">Incluye ${evitados.length > 1 ? "avisos que has elegido evitar" : "un aviso que has elegido evitar"}: ${evitados.map(esc).join(", ")}.</p>`;
-      avisos += `<p id="avisos-resumen" ${E.verAvisos ? "hidden" : ""}>Esta ficha tiene ${nombres.length === 1 ? "1 aviso" : nombres.length + " avisos"}. Están ocultos para no destripar la historia.</p>
-        <div id="avisos-contenido" ${E.verAvisos ? "" : "hidden"}><ul class="lista-avisos">${nombres.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>
+      avisos += `<p id="avisos-resumen" ${E.verAvisos ? "hidden" : ""}>Esta ficha tiene ${totalAvisos === 1 ? "1 aviso" : totalAvisos + " avisos"}. Están ocultos para no destripar la historia.</p>
+        <div id="avisos-contenido" ${E.verAvisos ? "" : "hidden"}><ul class="lista-avisos">${final ? `<li class="aviso-final">${final}</li>` : ""}${nombres.map((n) => `<li>${esc(n)}</li>`).join("")}</ul></div>
         <p style="margin-top:.75rem"><button class="boton boton--claro" type="button" data-accion="alternar-avisos" aria-expanded="${E.verAvisos}" aria-controls="avisos-contenido">${E.verAvisos ? "Ocultar los avisos" : "Ver los avisos"}</button></p>`;
     }
     avisos += `</section>`;
@@ -351,7 +355,7 @@
             ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
             ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
           <section class="bloque"><h2>Datos</h2><dl class="dato">
-            ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}${o.final_feliz ? dato("Final", "Final feliz") : ""}
+            ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}
             ${dato("Reparto", o.actrices.join(", "))}${dato("Dirección", o.directores.join(", "))}
           </dl></section>
           ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
@@ -409,9 +413,22 @@
   }
   function listaAvisos(consulta) {
     const q = norm(consulta).trim();
-    const items = gruposAvisos().filter((g) => !q || norm(g.etiqueta).includes(q));
-    if (!items.length) return `<p class="resumen">No hay avisos con ese nombre.</p>`;
-    return items.map((g) => `<label class="marca"><input type="checkbox" data-evitar="${esc(g.clave)}" ${E.evitar.has(g.clave) ? "checked" : ""}><span>${esc(g.etiqueta)}</span><span>${g.obras}</span></label>`).join("");
+    const todos = gruposAvisos();
+    const fila = (g) => `<label class="marca"><input type="checkbox" data-evitar="${esc(g.clave)}" ${E.evitar.has(g.clave) ? "checked" : ""}><span>${esc(g.etiqueta)}</span><span>${g.obras}</span></label>`;
+    const marcados = todos.filter((g) => E.evitar.has(g.clave));
+    let resto = todos.filter((g) => !E.evitar.has(g.clave) && (!q || norm(g.etiqueta).includes(q)));
+    resto.sort((p, r) => r.obras - p.obras || norm(p.etiqueta).localeCompare(norm(r.etiqueta), "es"));
+    const total = resto.length;
+    if (!q) resto = resto.slice(0, 12);
+    let html = "";
+    if (marcados.length) {
+      html += `<div class="lista-marcas__titulo"><span>Estás evitando (${marcados.length})</span><button class="boton-texto enlace-suave" type="button" data-accion="quitar-evitar">Quitar todos</button></div>${marcados.map(fila).join("")}`;
+    }
+    if (resto.length) html += `<p class="lista-marcas__titulo">${q ? "Resultados" : "Los más habituales"}</p>${resto.map(fila).join("")}`;
+    else if (!marcados.length) html += `<p class="resumen">No hay avisos con ese nombre.</p>`;
+    else if (q) html += `<p class="resumen">No hay más avisos con ese nombre.</p>`;
+    if (!q && total > resto.length) html += `<p class="resumen">Escribe para buscar entre los ${todos.length} avisos.</p>`;
+    return html;
   }
   function chipsTematica(consulta) {
     const q = norm(consulta).trim();
@@ -453,6 +470,10 @@
     const grupoFiltros = soloEvitar ? "" : `
       <section class="grupo" aria-labelledby="g-rel"><h3 id="g-rel">Nivel de relevancia</h3>
         <div class="chips">${["A", "B", "C"].map((n) => `<button class="chip chip--tejuelo" type="button" data-rel="${n}" aria-pressed="${f.rel.includes(n)}" aria-label="Nivel ${n}">${n}</button>`).join("")}</div></section>
+      <section class="grupo" aria-labelledby="g-final"><h3 id="g-final">Final de la historia</h3>
+        <label class="interruptor"><input type="checkbox" id="sw-final" role="switch" ${f.final ? "checked" : ""}>
+          <span class="interruptor__pista" aria-hidden="true"></span>
+          <span>Solo con final feliz<small>Salen solo las obras con final feliz confirmado.</small></span></label></section>
       <section class="grupo" aria-labelledby="g-gen"><h3 id="g-gen">Género</h3>
         <div class="chips">${E.cat.generos.map((g) => `<button class="chip" type="button" data-gen="${esc(g)}" aria-pressed="${f.gen.includes(g)}">${esc(g)}</button>`).join("")}</div></section>
       <section class="grupo" aria-labelledby="g-tem"><h3 id="g-tem">Temática</h3>
@@ -610,6 +631,11 @@
           const b = $("#buscar"); b && b.focus({ preventScroll: true });
           break;
         }
+        case "quitar-evitar": {
+          E.evitar.clear(); guardar.escribir("evitar", []); E.evitarCambiado = true;
+          const campo = $("#buscar-aviso"); $("#lista-avisos").innerHTML = listaAvisos(campo ? campo.value : "");
+          break;
+        }
         case "abrir-evitar": abrirHoja("evitar"); break;
         case "cerrar-hoja": hoja().close(); break;
         case "cerrar-campana": { const k = campana(); if (k) { E.campanaCerrada = k.c.id; guardar.escribir("campana", k.c.id); } pintar(false); break; }
@@ -653,6 +679,7 @@
       actualizarPieHoja(); ajustarCabecera();
     } else if (t.id === "sel-edad") { E.F.edad = t.value; sincronizar(); actualizarPieHoja(); }
     else if (t.id === "ordenar") { E.F.orden = t.value; sincronizar(); }
+    else if (t.id === "sw-final" && E.F) { E.F.final = t.checked ? "si" : ""; sincronizar(); actualizarPieHoja(); }
     else if (t.id === "sw-avisos") { E.verAvisos = t.checked; guardar.escribir("verAvisos", t.checked); }
   });
 
