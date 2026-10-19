@@ -34,7 +34,6 @@
   "Aceptación de la sexualidad",
   "Acoso",
   "Adolescencia",
-  "Adolescentes",
   "Adopción",
   "Adorabilidad Absoluta",
   "Afroamericanos",
@@ -66,6 +65,7 @@
   "Biográfico",
   "Bisexual",
   "Bisexualidad",
+  "Body Horror",
   "Bomberos",
   "Brujas",
   "Brujería",
@@ -98,7 +98,6 @@
   "DC",
   "De época",
   "Delincuencia",
-  "Deporte",
   "Deportes",
   "Desamor",
   "Desapariciones",
@@ -156,7 +155,6 @@
   "Homofobia",
   "Homosexualidad",
   "Horror",
-  "Horror corporal",
   "Hospital",
   "Humor negro",
   "Identidad",
@@ -177,8 +175,6 @@
   "Lesbofobia",
   "Lipstick lesbian",
   "Literatura",
-  "Los 80",
-  "Los 90",
   "Machismo",
   "Mafia",
   "Magia",
@@ -206,14 +202,13 @@
   "Pandemia",
   "Pandilla",
   "Pareja",
-  "Pareja Idiota",
-  "Pareja Sana",
+  "Pareja idiota",
+  "Pareja sana",
   "Pareja tóxica",
   "Piratas",
   "Poliamor",
   "Policía",
   "Policíaca",
-  "Policíaco",
   "Política",
   "Postapocalíptico",
   "Prisión",
@@ -270,8 +265,6 @@
   "Telenovela",
   "Terror",
   "Terrorismo",
-  "Thiller Psicológico",
-  "Thriler",
   "Thriller",
   "Thriller psicológico",
   "TLP",
@@ -282,7 +275,7 @@
   "Triángulo amoroso",
   "Universidad",
   "Universos alternativos",
-  "Vampiros",
+  "Vampiras",
   "Vecinos",
   "Vejez",
   "Venganza",
@@ -301,10 +294,6 @@
  "avisos": [
   {
    "nombre": "Abuso",
-   "categoria": null
-  },
-  {
-   "nombre": "Abuso animal",
    "categoria": null
   },
   {
@@ -332,23 +321,7 @@
    "categoria": null
   },
   {
-   "nombre": "Adicción",
-   "categoria": null
-  },
-  {
-   "nombre": "Agresión sexual",
-   "categoria": null
-  },
-  {
-   "nombre": "Alcohol",
-   "categoria": null
-  },
-  {
    "nombre": "Alcoholismo",
-   "categoria": null
-  },
-  {
-   "nombre": "Alcolismo",
    "categoria": null
   },
   {
@@ -385,10 +358,6 @@
   },
   {
    "nombre": "Brutalidad policial",
-   "categoria": null
-  },
-  {
-   "nombre": "Bullying",
    "categoria": null
   },
   {
@@ -472,10 +441,6 @@
    "categoria": null
   },
   {
-   "nombre": "Drogas",
-   "categoria": null
-  },
-  {
    "nombre": "Drogodependencia",
    "categoria": null
   },
@@ -524,10 +489,6 @@
    "categoria": null
   },
   {
-   "nombre": "Horror corporal",
-   "categoria": null
-  },
-  {
    "nombre": "Ideas suicidas",
    "categoria": null
   },
@@ -549,10 +510,6 @@
   },
   {
    "nombre": "Madre lgbtfóbica",
-   "categoria": null
-  },
-  {
-   "nombre": "Madre lgtbófoba",
    "categoria": null
   },
   {
@@ -624,10 +581,6 @@
    "categoria": null
   },
   {
-   "nombre": "Relaciones perjudiciales",
-   "categoria": null
-  },
-  {
    "nombre": "Relación tóxica",
    "categoria": null
   },
@@ -644,15 +597,11 @@
    "categoria": null
   },
   {
-   "nombre": "Sangre/gore",
+   "nombre": "Sangre/Gore",
    "categoria": null
   },
   {
    "nombre": "Secuestro",
-   "categoria": null
-  },
-  {
-   "nombre": "Sexo esplícito",
    "categoria": null
   },
   {
@@ -665,10 +614,6 @@
   },
   {
    "nombre": "Sexualización",
-   "categoria": null
-  },
-  {
-   "nombre": "Sexualizado",
    "categoria": null
   },
   {

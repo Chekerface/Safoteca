@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-16T15:26:58+00:00",
+  "generado": "2026-10-19T09:23:12+00:00",
   "total": 293
  },
  "obras": [
@@ -80,7 +80,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -851,7 +851,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -986,10 +986,6 @@
     },
     {
      "nombre": "Homofobia",
-     "categoria": null
-    },
-    {
-     "nombre": "Horror corporal",
      "categoria": null
     },
     {
@@ -1148,11 +1144,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -1214,11 +1210,15 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcolismo",
+     "nombre": "Alcoholismo",
      "categoria": null
     },
     {
      "nombre": "Bifobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -1283,7 +1283,7 @@
     "Escuela",
     "Final Feliz",
     "Heartwarming",
-    "Pareja Sana",
+    "Pareja sana",
     "Romance"
    ],
    "avisos": [],
@@ -1339,7 +1339,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     },
     {
@@ -1447,7 +1451,11 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -1987,19 +1995,19 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
-     "categoria": null
-    },
-    {
      "nombre": "Ansiedad",
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -2277,7 +2285,7 @@
     "Superheroinas",
     "Terror",
     "Tragedia",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -2560,7 +2568,7 @@
     "Comedia",
     "Fantasía",
     "Terror",
-    "Vampiros",
+    "Vampiras",
     "Webserie"
    ],
    "avisos": [],
@@ -2609,7 +2617,7 @@
     "Drama",
     "Fantástico",
     "Romance",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -2730,12 +2738,13 @@
     "Aventuras",
     "Bisexualidad",
     "Brujas",
+    "Brujería",
     "Enemies to Lovers",
     "Escuela",
     "Family Friendly",
     "Fantasía",
     "Misterio",
-    "Pareja Idiota",
+    "Pareja idiota",
     "Subtexto"
    ],
    "avisos": [
@@ -3149,7 +3158,7 @@
    ],
    "tematicas": [
     "Drama",
-    "Thiller Psicológico",
+    "Thriller psicológico",
     "Trastornos mentales"
    ],
    "avisos": [
@@ -3166,7 +3175,7 @@
      "categoria": null
     },
     {
-     "nombre": "Horror corporal",
+     "nombre": "Body Horror",
      "categoria": null
     },
     {
@@ -3174,7 +3183,7 @@
      "categoria": null
     },
     {
-     "nombre": "Relaciones perjudiciales",
+     "nombre": "Pareja Tóxica",
      "categoria": null
     },
     {
@@ -3359,7 +3368,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -3379,7 +3388,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -3387,7 +3396,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexualizado",
+     "nombre": "Sexualización",
      "categoria": null
     },
     {
@@ -3524,6 +3533,10 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -3681,7 +3694,7 @@
     "Final Feliz",
     "Heartwarming",
     "Juventud",
-    "Pareja Sana",
+    "Pareja sana",
     "Romance",
     "Salir del armario"
    ],
@@ -4052,7 +4065,6 @@
     "IRA",
     "Irlanda",
     "Irlanda del Norte",
-    "Los 90",
     "Terrorismo"
    ],
    "avisos": [],
@@ -4474,15 +4486,15 @@
     "Drama",
     "Enemies to Lovers",
     "Instituto",
-    "Policíaco"
+    "Policíaca"
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Cancelada",
      "categoria": null
     },
     {
-     "nombre": "Cancelada",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -4602,6 +4614,10 @@
     },
     {
      "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
      "categoria": null
     },
     {
@@ -4792,7 +4808,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -4982,7 +4998,7 @@
     "Años 40",
     "Biográfico",
     "Comedia",
-    "Deporte",
+    "Deportes",
     "Drama",
     "Histórico",
     "Machismo",
@@ -5062,6 +5078,7 @@
    ],
    "tematicas": [
     "Brujas",
+    "Brujería",
     "Drama",
     "Fantástico",
     "Magia"
@@ -5115,6 +5132,7 @@
    "tematicas": [
     "Acción",
     "Bisexual",
+    "Bisexualidad",
     "Bomberos",
     "Drama",
     "Romance"
@@ -5183,15 +5201,15 @@
      "categoria": null
     },
     {
-     "nombre": "Alcohol",
-     "categoria": null
-    },
-    {
      "nombre": "Asesinato",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -5263,10 +5281,6 @@
    ],
    "avisos": [
     {
-     "nombre": "Abuso animal",
-     "categoria": null
-    },
-    {
      "nombre": "Alcoholismo",
      "categoria": null
     },
@@ -5279,11 +5293,15 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -5299,6 +5317,10 @@
      "categoria": null
     },
     {
+     "nombre": "Maltrato animal",
+     "categoria": null
+    },
+    {
      "nombre": "Manipulación",
      "categoria": null
     },
@@ -5311,7 +5333,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexualizado",
+     "nombre": "Sexualización",
      "categoria": null
     },
     {
@@ -5518,7 +5540,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -5601,7 +5623,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     },
     {
@@ -5735,7 +5761,11 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     }
    ],
@@ -5802,6 +5832,10 @@
     },
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -5972,7 +6006,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     },
     {
@@ -6110,7 +6148,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexualizado",
+     "nombre": "Sexualización",
      "categoria": null
     }
    ],
@@ -6226,7 +6264,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     }
    ],
@@ -6507,7 +6545,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     },
     {
@@ -6611,11 +6653,15 @@
    ],
    "avisos": [
     {
-     "nombre": "Adicción",
+     "nombre": "Alcoholismo",
      "categoria": null
     },
     {
-     "nombre": "Alcoholismo",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -6623,7 +6669,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -6635,7 +6681,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -6969,7 +7015,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -7109,7 +7155,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexualizado",
+     "nombre": "Sexualización",
      "categoria": null
     }
    ],
@@ -7209,7 +7255,7 @@
     "Comedia",
     "Drama",
     "Thriller",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -7365,7 +7411,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexo esplícito",
+     "nombre": "Sexo Explícito",
      "categoria": null
     },
     {
@@ -7492,11 +7538,11 @@
      "categoria": null
     },
     {
-     "nombre": "Psicópata",
+     "nombre": "Pareja Tóxica",
      "categoria": null
     },
     {
-     "nombre": "Relaciones perjudiciales",
+     "nombre": "Psicópata",
      "categoria": null
     }
    ],
@@ -7598,11 +7644,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -7610,7 +7656,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -7792,6 +7838,7 @@
    "tematicas": [
     "Años 90",
     "Brujas",
+    "Brujería",
     "Intriga",
     "Slasher",
     "Sobrenatural",
@@ -7803,7 +7850,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -7856,6 +7903,7 @@
    "tematicas": [
     "Años 70",
     "Brujas",
+    "Brujería",
     "Intriga",
     "Secuela",
     "Slasher",
@@ -7864,7 +7912,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -7916,6 +7964,7 @@
    ],
    "tematicas": [
     "Brujas",
+    "Brujería",
     "Intriga",
     "Secuela",
     "Siglo XVII",
@@ -7929,7 +7978,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -8194,7 +8243,7 @@
     "Final Feliz",
     "Friends to Lovers",
     "Juventud",
-    "Pareja Sana",
+    "Pareja sana",
     "Política",
     "Sobrenatural",
     "Subtexto"
@@ -8391,11 +8440,11 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -8456,10 +8505,6 @@
    ],
    "avisos": [
     {
-     "nombre": "Adicción",
-     "categoria": null
-    },
-    {
      "nombre": "Alcoholismo",
      "categoria": null
     },
@@ -8481,6 +8526,10 @@
     },
     {
      "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -8606,8 +8655,8 @@
    "tematicas": [
     "Música",
     "Terror",
-    "Thiller Psicológico",
-    "Thriller"
+    "Thriller",
+    "Thriller psicológico"
    ],
    "avisos": [
     {
@@ -8667,7 +8716,7 @@
     "Intriga",
     "Sobrenatural",
     "Terror",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -8911,11 +8960,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -8927,7 +8976,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sexualizado",
+     "nombre": "Sexualización",
      "categoria": null
     }
    ],
@@ -9042,11 +9091,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Autolesión",
      "categoria": null
     },
     {
-     "nombre": "Autolesión",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -9054,7 +9103,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -9150,11 +9199,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Cancelada",
      "categoria": null
     },
     {
-     "nombre": "Cancelada",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -9327,7 +9376,7 @@
    "tematicas": [
     "Adolescencia",
     "Amistad",
-    "Deporte",
+    "Deportes",
     "Drama"
    ],
    "avisos": [
@@ -9507,10 +9556,11 @@
    ],
    "tematicas": [
     "Brujas",
+    "Brujería",
     "Drama",
     "Fantástico",
     "Hombres lobo",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -10080,15 +10130,15 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
      "nombre": "Cuernos",
-     "categoria": null
-    },
-    {
-     "nombre": "Drogas",
      "categoria": null
     },
     {
@@ -10152,7 +10202,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -10316,7 +10366,7 @@
     "Drama"
    ],
    "tematicas": [
-    "Adolescentes",
+    "Adolescencia",
     "Autismo",
     "Coming of age",
     "Drama",
@@ -10329,7 +10379,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -10502,7 +10552,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -10556,7 +10606,11 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     }
    ],
@@ -10934,11 +10988,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Ansiedad",
      "categoria": null
     },
     {
-     "nombre": "Ansiedad",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -10966,7 +11020,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -11035,15 +11089,7 @@
      "categoria": null
     },
     {
-     "nombre": "Abuso animal",
-     "categoria": null
-    },
-    {
      "nombre": "Abuso sexual",
-     "categoria": null
-    },
-    {
-     "nombre": "Agresión sexual",
      "categoria": null
     },
     {
@@ -11060,6 +11106,10 @@
     },
     {
      "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -11080,6 +11130,10 @@
     },
     {
      "nombre": "Lesbofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato animal",
      "categoria": null
     },
     {
@@ -11174,6 +11228,7 @@
    ],
    "tematicas": [
     "Brujas",
+    "Brujería",
     "Ciencia Ficción",
     "Drama",
     "Fantasía",
@@ -11241,7 +11296,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -11443,19 +11498,19 @@
      "categoria": null
     },
     {
-     "nombre": "Adicción",
-     "categoria": null
-    },
-    {
-     "nombre": "Alcohol",
-     "categoria": null
-    },
-    {
      "nombre": "Ansiedad",
      "categoria": null
     },
     {
      "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -11468,6 +11523,10 @@
     },
     {
      "nombre": "Desamor",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -11699,11 +11758,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Adicción",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Drogodependencia",
      "categoria": null
     }
    ],
@@ -11800,7 +11859,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -11937,6 +11996,14 @@
     },
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -12156,11 +12223,11 @@
     "Aceptación de la sexualidad",
     "Adolescencia",
     "Amistad",
+    "Años 80",
     "Ciencia Ficción",
     "Coming of age",
     "Drama",
     "Intriga",
-    "Los 80",
     "Viajes en el tiempo"
    ],
    "avisos": [
@@ -12240,7 +12307,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -12310,7 +12377,7 @@
     "Adolescencia",
     "Intriga",
     "Slasher",
-    "Thriler"
+    "Thriller"
    ],
    "avisos": [
     {
@@ -12322,7 +12389,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -12442,11 +12509,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -12454,7 +12521,7 @@
      "categoria": null
     },
     {
-     "nombre": "Relaciones perjudiciales",
+     "nombre": "Pareja Tóxica",
      "categoria": null
     },
     {
@@ -12761,7 +12828,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -12944,7 +13011,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -13050,7 +13117,7 @@
     "Drama",
     "Final Feliz",
     "Juventud",
-    "Pareja Sana",
+    "Pareja sana",
     "Romance",
     "Salir del armario",
     "Supporting Dad",
@@ -13063,7 +13130,7 @@
      "categoria": null
     },
     {
-     "nombre": "Madre lgtbófoba",
+     "nombre": "Madre lgbtfóbica",
      "categoria": null
     }
    ],
@@ -13316,7 +13383,7 @@
      "categoria": null
     },
     {
-     "nombre": "Relaciones perjudiciales",
+     "nombre": "Pareja Tóxica",
      "categoria": null
     },
     {
@@ -13706,7 +13773,7 @@
     "Furry",
     "Heartwarming",
     "Juventud",
-    "Pareja Idiota",
+    "Pareja idiota",
     "Sobrenatural",
     "Superheroinas"
    ],
@@ -13895,6 +13962,10 @@
      "categoria": null
     },
     {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
      "nombre": "Cuernos",
      "categoria": null
     },
@@ -13989,6 +14060,14 @@
      "categoria": null
     },
     {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
      "nombre": "Drogodependencia",
      "categoria": null
     },
@@ -14071,7 +14150,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -14193,9 +14272,9 @@
    ],
    "tematicas": [
     "Fantástico",
-    "Policíaco",
+    "Policíaca",
     "Romance",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [
     {
@@ -14588,7 +14667,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -14707,11 +14786,15 @@
      "categoria": null
     },
     {
-     "nombre": "Contenido Cuestionable",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Contenido Cuestionable",
      "categoria": null
     },
     {
@@ -14720,10 +14803,6 @@
     },
     {
      "nombre": "Pareja Tóxica",
-     "categoria": null
-    },
-    {
-     "nombre": "Relaciones perjudiciales",
      "categoria": null
     },
     {
@@ -14871,7 +14950,7 @@
    "tematicas": [
     "Comedia",
     "Fantasía",
-    "Vampiros",
+    "Vampiras",
     "Webserie"
    ],
    "avisos": [],
@@ -14979,7 +15058,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Tiroteo",
      "categoria": null
     },
     {
@@ -15176,11 +15259,11 @@
      "categoria": null
     },
     {
-     "nombre": "Cuernos",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Cuernos",
      "categoria": null
     },
     {
@@ -15356,15 +15439,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Abuso animal",
+     "nombre": "Acoso",
      "categoria": null
     },
     {
      "nombre": "Acoso escolar",
-     "categoria": null
-    },
-    {
-     "nombre": "Alcohol",
      "categoria": null
     },
     {
@@ -15376,7 +15455,15 @@
      "categoria": null
     },
     {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
      "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato animal",
      "categoria": null
     },
     {
@@ -15388,7 +15475,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/gore",
+     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -15511,6 +15598,7 @@
    ],
    "tematicas": [
     "Brujas",
+    "Brujería",
     "Comedia",
     "Fantasía",
     "Hombres lobo",
@@ -15573,7 +15661,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     },
     {
@@ -15751,10 +15843,6 @@
    ],
    "avisos": [
     {
-     "nombre": "Adicción",
-     "categoria": null
-    },
-    {
      "nombre": "Asesinato",
      "categoria": null
     },
@@ -15763,11 +15851,15 @@
      "categoria": null
     },
     {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
      "nombre": "Cáncer",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -15822,7 +15914,7 @@
     "Drama",
     "Pandemia",
     "Terror",
-    "Vampiros"
+    "Vampiras"
    ],
    "avisos": [],
    "actrices": [
@@ -15872,7 +15964,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
@@ -16098,11 +16190,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Alcohol",
+     "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -16222,7 +16314,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -16403,7 +16495,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     }
    ],
@@ -16994,7 +17086,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Bullying",
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
      "categoria": null
     }
    ],
@@ -17457,7 +17553,6 @@
     "Identidad",
     "Lesbianismo",
     "Lipstick lesbian",
-    "Los 90",
     "Protagonista lesbiana",
     "Relaciones complicadas",
     "Relación de pareja",
@@ -17511,7 +17606,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -17708,7 +17803,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -17819,10 +17914,10 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Body Horror",
     "Crimen",
     "Deportes",
     "Drama psicológico",
-    "Horror corporal",
     "Terror"
    ],
    "avisos": [
@@ -17835,7 +17930,15 @@
      "categoria": null
     },
     {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
      "nombre": "Cuernos",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
      "categoria": null
     },
     {
@@ -18242,11 +18345,11 @@
    ],
    "avisos": [
     {
-     "nombre": "Adicción",
+     "nombre": "Asesinato",
      "categoria": null
     },
     {
-     "nombre": "Asesinato",
+     "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
@@ -18262,7 +18365,7 @@
      "categoria": null
     },
     {
-     "nombre": "Drogas",
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -18344,7 +18447,7 @@
     "Fantasía",
     "Final Feliz",
     "Juventud",
-    "Pareja Sana",
+    "Pareja sana",
     "Supporting Dad",
     "Supporting Mom"
    ],
