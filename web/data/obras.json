@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-19T10:21:27+00:00",
+  "generado": "2026-10-19T11:38:24+00:00",
   "total": 293
  },
  "obras": [
@@ -24,6 +24,7 @@
     "Romance"
    ],
    "tematicas": [
+    "Adolescencia",
     "Amor",
     "Comedia",
     "Juventud",
@@ -75,10 +76,16 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Cine independiente USA",
+    "Identidad",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de alcohol",
      "categoria": null
@@ -237,6 +244,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -309,6 +320,10 @@
     {
      "nombre": "Suicidio",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -352,7 +367,9 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Amistad",
+    "Autodescubrimiento",
     "Comedia",
     "Coming of age",
     "Drama",
@@ -420,7 +437,9 @@
     "Comedia Dramática"
    ],
    "tematicas": [
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
+    "Fantasía",
     "Navidad",
     "Sobrenatural",
     "Vida adulta"
@@ -469,11 +488,17 @@
    ],
    "tematicas": [
     "Amor",
+    "Autodescubrimiento",
     "Documental",
     "Drama",
+    "Identidad",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -522,10 +547,13 @@
     "Drama"
    ],
    "tematicas": [
+    "Adolescencia",
     "Amor",
+    "Autodescubrimiento",
     "De época",
     "Diferencia de edad",
     "Drama",
+    "Identidad",
     "Juventud",
     "Pareja",
     "Salir del armario"
@@ -533,6 +561,10 @@
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -730,9 +762,12 @@
     "Drama"
    ],
    "tematicas": [
+    "Adolescencia",
     "Amor",
+    "Autodescubrimiento",
     "De época",
     "Drama",
+    "Identidad",
     "Juventud",
     "Pareja",
     "Salir del armario"
@@ -740,6 +775,10 @@
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -751,7 +790,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     }
    ],
@@ -798,8 +837,10 @@
     "Horror"
    ],
    "tematicas": [
+    "Fantasía",
     "Horror",
-    "Sobrenatural"
+    "Sobrenatural",
+    "Terror"
    ],
    "avisos": [],
    "actrices": [
@@ -844,8 +885,10 @@
     "Horror"
    ],
    "tematicas": [
+    "Fantasía",
     "Horror",
-    "Sobrenatural"
+    "Sobrenatural",
+    "Terror"
    ],
    "avisos": [
     {
@@ -914,8 +957,10 @@
    "tematicas": [
     "Asesinato",
     "Crimen",
+    "Fantasía",
     "Horror",
-    "Sobrenatural"
+    "Sobrenatural",
+    "Terror"
    ],
    "avisos": [
     {
@@ -947,7 +992,15 @@
      "categoria": null
     },
     {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
      "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -963,6 +1016,10 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Cruda",
      "categoria": null
     },
@@ -972,6 +1029,10 @@
     },
     {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -1136,11 +1197,16 @@
     "Comedia"
    ],
    "tematicas": [
+    "Comedia",
     "Comedia absurda",
     "Romance",
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de drogas",
      "categoria": null
@@ -1199,9 +1265,11 @@
     "Comedia"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
-    "Comedia de Enredo",
-    "Comedia Española",
+    "Comedia de enredo",
+    "Comedia española",
+    "Identidad",
     "Salir del armario",
     "Sitcom",
     "Vecinos"
@@ -1216,7 +1284,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -1275,11 +1351,13 @@
    "tematicas": [
     "Adolescencia",
     "Amor",
+    "Animación",
     "Anime",
     "Diferencia de altura",
     "Drama",
     "Escuela",
     "Heartwarming",
+    "Pareja",
     "Pareja sana",
     "Romance"
    ],
@@ -1326,10 +1404,11 @@
    "tematicas": [
     "Adolescencia",
     "Adorabilidad Absoluta",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Comedia",
     "Drama",
-    "Drama Adolescente",
+    "Drama adolescente",
+    "Fantasía",
     "Fantástico",
     "Instituto",
     "Monstruos"
@@ -1348,7 +1427,15 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -1445,6 +1532,10 @@
    "avisos": [
     {
      "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -1560,10 +1651,12 @@
    ],
    "tematicas": [
     "Amistad",
+    "Autodescubrimiento",
     "Comedia",
     "Comedia romántica",
     "Coming of age",
     "Drama",
+    "Identidad",
     "Romance",
     "Salir del armario",
     "Universidad"
@@ -1613,6 +1706,7 @@
     "Acción",
     "DC",
     "Drama",
+    "Fantasía",
     "Fantástico",
     "Superheroinas"
    ],
@@ -1622,11 +1716,19 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Enfermedad Mental",
      "categoria": null
     },
     {
      "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
@@ -1678,7 +1780,7 @@
     "Comedia"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Comedia",
     "Drama",
     "Fantasía",
@@ -1718,7 +1820,8 @@
     "Ciencia Ficción"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
+    "Comedia",
     "Comedia Negra",
     "Drama",
     "Ficción Sobrenatural",
@@ -1780,6 +1883,7 @@
    ],
    "tematicas": [
     "Aventuras",
+    "Crimen",
     "De época",
     "Delincuencia",
     "Drama",
@@ -1792,6 +1896,10 @@
    "avisos": [
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -1925,15 +2033,21 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Drama",
+    "Identidad",
     "Instituto",
     "Salir del armario"
    ],
    "avisos": [
     {
      "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -1983,8 +2097,10 @@
     "Alcoholismo",
     "Amistad",
     "Animación",
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
     "Comedia Negra",
+    "Consumo de alcohol",
     "Consumo de drogas",
     "Drogodependencia",
     "Espectáculo",
@@ -1992,7 +2108,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -2001,6 +2125,14 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -2103,6 +2235,10 @@
     {
      "nombre": "Sexualización",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2146,12 +2282,17 @@
     "Comedia romántica"
    ],
    "tematicas": [
+    "Comedia",
     "Comedia romántica",
     "Drama",
     "Romance",
     "Trans"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Transfobia",
      "categoria": null
@@ -2203,10 +2344,20 @@
     "Amistad",
     "Amor",
     "Comedia",
+    "Crimen",
     "Delincuencia",
+    "Policía",
     "Policíaca"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
     {
      "nombre": "Gordofobia",
      "categoria": null
@@ -2216,7 +2367,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     },
     {
@@ -2346,6 +2497,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Echar de casa",
      "categoria": null
     },
@@ -2362,7 +2517,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     }
    ],
@@ -2402,6 +2557,10 @@
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Racismo",
      "categoria": null
@@ -2450,6 +2609,7 @@
     "Drama"
    ],
    "tematicas": [
+    "Adolescencia",
     "Drama",
     "Juventud",
     "Romance"
@@ -2504,7 +2664,9 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Drama",
+    "Identidad",
     "Romance",
     "Salir del armario"
    ],
@@ -2611,6 +2773,7 @@
    ],
    "tematicas": [
     "Drama",
+    "Fantasía",
     "Fantástico",
     "Romance",
     "Vampiras"
@@ -2732,6 +2895,7 @@
     "Amistad",
     "Animación",
     "Aventuras",
+    "Bisexual",
     "Bisexualidad",
     "Brujas",
     "Brujería",
@@ -2740,6 +2904,7 @@
     "Family Friendly",
     "Fantasía",
     "Misterio",
+    "Pareja",
     "Pareja idiota",
     "Subtexto"
    ],
@@ -2853,6 +3018,10 @@
     {
      "nombre": "Bifobia",
      "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -2911,6 +3080,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -2920,6 +3093,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -2987,6 +3164,10 @@
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3081,11 +3262,17 @@
    "tematicas": [
     "Adolescencia",
     "Asesinato",
+    "Autodescubrimiento",
+    "Comedia",
+    "Crimen",
+    "Fantasía",
     "Humor negro",
+    "Identidad",
     "Muñecos",
     "Salir del armario",
     "Slasher",
-    "Sobrenatural"
+    "Sobrenatural",
+    "Terror"
    ],
    "avisos": [
     {
@@ -3106,6 +3293,10 @@
     },
     {
      "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3175,6 +3366,10 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Muerte de personaje importante",
      "categoria": null
     },
@@ -3192,6 +3387,10 @@
     },
     {
      "nombre": "TCA",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3235,11 +3434,12 @@
    "tematicas": [
     "Adolescencia",
     "Amor",
+    "Animación",
     "Anime",
     "Celos",
     "Drama",
     "Enemies to Lovers",
-    "Erotismo",
+    "Erótico",
     "Escuela",
     "NSFW",
     "Romance",
@@ -3302,6 +3502,7 @@
    "tematicas": [
     "Adolescencia",
     "Amistad",
+    "Autodescubrimiento",
     "Comedia",
     "Coming of age",
     "Drama",
@@ -3359,12 +3560,21 @@
    "tematicas": [
     "Amor",
     "Asesinato",
+    "Crimen",
     "Drama",
     "Suspense"
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -3463,6 +3673,14 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -3524,11 +3742,16 @@
     "Comedia",
     "Familia",
     "Musical",
-    "Salud Mental"
+    "Salud Mental",
+    "Trastornos mentales"
    ],
    "avisos": [
     {
      "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -3545,6 +3768,10 @@
     },
     {
      "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3595,13 +3822,18 @@
    "tematicas": [
     "Acción",
     "Animación",
-    "Ciencia Ficción",
+    "Ciencia ficción",
+    "Fantasía",
     "Fantástico",
     "Robots"
    ],
    "avisos": [
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3681,14 +3913,18 @@
    ],
    "tematicas": [
     "Acción",
+    "Adolescencia",
     "Amistad",
     "Amor",
+    "Autodescubrimiento",
     "Comedia",
     "Cutre",
     "Drama",
     "Enemies to Lovers",
     "Heartwarming",
+    "Identidad",
     "Juventud",
+    "Pareja",
     "Pareja sana",
     "Romance",
     "Salir del armario"
@@ -3737,9 +3973,11 @@
     "Thriller"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
+    "Crimen",
     "Desapariciones",
     "Drama",
+    "Fantasía",
     "Secuestros",
     "Sobrenatural",
     "Suspense",
@@ -3752,11 +3990,19 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
     {
      "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -3803,7 +4049,7 @@
    "tematicas": [
     "Acción",
     "Aventuras",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Espacio",
     "Mercenarios",
     "Misterio"
@@ -3846,14 +4092,20 @@
     "Romance"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
+    "Identidad",
     "Romance",
     "Salir del armario"
    ],
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -3941,11 +4193,15 @@
    "tematicas": [
     "Casanova",
     "Comedia",
-    "Comedia Española",
+    "Comedia española",
     "Homosexualidad",
     "Secuela"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia",
      "categoria": null
@@ -4056,6 +4312,7 @@
     "Años 90",
     "Comedia",
     "Comedia de situación",
+    "Crimen",
     "Histórico",
     "IRA",
     "Irlanda",
@@ -4177,14 +4434,17 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
+    "Bisexual",
     "Bisexualidad",
     "Desamor",
     "Diferencia de altura",
     "Drama",
     "Escuela",
+    "Fantasía",
     "Ficción Sobrenatural",
-    "Friends to Lovers",
+    "Friends to lovers",
     "NSFW",
     "Romance",
     "Sobrenatural",
@@ -4341,6 +4601,7 @@
    ],
    "tematicas": [
     "Amor",
+    "Autodescubrimiento",
     "Drama",
     "Identidad",
     "Religión",
@@ -4349,7 +4610,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -4362,6 +4631,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -4422,6 +4695,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -4474,17 +4751,23 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
     "Crimen",
     "Drama",
     "Enemies to Lovers",
     "Instituto",
+    "Policía",
     "Policíaca"
    ],
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -4623,6 +4906,10 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -4660,6 +4947,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -4705,6 +4996,7 @@
    "tematicas": [
     "Aceptación de la sexualidad",
     "Amistad",
+    "Amor",
     "Amor de juventud",
     "Divorcio",
     "Drama",
@@ -4718,6 +5010,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia leve",
      "categoria": null
     },
@@ -4727,6 +5023,10 @@
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -4787,7 +5087,8 @@
     "Romance",
     "Salud Mental",
     "Soledad",
-    "Tragedia"
+    "Tragedia",
+    "Trastornos mentales"
    ],
    "avisos": [
     {
@@ -4808,6 +5109,10 @@
     },
     {
      "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -4916,6 +5221,7 @@
    "tematicas": [
     "Amor",
     "De época",
+    "Discriminación",
     "Discriminación fuerte",
     "Drama",
     "Lesbofobia",
@@ -4923,15 +5229,23 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Maltrato",
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -5009,6 +5323,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     },
@@ -5075,6 +5393,7 @@
     "Brujas",
     "Brujería",
     "Drama",
+    "Fantasía",
     "Fantástico",
     "Magia"
    ],
@@ -5134,11 +5453,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
     {
-     "nombre": "Padre lgtbfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     }
    ],
@@ -5200,11 +5523,19 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -5217,6 +5548,10 @@
     },
     {
      "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -5266,6 +5601,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Autodescubrimiento",
     "Consumo de drogas",
     "Drama",
     "Drogodependencia",
@@ -5273,11 +5609,16 @@
     "Salud Mental",
     "Sexualidad",
     "Soledad",
-    "Trans"
+    "Trans",
+    "Trastornos mentales"
    ],
    "avisos": [
     {
      "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
      "categoria": null
     },
     {
@@ -5289,11 +5630,19 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -5338,6 +5687,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -5475,6 +5828,10 @@
     {
      "nombre": "Tiroteo",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -5526,6 +5883,7 @@
     "Adolescencia",
     "Años 70",
     "Años 90",
+    "Fantasía",
     "Fantástico",
     "Sobrenatural",
     "Terror"
@@ -5536,7 +5894,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -5627,7 +5993,15 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -5681,6 +6055,10 @@
    "avisos": [
     {
      "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -5740,6 +6118,7 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
     "Comedia juvenil",
@@ -5754,6 +6133,10 @@
     },
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -5820,6 +6203,10 @@
      "categoria": null
     },
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
      "categoria": null
     },
@@ -5832,7 +6219,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -5841,6 +6236,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -5993,9 +6392,11 @@
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
+    "Autodescubrimiento",
     "Comedia",
     "Coming of age",
     "Drama",
+    "Identidad",
     "Instituto",
     "Musical",
     "Salir del armario"
@@ -6007,6 +6408,10 @@
     },
     {
      "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -6065,14 +6470,20 @@
     "Comedia romántica"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "China",
     "Comedia",
     "Comedia romántica",
     "Familia",
+    "Identidad",
     "Romance",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia leve",
      "categoria": null
@@ -6130,7 +6541,7 @@
    ],
    "tematicas": [
     "Drama",
-    "Erotismo",
+    "Erótico",
     "Romance",
     "Sexualidad"
    ],
@@ -6145,6 +6556,10 @@
     },
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -6191,6 +6606,7 @@
     "Comedia"
    ],
    "tematicas": [
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
     "Drama",
@@ -6206,6 +6622,10 @@
     },
     {
      "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     }
    ],
@@ -6260,6 +6680,10 @@
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de drogas",
      "categoria": null
@@ -6348,12 +6772,15 @@
     "Animación",
     "Asesinato",
     "Aventuras",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
+    "Crimen",
     "DC",
     "Delincuencia",
     "Desamor",
-    "Friends to Lovers",
+    "Fantasía",
+    "Friends to lovers",
     "NSFW",
     "Pandilla",
     "Prisión",
@@ -6435,6 +6862,10 @@
     {
      "nombre": "Violación",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -6483,6 +6914,7 @@
    "tematicas": [
     "Adolescencia",
     "Drama",
+    "Fantasía",
     "Magia",
     "Sobrenatural",
     "Thriller"
@@ -6533,9 +6965,11 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Coming of age",
     "Drama",
     "Homofobia",
+    "Identidad",
     "Instituto",
     "Romance",
     "Salir del armario"
@@ -6604,6 +7038,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     }
@@ -6646,11 +7084,16 @@
     "Consumo de drogas",
     "Crimen",
     "Drama",
+    "Policía",
     "Policíaca"
    ],
    "avisos": [
     {
      "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -6683,6 +7126,10 @@
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -6727,13 +7174,14 @@
     "Amor",
     "Animación",
     "Aventuras",
+    "Bisexual",
     "Bisexualidad",
     "Distopía",
     "Familia",
     "Family Friendly",
     "Fantasía",
     "Ficción Sobrenatural",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Sobrenatural",
     "Subtexto",
     "WTF?!"
@@ -6745,6 +7193,10 @@
     },
     {
      "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -6791,8 +7243,9 @@
     "Ciencia Ficción"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
+    "Fantasía",
     "Robots"
    ],
    "avisos": [
@@ -6846,7 +7299,7 @@
     "Drama"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
     "Ficción Sobrenatural",
     "Superhéroes",
@@ -6904,6 +7357,10 @@
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -7011,6 +7468,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -7072,7 +7533,8 @@
    "tematicas": [
     "Adolescencia",
     "Años 60",
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
     "Familia",
     "Instituto"
    ],
@@ -7153,6 +7615,10 @@
     {
      "nombre": "Sexualización",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -7197,6 +7663,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
     "Comedia",
     "Diferencia de altura",
@@ -7257,6 +7724,10 @@
     {
      "nombre": "Manipulación",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -7315,11 +7786,19 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -7395,11 +7874,19 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
     {
-     "nombre": "Mentiras y Engaño",
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
@@ -7530,6 +8017,10 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Obsesión",
      "categoria": null
     },
@@ -7539,6 +8030,10 @@
     },
     {
      "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -7631,6 +8126,8 @@
    "tematicas": [
     "Alcoholismo",
     "Asesinato",
+    "Consumo de alcohol",
+    "Crimen",
     "De época",
     "Desamor",
     "Drama",
@@ -7640,11 +8137,19 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -7717,6 +8222,7 @@
    "tematicas": [
     "Brujería",
     "Familia",
+    "Fantasía",
     "Fantástico",
     "Thriller psicológico",
     "Vejez"
@@ -7835,12 +8341,17 @@
     "Años 90",
     "Brujas",
     "Brujería",
+    "Fantasía",
     "Intriga",
     "Slasher",
     "Sobrenatural",
     "Terror"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -7900,6 +8411,7 @@
     "Años 70",
     "Brujas",
     "Brujería",
+    "Fantasía",
     "Intriga",
     "Secuela",
     "Slasher",
@@ -7961,6 +8473,7 @@
    "tematicas": [
     "Brujas",
     "Brujería",
+    "Fantasía",
     "Intriga",
     "Secuela",
     "Siglo XVII",
@@ -7969,6 +8482,10 @@
     "Terror"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -8026,16 +8543,22 @@
     "Comedia Dramática"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Drama",
     "Familia",
+    "Identidad",
     "Romance",
     "Salir del armario"
    ],
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -8093,12 +8616,17 @@
    ],
    "tematicas": [
     "Celos",
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
     "Comedia Negra",
     "De época",
     "Histórico"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Ansiedad",
      "categoria": null
@@ -8177,6 +8705,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -8233,11 +8765,13 @@
     "Amistad",
     "Animación",
     "Aventuras",
+    "Bisexual",
     "Bisexualidad",
     "Family Friendly",
     "Fantasía",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Juventud",
+    "Pareja",
     "Pareja sana",
     "Política",
     "Sobrenatural",
@@ -8372,6 +8906,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -8423,6 +8961,7 @@
     "Terror"
    ],
    "tematicas": [
+    "Fantasía",
     "Muñecos",
     "Secuela",
     "Slasher",
@@ -8435,7 +8974,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -8512,6 +9059,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -8532,6 +9083,10 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Enfermedad Mental",
      "categoria": null
     },
@@ -8545,6 +9100,10 @@
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -8723,6 +9282,10 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Sangre",
      "categoria": null
     },
@@ -8789,6 +9352,14 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
      "nombre": "Violencia leve",
      "categoria": null
     }
@@ -8833,8 +9404,10 @@
     "Fantástico"
    ],
    "tematicas": [
+    "Bisexual",
     "Bisexualidad",
     "Crimen",
+    "Fantasía",
     "Fantástico",
     "Intriga",
     "Sobrenatural"
@@ -8947,15 +9520,25 @@
    "tematicas": [
     "Adolescencia",
     "Amor",
+    "Autodescubrimiento",
+    "Bisexual",
     "Bisexualidad",
     "Drama",
-    "Erotismo",
+    "Erótico",
     "Identidad",
     "Sexualidad"
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -8972,6 +9555,10 @@
     },
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -9018,8 +9605,10 @@
     "Comedia"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
+    "Identidad",
     "Salir del armario",
     "Sexualidad",
     "Universidad"
@@ -9030,11 +9619,23 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Engaños y Mentiras",
      "categoria": null
     },
     {
      "nombre": "Homofobia leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -9080,6 +9681,7 @@
    ],
    "tematicas": [
     "Acción",
+    "Fantasía",
     "Fantástico",
     "Ficción Sobrenatural",
     "Soledad"
@@ -9090,7 +9692,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -9198,6 +9808,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -9254,8 +9868,8 @@
    ],
    "tematicas": [
     "Acción",
-    "Aventura",
-    "Ciencia Ficción",
+    "Aventuras",
+    "Ciencia ficción",
     "Fantasía"
    ],
    "avisos": [
@@ -9318,7 +9932,7 @@
    "tematicas": [
     "Amistad",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Drama",
     "Enfermedad"
    ],
@@ -9389,6 +10003,10 @@
     },
     {
      "nombre": "Pareja tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -9476,6 +10094,8 @@
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
+    "Amistad",
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
     "Fake dating",
@@ -9487,6 +10107,10 @@
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -9553,6 +10177,7 @@
     "Brujas",
     "Brujería",
     "Drama",
+    "Fantasía",
     "Fantástico",
     "Hombres lobo",
     "Vampiras"
@@ -9651,7 +10276,7 @@
    "tematicas": [
     "Acción",
     "Amistad",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Comedia",
     "Comedia absurda",
     "DC",
@@ -9711,10 +10336,12 @@
     "Comedia"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
     "Día de Acción de Gracias",
     "Familia",
+    "Identidad",
     "Salir del armario"
    ],
    "avisos": [],
@@ -9804,8 +10431,10 @@
     "Suspense"
    ],
    "tematicas": [
+    "Crimen",
     "Delincuencia",
     "Drama",
+    "Policía",
     "Policíaca",
     "Suspense"
    ],
@@ -9905,6 +10534,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     }
@@ -9952,18 +10585,20 @@
     "Terror"
    ],
    "tematicas": [
+    "Asesinato",
     "Asesinatos en Serie",
+    "Crimen",
     "Supervivencia",
     "Terror",
     "Venganza"
    ],
    "avisos": [
     {
-     "nombre": "Manipulación",
+     "nombre": "Engaños y Mentiras",
      "categoria": null
     },
     {
-     "nombre": "Mentiras y Engaño",
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
@@ -9984,6 +10619,10 @@
     },
     {
      "nombre": "Tortura",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -10038,7 +10677,7 @@
    ],
    "tematicas": [
     "Acción",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
     "Guerra",
     "Militarismo",
@@ -10117,18 +10756,26 @@
    ],
    "tematicas": [
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Drama",
     "Familia",
     "Pareja"
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -10184,12 +10831,15 @@
    ],
    "tematicas": [
     "Acción",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
+    "Crimen",
     "Delincuencia",
     "Diferencia de altura",
     "Pareja",
+    "Policía",
     "Policíaca",
     "Tragedia",
     "Vida adulta"
@@ -10201,6 +10851,10 @@
     },
     {
      "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -10249,6 +10903,7 @@
    ],
    "tematicas": [
     "Animación",
+    "Autodescubrimiento",
     "Comedia",
     "Coming of age",
     "Familia",
@@ -10300,16 +10955,22 @@
     "Comedia romántica"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Comedia",
     "Comedia romántica",
     "Comida",
     "Escocia",
+    "Identidad",
     "India",
     "Música",
     "Romance",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia leve",
      "categoria": null
@@ -10361,9 +11022,10 @@
    "tematicas": [
     "Adolescencia",
     "Autismo",
+    "Autodescubrimiento",
     "Coming of age",
     "Drama",
-    "Drama Adolescente",
+    "Drama adolescente",
     "Identidad",
     "Instituto",
     "No binarie",
@@ -10372,11 +11034,19 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
      "categoria": null
     },
     {
      "nombre": "Intento de abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -10424,8 +11094,10 @@
     "Drama"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Coming of age",
     "Drama",
+    "Identidad",
     "Romance",
     "Salir del armario"
    ],
@@ -10522,8 +11194,10 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Animación",
     "Anime",
     "Drama",
+    "Fantasía",
     "Fantástico",
     "Intriga",
     "Juventud",
@@ -10598,6 +11272,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -10664,6 +11342,10 @@
     {
      "nombre": "Pederastia",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -10709,6 +11391,7 @@
     "Comedia"
    ],
    "tematicas": [
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
     "Drama",
@@ -10769,7 +11452,7 @@
    "tematicas": [
     "Acción",
     "Adolescencia",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Cómic",
     "Drama",
     "Superheroinas",
@@ -10820,6 +11503,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
     "Diferencia de altura",
     "Drama",
@@ -10867,6 +11551,10 @@
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia",
      "categoria": null
@@ -10917,6 +11605,7 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Comedia",
     "Drama",
     "Juvenil",
@@ -10928,11 +11617,19 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     },
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -10974,17 +11671,30 @@
     "Alcoholismo",
     "Asesinato",
     "Biográfico",
+    "Consumo de alcohol",
     "Crimen",
     "Drama",
     "Prostitución"
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -11008,7 +11718,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     },
     {
@@ -11073,7 +11783,8 @@
     "Histórico",
     "Horror",
     "Inexactitud histórica",
-    "Slasher"
+    "Slasher",
+    "Terror"
    ],
    "avisos": [
     {
@@ -11101,11 +11812,23 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -11129,6 +11852,10 @@
      "categoria": null
     },
     {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
      "nombre": "Muerte",
      "categoria": null
     },
@@ -11138,6 +11865,10 @@
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -11221,7 +11952,8 @@
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Ciencia Ficción",
+    "Ciencia ficción",
+    "Crimen",
     "Drama",
     "Fantasía",
     "Militarismo",
@@ -11229,11 +11961,19 @@
    ],
    "avisos": [
     {
-     "nombre": "Mentiras y Engaño",
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
      "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -11285,7 +12025,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -11478,16 +12226,26 @@
    "tematicas": [
     "Amistad",
     "Amor",
+    "Autodescubrimiento",
     "Drama",
     "Identidad",
     "Moda",
+    "Relaciones",
     "Relaciones complicadas",
     "Roommates",
     "Yuri"
    ],
    "avisos": [
     {
+     "nombre": "Abuso",
+     "categoria": null
+    },
+    {
      "nombre": "Abuso sexual implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
      "categoria": null
     },
     {
@@ -11495,7 +12253,15 @@
      "categoria": null
     },
     {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
      "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -11516,6 +12282,10 @@
     },
     {
      "nombre": "Drogodependencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -11548,6 +12318,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -11643,6 +12417,7 @@
    "tematicas": [
     "Acción",
     "Drama",
+    "Policía",
     "Policíaca"
    ],
    "avisos": [
@@ -11694,6 +12469,7 @@
     "Drama"
    ],
    "tematicas": [
+    "Adolescencia",
     "Animación",
     "Drama",
     "Juvenil",
@@ -11703,6 +12479,10 @@
    "avisos": [
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -11750,6 +12530,10 @@
     "Roommates"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de drogas",
      "categoria": null
@@ -11842,6 +12626,7 @@
    ],
    "tematicas": [
     "Angustia",
+    "Fantasía",
     "Intriga",
     "Sobrenatural",
     "Terror"
@@ -11849,6 +12634,10 @@
    "avisos": [
     {
      "nombre": "Body Horror",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -11963,9 +12752,11 @@
     "Afroamericanos",
     "Amistad",
     "Amor",
+    "Bisexual",
     "Bisexualidad",
     "Butch",
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
     "Feminismo",
     "Prisión",
     "Trans"
@@ -11992,6 +12783,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -12000,7 +12795,15 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Delincuencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -12110,7 +12913,8 @@
    ],
    "tematicas": [
     "Acción",
-    "Ciencia Ficción",
+    "Autodescubrimiento",
+    "Ciencia ficción",
     "Drama",
     "Familia",
     "Identidad",
@@ -12217,7 +13021,7 @@
     "Adolescencia",
     "Amistad",
     "Años 80",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Coming of age",
     "Drama",
     "Intriga",
@@ -12226,6 +13030,10 @@
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -12290,7 +13098,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Coming of age",
     "Distopía"
    ],
@@ -12300,7 +13108,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -12370,6 +13186,7 @@
     "Adolescencia",
     "Intriga",
     "Slasher",
+    "Terror",
     "Thriller"
    ],
    "avisos": [
@@ -12382,7 +13199,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -12499,6 +13324,10 @@
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -12629,14 +13458,23 @@
     "Comedia Dramática"
    ],
    "tematicas": [
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
     "Histórico",
     "Militancia",
     "Movimiento por los Derechos civiles"
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Discriminación fuerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -12648,7 +13486,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     },
     {
@@ -12762,6 +13600,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     }
@@ -12822,7 +13664,19 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -12934,8 +13788,9 @@
     "Comedia"
    ],
    "tematicas": [
+    "Acoso",
+    "Acoso escolar",
     "Adolescencia",
-    "Bullying",
     "Comedia",
     "Comedia juvenil",
     "Instituto",
@@ -12946,6 +13801,14 @@
    "avisos": [
     {
      "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -12996,8 +13859,10 @@
    "tematicas": [
     "Acción",
     "Adolescencia",
+    "Animación",
     "Anime",
     "Asesinato",
+    "Crimen",
     "No heartwarming",
     "Roommates",
     "Subtexto",
@@ -13060,6 +13925,10 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Violencia",
      "categoria": null
     }
@@ -13105,11 +13974,16 @@
     "Romance"
    ],
    "tematicas": [
+    "Adolescencia",
     "Adorabilidad Absoluta",
     "Amor",
+    "Autodescubrimiento",
+    "Bisexual",
     "Bisexualidad",
     "Drama",
+    "Identidad",
     "Juventud",
+    "Pareja",
     "Pareja sana",
     "Romance",
     "Salir del armario",
@@ -13118,6 +13992,10 @@
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Infidelidad",
      "categoria": null
@@ -13174,13 +14052,15 @@
     "Animación",
     "Aventuras",
     "Bajo presupuesto",
+    "Bisexual",
     "Bisexualidad",
+    "Crimen",
     "Escuela",
     "Familia",
     "Fantasía",
     "Fascismo",
     "Ficción Sobrenatural",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Juventud",
     "Militancia",
     "Misterio",
@@ -13211,6 +14091,14 @@
     },
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -13275,6 +14163,7 @@
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
+    "Amistad",
     "Amor",
     "Diferencia de altura",
     "Día a día",
@@ -13317,12 +14206,13 @@
    "tematicas": [
     "Adolescencia",
     "Amistad",
+    "Animación",
     "Anime",
     "Desamor",
     "Diferencia de altura",
     "Día a día",
     "Escuela",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Romance"
    ],
    "avisos": [],
@@ -13369,6 +14259,10 @@
    "avisos": [
     {
      "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -13437,6 +14331,7 @@
     "Amistad",
     "Crimen",
     "Drama",
+    "Feminismo",
     "Instituto",
     "Sororidad",
     "Suspense",
@@ -13457,6 +14352,14 @@
     },
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -13506,8 +14409,11 @@
    ],
    "tematicas": [
     "Acción",
-    "Ciencia Ficción",
+    "Adolescencia",
+    "Autodescubrimiento",
+    "Ciencia ficción",
     "Drama",
+    "Fantasía",
     "Ficción Sobrenatural",
     "Identidad",
     "Juventud",
@@ -13575,11 +14481,19 @@
    ],
    "avisos": [
     {
-     "nombre": "Mentiras y Engaño",
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
      "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -13619,6 +14533,7 @@
     "Crimen",
     "Drama",
     "Mafia",
+    "Policía",
     "Policíaca",
     "Suspense",
     "Telenovela"
@@ -13629,7 +14544,15 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
      "categoria": null
     },
     {
@@ -13684,14 +14607,20 @@
    "tematicas": [
     "Aceptación de la sexualidad",
     "Adolescencia",
+    "Autodescubrimiento",
     "Comedia",
     "Comedia sexual",
     "Coming of age",
     "Drama",
+    "Identidad",
     "Instituto",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia",
      "categoria": null
@@ -13755,16 +14684,18 @@
     "Amor",
     "Animación",
     "Aventuras",
+    "Bisexual",
     "Bisexualidad",
     "Butch",
     "Celos",
     "Enemies to Lovers",
     "Family Friendly",
     "Fantasía",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Furry",
     "Heartwarming",
     "Juventud",
+    "Pareja",
     "Pareja idiota",
     "Sobrenatural",
     "Superheroinas"
@@ -13780,6 +14711,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -13828,15 +14763,24 @@
     "Comedia"
    ],
    "tematicas": [
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Familia",
     "Religión"
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -13938,6 +14882,8 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Autodescubrimiento",
+    "Bisexual",
     "Bisexualidad",
     "Drama",
     "Feminismo",
@@ -13954,7 +14900,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -13979,6 +14933,10 @@
     },
     {
      "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     },
     {
@@ -14032,6 +14990,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
     "Escuela",
@@ -14052,11 +15011,23 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -14069,6 +15040,10 @@
     },
     {
      "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -14152,6 +15127,10 @@
     {
      "nombre": "Violación",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -14198,7 +15177,7 @@
     "Acción",
     "Cómic",
     "Distopía",
-    "Futuro postapocalíptico",
+    "Postapocalíptico",
     "Thriller"
    ],
    "avisos": [
@@ -14211,11 +15190,19 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Sexo Explícito",
      "categoria": null
     },
     {
      "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -14263,7 +15250,9 @@
     "Terror"
    ],
    "tematicas": [
+    "Fantasía",
     "Fantástico",
+    "Policía",
     "Policíaca",
     "Romance",
     "Vampiras"
@@ -14333,10 +15322,15 @@
    "tematicas": [
     "Amistad",
     "Salud Mental",
+    "Trastornos mentales",
     "Universidad",
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
     {
      "nombre": "Abuso sexual",
      "categoria": null
@@ -14362,11 +15356,19 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Enfermedad Mental",
      "categoria": null
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -14409,16 +15411,21 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Coming of age",
     "Consumo de drogas",
     "Drama",
-    "Drama Adolescente",
+    "Drama adolescente",
     "Drogodependencia",
     "Identidad",
     "Racismo",
     "Salir del armario"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Discriminación leve",
      "categoria": null
@@ -14483,7 +15490,7 @@
    "tematicas": [
     "Acción",
     "Aventuras",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama"
    ],
    "avisos": [],
@@ -14533,6 +15540,7 @@
     "Acción",
     "Amistad",
     "Animación",
+    "Autodescubrimiento",
     "Aventuras",
     "Comedia",
     "Día a día",
@@ -14543,7 +15551,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
      "nombre": "Ansiedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -14552,6 +15568,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -14603,6 +15623,7 @@
     "Adolescencia",
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
     "Celos",
     "Desamor",
@@ -14658,6 +15679,10 @@
     "Webserie"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de alcohol",
      "categoria": null
@@ -14715,6 +15740,7 @@
     "Amigas de la infancia",
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
     "Desamor",
     "Diferencia de altura",
@@ -14778,6 +15804,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -14787,6 +15817,10 @@
     },
     {
      "nombre": "Contenido Cuestionable",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -14845,6 +15879,7 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Animación",
     "Comedia",
     "Juvenil",
@@ -14854,6 +15889,10 @@
    "avisos": [
     {
      "nombre": "Sexualización",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -14992,12 +16031,16 @@
    "tematicas": [
     "Amor",
     "Drama",
-    "Erotismo",
+    "Erótico",
     "Sexualidad"
    ],
    "avisos": [
     {
      "nombre": "BDSM",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15049,6 +16092,10 @@
     "Instituto"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de drogas",
      "categoria": null
@@ -15181,6 +16228,7 @@
     "Años 80",
     "Drama",
     "Fantasmas",
+    "Fantasía",
     "Intriga",
     "Miedo",
     "Sobrenatural",
@@ -15189,6 +16237,10 @@
    "avisos": [
     {
      "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15250,7 +16302,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -15271,6 +16331,10 @@
     },
     {
      "nombre": "Transfobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15363,6 +16427,10 @@
     {
      "nombre": "Sexualización",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -15446,6 +16514,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
@@ -15522,8 +16594,9 @@
     "Drama"
    ],
    "tematicas": [
+    "Bisexual",
     "Bisexualidad",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Crimen",
     "Drama",
     "Fake dating",
@@ -15643,9 +16716,11 @@
    ],
    "tematicas": [
     "Adolescencia",
+    "Autodescubrimiento",
     "Comedia",
     "Drama",
     "Familia",
+    "Identidad",
     "Musical",
     "Prom",
     "Salir del armario"
@@ -15657,6 +16732,10 @@
     },
     {
      "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -15673,6 +16752,10 @@
     },
     {
      "nombre": "Religión",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15726,6 +16809,7 @@
     "Años 50",
     "Años 60",
     "Drama",
+    "Guerra",
     "Guerra Fría"
    ],
    "avisos": [],
@@ -15781,6 +16865,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15842,7 +16930,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -15854,7 +16950,19 @@
      "categoria": null
     },
     {
-     "nombre": "Mentiras y Engaño",
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -15901,7 +17009,7 @@
     "Drama"
    ],
    "tematicas": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
     "Pandemia",
     "Terror",
@@ -15954,6 +17062,10 @@
     "Webserie"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de alcohol",
      "categoria": null
@@ -16064,6 +17176,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     }
@@ -16115,6 +17231,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -16128,6 +17248,10 @@
     },
     {
      "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -16174,18 +17298,28 @@
     "Drama"
    ],
    "tematicas": [
+    "Drama",
     "Drama psicológico",
+    "Fantasía",
     "Religión",
     "Sobrenatural",
     "Universidad"
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -16241,7 +17375,7 @@
     "Delincuencia",
     "Drama",
     "Feminismo",
-    "Friends to Lovers",
+    "Friends to lovers",
     "Road Movie"
    ],
    "avisos": [
@@ -16251,6 +17385,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -16305,7 +17443,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -16370,6 +17516,10 @@
     {
      "nombre": "Síndrome de la lesbiana muerta",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -16418,6 +17568,7 @@
    "tematicas": [
     "Acción",
     "Amor",
+    "Comedia",
     "Comedia absurda",
     "Familia",
     "Salvar al mundo",
@@ -16426,6 +17577,10 @@
     "WTF?!"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia",
      "categoria": null
@@ -16486,6 +17641,10 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
      "categoria": null
     }
@@ -16539,6 +17698,10 @@
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
      "categoria": null
     },
     {
@@ -16597,12 +17760,16 @@
     "Amistad",
     "Años 30",
     "Comedia",
-    "Comedia Dramática",
+    "Comedia dramática",
     "Drama",
     "Racismo",
     "Vida Rural"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Racismo",
      "categoria": null
@@ -16718,7 +17885,10 @@
     "Drama"
    ],
    "tematicas": [
+    "Adolescencia",
+    "Autodescubrimiento",
     "Drama",
+    "Identidad",
     "Juvenil",
     "Romance",
     "Salir del armario"
@@ -16811,6 +17981,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     }
@@ -16851,11 +18025,13 @@
    ],
    "tematicas": [
     "Amor",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
     "Drama",
     "Familia",
     "Matrimonio",
+    "Pareja",
     "Pareja tóxica",
     "Poliamor",
     "Romance",
@@ -16863,6 +18039,10 @@
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Discriminación leve",
      "categoria": null
@@ -16974,6 +18154,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     }
@@ -17082,6 +18266,10 @@
     {
      "nombre": "Acoso escolar",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [
@@ -17130,7 +18318,9 @@
    "tematicas": [
     "Amistad",
     "Amor",
+    "Animación",
     "Anime",
+    "Autodescubrimiento",
     "Coming of age",
     "Drama",
     "Escuela",
@@ -17207,8 +18397,10 @@
    ],
    "tematicas": [
     "Alcoholismo",
+    "Bisexual",
     "Bisexualidad",
     "Comedia",
+    "Consumo de alcohol",
     "Drama"
    ],
    "avisos": [
@@ -17299,6 +18491,7 @@
    "tematicas": [
     "Crimen",
     "Intriga",
+    "Policía",
     "Policíaca",
     "Suspense",
     "Thriller"
@@ -17306,6 +18499,10 @@
    "avisos": [
     {
      "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -17361,6 +18558,10 @@
     "Soledad"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Homofobia",
      "categoria": null
@@ -17419,9 +18620,14 @@
     "Drama",
     "Histórico",
     "Romance",
-    "Salud Mental"
+    "Salud Mental",
+    "Trastornos mentales"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Ansiedad",
      "categoria": null
@@ -17476,6 +18682,7 @@
    "tematicas": [
     "Adolescencia",
     "Amor",
+    "Autodescubrimiento",
     "Coming of age",
     "Drama",
     "Identidad",
@@ -17485,11 +18692,23 @@
    ],
    "avisos": [
     {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
      "nombre": "Acoso sexual",
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "TCA",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -17538,6 +18757,7 @@
     "Romance"
    ],
    "tematicas": [
+    "Autodescubrimiento",
     "Años 90",
     "Butch",
     "Búsqueda de un propósito",
@@ -17547,6 +18767,7 @@
     "Lesbianismo",
     "Lipstick lesbian",
     "Protagonista lesbiana",
+    "Relaciones",
     "Relaciones complicadas",
     "Relación de pareja",
     "Relación interracial"
@@ -17598,6 +18819,10 @@
     "Tragedia"
    ],
    "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
     {
      "nombre": "Consumo de drogas",
      "categoria": null
@@ -17654,7 +18879,8 @@
    ],
    "tematicas": [
     "Drama",
-    "Fantasía Oscura",
+    "Fantasía",
+    "Fantasía oscura",
     "Fantástico",
     "Intriga",
     "Sobrenatural",
@@ -17731,6 +18957,10 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Exotismo",
      "categoria": null
     },
@@ -17792,7 +19022,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
      "nombre": "Acoso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
@@ -17801,6 +19039,10 @@
     },
     {
      "nombre": "Maltrato animal",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -17853,6 +19095,10 @@
     "Lesbianismo"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -17912,10 +19158,15 @@
     "Body Horror",
     "Crimen",
     "Deportes",
+    "Drama",
     "Drama psicológico",
     "Terror"
    ],
    "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
     {
      "nombre": "Abuso sexual implícito",
      "categoria": null
@@ -17925,11 +19176,19 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de alcohol",
      "categoria": null
     },
     {
      "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     },
     {
@@ -17971,6 +19230,10 @@
     {
      "nombre": "Tortura",
      "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
     }
    ],
    "actrices": [],
@@ -18009,12 +19272,17 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Comedia",
     "Drama",
     "Juvenil",
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -18064,12 +19332,17 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Comedia",
     "Drama",
     "Juvenil",
     "Romance"
    ],
    "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
     {
      "nombre": "Lesbofobia",
      "categoria": null
@@ -18120,6 +19393,7 @@
     "Comedia"
    ],
    "tematicas": [
+    "Adolescencia",
     "Comedia",
     "Drama",
     "Juvenil",
@@ -18184,6 +19458,10 @@
      "categoria": null
     },
     {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
      "nombre": "Manipulación",
      "categoria": null
     },
@@ -18234,7 +19512,9 @@
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
+    "Amistad",
     "Amor",
+    "Animación",
     "Anime",
     "Comedia",
     "Desamor",
@@ -18344,7 +19624,15 @@
      "categoria": null
     },
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -18360,6 +19648,10 @@
      "categoria": null
     },
     {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
      "nombre": "Homofobia",
      "categoria": null
     },
@@ -18368,7 +19660,7 @@
      "categoria": null
     },
     {
-     "nombre": "Padre lgbtfobo",
+     "nombre": "Padre lgbtfóbico",
      "categoria": null
     },
     {
@@ -18389,6 +19681,10 @@
     },
     {
      "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -18437,10 +19733,12 @@
     "Fantasía"
    ],
    "tematicas": [
+    "Adolescencia",
     "Amor",
     "Familia",
     "Fantasía",
     "Juventud",
+    "Pareja",
     "Pareja sana",
     "Supporting Dad",
     "Supporting Mom"

@@ -5,6 +5,7 @@ Tres tipos de operación, siempre sobre la base de datos:
   unir     X -> Y   Las obras que tenían X pasan a tener Y y X desaparece. Si Y no existe, X se renombra.
   anadir   X => Y   Las obras que tienen X reciben también Y (X se queda). Y se crea si no existe.
   renombrar X -> Y  Solo cambia el nombre (p. ej. mayúsculas).
+  eliminar  X       Quita la etiqueta de la lista, pero solo si ninguna obra la usa.
 
 Uso:
     python tools/unificar_etiquetas.py --simular   # solo informa
@@ -68,6 +69,27 @@ OPERACIONES = [
     ("tematica", "unir", "Drogas", "Consumo de drogas"),
     ("tematica", "anadir", "Drogodependencia", "Consumo de drogas"),
     ("aviso", "unir", "Cuernos", "Infidelidad"),
+    # ---- Tercera tanda (columna «Decisión» del listado del 19 de octubre)
+    ("tematica", "unir", "Aventura", "Aventuras"),
+    ("tematica", "unir", "Bullying", "Acoso escolar"),
+    ("tematica", "renombrar", "Ciencia Ficción", "Ciencia ficción"),
+    ("tematica", "renombrar", "Comedia de Enredo", "Comedia de enredo"),
+    ("tematica", "renombrar", "Comedia Dramática", "Comedia dramática"),
+    ("tematica", "renombrar", "Comedia Española", "Comedia española"),
+    ("tematica", "renombrar", "Cómic Juvenil", "Cómic juvenil"),
+    ("tematica", "renombrar", "Drama Adolescente", "Drama adolescente"),
+    ("tematica", "unir", "Erotismo", "Erótico"),
+    ("tematica", "renombrar", "Fantasía Oscura", "Fantasía oscura"),
+    ("tematica", "renombrar", "Friends to Lovers", "Friends to lovers"),
+    ("tematica", "unir", "Futuro postapocalíptico", "Postapocalíptico"),
+    ("aviso", "unir", "Mentiras y Engaño", "Engaños y Mentiras"),
+    ("aviso", "unir", "Padre lgbtfobo", "Padre lgbtfóbico"),
+    ("aviso", "unir", "Padre lgtbfobo", "Padre lgbtfóbico"),
+    # Se quitan de la lista solo si no las usa ninguna obra
+    *[("tematica", "eliminar", x, None) for x in (
+        '"Cosas de chicas"', "A fuego lento", "BD", "De amigas a amantes", "De enemigas a amantes",
+        "Entrada en la madurez", "Erótico-festivo", "Humor", "Manga", "Romance de instituto",
+        "Romance en el trabajo", "Viaje en carretera", "Young Adult")],
 ]
 
 TABLAS = {"tematica": "obra_tematica", "aviso": "obra_aviso"}
@@ -85,6 +107,15 @@ def aplicar(db, informe):
         o = ident(db, tabla, origen)
         d = ident(db, tabla, destino)
         et = "temática" if tabla == "tematica" else "aviso"
+        if op == "eliminar":
+            if o:
+                n = db.execute(f"SELECT COUNT(*) FROM {enlace} WHERE {col} = ?", (o[0],)).fetchone()[0]
+                if n:
+                    informe.append(f"{et}: «{origen}» NO se elimina porque la usan {n} obras")
+                else:
+                    db.execute(f"DELETE FROM {tabla} WHERE id = ?", (o[0],))
+                    informe.append(f"{et}: «{origen}» eliminada de la lista (0 obras)")
+            continue
         if op == "renombrar":
             if o and o[1] != destino:
                 db.execute(f"UPDATE {tabla} SET nombre = ? WHERE id = ?", (destino, o[0]))
