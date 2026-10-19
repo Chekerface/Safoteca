@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-19T10:03:11+00:00",
+  "generado": "2026-10-19T10:21:27+00:00",
   "total": 293
  },
  "obras": [
@@ -838,7 +838,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "211",
    "generos": [
     "Horror"
@@ -1432,7 +1432,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "79",
    "generos": [
     "Acción"
@@ -1773,7 +1773,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "224",
    "generos": [
     "Aventura"
@@ -2265,7 +2265,7 @@
    "relevancia": "A",
    "temporadas": "4",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "89",
    "generos": [
     "Fantasía"
@@ -2604,7 +2604,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "207",
    "generos": [
     "Drama"
@@ -2895,7 +2895,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "3",
    "generos": [
     "Acción"
@@ -4772,7 +4772,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "155",
    "generos": [
     "Drama"
@@ -7369,7 +7369,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "225",
    "generos": [
     "Thriller"
@@ -7623,7 +7623,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "192",
    "generos": [
     "Suspense"
@@ -8417,7 +8417,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "227",
    "generos": [
     "Terror"
@@ -10031,7 +10031,7 @@
    "relevancia": "A",
    "temporadas": "2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "264",
    "generos": [
     "Ciencia Ficción"
@@ -10177,7 +10177,7 @@
    "relevancia": "A",
    "temporadas": "5",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "138",
    "generos": [
     "Acción"
@@ -11403,7 +11403,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "221",
    "generos": [
     "Intriga"
@@ -13352,7 +13352,7 @@
    "relevancia": "B",
    "temporadas": "1.2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "216",
    "generos": [
     "Terror"
@@ -14023,7 +14023,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "34",
    "generos": [
     "Drama"
@@ -14122,7 +14122,7 @@
    "relevancia": "C",
    "temporadas": "2",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "156",
    "generos": [
     "Drama"
@@ -14257,7 +14257,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "259",
    "generos": [
     "Terror"
@@ -15172,7 +15172,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "90",
    "generos": [
     "Terror"
@@ -16230,7 +16230,7 @@
    "relevancia": "B",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "154",
    "generos": [
     "Drama"
@@ -16355,7 +16355,7 @@
    "relevancia": "B",
    "temporadas": "3",
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "6",
    "generos": [
     "Aventura"
@@ -16588,7 +16588,7 @@
    "relevancia": "C",
    "temporadas": null,
    "disponible_espana": true,
-   "final_feliz": null,
+   "final_feliz": false,
    "poster": "237",
    "generos": [
     "Drama"

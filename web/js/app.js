@@ -90,7 +90,7 @@
   function filtrosDe(p) {
     return {
       q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
-      rel: separar(p.get("rel")), final: ["si", "no"].includes(p.get("final")) ? p.get("final") : "", plat: separar(p.get("plat")), otros: p.get("otros") === "1",
+      rel: separar(p.get("rel")), final: p.get("final") === "si" ? "si" : "", plat: separar(p.get("plat")), otros: p.get("otros") === "1",
       edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
     };
   }
@@ -116,7 +116,7 @@
     const r = visibles().filter((o) => {
       if (f.tipo && o.tipo !== f.tipo) return false;
       if (f.rel.length && !f.rel.includes(o.relevancia)) return false;
-      if (f.final && o.final_feliz !== (f.final === "si")) return false;
+      if (f.final && o.final_feliz !== true) return false;
       if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
       if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
       if (f.plat.length && !(o.plataformas || []).some((x) => f.plat.includes(clavePlat(x)) && (f.otros || delPais(x)))) return false;
@@ -471,8 +471,9 @@
       <section class="grupo" aria-labelledby="g-rel"><h3 id="g-rel">Nivel de relevancia</h3>
         <div class="chips">${["A", "B", "C"].map((n) => `<button class="chip chip--tejuelo" type="button" data-rel="${n}" aria-pressed="${f.rel.includes(n)}" aria-label="Nivel ${n}">${n}</button>`).join("")}</div></section>
       <section class="grupo" aria-labelledby="g-final"><h3 id="g-final">Final de la historia</h3>
-        <div class="chips">${[["si", "Final feliz"], ["no", "Final no feliz"]].map(([v, t]) => `<button class="chip" type="button" data-final="${v}" aria-pressed="${f.final === v}">${t}</button>`).join("")}</div>
-        <p class="resumen" style="margin-top:.4rem">Solo salen las obras de las que sabemos cómo acaban. Vuelve a tocar para quitarlo.</p></section>
+        <label class="interruptor"><input type="checkbox" id="sw-final" role="switch" ${f.final ? "checked" : ""}>
+          <span class="interruptor__pista" aria-hidden="true"></span>
+          <span>Solo con final feliz<small>Salen solo las obras con final feliz confirmado.</small></span></label></section>
       <section class="grupo" aria-labelledby="g-gen"><h3 id="g-gen">Género</h3>
         <div class="chips">${E.cat.generos.map((g) => `<button class="chip" type="button" data-gen="${esc(g)}" aria-pressed="${f.gen.includes(g)}">${esc(g)}</button>`).join("")}</div></section>
       <section class="grupo" aria-labelledby="g-tem"><h3 id="g-tem">Temática</h3>
@@ -607,12 +608,6 @@
     const tipo = e.target.closest("[data-tipo]");
     if (tipo && E.F) { E.F.tipo = tipo.dataset.tipo; sincronizar(); if (hoja().open) actualizarPieHoja(); return; }
 
-    const fin = e.target.closest("[data-final]");
-    if (fin && E.F) {
-      E.F.final = E.F.final === fin.dataset.final ? "" : fin.dataset.final;
-      $$("[data-final]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.final === E.F.final)));
-      sincronizar(); actualizarPieHoja(); return;
-    }
     const rel = e.target.closest("[data-rel]");
     if (rel) { alternar(E.F.rel, rel.dataset.rel); rel.setAttribute("aria-pressed", String(E.F.rel.includes(rel.dataset.rel))); sincronizar(); actualizarPieHoja(); return; }
     const gen = e.target.closest("[data-gen]");
@@ -684,6 +679,7 @@
       actualizarPieHoja(); ajustarCabecera();
     } else if (t.id === "sel-edad") { E.F.edad = t.value; sincronizar(); actualizarPieHoja(); }
     else if (t.id === "ordenar") { E.F.orden = t.value; sincronizar(); }
+    else if (t.id === "sw-final" && E.F) { E.F.final = t.checked ? "si" : ""; sincronizar(); actualizarPieHoja(); }
     else if (t.id === "sw-avisos") { E.verAvisos = t.checked; guardar.escribir("verAvisos", t.checked); }
   });
 
