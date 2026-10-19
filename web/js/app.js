@@ -772,8 +772,8 @@
     e.preventDefault();
     const q = $("#buscar-flotante").value.trim();
     document.activeElement.blur();
-    if (rutaActual().ruta === "/catalogo") abrirFlotante(false);
-    else { location.hash = "#/catalogo" + (q ? "?q=" + encodeURIComponent(q) : ""); }
+    abrirFlotante(false);
+    if (rutaActual().ruta !== "/catalogo") { location.hash = "#/catalogo" + (q ? "?q=" + encodeURIComponent(q) : ""); }
   });
   document.addEventListener("keydown", (e) => { if (e.key === "Escape" && $("#form-flotante") && !$("#form-flotante").hidden) { abrirFlotante(false); $("#btn-flotante").focus(); } });
   let yPrev = 0;
