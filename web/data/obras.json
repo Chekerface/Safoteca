@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-10-21T08:51:45+00:00",
+  "generado": "2026-10-21T09:10:40+00:00",
   "total": 303
  },
  "obras": [
@@ -175,7 +175,7 @@
    "titulo_latam": null,
    "pais": "Tailandia",
    "anio": 2023,
-   "anio_fin": 2023,
+   "anio_fin": null,
    "sinopsis": "Ongsa, una solitaria toda su vida, se enamora a primera vista del Sun la más popular. Sin embargo, con el temor de ser rechazada, decide acercarse a ella bajo el seudónimo de \"Earth\". A medida que Sun se vuelve cada vez más curiosa sobre quién es Earth y comienza a enamorarse de ella, ¿Ongsa se revelará a Sun?",
    "edad": "TP",
    "relevancia": "A",
@@ -6140,7 +6140,7 @@
    "titulo_latam": null,
    "pais": "Corea del Sur",
    "anio": 2025,
-   "anio_fin": 2025,
+   "anio_fin": null,
    "sinopsis": "Woo Seul Gi creció en un orfanato en una provincia. Se muda a Seúl y se matricula en la escuela secundaria Chaehwa, que es una escuela para el 1% de los mejores estudiantes de Corea del Sur. Woo Seul Gi no se lleva bien con los otros estudiantes. Una estudiante llamada Yoo Je Yi se acerca a ella y se hacen amigas. Yoo Je Yi es la estudiante más poderoso de la escuela. Tiene un coeficiente intelectual alto, proviene de una familia adinerada y es atractiva físicamente. Ha vivido siendo la envidia de los demás desde que nació y es consciente de su superioridad. También es lo suficientemente astuta como para saber aprovechar su posición. Ella muestra especial interés en la estudiante transferido Woo Seul Gi. Pronto desarrollan una peligrosa relación entre amistad y obsesión.",
    "edad": "16",
    "relevancia": "C",
@@ -7249,7 +7249,7 @@
    "titulo_latam": null,
    "pais": "Tailandia",
    "anio": 2025,
-   "anio_fin": 2025,
+   "anio_fin": null,
    "sinopsis": "Dos herederas de un imperio hotelero y de una dinastía de grandes almacenes, respectivamente, compiten por una licitación nacional de Duty-Free. Desde el momento en que se conocen, surge una innegable atracción.",
    "edad": "16",
    "relevancia": "A",
@@ -13798,7 +13798,6 @@
     "Diferencia de clase",
     "Diferencias de clase social",
     "Drama",
-    "IRA",
     "Mujeres adultas",
     "Series que parecen fics",
     "Sexo",
