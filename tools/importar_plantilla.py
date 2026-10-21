@@ -123,6 +123,8 @@ class Plantilla:
             if fin and anio and fin < anio:
                 self.inc(n, titulo, "Año fin", fin, "anterior al año de inicio: se ignora")
                 fin = None
+            elif fin and anio and fin == anio:
+                fin = None  # mismo año: se muestra solo el de inicio, sin «2025–2025»
         oid = self.buscar(n, titulo, tipo, anio, limpio(f.get("id")))
         if oid == "error":
             self.res["omitidas"].append(titulo)
