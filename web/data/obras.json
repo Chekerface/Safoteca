@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-10-19T11:38:24+00:00",
-  "total": 293
+  "generado": "2026-10-21T08:51:45+00:00",
+  "total": 303
  },
  "obras": [
   {
@@ -166,6 +166,72 @@
    ],
    "letterboxd": "https://letterboxd.com/film/1448-love-among-us/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 380,
+   "tipo": "serie",
+   "titulo": "23.5",
+   "titulo_original": "23.5",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2023,
+   "anio_fin": 2023,
+   "sinopsis": "Ongsa, una solitaria toda su vida, se enamora a primera vista del Sun la más popular. Sin embargo, con el temor de ser rechazada, decide acercarse a ella bajo el seudónimo de \"Earth\". A medida que Sun se vuelve cada vez más curiosa sobre quién es Earth y comienza a enamorarse de ella, ¿Ongsa se revelará a Sun?",
+   "edad": "TP",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "380",
+   "generos": [
+    "Comedia",
+    "Romance"
+   ],
+   "tematicas": [
+    "Aceptación de la sexualidad",
+    "Adolescencia",
+    "Amistad",
+    "Autodescubrimiento",
+    "Comedia",
+    "Comedia juvenil",
+    "Comedia romántica",
+    "De amigas a amantes",
+    "Identidad",
+    "Romance de instituto",
+    "Salir del armario",
+    "Trans"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Benyapa Jeanprasom",
+    "Pansa Vosbein",
+    "Pattranite Limpatiyakorn",
+    "Wanwimol Jensawamethee"
+   ],
+   "directores": [
+    "Kanittha Kwanyu"
+   ],
+   "donde_ver": [
+    "https://www.viki.com/tv/40918c-235?utm_source=global_search_or_media_action&utm_campaign=40918c#episodes",
+    "https://www.netflix.com/mx/title/81760051"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.viki.com/tv/40918c-235?utm_source=global_search_or_media_action&utm_campaign=40918c#episodes"
+    },
+    {
+     "n": "Netflix",
+     "p": "MX",
+     "u": "https://www.netflix.com/mx/title/81760051"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film827362.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 117,
@@ -3893,6 +3959,47 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 383,
+   "tipo": "serie",
+   "titulo": "Cásate conmigo, Riwon",
+   "titulo_original": "💍 리원아 장가가자 | 레즈비언 공개 구혼 프로젝트",
+   "titulo_latam": null,
+   "pais": "Corea del Sur",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Reality en el que la influencer coreana Riwon tiene 12 citas con fans.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "383",
+   "generos": [
+    "Reality"
+   ],
+   "tematicas": [
+    "Romance"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Kim Riwon"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.youtube.com/playlist?list=PLWoPm8EhKN0c"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/playlist?list=PLWoPm8EhKN0c"
+    }
+   ],
+   "info": [],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
+  },
+  {
    "id": 109,
    "tipo": "pelicula",
    "titulo": "D.E.B.S. Espías en acción",
@@ -4850,6 +4957,74 @@
    ],
    "letterboxd": "https://letterboxd.com/film/duck-butter/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 378,
+   "tipo": "pelicula",
+   "titulo": "El club de las luchadoras",
+   "titulo_original": "Bottoms",
+   "titulo_latam": "El club de las peleadoras",
+   "pais": "Estados Unidos",
+   "anio": 2023,
+   "anio_fin": null,
+   "sinopsis": "Dos chicas lesbianas poco populares de último año de instituto crean un club de la lucha para intentar impresionar a las animadoras y ligar con ellas. ¡Y su plan parece que funciona! Pero ¿se les acabará yendo todo de las manos?",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "378",
+   "generos": [
+    "Comedia"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amor",
+    "Comedia",
+    "Comedia absurda",
+    "Conspiraciones",
+    "Familia encontrada",
+    "Instituto",
+    "Lesbiana",
+    "Lesbianismo",
+    "Protagonista Idiota",
+    "Romance de instituto"
+   ],
+   "avisos": [
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Ayo Edebiri",
+    "Havana Rose Liu",
+    "Kaia Gerber",
+    "Rachel Sennott",
+    "Ruby Cruz"
+   ],
+   "directores": [
+    "Emma Seligman"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/bottoms?awinaffid=400165&awinmid=82863"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/bottoms?awinaffid=400165&awinmid=82863"
+    }
+   ],
+   "info": [
+    "https://es.wikipedia.org/wiki/Bottoms"
+   ],
+   "letterboxd": "https://letterboxd.com/film/bottoms/",
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 374,
@@ -5958,6 +6133,96 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 385,
+   "tipo": "serie",
+   "titulo": "Friendly Rivalry",
+   "titulo_original": "선의의 경쟁",
+   "titulo_latam": null,
+   "pais": "Corea del Sur",
+   "anio": 2025,
+   "anio_fin": 2025,
+   "sinopsis": "Woo Seul Gi creció en un orfanato en una provincia. Se muda a Seúl y se matricula en la escuela secundaria Chaehwa, que es una escuela para el 1% de los mejores estudiantes de Corea del Sur. Woo Seul Gi no se lleva bien con los otros estudiantes. Una estudiante llamada Yoo Je Yi se acerca a ella y se hacen amigas. Yoo Je Yi es la estudiante más poderoso de la escuela. Tiene un coeficiente intelectual alto, proviene de una familia adinerada y es atractiva físicamente. Ha vivido siendo la envidia de los demás desde que nació y es consciente de su superioridad. También es lo suficientemente astuta como para saber aprovechar su posición. Ella muestra especial interés en la estudiante transferido Woo Seul Gi. Pronto desarrollan una peligrosa relación entre amistad y obsesión.",
+   "edad": "16",
+   "relevancia": "C",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "385",
+   "generos": [
+    "Acción",
+    "Drama",
+    "Intriga",
+    "Thriller"
+   ],
+   "tematicas": [
+    "Acoso",
+    "Acoso escolar",
+    "Adolescencia",
+    "Angustia",
+    "Angustia adolescente",
+    "Asesinato",
+    "Consumo de drogas",
+    "Crimen",
+    "Diferencia de clase",
+    "Drama",
+    "Drama psicológico",
+    "Drogodependencia",
+    "Intriga"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Jung Soo-Bin",
+    "Lee Hye-ri"
+   ],
+   "directores": [
+    "Kim Tae-hee"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/title/82036243"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "INT",
+     "u": "https://www.netflix.com/title/82036243"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film859928.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
+  },
+  {
    "id": 142,
    "tipo": "pelicula",
    "titulo": "Fucking Åmål",
@@ -6096,6 +6361,90 @@
    ],
    "letterboxd": "https://letterboxd.com/film/fire/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 384,
+   "tipo": "serie",
+   "titulo": "GAP THE SERIES",
+   "titulo_original": "GAP THE SERIES",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2022,
+   "anio_fin": 2023,
+   "sinopsis": "Mon, una estudiante recién graduada de la universidad, comienza a trabajar como pasante en una gran empresa porque, desde que era muy joven admira a Sam, la súper rica presidenta. Sin embargo, cuando Mon vuelve a encontrarse con Sam la imagen que tenía de ella se derrumba por completo.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "384",
+   "generos": [
+    "Comedia",
+    "Comedia romántica"
+   ],
+   "tematicas": [
+    "Aceptación de la sexualidad",
+    "Amor",
+    "Celos",
+    "Diferencia de clase",
+    "Diferencia de edad",
+    "Drama",
+    "Lesbiana",
+    "Protagonista lesbiana",
+    "Relaciones",
+    "Relación de pareja",
+    "Romance en el trabajo",
+    "Sexo",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfóbica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Rebecca Armstrong",
+    "Sarocha Chankimha"
+   ],
+   "directores": [
+    "Nuttapong Wongkaveepairoj"
+   ],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=pBl9uKcZFXo&list=PL4D0KlUVq4IzJslrn8ilKnXV7B3U6DBqO"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=pBl9uKcZFXo&list=PL4D0KlUVq4IzJslrn8ilKnXV7B3U6DBqO"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film287286.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 171,
@@ -6891,6 +7240,91 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 387,
+   "tipo": "serie",
+   "titulo": "Harmony Secret",
+   "titulo_original": "Harmony Secret",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2025,
+   "anio_fin": 2025,
+   "sinopsis": "Dos herederas de un imperio hotelero y de una dinastía de grandes almacenes, respectivamente, compiten por una licitación nacional de Duty-Free. Desde el momento en que se conocen, surge una innegable atracción.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "387",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Asia",
+    "Clase alta",
+    "Comedia",
+    "Comedia dramática",
+    "De enemigas a amantes",
+    "Erótico-festivo",
+    "Riqueza",
+    "Sexo",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Intento de abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Punyapat Wangpongsathaporn",
+    "Saranphat Pedersen"
+   ],
+   "directores": [
+    "Kritsada Techanilobon"
+   ],
+   "donde_ver": [
+    "https://youtube.com/playlist?list=PLpRvR46QQniulz-JYJziV6GsmAE0TryaC&si=iNsqPBPVSnmfObSD"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtube.com/playlist?list=PLpRvR46QQniulz-JYJziV6GsmAE0TryaC&si=iNsqPBPVSnmfObSD"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film711812.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 255,
@@ -8199,6 +8633,101 @@
    ],
    "letterboxd": "https://letterboxd.com/film/knife-heart/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 379,
+   "tipo": "pelicula",
+   "titulo": "La (des)educación de Cameron Post",
+   "titulo_original": "The Miseducation of Cameron Post",
+   "titulo_latam": "La (des)educación de Cameron Post",
+   "pais": "Estados Unidos",
+   "anio": 2018,
+   "anio_fin": null,
+   "sinopsis": "1993, Cameron Post parece la adolescente la perfecta y popular chica de instituto. Pero cuando la pillan en el asiento trasero de un coche con otra chica la noche del baile de graduación, su familia no duda en mandarla inmediatamente a un centro de terapia de conversión especializado en adolescentes “con problemas de atracción por el mismo sexo”. Una vez allí, Cameron se ve sometida a una disciplina extravagante, a dudosos métodos “contra-gay” y a entusiastas canciones de rock cristiano. Sin embargo, Cameron entrará allí en contacto con personas como ella por primera vez en su vida y encuentra un lugar entre sus compañeros marginados.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "379",
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Aceptación de la sexualidad",
+    "Adolescencia",
+    "Amor",
+    "Angustia",
+    "Angustia adolescente",
+    "Autodescubrimiento",
+    "Años 90",
+    "Drama",
+    "Drama adolescente",
+    "Entorno familiar negativo",
+    "Familia encontrada",
+    "Homofobia",
+    "Identidad",
+    "Juventud",
+    "Lesbiana",
+    "Lesbianismo",
+    "Protagonista lesbiana",
+    "Religión",
+    "Salud Mental",
+    "Trastornos mentales"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Chloë Grace Moretz",
+    "John Gallagher Jr.",
+    "Sasha Lane"
+   ],
+   "directores": [
+    "Desiree Akhavan"
+   ],
+   "donde_ver": [
+    "https://www.rtve.es/play/videos/cine-club-play/des-educacion-cameron-post/6162821/"
+   ],
+   "plataformas": [
+    {
+     "n": "RTVE Play",
+     "p": "ES",
+     "u": "https://www.rtve.es/play/videos/cine-club-play/des-educacion-cameron-post/6162821/"
+    }
+   ],
+   "info": [
+    "https://es.wikipedia.org/wiki/The_Miseducation_of_Cameron_Post"
+   ],
+   "letterboxd": "https://letterboxd.com/film/the-miseducation-of-cameron-post/",
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 271,
@@ -13243,6 +13772,85 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 386,
+   "tipo": "serie",
+   "titulo": "Pls Love",
+   "titulo_original": "Pls Love",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Una fría y distante heredera de un imperio empresarial conoce por casualidad a una joven junto al mar y, contra todo pronóstico, se siente inmediatamente atraída por ella. Pero el romance se complica cuando descubre que la mujer que ha conquistado su corazón trabaja como “ángel” en un exclusivo club, formando parte del mundo que ella más desprecia. Aunque sus sentimientos son cada vez más intensos, los prejuicios, las diferencias sociales, los secretos y constantes malentendidos las separan una y otra vez. Cada vez que intentan acercarse, una nueva barrera surge entre ellas. Para permanecer juntas, ambas deberán aprender a mirar más allá de las apariencias y decidir si su amor es lo suficientemente fuerte para desafiar todo aquello que las divide.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "386",
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Asia",
+    "Celos",
+    "Chantaje",
+    "Diferencia de clase",
+    "Diferencias de clase social",
+    "Drama",
+    "IRA",
+    "Mujeres adultas",
+    "Series que parecen fics",
+    "Sexo",
+    "Vida adulta",
+    "Vida nocturna"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia leve",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Lena Lalina Schuett",
+    "Miu Natsha Taechamongkalapiwat"
+   ],
+   "directores": [
+    "Patchanee Charuchinda"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/pls-love-2026-wopu9fjxm5?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/pls-love-2026-wopu9fjxm5?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://mydramalist.com/806010-pls-love"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
+  },
+  {
    "id": 240,
    "tipo": "pelicula",
    "titulo": "Poliamor para principiantes",
@@ -15229,6 +15837,91 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 381,
+   "tipo": "serie",
+   "titulo": "Somewhere Somehow",
+   "titulo_original": "Somewhere Somehow",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": null,
+   "anio_fin": 2025,
+   "sinopsis": "Kee, una tsundere genial, y Peem, una chica rica y traviesa, se hacen amigas inseparables. Pero nadie sabe la verdad: llevan enamoradas en secreto desde la preparatoria.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "381",
+   "generos": [
+    "Comedia",
+    "Comedia romántica",
+    "Romance"
+   ],
+   "tematicas": [
+    "A fuego lento",
+    "Adolescencia",
+    "Amor",
+    "Comedia",
+    "Comedia juvenil",
+    "Comedia romántica",
+    "Lesbiana",
+    "Mujeres adultas",
+    "Pareja",
+    "Protagonista lesbiana",
+    "Protagonistas con pocas luces",
+    "Relaciones",
+    "Relación de pareja",
+    "Romance de instituto",
+    "Romance en el trabajo",
+    "Universidad",
+    "Young Adult"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Padre lgbtfóbico",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Kunyaphat Na Nakorn",
+    "Yada Watcharamusik"
+   ],
+   "directores": [
+    "Nuttapong Wongkaveepairoj"
+   ],
+   "donde_ver": [
+    "https://www.youtube.com/watch?v=3RPB-fiDm1Q&list=PLpRvR46QQnivTP1Z9M8OgeFfpIr0OsxMA"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://www.youtube.com/watch?v=3RPB-fiDm1Q&list=PLpRvR46QQnivTP1Z9M8OgeFfpIr0OsxMA"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film366763.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 259,
@@ -18790,6 +19483,95 @@
    "info": [],
    "letterboxd": "https://letterboxd.com/film/the-watermelon-woman/",
    "publicada": "2026-10-16 15:03:54"
+  },
+  {
+   "id": 382,
+   "tipo": "pelicula",
+   "titulo": "Whistle: El silbido del mal",
+   "titulo_original": "Whistle",
+   "titulo_latam": null,
+   "pais": "Canadá",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Un grupo de estudiantes inadaptados encuentra por accidente un objeto maldito: un antiguo silbato de la muerte azteca. Al soplarlo, descubren que el terrorífico sonido que produce invoca a sus propias muertes futuras para perseguirlos. Mientras las víctimas aumentan, los amigos intentan descubrir el origen del artefacto y detener la terrible cadena de sucesos que han provocado.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "382",
+   "generos": [
+    "Horror",
+    "Terror"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Consumo de drogas",
+    "Juvenil",
+    "Violencia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte y Destrucción",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre/Gore",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Dafne Keen",
+    "Sophie Nélisse"
+   ],
+   "directores": [
+    "Corin Hardy"
+   ],
+   "donde_ver": [
+    "https://www.rakuten.tv/es?from=justwatch&content_type=movies&content_id=whistle-el-silbido-del-mal",
+    "https://orangetv.orange.es/vps/dyn/whistle-el-silbido-del-mal_PAGE_HD"
+   ],
+   "plataformas": [
+    {
+     "n": "Rakuten TV",
+     "p": "ES",
+     "u": "https://www.rakuten.tv/es?from=justwatch&content_type=movies&content_id=whistle-el-silbido-del-mal"
+    },
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://orangetv.orange.es/vps/dyn/whistle-el-silbido-del-mal_PAGE_HD"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film261988.html"
+   ],
+   "letterboxd": "https://letterboxd.com/film/whistle-2025-1/",
+   "publicada": "2026-10-21 08:48:57"
   },
   {
    "id": 205,
