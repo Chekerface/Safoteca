@@ -75,7 +75,8 @@
   const PAIS = { ES: "España", US: "EE. UU.", GB: "Reino Unido", CA: "Canadá", JP: "Japón", MX: "México", PA: "Panamá", FR: "Francia", DE: "Alemania", IT: "Italia", PT: "Portugal", AR: "Argentina", CO: "Colombia", CL: "Chile", AU: "Australia" };
   const delPais = (x) => x.p === "ES" || x.p === "INT";            // plataformas que se muestran siempre
   const clavePlat = (x) => (delPais(x) ? x.n : `${x.n} · ${PAIS[x.p] || x.p}`);
-  const anios = (o) => (o.anio ? `${o.anio}` : ""); // solo el año de inicio, nunca el final
+  // En las portadas (tarjetas) solo el año de inicio; dentro de la ficha puede ir el rango.
+  const anios = (o) => (o.anio ? (o.anio_fin && o.anio_fin !== o.anio ? `${o.anio}–${o.anio_fin}` : `${o.anio}`) : "");
   const edadNum = (o) => (o.edad == null ? null : o.edad === "TP" ? 0 : parseInt(o.edad, 10));
   const textoEdad = (o) => (o.edad == null ? "" : o.edad === "TP" ? "Todos los públicos" : `+${o.edad}`);
   const az = (a, b) => norm(a.titulo).localeCompare(norm(b.titulo), "es");
@@ -146,7 +147,7 @@
     const on = E.favs.has(o.id);
     return `<button class="corazon" type="button" data-fav="${o.id}" aria-pressed="${on}" aria-label="Guardar ${esc(o.titulo)} en favoritos">${ICONO.corazon}</button>`;
   };
-  const meta = (o) => `<p class="meta"><span>${TIPO[o.tipo] || ""}</span>${o.anio ? `<span>${anios(o)}</span>` : ""}</p>`;
+  const meta = (o) => `<p class="meta"><span>${TIPO[o.tipo] || ""}</span>${o.anio ? `<span>${o.anio}</span>` : ""}</p>`;
   const tarjeta = (o) => `
     <article class="tarjeta">
       <a class="tarjeta__imagen" href="#/obra/${o.id}" tabindex="-1" aria-hidden="true">${poster(o)}</a>
