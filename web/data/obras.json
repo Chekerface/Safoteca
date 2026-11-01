@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-01T22:45:47+00:00",
+  "generado": "2026-11-01T22:52:57+00:00",
   "total": 310
  },
  "obras": [
@@ -684,7 +684,7 @@
    "temporadas": null,
    "disponible_espana": true,
    "final_feliz": null,
-   "poster": null,
+   "poster": "390",
    "generos": [
     "Acción",
     "Fantasía"
@@ -7861,7 +7861,7 @@
    "info": [
     "https://m.filmaffinity.com/es/film119562.html"
    ],
-   "letterboxd": null,
+   "letterboxd": "https://letterboxd.com/film/honey-dont/",
    "publicada": "2026-11-01 22:45:47"
   },
   {
@@ -16614,7 +16614,7 @@
    "info": [
     "https://www.imdb.com/title/tt10287908/?ref_=ext_shr"
    ],
-   "letterboxd": null,
+   "letterboxd": "https://letterboxd.com/film/spring-2021/",
    "publicada": "2026-11-01 22:45:47"
   },
   {
@@ -16880,7 +16880,7 @@
    "temporadas": "2, 3, 4, 5 y 6",
    "disponible_espana": true,
    "final_feliz": true,
-   "poster": null,
+   "poster": "392",
    "generos": [
     "Acción",
     "Aventura",
