@@ -881,7 +881,7 @@
   window.addEventListener("hashchange", () => { if (!E.cargado) return; E.navegado = true; if (hoja().open) hoja().close(); pintar(true); });
 
 
-  // ---------- UAT: buscador flotante (solo en la versión de pruebas) ----------
+  // ---------- Buscador flotante (ya está también en PRO) ----------
   const RAIZ_TABS = ["/", "/catalogo", "/favoritos"];
   function pintarFlotante() {
     const { ruta, p } = rutaActual();
