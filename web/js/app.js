@@ -268,12 +268,32 @@
       <div id="resultados"></div>`;
   }
 
+  // Las portadas se dibujan por tandas según se baja, para que la página abra rápido aunque haya cientos de obras.
+  const TANDA = 24;
+  function pintarPorTandas(lista) {
+    if (E.observador) { E.observador.disconnect(); E.observador = null; }
+    const cont = $("#resultados");
+    cont.innerHTML = '<div class="rejilla"></div><div id="centinela" aria-hidden="true"></div>';
+    const rej = cont.firstElementChild, centinela = $("#centinela");
+    let hecho = 0;
+    const mas = () => {
+      rej.insertAdjacentHTML("beforeend", lista.slice(hecho, hecho + TANDA).map(tarjeta).join(""));
+      hecho += TANDA;
+      if (hecho >= lista.length) { if (E.observador) { E.observador.disconnect(); E.observador = null; } centinela.remove(); }
+    };
+    mas();
+    if (hecho >= lista.length) return;
+    if (!("IntersectionObserver" in window)) { while (hecho < lista.length) mas(); return; }
+    E.observador = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting) && hecho < lista.length) mas(); }, { rootMargin: "900px 0px" });
+    E.observador.observe(centinela);
+  }
+
   function pintarResultados() {
     const f = E.F;
     const lista = filtrar(f);
     const n = lista.length;
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
-    $("#resultados").innerHTML = n ? rejilla(lista) : `
+    if (n) pintarPorTandas(lista); else $("#resultados").innerHTML = `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
         <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
         ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;

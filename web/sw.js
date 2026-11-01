@@ -1,5 +1,5 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "uat-safoteca-app-v7";
+const CACHE_APP = "uat-safoteca-app-v8";
 const CACHE_IMG = "uat-safoteca-img";
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
@@ -20,16 +20,16 @@ self.addEventListener("activate", (e) => {
   );
 });
 
-async function primeroRed(req, cacheName) {
+// Copia guardada al instante y actualización por detrás: la web abre rápido aunque la red sea lenta.
+// Lo nuevo se ve en la visita siguiente (o al recargar). Si no hay copia, se espera a la red.
+async function copiaYActualiza(req, cacheName) {
   const cache = await caches.open(cacheName);
-  try {
-    const res = await fetch(req);
-    if (res.ok) cache.put(req, res.clone());
-    return res;
-  } catch (err) {
-    const guardada = await cache.match(req, { ignoreSearch: true });
-    if (guardada) return guardada;
-    if (req.mode === "navigate") return cache.match("./index.html");
+  const guardada = await cache.match(req, { ignoreSearch: true });
+  const red = fetch(req).then((res) => { if (res.ok) cache.put(req, res.clone()); return res; });
+  if (guardada) { red.catch(() => {}); return guardada; }
+  try { return await red; }
+  catch (err) {
+    if (req.mode === "navigate") { const inicio = await cache.match("./index.html"); if (inicio) return inicio; }
     throw err;
   }
 }
@@ -49,5 +49,5 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
   if (url.pathname.includes("/img/")) e.respondWith(primeroCache(req));
-  else e.respondWith(primeroRed(req, CACHE_APP));
+  else e.respondWith(copiaYActualiza(req, CACHE_APP));
 });
