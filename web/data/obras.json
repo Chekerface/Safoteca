@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-10-21T09:10:40+00:00",
-  "total": 303
+  "generado": "2026-11-01T22:52:57+00:00",
+  "total": 310
  },
  "obras": [
   {
@@ -670,6 +670,81 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 390,
+   "tipo": "serie",
+   "titulo": "Agatha ¿Quién si no?",
+   "titulo_original": "Agatha All Along",
+   "titulo_latam": "Agatha en todas partes",
+   "pais": "EE.UU.",
+   "anio": 2024,
+   "anio_fin": null,
+   "sinopsis": "Ambientada después de los acontecimientos de WandaVision, Agatha Harkness recluta a algunos aliados improbables en su búsqueda para recuperar sus antiguos poderes.",
+   "edad": "14",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "390",
+   "generos": [
+    "Acción",
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Cómic",
+    "Drama",
+    "Fantasía",
+    "Marvel",
+    "Pareja",
+    "Pareja tóxica",
+    "Sobrenatural",
+    "Spin-off",
+    "Superheroinas",
+    "Superhéroes"
+   ],
+   "avisos": [
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Pareja tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Aubrey Plaza",
+    "Kathryn Hahn"
+   ],
+   "directores": [
+    "Gandja Monteiro",
+    "Jac Schaeffer",
+    "Rachel Goldberg"
+   ],
+   "donde_ver": [
+    "https://www.disneyplus.com/es-mx/browse/entity-5e474669-a4a2-4b90-a928-5ae7f845090c"
+   ],
+   "plataformas": [
+    {
+     "n": "Disney+",
+     "p": "MX",
+     "u": "https://www.disneyplus.com/es-mx/browse/entity-5e474669-a4a2-4b90-a928-5ae7f845090c"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt15571732/?ref_=ext_shr"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-01 22:45:47"
+  },
+  {
    "id": 46,
    "tipo": "pelicula",
    "titulo": "All Cheerleaders Die",
@@ -1242,6 +1317,72 @@
    ],
    "letterboxd": "https://letterboxd.com/film/ammonite/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 395,
+   "tipo": "serie",
+   "titulo": "Amor a medida",
+   "titulo_original": "Love Design",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Dos antiguas amantes convertidas en arquitectos rivales chocan profesionalmente tras una traición relacionada con un trabajo robado. Su competitiva relación se complica cuando surge un nuevo interés romántico.",
+   "edad": "15",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "395",
+   "generos": [
+    "Comedia",
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "Comedia",
+    "Comedia dramática",
+    "De enemigas a amantes",
+    "Romance en el trabajo",
+    "Triángulo amoroso"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Matira Tantiprasut",
+    "Ramida Jiranorraphat",
+    "Supassra Thanachat"
+   ],
+   "directores": [
+    "Kittisak Cheewasatjasakun"
+   ],
+   "donde_ver": [
+    "https://wetv.vip/es/play/7oylb1l52637d6e/q410144arm1-EP01%3A_Amor_a_medida_(Uncut_Ver.)"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://wetv.vip/es/play/7oylb1l52637d6e/q410144arm1-EP01%3A_Amor_a_medida_(Uncut_Ver.)"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film564905.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-01 22:45:47"
   },
   {
    "id": 304,
@@ -7584,6 +7725,146 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 394,
+   "tipo": "pelicula",
+   "titulo": "Honey don’t!",
+   "titulo_original": "Honey don’t!",
+   "titulo_latam": "Honey don’t!",
+   "pais": "EEUU",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Honey O'Donahue, una detective privada en un pueblo pequeño, investiga una serie de muertes extrañas conectadas con una misteriosa iglesia.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": false,
+   "poster": "394",
+   "generos": [
+    "Comedia",
+    "Drama",
+    "Policiaca",
+    "Policíaca"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amor",
+    "Antiheroína",
+    "Asesinato",
+    "Años 70",
+    "Años 80",
+    "Años 90",
+    "Bajo presupuesto",
+    "Comedia",
+    "Comedia absurda",
+    "Comedia dramática",
+    "Crimen",
+    "De época",
+    "Delincuencia",
+    "Desamor",
+    "Desapariciones",
+    "Drama",
+    "Familia",
+    "Feminismo",
+    "Homosexualidad",
+    "Humor",
+    "Humor negro",
+    "Lesbiana",
+    "Lesbianismo",
+    "Lipstick lesbian",
+    "Misterio",
+    "Mujeres adultas",
+    "Policía",
+    "Policíaca",
+    "Prisión",
+    "Protagonista lesbiana",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Religión",
+    "Romance",
+    "Sectas",
+    "Secuestros",
+    "Superheroinas",
+    "Venganza"
+   ],
+   "avisos": [
+    {
+     "nombre": "Abuso",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Desnudos",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia de género",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Aubrey Plaza",
+    "Margaret Qualley"
+   ],
+   "directores": [
+    "Ethan Jesse Coen"
+   ],
+   "donde_ver": [
+    "https://www.primevideo.com/-/es/detail/0PAPIP86IA80N8Q14AOWFC9T9D"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/-/es/detail/0PAPIP86IA80N8Q14AOWFC9T9D"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film119562.html"
+   ],
+   "letterboxd": "https://letterboxd.com/film/honey-dont/",
+   "publicada": "2026-11-01 22:45:47"
+  },
+  {
    "id": 49,
    "tipo": "serie",
    "titulo": "Hora de Aventuras",
@@ -11901,6 +12182,61 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 391,
+   "tipo": "serie",
+   "titulo": "Lucky my Love",
+   "titulo_original": "Lucky My Love รักนี้มากับดวง",
+   "titulo_latam": "Lucky my Love",
+   "pais": "Tailandia",
+   "anio": 2023,
+   "anio_fin": null,
+   "sinopsis": "En su búsqueda del amor, Napdao lo ha intentado todo.  Sin embargo, por desgracia, parece que nadie está en la misma onda que ella. Empieza a pensar que quizá su guapísimo y cariñoso jefe, Pheem, podría ser el hombre de su vida. Entonces aparece Wela, su nueva jefa de equipo, y lo cambia todo con su atención observadora y cariñosa.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "391",
+   "generos": [
+    "Comedia",
+    "Comedia romántica",
+    "Romance"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Comedia romántica",
+    "Lesbiana",
+    "Lesbianismo",
+    "Pareja",
+    "Protagonista lesbiana",
+    "Romance",
+    "Romance en el trabajo",
+    "Vida adulta",
+    "Webserie"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Inthira \"Near\" Thammajaroen",
+    "Jiratchaya \"B Mine\" Komontut"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://youtu.be/Sh-N7OrU-4w?si=sgPlq5G6web-nhZD"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtu.be/Sh-N7OrU-4w?si=sgPlq5G6web-nhZD"
+    }
+   ],
+   "info": [
+    "https://drama.fandom.com/es/wiki/Lucky_My_Love"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-01 22:45:47"
+  },
+  {
    "id": 269,
    "tipo": "serie",
    "titulo": "Madre solo hay dos",
@@ -13848,6 +14184,86 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-21 08:48:57"
+  },
+  {
+   "id": 396,
+   "tipo": "serie",
+   "titulo": "Pluto",
+   "titulo_original": "Pluto",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2024,
+   "anio_fin": null,
+   "sinopsis": "Ai-oon es la gemela decepcionante de la exitosa y querida Ob-oom.  En la noche de bodas de Ob-oom, ella lleva a Ai-oon a un lado y le hace una petición. Ob-oon y su esposo Paul se irán de luna de miel y ella dejará algo importante atrás: un amante, May, con quien no ha roto y quiere que Ai-oon lo haga por ella.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "396",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Autodescubrimiento",
+    "Diferencia de clase",
+    "Drama",
+    "Homosexualidad",
+    "Romance"
+   ],
+   "avisos": [
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Padre lgbtfóbico",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Neen Suwanamas",
+    "Ploynira Hiruntaveesin",
+    "Rachanun Mahawan",
+    "Rutricha Phapakithi",
+    "Tipnaree Weerawatnodom"
+   ],
+   "directores": [
+    "Snap25 Team"
+   ],
+   "donde_ver": [
+    "https://m.youtube.com/watch?v=dObc3WRi6TU&pp=ygUFUGx1dG8%3D"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://m.youtube.com/watch?v=dObc3WRi6TU&pp=ygUFUGx1dG8%3D"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film818223.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-01 22:45:47"
   },
   {
    "id": 240,
@@ -16161,6 +16577,47 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 393,
+   "tipo": "pelicula",
+   "titulo": "Spring",
+   "titulo_original": "Spring",
+   "titulo_latam": "Spring",
+   "pais": "EE.UU.",
+   "anio": 2021,
+   "anio_fin": null,
+   "sinopsis": "Una adolescente inglesa ve cómo su vida da un giro radical en su último curso de instituto. Este pequeño pueblo estadounidense le trae recuerdos del pasado, de los años que pasó allí de niña, y las incertidumbres de la adolescencia.",
+   "edad": null,
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": null,
+   "poster": "393",
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Cine independiente USA",
+    "Instituto",
+    "Vida"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Alexandra Swarens",
+    "Emily Gateley"
+   ],
+   "directores": [
+    "Alexandra Swarens"
+   ],
+   "donde_ver": [],
+   "plataformas": [],
+   "info": [
+    "https://www.imdb.com/title/tt10287908/?ref_=ext_shr"
+   ],
+   "letterboxd": "https://letterboxd.com/film/spring-2021/",
+   "publicada": "2026-11-01 22:45:47"
+  },
+  {
    "id": 246,
    "tipo": "serie",
    "titulo": "Star trek: picard",
@@ -16407,6 +16864,62 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 392,
+   "tipo": "serie",
+   "titulo": "Supergirl",
+   "titulo_original": "Supergirl",
+   "titulo_latam": "Supergirl",
+   "pais": "EE.UU.",
+   "anio": 2015,
+   "anio_fin": 2021,
+   "sinopsis": "Sigue las aventuras de Kara Zor-El en su viaje para convertirse en la superheroína más fuerte de la Tierra, Supergirl.",
+   "edad": "14",
+   "relevancia": "B",
+   "temporadas": "2, 3, 4, 5 y 6",
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "392",
+   "generos": [
+    "Acción",
+    "Aventura",
+    "Ciencia Ficción"
+   ],
+   "tematicas": [
+    "Acción",
+    "Aventuras",
+    "Ciencia ficción",
+    "DC",
+    "Familia",
+    "Familia encontrada",
+    "Inclusión",
+    "Lesbiana",
+    "Lesbianismo",
+    "Superheroinas",
+    "Superhéroes"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Chyler Leigh",
+    "Floriana Lima y Azie Tesfai"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://www.atresplayer.com/antena3/series/supergirl/temporada-1/"
+   ],
+   "plataformas": [
+    {
+     "n": "Atresplayer",
+     "p": "ES",
+     "u": "https://www.atresplayer.com/antena3/series/supergirl/temporada-1/"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt4016454/?ref_=ext_shr"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-01 22:45:47"
   },
   {
    "id": 136,
