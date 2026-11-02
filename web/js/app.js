@@ -286,14 +286,19 @@
     if (rutaActual().ruta === "/catalogo") pintarResultados();
   }
 
-  function vistaFavoritos() {
-    const lista = visibles().filter((o) => E.favs.has(o.id)).sort(az);
-    if (!lista.length) {
+  function vistaFavoritos(p = new URLSearchParams()) {
+    const guardadas = visibles().filter((o) => E.favs.has(o.id)).sort(az);
+    if (!guardadas.length) {
       return `<h1 class="solo-lectores">Favoritos</h1><div class="vacio"><p>Aún no has guardado nada. Toca el corazón de una ficha para verla aquí.</p>
         <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
         <p class="resumen">Tus favoritos se guardan solo en este dispositivo.</p>`;
     }
-    return `<h1 class="solo-lectores">Favoritos</h1>${notaOcultas()}
+    const tipo = ["serie", "pelicula"].includes(p.get("tipo")) ? p.get("tipo") : "";
+    const lista = tipo ? guardadas.filter((o) => o.tipo === tipo) : guardadas;
+    const chipTipo = (valor, texto) => `<a class="chip" href="#/favoritos${valor ? "?tipo=" + valor : ""}" ${tipo === valor ? 'aria-current="true"' : ""}>${texto}</a>`;
+    const filtroTipo = `<div class="chips" role="navigation" aria-label="Tipo" style="margin:.25rem 0 .75rem">${chipTipo("", "Todo")}${chipTipo("serie", "Series")}${chipTipo("pelicula", "Películas")}</div>`;
+    if (!lista.length) return `<h1 class="solo-lectores">Favoritos</h1>${filtroTipo}<div class="vacio"><p>Entre tus favoritos no hay ${tipo === "serie" ? "series" : "películas"}.</p></div>`;
+    return `<h1 class="solo-lectores">Favoritos</h1>${filtroTipo}${notaOcultas()}
       <p class="resumen" style="margin-bottom:1rem">${lista.length === 1 ? "1 obra guardada" : lista.length + " obras guardadas"} en este dispositivo.</p>${rejilla(lista)}`;
   }
 
@@ -471,7 +476,10 @@
         <input class="campo" id="buscar-aviso" type="search" placeholder="Buscar un aviso" autocomplete="off">
         <div class="lista-marcas" id="lista-avisos">${listaAvisos("")}</div>
       </section>`;
+    const tipoHoja = (valor, texto) => `<button class="chip" type="button" data-tipo="${valor}" aria-pressed="${f.tipo === valor}">${texto}</button>`;
     const grupoFiltros = soloEvitar ? "" : `
+      <section class="grupo" aria-labelledby="g-tipo"><h3 id="g-tipo">Tipo</h3>
+        <div class="chips" role="group" aria-labelledby="g-tipo">${tipoHoja("", "Todo")}${tipoHoja("serie", "Series")}${tipoHoja("pelicula", "Películas")}</div></section>
       <section class="grupo" aria-labelledby="g-rel"><h3 id="g-rel">Nivel de relevancia</h3>
         <div class="chips">${["A", "B", "C"].map((n) => `<button class="chip chip--tejuelo" type="button" data-rel="${n}" aria-pressed="${f.rel.includes(n)}" aria-label="Nivel ${n}">${n}</button>`).join("")}</div></section>
       <section class="grupo" aria-labelledby="g-final"><h3 id="g-final">Final de la historia</h3>
@@ -565,7 +573,7 @@
       pintarResultados();
       if (E.abrirAlCargar) { const m = E.abrirAlCargar; E.abrirAlCargar = null; abrirHoja(m); }
     } else if (ruta === "/favoritos") {
-      vista.innerHTML = vistaFavoritos(); titulo = "Favoritos"; doc = titulo + " · " + doc;
+      vista.innerHTML = vistaFavoritos(p); titulo = "Favoritos"; doc = titulo + " · " + doc;
     } else if (ruta === "/ajustes") {
       vista.innerHTML = vistaAjustes(); titulo = "Ajustes"; doc = titulo + " · " + doc;
     } else if (ruta.startsWith("/obra/")) {
