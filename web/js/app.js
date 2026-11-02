@@ -612,7 +612,10 @@
         <input class="campo" id="buscar-aviso" type="search" placeholder="Buscar un aviso" autocomplete="off">
         <div class="lista-marcas" id="lista-avisos">${listaAvisos("")}</div>
       </section>`;
+    const tipoHoja = (valor, texto) => `<button class="chip" type="button" data-tipo="${valor}" aria-pressed="${f.tipo === valor}">${texto}</button>`;
     const grupoFiltros = soloEvitar ? "" : `
+      <section class="grupo" aria-labelledby="g-tipo"><h3 id="g-tipo">Tipo</h3>
+        <div class="chips" role="group" aria-labelledby="g-tipo">${tipoHoja("", "Todo")}${tipoHoja("serie", "Series")}${tipoHoja("pelicula", "Películas")}</div></section>
       <section class="grupo" aria-labelledby="g-rel"><h3 id="g-rel">Nivel de relevancia</h3>
         <div class="chips">${["A", "B", "C"].map((n) => `<button class="chip chip--tejuelo" type="button" data-rel="${n}" aria-pressed="${f.rel.includes(n)}" aria-label="Nivel ${n}">${n}</button>`).join("")}</div></section>
       <section class="grupo" aria-labelledby="g-final"><h3 id="g-final">Final de la historia</h3>
