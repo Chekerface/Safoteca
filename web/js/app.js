@@ -377,8 +377,9 @@
     let pie = '<button class="boton" type="button" data-accion="cerrar-hoja" id="pie-lista">Listo</button>';
     if (modo === "obra") {
       const o = E.porId.get(ctx.obra);
-      titulo = "Guardar en una lista";
+      titulo = "Guardar en…";
       cuerpo = `<section class="grupo"><p>${esc(o ? o.titulo : "")}</p>
+        <label class="marca"><input type="checkbox" data-fav-obra="${o ? o.id : 0}" ${E.favs.has(o && o.id) ? "checked" : ""}><span>Favoritos</span><span>${E.favs.size}</span></label>
         ${E.listas.length ? E.listas.map((l) => `<label class="marca"><input type="checkbox" data-lista-obra="${esc(l.id)}" data-obra="${o ? o.id : 0}" ${l.obras.includes(o && o.id) ? "checked" : ""}><span>${esc(l.nombre)}</span><span>${l.obras.length}</span></label>`).join("") : '<p>Todavía no tienes listas. Crea la primera:</p>'}</section>
         <section class="grupo"><h3>Crear una lista nueva</h3>${formulario("")}</section>`;
     } else if (modo === "nueva") { titulo = "Nueva lista"; cuerpo = `<section class="grupo">${formulario("")}</section>`; pie = '<button class="boton" type="submit" form="form-lista">Crear</button>'; }
@@ -435,6 +436,15 @@
       else { b.type = "button"; b.removeAttribute("form"); b.dataset.accion = "cerrar-hoja"; b.textContent = "Listo"; }
     });
     document.addEventListener("change", (e) => {
+      const fo = e.target.closest("[data-fav-obra]");
+      if (fo) {
+        const id = Number(fo.dataset.favObra);
+        if (fo.checked) E.favs.add(id); else E.favs.delete(id);
+        guardar.escribir("favs", [...E.favs]);
+        $$(`[data-fav="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(fo.checked)));
+        E.listasCambiado = true;
+        return;
+      }
       const c = e.target.closest("[data-lista-obra]");
       if (!c) return;
       const l = listaPorId(c.dataset.listaObra), obra = Number(c.dataset.obra);
@@ -764,10 +774,13 @@
     const fav = e.target.closest("[data-fav]");
     if (fav) {
       const id = Number(fav.dataset.fav);
+      // Con listas creadas, el corazón guarda en Favoritos (si aún no estaba) y abre la hoja para elegir listas.
+      if (E.listas.length && E.favs.has(id)) { abrirHojaListas("obra", { obra: id }); return; }
       const on = !E.favs.has(id);
       if (on) E.favs.add(id); else E.favs.delete(id);
       guardar.escribir("favs", [...E.favs]);
       $$(`[data-fav="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(on)));
+      if (on && E.listas.length) { abrirHojaListas("obra", { obra: id }); return; }
       toast(on ? "Guardado en favoritos" : "Quitado de favoritos");
       if (rutaActual().ruta === "/favoritos" && !on) { const y = scrollY; pintar(false); scrollTo(0, y); }
       return;
