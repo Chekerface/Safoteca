@@ -370,21 +370,22 @@
   function abrirHojaListas(modo, ctx = {}) {
     const h = hoja();
     let titulo = "", cuerpo = "";
-    const formulario = (valor, boton) => `<form id="form-lista" data-modo="${modo}" data-id="${esc(ctx.id || "")}" data-obra="${esc(ctx.obra || "")}">
+    // El botón principal del pie es el que crea (o guarda): no hay un segundo botón dentro del formulario.
+    const formulario = (valor) => `<form id="form-lista" data-modo="${modo}" data-id="${esc(ctx.id || "")}" data-obra="${esc(ctx.obra || "")}">
         <label class="solo-lectores" for="nombre-lista">Nombre de la lista</label>
-        <input class="campo" id="nombre-lista" type="text" maxlength="40" placeholder="Nombre de la lista" autocomplete="off" value="${esc(valor)}" required>
-        <div class="acciones" style="margin-top:.6rem"><button class="boton" type="submit">${boton}</button></div></form>`;
+        <input class="campo" id="nombre-lista" type="text" maxlength="40" placeholder="Nombre de la lista" autocomplete="off" value="${esc(valor)}" required enterkeyhint="done"></form>`;
+    let pie = '<button class="boton" type="button" data-accion="cerrar-hoja" id="pie-lista">Listo</button>';
     if (modo === "obra") {
       const o = E.porId.get(ctx.obra);
       titulo = "Guardar en una lista";
       cuerpo = `<section class="grupo"><p>${esc(o ? o.titulo : "")}</p>
         ${E.listas.length ? E.listas.map((l) => `<label class="marca"><input type="checkbox" data-lista-obra="${esc(l.id)}" data-obra="${o ? o.id : 0}" ${l.obras.includes(o && o.id) ? "checked" : ""}><span>${esc(l.nombre)}</span><span>${l.obras.length}</span></label>`).join("") : '<p>Todavía no tienes listas. Crea la primera:</p>'}</section>
-        <section class="grupo"><h3>Crear una lista nueva</h3>${formulario("", "Crear y guardar aquí")}</section>`;
-    } else if (modo === "nueva") { titulo = "Nueva lista"; cuerpo = `<section class="grupo">${formulario("", "Crear lista")}</section>`; }
-    else if (modo === "renombrar") { const l = listaPorId(ctx.id); titulo = "Renombrar lista"; cuerpo = `<section class="grupo">${formulario(l ? l.nombre : "", "Guardar nombre")}</section>`; }
+        <section class="grupo"><h3>Crear una lista nueva</h3>${formulario("")}</section>`;
+    } else if (modo === "nueva") { titulo = "Nueva lista"; cuerpo = `<section class="grupo">${formulario("")}</section>`; pie = '<button class="boton" type="submit" form="form-lista">Crear</button>'; }
+    else if (modo === "renombrar") { const l = listaPorId(ctx.id); titulo = "Renombrar lista"; cuerpo = `<section class="grupo">${formulario(l ? l.nombre : "")}</section>`; pie = '<button class="boton" type="submit" form="form-lista">Guardar nombre</button>'; }
     h.innerHTML = `<div class="hoja__cabecera"><h2 id="hoja-titulo">${titulo}</h2><button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
       <div class="hoja__cuerpo">${cuerpo}</div>
-      <div class="hoja__pie"><button class="boton" type="button" data-accion="cerrar-hoja">Listo</button></div>`;
+      <div class="hoja__pie">${pie}</div>`;
     h.dataset.modo = "listas-" + modo;
     if (!h.open) h.showModal();
     const c = $("#nombre-lista", h); if (c && modo !== "obra") c.focus();
@@ -425,6 +426,13 @@
           E.listas.push(l); guardarListas(); location.hash = "#/favoritos?lista=" + encodeURIComponent(l.id); toast("Lista guardada"); break;
         }
       }
+    });
+    // En la hoja «Guardar en una lista»: si escribes un nombre, el botón principal pasa de «Listo» a «Crear y guardar».
+    document.addEventListener("input", (e) => {
+      if (e.target.id !== "nombre-lista" || hoja().dataset.modo !== "listas-obra") return;
+      const b = $("#pie-lista"); if (!b) return;
+      if (e.target.value.trim()) { b.type = "submit"; b.setAttribute("form", "form-lista"); b.removeAttribute("data-accion"); b.textContent = "Crear y guardar"; }
+      else { b.type = "button"; b.removeAttribute("form"); b.dataset.accion = "cerrar-hoja"; b.textContent = "Listo"; }
     });
     document.addEventListener("change", (e) => {
       const c = e.target.closest("[data-lista-obra]");
