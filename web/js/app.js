@@ -339,12 +339,22 @@
     const sel = p.get("lista") || "";
     const lista = sel ? listaPorId(sel) : null;
     const ids = lista ? lista.obras : [...E.favs];
-    const obras = visibles().filter((o) => ids.includes(o.id)).sort(az);
+    const tipo = ["serie", "pelicula"].includes(p.get("tipo")) ? p.get("tipo") : "";
+    const guardadas = visibles().filter((o) => ids.includes(o.id)).sort(az);
+    const obras = tipo ? guardadas.filter((o) => o.tipo === tipo) : guardadas;
+    const chipTipo = (valor, texto) => {
+      const q = new URLSearchParams(); if (lista) q.set("lista", lista.id); if (valor) q.set("tipo", valor);
+      return `<a class="chip" href="#/favoritos${q.toString() ? "?" + q : ""}" ${tipo === valor ? 'aria-current="true"' : ""}>${texto}</a>`;
+    };
+    const filtroTipo = guardadas.length ? `<div class="chips" role="navigation" aria-label="Tipo" style="margin:.75rem 0">${chipTipo("", "Todo")}${chipTipo("serie", "Series")}${chipTipo("pelicula", "Películas")}</div>` : "";
     const cab = `<h1 class="solo-lectores">${lista ? esc(lista.nombre) : "Favoritos"}</h1>${chipsListas(lista ? lista.id : "")}`;
     const acciones = lista ? `<div class="acciones acciones--lista">
         <button class="boton boton--claro" type="button" data-la="renombrar" data-id="${esc(lista.id)}">Renombrar</button>
         <button class="boton boton--claro" type="button" data-la="compartir" data-id="${esc(lista.id)}">Compartir</button>
         <button class="boton boton--claro" type="button" data-la="borrar" data-id="${esc(lista.id)}">Borrar lista</button></div>` : "";
+    if (guardadas.length && !obras.length) {
+      return `${cab}${acciones}${filtroTipo}<div class="vacio"><p>${lista ? "En esta lista" : "Entre tus favoritos"} no hay ${tipo === "serie" ? "series" : "películas"}.</p></div>`;
+    }
     if (!obras.length) {
       return `${cab}${acciones}<div class="vacio"><p>${lista ? "Esta lista está vacía. Abre una ficha y pulsa «Añadir a una lista»." : "Aún no has guardado nada. Toca el corazón de una ficha para verla aquí."}</p>
         <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
@@ -353,8 +363,8 @@
     const tarjetas = lista
       ? obras.map((o) => tarjeta(o).replace("</article>", `<button class="boton-texto enlace-suave tarjeta__quitar" type="button" data-la="quitar-obra" data-id="${esc(lista.id)}" data-obra="${o.id}">Quitar de la lista</button></article>`)).join("")
       : obras.map(tarjeta).join("");
-    return `${cab}${acciones}${notaOcultas()}
-      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : "guardadas"} en este dispositivo.</p><div class="rejilla">${tarjetas}</div>`;
+    return `${cab}${acciones}${filtroTipo}${notaOcultas()}
+      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} en este dispositivo.</p><div class="rejilla">${tarjetas}</div>`;
   }
 
   function abrirHojaListas(modo, ctx = {}) {
