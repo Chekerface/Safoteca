@@ -32,6 +32,8 @@
   const E = {
     obras: [], porId: new Map(), cat: { generos: [], tematicas: [], avisos: [] }, meta: {},
     favs: new Set(guardar.leer("favs", [])),
+    listas: guardar.leer("listas", []).filter((l) => l && l.id && Array.isArray(l.obras)),
+    listasCambiado: false,
     evitar: new Set(guardar.leer("evitar", [])),
     verAvisos: guardar.leer("verAvisos", false),
     introVista: guardar.leer("intro", false),
@@ -266,12 +268,32 @@
       <div id="resultados"></div>`;
   }
 
+  // Las portadas se dibujan por tandas según se baja, para que la página abra rápido aunque haya cientos de obras.
+  const TANDA = 24;
+  function pintarPorTandas(lista) {
+    if (E.observador) { E.observador.disconnect(); E.observador = null; }
+    const cont = $("#resultados");
+    cont.innerHTML = '<div class="rejilla"></div><div id="centinela" aria-hidden="true"></div>';
+    const rej = cont.firstElementChild, centinela = $("#centinela");
+    let hecho = 0;
+    const mas = () => {
+      rej.insertAdjacentHTML("beforeend", lista.slice(hecho, hecho + TANDA).map(tarjeta).join(""));
+      hecho += TANDA;
+      if (hecho >= lista.length) { if (E.observador) { E.observador.disconnect(); E.observador = null; } centinela.remove(); }
+    };
+    mas();
+    if (hecho >= lista.length) return;
+    if (!("IntersectionObserver" in window)) { while (hecho < lista.length) mas(); return; }
+    E.observador = new IntersectionObserver((es) => { if (es.some((x) => x.isIntersecting) && hecho < lista.length) mas(); }, { rootMargin: "900px 0px" });
+    E.observador.observe(centinela);
+  }
+
   function pintarResultados() {
     const f = E.F;
     const lista = filtrar(f);
     const n = lista.length;
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
-    $("#resultados").innerHTML = n ? rejilla(lista) : `
+    if (n) pintarPorTandas(lista); else $("#resultados").innerHTML = `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
         <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
         ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
@@ -286,20 +308,161 @@
     if (rutaActual().ruta === "/catalogo") pintarResultados();
   }
 
+  // ---------- Listas de la usuaria (guardadas solo en este dispositivo) ----------
+  const guardarListas = () => guardar.escribir("listas", E.listas);
+  const listaPorId = (id) => E.listas.find((l) => l.id === id);
+  const listasDe = (obraId) => E.listas.filter((l) => l.obras.includes(obraId));
+  const limpiarNombre = (n) => String(n || "").replace(/\s+/g, " ").trim().slice(0, 40);
+  const enlaceLista = (l) => location.href.split("#")[0] + "#/favoritos?" + new URLSearchParams({ nombre: l.nombre, ids: l.obras.join(",") });
+  const textoObras = (n) => (n === 1 ? "1 obra" : n + " obras");
+
+  function chipsListas(sel) {
+    const chip = (href, activo, texto, n) => `<a class="chip" href="${href}" ${activo ? 'aria-current="true"' : ""}>${esc(texto)} <span class="chip__n">${n}</span></a>`;
+    return `<div class="chips chips--listas" role="navigation" aria-label="Mis listas">${chip("#/favoritos", !sel, "Favoritos", E.favs.size)}`
+      + E.listas.map((l) => chip("#/favoritos?lista=" + encodeURIComponent(l.id), sel === l.id, l.nombre, l.obras.length)).join("")
+      + `<button class="chip" type="button" data-la="nueva">+ Nueva lista</button></div>`;
+  }
+
+  function vistaCompartida(p) {
+    const ids = (p.get("ids") || "").split(",").map(Number).filter((n) => Number.isFinite(n) && n > 0);
+    const nombre = limpiarNombre(p.get("nombre")) || "Lista compartida";
+    const lista = visibles().filter((o) => ids.includes(o.id)).sort(az);
+    return `<h1 class="solo-lectores">Lista compartida</h1>${notaOcultas()}
+      <div class="nota"><p><strong>${esc(nombre)}</strong>: lista que te han compartido (${textoObras(ids.length)}).</p>
+        <div class="acciones"><button class="boton" type="button" data-la="guardar-compartida" data-nombre="${esc(nombre)}" data-ids="${esc(ids.join(","))}">Guardar como lista mía</button>
+        <a class="boton boton--claro" href="#/favoritos">Ir a mis favoritos</a></div></div>
+      ${lista.length ? rejilla(lista) : '<div class="vacio"><p>No hemos encontrado ninguna obra de esta lista.</p></div>'}`;
+  }
+
   function vistaFavoritos(p = new URLSearchParams()) {
-    const guardadas = visibles().filter((o) => E.favs.has(o.id)).sort(az);
-    if (!guardadas.length) {
-      return `<h1 class="solo-lectores">Favoritos</h1><div class="vacio"><p>Aún no has guardado nada. Toca el corazón de una ficha para verla aquí.</p>
-        <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
-        <p class="resumen">Tus favoritos se guardan solo en este dispositivo.</p>`;
-    }
+    if (p.has("ids")) return vistaCompartida(p);
+    const sel = p.get("lista") || "";
+    const lista = sel ? listaPorId(sel) : null;
+    const ids = lista ? lista.obras : [...E.favs];
     const tipo = ["serie", "pelicula"].includes(p.get("tipo")) ? p.get("tipo") : "";
-    const lista = tipo ? guardadas.filter((o) => o.tipo === tipo) : guardadas;
-    const chipTipo = (valor, texto) => `<a class="chip" href="#/favoritos${valor ? "?tipo=" + valor : ""}" ${tipo === valor ? 'aria-current="true"' : ""}>${texto}</a>`;
-    const filtroTipo = `<div class="chips" role="navigation" aria-label="Tipo" style="margin:.25rem 0 .75rem">${chipTipo("", "Todo")}${chipTipo("serie", "Series")}${chipTipo("pelicula", "Películas")}</div>`;
-    if (!lista.length) return `<h1 class="solo-lectores">Favoritos</h1>${filtroTipo}<div class="vacio"><p>Entre tus favoritos no hay ${tipo === "serie" ? "series" : "películas"}.</p></div>`;
-    return `<h1 class="solo-lectores">Favoritos</h1>${filtroTipo}${notaOcultas()}
-      <p class="resumen" style="margin-bottom:1rem">${lista.length === 1 ? "1 obra guardada" : lista.length + " obras guardadas"} en este dispositivo.</p>${rejilla(lista)}`;
+    const guardadas = visibles().filter((o) => ids.includes(o.id)).sort(az);
+    const obras = tipo ? guardadas.filter((o) => o.tipo === tipo) : guardadas;
+    const chipTipo = (valor, texto) => {
+      const q = new URLSearchParams(); if (lista) q.set("lista", lista.id); if (valor) q.set("tipo", valor);
+      return `<a class="chip" href="#/favoritos${q.toString() ? "?" + q : ""}" ${tipo === valor ? 'aria-current="true"' : ""}>${texto}</a>`;
+    };
+    const filtroTipo = guardadas.length ? `<div class="chips" role="navigation" aria-label="Tipo" style="margin:.75rem 0">${chipTipo("", "Todo")}${chipTipo("serie", "Series")}${chipTipo("pelicula", "Películas")}</div>` : "";
+    const cab = `<h1 class="solo-lectores">${lista ? esc(lista.nombre) : "Favoritos"}</h1>${chipsListas(lista ? lista.id : "")}`;
+    const acciones = lista ? `<div class="acciones acciones--lista">
+        <button class="boton boton--claro" type="button" data-la="renombrar" data-id="${esc(lista.id)}">Renombrar</button>
+        <button class="boton boton--claro" type="button" data-la="compartir" data-id="${esc(lista.id)}">Compartir</button>
+        <button class="boton boton--claro" type="button" data-la="borrar" data-id="${esc(lista.id)}">Borrar lista</button></div>` : "";
+    if (guardadas.length && !obras.length) {
+      return `${cab}${acciones}${filtroTipo}<div class="vacio"><p>${lista ? "En esta lista" : "Entre tus favoritos"} no hay ${tipo === "serie" ? "series" : "películas"}.</p></div>`;
+    }
+    if (!obras.length) {
+      return `${cab}${acciones}<div class="vacio"><p>${lista ? "Esta lista está vacía. Abre una ficha y pulsa «Añadir a una lista»." : "Aún no has guardado nada. Toca el corazón de una ficha para verla aquí."}</p>
+        <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
+        <p class="resumen">Tus favoritos y tus listas se guardan solo en este dispositivo.</p>`;
+    }
+    const tarjetas = lista
+      ? obras.map((o) => tarjeta(o).replace("</article>", `<button class="boton-texto enlace-suave tarjeta__quitar" type="button" data-la="quitar-obra" data-id="${esc(lista.id)}" data-obra="${o.id}">Quitar de la lista</button></article>`)).join("")
+      : obras.map(tarjeta).join("");
+    return `${cab}${acciones}${filtroTipo}${notaOcultas()}
+      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} en este dispositivo.</p><div class="rejilla">${tarjetas}</div>`;
+  }
+
+  function abrirHojaListas(modo, ctx = {}) {
+    const h = hoja();
+    let titulo = "", cuerpo = "";
+    // El botón principal del pie es el que crea (o guarda): no hay un segundo botón dentro del formulario.
+    const formulario = (valor) => `<form id="form-lista" data-modo="${modo}" data-id="${esc(ctx.id || "")}" data-obra="${esc(ctx.obra || "")}">
+        <label class="solo-lectores" for="nombre-lista">Nombre de la lista</label>
+        <input class="campo" id="nombre-lista" type="text" maxlength="40" placeholder="Nombre de la lista" autocomplete="off" value="${esc(valor)}" required enterkeyhint="done"></form>`;
+    let pie = '<button class="boton" type="button" data-accion="cerrar-hoja" id="pie-lista">Listo</button>';
+    if (modo === "obra") {
+      const o = E.porId.get(ctx.obra);
+      titulo = "Guardar en…";
+      cuerpo = `<section class="grupo"><p>${esc(o ? o.titulo : "")}</p>
+        <label class="marca"><input type="checkbox" data-fav-obra="${o ? o.id : 0}" ${E.favs.has(o && o.id) ? "checked" : ""}><span>Favoritos</span><span>${E.favs.size}</span></label>
+        ${E.listas.length ? E.listas.map((l) => `<label class="marca"><input type="checkbox" data-lista-obra="${esc(l.id)}" data-obra="${o ? o.id : 0}" ${l.obras.includes(o && o.id) ? "checked" : ""}><span>${esc(l.nombre)}</span><span>${l.obras.length}</span></label>`).join("") : '<p>Todavía no tienes listas. Crea la primera:</p>'}</section>
+        <section class="grupo"><h3>Crear una lista nueva</h3>${formulario("")}</section>`;
+    } else if (modo === "nueva") { titulo = "Nueva lista"; cuerpo = `<section class="grupo">${formulario("")}</section>`; pie = '<button class="boton" type="submit" form="form-lista">Crear</button>'; }
+    else if (modo === "renombrar") { const l = listaPorId(ctx.id); titulo = "Renombrar lista"; cuerpo = `<section class="grupo">${formulario(l ? l.nombre : "")}</section>`; pie = '<button class="boton" type="submit" form="form-lista">Guardar nombre</button>'; }
+    h.innerHTML = `<div class="hoja__cabecera"><h2 id="hoja-titulo">${titulo}</h2><button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
+      <div class="hoja__cuerpo">${cuerpo}</div>
+      <div class="hoja__pie">${pie}</div>`;
+    h.dataset.modo = "listas-" + modo;
+    if (!h.open) h.showModal();
+    const c = $("#nombre-lista", h); if (c && modo !== "obra") c.focus();
+  }
+
+  function eventosListas() {
+    document.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-la]");
+      if (!b) return;
+      const id = b.dataset.id, obra = Number(b.dataset.obra);
+      switch (b.dataset.la) {
+        case "abrir-obra": abrirHojaListas("obra", { obra }); break;
+        case "nueva": abrirHojaListas("nueva"); break;
+        case "renombrar": abrirHojaListas("renombrar", { id }); break;
+        case "quitar-obra": {
+          const l = listaPorId(id); if (!l) break;
+          l.obras = l.obras.filter((x) => x !== obra); guardarListas();
+          const y = scrollY; pintar(false); scrollTo(0, y); toast("Quitada de la lista"); break;
+        }
+        case "borrar":
+          if (b.dataset.seguro) { E.listas = E.listas.filter((l) => l.id !== id); guardarListas(); location.hash = "#/favoritos"; toast("Lista borrada"); }
+          else {
+            b.dataset.seguro = "1"; b.textContent = "Pulsa otra vez para borrar";
+            setTimeout(() => { if (b.isConnected) { delete b.dataset.seguro; b.textContent = "Borrar lista"; } }, 4000);
+          }
+          break;
+        case "compartir": {
+          const l = listaPorId(id); if (!l) break;
+          const url = enlaceLista(l);
+          if (navigator.share) navigator.share({ title: "Lista «" + l.nombre + "» · La Safoteca", url }).catch(() => {});
+          else if (navigator.clipboard) navigator.clipboard.writeText(url).then(() => toast("Enlace copiado"), () => toast(url));
+          else toast(url);
+          break;
+        }
+        case "guardar-compartida": {
+          const ids = b.dataset.ids.split(",").map(Number).filter((n) => n > 0);
+          const l = { id: Date.now().toString(36), nombre: limpiarNombre(b.dataset.nombre) || "Lista compartida", obras: ids };
+          E.listas.push(l); guardarListas(); location.hash = "#/favoritos?lista=" + encodeURIComponent(l.id); toast("Lista guardada"); break;
+        }
+      }
+    });
+    // En la hoja «Guardar en una lista»: si escribes un nombre, el botón principal pasa de «Listo» a «Crear y guardar».
+    document.addEventListener("input", (e) => {
+      if (e.target.id !== "nombre-lista" || hoja().dataset.modo !== "listas-obra") return;
+      const b = $("#pie-lista"); if (!b) return;
+      if (e.target.value.trim()) { b.type = "submit"; b.setAttribute("form", "form-lista"); b.removeAttribute("data-accion"); b.textContent = "Crear y guardar"; }
+      else { b.type = "button"; b.removeAttribute("form"); b.dataset.accion = "cerrar-hoja"; b.textContent = "Listo"; }
+    });
+    document.addEventListener("change", (e) => {
+      const fo = e.target.closest("[data-fav-obra]");
+      if (fo) {
+        const id = Number(fo.dataset.favObra);
+        if (fo.checked) E.favs.add(id); else E.favs.delete(id);
+        guardar.escribir("favs", [...E.favs]);
+        $$(`[data-fav="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(fo.checked)));
+        E.listasCambiado = true;
+        return;
+      }
+      const c = e.target.closest("[data-lista-obra]");
+      if (!c) return;
+      const l = listaPorId(c.dataset.listaObra), obra = Number(c.dataset.obra);
+      if (!l) return;
+      if (c.checked) { if (!l.obras.includes(obra)) l.obras.push(obra); } else l.obras = l.obras.filter((x) => x !== obra);
+      guardarListas(); E.listasCambiado = true;
+    });
+    document.addEventListener("submit", (e) => {
+      if (e.target.id !== "form-lista") return;
+      e.preventDefault();
+      const f = e.target, nombre = limpiarNombre($("#nombre-lista").value);
+      if (!nombre) return;
+      if (f.dataset.modo === "renombrar") { const l = listaPorId(f.dataset.id); if (l) l.nombre = nombre; guardarListas(); E.listasCambiado = true; hoja().close(); return; }
+      const l = { id: Date.now().toString(36), nombre, obras: f.dataset.modo === "obra" ? [Number(f.dataset.obra)] : [] };
+      E.listas.push(l); guardarListas();
+      if (f.dataset.modo === "obra") { E.listasCambiado = true; toast("Guardada en «" + nombre + "»"); hoja().close(); }
+      else { hoja().close(); location.hash = "#/favoritos?lista=" + encodeURIComponent(l.id); }
+    });
   }
 
   function vistaObra(id) {
@@ -355,6 +518,7 @@
               <span>${TIPO[o.tipo] || ""}${o.anio ? " " + anios(o) : ""}</span>
               ${o.edad != null ? `<span class="edad" title="Edad recomendada">${esc(textoEdad(o))}</span>` : ""}
             </div>
+            <p class="ficha__listas"><button class="boton boton--claro" type="button" data-la="abrir-obra" data-obra="${o.id}">${listasDe(o.id).length ? "En " + (listasDe(o.id).length === 1 ? "1 lista" : listasDe(o.id).length + " listas") + " · cambiar" : "Añadir a una lista"}</button></p>
             ${explica}
           </header>
           ${avisos}
@@ -610,10 +774,13 @@
     const fav = e.target.closest("[data-fav]");
     if (fav) {
       const id = Number(fav.dataset.fav);
+      // Con listas creadas, el corazón guarda en Favoritos (si aún no estaba) y abre la hoja para elegir listas.
+      if (E.listas.length && E.favs.has(id)) { abrirHojaListas("obra", { obra: id }); return; }
       const on = !E.favs.has(id);
       if (on) E.favs.add(id); else E.favs.delete(id);
       guardar.escribir("favs", [...E.favs]);
       $$(`[data-fav="${id}"]`).forEach((b) => b.setAttribute("aria-pressed", String(on)));
+      if (on && E.listas.length) { abrirHojaListas("obra", { obra: id }); return; }
       toast(on ? "Guardado en favoritos" : "Quitado de favoritos");
       if (rutaActual().ruta === "/favoritos" && !on) { const y = scrollY; pintar(false); scrollTo(0, y); }
       return;
@@ -673,7 +840,7 @@
         }
         case "borrar-datos":
           if (acc.dataset.seguro) {
-            guardar.borrar(); E.favs.clear(); E.evitar.clear(); E.verAvisos = false; E.introVista = false;
+            guardar.borrar(); E.favs.clear(); E.evitar.clear(); E.listas = []; E.verAvisos = false; E.introVista = false;
             pintar(false); toast("Datos borrados de este dispositivo");
           } else {
             acc.dataset.seguro = "1"; acc.textContent = "Pulsa otra vez para borrar";
@@ -742,13 +909,13 @@
     else { E.abrirAlCargar = "filtros"; location.hash = "#/catalogo"; }
   });
   hoja().addEventListener("close", () => {
-    if (E.evitarCambiado) { E.evitarCambiado = false; const y = scrollY; pintar(false); scrollTo(0, y); }
+    if (E.evitarCambiado || E.listasCambiado) { E.evitarCambiado = false; E.listasCambiado = false; const y = scrollY; pintar(false); scrollTo(0, y); }
     else ajustarCabecera();
   });
   window.addEventListener("hashchange", () => { if (!E.cargado) return; E.navegado = true; if (hoja().open) hoja().close(); pintar(true); });
 
 
-  // ---------- UAT: buscador flotante (solo en la versión de pruebas) ----------
+  // ---------- Buscador flotante (ya está también en PRO) ----------
   const RAIZ_TABS = ["/", "/catalogo", "/favoritos"];
   function pintarFlotante() {
     const { ruta, p } = rutaActual();
@@ -823,6 +990,7 @@
     }
   }
 
+  eventosListas();
   pintarTabs(rutaActual().ruta);
   ajustarCabecera();
   cargar();
