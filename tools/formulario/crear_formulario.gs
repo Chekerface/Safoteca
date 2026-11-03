@@ -145,7 +145,7 @@ var DATOS = {
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cutre» a «Humor negro»",
+   "rango": "de «Cutre» a «Identidad»",
    "opciones": [
     "Cutre",
     "Cómic",
@@ -164,7 +164,6 @@ var DATOS = {
     "Desamor",
     "Desapariciones",
     "Diferencia de altura",
-    "Diferencia de clase",
     "Diferencia de edad",
     "Diferencias de clase social",
     "Discriminación",
@@ -224,14 +223,14 @@ var DATOS = {
     "Horror",
     "Hospital",
     "Humor",
-    "Humor negro"
+    "Humor negro",
+    "Identidad"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Identidad» a «Relaciones interpersonales»",
+   "rango": "de «Inclusión» a «Relación de pareja»",
    "opciones": [
-    "Identidad",
     "Inclusión",
     "India",
     "Inexactitud histórica",
@@ -308,14 +307,14 @@ var DATOS = {
     "Redes Sociales",
     "Relaciones",
     "Relaciones complicadas",
-    "Relaciones interpersonales"
+    "Relaciones interpersonales",
+    "Relación de pareja"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relación de pareja» a «Épica»",
+   "rango": "de «Relación interracial» a «Épica»",
    "opciones": [
-    "Relación de pareja",
     "Relación interracial",
     "Religión",
     "Remake",
