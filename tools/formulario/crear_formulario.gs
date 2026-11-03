@@ -46,7 +46,6 @@ var DATOS = {
     "Horror",
     "Intriga",
     "Musical",
-    "Policiaca",
     "Policíaca",
     "Reality",
     "Romance",
@@ -231,7 +230,7 @@ var DATOS = {
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Identidad» a «Relación de pareja»",
+   "rango": "de «Identidad» a «Relaciones interpersonales»",
    "opciones": [
     "Identidad",
     "Inclusión",
@@ -259,6 +258,7 @@ var DATOS = {
     "Mainstream USA",
     "Mala con ganas",
     "Manga",
+    "Marvel",
     "Maternidad",
     "Matrimonio",
     "Mercenarios",
@@ -309,14 +309,14 @@ var DATOS = {
     "Redes Sociales",
     "Relaciones",
     "Relaciones complicadas",
-    "Relaciones interpersonales",
-    "Relación de pareja"
+    "Relaciones interpersonales"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relación interracial» a «Épica»",
+   "rango": "de «Relación de pareja» a «Épica»",
    "opciones": [
+    "Relación de pareja",
     "Relación interracial",
     "Religión",
     "Remake",
