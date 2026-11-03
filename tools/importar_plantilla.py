@@ -17,6 +17,9 @@ Reglas (también están en docs/guia.md):
   * «Revisada = Sí» publica la obra si es película o serie y tiene sinopsis y nivel de relevancia;
     si no los tiene queda como «revisada» y se avisa. Nunca se despublica nada desde la plantilla.
   * Valores nuevos de temática/aviso/género se crean marcados como «pendiente de revisión».
+  * Géneros, temáticas y avisos: solo se aceptan los de data/mapeos/generos_aceptados.csv,
+    tematicas_aceptadas.csv y avisos_aceptados.csv. Si llega uno distinto el programa AVISA y se BLOQUEA (no guarda nada)
+    hasta dar el okay en la terminal (escribir «si») o con --aceptar-etiquetas.
   * Columna opcional «Letterboxd (enlace)»: se guarda en data/letterboxd.csv.
 Antes de guardar se hace una copia de la base de datos en data/privado/copias/.
 Las incidencias salen por pantalla y en informes/incidencias_plantilla.csv.
@@ -253,6 +256,66 @@ def abrir_hoja(ruta, exigir_obras):
     return hoja
 
 
+MAPEOS = RAIZ / "data" / "mapeos"
+LISTAS_ACEPTADAS = {"genero": ("generos_aceptados.csv", "género"), "tematica": ("tematicas_aceptadas.csv", "temática"),
+                    "aviso": ("avisos_aceptados.csv", "aviso")}
+
+
+def sin_tildes(x):
+    return "".join(c for c in unicodedata.normalize("NFKD", x) if not unicodedata.combining(c)).casefold().strip()
+
+
+def leer_aceptadas(tabla):
+    f = MAPEOS / LISTAS_ACEPTADAS[tabla][0]
+    if not f.exists():
+        return set()
+    with open(f, encoding="utf-8-sig", newline="") as fh:
+        return {r["nombre"].strip() for r in csv.DictReader(fh) if r.get("nombre", "").strip()}
+
+
+def guardar_aceptadas(tabla, nuevas):
+    f = MAPEOS / LISTAS_ACEPTADAS[tabla][0]
+    todas = sorted(leer_aceptadas(tabla) | set(nuevas), key=sin_tildes)
+    with open(f, "w", encoding="utf-8", newline="") as fh:
+        w = csv.writer(fh)
+        w.writerow(["nombre"])
+        w.writerows([[n] for n in todas])
+
+
+def puerta_etiquetas(db, antes, aceptar, simular):
+    """Avisa de géneros/temáticas fuera de las listas aceptadas y BLOQUEA hasta que se dé el okay.
+    Devuelve las etiquetas aprobadas ({tabla: [nombres]}) o termina el programa."""
+    raras = {}
+    for t in LISTAS_ACEPTADAS:
+        ok = leer_aceptadas(t)
+        ahora = {x[0] for x in db.execute(f"SELECT nombre FROM {t}")}
+        extra = sorted(n for n in ahora - antes[t] if n not in ok)
+        if extra:
+            raras[t] = (extra, ok)
+    if not raras:
+        return {}
+    print("\n" + "!" * 70)
+    print("AVISO: hay géneros, temáticas o avisos que NO están en las listas aceptadas:")
+    for t, (extra, ok) in raras.items():
+        for n in extra:
+            parecidas = [o for o in ok if sin_tildes(o) == sin_tildes(n) or sin_tildes(o) in sin_tildes(n) or sin_tildes(n) in sin_tildes(o)]
+            pista = f"  (¿quizá «{'», «'.join(parecidas[:3])}»?)" if parecidas else ""
+            print(f"  - {LISTAS_ACEPTADAS[t][1]}: «{n}»{pista}")
+    print("!" * 70)
+    if aceptar:
+        print("Aceptadas con --aceptar-etiquetas.")
+    elif sys.stdin.isatty():
+        r = input("¿Las das por buenas y las añado a las listas aceptadas? Escribe «si» para seguir: ")
+        if sin_tildes(r) not in ("si", "s"):
+            db.rollback()
+            sys.exit("Importación cancelada: no se ha guardado nada.")
+    else:
+        db.rollback()
+        sys.exit("BLOQUEADO: corrige la plantilla/formulario o vuelve a ejecutar con --aceptar-etiquetas "
+                 "cuando des el okay. No se ha guardado nada.")
+    return {t: v[0] for t, v in raras.items()}
+
+
 def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extra_args=None):
     clase = clase or Plantilla
     ap = argparse.ArgumentParser(description=descripcion or __doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -261,6 +324,8 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
         extra_args(ap)
     ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
     ap.add_argument("--simular", action="store_true", help="no guarda nada: solo muestra qué pasaría")
+    ap.add_argument("--aceptar-etiquetas", action="store_true",
+                    help="da el okay a los géneros/temáticas nuevos (se añaden a data/mapeos/*_aceptad*.csv)")
     ap.add_argument("--sin-exportar", action="store_true", help="no regenera web/data después de guardar")
     a = ap.parse_args()
 
@@ -280,6 +345,7 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
     asegurar_esquema(db)
     db.execute("PRAGMA foreign_keys = ON")
     pl = clase(db, RAIZ / "informes", a) if clase is not Plantilla else Plantilla(db, RAIZ / "informes")
+    antes = {t: {x[0] for x in db.execute(f"SELECT nombre FROM {t}")} for t in LISTAS_ACEPTADAS}
     n_filas = 0
     for n, f in leer_filas(hoja):
         n_filas += 1
@@ -289,6 +355,7 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
             pl.inc(n, limpio(f.get("titulo original")) or "", "fila", None, f"no se pudo guardar: {e}")
             pl.res["omitidas"].append(limpio(f.get("titulo original")))
 
+    aprobadas = puerta_etiquetas(db, antes, a.aceptar_etiquetas, a.simular)
     (RAIZ / "informes").mkdir(exist_ok=True)
     with open(RAIZ / "informes" / informe, "w", encoding="utf-8-sig", newline="") as fh:
         w = csv.writer(fh)
@@ -314,6 +381,10 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
         db.close()
         print("\n(Simulación: no se ha guardado nada.)")
         return
+    for t, nombres in aprobadas.items():
+        guardar_aceptadas(t, nombres)
+        for n in nombres:
+            db.execute(f"UPDATE {t} SET pendiente_revision = 0 WHERE nombre = ?", (n,))
     db.commit()
     db.close()
     if pl.letterboxd:

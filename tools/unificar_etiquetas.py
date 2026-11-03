@@ -90,9 +90,12 @@ OPERACIONES = [
         '"Cosas de chicas"', "A fuego lento", "BD", "De amigas a amantes", "De enemigas a amantes",
         "Entrada en la madurez", "Erótico-festivo", "Humor", "Manga", "Romance de instituto",
         "Romance en el trabajo", "Viaje en carretera", "Young Adult")],
+    # ---- Cuarta tanda (3 de noviembre de 2026): géneros
+    ("genero", "unir", "Policiaca", "Policíaca"),
+    ("genero", "aprobar", "Policíaca", None),
 ]
 
-TABLAS = {"tematica": "obra_tematica", "aviso": "obra_aviso"}
+TABLAS = {"genero": "obra_genero", "tematica": "obra_tematica", "aviso": "obra_aviso"}
 
 
 def ident(db, tabla, nombre):
@@ -106,7 +109,12 @@ def aplicar(db, informe):
         col = tabla + "_id"
         o = ident(db, tabla, origen)
         d = ident(db, tabla, destino)
-        et = "temática" if tabla == "tematica" else "aviso"
+        et = {"genero": "género", "tematica": "temática"}.get(tabla, "aviso")
+        if op == "aprobar":
+            if o:
+                db.execute(f"UPDATE {tabla} SET pendiente_revision = 0 WHERE id = ?", (o[0],))
+                informe.append(f"{et}: «{origen}» aprobada (ya no está pendiente de revisión)")
+            continue
         if op == "eliminar":
             if o:
                 n = db.execute(f"SELECT COUNT(*) FROM {enlace} WHERE {col} = ?", (o[0],)).fetchone()[0]
