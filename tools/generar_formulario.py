@@ -3,11 +3,12 @@
 
 Uso:  python3 tools/generar_formulario.py      ->  tools/formulario/crear_formulario.gs
 
-Las listas de géneros, temáticas y avisos se leen de la base de datos (todos los valores del catálogo,
-no los «pendientes de revisión»). Vuelve a ejecutarlo cuando el catálogo cambie y, si ya tienes el
+Las listas de géneros, temáticas y avisos son las ACEPTADAS: data/mapeos/generos_aceptados.csv,
+tematicas_aceptadas.csv y avisos_aceptados.csv (las mismas que vigilan los importadores). Una etiqueta
+que exista en la base de datos pero no esté en esas listas no se ofrece en el formulario. Vuelve a ejecutarlo cuando el catálogo cambie y, si ya tienes el
 formulario, pega el script nuevo y ejecuta `actualizarListas` (no hace falta crear otro formulario).
 """
-import json, re, sqlite3, sys
+import csv, json, re, sqlite3, sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -15,8 +16,18 @@ SALIDA = RAIZ / "tools" / "formulario" / "crear_formulario.gs"
 MAX_POR_PREGUNTA = 100  # Google Forms va más fluido con listas cortas
 
 
+ACEPTADAS = {"genero": "generos_aceptados.csv", "tematica": "tematicas_aceptadas.csv", "aviso": "avisos_aceptados.csv"}
+
+
 def lista(db, tabla):
-    return [r[0] for r in db.execute(f"SELECT nombre FROM {tabla} ORDER BY nombre COLLATE NOCASE")]
+    """Etiquetas aceptadas, ordenadas sin distinguir mayúsculas. Avisa si alguna no existe en la base de datos."""
+    with open(RAIZ / "data" / "mapeos" / ACEPTADAS[tabla], encoding="utf-8-sig", newline="") as fh:
+        nombres = [r["nombre"].strip() for r in csv.DictReader(fh) if r["nombre"].strip()]
+    en_bd = {r[0] for r in db.execute(f"SELECT nombre FROM {tabla}")}
+    for n in nombres:
+        if n not in en_bd:
+            print(f"AVISO: «{n}» está en la lista aceptada de {tabla} pero no en la base de datos")
+    return sorted(nombres, key=str.casefold)
 
 
 def trozos(valores, base):

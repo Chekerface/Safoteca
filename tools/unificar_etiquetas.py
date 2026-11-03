@@ -93,6 +93,10 @@ OPERACIONES = [
     # ---- Cuarta tanda (3 de noviembre de 2026): géneros
     ("genero", "unir", "Policiaca", "Policíaca"),
     ("genero", "aprobar", "Policíaca", None),
+    ("genero", "unir", "Tragedia", "Drama"),
+    # ---- Quinta tanda: avisos
+    ("aviso", "unir", "Sangre/Gore", "Gore"),
+    ("tematica", "unir", "Diferencia de clase", "Diferencias de clase social"),
 ]
 
 TABLAS = {"genero": "obra_genero", "tematica": "obra_tematica", "aviso": "obra_aviso"}

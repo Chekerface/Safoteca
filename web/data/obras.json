@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-03T11:39:28+00:00",
+  "generado": "2026-11-03T17:42:21+00:00",
   "total": 310
  },
  "obras": [
@@ -1033,7 +1033,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -1750,7 +1750,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -2029,7 +2029,7 @@
    "tematicas": [
     "Ciencia ficción",
     "Comedia",
-    "Comedia Negra",
+    "Comedia negra",
     "Drama",
     "Ficción Sobrenatural",
     "Suspense",
@@ -2306,7 +2306,7 @@
     "Animación",
     "Comedia",
     "Comedia dramática",
-    "Comedia Negra",
+    "Comedia negra",
     "Consumo de alcohol",
     "Consumo de drogas",
     "Drogodependencia",
@@ -3785,6 +3785,10 @@
      "categoria": null
     },
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -3798,10 +3802,6 @@
     },
     {
      "nombre": "Pareja tóxica",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -5408,6 +5408,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -5417,10 +5421,6 @@
     },
     {
      "nombre": "Maltrato animal",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -6304,7 +6304,7 @@
     "Asesinato",
     "Consumo de drogas",
     "Crimen",
-    "Diferencia de clase",
+    "Diferencias de clase social",
     "Drama",
     "Drama psicológico",
     "Drogodependencia",
@@ -6527,8 +6527,8 @@
     "Aceptación de la sexualidad",
     "Amor",
     "Celos",
-    "Diferencia de clase",
     "Diferencia de edad",
+    "Diferencias de clase social",
     "Drama",
     "Lesbiana",
     "Protagonista lesbiana",
@@ -7684,6 +7684,10 @@
      "categoria": null
     },
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
@@ -7693,10 +7697,6 @@
     },
     {
      "nombre": "Prostitución",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -8668,7 +8668,7 @@
    ],
    "tematicas": [
     "Comedia",
-    "Comedia Negra",
+    "Comedia negra",
     "Crimen"
    ],
    "avisos": [],
@@ -8714,7 +8714,7 @@
    ],
    "tematicas": [
     "Comedia",
-    "Comedia Negra",
+    "Comedia negra",
     "Crimen",
     "Drama",
     "Espionaje",
@@ -8867,11 +8867,11 @@
      "categoria": null
     },
     {
-     "nombre": "Homofobia",
+     "nombre": "Gore",
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
@@ -9162,11 +9162,11 @@
      "categoria": null
     },
     {
-     "nombre": "Lesbofobia",
+     "nombre": "Gore",
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Lesbofobia",
      "categoria": null
     },
     {
@@ -9229,7 +9229,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -9296,11 +9296,11 @@
      "categoria": null
     },
     {
-     "nombre": "Lesbofobia",
+     "nombre": "Gore",
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Lesbofobia",
      "categoria": null
     },
     {
@@ -9427,7 +9427,7 @@
     "Celos",
     "Comedia",
     "Comedia dramática",
-    "Comedia Negra",
+    "Comedia negra",
     "De época",
     "Histórico"
    ],
@@ -9795,7 +9795,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -10517,7 +10517,7 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -11655,7 +11655,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -12023,11 +12023,11 @@
      "categoria": null
     },
     {
-     "nombre": "Pederastia",
+     "nombre": "Gore",
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Pederastia",
      "categoria": null
     },
     {
@@ -12570,6 +12570,10 @@
      "categoria": null
     },
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Lesbofobia",
      "categoria": null
     },
@@ -12583,10 +12587,6 @@
     },
     {
      "nombre": "Padre lgbtfóbico",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -14130,7 +14130,6 @@
     "Asia",
     "Celos",
     "Chantaje",
-    "Diferencia de clase",
     "Diferencias de clase social",
     "Drama",
     "Mujeres adultas",
@@ -14207,7 +14206,7 @@
    "tematicas": [
     "Amor",
     "Autodescubrimiento",
-    "Diferencia de clase",
+    "Diferencias de clase social",
     "Drama",
     "Homosexualidad",
     "Romance"
@@ -14892,7 +14891,7 @@
    ],
    "avisos": [
     {
-     "nombre": "Sangre/Gore",
+     "nombre": "Gore",
      "categoria": null
     },
     {
@@ -16131,15 +16130,15 @@
    ],
    "avisos": [
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Infidelidad",
      "categoria": null
     },
     {
      "nombre": "Maltrato",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -17730,6 +17729,10 @@
      "categoria": null
     },
     {
+     "nombre": "Gore",
+     "categoria": null
+    },
+    {
      "nombre": "Maltrato animal",
      "categoria": null
     },
@@ -17739,10 +17742,6 @@
     },
     {
      "nombre": "Muerte de personaje importante",
-     "categoria": null
-    },
-    {
-     "nombre": "Sangre/Gore",
      "categoria": null
     },
     {
@@ -20047,10 +20046,6 @@
      "categoria": null
     },
     {
-     "nombre": "Sangre/Gore",
-     "categoria": null
-    },
-    {
      "nombre": "Violencia",
      "categoria": null
     }
@@ -20442,9 +20437,9 @@
    "poster": "371",
    "generos": [
     "Comedia",
+    "Drama",
     "Horror",
-    "Suspense",
-    "Tragedia"
+    "Suspense"
    ],
    "tematicas": [
     "Adolescencia",

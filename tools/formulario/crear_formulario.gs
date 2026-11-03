@@ -31,30 +31,18 @@ var DATOS = {
     "Comedia",
     "Comedia Dramática",
     "Comedia Negra",
-    "Comedia romántica",
-    "Costumbrismo",
-    "De época",
-    "Deportes",
-    "Distopía",
-    "Documental",
     "Drama",
     "Día a Día",
     "Fantasía",
-    "Fantástico",
     "Ficción Sobrenatural",
     "Histórico",
-    "Horror",
-    "Intriga",
     "Musical",
     "Policíaca",
-    "Reality",
     "Romance",
     "Sitcom",
     "Suspense",
-    "Telenovela",
     "Terror",
     "Thriller",
-    "Tragedia",
     "Western"
    ]
   }
@@ -62,7 +50,7 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Crimen»",
+   "rango": "de «\"Cosas de chicas\"» a «Costumbrismo»",
    "opciones": [
     "\"Cosas de chicas\"",
     "A fuego lento",
@@ -131,7 +119,7 @@ var DATOS = {
     "Comedia española",
     "Comedia involuntaria",
     "Comedia juvenil",
-    "Comedia Negra",
+    "Comedia negra",
     "Comedia romántica",
     "Comedia sexual",
     "Comida",
@@ -140,14 +128,14 @@ var DATOS = {
     "Consumo de alcohol",
     "Consumo de drogas",
     "Cosplay",
-    "Costumbrismo",
-    "Crimen"
+    "Costumbrismo"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cutre» a «Humor negro»",
+   "rango": "de «Crimen» a «Humor»",
    "opciones": [
+    "Crimen",
     "Cutre",
     "Cómic",
     "Cómic de autor",
@@ -165,7 +153,6 @@ var DATOS = {
     "Desamor",
     "Desapariciones",
     "Diferencia de altura",
-    "Diferencia de clase",
     "Diferencia de edad",
     "Diferencias de clase social",
     "Discriminación",
@@ -224,14 +211,14 @@ var DATOS = {
     "Homosexualidad",
     "Horror",
     "Hospital",
-    "Humor",
-    "Humor negro"
+    "Humor"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Identidad» a «Relaciones interpersonales»",
+   "rango": "de «Humor negro» a «Relaciones complicadas»",
    "opciones": [
+    "Humor negro",
     "Identidad",
     "Inclusión",
     "India",
@@ -258,7 +245,6 @@ var DATOS = {
     "Mainstream USA",
     "Mala con ganas",
     "Manga",
-    "Marvel",
     "Maternidad",
     "Matrimonio",
     "Mercenarios",
@@ -308,16 +294,15 @@ var DATOS = {
     "Reality",
     "Redes Sociales",
     "Relaciones",
-    "Relaciones complicadas",
-    "Relaciones interpersonales"
+    "Relaciones complicadas"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relación de pareja» a «Épica»",
+   "rango": "de «Relaciones interpersonales» a «Épica»",
    "opciones": [
+    "Relaciones interpersonales",
     "Relación de pareja",
-    "Relación interracial",
     "Religión",
     "Remake",
     "Represión",
@@ -376,7 +361,6 @@ var DATOS = {
     "Vecinos",
     "Vejez",
     "Venganza",
-    "Viaje en carretera",
     "Viajes en el tiempo",
     "Vida",
     "Vida adulta",
@@ -480,7 +464,6 @@ var DATOS = {
     "Religión",
     "Ritos extraños",
     "Sangre",
-    "Sangre/Gore",
     "Secuestro",
     "Sexo Explícito",
     "Sexo Implícito",

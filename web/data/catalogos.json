@@ -25,8 +25,7 @@
   "Suspense",
   "Telenovela",
   "Terror",
-  "Thriller",
-  "Tragedia"
+  "Thriller"
  ],
  "tematicas": [
   "A fuego lento",
@@ -91,7 +90,7 @@
   "Comedia dramática",
   "Comedia española",
   "Comedia juvenil",
-  "Comedia Negra",
+  "Comedia negra",
   "Comedia romántica",
   "Comedia sexual",
   "Comida",
@@ -111,7 +110,6 @@
   "Desamor",
   "Desapariciones",
   "Diferencia de altura",
-  "Diferencia de clase",
   "Diferencia de edad",
   "Diferencias de clase social",
   "Discriminación",
@@ -609,10 +607,6 @@
   },
   {
    "nombre": "Sangre",
-   "categoria": null
-  },
-  {
-   "nombre": "Sangre/Gore",
    "categoria": null
   },
   {
