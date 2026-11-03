@@ -180,7 +180,7 @@ Alternativa a la plantilla de Excel para añadir obras sueltas, pensada para tod
 2. **Cargar las respuestas:** en la hoja de respuestas, Archivo → Descargar → Excel (.xlsx) (o .csv) y ejecuta
    `python tools/importar_formulario.py respuestas.xlsx --simular` para ver qué pasaría, y sin `--simular` para guardar. Cada fila es una obra, así que se cargan todas de golpe. Con `--publicar` se publican las que tengan sinopsis y nivel de relevancia; sin él entran como borrador.
 3. **Repetidos:** una fila no se importa si la obra ya existe en la base de datos o aparece antes en el mismo archivo (mismo tipo y título original o en España, sin fijarse en mayúsculas, tildes ni signos, y el mismo año si ambos lo tienen), ni si su enlace de Letterboxd ya lo tiene otra obra. Si un enlace de «dónde verla» o el póster ya lo usa otra obra, solo se avisa. El informe queda en `informes/incidencias_formulario.csv`.
-4. **Catálogo nuevo:** si añades géneros, temáticas o avisos, ejecuta `python tools/generar_formulario.py`, pega el script nuevo en el mismo proyecto de Apps Script y ejecuta `actualizarListas`. Las opciones nuevas que alguien escriba en «Otro» entran como pendientes de revisión.
+4. **Catálogo nuevo:** el formulario ofrece solo las etiquetas de `data/mapeos/generos_aceptados.csv`, `tematicas_aceptadas.csv` y `avisos_aceptados.csv`. Cuando cambien esas listas, ejecuta `python tools/generar_formulario.py`, pega el script nuevo en el mismo proyecto de Apps Script y ejecuta `actualizarListas`. Las opciones nuevas que alguien escriba en «Otro» activan el aviso de etiquetas no aceptadas al importar (se bloquea hasta dar el okay).
 
 ## Plataformas y países de «dónde ver»
 
