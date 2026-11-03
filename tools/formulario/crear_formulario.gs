@@ -480,7 +480,6 @@ var DATOS = {
     "Religión",
     "Ritos extraños",
     "Sangre",
-    "Sangre/Gore",
     "Secuestro",
     "Sexo Explícito",
     "Sexo Implícito",
