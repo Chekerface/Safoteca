@@ -130,7 +130,7 @@ var DATOS = {
     "Comedia española",
     "Comedia involuntaria",
     "Comedia juvenil",
-    "Comedia Negra",
+    "Comedia negra",
     "Comedia romántica",
     "Comedia sexual",
     "Comida",
