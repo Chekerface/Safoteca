@@ -17,8 +17,8 @@ Reglas (también están en docs/guia.md):
   * «Revisada = Sí» publica la obra si es película o serie y tiene sinopsis y nivel de relevancia;
     si no los tiene queda como «revisada» y se avisa. Nunca se despublica nada desde la plantilla.
   * Valores nuevos de temática/aviso/género se crean marcados como «pendiente de revisión».
-  * Géneros y temáticas: solo se aceptan los de data/mapeos/generos_aceptados.csv y
-    tematicas_aceptadas.csv. Si llega uno distinto el programa AVISA y se BLOQUEA (no guarda nada)
+  * Géneros, temáticas y avisos: solo se aceptan los de data/mapeos/generos_aceptados.csv,
+    tematicas_aceptadas.csv y avisos_aceptados.csv. Si llega uno distinto el programa AVISA y se BLOQUEA (no guarda nada)
     hasta dar el okay en la terminal (escribir «si») o con --aceptar-etiquetas.
   * Columna opcional «Letterboxd (enlace)»: se guarda en data/letterboxd.csv.
 Antes de guardar se hace una copia de la base de datos en data/privado/copias/.
@@ -257,7 +257,8 @@ def abrir_hoja(ruta, exigir_obras):
 
 
 MAPEOS = RAIZ / "data" / "mapeos"
-LISTAS_ACEPTADAS = {"genero": ("generos_aceptados.csv", "género"), "tematica": ("tematicas_aceptadas.csv", "temática")}
+LISTAS_ACEPTADAS = {"genero": ("generos_aceptados.csv", "género"), "tematica": ("tematicas_aceptadas.csv", "temática"),
+                    "aviso": ("avisos_aceptados.csv", "aviso")}
 
 
 def sin_tildes(x):
@@ -294,7 +295,7 @@ def puerta_etiquetas(db, antes, aceptar, simular):
     if not raras:
         return {}
     print("\n" + "!" * 70)
-    print("AVISO: hay géneros/temáticas que NO están en las listas aceptadas:")
+    print("AVISO: hay géneros, temáticas o avisos que NO están en las listas aceptadas:")
     for t, (extra, ok) in raras.items():
         for n in extra:
             parecidas = [o for o in ok if sin_tildes(o) == sin_tildes(n) or sin_tildes(o) in sin_tildes(n) or sin_tildes(n) in sin_tildes(o)]

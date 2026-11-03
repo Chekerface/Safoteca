@@ -90,11 +90,11 @@ python tools/importar_plantilla.py Plantilla_rellena.xlsx             # guarda, 
 - Una casilla vacía **no borra** lo que ya hay. Géneros, temáticas, avisos, actrices, directore y enlaces se sustituyen enteros solo si la fila trae algo.
 - **Revisada = Sí** publica la obra (película o serie) si tiene sinopsis y nivel; si no, avisa y queda como «revisada». Desde la plantilla nunca se despublica nada.
 - Temáticas, avisos o géneros nuevos se crean como «pendiente de revisión».
-- **Listas aceptadas**: solo valen los géneros y temáticas de `data/mapeos/generos_aceptados.csv` y
-  `tematicas_aceptadas.csv`. Si el Excel o el formulario traen uno distinto, el importador **avisa y se
+- **Listas aceptadas**: solo valen los géneros, temáticas y avisos de `data/mapeos/generos_aceptados.csv`,
+  `tematicas_aceptadas.csv` y `avisos_aceptados.csv`. Si el Excel o el formulario traen uno distinto, el importador **avisa y se
   bloquea sin guardar nada** (y sugiere el parecido, p. ej. sin tilde). Para seguir hay que dar el okay en
   la terminal (escribir «si») o volver a lanzarlo con `--aceptar-etiquetas`; entonces se añade a la lista
-  y deja de estar pendiente de revisión. Los avisos no tienen este bloqueo.
+  y deja de estar pendiente de revisión.
 - La columna «Letterboxd (enlace)» se guarda en `data/letterboxd.csv` (y el botón sale en la ficha).
 - Las incidencias salen por pantalla y en `informes/incidencias_plantilla.csv`. Las copias de la BD quedan en `data/privado/copias/`.
 - Después: `git add -A`, commit y subir. Si hay pósters nuevos, Actions → «Descargar pósters».
