@@ -54,7 +54,6 @@ var DATOS = {
     "Telenovela",
     "Terror",
     "Thriller",
-    "Tragedia",
     "Western"
    ]
   }
