@@ -24,7 +24,7 @@ window.SAFOTECA_CONFIG = {
     { id: "halloween", desde: "10-15", hasta: "11-02" }
   ],
   // Formulario público para proponer series y películas. Se usa en la campaña, en Ajustes y cuando una búsqueda no da resultados.
-  formularioAltas: "https://docs.google.com/forms/d/e/1FAIpQLSfX88UDkjQ5l10bq8YWujj9GjdcB_9ogv6FMOpF9M0GUQlWgA/viewform",
+  formularioAltas: "https://docs.google.com/forms/d/e/1FAIpQLSf9DUnpzeGC9c0ZuPT3o3caL02JeW5-MH8tvIEFk6g5xrjxcg/viewform",
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
   // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).
   // Para una campaña nueva, cambia "id" (así vuelve a salir a quien cerró la anterior), las fechas y el objetivo.
