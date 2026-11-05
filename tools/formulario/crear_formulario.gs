@@ -346,6 +346,7 @@ var DATOS = {
     "Telenovela",
     "Terror",
     "Terrorismo",
+    "Thai GL",
     "Thriller",
     "Thriller psicológico",
     "TLP",
