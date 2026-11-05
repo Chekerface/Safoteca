@@ -619,7 +619,8 @@
   function chipsPlataforma() {
     const f = E.F;
     const cuenta = new Map();
-    visibles().forEach((o) => {
+    // El recuento sigue el resto de filtros activos (todos menos la propia plataforma), igual que «Ver N obras».
+    filtrar({ ...f, plat: [] }).forEach((o) => {
       const claves = new Set((o.plataformas || []).filter((x) => f.otros || delPais(x)).map(clavePlat));
       claves.forEach((k) => cuenta.set(k, (cuenta.get(k) || 0) + 1));
     });
@@ -686,6 +687,8 @@
     const h = hoja();
     if (h.dataset.modo === "evitar") return;
     const n = filtrar(E.F).length;
+    const chipsPlat = $("#chips-plat", h);
+    if (chipsPlat) chipsPlat.innerHTML = chipsPlataforma();
     $("#hoja-ver", h).textContent = n === 1 ? "Ver 1 obra" : `Ver ${n} obras`;
   }
 
