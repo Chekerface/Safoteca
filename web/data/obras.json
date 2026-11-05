@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-03T17:42:21+00:00",
+  "generado": "2026-11-05T12:34:02+00:00",
   "total": 310
  },
  "obras": [
@@ -15033,16 +15033,8 @@
    "directores": [
     "Ol Parker"
    ],
-   "donde_ver": [
-    "https://www.primevideo.com/region/eu/detail/Rosas-rojas/0MNOTZPS7N398CPRVMAA9DJLEV/ref=atv_nb_lcl_es_ES?language=es_ES&ie=UTF8"
-   ],
-   "plataformas": [
-    {
-     "n": "Prime Video",
-     "p": "INT",
-     "u": "https://www.primevideo.com/region/eu/detail/Rosas-rojas/0MNOTZPS7N398CPRVMAA9DJLEV/ref=atv_nb_lcl_es_ES?language=es_ES&ie=UTF8"
-    }
-   ],
+   "donde_ver": [],
+   "plataformas": [],
    "info": [],
    "letterboxd": "https://letterboxd.com/film/imagine-me-you/",
    "publicada": "2026-10-11 22:17:42"
@@ -19370,16 +19362,8 @@
     "Jang Hee-jin"
    ],
    "directores": [],
-   "donde_ver": [
-    "https://www.primevideo.com/detail/Un-monstruo-en-mi-puerta/0M7J595TI52HNLDL1Z0SO0R5JP"
-   ],
-   "plataformas": [
-    {
-     "n": "Prime Video",
-     "p": "INT",
-     "u": "https://www.primevideo.com/detail/Un-monstruo-en-mi-puerta/0M7J595TI52HNLDL1Z0SO0R5JP"
-    }
-   ],
+   "donde_ver": [],
+   "plataformas": [],
    "info": [
     "https://www.filmaffinity.com/es/film808206.html"
    ],
