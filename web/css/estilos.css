@@ -431,3 +431,6 @@ details.explica p { margin-top: .5rem; }
 .acciones--lista { margin-bottom: 1rem; }
 .tarjeta__quitar { display: block; margin-top: .25rem; font-size: .875rem; }
 .ficha__listas { margin: .75rem 0; }
+
+.relacionadas { margin-top: 2rem; }
+.relacionadas .seccion__titulo { margin-bottom: .75rem; }

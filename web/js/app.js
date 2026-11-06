@@ -159,6 +159,31 @@
   const rejilla = (lista) => `<div class="rejilla">${lista.map(tarjeta).join("")}</div>`;
   const carrusel = (lista) => `<div class="carrusel">${lista.map(tarjeta).join("")}</div>`;
 
+  // ---- Obras relacionadas (reglas en CFG.relacionadas) ----
+  function relacionadas(o) {
+    const R = CFG.relacionadas;
+    if (!R) return [];
+    const P = R.pesos || {};
+    const com = (a, b) => (a || []).filter((x) => (b || []).includes(x)).length;
+    const rel = { A: 3, B: 2, C: 1 };
+    const sel = visibles()
+      .filter((c) => c.id !== o.id)
+      .filter((c) => !(R.exigirFinalFeliz && o.final_feliz === true && c.final_feliz !== true))
+      .filter((c) => !R.mismoTipo || c.tipo === o.tipo)
+      .map((c) => {
+        const pts = Math.min(R.topeTematicas ?? 99, com(o.tematicas, c.tematicas) * (P.tematica || 0))
+          + com(o.generos, c.generos) * (P.genero || 0)
+          + (com(o.directores, c.directores) ? (P.director || 0) : 0)
+          + com(o.actrices, c.actrices) * (P.actriz || 0);
+        return { c, pts };
+      })
+      .filter((x) => x.pts >= (R.minimo || 1));
+    const orden = (a, b) => b.pts - a.pts || (rel[b.c.relevancia] || 0) - (rel[a.c.relevancia] || 0) || (b.c.anio || 0) - (a.c.anio || 0);
+    return sel.sort(orden).slice(0, R.max || 10)
+      .sort((a, b) => (b.c.tipo === o.tipo) - (a.c.tipo === o.tipo) || orden(a, b))
+      .map((x) => x.c);
+  }
+
   function textoNota() {
     const n = ocultas();
     if (!E.evitar.size) return "";
@@ -506,6 +531,7 @@
       ? `<details class="explica"><summary>¿Qué significa el nivel ${esc(o.relevancia)}?</summary><p>${esc(CFG.textoRelevancia[o.relevancia])}</p></details>` : "";
     const disp = o.disponible_espana === null ? "" : o.disponible_espana ? "Sí" : "No";
 
+    const rels = relacionadas(o);
     return `
       <article class="ficha">
         <div class="ficha__portada">${poster(o, true)}${corazon(o)}</div>
@@ -533,7 +559,8 @@
           </dl></section>
           ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
         </div>
-      </article>`;
+      </article>
+      ${rels.length ? `<section class="relacionadas" aria-labelledby="rel-t"><h2 class="seccion__titulo" id="rel-t">Obras relacionadas</h2>${carrusel(rels)}</section>` : ""}`;
   }
 
   function vistaAjustes() {
