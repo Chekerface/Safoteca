@@ -319,6 +319,7 @@ var DATOS = {
     "Sectas",
     "Secuela",
     "Secuestros",
+    "Serie Coral",
     "Serie de antología",
     "Series que parecen fics",
     "Sexo",
