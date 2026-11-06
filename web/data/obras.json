@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-06T09:03:12+00:00",
+  "generado": "2026-11-06T09:05:44+00:00",
   "total": 310
  },
  "obras": [
@@ -605,7 +605,7 @@
    "anio_fin": null,
    "sinopsis": "Acacias 38 nos lleva a 1899 para narrar la historia de un grupo de sirvientas y las familias burguesas para las que trabajan. Una historia sobre ricos y pobres que refleja el encuentro de dos mundos. La trama sáfica se desarrolla de forma independiente en la temporada 5.",
    "edad": "7",
-   "relevancia": "A",
+   "relevancia": "B",
    "temporadas": "5",
    "disponible_espana": true,
    "final_feliz": true,
@@ -623,7 +623,8 @@
     "Identidad",
     "Juventud",
     "Pareja",
-    "Salir del armario"
+    "Salir del armario",
+    "Serie Coral"
    ],
    "avisos": [
     {
@@ -895,7 +896,7 @@
    "anio_fin": null,
    "sinopsis": "En la España de principios de los años 60, a la rigidez oficial se superpone una sociedad que desea abrirse al mundo y vivir nuevas experiencias. La trama sáfica se desarrolla en las temporadas 7 y 8.",
    "edad": "7",
-   "relevancia": "A",
+   "relevancia": "B",
    "temporadas": "7, 8",
    "disponible_espana": true,
    "final_feliz": true,
@@ -912,7 +913,8 @@
     "Identidad",
     "Juventud",
     "Pareja",
-    "Salir del armario"
+    "Salir del armario",
+    "Serie Coral"
    ],
    "avisos": [
     {
