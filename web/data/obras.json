@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-05T22:47:36+00:00",
+  "generado": "2026-11-06T09:03:12+00:00",
   "total": 310
  },
  "obras": [
@@ -4674,7 +4674,7 @@
    "relevancia": "A",
    "temporadas": null,
    "disponible_espana": false,
-   "final_feliz": true,
+   "final_feliz": null,
    "poster": "55",
    "generos": [
     "Acción"
