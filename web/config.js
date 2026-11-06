@@ -33,5 +33,14 @@ window.SAFOTECA_CONFIG = {
   // tools/formulario/reportar_enlaces.gs al ejecutarlo; mientras sea null el botón no aparece.
   reporteEnlaces: { url: "https://docs.google.com/forms/d/e/1FAIpQLSd21ZYeq0VawPGXW_RAt1R-Pgg6dCYQZMHxrPwxp0c4lwjfJg/viewform", campos: { id: "entry.1329433313", obra: "entry.1547440425", plataforma: "entry.110345365", enlace: "entry.682423969" }},
   // Opcional: enlace o correo para sugerencias (por ejemplo "mailto:..." o una URL).
-  contacto: ""
+  contacto: "",
+  // Obras relacionadas (carrusel al final de la ficha). Todo se ajusta aquí.
+  relacionadas: {
+    max: 10,              // tarjetas que se muestran
+    minimo: 3,            // puntos mínimos para considerarse relacionada
+    topeTematicas: 6,     // tope de puntos que aportan las temáticas
+    pesos: { tematica: 1, genero: 2, director: 5, actriz: 2 },
+    exigirFinalFeliz: true, // si la ficha tiene final feliz, solo se recomiendan obras con final feliz
+    mismoTipo: false      // true = solo obras del mismo tipo (serie/película)
+  }
 };
