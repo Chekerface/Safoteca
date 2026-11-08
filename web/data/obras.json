@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-11-06T09:08:53+00:00",
-  "total": 310
+  "generado": "2026-11-06T11:26:13+00:00",
+  "total": 314
  },
  "obras": [
   {
@@ -10970,6 +10970,90 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 400,
+   "tipo": "serie",
+   "titulo": "Las Pelotaris 1926",
+   "titulo_original": "Las Pelotaris 1926",
+   "titulo_latam": null,
+   "pais": "México, España",
+   "anio": 2023,
+   "anio_fin": null,
+   "sinopsis": "La serie se adentra en el periplo de tres jugadoras de pelota en los años 20, mujeres vascas adelantas a su época y que fueron conocidas como las ‘raquetistas’ en esa época, que se enfrentaron a los convencionalismos y cumplieron su sueño a pesar del coste que esta determinación tuvo en sus vidas.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "400",
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Años 30",
+    "Chantaje",
+    "Deportes",
+    "Homofobia",
+    "Machismo",
+    "Mujeres adultas"
+   ],
+   "avisos": [
+    {
+     "nombre": "Desnudos",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violación",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia de género",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Alejandra Onieva",
+    "María de Nati"
+   ],
+   "directores": [
+    "Marc Cistaré"
+   ],
+   "donde_ver": [
+    "https://www.movistarplus.es/series/las-pelotaris-1926-t1/pioneras/ficha?tipo=E&id=3419367&epi=&tduid=1a457117899d36612c0fb882e01230ae&utm_campaign=alwaysON&utm_content=Price%20Comparison&utm_medium=Affiliates&utm_source=Tradedoubler&utm_term=2854067"
+   ],
+   "plataformas": [
+    {
+     "n": "Movistar+",
+     "p": "ES",
+     "u": "https://www.movistarplus.es/series/las-pelotaris-1926-t1/pioneras/ficha?tipo=E&id=3419367&epi=&tduid=1a457117899d36612c0fb882e01230ae&utm_campaign=alwaysON&utm_content=Price%20Comparison&utm_medium=Affiliates&utm_source=Tradedoubler&utm_term=2854067"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film472483.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-06 11:26:13"
+  },
+  {
    "id": 145,
    "tipo": "serie",
    "titulo": "Legacies",
@@ -14114,6 +14198,100 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 397,
+   "tipo": "serie",
+   "titulo": "Petricor",
+   "titulo_original": "Petrichor",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2024,
+   "anio_fin": null,
+   "sinopsis": "La primera visita de campo de Tul, recién incorporada a su nuevo puesto, dista mucho de ser tranquila. Para colmo, debe trabajar junto a Cherran, la médica forense a cargo del caso. Sus personalidades y formas de abordar el trabajo chocan desde el inicio, dificultando cualquier entendimiento. Bajo la presión constante de la opinión pública —con cada caso expuesto ante los medios—, ambas deben aprender a colaborar. Con el tiempo y más oportunidades de trabajo conjunto, su relación comienza a mejorar. Pero todo se complica cuando ocurre un asesinato que reproduce con inquietante precisión un crimen cometido dieciocho años atrás. ¿Ha regresado la temida “Asesina de la Gota de Lluvia”, o se trata de una imitadora que juega con el pasado? Mientras las pistas se entrelazan, Tul y Cherran deberán dejar de lado sus diferencias para enfrentarse a un caso que amenaza con desenterrar viejas pesadillas.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "397",
+   "generos": [
+    "Policíaca",
+    "Romance",
+    "Suspense"
+   ],
+   "tematicas": [
+    "Acción",
+    "Asesinato",
+    "Crimen",
+    "Drama",
+    "Intriga",
+    "Mujeres adultas",
+    "Policía",
+    "Prostitución",
+    "Romance en el trabajo",
+    "Thai GL",
+    "Violencia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Brutalidad policial",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Maltrato",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Charlotte Austin",
+    "Engfa Waraha",
+    "Malin Chara-anan",
+    "Rina Chatamonchai"
+   ],
+   "directores": [
+    "Pongsatorn Thongjaroen",
+    "Poy Pannares Ruchirananta"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/petricor-2024-ar002mup45?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/petricor-2024-ar002mup45?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film319829.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-06 11:26:13"
+  },
+  {
    "id": 386,
    "tipo": "serie",
    "titulo": "Pls Love",
@@ -14602,6 +14780,169 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 398,
+   "tipo": "serie",
+   "titulo": "Queendom",
+   "titulo_original": "Queendom",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Enemigas desde el colegio hasta que entran en la industria del entretenimiento, Rey y Print se reencuentran cuando consiguen papeles en una serie muy esperada. Sin embargo, una semana antes de que comience el rodaje, ocurre algo extraño: sus almas cambian de cuerpo...",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "398",
+   "generos": [
+    "Romance"
+   ],
+   "tematicas": [
+    "A fuego lento",
+    "Adorabilidad Absoluta",
+    "Comedia",
+    "Comedia romántica",
+    "De enemigas a amantes",
+    "Diferencia de altura",
+    "Diferencias de clase social",
+    "Enemies to Lovers",
+    "Mujeres adultas",
+    "Redes Sociales",
+    "Romance en el trabajo",
+    "Thai GL"
+   ],
+   "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfóbica",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Chermawee Suwanpanuchoke",
+    "Mashannoad Suvanamas",
+    "Nattawadee Pipobpornchai",
+    "Tarradee Watancharoen"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://wetv.vip/en/play/7l74coxequnt8hl/m41018q6gki-EP01%3A_Queendom_(Uncut_Ver.)"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://wetv.vip/en/play/7l74coxequnt8hl/m41018q6gki-EP01%3A_Queendom_(Uncut_Ver.)"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film294769.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-06 11:26:13"
+  },
+  {
+   "id": 399,
+   "tipo": "serie",
+   "titulo": "Regla Principal: No te Enamores de Ella",
+   "titulo_original": "Girls Rules",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Cuando la agencia de publicidad de Prim y Min recibe a una nueva clienta, Bambi , quien resulta ser la ex de Prim, todo se revoluciona. Aunque Bambi dejó a Prim sin explicaciones, ahora espera una reconciliación, al menos como amigas. Al no poder rechazar a una clienta, Prim y Min siguen adelante con el proyecto, lo que entrelaza aún más los hilos del amor. Se suma la carismática modelo Shasha, elegida como imagen de la campaña, y la estilista Gorya, quien ha estado enamorada de Prim en secreto por años, hasta que Shasha empieza a hacerla dudar. El caos se completa con Praew, una fotógrafa y bartender en un bar lésbico que es abierta sobre su interés en Min, quien a su vez lucha con su propia sexualidad. ¿Cuántos corazones terminarán rotos en el proceso?",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "399",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "\"Cosas de chicas\"",
+    "Aceptación de la sexualidad",
+    "Adolescencia",
+    "Amistad",
+    "Autodescubrimiento",
+    "Enemies to Lovers",
+    "Identidad",
+    "Intercambio de parejas",
+    "Juventud",
+    "Moda",
+    "Mujeres adultas",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Romance en el trabajo",
+    "Salir del armario",
+    "Sexo",
+    "Thai GL",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Madre lgbtfóbica",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Benyapa Jeanprasom",
+    "Pansa Vosbein",
+    "Pattranite Limpatiyakorn",
+    "Rachanun Mahawan",
+    "Rattawadee Wongthong",
+    "Tipnaree Weerawatnodom"
+   ],
+   "directores": [
+    "Tichakorn Phukhaotong"
+   ],
+   "donde_ver": [
+    "https://www.viki.com/tv/41431c-girl-rules#about"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.viki.com/tv/41431c-girl-rules#about"
+    }
+   ],
+   "info": [
+    "https://www.filmaffinity.com/es/film965644.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-06 11:26:13"
   },
   {
    "id": 220,
