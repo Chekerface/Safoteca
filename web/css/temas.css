@@ -61,53 +61,18 @@
 
 
 /* ---------- Navidad 🎄 ---------- */
-:root[data-tema="navidad"] {
-  --lila: #c8372d;
-  --violeta: #a3231b;
-  --tinta: #2a1a18;
-  --tinta-suave: #6a4a45;
-  --papel: #fff8f3;
-  --superficie: #ffffff;
-  --suave: #fdeae6;
-  --linea: #efcdc6;
-  --boton-fondo: #a3231b;
-  --boton-texto: #ffffff;
-  --alerta-fondo: #e3f1e8;
-  --alerta-texto: #12452d;
-  --sombra: 0 1px 2px rgb(42 26 24 / .14), 0 6px 18px rgb(42 26 24 / .10);
-  --copos: #8fb4d9;
-}
-@media (prefers-color-scheme: dark) {
-  :root[data-tema="navidad"] {
-    --lila: #ef5b4f;
-    --violeta: #ff8b80;
-    --tinta: #fdf0ec;
-    --tinta-suave: #d7bdb7;
-    --papel: #0e1b17;
-    --superficie: #162722;
-    --suave: #1f3a31;
-    --linea: #315247;
-    --boton-fondo: #ef5b4f;
-    --boton-texto: #1d0b09;
-    --alerta-fondo: #1f3a31;
-    --alerta-texto: #cdeedb;
-    --sombra: 0 1px 2px rgb(0 0 0 / .45), 0 6px 18px rgb(0 0 0 / .35);
-    --copos: #ffffff;
-  }
-}
-/* Franja decorativa fina bajo la cabecera */
-:root[data-tema="navidad"] .cabecera { border-bottom: 3px solid var(--lila); }
+/* Mantiene la paleta normal de la web (lila y negro); solo añade el logotipo con gorro (app.js) y la nieve. */
 
-/* Navidad: nieve de fondo, fija y por detrás del contenido */
+/* Navidad: copos blancos de fondo, fijos y por detrás del contenido.
+   Llevan un fino contorno lila para que se vean también sobre el fondo claro. */
 :root[data-tema="navidad"] body::before {
   content: ""; position: fixed; z-index: -1; pointer-events: none;
   top: var(--alto-cabecera); left: 50%; transform: translateX(-50%);
   width: min(100vw, 740px); aspect-ratio: 1 / 1;
-  background: var(--copos);
-  opacity: .75;
-  -webkit-mask: url("../img/tema/copos.webp") center top / 100% 100% no-repeat;
-          mask: url("../img/tema/copos.webp") center top / 100% 100% no-repeat;
+  background: url("../img/tema/copos.webp") center top / 100% 100% no-repeat;
+  filter: drop-shadow(0 0 1.2px rgb(156 136 187 / .95)) drop-shadow(0 0 1px rgb(156 136 187 / .6));
+  opacity: .9;
 }
 @media (prefers-color-scheme: dark) {
-  :root[data-tema="navidad"] body::before { opacity: .55; }
+  :root[data-tema="navidad"] body::before { filter: none; opacity: .6; }
 }
