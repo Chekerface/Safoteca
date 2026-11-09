@@ -58,3 +58,56 @@
 @media (prefers-color-scheme: dark) {
   :root[data-tema="halloween"] body::before { background: #f1e6dc; opacity: .40; }
 }
+
+
+/* ---------- Navidad 🎄 ---------- */
+:root[data-tema="navidad"] {
+  --lila: #c8372d;
+  --violeta: #a3231b;
+  --tinta: #2a1a18;
+  --tinta-suave: #6a4a45;
+  --papel: #fff8f3;
+  --superficie: #ffffff;
+  --suave: #fdeae6;
+  --linea: #efcdc6;
+  --boton-fondo: #a3231b;
+  --boton-texto: #ffffff;
+  --alerta-fondo: #e3f1e8;
+  --alerta-texto: #12452d;
+  --sombra: 0 1px 2px rgb(42 26 24 / .14), 0 6px 18px rgb(42 26 24 / .10);
+  --copos: #8fb4d9;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-tema="navidad"] {
+    --lila: #ef5b4f;
+    --violeta: #ff8b80;
+    --tinta: #fdf0ec;
+    --tinta-suave: #d7bdb7;
+    --papel: #0e1b17;
+    --superficie: #162722;
+    --suave: #1f3a31;
+    --linea: #315247;
+    --boton-fondo: #ef5b4f;
+    --boton-texto: #1d0b09;
+    --alerta-fondo: #1f3a31;
+    --alerta-texto: #cdeedb;
+    --sombra: 0 1px 2px rgb(0 0 0 / .45), 0 6px 18px rgb(0 0 0 / .35);
+    --copos: #ffffff;
+  }
+}
+/* Franja decorativa fina bajo la cabecera */
+:root[data-tema="navidad"] .cabecera { border-bottom: 3px solid var(--lila); }
+
+/* Navidad: nieve de fondo, fija y por detrás del contenido */
+:root[data-tema="navidad"] body::before {
+  content: ""; position: fixed; z-index: -1; pointer-events: none;
+  top: var(--alto-cabecera); left: 50%; transform: translateX(-50%);
+  width: min(100vw, 740px); aspect-ratio: 1 / 1;
+  background: var(--copos);
+  opacity: .75;
+  -webkit-mask: url("../img/tema/copos.webp") center top / 100% 100% no-repeat;
+          mask: url("../img/tema/copos.webp") center top / 100% 100% no-repeat;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-tema="navidad"] body::before { opacity: .55; }
+}

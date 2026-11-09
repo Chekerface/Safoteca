@@ -4,7 +4,7 @@
    2) Si no, el tema cuyas fechas incluyan el día de hoy (config.js -> temas). Fuera de fechas, aspecto normal. */
 (function () {
   var cfg = (window.SAFOTECA_CONFIG || {}).temas || [];
-  var COLORES = { halloween: ["#fff6ec", "#130b17"] };   // color de la barra del navegador (claro, oscuro)
+  var COLORES = { halloween: ["#fff6ec", "#130b17"], navidad: ["#fff8f3", "#0e1b17"] };   // color de la barra del navegador (claro, oscuro)
 
   function guardar(v) { try { if (v) sessionStorage.setItem("safoteca.tema", v); else sessionStorage.removeItem("safoteca.tema"); } catch (e) { /* sin almacenamiento */ } }
   function leer() { try { return sessionStorage.getItem("safoteca.tema"); } catch (e) { return null; } }
