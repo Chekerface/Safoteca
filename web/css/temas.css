@@ -63,19 +63,19 @@
 /* ---------- Navidad 🎄 ---------- */
 /* Mantiene la paleta normal de la web (lila y negro); solo añade el logotipo con gorro (app.js) y la nieve. */
 
-/* Navidad: copos blancos de fondo, fijos y por detrás del contenido, cubriendo toda la pantalla.
-   La imagen se repite como un mosaico (sin copos cortados en los bordes).
+/* Navidad: copos blancos en la parte de arriba, fijos y por detrás del contenido.
+   La imagen se repite solo a lo ancho (mosaico horizontal, sin copos cortados en los bordes), así que
+   siempre hay nieve de lado a lado, sea cual sea el ancho de la pantalla; hacia abajo se desvanece.
    Llevan un fino contorno lila para que se vean también sobre el fondo claro. */
 :root[data-tema="navidad"] body::before {
   content: ""; position: fixed; z-index: -1; pointer-events: none;
-  top: var(--alto-cabecera); left: 0; right: 0; bottom: 0;
-  background-image: url("../img/tema/copos.webp");
-  background-size: 560px auto;
-  background-position: 0 0;
-  background-repeat: repeat;
+  top: var(--alto-cabecera); left: 0; right: 0; height: 400px;
+  background: url("../img/tema/copos.webp") 0 0 / 740px auto repeat-x;
   filter: drop-shadow(0 0 1.2px rgb(156 136 187 / .95)) drop-shadow(0 0 1px rgb(156 136 187 / .6));
+  -webkit-mask: linear-gradient(to bottom, #000 45%, transparent);
+          mask: linear-gradient(to bottom, #000 45%, transparent);
   opacity: .85;
 }
 @media (prefers-color-scheme: dark) {
-  :root[data-tema="navidad"] body::before { filter: none; opacity: .55; }
+  :root[data-tema="navidad"] body::before { filter: none; opacity: .6; }
 }
