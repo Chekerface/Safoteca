@@ -784,8 +784,10 @@
       // En las pestañas principales se muestra siempre el logotipo (claro u oscuro según el tema);
       // en el inicio el h1 accesible ya existe en la vista, y en las otras dos el nombre de la pestaña
       // va a la derecha, antes del icono de filtros.
-      tit.innerHTML = '<img class="cabecera__logo cabecera__logo--claro" src="marca/logo-horizontal.svg" alt="La Safoteca">'
-        + '<img class="cabecera__logo cabecera__logo--oscuro" src="marca/logo-horizontal-oscuro.svg" alt="" aria-hidden="true">';
+      // Con el tema de Navidad el logotipo lleva gorro de Papá Noel (img/tema/); el resto del año, el normal.
+      const navidad = document.documentElement.getAttribute("data-tema") === "navidad";
+      tit.innerHTML = `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="La Safoteca">`
+        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt="" aria-hidden="true">`;
       pag.hidden = ruta === "/";
       pag.textContent = ruta === "/" ? "" : titulo;
     } else {
