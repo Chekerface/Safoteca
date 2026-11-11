@@ -22,7 +22,7 @@ window.SAFOTECA_CONFIG = {
   // Vista previa en cualquier momento: #/?tema=halloween o #/?tema=navidad  (y #/?tema=normal para quitarla).
   temas: [
     { id: "halloween", desde: "10-15", hasta: "11-02" },
-    { id: "navidad", desde: "12-01", hasta: "01-06" }
+    { id: "navidad", desde: "11-26", hasta: "01-10" }
   ],
   // Formulario público para proponer series y películas. Se usa en la campaña, en Ajustes y cuando una búsqueda no da resultados.
   formularioAltas: "https://docs.google.com/forms/d/e/1FAIpQLSf9DUnpzeGC9c0ZuPT3o3caL02JeW5-MH8tvIEFk6g5xrjxcg/viewform",
