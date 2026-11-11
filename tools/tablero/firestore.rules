@@ -1,0 +1,15 @@
+// Reglas de Firestore del tablero del equipo (se pegan en Firebase → Firestore → Reglas).
+// Solo las cuentas de Google de esta lista pueden leer y escribir. Cambia los tres correos.
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function equipo() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in ['CORREO_CARMEN@gmail.com', 'CORREO_CARLA@gmail.com', 'CORREO_SANDRA@gmail.com'];
+    }
+    match /tareas/{id} { allow read, write: if equipo(); }
+    match /hitos/{id}  { allow read, write: if equipo(); }
+    match /{resto=**}  { allow read, write: if false; }
+  }
+}
