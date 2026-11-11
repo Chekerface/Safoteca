@@ -1,15 +1,20 @@
 // Reglas de Firestore del tablero del equipo (se pegan en Firebase → Firestore → Reglas).
-// Solo las cuentas de Google de esta lista pueden leer y escribir. Cambia los tres correos.
+// Solo quien tenga la clave del enlace (…/equipo/#CLAVE) puede leer y escribir.
+// Sustituye CLAVE_DEL_EQUIPO por la clave (en los tres sitios). Para cambiarla: cámbiala aquí,
+// publica las reglas y pasad el enlace nuevo; con «Importar copia» se recuperan los datos.
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    function equipo() {
-      return request.auth != null
-        && request.auth.token.email_verified == true
-        && request.auth.token.email in ['CORREO_CARMEN@gmail.com', 'CORREO_CARLA@gmail.com', 'CORREO_SANDRA@gmail.com'];
+    // tareas e hitos: leer y escribir con la clave
+    match /equipos/{clave}/{col}/{id} {
+      allow read, write: if clave == 'CLAVE_DEL_EQUIPO' && col in ['tareas', 'hitos'];
     }
-    match /tareas/{id} { allow read, write: if equipo(); }
-    match /hitos/{id}  { allow read, write: if equipo(); }
-    match /{resto=**}  { allow read, write: if false; }
+    // copias diarias: se pueden crear y leer, pero nunca cambiar ni borrar
+    match /equipos/{clave}/copias/{dia} {
+      allow read: if clave == 'CLAVE_DEL_EQUIPO';
+      allow create: if clave == 'CLAVE_DEL_EQUIPO' && dia.matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$');
+    }
+    // todo lo demás, cerrado
+    match /{resto=**} { allow read, write: if false; }
   }
 }

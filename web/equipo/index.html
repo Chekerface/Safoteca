@@ -7,7 +7,8 @@
 <title>Tablero La Safoteca</title>
 <link rel="icon" href="../marca/buholira.svg">
 <!-- VERSIÓN EQUIPO: los datos se guardan en Firebase (Firestore) y se comparten en tiempo real.
-     Solo pueden leer y escribir las cuentas de Google que estén en las reglas de Firestore. -->
+     Se entra con el enlace del equipo (…/equipo/#clave). La clave no está en el código: solo en el
+     enlace y en las reglas de Firestore. Cada día, la primera visita guarda una copia que no se puede borrar. -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Roboto+Mono:wght@500;700&display=swap">
 <style>
 [hidden]{display:none!important}
@@ -165,17 +166,16 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
 .acceso{max-width:420px;margin:12vh auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;text-align:center}
 .acceso img{width:84px;margin:0 auto}
 .acceso h2{margin:0;font:700 18px var(--f-mono)}
-.usuaria{display:inline-flex;gap:8px;align-items:center;font-size:13px;color:var(--muted)}
-.usuaria img{width:26px;height:26px;border-radius:50%}
+.acceso input{text-align:center}
 </style>
 </head>
 <body>
 <section id="acceso" class="acceso" hidden>
   <img src="../marca/buholira.svg" alt="">
   <h2>Tablero del equipo</h2>
-  <p id="acceso-texto">Entra con tu cuenta de Google para ver y editar el tablero.</p>
-  <button class="btn main" id="entrar">Entrar con Google</button>
-  <button class="btn" id="salir2" hidden>Usar otra cuenta</button>
+  <p id="acceso-texto">Abre el enlace del equipo o pega aquí la clave.</p>
+  <input type="text" id="clave-in" placeholder="Clave del equipo" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <button class="btn main" id="entrar">Entrar</button>
 </section>
 <div id="app" hidden>
 <header>
@@ -185,8 +185,8 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
     <button role="tab" id="tab-calendario" aria-selected="false">Calendario</button>
   </div>
   <div class="fila">
-    <span class="usuaria" id="usuaria"></span>
-    <button class="btn small" id="salir">Salir</button>
+    <span class="fecha" id="estado-copia"></span>
+    <button class="btn small" id="copias">🗂 Copias diarias</button>
     <button class="btn small" id="exportar">⬇ Exportar copia</button>
     <button class="btn small" id="importar">⬆ Importar copia</button>
     <input type="file" id="archivo" accept="application/json,.json" hidden>
@@ -262,34 +262,73 @@ const nuevoId = col => db.collection(col).doc().id;
 const sinId = ({id, ...resto}) => resto;
 
 /* =====================================================================
-   FIREBASE — datos compartidos en tiempo real (Firestore) y entrada con Google
+   FIREBASE — datos compartidos en tiempo real (Firestore), con la clave del enlace
+   Ruta de los datos: equipos/<clave>/tareas, equipos/<clave>/hitos, equipos/<clave>/copias/<AAAA-MM-DD>
    ===================================================================== */
 import { FIREBASE } from "./firebase-config.js";
 const V = "10.14.1";
 const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
-const { getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect, onAuthStateChanged, signOut } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-auth.js`);
-const { initializeFirestore, collection, doc, setDoc, deleteDoc, onSnapshot, writeBatch } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore.js`);
-let almacen = { tareas:{}, hitos:{} };          // copia en memoria, para «Exportar copia»
-let fsdb = null, auth = null, desuscribir = [];
+const { initializeFirestore, collection, doc, setDoc, deleteDoc, getDoc, getDocs, onSnapshot, writeBatch } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore.js`);
+let almacen = { tareas:{}, hitos:{} };          // copia en memoria, para exportar y para la copia diaria
+let fsdb = null, desuscribir = [], CLAVE_EQ = "";
+const ruta = (...p) => ["equipos", CLAVE_EQ, ...p].join("/");
 function crearAlmacen(){
   return {
     collection: c => ({
-      doc: () => doc(collection(fsdb, c)),
-      onSnapshot: (f, err) => { const u = onSnapshot(collection(fsdb, c), s => { almacen[c] = Object.fromEntries(s.docs.map(d=>[d.id, d.data()])); f(s); }, err); desuscribir.push(u); return u; },
+      doc: () => doc(collection(fsdb, ruta(c))),
+      onSnapshot: (f, err) => { const u = onSnapshot(collection(fsdb, ruta(c)), s => { almacen[c] = Object.fromEntries(s.docs.map(d=>[d.id, d.data()])); f(s); }, err); desuscribir.push(u); return u; },
     }),
-    doc: ruta => { const [c,id] = ruta.split("/"); return { set: d => setDoc(doc(fsdb, c, id), d), delete: () => deleteDoc(doc(fsdb, c, id)) }; },
+    doc: r => { const [c,id] = r.split("/"); return { set: d => setDoc(doc(fsdb, ruta(c), id), d), delete: () => deleteDoc(doc(fsdb, ruta(c), id)) }; },
   };
+}
+/* Sustituye todo el tablero por una copia (importar o restaurar) */
+async function sustituirPor(d){
+  const lote = writeBatch(fsdb);
+  for(const c of ["tareas","hitos"]){
+    for(const id of Object.keys(almacen[c])) if(!(id in d[c])) lote.delete(doc(fsdb, ruta(c), id));
+    for(const [id, v] of Object.entries(d[c])) lote.set(doc(fsdb, ruta(c), id), v);
+  }
+  await lote.commit();
+}
+/* Copia diaria: la primera visita del día la crea. Las reglas no dejan cambiarla ni borrarla. */
+async function copiaDiaria(){
+  try {
+    const ref = doc(fsdb, ruta("copias"), HOY);
+    if((await getDoc(ref)).exists()) { $("#estado-copia").textContent = "Copia de hoy guardada"; return; }
+    if(!Object.keys(almacen.tareas).length && !Object.keys(almacen.hitos).length) return;   // tablero vacío: no se copia
+    await setDoc(ref, { fecha:HOY, creada:new Date().toISOString(), tareas:almacen.tareas, hitos:almacen.hitos });
+    $("#estado-copia").textContent = "Copia de hoy guardada"; toast("Copia diaria guardada");
+  } catch(e) { /* otra persona la ha creado a la vez, o sin red: no pasa nada */ }
+}
+async function verCopias(){
+  let lista = [];
+  try { lista = (await getDocs(collection(fsdb, ruta("copias")))).docs.map(d=>({id:d.id, ...d.data()})).sort((a,b)=>a.id<b.id?1:-1); }
+  catch(e){ return toast("No se pudieron leer las copias: "+e.code); }
+  abrirVentana(`<h3>Copias diarias</h3>
+    <div class="nota">Cada día, la primera que entra guarda una copia de todo el tablero. Nadie puede borrarlas ni cambiarlas. Restaurar sustituye el tablero de todo el equipo por esa copia.</div>
+    ${lista.map(c=>`<div class="hito"><span><span class="n">${diaCorto(c.id)} ${c.id.slice(0,4)}</span><br><span class="r">${Object.keys(c.tareas||{}).length} tareas · ${Object.keys(c.hitos||{}).length} hitos</span></span>
+      <span class="acc"><button class="btn small" data-bajar="${c.id}" title="Descargar">⬇</button><button class="btn small" data-restaurar="${c.id}">Restaurar</button></span></div>`).join("") || `<div class="vacio">Aún no hay copias.</div>`}
+    <div class="acciones"><span></span><button class="btn" id="c-cerrar">Cerrar</button></div>`);
+  $("#c-cerrar").onclick = cerrar;
+  document.querySelectorAll("[data-bajar]").forEach(b => b.onclick = () => { const c = lista.find(x=>x.id===b.dataset.bajar); descargar({tareas:c.tareas||{}, hitos:c.hitos||{}}, `tablero-safoteca-copia-${c.id}.json`); });
+  document.querySelectorAll("[data-restaurar]").forEach(b => b.onclick = async () => {
+    if(!b.dataset.seguro){ b.dataset.seguro = 1; b.textContent = "Pulsa otra vez"; return; }
+    const c = lista.find(x=>x.id===b.dataset.restaurar);
+    try { await sustituirPor({tareas:c.tareas||{}, hitos:c.hitos||{}}); cerrar(); toast("Tablero restaurado a la copia del "+corta(c.id)); }
+    catch(e){ toast("No se pudo restaurar: "+e.code); }
+  });
+}
+function descargar(datos, nombre){
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(datos,null,1)],{type:"application/json"}));
+  a.download = nombre; a.click();
 }
 
 /* ---- copia de seguridad ---- */
-$("#exportar").onclick = () => {
-  const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([JSON.stringify(almacen,null,1)],{type:"application/json"}));
-  a.download = `tablero-safoteca-${HOY}.json`; a.click(); toast("Copia exportada");
-};
+$("#exportar").onclick = () => { descargar(almacen, `tablero-safoteca-${HOY}.json`); toast("Copia exportada"); };
+$("#copias").onclick = verCopias;
 let avisoImportar = 0;
 /* Importar sustituye el tablero de todas: pide una segunda pulsación en 5 s para confirmar. */
-function confirmarImportar(n){ return true; }
 $("#importar").onclick = () => {
   if(Date.now() - avisoImportar > 5000){ avisoImportar = Date.now(); return toast("Importar sustituye el tablero de todo el equipo. Pulsa otra vez para elegir el archivo."); }
   avisoImportar = 0; $("#archivo").click();
@@ -298,14 +337,7 @@ $("#archivo").onchange = async e => {
   try {
     const d = JSON.parse(await e.target.files[0].text());
     if(!d.tareas || !d.hitos) throw 0;
-    const n = Object.keys(d.tareas).length + Object.keys(d.hitos).length;
-    if(!confirmarImportar(n)) { e.target.value = ""; return; }
-    const lote = writeBatch(fsdb);
-    for(const c of ["tareas","hitos"]){
-      for(const id of Object.keys(almacen[c])) if(!(id in d[c])) lote.delete(doc(fsdb, c, id));
-      for(const [id, v] of Object.entries(d[c])) lote.set(doc(fsdb, c, id), v);
-    }
-    await lote.commit(); toast("Copia importada para todo el equipo");
+    await sustituirPor(d); toast("Copia importada para todo el equipo");
   } catch(err) { toast(err && err.code ? "No se pudo importar: "+err.code : "Ese archivo no es una copia del tablero"); }
   e.target.value = "";
 };
@@ -670,44 +702,50 @@ document.addEventListener("click", e => {
 });
 function pestana(v){
   vista=v; $("#tab-tablero").setAttribute("aria-selected",v==="tablero"); $("#tab-calendario").setAttribute("aria-selected",v==="calendario");
-  try{ history.replaceState(null,"","#"+v); }catch(_){} pintar();
+  try{ localStorage.setItem("tablero-equipo-vista", v); }catch(_){} pintar();
 }
 $("#tab-tablero").onclick = () => pestana("tablero");
 $("#tab-calendario").onclick = () => pestana("calendario");
 const pintar = () => vista==="tablero" ? pintarTablero() : pintarCalendario();
 
-function mostrarAcceso(texto, otra){
-  $("#app").hidden = true; $("#acceso").hidden = false;
-  $("#acceso-texto").textContent = texto; $("#entrar").hidden = !!otra; $("#salir2").hidden = !otra;
+function mostrarAcceso(texto){
+  $("#app").hidden = true; $("#acceso").hidden = false; $("#acceso-texto").textContent = texto;
 }
-function arrancarTablero(u){
+function parar(){ desuscribir.forEach(u=>u()); desuscribir = []; tareas = []; hitos = []; }
+function arrancarTablero(){
   $("#acceso").hidden = true; $("#app").hidden = false;
-  $("#usuaria").innerHTML = `${u.photoURL?`<img src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer">`:""}${esc(u.displayName||u.email)}`;
-  if(location.hash==="#calendario") { vista="calendario"; $("#tab-tablero").setAttribute("aria-selected","false"); $("#tab-calendario").setAttribute("aria-selected","true"); }
+  let v = "tablero"; try { v = localStorage.getItem("tablero-equipo-vista") || "tablero"; } catch(_) {}
+  vista = v==="calendario" ? "calendario" : "tablero";
+  $("#tab-tablero").setAttribute("aria-selected", vista==="tablero"); $("#tab-calendario").setAttribute("aria-selected", vista==="calendario");
   pintar();
   db = crearAlmacen();
   const aviso = $("#aviso"); const tiempo = setTimeout(()=>{ aviso.hidden=false; aviso.textContent="Cargando… si tarda, comprueba la conexión."; },10000);
   const fin = () => { clearTimeout(tiempo); aviso.hidden=true; };
-  const error = e => { fin(); if(e.code==="permission-denied") { parar(); mostrarAcceso(`La cuenta ${u.email} no tiene acceso a este tablero. Pide a Carmen que la añada.`, true); } else toast("Error leyendo datos: "+e.code); };
-  db.collection("tareas").onSnapshot(s=>{ fin(); tareas=s.docs.map(d=>({id:d.id,...d.data()})); if($("#velo").hidden) pintar(); }, error);
-  db.collection("hitos").onSnapshot(s=>{ fin(); hitos=s.docs.map(d=>({id:d.id,...d.data()})); if($("#velo").hidden) pintar(); }, error);
+  const cargado = { tareas:false, hitos:false };
+  const listo = c => { if(cargado[c]) return; cargado[c] = true; if(cargado.tareas && cargado.hitos) copiaDiaria(); };
+  const error = e => { fin(); parar();
+    if(e.code==="permission-denied"){ try{ localStorage.removeItem("tablero-equipo-clave"); }catch(_){} mostrarAcceso("Esa clave no es correcta o ha cambiado. Pide el enlace nuevo del equipo."); }
+    else mostrarAcceso("No se pudo conectar ("+e.code+"). Comprueba la conexión y recarga."); };
+  db.collection("tareas").onSnapshot(s=>{ fin(); tareas=s.docs.map(d=>({id:d.id,...d.data()})); listo("tareas"); if($("#velo").hidden) pintar(); }, error);
+  db.collection("hitos").onSnapshot(s=>{ fin(); hitos=s.docs.map(d=>({id:d.id,...d.data()})); listo("hitos"); if($("#velo").hidden) pintar(); }, error);
 }
-function parar(){ desuscribir.forEach(u=>u()); desuscribir = []; tareas = []; hitos = []; }
+function entrar(clave){
+  clave = (clave||"").trim(); if(!clave) return;
+  CLAVE_EQ = clave; try { localStorage.setItem("tablero-equipo-clave", clave); } catch(_) {}
+  arrancarTablero();
+}
 if(!FIREBASE || !FIREBASE.apiKey){
   mostrarAcceso("Falta la configuración de Firebase (archivo firebase-config.js).");
-  $("#entrar").hidden = true;
+  $("#entrar").hidden = true; $("#clave-in").hidden = true;
 } else {
-  const app = initializeApp(FIREBASE);
-  auth = getAuth(app); auth.languageCode = "es";
-  fsdb = initializeFirestore(app, { ignoreUndefinedProperties: true });
-  const prov = new GoogleAuthProvider(); prov.setCustomParameters({ prompt:"select_account" });
-  $("#entrar").onclick = async () => {
-    try { await signInWithPopup(auth, prov); }
-    catch(e){ if(e.code==="auth/popup-blocked" || e.code==="auth/operation-not-supported-in-this-environment") signInWithRedirect(auth, prov); else if(e.code!=="auth/popup-closed-by-user" && e.code!=="auth/cancelled-popup-request") toast("No se pudo entrar: "+e.code); }
-  };
-  const salir = () => { parar(); signOut(auth); };
-  $("#salir").onclick = salir; $("#salir2").onclick = salir;
-  onAuthStateChanged(auth, u => { if(u) arrancarTablero(u); else { parar(); mostrarAcceso("Entra con tu cuenta de Google para ver y editar el tablero."); } });
+  fsdb = initializeFirestore(initializeApp(FIREBASE), { ignoreUndefinedProperties: true });
+  // la clave llega en el enlace (…/equipo/#clave); se guarda en el navegador y se quita de la barra de direcciones
+  let clave = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if(clave){ try{ history.replaceState(null, "", location.pathname); }catch(_){} }
+  else { try { clave = localStorage.getItem("tablero-equipo-clave") || ""; } catch(_) {} }
+  $("#entrar").onclick = () => entrar($("#clave-in").value);
+  $("#clave-in").onkeydown = e => { if(e.key==="Enter") entrar(e.target.value); };
+  if(clave) entrar(clave); else mostrarAcceso("Abre el enlace del equipo o pega aquí la clave.");
 }
 </script>
 </body>
