@@ -787,7 +787,7 @@
       // Con el tema de Navidad el logotipo lleva gorro de Papá Noel (img/tema/); el resto del año, el normal.
       const navidad = document.documentElement.getAttribute("data-tema") === "navidad";
       tit.innerHTML = `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="La Safoteca">`
-        + `<img class="cabecera__logo cabecera__logo--oscuro" src="marca/logo-horizontal-oscuro.svg" alt="" aria-hidden="true">`;
+        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt="" aria-hidden="true">`;
       pag.hidden = ruta === "/";
       pag.textContent = ruta === "/" ? "" : titulo;
     } else {
