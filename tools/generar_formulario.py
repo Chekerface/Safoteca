@@ -12,6 +12,9 @@ import csv, json, re, sqlite3, sys
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 SALIDA = RAIZ / "tools" / "formulario" / "crear_formulario.gs"
 MAX_POR_PREGUNTA = 100  # Google Forms va más fluido con listas cortas
 
@@ -48,7 +51,7 @@ def relevancia():
 
 
 def main():
-    db = sqlite3.connect(RAIZ / "safoteca.db")
+    db = sqlite3.connect(DB_DEFECTO)
     datos = {
         "generos": trozos(lista(db, "genero"), "Género"),
         "tematicas": trozos(lista(db, "tematica"), "Temática"),

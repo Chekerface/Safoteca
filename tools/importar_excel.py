@@ -21,6 +21,9 @@ from pathlib import Path
 import openpyxl
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402
+
 EDADES_VALIDAS = {"TP", "7", "12", "13", "14", "15", "16", "18"}
 URL_RE = re.compile(r"https?://[^\s,;<>\"']+")
 
@@ -442,7 +445,7 @@ class Importador:
                 for variantes in grupos.values():
                     if len(variantes) > 1:
                         w.writerow([" | ".join(variantes), " | ".join(str(self.uso[tabla][v]) for v in variantes)])
-        priv = RAIZ / "data" / "privado"
+        priv = PRIVADO
         priv.mkdir(parents=True, exist_ok=True)
         with open(priv / "revisoras.csv", "w", encoding="utf-8", newline="") as f:
             w = csv.writer(f)
@@ -454,7 +457,7 @@ class Importador:
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("excel")
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--forzar", action="store_true", help="borra la base de datos existente y la recrea")
     ap.add_argument("--publicar-revisadas", action="store_true",
                     help="pasa a 'publicada' las películas y series revisadas que cumplan los mínimos")

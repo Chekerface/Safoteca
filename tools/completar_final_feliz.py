@@ -16,8 +16,12 @@ Después: python tools/exportar_json.py
 import argparse, shutil, sqlite3
 from datetime import datetime
 from pathlib import Path
+import sys
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 REGLAS_NO = ["Síndrome de la lesbiana muerta"]
 # Pistas que se enseñan en el Excel para ayudar a revisar (no se usan para decidir nada)
 PISTAS_AVISOS = ["Muerte de personaje importante", "Muerte", "Suicidio", "Desamor", "Cuernos", "Infidelidad", "Cancelada"]
@@ -25,7 +29,7 @@ PISTAS_TEMATICAS = ["Heartwarming", "No heartwarming", "Romance", "Comedia romá
 
 
 def copia(db_ruta):
-    destino = RAIZ / "data" / "privado" / "copias" / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
+    destino = COPIAS / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
     destino.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(db_ruta, destino)
     print("Copia de seguridad:", destino.relative_to(RAIZ))
@@ -99,7 +103,7 @@ def aplicar(db, ruta):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--simular", action="store_true")
     ap.add_argument("--pendientes", metavar="EXCEL")
     ap.add_argument("--aplicar", metavar="EXCEL")
