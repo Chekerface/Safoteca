@@ -20,6 +20,9 @@ from datetime import datetime
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 MAPEOS = RAIZ / "data" / "mapeos"
 HOJAS = {"tematica": ("Temáticas", "grupos_tematicas.csv"), "aviso": ("Avisos (TW)", "grupos_avisos.csv")}
 # Erratas del Excel y nombres que cambian al aplicar las decisiones de unificar_etiquetas.py
@@ -93,7 +96,7 @@ def aplicar(db, informe):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--excel", metavar="EXCEL")
     ap.add_argument("--simular", action="store_true")
     a = ap.parse_args()
@@ -104,7 +107,7 @@ def main():
     db.execute("PRAGMA foreign_keys = ON")
     antes = {t: db.execute(f"SELECT COUNT(*) FROM obra_{t}").fetchone()[0] for t in ("tematica", "aviso")} if db.execute("SELECT name FROM sqlite_master WHERE name='obra_tematica'").fetchone() else {}
     if not a.simular:
-        copia = RAIZ / "data" / "privado" / "copias" / f"safoteca_antes_grupos_{datetime.now():%Y%m%d_%H%M%S}.db"
+        copia = COPIAS / f"safoteca_antes_grupos_{datetime.now():%Y%m%d_%H%M%S}.db"
         copia.parent.mkdir(parents=True, exist_ok=True); shutil.copy(a.db, copia)
         print("Copia de seguridad:", copia.relative_to(RAIZ))
     informe = []

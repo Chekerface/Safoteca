@@ -10,11 +10,15 @@ Es seguro repetirlo. Las obras que ya tenían final_feliz = 0 (final no feliz) n
 import argparse, shutil, sqlite3
 from datetime import datetime
 from pathlib import Path
+import sys
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 
 ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+ap.add_argument("--db", default=str(DB_DEFECTO))
 ap.add_argument("--simular", action="store_true")
 a = ap.parse_args()
 db = sqlite3.connect(a.db)
@@ -23,7 +27,7 @@ if not t:
     print("La temática «Final Feliz» ya no existe: nada que hacer.")
     raise SystemExit
 if not a.simular:
-    copia = RAIZ / "data" / "privado" / "copias" / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
+    copia = COPIAS / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
     copia.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(a.db, copia)
     print("Copia de seguridad:", copia.relative_to(RAIZ))
