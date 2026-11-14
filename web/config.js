@@ -29,7 +29,7 @@ window.SAFOTECA_CONFIG = {
   // Pantalla propia «Proponer una obra» (#/proponer). Si existe, sustituye al Google Form en todos los botones.
   // servicio: URL de la aplicación web de Apps Script (tools/formulario/proponer_obra.gs).
   // clientId: ID de cliente OAuth de Google Cloud para «Entrar con Google». Vacíos = pantalla en pruebas.
-  proponer: { servicio: "", clientId: "" },
+  proponer: { servicio: "", clientId: "963227097109-tgn6p1hm3l6u197pvvd1et2kik41pmna.apps.googleusercontent.com" },
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
   // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).
   // Para una campaña nueva, cambia "id" (así vuelve a salir a quien cerró la anterior), las fechas y el objetivo.
