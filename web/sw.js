@@ -48,6 +48,7 @@ self.addEventListener("fetch", (e) => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (url.pathname.includes("/obra/")) return;     // páginas por obra (para buscadores): siempre de la red
   if (url.pathname.includes("/img/")) e.respondWith(primeroCache(req));
   else e.respondWith(copiaYActualiza(req, CACHE_APP));
 });

@@ -42,11 +42,12 @@ jobs:
             mkdir -p web/uat
             cp -r /tmp/uat/web/. web/uat/
             rm -f web/uat/robots.txt web/uat/sitemap.xml
+            python3 tools/generar_paginas.py --web web/uat --noindex
             echo "Versión de pruebas añadida en /uat/"
           else
             echo "No hay rama uat: se publica solo la web normal"
           fi
-      - name: robots.txt y sitemap.xml (solo PRO; PRE no se indexa)
+      - name: robots.txt, sitemap.xml y páginas por obra para buscadores (PRE no se indexa)
         run: |
           { echo "User-agent: *"; [ -d web/uat ] && echo "Disallow: /uat/"; echo ""; echo "Sitemap: https://www.lasafoteca.com/sitemap.xml"; } > web/robots.txt
           python3 - <<'PY'
@@ -60,6 +61,7 @@ jobs:
               f.write("</urlset>\n")
           print(f"sitemap.xml: {len(urls)} direcciones")
           PY
+          python3 tools/generar_paginas.py --web web --sitemap web/sitemap.xml
           cat web/robots.txt
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
