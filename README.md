@@ -15,10 +15,12 @@ Excel de Glide (una sola vez) → importar_excel.py → safoteca.db (SQLite)
                                   web/ (estática) → GitHub Pages
 ```
 
-- **Base de datos:** SQLite (un archivo). Sin servidor, sin puertos abiertos.
+- **Base de datos:** SQLite (un archivo). Sin servidor, sin puertos abiertos. **No está en este repositorio:** vive en el
+  repositorio privado `Chekerface/Safoteca-datos` (con sus copias de seguridad), que se clona al lado de este. Los
+  scripts de `tools/` la encuentran solos (ver `tools/rutas.py`). Después de cada cambio hay que subirla allí.
 - **Producción:** solo salen películas y series con estado `publicada`. Libros y cómics quedan en la base de datos.
 - **Estados:** `borrador` → `revisada` → `publicada`. Un disparador impide publicar sin sinopsis o nivel de relevancia.
-- **Privacidad:** las revisoras se guardan con alias (R01, R02…); los correos solo existen en `data/privado/`, que Git ignora.
+- **Privacidad:** las revisoras se guardan con alias (R01, R02…); los correos solo existen en el repositorio privado de datos.
 
 ## Estructura
 
@@ -27,7 +29,7 @@ Excel de Glide (una sola vez) → importar_excel.py → safoteca.db (SQLite)
 | `db/schema.sql` | Tablas, validaciones y la vista `vista_publicable` |
 | `tools/` | Scripts de importación, imágenes y exportación |
 | `data/mapeos/` | CSV editables para unificar géneros, temáticas y avisos |
-| `data/privado/` | **No se sube a GitHub.** Aquí va el Excel |
+| `data/privado/` | **No se sube a GitHub.** Excel de trabajo temporales (la base de datos y las copias van en `Safoteca-datos`) |
 | `informes/` | Resultados de cada ejecución (qué hay que revisar) |
 | `web/` | La web (PWA estática): código, datos e imágenes generados |
 | `.github/workflows/` | Publicación automática en GitHub Pages |

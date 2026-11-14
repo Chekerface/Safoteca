@@ -18,6 +18,9 @@ from importar_excel import asegurar_esquema  # noqa: E402
 from plataformas import reconocer  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402
+
 
 SQL_GENEROS = """SELECT g.nombre FROM obra_genero x JOIN genero g ON g.id = x.genero_id
                  WHERE x.obra_id = ? ORDER BY g.nombre"""
@@ -43,7 +46,7 @@ SQL_CAT_AVISOS = """SELECT DISTINCT a.nombre, a.categoria FROM aviso a
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--salida", default=str(RAIZ / "web" / "data"))
     a = ap.parse_args()
 
