@@ -1,5 +1,5 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "uat-safoteca-app-v31";
+const CACHE_APP = "uat-safoteca-app-v32";
 const CACHE_IMG = "uat-safoteca-img";
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
@@ -49,6 +49,7 @@ self.addEventListener("fetch", (e) => {
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
   if (url.pathname.includes("/equipo/")) return;   // el tablero del equipo va siempre a la red
+  if (url.pathname.includes("/obra/")) return;     // páginas por obra (para buscadores): siempre de la red
   if (url.pathname.includes("/img/")) e.respondWith(primeroCache(req));
   else e.respondWith(copiaYActualiza(req, CACHE_APP));
 });
