@@ -18,6 +18,9 @@ from datetime import datetime
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 
 # (tabla, operación, origen, destino). El orden importa: primero se unen variantes y luego se añaden etiquetas.
 OPERACIONES = [
@@ -158,13 +161,13 @@ def aplicar(db, informe):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--simular", action="store_true")
     a = ap.parse_args()
     db = sqlite3.connect(a.db)
     db.execute("PRAGMA foreign_keys = ON")
     if not a.simular:
-        copia = RAIZ / "data" / "privado" / "copias" / f"safoteca_antes_unificar_{datetime.now():%Y%m%d_%H%M%S}.db"
+        copia = COPIAS / f"safoteca_antes_unificar_{datetime.now():%Y%m%d_%H%M%S}.db"
         copia.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(a.db, copia)
         print("Copia de seguridad:", copia.relative_to(RAIZ))

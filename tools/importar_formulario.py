@@ -19,7 +19,7 @@ Diferencias con importar_plantilla.py:
     póster ya lo usa otra obra, se avisa (pero se importa).
   * Las obras entran como «borrador». Con --publicar pasan a publicadas si tienen sinopsis y nivel de relevancia.
   * El correo con el que se rellenó el formulario queda como «revisore».
-Antes de guardar se hace una copia de la base de datos en data/privado/copias/.
+Antes de guardar se hace una copia de la base de datos en Safoteca-datos/copias/ (ver tools/rutas.py).
 Las incidencias salen por pantalla y en informes/incidencias_formulario.csv.
 """
 import csv, re, sys, unicodedata

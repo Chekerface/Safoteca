@@ -26,6 +26,9 @@ import requests
 from PIL import Image, UnidentifiedImageError
 
 RAIZ = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 MAX_BYTES = 15 * 1024 * 1024
 ANCHOS = (300, 600)
 CABECERAS = {"User-Agent": "Mozilla/5.0 (compatible; Safoteca-catalogo/1.0; proyecto sin animo de lucro)"}
@@ -71,7 +74,7 @@ def optimizar(datos: bytes, destino: Path, oid: int):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--originales", default=str(RAIZ / "originales"))
     ap.add_argument("--salida", default=str(RAIZ / "web" / "img"))
     ap.add_argument("--informe", default=str(RAIZ / "informes" / "imagenes.csv"))

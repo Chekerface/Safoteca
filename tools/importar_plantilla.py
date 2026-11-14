@@ -21,7 +21,7 @@ Reglas (también están en docs/guia.md):
     tematicas_aceptadas.csv y avisos_aceptados.csv. Si llega uno distinto el programa AVISA y se BLOQUEA (no guarda nada)
     hasta dar el okay en la terminal (escribir «si») o con --aceptar-etiquetas.
   * Columna opcional «Letterboxd (enlace)»: se guarda en data/letterboxd.csv.
-Antes de guardar se hace una copia de la base de datos en data/privado/copias/.
+Antes de guardar se hace una copia de la base de datos en Safoteca-datos/copias/ (ver tools/rutas.py).
 Las incidencias salen por pantalla y en informes/incidencias_plantilla.csv.
 """
 import argparse, csv, shutil, sqlite3, subprocess, sys, unicodedata
@@ -32,6 +32,9 @@ import openpyxl
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from importar_excel import Importador, RAIZ, limpio, separar, a_entero, asegurar_esquema  # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from rutas import DB_DEFECTO, COPIAS, PRIVADO  # noqa: E402,F401
+
 
 HOJA = "Plantilla"
 TIPOS = {"pelicula": "pelicula", "película": "pelicula", "serie": "serie", "libro": "libro",
@@ -322,7 +325,7 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
     ap.add_argument("excel")
     if extra_args:
         extra_args(ap)
-    ap.add_argument("--db", default=str(RAIZ / "safoteca.db"))
+    ap.add_argument("--db", default=str(DB_DEFECTO))
     ap.add_argument("--simular", action="store_true", help="no guarda nada: solo muestra qué pasaría")
     ap.add_argument("--aceptar-etiquetas", action="store_true",
                     help="da el okay a los géneros/temáticas nuevos (se añaden a data/mapeos/*_aceptad*.csv)")
@@ -335,11 +338,11 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
     hoja = abrir_hoja(a.excel, clase is Plantilla)
 
     if not a.simular:
-        copias = RAIZ / "data" / "privado" / "copias"
+        copias = COPIAS
         copias.mkdir(parents=True, exist_ok=True)
         copia = copias / f"safoteca_{datetime.now():%Y%m%d_%H%M%S}.db"
         shutil.copy2(dbp, copia)
-        print(f"Copia de seguridad: {copia.relative_to(RAIZ)}")
+        print(f"Copia de seguridad: {copia}")
 
     db = sqlite3.connect(dbp)
     asegurar_esquema(db)
@@ -391,7 +394,7 @@ def main(clase=None, descripcion=None, informe="incidencias_plantilla.csv", extr
         pl.guardar_letterboxd()
         print(f"  Letterboxd: {len(pl.letterboxd)} enlaces guardados")
     if not a.sin_exportar:
-        subprocess.run([sys.executable, str(RAIZ / "tools" / "exportar_json.py")], check=True)
+        subprocess.run([sys.executable, str(RAIZ / "tools" / "exportar_json.py"), "--db", str(dbp)], check=True)
     print("\nListo. Revisa los cambios con «git status», haz commit y sube a GitHub.")
 
 
