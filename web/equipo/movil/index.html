@@ -1,0 +1,920 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Tablero La Safoteca · móvil (prueba)</title>
+<link rel="icon" href="../../marca/buholira.svg">
+<!-- VERSIÓN EQUIPO: los datos se guardan en Firebase (Firestore) y se comparten en tiempo real.
+     Se entra con el enlace del equipo (…/equipo/#clave). La clave no está en el código: solo en el
+     enlace y en las reglas de Firestore. Cada día, la primera visita guarda una copia que no se puede borrar. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&family=Roboto+Mono:wght@500;700&display=swap">
+<style>
+[hidden]{display:none!important}
+/* Tablero kanban de dos carriles + calendario anual. Paleta de marca: lila #9c88bb y tinta oscura. */
+:root{
+  --bg:#f6f3fb; --card:#ffffff; --fg:#2a2140; --muted:#675d7c; --line:#ddd5ec;
+  --accent:#9c88bb; --strong:#5d4a8a; --soft:#efeaf8;
+  --warn:#a85f00; --crit:#b3261e; --ok:#2f7d5b;
+  --c1:#7c63b8; --c2:#1f8a8a; --c3:#b07d00; --c4:#c8486a; --c5:#3f6fc0;
+  --f-body:'Nunito Sans',system-ui,sans-serif; --f-mono:'Roboto Mono',ui-monospace,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#16131d; --card:#211c2c; --fg:#efeaf8; --muted:#a79fbb; --line:#38304a;
+  --accent:#b3a2dd; --strong:#cdbff0; --soft:#2a2438;
+  --warn:#e0a04a; --crit:#f08a82; --ok:#6cc79c;
+  --c1:#b3a2dd; --c2:#5fc4c0; --c3:#e0b04a; --c4:#ee8aa0; --c5:#7fa6ee; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#16131d; --card:#211c2c; --fg:#efeaf8; --muted:#a79fbb; --line:#38304a;
+  --accent:#b3a2dd; --strong:#cdbff0; --soft:#2a2438;
+  --warn:#e0a04a; --crit:#f08a82; --ok:#6cc79c;
+  --c1:#b3a2dd; --c2:#5fc4c0; --c3:#e0b04a; --c4:#ee8aa0; --c5:#7fa6ee; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:15px/1.4 var(--f-body);
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:16px 48px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--strong);outline-offset:2px}
+.mono{font-family:var(--f-mono)}
+
+header{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;margin-bottom:16px}
+h1{margin:0;font:700 20px var(--f-mono);letter-spacing:.2px}
+h1 small{display:block;font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+.tabs{display:flex;gap:4px;background:var(--soft);padding:4px;border-radius:10px}
+.tabs button{border:0;background:none;padding:8px 16px;border-radius:7px;font:600 14px var(--f-body);color:var(--muted)}
+.tabs button[aria-selected="true"]{background:var(--card);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+
+.btn{border:1px solid var(--line);background:var(--card);border-radius:8px;padding:7px 12px;font-weight:600}
+.btn:hover{border-color:var(--accent)}
+.btn.main{background:var(--strong);border-color:var(--strong);color:var(--bg)}
+.btn.danger{color:var(--crit)}
+.btn.small{padding:3px 8px;font-size:13px}
+
+#aviso{background:var(--soft);border:1px solid var(--line);padding:10px 14px;border-radius:8px;margin-bottom:12px}
+
+/* ---------- Ideas ---------- */
+details.ideas{background:var(--card);border:1px dashed var(--accent);border-radius:12px;margin-bottom:20px}
+details.ideas summary{cursor:pointer;padding:12px 16px;font:700 14px var(--f-mono);display:flex;gap:10px;align-items:center;list-style:none}
+details.ideas summary::-webkit-details-marker{display:none}
+details.ideas summary::before{content:"▸";transition:transform .15s}
+details.ideas[open] summary::before{transform:rotate(90deg)}
+details.ideas.sobre{background:var(--soft)}
+.ideas-body{padding:0 16px 16px;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px}
+.vacio{color:var(--muted);font-size:13px;padding:6px 2px}
+
+/* ---------- Carriles ---------- */
+.carril{margin-bottom:28px}
+.carril-cab{display:flex;align-items:center;gap:12px;margin-bottom:8px;flex-wrap:wrap}
+.carril-cab h2{margin:0;font:700 15px var(--f-mono)}
+.wip{font:700 12px var(--f-mono);padding:3px 10px;border-radius:99px;background:var(--soft);color:var(--strong)}
+.wip.lleno{background:var(--crit);color:var(--bg)}
+.tablero{overflow-x:auto;padding-bottom:8px}
+.cols{display:grid;grid-template-columns:repeat(7,minmax(200px,1fr));gap:10px;min-width:1480px}
+.col{background:var(--soft);border-radius:12px;padding:8px;display:flex;flex-direction:column;gap:8px;min-height:130px}
+.col h3{margin:2px 4px 2px;font:700 11px var(--f-mono);text-transform:uppercase;letter-spacing:.6px;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
+.col.off{background:repeating-linear-gradient(135deg,transparent 0 8px,var(--line) 8px 9px);opacity:.55}
+.col.off h3::after{content:"no se usa";font-weight:500}
+.col.sobre{outline:2px dashed var(--accent);outline-offset:-2px}
+.col.trabajo h3 span:first-child::after{content:" · WIP";font-weight:500}
+
+/* ---------- Tarjetas ---------- */
+.tarjeta{position:relative;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 10px 8px;display:flex;flex-direction:column;gap:7px;cursor:grab}
+.caras{position:absolute;top:7px;right:7px;display:flex;align-items:center;border:0;background:none;padding:2px;border-radius:99px;cursor:pointer}
+.caras img,.caras .vacia{width:32px;height:32px;border-radius:50%;border:2px solid var(--card);object-fit:cover;display:block}
+.caras img+img{margin-left:-11px}
+.caras .vacia{border:1.5px dashed var(--accent);color:var(--muted);font:700 15px var(--f-mono);display:grid;place-items:center;background:var(--soft)}
+.caras:hover img,.caras:hover .vacia{border-color:var(--accent)}
+.evento{font-size:12px;font-weight:700;color:var(--c2);display:flex;gap:6px;align-items:center}
+.evento.hecho{color:var(--muted);text-decoration:line-through}
+.perfiles{display:flex;gap:10px;flex-wrap:wrap}
+.perfil{border:2px solid var(--line);border-radius:12px;background:var(--card);padding:10px 8px;display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:700;width:96px}
+.perfil img{width:58px;height:58px;border-radius:50%;object-fit:cover}
+.perfil[aria-pressed="true"]{border-color:var(--strong);background:var(--soft)}
+.perfil[aria-pressed="true"]::after{content:"✔";font:700 12px var(--f-mono);color:var(--strong)}
+.nota{font-size:12px;color:var(--muted)}
+.tarjeta.bloq{border-style:dashed;border-color:var(--warn);background:color-mix(in srgb,var(--warn) 9%,var(--card))}
+.tarjeta.fija{border-color:var(--strong);background:color-mix(in srgb,var(--strong) 11%,var(--card))}
+.tarjeta.urgente{border:2px solid var(--crit);background:color-mix(in srgb,var(--crit) 13%,var(--card))}
+.etq-urg{font:700 11px var(--f-mono);color:var(--crit)}
+.limite{font-size:12px;font-weight:700;color:var(--strong)}
+.limite.venc{color:var(--crit)}
+.leyenda{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);margin-bottom:12px}
+.leyenda span{display:inline-flex;gap:6px;align-items:center}
+.sw{width:14px;height:14px;border-radius:4px;border:1px solid var(--line);display:inline-block}
+.sw.fija{background:color-mix(in srgb,var(--strong) 30%,var(--card));border-color:var(--strong)}
+.sw.urgente{background:color-mix(in srgb,var(--crit) 35%,var(--card));border:2px solid var(--crit)}
+.sw.bloq{background:color-mix(in srgb,var(--warn) 20%,var(--card));border:1px dashed var(--warn)}
+details.terminadas{margin-top:8px}
+.tarjeta .tit{font-weight:700;line-height:1.25;overflow-wrap:anywhere;text-align:left;background:none;border:0;padding:0 58px 0 0;cursor:pointer}
+.fila{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.chip{font:700 11px var(--f-mono);padding:2px 8px;border-radius:99px;background:color-mix(in srgb,var(--cc,var(--muted)) 20%,var(--card));color:var(--fg);display:inline-flex;gap:5px;align-items:center}
+.chip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cc,var(--muted))}
+.fecha{font-size:12px;color:var(--muted)}
+.puntos{display:flex;flex-wrap:wrap;gap:3px;align-items:center}
+.puntos i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.puntos i.v3{background:var(--warn)}
+.puntos i.v5{background:var(--crit)}
+.puntos b{font:700 11px var(--f-mono);color:var(--muted);margin-left:2px}
+.bloqueo{font-size:12px;color:var(--warn);font-weight:700}
+.pie{display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap}
+
+/* ---------- Calendario ---------- */
+.cal-nav{display:flex;align-items:center;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.cal-nav h2{margin:0;font:700 20px var(--f-mono);min-width:5ch;text-align:center}
+.meses{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.mes{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 10px 8px}
+.mes h3{margin:0 0 6px;font:700 12px var(--f-mono);text-transform:uppercase;letter-spacing:.6px;color:var(--strong)}
+.sem{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+.sem .d{font:500 10px var(--f-mono);color:var(--muted);padding-bottom:2px}
+.dia{border:0;background:none;border-radius:6px;padding:3px 0 2px;min-height:34px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:12px}
+.dia:hover{background:var(--soft)}
+.dia.hoy{outline:2px solid var(--strong);outline-offset:-2px;font-weight:700}
+.dia.sel{background:var(--strong);color:var(--bg)}
+.dia .p{display:flex;gap:2px;height:5px}
+.dia .p i{width:5px;height:5px;border-radius:50%;background:var(--cc)}
+.dia .p i.arch{opacity:.3}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-top:18px}
+.panel h3{margin:0 0 10px;font:700 14px var(--f-mono)}
+.hito{display:flex;gap:10px;align-items:center;justify-content:space-between;padding:8px 0;border-top:1px solid var(--line)}
+.hito:first-of-type{border-top:0}
+.hito .acc{display:flex;gap:4px;flex:none}
+.hito.archivado .n{color:var(--muted);text-decoration:line-through}
+.venc-h{color:var(--crit);font-weight:700}
+.tarea-h{color:var(--c2);font-weight:700}
+.hito button.t{background:none;border:0;text-align:left;padding:0;display:flex;gap:8px;align-items:center;min-width:0}
+.hito .n{overflow-wrap:anywhere;font-weight:600}
+.hito .r{font-size:12px;color:var(--muted)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--cc);flex:none}
+
+/* ---------- Ventana de edición ---------- */
+#velo{position:fixed;inset:0;background:rgba(20,14,34,.55);display:flex;align-items:flex-end;justify-content:center;z-index:20;
+  padding:max(12px,env(safe-area-inset-top,0px)) max(12px,env(safe-area-inset-right,0px)) max(12px,env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px))}
+#velo[hidden]{display:none}
+.ventana{background:var(--card);border-radius:14px;width:min(460px,100%);max-height:100%;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px}
+.ventana h3{margin:0;font:700 16px var(--f-mono)}
+label{display:flex;flex-direction:column;gap:4px;font-size:13px;font-weight:600;color:var(--muted)}
+label.h{flex-direction:row;align-items:center;gap:8px;color:var(--fg)}
+input[type=text],input[type=date],select,textarea{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px 10px;color:var(--fg);font-weight:400;width:100%}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.acciones{display:flex;gap:8px;justify-content:space-between;flex-wrap:wrap}
+#toast{position:fixed;left:50%;transform:translateX(-50%);bottom:max(20px,env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:99px;z-index:30;font-weight:600;max-width:90vw}
+#toast[hidden]{display:none}
+@media (min-width:700px){#velo{align-items:center}}
+/* ===== VERSIÓN MÓVIL (prueba) — solo cambia por debajo de 700 px ===== */
+.prueba{background:var(--strong);color:var(--bg);font:600 12px var(--f-mono);text-align:center;padding:6px 10px;border-radius:8px;margin-bottom:10px}
+.prueba a{color:inherit}
+#mas,#fab,.solo-movil{display:none}
+@media (max-width:699px){
+  body{padding-inline:max(12px,env(safe-area-inset-left,0px)) max(12px,env(safe-area-inset-right,0px));padding-bottom:96px}
+  header{position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0;margin-bottom:8px;gap:8px;flex-wrap:nowrap}
+  h1{font-size:16px} h1 small{display:none}
+  .tabs button{padding:8px 12px}
+  #mas{display:inline-flex;min-width:44px;min-height:40px;justify-content:center;align-items:center}
+  header > .fila{display:none;position:absolute;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:220px}
+  header.menu-abierto > .fila{display:flex}
+  header > .fila .btn{min-height:44px;text-align:left}
+  .solo-movil{display:block}
+  .leyenda{display:none}
+  .btn.small{min-height:40px;min-width:40px;padding:6px 12px;font-size:14px}
+  .ideas-body{grid-template-columns:1fr}
+  /* tablero: un carril y una columna cada vez */
+  .seg{display:flex;gap:4px;background:var(--soft);padding:4px;border-radius:10px;margin-bottom:10px}
+  .seg button{flex:1;border:0;background:none;padding:10px 6px;border-radius:7px;font:600 14px var(--f-body);color:var(--muted)}
+  .seg button[aria-pressed="true"]{background:var(--card);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+  .seg .wip{margin-left:6px}
+  .chips-col{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none;scroll-snap-type:x proximity}
+  .chips-col::-webkit-scrollbar{display:none}
+  .chips-col button{flex:none;scroll-snap-align:start;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 14px;font:600 13px var(--f-body);color:var(--muted);min-height:40px}
+  .chips-col button b{font-family:var(--f-mono);margin-left:4px;color:var(--fg)}
+  .chips-col button[aria-pressed="true"]{background:var(--strong);border-color:var(--strong);color:var(--bg)}
+  .chips-col button[aria-pressed="true"] b{color:var(--bg)}
+  .columna-movil{display:flex;flex-direction:column;gap:10px;min-height:120px;touch-action:pan-y}
+  .columna-movil .vacio{text-align:center;padding:28px 8px;border:1px dashed var(--line);border-radius:12px}
+  .tarjeta{cursor:default}
+  .pie{justify-content:space-between}
+  /* calendario: agenda arriba, un solo mes */
+  .agenda h4{margin:14px 0 4px;font:700 11px var(--f-mono);text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .agenda h4.pasado{color:var(--crit)}
+  .mes-movil .sem{gap:4px}
+  .mes-movil .dia{min-height:44px;font-size:14px}
+  .cal-nav h2{font-size:17px;min-width:0;flex:1}
+  .hito{flex-wrap:wrap}
+  /* ventanas a pantalla completa y botón + flotante */
+  #velo{padding:0;align-items:stretch}
+  .ventana{width:100%;max-height:none;height:100%;border-radius:0;padding:16px 16px max(24px,env(safe-area-inset-bottom,0px))}
+  .ventana .acciones{position:sticky;bottom:0;background:var(--card);padding-top:10px}
+  .dos{grid-template-columns:1fr}
+  #fab{display:flex;position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;background:var(--strong);color:var(--bg);font:400 32px/1 var(--f-body);align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:15}
+  #toast{bottom:max(92px,env(safe-area-inset-bottom,0px))}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+.acceso{max-width:420px;margin:12vh auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;text-align:center}
+.acceso img{width:84px;margin:0 auto}
+.acceso h2{margin:0;font:700 18px var(--f-mono)}
+.acceso input{text-align:center}
+</style>
+</head>
+<body>
+<section id="acceso" class="acceso" hidden>
+  <img src="../../marca/buholira.svg" alt="">
+  <h2>Tablero del equipo</h2>
+  <p id="acceso-texto">Abre el enlace del equipo o pega aquí la clave.</p>
+  <input type="text" id="clave-in" placeholder="Clave del equipo" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <button class="btn main" id="entrar">Entrar</button>
+</section>
+<div id="app" hidden>
+<header>
+  <h1>Tablero La Safoteca<small>Solo para el equipo · no forma parte de la web</small></h1>
+  <div class="tabs" role="tablist">
+    <button role="tab" id="tab-tablero" aria-selected="true">Tablero</button>
+    <button role="tab" id="tab-calendario" aria-selected="false">Calendario</button>
+  </div>
+  <button class="btn" id="mas" aria-label="Más opciones" aria-expanded="false">⋯</button>
+  <div class="fila">
+    <span class="fecha" id="estado-copia"></span>
+    <button class="btn small" id="copias">🗂 Copias diarias</button>
+    <button class="btn small" id="exportar">⬇ Exportar copia</button>
+    <button class="btn small" id="importar">⬆ Importar copia</button>
+    <input type="file" id="archivo" accept="application/json,.json" hidden>
+  </div>
+</header>
+<div id="aviso" hidden></div>
+<div class="prueba">Versión móvil de prueba · mismos datos que el tablero · <a href="../">volver al tablero normal</a></div>
+<main id="vista"></main>
+<button id="fab" aria-label="Nueva">+</button>
+<div id="velo" hidden></div>
+<div id="toast" hidden></div>
+</div>
+
+<script type="module">
+/* =====================================================================
+   CONFIGURACIÓN — aquí se cambia lo que casi nunca cambia
+   ===================================================================== */
+const COLUMNAS = ["Backlog","Diseño","Desarrollo","Ejecución","Pruebas","Documentación","Listo para Despliegue"];
+
+const CARRILES = {
+  principal: { nombre:"Carril 1 · Web, datos y herramientas",
+               activas:["Backlog","Diseño","Desarrollo","Ejecución","Pruebas","Documentación","Listo para Despliegue"],
+               cuentanWip:["Diseño","Desarrollo","Ejecución","Pruebas","Documentación"], wip:2 },
+  redes:     { nombre:"Carril 2 · Series nuevas e Instagram",
+               activas:["Diseño","Ejecución","Listo para Despliegue"],
+               cuentanWip:["Diseño","Ejecución"], wip:2 },
+};
+
+/* Color de la etiqueta según la primera letra del componente (W4 → W). Cambia las letras a tu gusto. */
+const COLOR_COMPONENTE = { W:"var(--c1)", D:"var(--c2)", E:"var(--c3)", M:"var(--c4)", I:"var(--c5)" };
+
+/* Colores que se pueden elegir para un hito del calendario */
+const COLORES_HITO = { Lila:"var(--c1)", Verde:"var(--c2)", Ámbar:"var(--c3)", Coral:"var(--c4)", Azul:"var(--c5)" };
+
+/* Perfiles del equipo: hasta dos por tarjeta */
+const PERFILES = {
+  carmen: { nombre:"Carmen", foto:"data:image/jpeg;base64,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" },
+  carla:  { nombre:"Carla",  foto:"data:image/jpeg;base64,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" },
+  sandra: { nombre:"Sandra", foto:"data:image/jpeg;base64,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" },
+};
+const MAX_PERSONAS = 2;
+
+const MESES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const DIAS = ["L","M","X","J","V","S","D"];
+const DIAS_LARGO = ["domingo","lunes","martes","miércoles","jueves","viernes","sábado"];
+const REPITE = { unico:"Una sola vez", semanal:"Cada semana", mensual:"Cada mes", anual:"Cada año" };
+
+/* =====================================================================
+   DATOS — se guardan solos en el almacén de esta página
+   tareas/<id>: { titulo, componente, columna ("Ideas" o una de COLUMNAS), carril, inicio, bloqueada, motivo, creada, personas[], hito }
+   hitos/<id>:  { titulo, fecha, repite, hasta, color, tarea, archivado, archivadoEl }
+   ===================================================================== */
+let db = null, tareas = [], hitos = [], vista = "tablero", anio = new Date().getFullYear(), diaSel = null;
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const pad = n => String(n).padStart(2,"0");
+const iso = d => `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;
+const fecha = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y,m-1,d); };
+const HOY = iso(new Date());
+const dias = (a,b) => Math.round((fecha(b)-fecha(a))/864e5);
+const corta = s => { const d = fecha(s); return `${d.getDate()} ${MESES[d.getMonth()].slice(0,3).toLowerCase()}`; };
+
+function toast(t){ const el=$("#toast"); el.textContent=t; el.hidden=false; clearTimeout(toast.t); toast.t=setTimeout(()=>el.hidden=true,3200); }
+
+async function guardar(col, id, datos){
+  if(!db) return toast("Sin conexión con el almacén");
+  try { await db.doc(`${col}/${id}`).set(datos); } catch(e){ toast("No se pudo guardar: "+(e.code||e.message)); }
+}
+async function borrar(col, id){
+  if(!db) return;
+  try { await db.doc(`${col}/${id}`).delete(); } catch(e){ toast("No se pudo borrar"); }
+}
+const nuevoId = col => db.collection(col).doc().id;
+const sinId = ({id, ...resto}) => resto;
+
+/* =====================================================================
+   FIREBASE — datos compartidos en tiempo real (Firestore), con la clave del enlace
+   Ruta de los datos: equipos/<clave>/tareas, equipos/<clave>/hitos, equipos/<clave>/copias/<AAAA-MM-DD>
+   ===================================================================== */
+import { FIREBASE } from "../firebase-config.js";
+const V = "10.14.1";
+const { initializeApp } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-app.js`);
+const { initializeFirestore, collection, doc, setDoc, deleteDoc, getDoc, getDocs, onSnapshot, writeBatch } = await import(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore.js`);
+let almacen = { tareas:{}, hitos:{} };          // copia en memoria, para exportar y para la copia diaria
+let fsdb = null, desuscribir = [], CLAVE_EQ = "";
+const ruta = (...p) => ["equipos", CLAVE_EQ, ...p].join("/");
+function crearAlmacen(){
+  return {
+    collection: c => ({
+      doc: () => doc(collection(fsdb, ruta(c))),
+      onSnapshot: (f, err) => { const u = onSnapshot(collection(fsdb, ruta(c)), s => { almacen[c] = Object.fromEntries(s.docs.map(d=>[d.id, d.data()])); f(s); }, err); desuscribir.push(u); return u; },
+    }),
+    doc: r => { const [c,id] = r.split("/"); return { set: d => setDoc(doc(fsdb, ruta(c), id), d), delete: () => deleteDoc(doc(fsdb, ruta(c), id)) }; },
+  };
+}
+/* Sustituye todo el tablero por una copia (importar o restaurar) */
+async function sustituirPor(d){
+  const lote = writeBatch(fsdb);
+  for(const c of ["tareas","hitos"]){
+    for(const id of Object.keys(almacen[c])) if(!(id in d[c])) lote.delete(doc(fsdb, ruta(c), id));
+    for(const [id, v] of Object.entries(d[c])) lote.set(doc(fsdb, ruta(c), id), v);
+  }
+  await lote.commit();
+}
+/* Copia diaria: la primera visita del día la crea. Las reglas no dejan cambiarla ni borrarla. */
+async function copiaDiaria(){
+  try {
+    const ref = doc(fsdb, ruta("copias"), HOY);
+    if((await getDoc(ref)).exists()) { $("#estado-copia").textContent = "Copia de hoy guardada"; return; }
+    if(!Object.keys(almacen.tareas).length && !Object.keys(almacen.hitos).length) return;   // tablero vacío: no se copia
+    await setDoc(ref, { fecha:HOY, creada:new Date().toISOString(), tareas:almacen.tareas, hitos:almacen.hitos });
+    $("#estado-copia").textContent = "Copia de hoy guardada"; toast("Copia diaria guardada");
+  } catch(e) { /* otra persona la ha creado a la vez, o sin red: no pasa nada */ }
+}
+async function verCopias(){
+  let lista = [];
+  try { lista = (await getDocs(collection(fsdb, ruta("copias")))).docs.map(d=>({id:d.id, ...d.data()})).sort((a,b)=>a.id<b.id?1:-1); }
+  catch(e){ return toast("No se pudieron leer las copias: "+e.code); }
+  abrirVentana(`<h3>Copias diarias</h3>
+    <div class="nota">Cada día, la primera que entra guarda una copia de todo el tablero. Nadie puede borrarlas ni cambiarlas. Restaurar sustituye el tablero de todo el equipo por esa copia.</div>
+    ${lista.map(c=>`<div class="hito"><span><span class="n">${diaCorto(c.id)} ${c.id.slice(0,4)}</span><br><span class="r">${Object.keys(c.tareas||{}).length} tareas · ${Object.keys(c.hitos||{}).length} hitos</span></span>
+      <span class="acc"><button class="btn small" data-bajar="${c.id}" title="Descargar">⬇</button><button class="btn small" data-restaurar="${c.id}">Restaurar</button></span></div>`).join("") || `<div class="vacio">Aún no hay copias.</div>`}
+    <div class="acciones"><span></span><button class="btn" id="c-cerrar">Cerrar</button></div>`);
+  $("#c-cerrar").onclick = cerrar;
+  document.querySelectorAll("[data-bajar]").forEach(b => b.onclick = () => { const c = lista.find(x=>x.id===b.dataset.bajar); descargar({tareas:c.tareas||{}, hitos:c.hitos||{}}, `tablero-safoteca-copia-${c.id}.json`); });
+  document.querySelectorAll("[data-restaurar]").forEach(b => b.onclick = async () => {
+    if(!b.dataset.seguro){ b.dataset.seguro = 1; b.textContent = "Pulsa otra vez"; return; }
+    const c = lista.find(x=>x.id===b.dataset.restaurar);
+    try { await sustituirPor({tareas:c.tareas||{}, hitos:c.hitos||{}}); cerrar(); toast("Tablero restaurado a la copia del "+corta(c.id)); }
+    catch(e){ toast("No se pudo restaurar: "+e.code); }
+  });
+}
+function descargar(datos, nombre){
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([JSON.stringify(datos,null,1)],{type:"application/json"}));
+  a.download = nombre; a.click();
+}
+
+/* ---- copia de seguridad ---- */
+$("#exportar").onclick = () => { descargar(almacen, `tablero-safoteca-${HOY}.json`); toast("Copia exportada"); };
+$("#copias").onclick = verCopias;
+let avisoImportar = 0;
+/* Importar sustituye el tablero de todas: pide una segunda pulsación en 5 s para confirmar. */
+$("#importar").onclick = () => {
+  if(Date.now() - avisoImportar > 5000){ avisoImportar = Date.now(); return toast("Importar sustituye el tablero de todo el equipo. Pulsa otra vez para elegir el archivo."); }
+  avisoImportar = 0; $("#archivo").click();
+};
+$("#archivo").onchange = async e => {
+  try {
+    const d = JSON.parse(await e.target.files[0].text());
+    if(!d.tareas || !d.hitos) throw 0;
+    await sustituirPor(d); toast("Copia importada para todo el equipo");
+  } catch(err) { toast(err && err.code ? "No se pudo importar: "+err.code : "Ese archivo no es una copia del tablero"); }
+  e.target.value = "";
+};
+
+/* =====================================================================
+   TABLERO
+   ===================================================================== */
+function enWip(carril){
+  const c = CARRILES[carril];
+  return tareas.filter(t => t.carril===carril && c.cuentanWip.includes(t.columna));
+}
+
+/* Mueve una tarea. Devuelve false si no se puede (columna no usada o WIP lleno). */
+function mover(id, columna, carril){
+  const t = tareas.find(x => x.id===id); if(!t) return false;
+  if(columna==="Ideas"){
+    guardar("tareas", id, sinId({...t, columna:"Ideas", carril:"", inicio:"", fin:""}));
+    return true;
+  }
+  if(columna==="Terminada"){                 // se puede terminar desde cualquier sitio
+    guardar("tareas", id, sinId({...t, columna:"Terminada", fin:HOY}));
+    if(t.hito && archivarHito(t.hito, true)) toast("Tarea terminada y su evento archivado");
+    return true;
+  }
+  const c = CARRILES[carril];
+  if(!c.activas.includes(columna)){ toast(`«${columna}» no se usa en este carril`); return false; }
+  if(c.cuentanWip.includes(columna) && !(t.carril===carril && c.cuentanWip.includes(t.columna))
+     && !t.urgente && enWip(carril).length >= c.wip){
+    toast(`WIP lleno: ya hay ${c.wip} en curso en este carril`); return false;
+  }
+  const inicio = t.inicio || HOY;           // la fecha de inicio se pone al salir de Ideas
+  guardar("tareas", id, sinId({...t, columna, carril, inicio, fin:""}));
+  return true;
+}
+
+/* Archiva o recupera un hito. Devuelve true si ha cambiado algo. */
+function archivarHito(id, on){
+  const h = hitos.find(x=>x.id===id); if(!h || !!h.archivado===on) return false;
+  guardar("hitos", id, sinId({...h, archivado:on, archivadoEl:on?HOY:""}));
+  return true;
+}
+const hitoDe = t => t.hito ? hitos.find(h=>h.id===t.hito) : null;
+const diaCorto = s => { const d = fecha(s); return `${DIAS_LARGO[d.getDay()].slice(0,3)} ${corta(s)}`; };
+
+function caras(t){
+  const ps = (t.personas||[]).filter(p=>PERFILES[p]);
+  const nombres = ps.map(p=>PERFILES[p].nombre).join(" y ");
+  return `<button class="caras" data-personas="${t.id}" title="${ps.length?esc(nombres)+" · cambiar":"Asignar persona"}" aria-label="${ps.length?"Asignada a "+esc(nombres)+". Cambiar":"Asignar persona"}">${
+    ps.length ? ps.map(p=>`<img src="${PERFILES[p].foto}" alt="">`).join("") : `<span class="vacia">+</span>`}</button>`;
+}
+function selectorPersonas(sel){
+  return `<div class="perfiles" id="perfiles">${Object.entries(PERFILES).map(([k,p])=>
+    `<button type="button" class="perfil" data-perfil="${k}" aria-pressed="${sel.includes(k)}"><img src="${p.foto}" alt="">${p.nombre}</button>`).join("")}</div>
+    <div class="nota">Elige una o dos personas.</div>`;
+}
+function leerPersonas(){ return [...document.querySelectorAll("#perfiles .perfil[aria-pressed='true']")].map(b=>b.dataset.perfil); }
+document.addEventListener("click", e => {
+  const b = e.target.closest?.("#perfiles .perfil"); if(!b) return;
+  e.stopPropagation();
+  const on = b.getAttribute("aria-pressed")==="true";
+  if(!on && leerPersonas().length>=MAX_PERSONAS) return toast(`Como mucho ${MAX_PERSONAS} personas por tarea`);
+  b.setAttribute("aria-pressed", String(!on));
+}, true);
+function editarPersonas(id){
+  const t = tareas.find(x=>x.id===id); if(!t) return;
+  abrirVentana(`<h3>¿Quién lleva «${esc(t.titulo)}»?</h3>${selectorPersonas(t.personas||[])}
+    <div class="acciones"><span></span><span><button class="btn" id="p-cancelar">Cancelar</button> <button class="btn main" id="p-guardar">Guardar</button></span></div>`);
+  $("#p-cancelar").onclick = cerrar;
+  $("#p-guardar").onclick = () => { guardar("tareas", id, sinId({...t, personas:leerPersonas()})); cerrar(); };
+}
+
+function siguiente(t, paso){
+  const act = CARRILES[t.carril].activas, i = act.indexOf(t.columna) + paso;
+  if(i<0) return mover(t.id,"Ideas","");
+  if(i>=act.length) return mover(t.id, "Terminada", t.carril);   // › desde «Listo para Despliegue» = terminada
+  mover(t.id, act[i], t.carril);
+}
+
+function tarjeta(t, enIdeas){
+  const letra = (t.componente||"").trim().charAt(0).toUpperCase();
+  const color = COLOR_COMPONENTE[letra] || "var(--muted)";
+  const sem = t.inicio ? Math.floor(dias(t.inicio, HOY)/7)+1 : 0;
+  const pts = Array.from({length:Math.min(sem,12)},(_,i)=>`<i class="${i>=4?"v5":i>=2?"v3":""}"></i>`).join("");
+  const falta = t.limite ? dias(HOY, t.limite) : null;
+  const ev = hitoDe(t);
+  return `<article class="tarjeta ${t.bloqueada?"bloq":""} ${t.limite?"fija":""} ${t.urgente?"urgente":""}" draggable="true" data-id="${t.id}">
+    ${caras(t)}
+    <button class="tit" data-edit="${t.id}">${esc(t.titulo)||"(sin título)"}</button>
+    <div class="fila">
+      ${t.urgente?`<span class="etq-urg">🔥 URGENTE</span>`:""}
+      ${t.componente?`<span class="chip" style="--cc:${color}">${esc(t.componente)}</span>`:""}
+      ${t.inicio?`<span class="fecha">desde ${corta(t.inicio)}</span>`:""}
+    </div>
+    ${t.limite?`<div class="limite ${falta<0?"venc":""}">📅 Para el ${corta(t.limite)} · ${falta<0?"vencida hace "+(-falta)+" d":falta===0?"es hoy":"faltan "+falta+" d"}</div>`:""}
+    ${ev?`<div class="evento" title="Evento del calendario: se archiva al terminar la tarea">🗓 ${esc(ev.titulo)} · ${diaCorto(ev.fecha)}</div>`:""}
+    ${sem?`<div class="puntos" title="${sem} semana${sem>1?"s":""} en el tablero">${pts}${sem>12?`<b>+${sem-12}</b>`:""}</div>`:""}
+    ${t.bloqueada?`<div class="bloqueo">⛔ Bloqueada${t.motivo?": "+esc(t.motivo):""}</div>`:""}
+    <div class="pie">${enIdeas
+      ? `<button class="btn small" data-a="ir" data-id="${t.id}" data-c="principal">→ Carril 1</button>
+         <button class="btn small" data-a="ir" data-id="${t.id}" data-c="redes">→ Carril 2</button>`
+      : `${esMovil()?`<button class="btn small" data-mover-mov="${t.id}">Mover a…</button><span>`:""}<button class="btn small" data-a="atras" data-id="${t.id}" aria-label="Columna anterior">‹</button>
+         <button class="btn small" data-a="avanza" data-id="${t.id}" aria-label="${t.columna==="Listo para Despliegue"?"Marcar como terminada":"Columna siguiente"}" title="${t.columna==="Listo para Despliegue"?(ev&&!ev.archivado?"Terminar y archivar su evento":"Marcar como terminada"):"Siguiente columna"}">${t.columna==="Listo para Despliegue"?"✔":"›"}</button>${esMovil()?"</span>":""}`}
+    </div></article>`;
+}
+
+function tarjetaFin(t){
+  const letra = (t.componente||"").trim().charAt(0).toUpperCase(), color = COLOR_COMPONENTE[letra] || "var(--muted)";
+  const dur = t.inicio && t.fin ? dias(t.inicio, t.fin) : null;
+  const ev = hitoDe(t);
+  return `<article class="tarjeta" draggable="true" data-id="${t.id}">
+    ${caras(t)}
+    <button class="tit" data-edit="${t.id}">${esc(t.titulo)}</button>
+    ${ev?`<div class="evento ${ev.archivado?"hecho":""}">🗓 ${esc(ev.titulo)} · ${diaCorto(ev.fecha)}${ev.archivado?" · archivado":""}</div>`:""}
+    <div class="fila">${t.componente?`<span class="chip" style="--cc:${color}">${esc(t.componente)}</span>`:""}
+      <span class="fecha">✔ terminada el ${t.fin?corta(t.fin):"?"}${dur!=null?` · ${dur===0?"el mismo día":"tardó "+dur+" d"}`:""}</span></div>
+    <div class="pie"><button class="btn small" data-a="reabrir" data-id="${t.id}">↩ Reabrir</button></div></article>`;
+}
+
+/* =====================================================================
+   VERSIÓN MÓVIL (prueba): por debajo de 700 px se pinta distinto
+   ===================================================================== */
+const MQ = matchMedia("(max-width:699px)");
+const esMovil = () => MQ.matches;
+MQ.addEventListener?.("change", () => { if($("#velo").hidden) pintar(); });
+const recordar = (k,v) => { try{ localStorage.setItem("tablero-movil-"+k, v); }catch(_){} };
+const recuerdo = (k,d) => { try{ return localStorage.getItem("tablero-movil-"+k) || d; }catch(_){ return d; } };
+let carrilMov = recuerdo("carril","principal");
+const colMov = { principal: recuerdo("col-principal",""), redes: recuerdo("col-redes","") };
+const hoyD = new Date(HOY+"T00:00:00");
+let mesMov = { a: hoyD.getFullYear(), m: hoyD.getMonth() };
+
+function pintarTableroMovil(){
+  const ideas = tareas.filter(t=>t.columna==="Ideas").sort((a,b)=>(a.creada||0)-(b.creada||0));
+  const hechas = tareas.filter(t=>t.columna==="Terminada").sort((a,b)=>(a.fin||"")<(b.fin||"")?1:-1);
+  const abierto = $("#zona-ideas")?.open ?? false, abiertoFin = $("#zona-term")?.open ?? false;
+  const c = CARRILES[carrilMov];
+  const cuenta = col => tareas.filter(t=>t.carril===carrilMov && t.columna===col).length;
+  // columna elegida: la recordada, o la primera con tarjetas en curso
+  let col = colMov[carrilMov];
+  if(!c.activas.includes(col)) col = c.activas.find(x=>c.cuentanWip.includes(x) && cuenta(x)) || c.activas.find(x=>cuenta(x)) || c.activas[0];
+  colMov[carrilMov] = col;
+  const lista = tareas.filter(t=>t.carril===carrilMov && t.columna===col).sort((a,b)=>(a.creada||0)-(b.creada||0));
+  let h = `<div class="seg" role="group" aria-label="Carril">${Object.entries(CARRILES).map(([k,x])=>{ const n=enWip(k).length;
+      return `<button data-carril-mov="${k}" aria-pressed="${k===carrilMov}">${k==="principal"?"Web y datos":"Series e Instagram"}<span class="wip ${n>=x.wip?"lleno":""}">${n}/${x.wip}</span></button>`; }).join("")}</div>
+    <div class="chips-col" role="group" aria-label="Columna">${c.activas.map(x=>`<button data-col-mov="${esc(x)}" aria-pressed="${x===col}">${x}<b>${cuenta(x)}</b></button>`).join("")}</div>
+    <div class="columna-movil" id="col-movil">${lista.map(t=>tarjeta(t,false)).join("") || `<div class="vacio">Nada en «${esc(col)}».</div>`}</div>
+    <details class="ideas" id="zona-ideas" ${abierto?"open":""} style="margin-top:22px">
+      <summary>Ideas <span class="wip">${ideas.length}</span></summary>
+      <div class="ideas-body">${ideas.map(t=>tarjeta(t,true)).join("")||`<div class="vacio">No hay ideas. Pulsa «+».</div>`}</div></details>
+    <details class="ideas terminadas" id="zona-term" ${abiertoFin?"open":""}>
+      <summary>Terminadas <span class="wip">${hechas.length}</span></summary>
+      <div class="ideas-body">${hechas.map(tarjetaFin).join("")||`<div class="vacio">Aún no hay tareas terminadas.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+  // deslizar a izquierda/derecha cambia de columna
+  const zona = $("#col-movil"); let x0 = null, y0 = null;
+  zona.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  zona.addEventListener("touchend", e => {
+    if(x0===null) return; const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if(Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy)*1.5) return;
+    const i = c.activas.indexOf(col) + (dx<0 ? 1 : -1);
+    if(i>=0 && i<c.activas.length){ colMov[carrilMov] = c.activas[i]; recordar("col-"+carrilMov, c.activas[i]); pintar(); }
+  }, {passive:true});
+}
+function moverA(id){
+  const t = tareas.find(x=>x.id===id); if(!t) return;
+  const destinos = [["Ideas",""], ...CARRILES[t.carril||"principal"].activas.map(c=>[c,t.carril||"principal"]), ["Terminada",t.carril]];
+  abrirVentana(`<h3>Mover «${esc(t.titulo)}»</h3>
+    <div class="perfiles" style="flex-direction:column">${destinos.map(([c,k])=>`<button class="btn" style="text-align:left;min-height:48px" data-mover-a="${esc(c)}" data-carril-a="${k||""}" ${c===t.columna?"disabled":""}>${c===t.columna?"● ":""}${c}</button>`).join("")}</div>
+    <div class="acciones"><span></span><button class="btn" id="m-cancelar">Cancelar</button></div>`);
+  $("#m-cancelar").onclick = cerrar;
+  document.querySelectorAll("[data-mover-a]").forEach(b => b.onclick = () => {
+    const ok = b.dataset.moverA==="Ideas" ? mover(id,"Ideas","") : mover(id, b.dataset.moverA, b.dataset.carrilA);
+    if(ok!==false){ if(t.carril){ colMov[t.carril] = b.dataset.moverA; recordar("col-"+t.carril, b.dataset.moverA); } cerrar(); }
+  });
+}
+/* próxima vez que ocurre un hito, a partir de hoy (para los que se repiten) */
+function proxima(h){
+  if((h.repite||"unico")==="unico") return h.fecha;
+  for(let i=0;i<400;i++){ const d=new Date(hoyD); d.setDate(d.getDate()+i); const k=iso(d); if(ocurre(h,k)) return k; if(h.hasta && k>h.hasta) break; }
+  return null;
+}
+function pintarCalendarioMovil(){
+  const finSemana = 7 - ((hoyD.getDay()+6)%7) - 1;          // días hasta el domingo
+  const grupos = { "Pasados sin archivar":[], "Esta semana":[], "La semana que viene":[], "Más adelante":[] };
+  for(const h of hitos.filter(x=>!x.archivado)){
+    const f = proxima(h); if(!f) continue; const d = dias(HOY,f);
+    const g = d<0 ? "Pasados sin archivar" : d<=finSemana ? "Esta semana" : d<=finSemana+7 ? "La semana que viene" : "Más adelante";
+    grupos[g].push({...h, fecha:f});
+  }
+  const arch = hitos.filter(x=>x.archivado).sort((a,b)=>(a.archivadoEl||a.fecha)<(b.archivadoEl||b.fecha)?1:-1);
+  const abiertoArch = $("#zona-arch")?.open ?? false;
+  const total = Object.values(grupos).reduce((n,l)=>n+l.length,0);
+  let h = `<div class="panel agenda" style="margin-top:0"><h3>Pendientes <span class="wip">${total}</span></h3>`;
+  for(const [g,l] of Object.entries(grupos)){
+    if(!l.length) continue;
+    l.sort((a,b)=>a.fecha<b.fecha?-1:1);
+    h += `<h4 class="${g.startsWith("Pasados")?"pasado":""}">${g}</h4>${l.map(x=>fila(hitos.find(y=>y.id===x.id))).join("")}`;
+  }
+  if(!total) h += `<div class="vacio">No hay hitos pendientes. Pulsa «+».</div>`;
+  h += `</div>`;
+  // un solo mes
+  const {a, m} = mesMov, primero = new Date(a,m,1), vacios = (primero.getDay()+6)%7, n = new Date(a,m+1,0).getDate();
+  h += `<div class="panel mes-movil"><div class="cal-nav" style="margin-bottom:8px"><button class="btn" id="m-ant" aria-label="Mes anterior">‹</button>
+    <h2>${MESES[m]} ${a}</h2><button class="btn" id="m-hoy">Hoy</button><button class="btn" id="m-sig" aria-label="Mes siguiente">›</button></div>
+    <div class="sem">${DIAS.map(d=>`<span class="d">${d}</span>`).join("")}${"<span></span>".repeat(vacios)}`;
+  for(let d=1; d<=n; d++){
+    const k = `${a}-${pad(m+1)}-${pad(d)}`, hs = hitosDe(k).slice(0,3);
+    h += `<button class="dia ${k===HOY?"hoy":""} ${k===diaSel?"sel":""}" data-dia="${k}">${d}<span class="p">${hs.map(x=>`<i class="${x.archivado?"arch":""}" style="--cc:${x.color||"var(--c1)"}"></i>`).join("")}</span></button>`;
+  }
+  h += `</div>`;
+  if(diaSel && diaSel.slice(0,7)===`${a}-${pad(m+1)}`){
+    const d = fecha(diaSel), lista = hitosDe(diaSel);
+    h += `<h3 style="margin-top:14px">${DIAS_LARGO[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()].toLowerCase()}</h3>
+      ${lista.map(fila).join("")||`<div class="vacio">Nada este día.</div>`}
+      <div style="margin-top:10px"><button class="btn small" id="hito-dia">+ Añadir hito este día</button></div>`;
+  }
+  h += `</div>
+    <details class="ideas terminadas" id="zona-arch" ${abiertoArch?"open":""} style="margin-top:18px">
+    <summary>Hitos archivados <span class="wip">${arch.length}</span></summary>
+    <div style="padding:0 16px 12px">${arch.map(fila).join("")||`<div class="vacio">Aquí van los hitos archivados.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest?.("button"); if(!b) return;
+  if(b.dataset.carrilMov){ carrilMov = b.dataset.carrilMov; recordar("carril", carrilMov); return pintar(); }
+  if(b.dataset.colMov){ colMov[carrilMov] = b.dataset.colMov; recordar("col-"+carrilMov, b.dataset.colMov); return pintar(); }
+  if(b.dataset.moverMov) return moverA(b.dataset.moverMov);
+  if(b.id==="m-ant"||b.id==="m-sig"){ const d=new Date(mesMov.a, mesMov.m+(b.id==="m-sig"?1:-1), 1); mesMov={a:d.getFullYear(), m:d.getMonth()}; return pintar(); }
+  if(b.id==="m-hoy"){ mesMov={a:hoyD.getFullYear(), m:hoyD.getMonth()}; diaSel=HOY; return pintar(); }
+  if(b.id==="mas"){ const hd=b.closest("header"); hd.classList.toggle("menu-abierto"); b.setAttribute("aria-expanded", hd.classList.contains("menu-abierto")); return; }
+  if(b.id==="fab") return vista==="tablero" ? editarTarea() : editarHito(null, diaSel||HOY);
+});
+document.addEventListener("click", e => { const hd=$("header"); if(hd.classList.contains("menu-abierto") && !e.target.closest("#mas") && (!e.target.closest("header > .fila") || e.target.closest("header > .fila button"))) { hd.classList.remove("menu-abierto"); $("#mas").setAttribute("aria-expanded","false"); } });
+
+function pintarTablero(){
+  if(esMovil()) return pintarTableroMovil();
+  const ideas = tareas.filter(t=>t.columna==="Ideas").sort((a,b)=>(a.creada||0)-(b.creada||0));
+  const abierto = $("#zona-ideas")?.open ?? true, abiertoFin = $("#zona-term")?.open ?? false;
+  let h = `<div class="leyenda"><span><i class="sw fija"></i>Morada: fecha fija</span><span><i class="sw urgente"></i>Roja: urgente (solo una, ignora el WIP)</span><span><i class="sw bloq"></i>Rayada ámbar: bloqueada</span></div>
+    <details class="ideas" id="zona-ideas" ${abierto?"open":""}>
+    <summary>Ideas <span class="wip">${ideas.length}</span>
+      <span style="margin-left:auto"><button class="btn small" id="nueva-idea">+ Nueva idea</button></span></summary>
+    <div class="ideas-body">${ideas.map(t=>tarjeta(t,true)).join("")||`<div class="vacio">No hay ideas guardadas. Pulsa «+ Nueva idea».</div>`}</div></details>`;
+
+  for(const [k,c] of Object.entries(CARRILES)){
+    const n = enWip(k).length;
+    h += `<section class="carril"><div class="carril-cab"><h2>${c.nombre}</h2>
+      <span class="wip ${n>=c.wip?"lleno":""}">WIP ${n}/${c.wip}</span></div>
+      <div class="tablero"><div class="cols">`;
+    for(const col of COLUMNAS){
+      const on = c.activas.includes(col);
+      const lista = tareas.filter(t=>t.carril===k && t.columna===col).sort((a,b)=>(a.creada||0)-(b.creada||0));
+      h += `<div class="col ${on?"":"off"} ${c.cuentanWip.includes(col)?"trabajo":""}" data-col="${esc(col)}" data-carril="${k}">
+        <h3><span>${col}</span>${lista.length?`<span>${lista.length}</span>`:""}</h3>
+        ${lista.map(t=>tarjeta(t,false)).join("")}</div>`;
+    }
+    h += `</div></div></section>`;
+  }
+  const hechas = tareas.filter(t=>t.columna==="Terminada").sort((a,b)=>(a.fin||"")<(b.fin||"")?1:-1);
+  h += `<details class="ideas terminadas" id="zona-term" ${abiertoFin?"open":""}>
+    <summary>Terminadas <span class="wip">${hechas.length}</span></summary>
+    <div class="ideas-body">${hechas.map(tarjetaFin).join("")||`<div class="vacio">Aquí van las tareas terminadas. Pulsa ✔ en «Listo para Despliegue» o arrastra una tarjeta aquí.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+}
+
+/* ---- arrastrar y soltar (en móvil usa los botones ‹ › y «→ Carril») ---- */
+let arrastrando = null;
+document.addEventListener("dragstart", e => { const a=e.target.closest?.(".tarjeta"); if(a){ arrastrando=a.dataset.id; e.dataTransfer.setData("text/plain",arrastrando); e.dataTransfer.effectAllowed="move"; }});
+document.addEventListener("dragend", () => { arrastrando=null; document.querySelectorAll(".sobre").forEach(x=>x.classList.remove("sobre")); });
+document.addEventListener("dragover", e => {
+  const z = e.target.closest?.(".col,details.ideas"); if(!z || !arrastrando) return;
+  e.preventDefault(); document.querySelectorAll(".sobre").forEach(x=>x.classList.remove("sobre")); z.classList.add("sobre");
+});
+document.addEventListener("drop", e => {
+  const z = e.target.closest?.(".col,details.ideas"); if(!z || !arrastrando) return;
+  e.preventDefault();
+  if(z.id==="zona-ideas") mover(arrastrando,"Ideas","");
+  else if(z.id==="zona-term") mover(arrastrando,"Terminada","");
+  else mover(arrastrando, z.dataset.col, z.dataset.carril);
+});
+
+/* =====================================================================
+   VENTANAS DE EDICIÓN
+   ===================================================================== */
+function abrirVentana(html){ const v=$("#velo"); v.innerHTML=`<div class="ventana" role="dialog" aria-modal="true">${html}</div>`; v.hidden=false; v.querySelector("input,select")?.focus(); }
+function cerrar(){ $("#velo").hidden=true; $("#velo").innerHTML=""; pintar(); }
+$("#velo").addEventListener("click", e => { if(e.target.id==="velo") cerrar(); });
+document.addEventListener("keydown", e => { if(e.key==="Escape") cerrar(); });
+
+function editarTarea(id){
+  const t = id ? tareas.find(x=>x.id===id) : { titulo:"", componente:"", columna:"Ideas", carril:"", bloqueada:false, motivo:"", inicio:"", limite:"", urgente:false, fin:"", personas:[], hito:"" };
+  const libres = hitos.filter(h => (!h.archivado && (!h.tarea || h.tarea===id || !tareas.some(x=>x.id===h.tarea))) || h.id===t.hito)
+                      .sort((a,b)=>a.fecha<b.fecha?-1:1);
+  const opEv = [`<option value="">— Sin evento —</option>`]
+    .concat(libres.map(h=>`<option value="${h.id}" ${h.id===t.hito?"selected":""}>${esc(h.titulo)} · ${diaCorto(h.fecha)}${h.archivado?" (archivado)":""}</option>`))
+    .concat(`<option value="__nuevo">+ Crear un evento nuevo…</option>`);
+  const opciones = [`<option value="Ideas|" ${t.columna==="Ideas"?"selected":""}>Ideas</option>`];
+  opciones.push(`<option value="Terminada|${esc(t.carril||"")}" ${t.columna==="Terminada"?"selected":""}>Terminada</option>`);
+  for(const [k,c] of Object.entries(CARRILES)) for(const col of c.activas)
+    opciones.push(`<option value="${esc(col)}|${k}" ${t.columna===col&&t.carril===k?"selected":""}>${k==="principal"?"Carril 1":"Carril 2"} · ${col}</option>`);
+  abrirVentana(`<h3>${id?"Editar tarea":"Nueva idea"}</h3>
+    <label>Título<input type="text" id="f-titulo" value="${esc(t.titulo)}"></label>
+    <div class="dos">
+      <label>Componente (ej. W4, D2, M1)<input type="text" id="f-comp" value="${esc(t.componente)}"></label>
+      <label>Inicio<input type="date" id="f-inicio" value="${esc(t.inicio)}"></label>
+    </div>
+    <label>Dónde está<select id="f-donde">${opciones.join("")}</select></label>
+    <label>Fecha límite (solo si es una tarea de fecha fija; sale en morado)<input type="date" id="f-lim" value="${esc(t.limite||"")}"></label>
+    <label>Evento del calendario (se archiva al terminar la tarea)<select id="f-evento">${opEv.join("")}</select></label>
+    <div class="dos" id="f-nuevo-ev" hidden>
+      <label>Título del evento<input type="text" id="f-ev-tit" value="${esc(t.titulo)}"></label>
+      <label>Fecha del evento<input type="date" id="f-ev-fecha" value="${esc(t.limite||HOY)}"></label>
+    </div>
+    <label>Quién la lleva</label>${selectorPersonas(t.personas||[])}
+    <label class="h"><input type="checkbox" id="f-urg" ${t.urgente?"checked":""}> 🔥 Urgente (sale en rojo, puede superar el WIP; solo una a la vez)</label>
+    <label class="h"><input type="checkbox" id="f-bloq" ${t.bloqueada?"checked":""}> Bloqueada</label>
+    <label>Motivo del bloqueo<input type="text" id="f-motivo" value="${esc(t.motivo)}"></label>
+    <div class="acciones">
+      <span>${id?`<button class="btn danger" id="f-borrar">Borrar</button>`:""}</span>
+      <span><button class="btn" id="f-cancelar">Cancelar</button> <button class="btn main" id="f-guardar">Guardar</button></span>
+    </div>`);
+  $("#f-cancelar").onclick = cerrar;
+  $("#f-evento").onchange = e => { $("#f-nuevo-ev").hidden = e.target.value!=="__nuevo"; };
+  if(id) $("#f-borrar").onclick = e => {
+    if(e.target.dataset.seguro){ const ev=hitoDe(t); if(ev && ev.tarea===id) guardar("hitos", ev.id, sinId({...ev, tarea:""})); borrar("tareas",id); cerrar(); }
+    else { e.target.dataset.seguro=1; e.target.textContent="Pulsa otra vez para borrar"; }
+  };
+  $("#f-guardar").onclick = () => {
+    const [columna, carril] = $("#f-donde").value.split("|");
+    const nuevo = { ...t, titulo:$("#f-titulo").value.trim(), componente:$("#f-comp").value.trim(),
+      bloqueada:$("#f-bloq").checked, motivo:$("#f-motivo").value.trim(),
+      inicio:$("#f-inicio").value || (columna==="Ideas" ? "" : HOY), columna, carril, creada:t.creada||Date.now(),
+      limite:$("#f-lim").value, urgente:$("#f-urg").checked, fin: columna==="Terminada" ? (t.fin||HOY) : "",
+      personas:leerPersonas() };
+    if(!nuevo.titulo) return toast("Escribe un título");
+    const otra = nuevo.urgente && tareas.find(x => x.urgente && x.id!==id && x.columna!=="Terminada");
+    if(otra) return toast(`Ya hay una urgente: «${otra.titulo}». Quítale la marca antes.`);
+    const cambioDonde = id && (columna!==t.columna || carril!==t.carril);
+    if(cambioDonde && columna!=="Ideas" && columna!=="Terminada" && !mover.puede({...t, urgente:nuevo.urgente}, columna, carril)) return;
+    delete nuevo.id;
+    const tid = id || nuevoId("tareas");
+    // evento asociado
+    let ev = $("#f-evento").value;
+    if(ev==="__nuevo"){
+      const tit = $("#f-ev-tit").value.trim() || nuevo.titulo, f = $("#f-ev-fecha").value;
+      if(!f) return toast("Pon la fecha del evento");
+      ev = nuevoId("hitos");
+      guardar("hitos", ev, { titulo:tit, fecha:f, repite:"unico", hasta:"", color:"var(--c1)", tarea:tid, archivado:false, archivadoEl:"" });
+    } else if(ev){
+      const h = hitos.find(x=>x.id===ev); if(h && h.tarea!==tid) guardar("hitos", ev, sinId({...h, tarea:tid}));
+    }
+    if(t.hito && t.hito!==ev){ const viejo = hitos.find(x=>x.id===t.hito); if(viejo && viejo.tarea===tid) guardar("hitos", viejo.id, sinId({...viejo, tarea:""})); }
+    nuevo.hito = ev;
+    guardar("tareas", tid, nuevo);
+    if(columna==="Terminada" && t.columna!=="Terminada" && ev) archivarHito(ev, true);
+    cerrar();
+  };
+}
+/* comprueba las mismas reglas que mover() sin guardar */
+mover.puede = (t, columna, carril) => {
+  const c = CARRILES[carril];
+  if(!c.activas.includes(columna)){ toast(`«${columna}» no se usa en este carril`); return false; }
+  if(c.cuentanWip.includes(columna) && !(t.carril===carril && c.cuentanWip.includes(t.columna)) && !t.urgente && enWip(carril).length>=c.wip){
+    toast(`WIP lleno: ya hay ${c.wip} en curso en este carril`); return false; }
+  return true;
+};
+
+/* =====================================================================
+   CALENDARIO
+   ===================================================================== */
+function ocurre(h, d){                       // d = "AAAA-MM-DD"
+  if(d < h.fecha || (h.hasta && d > h.hasta)) return false;
+  const a = fecha(h.fecha), b = fecha(d);
+  switch(h.repite){
+    case "semanal": return dias(h.fecha, d) % 7 === 0;
+    case "mensual": return a.getDate()===b.getDate();
+    case "anual":   return a.getDate()===b.getDate() && a.getMonth()===b.getMonth();
+    default:        return d===h.fecha;
+  }
+}
+const hitosDe = d => hitos.filter(h=>ocurre(h,d));
+
+function pintarCalendario(){
+  if(esMovil()) return pintarCalendarioMovil();
+  let h = `<div class="cal-nav"><button class="btn" id="a-ant" aria-label="Año anterior">‹</button><h2>${anio}</h2>
+    <button class="btn" id="a-sig" aria-label="Año siguiente">›</button>
+    <button class="btn" id="a-hoy">Hoy</button>
+    <button class="btn main" id="nuevo-hito" style="margin-left:auto">+ Nuevo hito</button></div><div class="meses">`;
+  for(let m=0;m<12;m++){
+    const primero = new Date(anio,m,1), vacios = (primero.getDay()+6)%7, n = new Date(anio,m+1,0).getDate();
+    h += `<div class="mes"><h3>${MESES[m]}</h3><div class="sem">${DIAS.map(d=>`<span class="d">${d}</span>`).join("")}`;
+    h += "<span></span>".repeat(vacios);
+    for(let d=1; d<=n; d++){
+      const k = `${anio}-${pad(m+1)}-${pad(d)}`, hs = hitosDe(k).slice(0,3);
+      h += `<button class="dia ${k===HOY?"hoy":""} ${k===diaSel?"sel":""}" data-dia="${k}">${d}
+        <span class="p">${hs.map(x=>`<i class="${x.archivado?"arch":""}" style="--cc:${x.color||"var(--c1)"}"></i>`).join("")}</span></button>`;
+    }
+    h += `</div></div>`;
+  }
+  h += `</div>`;
+
+  if(diaSel){
+    const d = fecha(diaSel), lista = hitosDe(diaSel);
+    h += `<div class="panel"><h3>${DIAS_LARGO[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()].toLowerCase()}</h3>
+      ${lista.map(fila).join("")||`<div class="vacio">Nada este día.</div>`}
+      <div style="margin-top:10px"><button class="btn small" id="hito-dia">+ Añadir hito este día</button></div></div>`;
+  }
+  const orden = (a,b)=>a.fecha<b.fecha?-1:1;
+  const pend = hitos.filter(x=>!x.archivado).sort(orden), arch = hitos.filter(x=>x.archivado).sort((a,b)=>(a.archivadoEl||a.fecha)<(b.archivadoEl||b.fecha)?1:-1);
+  const abiertoArch = $("#zona-arch")?.open ?? false;
+  h += `<div class="panel"><h3>Pendientes <span class="wip">${pend.length}</span></h3>
+    ${pend.map(fila).join("")||`<div class="vacio">No hay hitos pendientes. Pulsa «+ Nuevo hito».</div>`}</div>
+    <details class="ideas terminadas" id="zona-arch" ${abiertoArch?"open":""} style="margin-top:18px">
+    <summary>Hitos archivados <span class="wip">${arch.length}</span></summary>
+    <div style="padding:0 16px 12px">${arch.map(fila).join("")||`<div class="vacio">Aquí van los hitos archivados: al terminar su tarea o con ✔ Archivar.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+}
+const fila = h => {
+  const t = h.tarea ? tareas.find(x=>x.id===h.tarea) : null;
+  const venc = !h.archivado && (h.repite||"unico")==="unico" && h.fecha < HOY;
+  return `<div class="hito ${h.archivado?"archivado":""}"><button class="t" data-hito="${h.id}"><span class="dot" style="--cc:${h.color||"var(--c1)"}"></span>
+  <span><span class="n">${esc(h.titulo)}</span><br><span class="r">${(h.repite||"unico")==="unico" ? diaCorto(h.fecha)+" "+fecha(h.fecha).getFullYear() : REPITE[h.repite]+" · desde "+corta(h.fecha)+" "+fecha(h.fecha).getFullYear()+(h.hasta?" hasta "+corta(h.hasta):"")}${
+    venc?` · <span class="venc-h">pasado</span>`:""}${h.archivado&&h.archivadoEl?" · archivado el "+corta(h.archivadoEl):""}${t?` · <span class="tarea-h">tarea: ${esc(t.titulo)}</span>`:""}</span></span></button>
+  <span class="acc">${h.archivado?`<button class="btn small" data-desarchivar="${h.id}" title="Volver a pendientes">↩</button>`:`<button class="btn small" data-archivar="${h.id}" title="Archivar">✔ Archivar</button>`}</span></div>`;
+};
+
+function editarHito(id, diaIni){
+  const h = id ? hitos.find(x=>x.id===id) : { titulo:"", fecha:diaIni||HOY, repite:"unico", hasta:"", color:"var(--c1)" };
+  abrirVentana(`<h3>${id?"Editar hito":"Nuevo hito"}</h3>
+    <label>Título<input type="text" id="h-titulo" value="${esc(h.titulo)}" placeholder="Ej. Subir post de la semana"></label>
+    <div class="dos">
+      <label>Empieza el<input type="date" id="h-fecha" value="${esc(h.fecha)}"></label>
+      <label>Se repite<select id="h-rep">${Object.entries(REPITE).map(([k,v])=>`<option value="${k}" ${h.repite===k?"selected":""}>${v}</option>`).join("")}</select></label>
+    </div>
+    <div class="dos">
+      <label>Hasta (opcional)<input type="date" id="h-hasta" value="${esc(h.hasta)}"></label>
+      <label>Color<select id="h-color">${Object.entries(COLORES_HITO).map(([k,v])=>`<option value="${v}" ${h.color===v?"selected":""}>${k}</option>`).join("")}</select></label>
+    </div>
+    ${h.tarea && tareas.find(x=>x.id===h.tarea) ? `<div class="nota">Asociado a la tarea «${esc(tareas.find(x=>x.id===h.tarea).titulo)}»: se archiva al terminarla.</div>` : ""}
+    <div class="acciones">
+      <span>${id?`<button class="btn danger" id="h-borrar">Borrar</button>`:""}</span>
+      <span><button class="btn" id="h-cancelar">Cancelar</button> <button class="btn main" id="h-guardar">Guardar</button></span>
+    </div>`);
+  $("#h-cancelar").onclick = cerrar;
+  if(id) $("#h-borrar").onclick = e => {
+    if(e.target.dataset.seguro){ const t=tareas.find(x=>x.hito===id); if(t) guardar("tareas", t.id, sinId({...t, hito:""})); borrar("hitos",id); cerrar(); }
+    else { e.target.dataset.seguro=1; e.target.textContent="Pulsa otra vez para borrar"; }
+  };
+  $("#h-guardar").onclick = () => {
+    const nuevo = { ...sinId(h), titulo:$("#h-titulo").value.trim(), fecha:$("#h-fecha").value, repite:$("#h-rep").value,
+                    hasta:$("#h-hasta").value, color:$("#h-color").value, tarea:h.tarea||"", archivado:!!h.archivado, archivadoEl:h.archivadoEl||"" };
+    if(!nuevo.titulo || !nuevo.fecha) return toast("Faltan el título o la fecha");
+    guardar("hitos", id||nuevoId("hitos"), nuevo); cerrar();
+  };
+}
+
+/* =====================================================================
+   EVENTOS Y ARRANQUE
+   ===================================================================== */
+document.addEventListener("click", e => {
+  const t = e.target.closest("button"); if(!t) return;
+  if(t.dataset.personas) return editarPersonas(t.dataset.personas);
+  if(t.dataset.archivar){ archivarHito(t.dataset.archivar, true); return; }
+  if(t.dataset.desarchivar){ archivarHito(t.dataset.desarchivar, false); return; }
+  if(t.dataset.edit) return editarTarea(t.dataset.edit);
+  if(t.id==="nueva-idea") { e.preventDefault(); return editarTarea(); }
+  if(t.dataset.a){
+    const x = tareas.find(z=>z.id===t.dataset.id); if(!x) return;
+    if(t.dataset.a==="reabrir"){ if(x.hito) archivarHito(x.hito, false); return x.carril ? mover(x.id,"Listo para Despliegue",x.carril) : mover(x.id,"Ideas",""); }
+    if(t.dataset.a==="ir") return mover(x.id, t.dataset.c==="redes" ? "Diseño" : "Backlog", t.dataset.c);
+    return siguiente(x, t.dataset.a==="avanza" ? 1 : -1);
+  }
+  if(t.dataset.dia){ diaSel = diaSel===t.dataset.dia ? null : t.dataset.dia; return pintar(); }
+  if(t.dataset.hito) return editarHito(t.dataset.hito);
+  if(t.id==="nuevo-hito") return editarHito();
+  if(t.id==="hito-dia") return editarHito(null, diaSel);
+  if(t.id==="a-ant"){ anio--; return pintar(); }
+  if(t.id==="a-sig"){ anio++; return pintar(); }
+  if(t.id==="a-hoy"){ anio=new Date().getFullYear(); diaSel=HOY; return pintar(); }
+});
+function pestana(v){
+  vista=v; $("#tab-tablero").setAttribute("aria-selected",v==="tablero"); $("#tab-calendario").setAttribute("aria-selected",v==="calendario");
+  try{ localStorage.setItem("tablero-equipo-vista", v); }catch(_){} pintar();
+}
+$("#tab-tablero").onclick = () => pestana("tablero");
+$("#tab-calendario").onclick = () => pestana("calendario");
+const pintar = () => vista==="tablero" ? pintarTablero() : pintarCalendario();
+
+function mostrarAcceso(texto){
+  $("#app").hidden = true; $("#acceso").hidden = false; $("#acceso-texto").textContent = texto;
+}
+function parar(){ desuscribir.forEach(u=>u()); desuscribir = []; tareas = []; hitos = []; }
+function arrancarTablero(){
+  $("#acceso").hidden = true; $("#app").hidden = false;
+  let v = "tablero"; try { v = localStorage.getItem("tablero-equipo-vista") || "tablero"; } catch(_) {}
+  vista = v==="calendario" ? "calendario" : "tablero";
+  $("#tab-tablero").setAttribute("aria-selected", vista==="tablero"); $("#tab-calendario").setAttribute("aria-selected", vista==="calendario");
+  pintar();
+  db = crearAlmacen();
+  const aviso = $("#aviso"); const tiempo = setTimeout(()=>{ aviso.hidden=false; aviso.textContent="Cargando… si tarda, comprueba la conexión."; },10000);
+  const fin = () => { clearTimeout(tiempo); aviso.hidden=true; };
+  const cargado = { tareas:false, hitos:false };
+  const listo = c => { if(cargado[c]) return; cargado[c] = true; if(cargado.tareas && cargado.hitos) copiaDiaria(); };
+  const error = e => { fin(); parar();
+    if(e.code==="permission-denied"){ try{ localStorage.removeItem("tablero-equipo-clave"); }catch(_){} mostrarAcceso("Esa clave no es correcta o ha cambiado. Pide el enlace nuevo del equipo."); }
+    else mostrarAcceso("No se pudo conectar ("+e.code+"). Comprueba la conexión y recarga."); };
+  db.collection("tareas").onSnapshot(s=>{ fin(); tareas=s.docs.map(d=>({id:d.id,...d.data()})); listo("tareas"); if($("#velo").hidden) pintar(); }, error);
+  db.collection("hitos").onSnapshot(s=>{ fin(); hitos=s.docs.map(d=>({id:d.id,...d.data()})); listo("hitos"); if($("#velo").hidden) pintar(); }, error);
+}
+function entrar(clave){
+  clave = (clave||"").trim(); if(!clave) return;
+  CLAVE_EQ = clave; try { localStorage.setItem("tablero-equipo-clave", clave); } catch(_) {}
+  arrancarTablero();
+}
+if(!FIREBASE || !FIREBASE.apiKey){
+  mostrarAcceso("Falta la configuración de Firebase (archivo firebase-config.js).");
+  $("#entrar").hidden = true; $("#clave-in").hidden = true;
+} else {
+  fsdb = initializeFirestore(initializeApp(FIREBASE), { ignoreUndefinedProperties: true });
+  // la clave llega en el enlace (…/equipo/#clave); se guarda en el navegador y se quita de la barra de direcciones
+  let clave = decodeURIComponent(location.hash.replace(/^#/, ""));
+  if(clave){ try{ history.replaceState(null, "", location.pathname); }catch(_){} }
+  else { try { clave = localStorage.getItem("tablero-equipo-clave") || ""; } catch(_) {} }
+  $("#entrar").onclick = () => entrar($("#clave-in").value);
+  $("#clave-in").onkeydown = e => { if(e.key==="Enter") entrar(e.target.value); };
+  if(clave) entrar(clave); else mostrarAcceso("Abre el enlace del equipo o pega aquí la clave.");
+}
+</script>
+</body>
+</html>
