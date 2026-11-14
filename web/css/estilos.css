@@ -435,3 +435,65 @@ details.explica p { margin-top: .5rem; }
 
 .relacionadas { margin-top: 2rem; }
 .relacionadas .seccion__titulo { margin-bottom: .75rem; }
+
+/* ---------- Proponer una obra (#/proponer) ---------- */
+.prop { display: grid; gap: 1.25rem; padding-bottom: 2rem; }
+.prop-grupo { display: grid; gap: .45rem; background: var(--superficie); border: 1px solid var(--linea); border-radius: 14px; padding: 1rem; }
+.prop-grupo .prop-grupo { border: 0; padding: 0; background: none; margin-top: .75rem; }
+.prop-h { font-family: var(--serif); font-size: 1.15rem; color: var(--violeta); }
+.prop-etq { display: grid; gap: .3rem; font-weight: 700; font-size: .9rem; margin-top: .4rem; }
+.prop-etq--sub { font-weight: 600; color: var(--tinta-suave); }
+.prop-ayuda { color: var(--tinta-suave); font-size: .875rem; }
+.prop-campo, .sel__caja input, .sel__filtro {
+  width: 100%; min-height: 2.75rem; padding: .55rem .75rem; font: inherit; font-size: 16px;
+  color: var(--tinta); background: var(--papel); border: 1px solid var(--linea); border-radius: 10px;
+}
+textarea.prop-campo { resize: vertical; }
+.prop-campo:focus, .sel__caja input:focus, .sel__filtro:focus { outline: 2px solid var(--lila); outline-offset: 1px; }
+.prop-fila { display: flex; gap: .5rem; }
+.prop-fila .prop-campo { flex: 1; }
+.prop-dos { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; }
+.prop-dos > * { min-width: 0; }
+.prop-radio { border: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; padding: 0; }
+.prop-radio legend { margin-bottom: .3rem; }
+.prop-radio label { display: flex; align-items: center; gap: .4rem; min-height: 2.25rem; }
+.prop-radio--col { flex-direction: column; gap: .35rem; }
+.prop-radio--col label { align-items: flex-start; font-size: .9rem; }
+.prop-radio input, .sel__op input { accent-color: var(--violeta); width: 1.15rem; height: 1.15rem; flex: none; }
+.prop-poster { width: 120px; border-radius: 8px; box-shadow: var(--sombra); margin-top: .5rem; }
+.prop-res { list-style: none; padding: 0; display: grid; gap: .4rem; }
+.prop-res button {
+  display: flex; gap: .75rem; align-items: center; width: 100%; text-align: left; font: inherit; color: inherit;
+  background: var(--papel); border: 1px solid var(--linea); border-radius: 10px; padding: .4rem; cursor: pointer;
+}
+.prop-res button:hover, .prop-res button:focus-visible { border-color: var(--lila); }
+.prop-res img, .prop-res__sin { width: 46px; height: 69px; object-fit: cover; border-radius: 6px; background: var(--suave); flex: none; }
+.prop-error { color: var(--alerta-texto); font-weight: 700; min-height: 1em; }
+.prop-enviar { justify-self: start; }
+.prop-enviar[disabled], #btn-buscar[disabled] { opacity: .5; }
+.prop-trampa { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.prop-gracias .acciones, .prop-gracias p + p { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+/* selector de etiquetas: caja con sugerencias + «Ver todas» plegado */
+.sel__elegidas { display: flex; flex-wrap: wrap; gap: .35rem; }
+.sel__elegidas:empty { display: none; }
+.sel__chip {
+  display: inline-flex; align-items: center; gap: .25rem; padding: .2rem .25rem .2rem .7rem;
+  background: var(--suave); border: 1px solid var(--lila); border-radius: 999px; font-size: .875rem;
+}
+.sel__chip button { border: 0; background: none; color: var(--violeta); font-size: .9rem; min-width: 2rem; min-height: 2rem; cursor: pointer; }
+.sel__caja { position: relative; }
+.sel__sug {
+  position: absolute; z-index: 5; left: 0; right: 0; top: calc(100% + 4px); list-style: none; padding: .25rem;
+  background: var(--superficie); border: 1px solid var(--linea); border-radius: 10px; box-shadow: var(--sombra);
+  max-height: 16rem; overflow-y: auto;
+}
+.sel__sug li { padding: .6rem .7rem; border-radius: 8px; cursor: pointer; }
+.sel__sug li[aria-selected="true"], .sel__sug li[data-v]:hover { background: var(--suave); }
+.sel__nada { color: var(--tinta-suave); font-size: .875rem; cursor: default; }
+.sel__todas summary { cursor: pointer; color: var(--violeta); font-weight: 700; padding: .4rem 0; min-height: 2.25rem; }
+.sel__filtro { margin: .25rem 0 .5rem; }
+.sel__lista { max-height: 18rem; overflow-y: auto; display: grid; gap: .1rem; border: 1px solid var(--linea); border-radius: 10px; padding: .4rem; }
+.sel__op { display: flex; align-items: center; gap: .5rem; padding: .35rem .25rem; font-size: .925rem; }
+.sel__op[hidden] { display: none; }
+@media (min-width: 40rem) { .sel__lista { grid-template-columns: 1fr 1fr; } }

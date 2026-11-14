@@ -205,7 +205,7 @@
   const hoyISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
   function campana() {
     const c = CFG.campana;
-    if (!c || !CFG.formularioAltas || !seguro(CFG.formularioAltas)) return null;
+    if (!c || !hayAltas()) return null;
     const hoy = hoyISO();
     if (hoy < c.desde || hoy > c.hasta) return null;
     const hechas = E.obras.filter((o) => o.publicada && o.publicada.slice(0, 10) >= c.desde).length;
@@ -227,14 +227,18 @@
           <progress class="campana__barra" max="${k.c.objetivo}" value="${Math.min(k.hechas, k.c.objetivo)}" aria-label="Obras nuevas conseguidas"></progress>
           <p class="campana__cuenta">${Math.min(k.hechas, k.c.objetivo)} de ${k.c.objetivo} obras nuevas</p>
           <div class="acciones">
-            <a class="boton" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">Añadir una obra ${ICONO.fuera}</a>
+            ${botonAltas("Añadir una obra", "boton")}
             <button class="boton boton--claro" type="button" data-accion="cerrar-campana">Ahora no</button>
           </div>
         </div>
       </aside>`;
   }
-  const enlaceAltas = (texto) => (CFG.formularioAltas && seguro(CFG.formularioAltas)
-    ? `<a class="boton boton--claro" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">${texto} ${ICONO.fuera}</a>` : "");
+  // Si config.js tiene «proponer», las altas van a la pantalla propia #/proponer; si no, al Google Form.
+  const hayAltas = () => !!CFG.proponer || !!(CFG.formularioAltas && seguro(CFG.formularioAltas));
+  const botonAltas = (texto, clase) => CFG.proponer
+    ? `<a class="${clase}" href="#/proponer">${texto}</a>`
+    : `<a class="${clase}" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">${texto} ${ICONO.fuera}</a>`;
+  const enlaceAltas = (texto) => (hayAltas() ? botonAltas(texto, "boton boton--claro") : "");
 
   // ---------- Vistas ----------
   function vistaInicio() {
@@ -321,7 +325,7 @@
     if (n) pintarPorTandas(lista); else $("#resultados").innerHTML = `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
         <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
-        ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
+        ${hayAltas() ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
     $$('[data-tipo]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tipo === f.tipo)));
     $("#ordenar").value = f.orden;
     ajustarCabecera();
@@ -579,9 +583,11 @@
           <p class="resumen" style="margin-bottom:.75rem">${n ? (n === 1 ? "Estás evitando 1 aviso." : `Estás evitando ${n} avisos.`) : "Ahora mismo no evitas ningún aviso."}</p>
           <button class="boton" type="button" data-accion="abrir-evitar">Elegir avisos a evitar</button>
         </section>
-        ${CFG.formularioAltas ? `<section class="bloque" aria-labelledby="a5"><h2 id="a5">Ayúdanos a crecer</h2>
+        ${hayAltas() ? `<section class="bloque" aria-labelledby="a5"><h2 id="a5">Ayúdanos a crecer</h2>
           <p style="margin-bottom:.75rem">¿Falta alguna serie o película con representación lésbica o bisexual? Propónla con un formulario y la revisaremos.</p>
           ${enlaceAltas("Añadir una obra")}</section>` : ""}
+        ${CFG.proponer ? `<section class="bloque" aria-labelledby="a6"><h2 id="a6">Créditos</h2>
+          <p>La pantalla «Proponer una obra» rellena datos con la API de <a class="enlace-suave" href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p></section>` : ""}
         <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
           <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
           <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
@@ -755,6 +761,12 @@
       + t("#/favoritos", ruta === "/favoritos", ICONO.corazon.replace("<svg ", '<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" '), "Favoritos");
   }
 
+  // La pantalla «Proponer una obra» solo se descarga cuando alguien la abre.
+  const cargarProponer = () => (window.SafotecaProponer ? Promise.resolve() : (cargarProponer.p ||= new Promise((ok, mal) => {
+    const s = document.createElement("script"); s.src = "js/proponer.js"; s.onload = ok;
+    s.onerror = () => { cargarProponer.p = null; mal(); }; document.head.appendChild(s);
+  })));
+
   function pintar(arriba = true) {
     const { ruta, p } = rutaActual();
     const vista = $("#vista");
@@ -770,6 +782,11 @@
       vista.innerHTML = vistaFavoritos(p); titulo = "Favoritos"; doc = titulo + " · " + doc;
     } else if (ruta === "/ajustes") {
       vista.innerHTML = vistaAjustes(); titulo = "Ajustes"; doc = titulo + " · " + doc;
+    } else if (ruta === "/proponer" && CFG.proponer) {
+      titulo = "Proponer una obra"; doc = titulo + " · " + doc;
+      vista.innerHTML = '<p class="cargando">Cargando el formulario…</p>';
+      cargarProponer().then(() => window.SafotecaProponer.pintar(vista, { CFG, OBRAS: E.obras }))
+        .catch(() => { vista.innerHTML = '<div class="vacio"><p>No hemos podido cargar el formulario. Comprueba tu conexión.</p></div>'; });
     } else if (ruta.startsWith("/obra/")) {
       const id = parseInt(ruta.split("/")[2], 10);
       vista.innerHTML = vistaObra(id);

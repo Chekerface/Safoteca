@@ -50,8 +50,20 @@ def relevancia():
     return {k: re.search(rf'{k}:\s*"([^"]+)"', txt).group(1) for k in "ABC"}
 
 
+WEB_JSON = RAIZ / "web" / "data" / "formulario.json"
+
+
+def json_web(db):
+    """Listas para la pantalla «Proponer una obra» de la web (web/data/formulario.json)."""
+    datos = {"generos": lista(db, "genero"), "tematicas": lista(db, "tematica"), "avisos": lista(db, "aviso"),
+             "relevancia": relevancia(), "edades": ["TP", "7", "11", "12", "13", "14", "15", "16", "17", "18"]}
+    WEB_JSON.write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    print(f"Escrito {WEB_JSON.relative_to(RAIZ)} ({WEB_JSON.stat().st_size // 1024} KB)")
+
+
 def main():
     db = sqlite3.connect(DB_DEFECTO)
+    json_web(db)
     datos = {
         "generos": trozos(lista(db, "genero"), "Género"),
         "tematicas": trozos(lista(db, "tematica"), "Temática"),
