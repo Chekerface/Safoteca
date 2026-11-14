@@ -41,12 +41,26 @@ jobs:
             node --check /tmp/uat/web/js/app.js
             mkdir -p web/uat
             cp -r /tmp/uat/web/. web/uat/
-            rm -f web/uat/robots.txt
-            printf 'User-agent: *\nDisallow: /uat/\n' > web/robots.txt
+            rm -f web/uat/robots.txt web/uat/sitemap.xml
             echo "Versión de pruebas añadida en /uat/"
           else
             echo "No hay rama uat: se publica solo la web normal"
           fi
+      - name: robots.txt y sitemap.xml (solo PRO; PRE no se indexa)
+        run: |
+          { echo "User-agent: *"; [ -d web/uat ] && echo "Disallow: /uat/"; echo ""; echo "Sitemap: https://www.lasafoteca.com/sitemap.xml"; } > web/robots.txt
+          python3 - <<'PY'
+          import json
+          fecha = json.load(open("web/data/obras.json", encoding="utf-8"))["meta"]["generado"][:10]
+          urls = [("https://www.lasafoteca.com/", fecha)]
+          with open("web/sitemap.xml", "w", encoding="utf-8") as f:
+              f.write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n')
+              for u, d in urls:
+                  f.write(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>\n")
+              f.write("</urlset>\n")
+          print(f"sitemap.xml: {len(urls)} direcciones")
+          PY
+          cat web/robots.txt
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
