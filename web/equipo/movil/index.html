@@ -202,8 +202,16 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
   .cal-nav h2{font-size:17px;min-width:0;flex:1}
   .hito{flex-wrap:wrap}
   /* ventanas a pantalla completa y botón + flotante */
-  #velo{padding:0;align-items:stretch}
-  .ventana{width:100%;max-height:none;height:100%;border-radius:0;padding:16px 16px max(24px,env(safe-area-inset-bottom,0px))}
+  /* ventana como hoja desde abajo: solo lo alto que necesita, con su propio scroll */
+  #velo{padding:0;align-items:flex-end}
+  .ventana{width:100%;max-height:88dvh;border-radius:18px 18px 0 0;padding:12px 16px max(18px,env(safe-area-inset-bottom,0px));gap:10px;overscroll-behavior:contain}
+  .ventana::before{content:"";align-self:center;width:40px;height:4px;border-radius:2px;background:var(--line);margin-bottom:2px}
+  /* 16 px en los campos: así el iPhone no hace zoom al escribir y no hay que reajustar la pantalla */
+  input[type=text],input[type=date],select,textarea{font-size:16px}
+  .mas-opciones{border-top:1px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:10px}
+  .mas-opciones summary{cursor:pointer;font:700 13px var(--f-mono);color:var(--strong);padding:6px 0}
+  .mas-opciones > *:not(summary){margin-top:10px}
+  .ventana .perfil{width:84px;padding:8px 6px} .ventana .perfil img{width:46px;height:46px}
   .ventana .acciones{position:sticky;bottom:0;background:var(--card);padding-top:10px}
   .dos{grid-template-columns:1fr}
   #fab{display:flex;position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;background:var(--strong);color:var(--bg);font:400 32px/1 var(--f-body);align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:15}
@@ -486,8 +494,8 @@ function tarjeta(t, enIdeas){
     ${sem?`<div class="puntos" title="${sem} semana${sem>1?"s":""} en el tablero">${pts}${sem>12?`<b>+${sem-12}</b>`:""}</div>`:""}
     ${t.bloqueada?`<div class="bloqueo">⛔ Bloqueada${t.motivo?": "+esc(t.motivo):""}</div>`:""}
     <div class="pie">${enIdeas
-      ? `<button class="btn small" data-a="ir" data-id="${t.id}" data-c="principal">→ Carril 1</button>
-         <button class="btn small" data-a="ir" data-id="${t.id}" data-c="redes">→ Carril 2</button>`
+      ? `<button class="btn small" data-a="ir" data-id="${t.id}" data-c="principal">→ Web y datos</button>
+         <button class="btn small" data-a="ir" data-id="${t.id}" data-c="redes">→ Series e Instagram</button>`
       : `${esMovil()?`<button class="btn small" data-mover-mov="${t.id}">Mover a…</button><span>`:""}<button class="btn small" data-a="atras" data-id="${t.id}" aria-label="Columna anterior">‹</button>
          <button class="btn small" data-a="avanza" data-id="${t.id}" aria-label="${t.columna==="Listo para Despliegue"?"Marcar como terminada":"Columna siguiente"}" title="${t.columna==="Listo para Despliegue"?(ev&&!ev.archivado?"Terminar y archivar su evento":"Marcar como terminada"):"Siguiente columna"}">${t.columna==="Listo para Despliegue"?"✔":"›"}</button>${esMovil()?"</span>":""}`}
     </div></article>`;
@@ -672,7 +680,17 @@ document.addEventListener("drop", e => {
 /* =====================================================================
    VENTANAS DE EDICIÓN
    ===================================================================== */
-function abrirVentana(html){ const v=$("#velo"); v.innerHTML=`<div class="ventana" role="dialog" aria-modal="true">${html}</div>`; v.hidden=false; v.querySelector("input,select")?.focus(); }
+/* móvil: lo que casi nunca se toca va dentro de «Más opciones» (cerrado al crear, abierto al editar) */
+function plegarOpciones(cerrado){
+  const v = $("#velo .ventana"), acc = v.querySelector(".acciones");
+  const d = document.createElement("details"); d.className = "mas-opciones"; if(!cerrado) d.open = true;
+  d.innerHTML = "<summary>Más opciones</summary>";
+  const cajas = ["#f-inicio","#f-donde","#f-lim","#f-evento","#f-nuevo-ev","#f-urg","#f-bloq","#f-motivo"]
+    .map(sel => { const el = v.querySelector(sel); return el && (el.id==="f-nuevo-ev" ? el : el.closest("label")); }).filter(Boolean);
+  cajas.forEach(c => d.appendChild(c));
+  v.insertBefore(d, acc);
+}
+function abrirVentana(html){ const v=$("#velo"); v.innerHTML=`<div class="ventana" role="dialog" aria-modal="true">${html}</div>`; v.hidden=false; if(!esMovil()) v.querySelector("input,select")?.focus(); }
 function cerrar(){ $("#velo").hidden=true; $("#velo").innerHTML=""; pintar(); }
 $("#velo").addEventListener("click", e => { if(e.target.id==="velo") cerrar(); });
 document.addEventListener("keydown", e => { if(e.key==="Escape") cerrar(); });
@@ -687,7 +705,7 @@ function editarTarea(id){
   const opciones = [`<option value="Ideas|" ${t.columna==="Ideas"?"selected":""}>Ideas</option>`];
   opciones.push(`<option value="Terminada|${esc(t.carril||"")}" ${t.columna==="Terminada"?"selected":""}>Terminada</option>`);
   for(const [k,c] of Object.entries(CARRILES)) for(const col of c.activas)
-    opciones.push(`<option value="${esc(col)}|${k}" ${t.columna===col&&t.carril===k?"selected":""}>${k==="principal"?"Carril 1":"Carril 2"} · ${col}</option>`);
+    opciones.push(`<option value="${esc(col)}|${k}" ${t.columna===col&&t.carril===k?"selected":""}>${k==="principal"?"Web y datos":"Series e Instagram"} · ${col}</option>`);
   abrirVentana(`<h3>${id?"Editar tarea":"Nueva idea"}</h3>
     <label>Título<input type="text" id="f-titulo" value="${esc(t.titulo)}"></label>
     <div class="dos">
@@ -710,6 +728,7 @@ function editarTarea(id){
       <span><button class="btn" id="f-cancelar">Cancelar</button> <button class="btn main" id="f-guardar">Guardar</button></span>
     </div>`);
   $("#f-cancelar").onclick = cerrar;
+  if(esMovil()) plegarOpciones(!id);
   $("#f-evento").onchange = e => { $("#f-nuevo-ev").hidden = e.target.value!=="__nuevo"; };
   if(id) $("#f-borrar").onclick = e => {
     if(e.target.dataset.seguro){ const ev=hitoDe(t); if(ev && ev.tarea===id) guardar("hitos", ev.id, sinId({...ev, tarea:""})); borrar("tareas",id); cerrar(); }
