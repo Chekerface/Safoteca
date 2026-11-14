@@ -162,6 +162,61 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
 #toast{position:fixed;left:50%;transform:translateX(-50%);bottom:max(20px,env(safe-area-inset-bottom,0px));background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:99px;z-index:30;font-weight:600;max-width:90vw}
 #toast[hidden]{display:none}
 @media (min-width:700px){#velo{align-items:center}}
+/* ===== VERSIÓN MÓVIL (prueba) — solo cambia por debajo de 700 px ===== */
+.prueba{background:var(--strong);color:var(--bg);font:600 12px var(--f-mono);text-align:center;padding:6px 10px;border-radius:8px;margin-bottom:10px}
+.prueba a{color:inherit}
+#mas,#fab,.solo-movil{display:none}
+@media (max-width:699px){
+  body{padding-inline:max(12px,env(safe-area-inset-left,0px)) max(12px,env(safe-area-inset-right,0px));padding-bottom:96px}
+  header{position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0;margin-bottom:8px;gap:8px;flex-wrap:nowrap}
+  h1{font-size:16px} h1 small{display:none}
+  .tabs button{padding:8px 12px}
+  #mas{display:inline-flex;min-width:44px;min-height:40px;justify-content:center;align-items:center}
+  header > .fila{display:none;position:absolute;right:0;top:100%;flex-direction:column;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);min-width:220px}
+  header.menu-abierto > .fila{display:flex}
+  header > .fila .btn{min-height:44px;text-align:left}
+  .solo-movil{display:block}
+  .leyenda{display:none}
+  .btn.small{min-height:40px;min-width:40px;padding:6px 12px;font-size:14px}
+  .ideas-body{grid-template-columns:1fr}
+  /* tablero: un carril y una columna cada vez */
+  .seg{display:flex;gap:4px;background:var(--soft);padding:4px;border-radius:10px;margin-bottom:10px}
+  .seg button{flex:1;border:0;background:none;padding:10px 6px;border-radius:7px;font:600 14px var(--f-body);color:var(--muted)}
+  .seg button[aria-pressed="true"]{background:var(--card);color:var(--fg);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+  .seg .wip{margin-left:6px}
+  .chips-col{display:flex;gap:6px;overflow-x:auto;padding:2px 0 10px;scrollbar-width:none;scroll-snap-type:x proximity}
+  .chips-col::-webkit-scrollbar{display:none}
+  .chips-col button{flex:none;scroll-snap-align:start;border:1px solid var(--line);background:var(--card);border-radius:99px;padding:8px 14px;font:600 13px var(--f-body);color:var(--muted);min-height:40px}
+  .chips-col button b{font-family:var(--f-mono);margin-left:4px;color:var(--fg)}
+  .chips-col button[aria-pressed="true"]{background:var(--strong);border-color:var(--strong);color:var(--bg)}
+  .chips-col button[aria-pressed="true"] b{color:var(--bg)}
+  .columna-movil{display:flex;flex-direction:column;gap:10px;min-height:120px;touch-action:pan-y}
+  .columna-movil .vacio{text-align:center;padding:28px 8px;border:1px dashed var(--line);border-radius:12px}
+  .tarjeta{cursor:default}
+  .pie{justify-content:space-between}
+  /* calendario: agenda arriba, un solo mes */
+  .agenda h4{margin:14px 0 4px;font:700 11px var(--f-mono);text-transform:uppercase;letter-spacing:.6px;color:var(--muted)}
+  .agenda h4.pasado{color:var(--crit)}
+  .mes-movil .sem{gap:4px}
+  .mes-movil .dia{min-height:44px;font-size:14px}
+  .cal-nav h2{font-size:17px;min-width:0;flex:1}
+  .hito{flex-wrap:wrap}
+  /* ventanas a pantalla completa y botón + flotante */
+  /* ventana como hoja desde abajo: solo lo alto que necesita, con su propio scroll */
+  #velo{padding:0;align-items:flex-end}
+  .ventana{width:100%;max-height:88dvh;border-radius:18px 18px 0 0;padding:12px 16px max(18px,env(safe-area-inset-bottom,0px));gap:10px;overscroll-behavior:contain}
+  .ventana::before{content:"";align-self:center;width:40px;height:4px;border-radius:2px;background:var(--line);margin-bottom:2px}
+  /* 16 px en los campos: así el iPhone no hace zoom al escribir y no hay que reajustar la pantalla */
+  input[type=text],input[type=date],select,textarea{font-size:16px}
+  .mas-opciones{border-top:1px solid var(--line);padding-top:8px;display:flex;flex-direction:column;gap:10px}
+  .mas-opciones summary{cursor:pointer;font:700 13px var(--f-mono);color:var(--strong);padding:6px 0}
+  .mas-opciones > *:not(summary){margin-top:10px}
+  .ventana .perfil{width:84px;padding:8px 6px} .ventana .perfil img{width:46px;height:46px}
+  .ventana .acciones{position:sticky;bottom:0;background:var(--card);padding-top:10px}
+  .dos{grid-template-columns:1fr}
+  #fab{display:flex;position:fixed;right:max(16px,env(safe-area-inset-right,0px));bottom:max(20px,env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;border:0;background:var(--strong);color:var(--bg);font:400 32px/1 var(--f-body);align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:15}
+  #toast{bottom:max(92px,env(safe-area-inset-bottom,0px))}
+}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 .acceso{max-width:420px;margin:12vh auto 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:14px;text-align:center}
 .acceso img{width:84px;margin:0 auto}
@@ -184,6 +239,7 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
     <button role="tab" id="tab-tablero" aria-selected="true">Tablero</button>
     <button role="tab" id="tab-calendario" aria-selected="false">Calendario</button>
   </div>
+  <button class="btn" id="mas" aria-label="Más opciones" aria-expanded="false">⋯</button>
   <div class="fila">
     <span class="fecha" id="estado-copia"></span>
     <button class="btn small" id="copias">🗂 Copias diarias</button>
@@ -194,6 +250,7 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
 </header>
 <div id="aviso" hidden></div>
 <main id="vista"></main>
+<button id="fab" aria-label="Nueva">+</button>
 <div id="velo" hidden></div>
 <div id="toast" hidden></div>
 </div>
@@ -436,10 +493,10 @@ function tarjeta(t, enIdeas){
     ${sem?`<div class="puntos" title="${sem} semana${sem>1?"s":""} en el tablero">${pts}${sem>12?`<b>+${sem-12}</b>`:""}</div>`:""}
     ${t.bloqueada?`<div class="bloqueo">⛔ Bloqueada${t.motivo?": "+esc(t.motivo):""}</div>`:""}
     <div class="pie">${enIdeas
-      ? `<button class="btn small" data-a="ir" data-id="${t.id}" data-c="principal">→ Carril 1</button>
-         <button class="btn small" data-a="ir" data-id="${t.id}" data-c="redes">→ Carril 2</button>`
-      : `<button class="btn small" data-a="atras" data-id="${t.id}" aria-label="Columna anterior">‹</button>
-         <button class="btn small" data-a="avanza" data-id="${t.id}" aria-label="${t.columna==="Listo para Despliegue"?"Marcar como terminada":"Columna siguiente"}" title="${t.columna==="Listo para Despliegue"?(ev&&!ev.archivado?"Terminar y archivar su evento":"Marcar como terminada"):"Siguiente columna"}">${t.columna==="Listo para Despliegue"?"✔":"›"}</button>`}
+      ? `<button class="btn small" data-a="ir" data-id="${t.id}" data-c="principal">→ Web y datos</button>
+         <button class="btn small" data-a="ir" data-id="${t.id}" data-c="redes">→ Series e Instagram</button>`
+      : `${esMovil()?`<button class="btn small" data-mover-mov="${t.id}">Mover a…</button><span>`:""}<button class="btn small" data-a="atras" data-id="${t.id}" aria-label="Columna anterior">‹</button>
+         <button class="btn small" data-a="avanza" data-id="${t.id}" aria-label="${t.columna==="Listo para Despliegue"?"Marcar como terminada":"Columna siguiente"}" title="${t.columna==="Listo para Despliegue"?(ev&&!ev.archivado?"Terminar y archivar su evento":"Marcar como terminada"):"Siguiente columna"}">${t.columna==="Listo para Despliegue"?"✔":"›"}</button>${esMovil()?"</span>":""}`}
     </div></article>`;
 }
 
@@ -456,7 +513,124 @@ function tarjetaFin(t){
     <div class="pie"><button class="btn small" data-a="reabrir" data-id="${t.id}">↩ Reabrir</button></div></article>`;
 }
 
+/* =====================================================================
+   VERSIÓN MÓVIL (prueba): por debajo de 700 px se pinta distinto
+   ===================================================================== */
+const MQ = matchMedia("(max-width:699px)");
+const esMovil = () => MQ.matches;
+MQ.addEventListener?.("change", () => { if($("#velo").hidden) pintar(); });
+const recordar = (k,v) => { try{ localStorage.setItem("tablero-movil-"+k, v); }catch(_){} };
+const recuerdo = (k,d) => { try{ return localStorage.getItem("tablero-movil-"+k) || d; }catch(_){ return d; } };
+let carrilMov = recuerdo("carril","principal");
+const colMov = { principal: recuerdo("col-principal",""), redes: recuerdo("col-redes","") };
+const hoyD = new Date(HOY+"T00:00:00");
+let mesMov = { a: hoyD.getFullYear(), m: hoyD.getMonth() };
+
+function pintarTableroMovil(){
+  const ideas = tareas.filter(t=>t.columna==="Ideas").sort((a,b)=>(a.creada||0)-(b.creada||0));
+  const hechas = tareas.filter(t=>t.columna==="Terminada").sort((a,b)=>(a.fin||"")<(b.fin||"")?1:-1);
+  const abierto = $("#zona-ideas")?.open ?? false, abiertoFin = $("#zona-term")?.open ?? false;
+  const c = CARRILES[carrilMov];
+  const cuenta = col => tareas.filter(t=>t.carril===carrilMov && t.columna===col).length;
+  // columna elegida: la recordada, o la primera con tarjetas en curso
+  let col = colMov[carrilMov];
+  if(!c.activas.includes(col)) col = c.activas.find(x=>c.cuentanWip.includes(x) && cuenta(x)) || c.activas.find(x=>cuenta(x)) || c.activas[0];
+  colMov[carrilMov] = col;
+  const lista = tareas.filter(t=>t.carril===carrilMov && t.columna===col).sort((a,b)=>(a.creada||0)-(b.creada||0));
+  let h = `<div class="seg" role="group" aria-label="Carril">${Object.entries(CARRILES).map(([k,x])=>{ const n=enWip(k).length;
+      return `<button data-carril-mov="${k}" aria-pressed="${k===carrilMov}">${k==="principal"?"Web y datos":"Series e Instagram"}<span class="wip ${n>=x.wip?"lleno":""}">${n}/${x.wip}</span></button>`; }).join("")}</div>
+    <div class="chips-col" role="group" aria-label="Columna">${c.activas.map(x=>`<button data-col-mov="${esc(x)}" aria-pressed="${x===col}">${x}<b>${cuenta(x)}</b></button>`).join("")}</div>
+    <div class="columna-movil" id="col-movil">${lista.map(t=>tarjeta(t,false)).join("") || `<div class="vacio">Nada en «${esc(col)}».</div>`}</div>
+    <details class="ideas" id="zona-ideas" ${abierto?"open":""} style="margin-top:22px">
+      <summary>Ideas <span class="wip">${ideas.length}</span></summary>
+      <div class="ideas-body">${ideas.map(t=>tarjeta(t,true)).join("")||`<div class="vacio">No hay ideas. Pulsa «+».</div>`}</div></details>
+    <details class="ideas terminadas" id="zona-term" ${abiertoFin?"open":""}>
+      <summary>Terminadas <span class="wip">${hechas.length}</span></summary>
+      <div class="ideas-body">${hechas.map(tarjetaFin).join("")||`<div class="vacio">Aún no hay tareas terminadas.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+  // deslizar a izquierda/derecha cambia de columna
+  const zona = $("#col-movil"); let x0 = null, y0 = null;
+  zona.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+  zona.addEventListener("touchend", e => {
+    if(x0===null) return; const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+    if(Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy)*1.5) return;
+    const i = c.activas.indexOf(col) + (dx<0 ? 1 : -1);
+    if(i>=0 && i<c.activas.length){ colMov[carrilMov] = c.activas[i]; recordar("col-"+carrilMov, c.activas[i]); pintar(); }
+  }, {passive:true});
+}
+function moverA(id){
+  const t = tareas.find(x=>x.id===id); if(!t) return;
+  const destinos = [["Ideas",""], ...CARRILES[t.carril||"principal"].activas.map(c=>[c,t.carril||"principal"]), ["Terminada",t.carril]];
+  abrirVentana(`<h3>Mover «${esc(t.titulo)}»</h3>
+    <div class="perfiles" style="flex-direction:column">${destinos.map(([c,k])=>`<button class="btn" style="text-align:left;min-height:48px" data-mover-a="${esc(c)}" data-carril-a="${k||""}" ${c===t.columna?"disabled":""}>${c===t.columna?"● ":""}${c}</button>`).join("")}</div>
+    <div class="acciones"><span></span><button class="btn" id="m-cancelar">Cancelar</button></div>`);
+  $("#m-cancelar").onclick = cerrar;
+  document.querySelectorAll("[data-mover-a]").forEach(b => b.onclick = () => {
+    const ok = b.dataset.moverA==="Ideas" ? mover(id,"Ideas","") : mover(id, b.dataset.moverA, b.dataset.carrilA);
+    if(ok!==false){ if(t.carril){ colMov[t.carril] = b.dataset.moverA; recordar("col-"+t.carril, b.dataset.moverA); } cerrar(); }
+  });
+}
+/* próxima vez que ocurre un hito, a partir de hoy (para los que se repiten) */
+function proxima(h){
+  if((h.repite||"unico")==="unico") return h.fecha;
+  for(let i=0;i<400;i++){ const d=new Date(hoyD); d.setDate(d.getDate()+i); const k=iso(d); if(ocurre(h,k)) return k; if(h.hasta && k>h.hasta) break; }
+  return null;
+}
+function pintarCalendarioMovil(){
+  const finSemana = 7 - ((hoyD.getDay()+6)%7) - 1;          // días hasta el domingo
+  const grupos = { "Pasados sin archivar":[], "Esta semana":[], "La semana que viene":[], "Más adelante":[] };
+  for(const h of hitos.filter(x=>!x.archivado)){
+    const f = proxima(h); if(!f) continue; const d = dias(HOY,f);
+    const g = d<0 ? "Pasados sin archivar" : d<=finSemana ? "Esta semana" : d<=finSemana+7 ? "La semana que viene" : "Más adelante";
+    grupos[g].push({...h, fecha:f});
+  }
+  const arch = hitos.filter(x=>x.archivado).sort((a,b)=>(a.archivadoEl||a.fecha)<(b.archivadoEl||b.fecha)?1:-1);
+  const abiertoArch = $("#zona-arch")?.open ?? false;
+  const total = Object.values(grupos).reduce((n,l)=>n+l.length,0);
+  let h = `<div class="panel agenda" style="margin-top:0"><h3>Pendientes <span class="wip">${total}</span></h3>`;
+  for(const [g,l] of Object.entries(grupos)){
+    if(!l.length) continue;
+    l.sort((a,b)=>a.fecha<b.fecha?-1:1);
+    h += `<h4 class="${g.startsWith("Pasados")?"pasado":""}">${g}</h4>${l.map(x=>fila(hitos.find(y=>y.id===x.id))).join("")}`;
+  }
+  if(!total) h += `<div class="vacio">No hay hitos pendientes. Pulsa «+».</div>`;
+  h += `</div>`;
+  // un solo mes
+  const {a, m} = mesMov, primero = new Date(a,m,1), vacios = (primero.getDay()+6)%7, n = new Date(a,m+1,0).getDate();
+  h += `<div class="panel mes-movil"><div class="cal-nav" style="margin-bottom:8px"><button class="btn" id="m-ant" aria-label="Mes anterior">‹</button>
+    <h2>${MESES[m]} ${a}</h2><button class="btn" id="m-hoy">Hoy</button><button class="btn" id="m-sig" aria-label="Mes siguiente">›</button></div>
+    <div class="sem">${DIAS.map(d=>`<span class="d">${d}</span>`).join("")}${"<span></span>".repeat(vacios)}`;
+  for(let d=1; d<=n; d++){
+    const k = `${a}-${pad(m+1)}-${pad(d)}`, hs = hitosDe(k).slice(0,3);
+    h += `<button class="dia ${k===HOY?"hoy":""} ${k===diaSel?"sel":""}" data-dia="${k}">${d}<span class="p">${hs.map(x=>`<i class="${x.archivado?"arch":""}" style="--cc:${x.color||"var(--c1)"}"></i>`).join("")}</span></button>`;
+  }
+  h += `</div>`;
+  if(diaSel && diaSel.slice(0,7)===`${a}-${pad(m+1)}`){
+    const d = fecha(diaSel), lista = hitosDe(diaSel);
+    h += `<h3 style="margin-top:14px">${DIAS_LARGO[d.getDay()]} ${d.getDate()} de ${MESES[d.getMonth()].toLowerCase()}</h3>
+      ${lista.map(fila).join("")||`<div class="vacio">Nada este día.</div>`}
+      <div style="margin-top:10px"><button class="btn small" id="hito-dia">+ Añadir hito este día</button></div>`;
+  }
+  h += `</div>
+    <details class="ideas terminadas" id="zona-arch" ${abiertoArch?"open":""} style="margin-top:18px">
+    <summary>Hitos archivados <span class="wip">${arch.length}</span></summary>
+    <div style="padding:0 16px 12px">${arch.map(fila).join("")||`<div class="vacio">Aquí van los hitos archivados.</div>`}</div></details>`;
+  $("#vista").innerHTML = h;
+}
+document.addEventListener("click", e => {
+  const b = e.target.closest?.("button"); if(!b) return;
+  if(b.dataset.carrilMov){ carrilMov = b.dataset.carrilMov; recordar("carril", carrilMov); return pintar(); }
+  if(b.dataset.colMov){ colMov[carrilMov] = b.dataset.colMov; recordar("col-"+carrilMov, b.dataset.colMov); return pintar(); }
+  if(b.dataset.moverMov) return moverA(b.dataset.moverMov);
+  if(b.id==="m-ant"||b.id==="m-sig"){ const d=new Date(mesMov.a, mesMov.m+(b.id==="m-sig"?1:-1), 1); mesMov={a:d.getFullYear(), m:d.getMonth()}; return pintar(); }
+  if(b.id==="m-hoy"){ mesMov={a:hoyD.getFullYear(), m:hoyD.getMonth()}; diaSel=HOY; return pintar(); }
+  if(b.id==="mas"){ const hd=b.closest("header"); hd.classList.toggle("menu-abierto"); b.setAttribute("aria-expanded", hd.classList.contains("menu-abierto")); return; }
+  if(b.id==="fab") return vista==="tablero" ? editarTarea() : editarHito(null, diaSel||HOY);
+});
+document.addEventListener("click", e => { const hd=$("header"); if(hd.classList.contains("menu-abierto") && !e.target.closest("#mas") && (!e.target.closest("header > .fila") || e.target.closest("header > .fila button"))) { hd.classList.remove("menu-abierto"); $("#mas").setAttribute("aria-expanded","false"); } });
+
 function pintarTablero(){
+  if(esMovil()) return pintarTableroMovil();
   const ideas = tareas.filter(t=>t.columna==="Ideas").sort((a,b)=>(a.creada||0)-(b.creada||0));
   const abierto = $("#zona-ideas")?.open ?? true, abiertoFin = $("#zona-term")?.open ?? false;
   let h = `<div class="leyenda"><span><i class="sw fija"></i>Morada: fecha fija</span><span><i class="sw urgente"></i>Roja: urgente (solo una, ignora el WIP)</span><span><i class="sw bloq"></i>Rayada ámbar: bloqueada</span></div>
@@ -505,7 +679,17 @@ document.addEventListener("drop", e => {
 /* =====================================================================
    VENTANAS DE EDICIÓN
    ===================================================================== */
-function abrirVentana(html){ const v=$("#velo"); v.innerHTML=`<div class="ventana" role="dialog" aria-modal="true">${html}</div>`; v.hidden=false; v.querySelector("input,select")?.focus(); }
+/* móvil: lo que casi nunca se toca va dentro de «Más opciones» (cerrado al crear, abierto al editar) */
+function plegarOpciones(cerrado){
+  const v = $("#velo .ventana"), acc = v.querySelector(".acciones");
+  const d = document.createElement("details"); d.className = "mas-opciones"; if(!cerrado) d.open = true;
+  d.innerHTML = "<summary>Más opciones</summary>";
+  const cajas = ["#f-inicio","#f-donde","#f-lim","#f-evento","#f-nuevo-ev","#f-urg","#f-bloq","#f-motivo"]
+    .map(sel => { const el = v.querySelector(sel); return el && (el.id==="f-nuevo-ev" ? el : el.closest("label")); }).filter(Boolean);
+  cajas.forEach(c => d.appendChild(c));
+  v.insertBefore(d, acc);
+}
+function abrirVentana(html){ const v=$("#velo"); v.innerHTML=`<div class="ventana" role="dialog" aria-modal="true">${html}</div>`; v.hidden=false; if(!esMovil()) v.querySelector("input,select")?.focus(); }
 function cerrar(){ $("#velo").hidden=true; $("#velo").innerHTML=""; pintar(); }
 $("#velo").addEventListener("click", e => { if(e.target.id==="velo") cerrar(); });
 document.addEventListener("keydown", e => { if(e.key==="Escape") cerrar(); });
@@ -520,7 +704,7 @@ function editarTarea(id){
   const opciones = [`<option value="Ideas|" ${t.columna==="Ideas"?"selected":""}>Ideas</option>`];
   opciones.push(`<option value="Terminada|${esc(t.carril||"")}" ${t.columna==="Terminada"?"selected":""}>Terminada</option>`);
   for(const [k,c] of Object.entries(CARRILES)) for(const col of c.activas)
-    opciones.push(`<option value="${esc(col)}|${k}" ${t.columna===col&&t.carril===k?"selected":""}>${k==="principal"?"Carril 1":"Carril 2"} · ${col}</option>`);
+    opciones.push(`<option value="${esc(col)}|${k}" ${t.columna===col&&t.carril===k?"selected":""}>${k==="principal"?"Web y datos":"Series e Instagram"} · ${col}</option>`);
   abrirVentana(`<h3>${id?"Editar tarea":"Nueva idea"}</h3>
     <label>Título<input type="text" id="f-titulo" value="${esc(t.titulo)}"></label>
     <div class="dos">
@@ -543,6 +727,7 @@ function editarTarea(id){
       <span><button class="btn" id="f-cancelar">Cancelar</button> <button class="btn main" id="f-guardar">Guardar</button></span>
     </div>`);
   $("#f-cancelar").onclick = cerrar;
+  if(esMovil()) plegarOpciones(!id);
   $("#f-evento").onchange = e => { $("#f-nuevo-ev").hidden = e.target.value!=="__nuevo"; };
   if(id) $("#f-borrar").onclick = e => {
     if(e.target.dataset.seguro){ const ev=hitoDe(t); if(ev && ev.tarea===id) guardar("hitos", ev.id, sinId({...ev, tarea:""})); borrar("tareas",id); cerrar(); }
@@ -604,6 +789,7 @@ function ocurre(h, d){                       // d = "AAAA-MM-DD"
 const hitosDe = d => hitos.filter(h=>ocurre(h,d));
 
 function pintarCalendario(){
+  if(esMovil()) return pintarCalendarioMovil();
   let h = `<div class="cal-nav"><button class="btn" id="a-ant" aria-label="Año anterior">‹</button><h2>${anio}</h2>
     <button class="btn" id="a-sig" aria-label="Año siguiente">›</button>
     <button class="btn" id="a-hoy">Hoy</button>
