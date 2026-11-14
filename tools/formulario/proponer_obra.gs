@@ -7,7 +7,7 @@
  *   2. Recibe las propuestas, comprueba que vienen de una cuenta de Google y las añade como una fila
  *      más de la hoja de respuestas del formulario (mismas columnas), así que el importador no cambia.
  *
- * Instalación (una sola vez): ver los pasos en el chat o en la Retrospectiva técnica (componente E6).
+ * Instalación (una sola vez):
  *   - Se pega en la hoja de RESPUESTAS del formulario: Extensiones → Apps Script.
  *   - Propiedades del script (Configuración del proyecto): TMDB_TOKEN y CLIENT_ID.
  *   - Implementar → Nueva implementación → Aplicación web · Ejecutar como: Yo · Acceso: Cualquier usuario.
