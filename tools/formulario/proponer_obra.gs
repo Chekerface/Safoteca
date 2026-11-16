@@ -88,16 +88,64 @@ function porEnlace(url) {
   return { error: "Ese enlace no es de IMDb ni de TMDB. Prueba a buscar por el título." };
 }
 
+/* ---------- Alfabeto latino ----------
+   La Safoteca guarda nombres y títulos en letras latinas (es lo que la gente busca). Si TMDB los da en
+   otra escritura (tailandés, coreano, japonés…), buscamos su versión latina entre los nombres alternativos. */
+function noLatino(s) {
+  const letras = String(s || "").match(/\p{L}/gu) || [];
+  return letras.some(ch => !/\p{Script=Latin}/u.test(ch));
+}
+const primeraLatina = lista => (lista || []).map(x => String(x || "").trim()).filter(x => x && !noLatino(x))[0] || "";
+
+function nombrePersona(p) {
+  if (!noLatino(p.name)) return p.name;
+  try {
+    const d = tmdb("/person/" + p.id, { language: "en-US", append_to_response: "translations" });
+    const trad = ((d.translations && d.translations.translations) || [])
+      .filter(t => t.iso_639_1 === "en" || t.iso_639_1 === "es").map(t => t.data && t.data.name);
+    return primeraLatina([d.name].concat(trad, d.also_known_as || [])) || p.name;
+  } catch (e) {
+    return p.name;
+  }
+}
+
+function traduccion(d, idioma, pais) {
+  const ts = (d.translations && d.translations.translations) || [];
+  const t = ts.filter(x => x.iso_639_1 === idioma && (!pais || x.iso_3166_1 === pais))[0];
+  return t ? { titulo: (t.data.title || t.data.name || "").trim(), sinopsis: (t.data.overview || "").trim() } : { titulo: "", sinopsis: "" };
+}
+
 function detalle(tipo, id) {
   id = String(id).replace(/\D/g, "");
   if (!id) throw new Error("Falta el identificador");
   const serie = tipo === "serie";
-  const d = tmdb((serie ? "/tv/" : "/movie/") + id, { append_to_response: "credits,external_ids,watch/providers" });
+  const d = tmdb((serie ? "/tv/" : "/movie/") + id, { append_to_response: "credits,external_ids,watch/providers,translations,alternative_titles" });
+
+  // Títulos: el original en letras latinas (romanización → inglés → otro latino → el que haya)
+  const original = d.original_title || d.original_name || "";
+  const alt = ((d.alternative_titles && (d.alternative_titles.titles || d.alternative_titles.results)) || []);
+  const es = traduccion(d, "es", "ES"), esLat = traduccion(d, "es", ""), en = traduccion(d, "en", "US"), enAlg = traduccion(d, "en", "");
+  let tituloOriginal = original;
+  if (noLatino(original)) {
+    tituloOriginal = primeraLatina(alt.filter(a => /roman|romaji|latin/i.test(a.type || "")).map(a => a.title))
+      || primeraLatina([en.titulo, enAlg.titulo])
+      || primeraLatina(alt.filter(a => a.iso_3166_1 === "US" || a.iso_3166_1 === "GB").map(a => a.title))
+      || primeraLatina(alt.map(a => a.title))
+      || original;
+  }
+  // Título en España: español → inglés (si es igual al original, se deja vacío)
+  let tituloEs = primeraLatina([es.titulo, esLat.titulo]) || primeraLatina([en.titulo, enAlg.titulo]);
+  if (tituloEs === tituloOriginal) tituloEs = "";
+  // Sinopsis: español de España → otro español → inglés (avisando)
+  let sinopsis = es.sinopsis || (d.overview || "").trim() || esLat.sinopsis, sinopsisIdioma = "es";
+  if (!sinopsis) { sinopsis = en.sinopsis || enAlg.sinopsis; sinopsisIdioma = sinopsis ? "en" : ""; }
+
   const reparto = ((d.credits && d.credits.cast) || []);
-  const actrices = reparto.filter(p => p.gender === 1).slice(0, 6).map(p => p.name);
+  const actrices = reparto.filter(p => p.gender === 1).slice(0, 6).map(nombrePersona);
   const equipo = ((d.credits && d.credits.crew) || []);
-  let direccion = serie ? (d.created_by || []).map(p => p.name) : [];
-  if (!direccion.length) direccion = equipo.filter(p => p.job === "Director").map(p => p.name);
+  let direccion = serie ? (d.created_by || []) : [];
+  if (!direccion.length) direccion = equipo.filter(p => p.job === "Director");
+  direccion = direccion.slice(0, 4).map(nombrePersona);
   const paises = serie ? (d.origin_country || []) : (d.production_countries || []).map(c => c.iso_3166_1);
   const prov = (d["watch/providers"] && d["watch/providers"].results && d["watch/providers"].results.ES) || {};
   const plataformas = [];
@@ -107,15 +155,17 @@ function detalle(tipo, id) {
   return {
     tipo: serie ? "serie" : "pelicula",
     tmdb: id,
-    titulo: d.title || d.name || "",
-    original: d.original_title || d.original_name || "",
+    titulo: tituloEs,
+    original: tituloOriginal,
+    original_escritura: tituloOriginal !== original ? original : "",
     anio: anioDe(d.release_date || d.first_air_date),
     anio_fin: terminada ? anioDe(d.last_air_date) : null,
     temporadas: serie ? (d.number_of_seasons || null) : null,
     paises: paises.slice(0, 3),
-    sinopsis: d.overview || "",
+    sinopsis: sinopsis,
+    sinopsis_idioma: sinopsisIdioma,
     generos: (d.genres || []).map(g => g.name),
-    direccion: direccion.slice(0, 4),
+    direccion: direccion,
     actrices: actrices,
     plataformas_es: plataformas,
     poster: posterDe(d.poster_path, "w780"),
@@ -210,5 +260,6 @@ function limpio(v) {
 /* Para probar desde el editor: Ejecutar → probarTMDB (mira el registro). */
 function probarTMDB() {
   console.log(JSON.stringify(buscar("Gap the series")).slice(0, 500));
+  console.log(JSON.stringify(detalle("serie", 155513)).slice(0, 900));
   console.log(JSON.stringify(porEnlace("https://www.imdb.com/title/tt0115736/")).slice(0, 800));
 }

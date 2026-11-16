@@ -172,8 +172,25 @@
     const plat = [...new Set(d.plataformas_es.map((p) => p.replace(/\s+(Standard\s+)?with Ads$/i, "").replace(/\s+Amazon Channel$/i, "")))];
     $("#plataformas").textContent = plat.length ? "En España se puede ver en: " + plat.join(", ") + ". Pega aquí el enlace de la plataforma." : "";
     if (!d.sinopsis) $("#f-sinopsis").placeholder = "TMDB no tiene sinopsis en español: escribe una breve, por favor.";
+    marcarEscritura(d);
     actualizarTipo(); prevPoster(); comprobarRepetida();
     $("#f-titulo-original").scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  // Avisos junto a los campos: otro alfabeto (la gente no podría buscarlo) o sinopsis en inglés
+  const noLatino = (t) => (String(t || "").match(/\p{L}/gu) || []).some((c) => !/\p{Script=Latin}/u.test(c));
+  function avisoCampo(el, texto) {
+    el.classList.toggle("prop-revisar", !!texto);
+    let n = el.nextElementSibling; if (!n || !n.classList.contains("prop-aviso-campo")) { n = document.createElement("p"); n.className = "prop-aviso-campo"; el.after(n); }
+    n.textContent = texto || ""; n.hidden = !texto;
+  }
+  function marcarEscritura(d = {}) {
+    ["Título original", "Título en España", "Directore", "Actrices (separadas por comas)"].forEach((nombre) => {
+      const el = $(`[name="${CSS.escape(nombre)}"]`);
+      avisoCampo(el, noLatino(el.value) ? "Está en otro alfabeto: cámbialo por su versión en letras latinas si la conoces, para que se pueda buscar." : "");
+    });
+    const orig = $("[name='Título original']");
+    if (!orig.classList.contains("prop-revisar") && d.original_escritura) avisoCampo(orig, "En su escritura original: " + d.original_escritura);
+    if (d.tmdb) avisoCampo($("#f-sinopsis"), d.sinopsis_idioma === "en" ? "TMDB solo la tiene en inglés: tradúcela si puedes." : "");
   }
   function comprobarRepetida() {
     const t = norm($("#f-titulo-original").value), te = norm($("[name='Título en España']").value), a = parseInt($("[name='Año']").value, 10);
@@ -265,6 +282,8 @@
       $$(`[name="Tipo"]`).forEach((r) => r.addEventListener("change", actualizarTipo)); actualizarTipo();
       ["#f-titulo-original", "[name='Título en España']", "[name='Año']"].forEach((s) => $(s).addEventListener("change", comprobarRepetida));
       $("[name='Póster (enlace de la imagen)']").addEventListener("change", prevPoster);
+      ["Título original", "Título en España", "Directore", "Actrices (separadas por comas)"].forEach((n) =>
+        $(`[name="${CSS.escape(n)}"]`).addEventListener("change", (e) => { if (!noLatino(e.target.value)) avisoCampo(e.target, ""); }));
       $("#proponer").addEventListener("submit", enviar);
       iniciarGoogle();
     },
