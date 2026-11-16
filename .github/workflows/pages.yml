@@ -37,12 +37,13 @@ jobs:
           if git ls-remote --exit-code --heads origin uat >/dev/null 2>&1; then
             git fetch --depth=1 origin uat
             mkdir -p /tmp/uat
-            git archive FETCH_HEAD web | tar -x -C /tmp/uat
+            git archive FETCH_HEAD web tools | tar -x -C /tmp/uat
             node --check /tmp/uat/web/js/app.js
             mkdir -p web/uat
             cp -r /tmp/uat/web/. web/uat/
             rm -f web/uat/robots.txt web/uat/sitemap.xml
-            python3 tools/generar_paginas.py --web web/uat --noindex
+            # PRE genera sus páginas con su propia versión del script, para poder probar cambios antes de PRO
+            python3 /tmp/uat/tools/generar_paginas.py --web web/uat --noindex
             echo "Versión de pruebas añadida en /uat/"
           else
             echo "No hay rama uat: se publica solo la web normal"
