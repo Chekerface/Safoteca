@@ -1,5 +1,7 @@
 # La Safoteca
 
+**🌐 Web: [www.lasafoteca.com](https://www.lasafoteca.com/)** · Instagram: [@lasafoteca](https://www.instagram.com/lasafoteca/)
+
 Catálogo sin ánimo de lucro de series y películas (y, más adelante, libros y cómics) con representación
 lésbica y bisexual, con información sobre la calidad de la representación y avisos de contenido.
 
