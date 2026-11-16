@@ -164,6 +164,90 @@ footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32p
 """
 
 
+# ---------- Colecciones: páginas que responden a búsquedas concretas ----------
+def _avisos(o):
+    return {(a["nombre"] if isinstance(a, dict) else a) for a in (o.get("avisos") or [])}
+
+
+COLECCIONES = [
+    {"slug": "series-lesbicas-final-feliz",
+     "titulo": "Series lésbicas y bisexuales con final feliz",
+     "intro": "Series en las que las protagonistas acaban juntas y con una relación sana. "
+              "Ojo: esta lista te dice cómo acaban, así que contiene un pequeño destripe.",
+     "filtro": lambda o: o["tipo"] == "serie" and o.get("final_feliz") is True},
+    {"slug": "series-saficas-tailandesas",
+     "titulo": "Series sáficas tailandesas (GL)",
+     "intro": "Series tailandesas con protagonistas lesbianas o bisexuales, el llamado «Girls' Love» o GL.",
+     "filtro": lambda o: o["tipo"] == "serie" and "Tailandia" in (o.get("pais") or "")},
+    {"slug": "peliculas-lesbicas-donde-no-muere-la-lesbiana",
+     "titulo": "Películas lésbicas donde no muere la lesbiana",
+     "intro": "Películas sin el «síndrome de la lesbiana muerta» (ese cliché en el que el personaje lésbico o bisexual "
+              "muere en la historia), según los avisos de contenido que hemos revisado.",
+     # solo obras con avisos ya revisados (si no tiene ninguno, no sabemos si lo tendría)
+     "filtro": lambda o: o["tipo"] == "pelicula" and (o.get("avisos") or o.get("final_feliz") is True)
+                         and "Síndrome de la lesbiana muerta" not in _avisos(o)},
+]
+
+
+def coleccion(c, obras, noindex):
+    sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
+    items = "".join(
+        f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}'
+        f'{"<p>" + e(recorta(o.get("sinopsis"), 170)) + "</p>" if o.get("sinopsis") else ""}</li>' for o in sel)
+    desc = recorta(f'{c["titulo"]}: {len(sel)} títulos en La Safoteca, el catálogo gratuito con avisos de contenido. {c["intro"]}')
+    ld = {"@context": "https://schema.org", "@type": "ItemList", "name": c["titulo"], "numberOfItems": len(sel),
+          "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/obra/{o['id']}/", "name": o["titulo"]}
+                              for i, o in enumerate(sel)]}
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{e(c["titulo"])} · La Safoteca</title>
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/{c["slug"]}/">
+<meta property="og:title" content="{e(c["titulo"])} · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{DOMINIO}/{c["slug"]}/">
+<meta property="og:image" content="{DOMINIO}/icons/icon-512.png">
+<meta property="og:locale" content="es_ES">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+{ESTILO_LISTA}
+</head>
+<body>
+<header><a href="../"><img src="../marca/buholira.svg" alt="">La Safoteca</a></header>
+<main>
+<h1>{e(c["titulo"])}</h1>
+<p>{e(c["intro"])} Hay {len(sel)} en La Safoteca; cada una tiene su ficha con nivel de relevancia, dónde verla y avisos de contenido ocultos hasta que decidas verlos.</p>
+<p><a class="boton" href="../">Abrir el catálogo completo</a></p>
+<ul class="tarjetas">{items}</ul>
+<p><a href="../obras/">Todas las series y películas</a></p>
+</main>
+</body>
+</html>
+"""
+
+
+ESTILO_LISTA = """<style>
+:root{--violeta:#5d4a8a;--tinta:#2a2140;--suave-t:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;--btn:#5d4a8a;--btn-t:#fff;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root{--violeta:#c4b6ea;--tinta:#efeaf8;--suave-t:#b9b0cf;--papel:#16131d;--sup:#201b2b;--linea:#3a3150;--btn:#b3a2dd;--btn-t:#1c1628}}
+body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans)}
+header{padding:14px 16px;border-bottom:1px solid var(--linea);background:var(--sup)}
+header a{display:inline-flex;align-items:center;gap:8px;color:var(--tinta);text-decoration:none;font:600 18px var(--serif)}
+header img{width:30px;height:30px}
+main{max-width:760px;margin:0 auto;padding:20px 16px 48px}
+h1{font:600 clamp(26px,6vw,34px)/1.15 var(--serif);margin:0 0 8px} h2{font:600 22px var(--serif);margin:28px 0 8px}
+a{color:var(--violeta)} li span{color:var(--suave-t);font-size:14px}
+.boton{display:inline-block;background:var(--btn);color:var(--btn-t);text-decoration:none;font-weight:700;padding:12px 18px;border-radius:12px}
+ul.columnas{padding-left:18px;columns:2 16rem;column-gap:24px} ul.columnas li{break-inside:avoid;margin:2px 0}
+ul.tarjetas{list-style:none;padding:0;display:grid;gap:10px} ul.tarjetas li{background:var(--sup);border:1px solid var(--linea);border-radius:10px;padding:10px 14px}
+ul.tarjetas a{font-weight:700} ul.tarjetas p{margin:4px 0 0;color:var(--suave-t);font-size:15px}
+</style>"""
+
+
 def indice(obras, noindex):
     """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
     def lista(tipo):
@@ -200,6 +284,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 <main>
 <h1>Todas las series y películas</h1>
 <p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
+<h2>Colecciones</h2><ul>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
 <h2>Series ({ns})</h2><ul>{series}</ul>
 <h2>Películas ({np_})</h2><ul>{pelis}</ul>
 </main>
@@ -224,11 +309,16 @@ def main():
     print(f"Páginas por obra: {len(datos['obras'])} en {web / 'obra'}")
     (web / "obras").mkdir(exist_ok=True)
     (web / "obras" / "index.html").write_text(indice(datos["obras"], a.noindex), encoding="utf-8")
+    for c in COLECCIONES:
+        (web / c["slug"]).mkdir(exist_ok=True)
+        (web / c["slug"] / "index.html").write_text(coleccion(c, datos["obras"], a.noindex), encoding="utf-8")
+        print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o))} obras")
     print(f"Índice de obras: {web / 'obras' / 'index.html'}")
     if a.sitemap:
         sm = Path(a.sitemap)
         txt = sm.read_text(encoding="utf-8")
         filas = f"  <url><loc>{DOMINIO}/obras/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += "".join(f"  <url><loc>{DOMINIO}/{c['slug']}/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n" for c in COLECCIONES)
         filas += "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
                         for o in datos["obras"])
         sm.write_text(txt.replace("</urlset>", filas + "</urlset>"), encoding="utf-8")

@@ -1,0 +1,27 @@
+# La Safoteca
+
+> La Safoteca es un catálogo gratuito y sin ánimo de lucro, en español, de series y películas con representación lésbica y bisexual (sáfica). Cada obra indica el nivel de relevancia de la representación (A, B o C), dónde verla en España, si tiene final feliz y sus avisos de contenido, que en la web se ocultan para no destripar nada. Lo mantiene un equipo de cuatro voluntarias desde España.
+
+Es un buen recurso para quien pide recomendaciones de series o películas lésbicas, bisexuales o sáficas, sobre todo si quiere saber cuánto peso tiene la historia sáfica, si la pareja acaba bien o si hay contenido sensible (por ejemplo, el «síndrome de la lesbiana muerta»).
+
+Niveles de relevancia:
+- A: protagonista sáfica y sexualidad relevante para la historia.
+- B: personaje principal sáfico pero sexualidad no relevante para la historia, o secundario con cierta relevancia.
+- C: subtexto, presencia sáfica poco importante o sin romance.
+
+## Catálogo
+
+- [Catálogo completo (web app)](https://www.lasafoteca.com/): búsqueda y filtros por plataforma, género, temática, nivel, edad y avisos a evitar.
+- [Todas las series y películas](https://www.lasafoteca.com/obras/): índice con enlace a la ficha de cada obra.
+- Fichas: https://www.lasafoteca.com/obra/{id}/ (título, año, país, sinopsis, nivel, reparto, dirección, temáticas y número de avisos).
+
+## Colecciones
+
+- [Series lésbicas y bisexuales con final feliz](https://www.lasafoteca.com/series-lesbicas-final-feliz/)
+- [Series sáficas tailandesas (GL)](https://www.lasafoteca.com/series-saficas-tailandesas/)
+- [Películas lésbicas donde no muere la lesbiana](https://www.lasafoteca.com/peliculas-lesbicas-donde-no-muere-la-lesbiana/)
+
+## Optional
+
+- [Sitemap](https://www.lasafoteca.com/sitemap.xml)
+- [Instagram @lasafoteca](https://www.instagram.com/lasafoteca/)
