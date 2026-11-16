@@ -50,7 +50,7 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Costumbrismo»",
+   "rango": "de «\"Cosas de chicas\"» a «Cosplay»",
    "opciones": [
     "\"Cosas de chicas\"",
     "A fuego lento",
@@ -69,6 +69,7 @@ var DATOS = {
     "Amistad",
     "Amor",
     "Amor de juventud",
+    "Amor imposible",
     "Anacronismos",
     "Angustia",
     "Angustia adolescente",
@@ -128,14 +129,14 @@ var DATOS = {
     "Consumo de alcohol",
     "Consumo de drogas",
     "Corrupción policial",
-    "Cosplay",
-    "Costumbrismo"
+    "Cosplay"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Crimen» a «Humor negro»",
+   "rango": "de «Costumbrismo» a «Humor»",
    "opciones": [
+    "Costumbrismo",
     "Crimen",
     "Cutre",
     "Cómic",
@@ -212,14 +213,14 @@ var DATOS = {
     "Homosexualidad",
     "Horror",
     "Hospital",
-    "Humor",
-    "Humor negro"
+    "Humor"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Identidad» a «Relación de pareja»",
+   "rango": "de «Humor negro» a «Relaciones interpersonales»",
    "opciones": [
+    "Humor negro",
     "Identidad",
     "Inclusión",
     "India",
@@ -296,14 +297,14 @@ var DATOS = {
     "Redes Sociales",
     "Relaciones",
     "Relaciones complicadas",
-    "Relaciones interpersonales",
-    "Relación de pareja"
+    "Relaciones interpersonales"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Religión» a «Épica»",
+   "rango": "de «Relación de pareja» a «Épica»",
    "opciones": [
+    "Relación de pareja",
     "Religión",
     "Remake",
     "Represión",
