@@ -127,13 +127,14 @@ var DATOS = {
     "Conspiraciones",
     "Consumo de alcohol",
     "Consumo de drogas",
+    "Corrupción policial",
     "Cosplay",
     "Costumbrismo"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Crimen» a «Humor»",
+   "rango": "de «Crimen» a «Humor negro»",
    "opciones": [
     "Crimen",
     "Cutre",
@@ -211,14 +212,14 @@ var DATOS = {
     "Homosexualidad",
     "Horror",
     "Hospital",
-    "Humor"
+    "Humor",
+    "Humor negro"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Humor negro» a «Relaciones complicadas»",
+   "rango": "de «Identidad» a «Relación de pareja»",
    "opciones": [
-    "Humor negro",
     "Identidad",
     "Inclusión",
     "India",
@@ -294,15 +295,15 @@ var DATOS = {
     "Reality",
     "Redes Sociales",
     "Relaciones",
-    "Relaciones complicadas"
+    "Relaciones complicadas",
+    "Relaciones interpersonales",
+    "Relación de pareja"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relaciones interpersonales» a «Épica»",
+   "rango": "de «Religión» a «Épica»",
    "opciones": [
-    "Relaciones interpersonales",
-    "Relación de pareja",
     "Religión",
     "Remake",
     "Represión",
@@ -406,6 +407,7 @@ var DATOS = {
     "Body Horror",
     "Brutalidad policial",
     "Cancelada",
+    "Canibalismo",
     "Capacitismo",
     "Chantaje",
     "Chantaje emocional",
