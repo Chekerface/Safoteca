@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-11-14T13:11:58+00:00",
-  "total": 314
+  "generado": "2026-11-16T21:37:15+00:00",
+  "total": 325
  },
  "obras": [
   {
@@ -1387,6 +1387,70 @@
    ],
    "letterboxd": null,
    "publicada": "2026-11-01 22:45:47"
+  },
+  {
+   "id": 485,
+   "tipo": "serie",
+   "titulo": "Amor negado",
+   "titulo_original": "Denied Love",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2025,
+   "anio_fin": 2026,
+   "sinopsis": "Tras ser abandonada por su ex, Praenarin se ve obligada a casarse con Khemjira, a cambio de su herencia. Aunque Praenarin afirma con firmeza: \"Nunca te amaré\", Khemjira dice: \"Esperaré al día en que me ames, con todo tu corazón\".",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Drama",
+    "Erótico",
+    "Matrimonio",
+    "Romance",
+    "Sexo"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "June Nannirin Varokornwatcharakool",
+    "Thidarut Pruethong"
+   ],
+   "directores": [
+    "Cheewin Thanamin Wongskulphat"
+   ],
+   "donde_ver": [
+    "https://wetv.vip/play/wzl47su0dwgdwm9/u41019ncrhw?ptag=3_5.41.5.18940_WhatsApp"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://wetv.vip/play/wzl47su0dwgdwm9/u41019ncrhw?ptag=3_5.41.5.18940_WhatsApp"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film311270.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 304,
@@ -5297,6 +5361,94 @@
    "publicada": "2026-10-16 15:03:54"
   },
   {
+   "id": 488,
+   "tipo": "serie",
+   "titulo": "El cuerpo",
+   "titulo_original": "The Body",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "La noche de Halloween, un grupo de baile femenino lidia con remordimientos, deseos impuros y visiones fantasmales cuando una novatada sale endemoniadamente mal.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción",
+    "Drama",
+    "Romance",
+    "Suspense"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Drama",
+    "Drama adolescente",
+    "Fantasía",
+    "Fantástico",
+    "Lesbiana",
+    "Religión"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Obsesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Geena Meszaros",
+    "Kristina Bogic",
+    "Louisa Krause",
+    "Sara Boustany",
+    "Shirley Chen",
+    "Sofia Wylie"
+   ],
+   "directores": [
+    "Quinn Shephard"
+   ],
+   "donde_ver": [
+    "https://www.netflix.com/es/title/81983578?preventIntent=true"
+   ],
+   "plataformas": [
+    {
+     "n": "Netflix",
+     "p": "ES",
+     "u": "https://www.netflix.com/es/title/81983578?preventIntent=true"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt8014982/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
+  },
+  {
    "id": 270,
    "tipo": "serie",
    "titulo": "El juego de las llaves",
@@ -5745,6 +5897,78 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 483,
+   "tipo": "serie",
+   "titulo": "Enemies with Benefits",
+   "titulo_original": "Enemies with Benefits",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Lan, la jefa de ventas, está decidida a vencer a Wine, la jefa de contabilidad. Wine es su polo opuesto y es conocida por su crueldad. Cuando una noche de desenfreno las lleva a una relación de amigos con derecho a roce, harán lo que sea para mantenerlo en secreto, fingiendo ser enemigas para que nadie en el trabajo se entere. Sin darse cuenta, sin embargo, su recién descubierta cercanía comienza a transformarse en amor.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Comedia",
+    "Drama",
+    "Romance en el trabajo",
+    "Thai GL"
+   ],
+   "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "JingJing Prariyapit Yu",
+    "Ployshompoo Supasap"
+   ],
+   "directores": [
+    "Arisa Wawwanjit",
+    "Tawan Charujinda"
+   ],
+   "donde_ver": [
+    "https://youtu.be/0EPN_IlU2gU?is=3_cYAeEaOd4DP2c0"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtu.be/0EPN_IlU2gU?is=3_cYAeEaOd4DP2c0"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film492523.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 30,
@@ -7476,6 +7700,118 @@
    "publicada": "2026-10-21 08:48:57"
   },
   {
+   "id": 484,
+   "tipo": "serie",
+   "titulo": "Heart Code",
+   "titulo_original": "Heart Code",
+   "titulo_latam": "Heart Code",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "La hija de un poderoso oficial de policía ha esquivado varios intentos de asesinato y ahora participa en secreto en un programa de entrenamiento de élite. Allí conoce a una oficial disciplinada con un instinto agudo. Se ven obligadas a compartir habitación y la química entre ellas comienza a cambiar. Pero las conspiraciones políticas, un asesinato oculto y un pasado complicado amenazan con separarlas. Cuando una descubre que el padre de la otra podría estar relacionado con la tragedia de su propia familia, sus sentimientos se ven puestos a prueba por el deber, el peligro y el precio de la verdad. Tienen que elegir entre la justicia y el amor que nunca supieron que sentían.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Acción",
+    "Comedia Dramática",
+    "Drama",
+    "Policíaca",
+    "Romance"
+   ],
+   "tematicas": [
+    "Acción",
+    "Amor",
+    "Asesinato",
+    "Comedia",
+    "Comedia dramática",
+    "Comedia romántica",
+    "Corrupción policial",
+    "Crimen",
+    "Drama",
+    "Drama psicológico",
+    "Familia",
+    "Lesbiana",
+    "Mafia",
+    "Misterio",
+    "Mujeres adultas",
+    "Pareja",
+    "Pareja sana",
+    "Policía",
+    "Policíaca",
+    "Política",
+    "Protagonista lesbiana",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Romance",
+    "Terrorismo",
+    "Thai GL",
+    "Venganza",
+    "Violencia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Brutalidad policial",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Tiroteo",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Jessie Natsiya Prommart es \"Vicky\" Phawika Ratchanon",
+    "Tungpang Pattarawadee Laosa es \"Than\" Thara Krahan"
+   ],
+   "directores": [],
+   "donde_ver": [
+    "https://mydramalist.com/799262-heart-code"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://mydramalist.com/799262-heart-code"
+    }
+   ],
+   "info": [
+    "https://www.betaseries.com/es/show/heart-code"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
+  },
+  {
    "id": 255,
    "tipo": "serie",
    "titulo": "Heartless",
@@ -8656,6 +8992,101 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 490,
+   "tipo": "serie",
+   "titulo": "Juliet & Juliet",
+   "titulo_original": "Juliet & Juliet",
+   "titulo_latam": "Juliet & Juliet",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Blue, la única hija de la familia Monchaitrakul, se traslada a un colegio religioso de provincia, donde conoce a Tokyo, la hija menor de Sia Po, una influyente figura local de la familia Khongpirum. Entre ellas surge el amor, pero se trata de un amor prohibido, ya que sus familias, enemistadas desde hace mucho tiempo, están enzarzadas en una lucha por el poder.\n\nCuando las herederas de dos familias enemistadas se convierten en el primer amor la una de la otra, ¿terminará todo en amor o en tragedia?",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": "1.0",
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Acción",
+    "Ciencia Ficción",
+    "Drama",
+    "Policíaca",
+    "Romance",
+    "Thriller"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
+    "Amor",
+    "Amor de juventud",
+    "Amor imposible",
+    "Asesinato",
+    "Corrupción policial",
+    "Crimen",
+    "Familia",
+    "Mafia",
+    "Thai GL",
+    "Venganza"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Tiroteo",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Mingming Kanyakorn Namboonruang",
+    "Nepjune Nutkitta Poonsukwattana"
+   ],
+   "directores": [
+    "Chantana Tiprachart"
+   ],
+   "donde_ver": [
+    "https://www.gagaoolala.com/es/videos/8935/juliet-and-juliet-2026-e01"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.gagaoolala.com/es/videos/8935/juliet-and-juliet-2026-e01"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt34088514/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
+  },
+  {
    "id": 97,
    "tipo": "pelicula",
    "titulo": "Kajillionaire",
@@ -8700,6 +9131,70 @@
    ],
    "letterboxd": "https://letterboxd.com/film/kajillionaire/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 489,
+   "tipo": "serie",
+   "titulo": "Khom Khlang",
+   "titulo_original": "Khom Khlang",
+   "titulo_latam": "Khom Khlang",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Bulan, una mujer que irradia un aura de misterio, se cruza en el camino de Peem, una agente de policía desesperada por resolver un caso para el que la ley no ofrece respuestas. Recomendada como la única persona capaz de ayudarla, Bulan despierta en Peem dudas, atracción y un vínculo inesperado que pondrá a prueba sus creencias y su concepción de la justicia.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción",
+    "Drama",
+    "Ficción Sobrenatural",
+    "Policíaca",
+    "Romance",
+    "Suspense",
+    "Thriller"
+   ],
+   "tematicas": [
+    "Brujas",
+    "Fantasmas",
+    "Misterio",
+    "Thai GL"
+   ],
+   "avisos": [
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Puinoon Warangsiri Tanajarusworaphat",
+    "Sireethorn Leearamwat"
+   ],
+   "directores": [
+    "Puwadon Naosopa"
+   ],
+   "donde_ver": [
+    "https://wetv.vip/es/play/l8u24vqut3sseql/q4102w0v9o8-EP01%3A_Khom_Khlang_(Uncut_Ver.)"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://wetv.vip/es/play/l8u24vqut3sseql/q4102w0v9o8-EP01%3A_Khom_Khlang_(Uncut_Ver.)"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt45115286/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 86,
@@ -11313,6 +11808,132 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 482,
+   "tipo": "pelicula",
+   "titulo": "Light Light Light",
+   "titulo_original": "Valoa valoa valoa",
+   "titulo_latam": "Luz del 86",
+   "pais": "Finlandia",
+   "anio": null,
+   "anio_fin": 2023,
+   "sinopsis": "En la primavera de 1986, tras el accidente de Chernobyl, una joven llamada Mimi llega a un pequeño pueblo del oeste de Finlandia. Inmediatamente llena de luz la vida de Mariia, de 15 años. Mariia regresa 20 años después a casa para cuidar de su madre enferma, y ​​los recuerdos de ese significativo verano comienzan a salir a la superficie.",
+   "edad": "14",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": false,
+   "poster": null,
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Aceptación de la sexualidad",
+    "Adolescencia",
+    "Amor",
+    "Amor de juventud",
+    "Angustia",
+    "Angustia adolescente",
+    "Autodescubrimiento",
+    "Años 80",
+    "Coming of age",
+    "De amigas a amantes",
+    "Diferencia de altura",
+    "Drama",
+    "Drama adolescente",
+    "Drama psicológico",
+    "Entrada en la madurez",
+    "Escuela",
+    "Homosexualidad",
+    "Identidad",
+    "Instituto",
+    "Juventud",
+    "Lesbiana",
+    "Lesbianismo",
+    "Miedo",
+    "Psicológico",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Romance de instituto",
+    "Salir del armario",
+    "Soledad",
+    "Terror",
+    "Tragedia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    },
+    {
+     "nombre": "Duelo",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad Mental",
+     "categoria": null
+    },
+    {
+     "nombre": "Ideas suicidas",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Muerte de personaje importante",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Síndrome de la lesbiana muerta",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Anni Iikkanen",
+    "Rebekka Baer"
+   ],
+   "directores": [
+    "Inari Niemi"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/luz-del-86"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/luz-del-86"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/es/title/tt13328830"
+   ],
+   "letterboxd": "https://letterboxd.com/film/light-light-light/",
+   "publicada": "2026-11-16 21:37:15"
+  },
+  {
    "id": 76,
    "tipo": "serie",
    "titulo": "Line of Duty",
@@ -12483,6 +13104,96 @@
    ],
    "letterboxd": null,
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 480,
+   "tipo": "serie",
+   "titulo": "Mate",
+   "titulo_original": "Mate",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2024,
+   "anio_fin": 2025,
+   "sinopsis": "Una mujer adinerada e inteligente se siente cautivada por su amiga de la infancia, una chica inocente que le había contagiado los piojos cuando era niña, y cae rendida a sus encantos.",
+   "edad": "18",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Aceptación de la sexualidad",
+    "Acoso",
+    "Amigas de la infancia",
+    "Amistad",
+    "Autodescubrimiento",
+    "Celos",
+    "Chantaje",
+    "Consumo de alcohol",
+    "De amigas a amantes",
+    "Diferencias de clase social",
+    "Drama",
+    "Mujeres adultas",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Trastornos mentales"
+   ],
+   "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Intento de abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia leve",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Budsarin Wonglelamont",
+    "Oaey Ponchanok Theerawan"
+   ],
+   "directores": [
+    "Phadung Samajarn"
+   ],
+   "donde_ver": [
+    "https://youtube.com/playlist?list=PL-GesbDOxBcjTgdHiZsCSi9QUJQ6WBBbY&si=KP7rS3tgUxTYO1Wi"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtube.com/playlist?list=PL-GesbDOxBcjTgdHiZsCSi9QUJQ6WBBbY&si=KP7rS3tgUxTYO1Wi"
+    }
+   ],
+   "info": [
+    "https://m.filmaffinity.com/es/film176471.html"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 265,
@@ -15209,6 +15920,82 @@
    ],
    "letterboxd": "https://letterboxd.com/film/do-revenge/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 487,
+   "tipo": "serie",
+   "titulo": "Reverse with Me",
+   "titulo_original": "Reverse With Me",
+   "titulo_latam": null,
+   "pais": "Tailandia",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Karan y Kliao Khluen, dos almas unidas por un amor que se forjó en el reino de los sueños. Al viajar atrás en el tiempo, intentan reparar las fracturas del pasado. Sin embargo, alterar el pasado desató consecuencias imprevistas, algunas de ellas más allá incluso del alcance del propio tiempo.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": null,
+   "generos": [
+    "Ciencia Ficción",
+    "Drama",
+    "Fantasía"
+   ],
+   "tematicas": [
+    "Drama",
+    "Fantasía",
+    "Romance en el trabajo",
+    "Thai GL"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Implícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Suicidio",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Isarapa Thawatpakdee",
+    "Jennis Oprasert",
+    "Kanteera Wadcharathadsanakul",
+    "Natruja Chutiwansopon",
+    "Nattamon Chokejindachai",
+    "Pitchatorn Santinatornkul"
+   ],
+   "directores": [
+    "Siwat Decharat"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/wiki/es_mx/album/regr%C3%A9same-contigo-2025-24lp7m293hd"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/wiki/es_mx/album/regr%C3%A9same-contigo-2025-24lp7m293hd"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt33459365/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 137,
@@ -19553,6 +20340,122 @@
    "publicada": "2026-10-11 22:17:42"
   },
   {
+   "id": 481,
+   "tipo": "pelicula",
+   "titulo": "Tú no eres Yo",
+   "titulo_original": "Tú no eres Yo",
+   "titulo_latam": null,
+   "pais": "España",
+   "anio": 2023,
+   "anio_fin": null,
+   "sinopsis": "Aitana regresa a casa por Navidad por primera vez después de tres años. Para su sorpresa, sus padres la han sustituido por una mujer desconocida a la que tratan como a su hija.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": false,
+   "poster": null,
+   "generos": [
+    "Suspense",
+    "Terror",
+    "Thriller"
+   ],
+   "tematicas": [
+    "Angustia",
+    "Celos",
+    "Conspiraciones",
+    "Drama",
+    "Familia",
+    "Intriga",
+    "Navidad",
+    "Sectas",
+    "Terror",
+    "Thriller",
+    "Thriller psicológico"
+   ],
+   "avisos": [
+    {
+     "nombre": "Autolesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Cruda",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Engaños y Mentiras",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Ritos extraños",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia explícita",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Roser Tapias",
+    "Yapoena Silva"
+   ],
+   "directores": [
+    "Marisa Crespo",
+    "Moisés Romera"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/tu-no-eres-yo"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/tu-no-eres-yo"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/es-es/title/tt22085300/"
+   ],
+   "letterboxd": "https://letterboxd.com/film/you-are-not-me-2023/",
+   "publicada": "2026-11-16 21:37:15"
+  },
+  {
    "id": 131,
    "tipo": "serie",
    "titulo": "Tú, yo y ella",
@@ -21049,6 +21952,80 @@
    ],
    "letterboxd": "https://letterboxd.com/film/yes-or-no-2/",
    "publicada": "2026-10-11 22:17:42"
+  },
+  {
+   "id": 486,
+   "tipo": "pelicula",
+   "titulo": "Yo no moriré de amor",
+   "titulo_original": "Yo no moriré de amor",
+   "titulo_latam": null,
+   "pais": "España",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "A sus 18 años, Claudia no quiere ser una heroína. La enfermedad de su madre irrumpe como una tormenta silenciosa que obliga a redefinir los roles en una familia que lleva tiempo desconectada. Entre el deber de cuidar y el deseo de vivir como cualquier chica de su edad, Claudia busca un modo de habitar esa nueva realidad, que transformará los vínculos entre toda la familia.",
+   "edad": "12",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": null,
+   "generos": [
+    "Drama"
+   ],
+   "tematicas": [
+    "Coming of age",
+    "Día a día",
+    "Enfermedad",
+    "Familia"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Sexo Explícito",
+     "categoria": null
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Júlia Mascort",
+    "Laura Weissmahr",
+    "Lorea Intxausti",
+    "Sofía de Iznájar",
+    "Sonia Almarcha",
+    "Victoria Paniagua"
+   ],
+   "directores": [
+    "Marta Matute"
+   ],
+   "donde_ver": [
+    "https://www.filmin.es/pelicula/yo-no-morire-de-amor"
+   ],
+   "plataformas": [
+    {
+     "n": "Filmin",
+     "p": "ES",
+     "u": "https://www.filmin.es/pelicula/yo-no-morire-de-amor"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt29299092/"
+   ],
+   "letterboxd": "https://letterboxd.com/tmdb/1446301/",
+   "publicada": "2026-11-16 21:37:15"
   },
   {
    "id": 184,
