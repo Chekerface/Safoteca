@@ -80,10 +80,45 @@ class Plantilla:
         self.imp = Importador(db, informes)
         for n, tw, desc in db.execute("SELECT nombre, es_tw, descripcion FROM aviso"):
             self.imp.tw_tags[n.lower()] = (tw, desc)
-        self.oficiales = {t: {r[0] for r in db.execute(f"SELECT nombre FROM {t} WHERE pendiente_revision=0")}
+        # oficiales = ya revisadas en la base de datos o en las listas aceptadas (una aceptada nueva no queda «pendiente»)
+        self.oficiales = {t: {r[0] for r in db.execute(f"SELECT nombre FROM {t} WHERE pendiente_revision=0")} | leer_aceptadas(t)
                           for t in ("genero", "tematica", "aviso")}
         self.res = {"nuevas": [], "actualizadas": [], "publicadas": [], "omitidas": []}
         self.letterboxd = {}
+
+    def normalizar_etiquetas(self, n, titulo, gen, tem, avi):
+        """Corrige solas las etiquetas antes de comprobar las listas aceptadas, para no tener que revisarlas a mano:
+        1. aplica las equivalencias de data/mapeos (Secta → Sectas, Thiler → Thriller…);
+        2. ignora mayúsculas y tildes: «Corrupción Policial» → «Corrupción policial» si esa es la aceptada;
+        3. si una etiqueta llega como aviso pero es una temática aceptada (o al revés), la cambia de grupo.
+        Lo que no encaja en ninguna lista se deja tal cual y la puerta de etiquetas sigue bloqueando."""
+        imp = self.imp
+        mapas = {"genero": imp.map_gen, "tematica": imp.map_tem, "aviso": imp.map_avi}
+        acept = {t: {sin_tildes(x): x for x in leer_aceptadas(t)} for t in LISTAS_ACEPTADAS}
+        dest = {"genero": [], "tematica": [], "aviso": []}
+
+        def resolver(x, t):
+            m = mapas[t].get(x.lower(), x)
+            if m == "":
+                return ""                       # la equivalencia dice «descartar»
+            return acept[t].get(sin_tildes(m))
+
+        for t, valor in (("genero", gen), ("tematica", tem), ("aviso", avi)):
+            for x in separar(valor):
+                r = resolver(x, t)
+                if r == "":
+                    continue
+                if r:
+                    dest[t].append(r)
+                    continue
+                otro = {"tematica": "aviso", "aviso": "tematica"}.get(t)
+                r2 = resolver(x, otro) if otro else None
+                if r2:
+                    dest[otro].append(r2)
+                    self.inc(n, titulo, t, x, f"llegó como {LISTAS_ACEPTADAS[t][1]} y se guarda como {LISTAS_ACEPTADAS[otro][1]} «{r2}» (corregido solo)")
+                else:
+                    dest[t].append(mapas[t].get(x.lower(), x))
+        return tuple(", ".join(dict.fromkeys(dest[t])) for t in ("genero", "tematica", "aviso"))
 
     def inc(self, n, titulo, campo, valor, problema):
         self.imp.inc(HOJA, n, titulo, campo, valor, problema)
@@ -177,6 +212,7 @@ class Plantilla:
         gen = grupo(f, "Género", "")
         tem = grupo(f, "Temática", "Otras temáticas (separadas por comas)")
         avi = grupo(f, "Aviso", "Otros avisos (separados por comas)")
+        gen, tem, avi = self.normalizar_etiquetas(n, titulo, gen, tem, avi)
         if gen:
             self.db.execute("DELETE FROM obra_genero WHERE obra_id=?", (oid,))
             imp.vincular_lista(oid, gen, "genero", "obra_genero", "genero_id", imp.map_gen, self.oficiales["genero"])
