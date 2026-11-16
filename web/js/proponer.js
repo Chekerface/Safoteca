@@ -12,6 +12,9 @@
   let CFG = {}, LISTAS = null, OBRAS = [], credencial = null, tmdbId = "", ctxCuenta = "";
   const elegidas = { tematicas: new Set(), avisos: new Set(), generos: new Set() };
 
+  // Plan B: si algo falla, enlace al Google Form de siempre (se abre en otra pestaña y no se pierde lo escrito)
+  const planB = () => (CFG.formularioAltas && /^https:\/\//.test(CFG.formularioAltas)
+    ? ` <a class="enlace-suave" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">Envíala con el formulario de siempre</a> (se abre en otra pestaña; lo que has escrito aquí no se borra).` : "");
   const servicio = () => (CFG.proponer && CFG.proponer.servicio) || "";
   const clientId = () => (CFG.proponer && CFG.proponer.clientId) || "";
 
@@ -88,7 +91,7 @@
     const listo = servicio() && clientId();
     return `<h1 class="solo-lectores">Proponer una obra</h1>
     <form id="proponer" class="prop" novalidate>
-      ${listo ? "" : `<p class="nota prop-aviso">Esta pantalla está en pruebas: falta conectar el buscador y la entrada con Google, así que todavía no se puede enviar.</p>`}
+      ${listo ? "" : `<p class="nota prop-aviso">Esta pantalla está en pruebas y todavía no se puede enviar.${planB()}</p>`}
       <section class="prop-grupo">
         <h2 class="prop-h">1 · Entra con tu cuenta de Google</h2>
         <p class="prop-ayuda">Solo para evitar el spam. Tu correo no se publica.</p>
@@ -211,7 +214,7 @@
     };
     if (window.google?.accounts?.id) return arrancar();
     const s = document.createElement("script"); s.src = "https://accounts.google.com/gsi/client"; s.async = true; s.onload = arrancar;
-    s.onerror = () => { $("#g-estado").textContent = "No se ha podido cargar la entrada con Google. Comprueba tu conexión."; };
+    s.onerror = () => { $("#g-estado").innerHTML = "No se ha podido cargar la entrada con Google." + planB(); };
     document.head.appendChild(s);
   }
 
@@ -236,7 +239,11 @@
         <p><a class="boton" href="#/proponer" id="otra">Proponer otra</a> <a class="boton boton--claro" href="#/">Volver al inicio</a></p></div>`;
       $("#otra").addEventListener("click", (ev) => { ev.preventDefault(); window.SafotecaProponer.pintar($("#vista"), { CFG, OBRAS }); });
       scrollTo(0, 0);
-    } catch (x) { err.textContent = x.message || "No se ha podido enviar. Inténtalo de nuevo."; b.disabled = false; b.textContent = "Enviar propuesta"; }
+    } catch (x) {
+      const msg = x instanceof TypeError || x instanceof SyntaxError ? "No hemos podido conectar para enviarla." : (x.message || "No se ha podido enviar.");
+      err.innerHTML = esc(msg) + (/mañana|Google|Faltan/.test(msg) ? "" : planB());
+      b.disabled = false; b.textContent = "Enviar propuesta";
+    }
   }
 
   window.SafotecaProponer = {
