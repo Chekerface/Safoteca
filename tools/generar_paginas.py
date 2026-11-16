@@ -36,7 +36,20 @@ def anios(o):
     return str(o.get("anio") or "")
 
 
-def pagina(o, nivel, noindex):
+def relacionadas(o, todas, n=6):
+    """Las obras que más temáticas (y géneros) comparten con esta, para enlazar fichas entre sí."""
+    tem, gen = set(o.get("tematicas") or []), set(o.get("generos") or [])
+    puntos = []
+    for x in todas:
+        if x["id"] == o["id"]:
+            continue
+        p = len(tem & set(x.get("tematicas") or [])) + 0.5 * len(gen & set(x.get("generos") or []))
+        if p:
+            puntos.append((-p, x["titulo"], x))
+    return [x for _, _, x in sorted(puntos, key=lambda t: (t[0], t[1]))[:n]]
+
+
+def pagina(o, nivel, noindex, todas=()):
     oid, tit = o["id"], o["titulo"]
     url = f"{DOMINIO}/obra/{oid}/"
     tipo = TIPO.get(o["tipo"], "Obra")
@@ -66,13 +79,21 @@ def pagina(o, nivel, noindex):
         ld["actor"] = [{"@type": "Person", "name": p} for p in o["actrices"]]
     plataformas = sorted({p["n"] for p in (o.get("plataformas") or []) if p.get("n")})
     filas = [("Título original", o.get("titulo_original") if o.get("titulo_original") != tit else ""),
+             ("Título en Latinoamérica", o.get("titulo_latam") if o.get("titulo_latam") not in (tit, o.get("titulo_original")) else ""),
              ("Género", ", ".join(o.get("generos") or [])),
              ("Dirección", ", ".join(o.get("directores") or [])),
              ("Reparto", ", ".join(o.get("actrices") or [])),
              ("Temporadas", o.get("temporadas")),
              ("Edad recomendada", f'{o["edad"]}+' if o.get("edad") else ""),
-             ("Dónde verla", ", ".join(plataformas))]
+             ("Temáticas", ", ".join(o.get("tematicas") or []))]
     filas_html = "".join(f"<dt>{e(k)}</dt><dd>{e(v)}</dd>" for k, v in filas if v)
+    # Dónde verla: no se enseñan las plataformas aquí, se manda a la ficha completa de la web
+    donde = (f'<p class="donde"><a class="boton boton--claro" href="../../#/obra/{oid}">Ver en qué plataforma está</a></p>'
+             if plataformas else "")
+    rels = relacionadas(o, todas)
+    rel_lista = ("<section class=\"rel\"><h2>Si te gusta, mira también</h2><ul>" + "".join(
+        f'<li><a href="../{x["id"]}/">{e(x["titulo"])}</a> <span>{e(TIPO.get(x["tipo"], ""))}{" · " + str(x["anio"]) if x.get("anio") else ""}</span></li>'
+        for x in rels) + "</ul></section>") if rels else ""
     rel = o.get("relevancia")
     rel_html = f'<p class="nivel"><span class="tejuelo">{e(rel)}</span> {e(nivel.get(rel, ""))}</p>' if rel else ""
     return f"""<!doctype html>
@@ -112,6 +133,10 @@ h1{{margin:0;font:600 clamp(26px,6vw,34px)/1.15 var(--serif)}}
 .tejuelo{{flex:none;display:inline-grid;place-items:center;width:2rem;height:2.3rem;border-radius:4px 4px 10px 10px;background:var(--lila);color:#fff;font:700 18px var(--serif)}}
 .avisos{{background:var(--sup);border:1px solid var(--linea);border-radius:10px;padding:12px 14px;margin:0}}
 dl{{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}} dt{{color:var(--suave-t)}} dd{{margin:0}}
+.boton--claro{{background:transparent;color:var(--violeta);border:2px solid var(--violeta);padding:10px 16px}}
+.donde{{margin:0}}
+.rel h2{{font:600 20px var(--serif);margin:0 0 8px}} .rel ul{{margin:0;padding-left:18px;display:grid;gap:4px}}
+.rel a{{color:var(--violeta);font-weight:600}} .rel span{{color:var(--suave-t);font-size:14px}}
 footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32px}} footer a{{color:var(--violeta)}}
 </style>
 </head>
@@ -129,9 +154,55 @@ footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32p
     {f'<p style="margin:0">{e(o["sinopsis"])}</p>' if o.get("sinopsis") else ''}
     <p class="avisos">{e(avisos)}</p>
     <dl>{filas_html}</dl>
+    {donde}
+    {rel_lista}
   </div>
 </main>
-<footer>La Safoteca: catálogo gratuito de series y películas con representación lésbica y bisexual, con avisos de contenido.<br><a href="../../">Ir al catálogo</a></footer>
+<footer>La Safoteca: catálogo gratuito de series y películas con representación lésbica y bisexual, con avisos de contenido.<br><a href="../../">Ir al catálogo</a> · <a href="../../obras/">Todas las series y películas</a></footer>
+</body>
+</html>
+"""
+
+
+def indice(obras, noindex):
+    """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
+    def lista(tipo):
+        sel = sorted((o for o in obras if o["tipo"] == tipo), key=lambda o: o["titulo"].casefold())
+        return "".join(f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}</li>' for o in sel), len(sel)
+    series, ns = lista("serie")
+    pelis, np_ = lista("pelicula")
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Todas las series y películas lésbicas y bisexuales · La Safoteca</title>
+<meta name="description" content="Índice de las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca, con avisos de contenido.">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/obras/">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+<style>
+:root{{--violeta:#5d4a8a;--tinta:#2a2140;--suave-t:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}}
+@media (prefers-color-scheme:dark){{:root{{--violeta:#c4b6ea;--tinta:#efeaf8;--suave-t:#b9b0cf;--papel:#16131d;--sup:#201b2b;--linea:#3a3150}}}}
+body{{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans)}}
+header{{padding:14px 16px;border-bottom:1px solid var(--linea);background:var(--sup)}}
+header a{{display:inline-flex;align-items:center;gap:8px;color:var(--tinta);text-decoration:none;font:600 18px var(--serif)}}
+header img{{width:30px;height:30px}}
+main{{max-width:760px;margin:0 auto;padding:20px 16px 48px}}
+h1{{font:600 clamp(26px,6vw,34px)/1.15 var(--serif);margin:0 0 8px}} h2{{font:600 22px var(--serif);margin:28px 0 8px}}
+ul{{padding-left:18px;columns:2 16rem;column-gap:24px}} li{{break-inside:avoid;margin:2px 0}}
+a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
+</style>
+</head>
+<body>
+<header><a href="../"><img src="../marca/buholira.svg" alt="">La Safoteca</a></header>
+<main>
+<h1>Todas las series y películas</h1>
+<p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
+<h2>Series ({ns})</h2><ul>{series}</ul>
+<h2>Películas ({np_})</h2><ul>{pelis}</ul>
+</main>
 </body>
 </html>
 """
@@ -149,12 +220,16 @@ def main():
     for o in datos["obras"]:
         d = web / "obra" / str(o["id"])
         d.mkdir(parents=True, exist_ok=True)
-        (d / "index.html").write_text(pagina(o, nivel, a.noindex), encoding="utf-8")
+        (d / "index.html").write_text(pagina(o, nivel, a.noindex, datos["obras"]), encoding="utf-8")
     print(f"Páginas por obra: {len(datos['obras'])} en {web / 'obra'}")
+    (web / "obras").mkdir(exist_ok=True)
+    (web / "obras" / "index.html").write_text(indice(datos["obras"], a.noindex), encoding="utf-8")
+    print(f"Índice de obras: {web / 'obras' / 'index.html'}")
     if a.sitemap:
         sm = Path(a.sitemap)
         txt = sm.read_text(encoding="utf-8")
-        filas = "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas = f"  <url><loc>{DOMINIO}/obras/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
                         for o in datos["obras"])
         sm.write_text(txt.replace("</urlset>", filas + "</urlset>"), encoding="utf-8")
         print(f"Añadidas {len(datos['obras'])} direcciones a {sm}")
