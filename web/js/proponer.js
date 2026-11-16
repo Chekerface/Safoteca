@@ -131,8 +131,15 @@
           ${["A", "B", "C"].map((k) => `<label><input type="radio" name="Nivel de relevancia" value="${k}"> <b>${k}</b> · ${esc(rel[k] || "")}</label>`).join("")}</fieldset>
         <div class="prop-dos">
           <label class="prop-etq">Edad recomendada<select name="Edad recomendada" class="prop-campo"><option value="">—</option>${LISTAS.edades.map((e) => `<option>${e === "TP" ? "Todos los públicos" : e}</option>`).join("")}</select></label>
-          <label class="prop-etq">¿Final feliz?<select name="Final feliz" class="prop-campo"><option value="">No lo sé</option><option>Sí</option><option>No</option></select></label>
         </div>
+        <fieldset class="prop-radio"><legend class="prop-etq">¿Final feliz?
+            <button type="button" class="prop-info" aria-expanded="false" aria-controls="info-final" aria-label="Qué consideramos final feliz">i</button></legend>
+          <p id="info-final" class="prop-info__texto" hidden>Es una historia de amor en la que las protagonistas acaban juntas y la relación es sana.
+            <b>No</b> es final feliz si la pareja se rompe o si la relación es tóxica.
+            <b>No aplica</b> si no acaban juntas pero es el mejor desenlace posible, o si la relación no es lo importante de la historia.
+            Si no sabes qué poner, pregúntate: ¿esta historia te dejó buen regusto al terminar?</p>
+          <label><input type="radio" name="Final feliz" value="Sí"> Sí</label><label><input type="radio" name="Final feliz" value="No"> No</label>
+          <label><input type="radio" name="Final feliz" value=""> No lo sé o no aplica</label></fieldset>
         <label class="prop-etq">¿Se puede ver en España?<select name="Disponible en España" class="prop-campo"><option value="">No lo sé</option><option>Sí</option><option>No</option></select></label>
       </section>
       <div class="prop-trampa" aria-hidden="true"><label>Web <input name="web" tabindex="-1" autocomplete="off"></label></div>
@@ -284,6 +291,7 @@
       $("[name='Póster (enlace de la imagen)']").addEventListener("change", prevPoster);
       ["Título original", "Título en España", "Directore", "Actrices (separadas por comas)"].forEach((n) =>
         $(`[name="${CSS.escape(n)}"]`).addEventListener("change", (e) => { if (!noLatino(e.target.value)) avisoCampo(e.target, ""); }));
+      $(".prop-info").addEventListener("click", (e) => { const t = $("#info-final"), abrir = t.hidden; t.hidden = !abrir; e.currentTarget.setAttribute("aria-expanded", abrir); });
       $("#proponer").addEventListener("submit", enviar);
       iniciarGoogle();
     },

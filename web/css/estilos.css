@@ -499,3 +499,10 @@ textarea.prop-campo { resize: vertical; }
 @media (min-width: 40rem) { .sel__lista { grid-template-columns: 1fr 1fr; } }
 .prop-revisar { border-color: var(--lila); border-width: 2px; background: var(--suave); }
 .prop-aviso-campo { color: var(--violeta); font-size: .85rem; font-weight: 600; margin-top: -.1rem; }
+.prop-info {
+  display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem; margin-left: .35rem; vertical-align: middle;
+  border-radius: 50%; border: 2px solid var(--violeta); background: none; color: var(--violeta); font: 700 .85rem var(--serif); font-style: italic; cursor: pointer;
+}
+.prop-info[aria-expanded="true"] { background: var(--violeta); color: var(--boton-texto); }
+.prop-info__texto { flex-basis: 100%; background: var(--suave); border-radius: 10px; padding: .75rem .9rem; font-size: .9rem; line-height: 1.5; }
+.prop-radio legend:has(.prop-info) { display: flex; align-items: center; }
