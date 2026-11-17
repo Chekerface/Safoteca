@@ -56,10 +56,9 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Crimen»",
+   "rango": "de «\"Cosas de chicas\"» a «Cutre»",
    "opciones": [
     "\"Cosas de chicas\"",
-    "A fuego lento",
     "Aborto",
     "Aceptación de la sexualidad",
     "Acoso",
@@ -128,14 +127,14 @@ var DATOS = {
     "Corrupción policial",
     "Cosplay",
     "Costumbrismo",
-    "Crimen"
+    "Crimen",
+    "Cutre"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cutre» a «Inclusión»",
+   "rango": "de «Cómic» a «Inexactitud histórica»",
    "opciones": [
-    "Cutre",
     "Cómic",
     "Cómic de autor",
     "Cómic indie",
@@ -144,7 +143,6 @@ var DATOS = {
     "Cómic mainstream",
     "DC",
     "De amigas a amantes",
-    "De enemigas a amantes",
     "De época",
     "Delincuencia",
     "Demisexualidad",
@@ -205,15 +203,15 @@ var DATOS = {
     "Humor",
     "Humor negro",
     "Identidad",
-    "Inclusión"
+    "Inclusión",
+    "India",
+    "Inexactitud histórica"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «India» a «Relaciones interpersonales»",
+   "rango": "de «Infancia» a «Religión»",
    "opciones": [
-    "India",
-    "Inexactitud histórica",
     "Infancia",
     "Infidelidad",
     "Instituto",
@@ -282,15 +280,15 @@ var DATOS = {
     "Redes Sociales",
     "Relaciones",
     "Relaciones complicadas",
-    "Relaciones interpersonales"
+    "Relaciones interpersonales",
+    "Relación de pareja",
+    "Religión"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Relación de pareja» a «Épica»",
+   "rango": "de «Remake» a «Épica»",
    "opciones": [
-    "Relación de pareja",
-    "Religión",
     "Remake",
     "Represión",
     "Riqueza",
@@ -314,6 +312,7 @@ var DATOS = {
     "Siglo XIX",
     "Siglo XVII",
     "Slasher",
+    "Slow burn",
     "Sobrenatural",
     "Soledad",
     "Sororidad",
