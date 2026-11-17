@@ -10,7 +10,7 @@ Cómo puntúa (los números se ajustan aquí, en AJUSTES):
   * Géneros en común: 1 + su rareza, multiplicado por lo definitorio que es el género para las dos obras
     (1 / raíz(nº de géneros de una × nº de géneros de la otra)); como mucho 3 puntos en total. Dos obras que solo
     son «Drama» se parecen más que dos que son «Drama» entre otros cinco géneros.
-  * Misma dirección y actrices en común suman aparte.
+  * Misma dirección, actrices en común y el mismo nivel de representación (A, B o C) suman aparte.
   * Hay que parecerse en algo concreto: temáticas suficientemente raras, alguna temática más un género
     definitorio, un género muy raro, o la misma directora o actriz. Compartir solo géneros comunes no basta.
   * Si la obra tiene final feliz, solo se recomiendan obras con final feliz.
@@ -30,6 +30,7 @@ AJUSTES = {
     "direccion": 3.0,          # misma directora/director
     "actriz": 1.5,             # por actriz en común
     "mismo_tipo": 0.5,         # serie con serie, película con película
+    "mismo_nivel": 1.0,        # mismo nivel de representación (A con A, B con B, C con C)
     "exigir_final_feliz": True,
 }
 REL = {"A": 3, "B": 2, "C": 1}
@@ -67,7 +68,8 @@ def calcular(obras, ajustes=None):
             if not concreto:
                 continue
             mismo = c.get("tipo") == o.get("tipo")
-            pts = p_tem + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0)
+            nivel = A["mismo_nivel"] if o.get("relevancia") and o.get("relevancia") == c.get("relevancia") else 0.0
+            pts = p_tem + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0) + nivel
             cand.append((-round(pts, 3), -mismo, -REL.get(c.get("relevancia"), 0), -(c.get("anio") or 0), c["id"]))
         cand.sort()
         # dentro de las elegidas, primero las del mismo tipo (series con series, películas con películas),
