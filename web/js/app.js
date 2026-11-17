@@ -227,7 +227,7 @@
   function vistaInicio() {
     const v = visibles();
     if (!E.obras.length) return `<div class="vacio"><p>Todavía no hay obras publicadas.</p></div>`;
-    // Novedades: por la fecha exacta de TMDB (estreno o último episodio) si la tiene; si no, por el año
+    // Novedades: por la fecha exacta de estreno (TMDB) si la tiene; si no, por el año
     const clave = (o) => o.fecha || `${o.anio_fin || o.anio}-00-00`;
     const nov = [...v].filter((o) => o.anio).sort((a, b) => clave(b).localeCompare(clave(a)) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
     const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
