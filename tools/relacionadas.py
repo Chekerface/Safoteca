@@ -13,7 +13,8 @@ Cómo puntúa (los números se ajustan aquí, en AJUSTES):
   * Hay que parecerse en algo concreto: temáticas suficientemente raras, un género muy raro, o la misma
     directora o actriz. Compartir solo géneros comunes no basta.
   * Si la obra tiene final feliz, solo se recomiendan obras con final feliz.
-  * Desempates: mismo tipo (serie/película), nivel de relevancia y año.
+  * Desempates: mismo tipo (serie/película), nivel de relevancia y año. Al final se ordenan poniendo primero
+    las del mismo tipo (si la ficha es una serie, las series delante y las películas detrás).
 """
 import math
 from collections import Counter
@@ -64,5 +65,8 @@ def calcular(obras, ajustes=None):
             pts = p_tem + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0)
             cand.append((-round(pts, 3), -mismo, -REL.get(c.get("relevancia"), 0), -(c.get("anio") or 0), c["id"]))
         cand.sort()
-        res[o["id"]] = [x[-1] for x in cand[:A["max"]]]
+        # dentro de las elegidas, primero las del mismo tipo (series con series, películas con películas),
+        # cada grupo en su orden de parecido
+        top = cand[:A["max"]]
+        res[o["id"]] = [x[-1] for x in sorted(top, key=lambda x: x[1])]
     return res
