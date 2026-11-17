@@ -6,7 +6,8 @@ La web enseña las 10 primeras que no tengan avisos que la persona evita; las p�
 
 Cómo puntúa (los números se ajustan aquí, en AJUSTES):
   * Temáticas en común, según lo raras que son: compartir «Vampiras» (pocas obras) vale mucho; compartir
-    «Adolescencia» (casi 100 obras), poco. Rareza = ln(obras publicadas / obras con esa temática).
+    «Adolescencia» (casi 100 obras), poco. Rareza = ln(obras publicadas / obras con esa temática). Como mucho
+    3 puntos en total; a igualdad de puntos desempata lo que compartan en temáticas sin ese tope.
   * Géneros en común: 1 + su rareza, multiplicado por lo definitorio que es el género para las dos obras
     (1 / raíz(nº de géneros de una × nº de géneros de la otra)); como mucho 3 puntos en total. Dos obras que solo
     son «Drama» se parecen más que dos que son «Drama» entre otros cinco géneros.
@@ -22,7 +23,8 @@ from collections import Counter
 
 AJUSTES = {
     "max": 20,                 # cuántas se guardan (la web enseña 10 y las páginas 6, tras quitar las evitadas)
-    "peso_tematica": 1.0,      # multiplica la rareza de cada temática en común
+    "peso_tematica": 1.0,      # multiplica la rareza de cada temática en común...
+    "tope_tematicas": 3.0,     # ...con este máximo de puntos entre todas las temáticas
     "peso_genero": 1.0,        # multiplica (1 + rareza) × especificidad de cada género en común...
     "tope_generos": 3.0,       # ...con este máximo de puntos entre todos los géneros
     "genero_raro": 5,          # un género con este nº de obras o menos cuenta como «algo concreto»
@@ -69,8 +71,9 @@ def calcular(obras, ajustes=None):
                 continue
             mismo = c.get("tipo") == o.get("tipo")
             nivel = A["mismo_nivel"] if o.get("relevancia") and o.get("relevancia") == c.get("relevancia") else 0.0
-            pts = p_tem + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0) + nivel
-            cand.append((-round(pts, 3), -mismo, -REL.get(c.get("relevancia"), 0), -(c.get("anio") or 0), c["id"]))
+            pts = min(A["tope_tematicas"], p_tem) + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0) + nivel
+            # a igualdad de puntos, desempata lo que comparten en temáticas sin tope (para no ordenar al azar)
+            cand.append((-round(pts, 3), -mismo, -round(p_tem, 3), -REL.get(c.get("relevancia"), 0), -(c.get("anio") or 0), c["id"]))
         cand.sort()
         # dentro de las elegidas, primero las del mismo tipo (series con series, películas con películas),
         # cada grupo en su orden de parecido
