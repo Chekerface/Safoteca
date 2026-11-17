@@ -160,29 +160,11 @@
   const rejilla = (lista) => `<div class="rejilla">${lista.map(tarjeta).join("")}</div>`;
   const carrusel = (lista) => `<div class="carrusel">${lista.map(tarjeta).join("")}</div>`;
 
-  // ---- Obras relacionadas (reglas en CFG.relacionadas) ----
+  // ---- Obras relacionadas ----
+  // La lista viene calculada en obras.json («rel», de más a menos parecida) con la misma fórmula que las páginas
+  // para buscadores (tools/relacionadas.py). Aquí solo se quitan las que la persona evita y se enseñan 10.
   function relacionadas(o) {
-    const R = CFG.relacionadas;
-    if (!R) return [];
-    const P = R.pesos || {};
-    const com = (a, b) => (a || []).filter((x) => (b || []).includes(x)).length;
-    const rel = { A: 3, B: 2, C: 1 };
-    const sel = visibles()
-      .filter((c) => c.id !== o.id)
-      .filter((c) => !(R.exigirFinalFeliz && o.final_feliz === true && c.final_feliz !== true))
-      .filter((c) => !R.mismoTipo || c.tipo === o.tipo)
-      .map((c) => {
-        const pts = Math.min(R.topeTematicas ?? 99, com(o.tematicas, c.tematicas) * (P.tematica || 0))
-          + com(o.generos, c.generos) * (P.genero || 0)
-          + (com(o.directores, c.directores) ? (P.director || 0) : 0)
-          + com(o.actrices, c.actrices) * (P.actriz || 0);
-        return { c, pts };
-      })
-      .filter((x) => x.pts >= (R.minimo || 1));
-    const orden = (a, b) => b.pts - a.pts || (rel[b.c.relevancia] || 0) - (rel[a.c.relevancia] || 0) || (b.c.anio || 0) - (a.c.anio || 0);
-    return sel.sort(orden).slice(0, R.max || 10)
-      .sort((a, b) => (b.c.tipo === o.tipo) - (a.c.tipo === o.tipo) || orden(a, b))
-      .map((x) => x.c);
+    return (o.rel || []).map((id) => E.porId.get(id)).filter((c) => c && !tieneEvitado(c)).slice(0, 10);
   }
 
   function textoNota() {
@@ -245,7 +227,9 @@
   function vistaInicio() {
     const v = visibles();
     if (!E.obras.length) return `<div class="vacio"><p>Todavía no hay obras publicadas.</p></div>`;
-    const nov = [...v].filter((o) => o.anio).sort((a, b) => (b.anio_fin || b.anio) - (a.anio_fin || a.anio) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
+    // Novedades: por la fecha exacta de TMDB (estreno o último episodio) si la tiene; si no, por el año
+    const clave = (o) => o.fecha || `${o.anio_fin || o.anio}-00-00`;
+    const nov = [...v].filter((o) => o.anio).sort((a, b) => clave(b).localeCompare(clave(a)) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
     const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
     const seccion = (id, titulo, lista, href) => (lista.length ? `
       <section class="seccion" aria-labelledby="${id}">
