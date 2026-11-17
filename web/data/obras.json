@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-17T11:16:22+00:00",
+  "generado": "2026-11-17T11:27:37+00:00",
   "total": 325
  },
  "obras": [
@@ -9596,7 +9596,7 @@
    "temporadas": null,
    "disponible_espana": false,
    "final_feliz": true,
-   "poster": null,
+   "poster": "484",
    "generos": [
     "Acción",
     "Comedia",

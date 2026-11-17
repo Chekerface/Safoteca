@@ -55,8 +55,8 @@ var DATOS = {
  ],
  "tematicas": [
   {
-   "titulo": "Temática (parte 1 de 3)",
-   "rango": "de «\"Cosas de chicas\"» a «Divorcio»",
+   "titulo": "Temática (parte 1 de 4)",
+   "rango": "de «\"Cosas de chicas\"» a «Crimen»",
    "opciones": [
     "\"Cosas de chicas\"",
     "A fuego lento",
@@ -128,7 +128,13 @@ var DATOS = {
     "Corrupción policial",
     "Cosplay",
     "Costumbrismo",
-    "Crimen",
+    "Crimen"
+   ]
+  },
+  {
+   "titulo": "Temática (parte 2 de 4)",
+   "rango": "de «Cutre» a «Inclusión»",
+   "opciones": [
     "Cutre",
     "Cómic",
     "Cómic de autor",
@@ -151,13 +157,7 @@ var DATOS = {
     "Discriminación",
     "Discriminación fuerte",
     "Distopía",
-    "Divorcio"
-   ]
-  },
-  {
-   "titulo": "Temática (parte 2 de 3)",
-   "rango": "de «Drama adolescente» a «Pandilla»",
-   "opciones": [
+    "Divorcio",
     "Drama adolescente",
     "Drama médico",
     "Drama psicológico",
@@ -205,7 +205,13 @@ var DATOS = {
     "Humor",
     "Humor negro",
     "Identidad",
-    "Inclusión",
+    "Inclusión"
+   ]
+  },
+  {
+   "titulo": "Temática (parte 3 de 4)",
+   "rango": "de «India» a «Relaciones interpersonales»",
+   "opciones": [
     "India",
     "Inexactitud histórica",
     "Infancia",
@@ -251,13 +257,7 @@ var DATOS = {
     "Novela Rosa",
     "NSFW",
     "Pandemia",
-    "Pandilla"
-   ]
-  },
-  {
-   "titulo": "Temática (parte 3 de 3)",
-   "rango": "de «Pareja» a «Épica»",
-   "opciones": [
+    "Pandilla",
     "Pareja",
     "Pareja idiota",
     "Pareja sana",
@@ -282,7 +282,13 @@ var DATOS = {
     "Redes Sociales",
     "Relaciones",
     "Relaciones complicadas",
-    "Relaciones interpersonales",
+    "Relaciones interpersonales"
+   ]
+  },
+  {
+   "titulo": "Temática (parte 4 de 4)",
+   "rango": "de «Relación de pareja» a «Épica»",
+   "opciones": [
     "Relación de pareja",
     "Religión",
     "Remake",
@@ -472,6 +478,8 @@ var DATOS = {
 
 var TITULO_FORMULARIO = "La Safoteca · Añadir una serie o película";
 var CLAVE_ID = "ID_FORMULARIO";
+// Solo si actualizarListas dice que no sabe qué formulario es: pega aquí su enlace de edición (el que acaba en /edit)
+var URL_EDICION = "";
 
 function crearFormulario() {
   var f = FormApp.create(TITULO_FORMULARIO);
@@ -539,18 +547,26 @@ function crearFormulario() {
   Logger.log("Hoja de respuestas: " + hoja.getUrl());
 }
 
-/** Actualiza las opciones de géneros, temáticas y avisos del formulario ya creado. */
+/** Actualiza las opciones de géneros, temáticas y avisos del formulario ya creado (sin tocar nada más ni perder respuestas). */
 function actualizarListas() {
   var id = PropertiesService.getScriptProperties().getProperty(CLAVE_ID);
-  if (!id) throw new Error("No hay formulario guardado: ejecuta primero crearFormulario.");
+  if (!id && URL_EDICION) id = FormApp.openByUrl(URL_EDICION).getId();
+  if (!id) throw new Error("No sé qué formulario es: pega su enlace de edición en URL_EDICION (arriba) y vuelve a ejecutar.");
   var f = FormApp.openById(id);
-  var grupos = DATOS.generos.concat(DATOS.tematicas, DATOS.avisos);
-  var cambiados = 0;
-  f.getItems(FormApp.ItemType.CHECKBOX).forEach(function (item) {
-    grupos.forEach(function (g) {
-      if (item.getTitle() === g.titulo) { item.asCheckboxItem().setChoiceValues(g.opciones); cambiados++; }
+  var items = f.getItems(FormApp.ItemType.CHECKBOX);
+  var grupos = [["géneros", DATOS.generos], ["temáticas", DATOS.tematicas], ["avisos", DATOS.avisos]];
+  var cambiados = 0, faltan = [];
+  grupos.forEach(function (par) {
+    par[1].forEach(function (g) {
+      var item = items.filter(function (it) { return it.getTitle() === g.titulo; })[0];
+      if (!item) { faltan.push(g.titulo); return; }
+      var cb = item.asCheckboxItem();
+      cb.setChoiceValues(g.opciones);
+      if (g.rango) cb.setHelpText(cb.getHelpText().replace(/de «.*» a «.*»/, g.rango));
+      cambiados++;
     });
   });
   Logger.log("Listas actualizadas: " + cambiados + " preguntas.");
-  if (cambiados < grupos.length) Logger.log("Aviso: han cambiado los tramos (títulos) de alguna lista; crea un formulario nuevo con crearFormulario.");
+  if (faltan.length) Logger.log("AVISO: no encuentro estas preguntas en el formulario: " + faltan.join(", ") +
+    ". No se ha cambiado su lista; avisa a Claude.");
 }
