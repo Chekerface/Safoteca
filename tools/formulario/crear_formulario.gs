@@ -363,8 +363,8 @@ var DATOS = {
  ],
  "avisos": [
   {
-   "titulo": "Aviso (parte 1 de 2)",
-   "rango": "de «Abuso» a «Exotismo»",
+   "titulo": "Aviso",
+   "rango": "",
    "opciones": [
     "Abuso",
     "Abuso sexual",
@@ -415,13 +415,7 @@ var DATOS = {
     "Enfermedad Mental",
     "Engaños y Mentiras",
     "Erotismo",
-    "Exotismo"
-   ]
-  },
-  {
-   "titulo": "Aviso (parte 2 de 2)",
-   "rango": "de «Genocidio» a «Vómitos»",
-   "opciones": [
+    "Exotismo",
     "Genocidio",
     "Gordofobia",
     "Gore",
