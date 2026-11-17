@@ -37,16 +37,9 @@ def anios(o):
 
 
 def relacionadas(o, todas, n=6):
-    """Las obras que más temáticas (y géneros) comparten con esta, para enlazar fichas entre sí."""
-    tem, gen = set(o.get("tematicas") or []), set(o.get("generos") or [])
-    puntos = []
-    for x in todas:
-        if x["id"] == o["id"]:
-            continue
-        p = len(tem & set(x.get("tematicas") or [])) + 0.5 * len(gen & set(x.get("generos") or []))
-        if p:
-            puntos.append((-p, x["titulo"], x))
-    return [x for _, _, x in sorted(puntos, key=lambda t: (t[0], t[1]))[:n]]
+    """Las 6 primeras de la lista «rel» de obras.json: la misma fórmula que la web (tools/relacionadas.py)."""
+    por_id = {x["id"]: x for x in todas}
+    return [por_id[i] for i in (o.get("rel") or []) if i in por_id][:n]
 
 
 def pagina(o, nivel, noindex, todas=()):
