@@ -31,7 +31,10 @@ CREATE TABLE IF NOT EXISTS obra (
     notas_internas      TEXT,
     creada_el           TEXT NOT NULL DEFAULT (datetime('now')),
     actualizada_el      TEXT NOT NULL DEFAULT (datetime('now')),
-    publicada_el        TEXT             -- cuándo pasó a 'publicada' (UTC); se rellena sola con un trigger
+    publicada_el        TEXT,            -- cuándo pasó a 'publicada' (UTC); se rellena sola con un trigger
+    tmdb_id             TEXT,            -- «movie/123» o «tv/456» en TMDB (tools/fechas_tmdb.py)
+    fecha_estreno       TEXT,            -- AAAA-MM-DD: estreno (series: primer episodio)
+    fecha_novedad       TEXT             -- AAAA-MM-DD: series, último episodio emitido; películas, el estreno
 );
 
 CREATE INDEX IF NOT EXISTS idx_obra_estado_tipo ON obra (estado, tipo);
