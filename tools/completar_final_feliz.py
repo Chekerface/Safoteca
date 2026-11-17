@@ -32,7 +32,7 @@ def copia(db_ruta):
     destino = COPIAS / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
     destino.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(db_ruta, destino)
-    print("Copia de seguridad:", destino.relative_to(RAIZ))
+    print("Copia de seguridad:", destino)
 
 
 def titulo(f):

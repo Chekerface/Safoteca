@@ -34,7 +34,8 @@
     favs: new Set(guardar.leer("favs", [])),
     listas: guardar.leer("listas", []).filter((l) => l && l.id && Array.isArray(l.obras)),
     listasCambiado: false,
-    evitar: new Set(guardar.leer("evitar", [])),
+    // «Sexo implícito» pasó a llamarse «Sexo» (17/11/2026): quien lo evitaba sigue evitándolo
+    evitar: new Set(guardar.leer("evitar", []).map((k) => (k === "sexo implicito" ? "sexo" : k))),
     verAvisos: guardar.leer("verAvisos", false),
     introVista: guardar.leer("intro", false),
     campanaCerrada: guardar.leer("campana", ""),

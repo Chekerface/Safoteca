@@ -109,7 +109,7 @@ def main():
     if not a.simular:
         copia = COPIAS / f"safoteca_antes_grupos_{datetime.now():%Y%m%d_%H%M%S}.db"
         copia.parent.mkdir(parents=True, exist_ok=True); shutil.copy(a.db, copia)
-        print("Copia de seguridad:", copia.relative_to(RAIZ))
+        print("Copia de seguridad:", copia)
     informe = []
     aplicar(db, informe)
     print("\n".join(informe))

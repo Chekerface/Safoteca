@@ -100,6 +100,9 @@ OPERACIONES = [
     # ---- Quinta tanda: avisos
     ("aviso", "unir", "Sangre/Gore", "Gore"),
     ("tematica", "unir", "Diferencia de clase", "Diferencias de clase social"),
+    # ---- Sexta tanda (17 de noviembre de 2026): «Sexo» como grupo; «Sexo implícito» pasa a ser «Sexo»
+    ("aviso", "renombrar", "Sexo Explícito", "Sexo explícito"),
+    ("aviso", "unir", "Sexo Implícito", "Sexo"),
 ]
 
 TABLAS = {"genero": "obra_genero", "tematica": "obra_tematica", "aviso": "obra_aviso"}
@@ -170,7 +173,7 @@ def main():
         copia = COPIAS / f"safoteca_antes_unificar_{datetime.now():%Y%m%d_%H%M%S}.db"
         copia.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(a.db, copia)
-        print("Copia de seguridad:", copia.relative_to(RAIZ))
+        print("Copia de seguridad:", copia)
     informe = []
     aplicar(db, informe)
     print("\n".join(informe))

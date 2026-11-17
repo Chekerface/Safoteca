@@ -80,10 +80,58 @@ class Plantilla:
         self.imp = Importador(db, informes)
         for n, tw, desc in db.execute("SELECT nombre, es_tw, descripcion FROM aviso"):
             self.imp.tw_tags[n.lower()] = (tw, desc)
-        self.oficiales = {t: {r[0] for r in db.execute(f"SELECT nombre FROM {t} WHERE pendiente_revision=0")}
+        # oficiales = ya revisadas en la base de datos o en las listas aceptadas (una aceptada nueva no queda «pendiente»)
+        self.oficiales = {t: {r[0] for r in db.execute(f"SELECT nombre FROM {t} WHERE pendiente_revision=0")} | leer_aceptadas(t)
                           for t in ("genero", "tematica", "aviso")}
         self.res = {"nuevas": [], "actualizadas": [], "publicadas": [], "omitidas": []}
         self.letterboxd = {}
+
+    def normalizar_etiquetas(self, n, titulo, gen, tem, avi):
+        """Corrige solas las etiquetas antes de comprobar las listas aceptadas, para no tener que revisarlas a mano:
+        1. aplica las equivalencias de data/mapeos (Secta → Sectas, Thiler → Thriller…);
+        2. ignora mayúsculas y tildes: «Corrupción Policial» → «Corrupción policial» si esa es la aceptada;
+        3. si una etiqueta llega como aviso pero es una temática aceptada (o al revés), la cambia de grupo.
+        Lo que no encaja en ninguna lista se deja tal cual y la puerta de etiquetas sigue bloqueando."""
+        imp = self.imp
+        mapas = {"genero": imp.map_gen, "tematica": imp.map_tem, "aviso": imp.map_avi}
+        acept = {t: {sin_tildes(x): x for x in leer_aceptadas(t)} for t in LISTAS_ACEPTADAS}
+        dest = {"genero": [], "tematica": [], "aviso": []}
+
+        def resolver(x, t):
+            m = mapas[t].get(x.lower(), x)
+            if m == "":
+                return ""                       # la equivalencia dice «descartar»
+            return acept[t].get(sin_tildes(m))
+
+        for t, valor in (("genero", gen), ("tematica", tem), ("aviso", avi)):
+            for x in separar(valor):
+                r = resolver(x, t)
+                if r == "":
+                    continue
+                if r:
+                    dest[t].append(r)
+                    continue
+                for otro in {"tematica": ("genero", "aviso"), "aviso": ("tematica",), "genero": ("tematica",)}[t]:
+                    r2 = resolver(x, otro)
+                    if r2:
+                        dest[otro].append(r2)
+                        self.inc(n, titulo, t, x, f"llegó como {LISTAS_ACEPTADAS[t][1]} y se guarda como {LISTAS_ACEPTADAS[otro][1]} «{r2}» (corregido solo)")
+                        break
+                else:
+                    dest[t].append(mapas[t].get(x.lower(), x))
+        # Temáticas que llevan género (Drama médico → Drama…): data/mapeos/tematica_a_genero.csv
+        for tm in list(dest["tematica"]):
+            g = TEMATICA_A_GENERO.get(sin_tildes(tm))
+            if g and g not in dest["genero"]:
+                dest["genero"].append(g)
+                self.inc(n, titulo, "genero", g, f"añadido solo por la temática «{tm}»")
+        # Temáticas que también son avisos (Racismo, Crimen…): la obra recibe el aviso, para quien lo evite
+        for tm in list(dest["tematica"]):
+            av = acept["aviso"].get(sin_tildes(tm))
+            if av and av not in dest["aviso"]:
+                dest["aviso"].append(av)
+                self.inc(n, titulo, "aviso", av, f"añadido solo por la temática «{tm}»")
+        return tuple(", ".join(dict.fromkeys(dest[t])) for t in ("genero", "tematica", "aviso"))
 
     def inc(self, n, titulo, campo, valor, problema):
         self.imp.inc(HOJA, n, titulo, campo, valor, problema)
@@ -177,6 +225,13 @@ class Plantilla:
         gen = grupo(f, "Género", "")
         tem = grupo(f, "Temática", "Otras temáticas (separadas por comas)")
         avi = grupo(f, "Aviso", "Otros avisos (separados por comas)")
+        gen, tem, avi = self.normalizar_etiquetas(n, titulo, gen, tem, avi)
+        # Thai GL por defecto: obras NUEVAS tailandesas (series y películas) de 2023 en adelante
+        nueva = any(o == oid for o, _ in self.res["nuevas"])
+        if nueva and "tailandia" in (campos.get("pais") or "").lower() and (campos.get("anio") or 0) >= 2023 \
+                and "thai gl" not in (tem or "").lower():
+            tem = ", ".join(x for x in (tem, "Thai GL") if x)
+            self.inc(n, titulo, "Temática", "Thai GL", "añadida sola (obra tailandesa de 2023 o posterior)")
         if gen:
             self.db.execute("DELETE FROM obra_genero WHERE obra_id=?", (oid,))
             imp.vincular_lista(oid, gen, "genero", "obra_genero", "genero_id", imp.map_gen, self.oficiales["genero"])
@@ -268,6 +323,14 @@ def sin_tildes(x):
     return "".join(c for c in unicodedata.normalize("NFKD", x) if not unicodedata.combining(c)).casefold().strip()
 
 
+def leer_tematica_a_genero():
+    f = MAPEOS / "tematica_a_genero.csv"
+    if not f.exists():
+        return {}
+    with open(f, encoding="utf-8-sig", newline="") as fh:
+        return {sin_tildes(r["tematica"]): r["genero"].strip() for r in csv.DictReader(fh) if r.get("tematica")}
+
+
 def leer_aceptadas(tabla):
     f = MAPEOS / LISTAS_ACEPTADAS[tabla][0]
     if not f.exists():
@@ -283,6 +346,9 @@ def guardar_aceptadas(tabla, nuevas):
         w = csv.writer(fh)
         w.writerow(["nombre"])
         w.writerows([[n] for n in todas])
+
+
+TEMATICA_A_GENERO = leer_tematica_a_genero()
 
 
 def puerta_etiquetas(db, antes, aceptar, simular):
