@@ -24,7 +24,7 @@ Reglas (también están en docs/guia.md):
 Antes de guardar se hace una copia de la base de datos en Safoteca-datos/copias/ (ver tools/rutas.py).
 Las incidencias salen por pantalla y en informes/incidencias_plantilla.csv.
 """
-import argparse, csv, shutil, sqlite3, subprocess, sys, unicodedata
+import argparse, csv, re, shutil, sqlite3, subprocess, sys, unicodedata
 from datetime import datetime
 from pathlib import Path
 
@@ -196,7 +196,13 @@ class Plantilla:
             campos["disponible_espana"] = imp.si_no(HOJA, n, titulo, "disponible_espana", f.get("disponible en espana"))
         if limpio(f.get("final feliz")):
             campos["final_feliz"] = imp.si_no(HOJA, n, titulo, "final_feliz", f.get("final feliz"))
+        tmdb = limpio(f.get("tmdb"))   # lo rellena la pantalla «Proponer una obra» («movie/123» o «tv/456»)
+        if tmdb and re.fullmatch(r"(movie|tv)/\d+", tmdb):
+            campos["tmdb_id"] = tmdb
         poster = limpio(f.get("poster (enlace de la imagen)"))
+        if poster and re.search(r"google\.[a-z.]+/(search|imgres)|/url\?|lens\.google|bing\.com/images", poster):
+            self.inc(n, titulo, "Póster", poster[:80], "es un enlace a una búsqueda, no a una imagen: se ignora (pon el enlace de la imagen)")
+            poster = None
         if poster:
             campos["poster_origen"] = imp.poster(poster)
             if not campos["poster_origen"]:

@@ -15,6 +15,7 @@ import sys
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from importar_excel import asegurar_esquema  # noqa: E402
+import relacionadas  # noqa: E402
 from plataformas import reconocer  # noqa: E402
 
 RAIZ = Path(__file__).resolve().parent.parent
@@ -103,7 +104,14 @@ def main():
             "info": col(SQL_ENLACES, oid, "info"),
             "letterboxd": letterboxd.get(oid),
             "publicada": o["publicada_el"],  # fecha UTC de publicación: desempata «Novedades»
+            # fecha exacta (AAAA-MM-DD) del estreno o del último episodio, desde TMDB: ordena «Novedades»; no se enseña
+            "fecha": o["fecha_novedad"] if "fecha_novedad" in o.keys() else None,
         })
+
+    # Obras relacionadas: una sola fórmula para la web y las páginas de buscadores (tools/relacionadas.py)
+    rel = relacionadas.calcular(obras)
+    for x in obras:
+        x["rel"] = rel.get(x["id"], [])
 
     catalogos = {
         "generos": col(SQL_CAT_GENEROS),
