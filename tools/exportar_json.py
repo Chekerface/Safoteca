@@ -104,8 +104,10 @@ def main():
             "info": col(SQL_ENLACES, oid, "info"),
             "letterboxd": letterboxd.get(oid),
             "publicada": o["publicada_el"],  # fecha UTC de publicación: desempata «Novedades»
-            # fecha exacta (AAAA-MM-DD) del estreno o del último episodio, desde TMDB: ordena «Novedades»; no se enseña
-            "fecha": o["fecha_novedad"] if "fecha_novedad" in o.keys() else None,
+            # fecha exacta (AAAA-MM-DD) del estreno, desde TMDB: ordena «Novedades»; no se enseña. Se usa el estreno y no
+            # el último episodio porque muchas series siguen emitiéndose aunque su parte sáfica sea de temporadas antiguas
+            # (Chicago Fire, Ladybug…). fecha_novedad queda guardada en la base de datos por si se usa más adelante.
+            "fecha": o["fecha_estreno"] if "fecha_estreno" in o.keys() else None,
         })
 
     # Obras relacionadas: una sola fórmula para la web y las páginas de buscadores (tools/relacionadas.py)
