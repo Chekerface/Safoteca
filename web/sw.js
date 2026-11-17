@@ -1,11 +1,6 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-<<<<<<< HEAD
-const CACHE_APP = "uat-safoteca-app-v45";
+const CACHE_APP = "uat-safoteca-app-v46";
 const CACHE_IMG = "uat-safoteca-img";
-=======
-const CACHE_APP = "safoteca-app-v24";
-const CACHE_IMG = "safoteca-img";
->>>>>>> origin/main
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
   "./", "./index.html", "./css/estilos.css", "./css/temas.css", "./js/app.js", "./js/temas.js", "./config.js",
