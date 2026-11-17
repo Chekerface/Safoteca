@@ -245,7 +245,7 @@
   function vistaInicio() {
     const v = visibles();
     if (!E.obras.length) return `<div class="vacio"><p>Todavía no hay obras publicadas.</p></div>`;
-    const nov = [...v].filter((o) => o.anio).sort((a, b) => (b.anio_fin || b.anio) - (a.anio_fin || a.anio) || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
+    const nov = [...v].filter((o) => o.anio).sort((a, b) => (b.anio_fin || b.anio) - (a.anio_fin || a.anio) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
     const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
     const seccion = (id, titulo, lista, href) => (lista.length ? `
       <section class="seccion" aria-labelledby="${id}">
