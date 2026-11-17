@@ -213,6 +213,12 @@ class Plantilla:
         tem = grupo(f, "Temática", "Otras temáticas (separadas por comas)")
         avi = grupo(f, "Aviso", "Otros avisos (separados por comas)")
         gen, tem, avi = self.normalizar_etiquetas(n, titulo, gen, tem, avi)
+        # Thai GL por defecto: obras NUEVAS tailandesas (series y películas) de 2023 en adelante
+        nueva = any(o == oid for o, _ in self.res["nuevas"])
+        if nueva and "tailandia" in (campos.get("pais") or "").lower() and (campos.get("anio") or 0) >= 2023 \
+                and "thai gl" not in (tem or "").lower():
+            tem = ", ".join(x for x in (tem, "Thai GL") if x)
+            self.inc(n, titulo, "Temática", "Thai GL", "añadida sola (obra tailandesa de 2023 o posterior)")
         if gen:
             self.db.execute("DELETE FROM obra_genero WHERE obra_id=?", (oid,))
             imp.vincular_lista(oid, gen, "genero", "obra_genero", "genero_id", imp.map_gen, self.oficiales["genero"])
