@@ -7,11 +7,12 @@ La web enseña las 10 primeras que no tengan avisos que la persona evita; las p�
 Cómo puntúa (los números se ajustan aquí, en AJUSTES):
   * Temáticas en común, según lo raras que son: compartir «Vampiras» (pocas obras) vale mucho; compartir
     «Adolescencia» (casi 100 obras), poco. Rareza = ln(obras publicadas / obras con esa temática).
-  * Géneros en común, también según su rareza, pero como mucho 3 puntos en total: «Drama» casi no suma y
-    un género muy raro («Western», «Documental») puede llegar a los 3.
+  * Géneros en común: 1 + su rareza, multiplicado por lo definitorio que es el género para las dos obras
+    (1 / raíz(nº de géneros de una × nº de géneros de la otra)); como mucho 3 puntos en total. Dos obras que solo
+    son «Drama» se parecen más que dos que son «Drama» entre otros cinco géneros.
   * Misma dirección y actrices en común suman aparte.
-  * Hay que parecerse en algo concreto: temáticas suficientemente raras, un género muy raro, o la misma
-    directora o actriz. Compartir solo géneros comunes no basta.
+  * Hay que parecerse en algo concreto: temáticas suficientemente raras, alguna temática más un género
+    definitorio, un género muy raro, o la misma directora o actriz. Compartir solo géneros comunes no basta.
   * Si la obra tiene final feliz, solo se recomiendan obras con final feliz.
   * Desempates: mismo tipo (serie/película), nivel de relevancia y año. Al final se ordenan poniendo primero
     las del mismo tipo (si la ficha es una serie, las series delante y las películas detrás).
@@ -22,7 +23,7 @@ from collections import Counter
 AJUSTES = {
     "max": 20,                 # cuántas se guardan (la web enseña 10 y las páginas 6, tras quitar las evitadas)
     "peso_tematica": 1.0,      # multiplica la rareza de cada temática en común
-    "peso_genero": 0.5,        # multiplica la rareza de cada género en común...
+    "peso_genero": 1.0,        # multiplica (1 + rareza) × especificidad de cada género en común...
     "tope_generos": 3.0,       # ...con este máximo de puntos entre todos los géneros
     "genero_raro": 5,          # un género con este nº de obras o menos cuenta como «algo concreto»
     "minimo_tematicas": 2.5,   # puntos de temáticas para contar como «algo concreto»
@@ -54,10 +55,14 @@ def calcular(obras, ajustes=None):
             t_com = tem & set(c.get("tematicas") or [])
             g_com = gen & set(c.get("generos") or [])
             p_tem = A["peso_tematica"] * sum(rareza(df_t, t) for t in t_com)
-            p_gen = min(A["tope_generos"], A["peso_genero"] * sum(rareza(df_g, g) for g in g_com))
+            # cada género en común: 1 + su rareza, multiplicado por lo «definitorio» que es para las dos obras
+            # (1 si ambas tienen un solo género; 0,5 si tienen 2 y 2; casi nada si tienen muchos)
+            esp = 1 / math.sqrt(max(len(gen), 1) * max(len(set(c.get("generos") or [])), 1))
+            p_gen = min(A["tope_generos"], A["peso_genero"] * sum(1 + rareza(df_g, g) for g in g_com) * esp)
             p_dir = A["direccion"] if dirs & set(c.get("directores") or []) else 0.0
             p_act = A["actriz"] * len(acts & set(c.get("actrices") or []))
             concreto = (p_tem >= A["minimo_tematicas"] or p_dir or p_act
+                        or (p_tem > 0 and p_tem + p_gen >= A["minimo_tematicas"])   # alguna temática + género definitorio
                         or any(df_g[g] <= A["genero_raro"] for g in g_com))
             if not concreto:
                 continue
