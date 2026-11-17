@@ -33,9 +33,14 @@ def lista(db, tabla):
     return sorted(nombres, key=str.casefold)
 
 
+# Partes que tiene el formulario de Google que ya está en uso: si cambian, «actualizarListas» no encuentra las
+# preguntas por su título y habría que crear un formulario nuevo. Por eso se respetan aunque las listas encojan.
+PARTES_FORMULARIO = {"Temática": 4, "Aviso": 2}
+
+
 def trozos(valores, base):
     """Parte una lista larga en preguntas «Temática (parte 1 de 4)»…"""
-    n = -(-len(valores) // MAX_POR_PREGUNTA)
+    n = max(-(-len(valores) // MAX_POR_PREGUNTA), PARTES_FORMULARIO.get(base, 1))
     tam = -(-len(valores) // n)
     out = []
     for i in range(n):
