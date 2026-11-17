@@ -200,7 +200,7 @@ def main():
             cambios["actualizadas"] += 1
         cambios["ok"] += 1
         informe.append([o["id"], titulo, o["anio"], f"ok ({como})", tid, det["fecha_estreno"] or "",
-                        det["fecha_novedad"] or "", "póster de TMDB" if "poster_origen" in distintos else ""])
+                        det["fecha_novedad"] or "", f"en TMDB: {det['titulo']}" + (" · póster de TMDB" if "poster_origen" in distintos else "")])
 
     (RAIZ / "informes").mkdir(exist_ok=True)
     with open(RAIZ / "informes" / "fechas_tmdb.csv", "w", encoding="utf-8-sig", newline="") as fh:
