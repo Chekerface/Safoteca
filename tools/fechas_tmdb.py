@@ -31,6 +31,9 @@ from rutas import DB_DEFECTO, COPIAS  # noqa: E402
 from importar_excel import asegurar_esquema  # noqa: E402
 
 API = "https://api.themoviedb.org/3"
+# Correcciones a mano para las que no encuentra o encuentra mal: Safoteca-datos/tmdb_manual.csv con columnas
+# id,tmdb (p. ej. «42,movie/290098»). Se copia el id de TMDB de la dirección de su ficha (themoviedb.org/movie/290098).
+MANUAL = {}
 POSTER = "https://image.tmdb.org/t/p/w780"
 
 
@@ -92,6 +95,8 @@ def detalle(api, tmdb_id):
 def buscar(api, o, enlaces):
     """Devuelve (tmdb_id, cómo, candidatos). tmdb_id None si no hay una coincidencia clara."""
     tipo = "tv" if o["tipo"] == "serie" else "movie"
+    if MANUAL.get(o["id"]):
+        return MANUAL[o["id"]], "puesto a mano (tmdb_manual.csv)", []
     if o["tmdb_id"]:
         return o["tmdb_id"], "ya guardado", []
     for u in enlaces:
@@ -102,9 +107,10 @@ def buscar(api, o, enlaces):
             if len(res) == 1:
                 return f"{tipo}/{res[0]['id']}", "IMDb", []
     cands = []
-    for titulo in [o["titulo_original"], o["titulo_es"]]:
-        if not titulo:
-            continue
+    limpia = lambda t: re.sub(r"\s*[\(\[].*?[\)\]]\s*", " ", t or "").strip()   # «Skins (Temporadas 3 y 4)» → «Skins»
+    nuestros = {norm(x) for x in (o["titulo_original"], o["titulo_es"], o["titulo_latam"],
+                                  limpia(o["titulo_original"]), limpia(o["titulo_es"])) if x} - {""}
+    for titulo in dict.fromkeys(x for x in (limpia(o["titulo_original"]), limpia(o["titulo_es"])) if x):
         params = {"query": titulo, "include_adult": "false"}
         if o["anio"]:
             params["first_air_date_year" if tipo == "tv" else "primary_release_year"] = o["anio"]
@@ -117,10 +123,15 @@ def buscar(api, o, enlaces):
             nombres = {norm(r.get(k)) for k in ("name", "original_name", "title", "original_title")} - {""}
             a = anio_de(r.get("first_air_date") or r.get("release_date"))
             cands.append(f"{tipo}/{r['id']} {r.get('name') or r.get('title')} ({a})")
-            if norm(titulo) in nombres and (not o["anio"] or not a or abs(a - o["anio"]) <= 1):
+            if nombres & nuestros and (not o["anio"] or not a or abs(a - o["anio"]) <= 1):
                 buenos.append(r)
         if len(buenos) == 1:
             return f"{tipo}/{buenos[0]['id']}", "título y año", []
+        # un único resultado buscando con el año exacto (p. ej. el título original en coreano): se acepta
+        if not buenos and o["anio"]:
+            del_anio = [r for r in res if anio_de(r.get("first_air_date") or r.get("release_date")) == o["anio"]]
+            if len(res) == 1 and len(del_anio) == 1:
+                return f"{tipo}/{del_anio[0]['id']}", "único resultado de ese año", []
         if len(buenos) > 1:
             exactos = [r for r in buenos if anio_de(r.get("first_air_date") or r.get("release_date")) == o["anio"]]
             if len(exactos) == 1:
@@ -141,6 +152,13 @@ def main():
     if not token:
         sys.exit("Falta la variable TMDB_TOKEN (el token de lectura de TMDB).")
     api = TMDB(token)
+    f = Path(a.db).parent / "tmdb_manual.csv"
+    if f.exists():
+        with open(f, encoding="utf-8-sig", newline="") as fh:
+            for r in csv.DictReader(fh):
+                if (r.get("id") or "").strip().isdigit() and re.fullmatch(r"(movie|tv)/\d+", (r.get("tmdb") or "").strip()):
+                    MANUAL[int(r["id"])] = r["tmdb"].strip()
+        print(f"Correcciones a mano: {len(MANUAL)} (tmdb_manual.csv)")
 
     db = sqlite3.connect(a.db)
     asegurar_esquema(db)
@@ -154,7 +172,7 @@ def main():
     obras = db.execute("SELECT * FROM obra WHERE tipo IN ('serie','pelicula') ORDER BY id").fetchall()
     informe, cambios = [], {"ok": 0, "dudosa": 0, "posters": 0, "actualizadas": 0}
     for o in obras:
-        falta = not o["tmdb_id"] or not o["fecha_novedad"]
+        falta = not o["tmdb_id"] or not o["fecha_novedad"] or (MANUAL.get(o["id"]) and MANUAL[o["id"]] != o["tmdb_id"])
         en_emision = a.series_en_emision and o["tipo"] == "serie" and o["tmdb_id"] and not o["anio_fin"]
         sin_poster = a.posters and not (o["poster_origen"] or "").strip()
         if not (a.todas or falta or en_emision or sin_poster):
