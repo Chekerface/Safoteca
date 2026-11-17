@@ -73,8 +73,11 @@ def separar(v):
 
 
 def nombre_persona(texto):
-    """'Kieron Gillen (1-13; coguionista: 14-19)' -> 'Kieron Gillen'."""
-    return texto.split("(")[0].strip()
+    """'Kieron Gillen (1-13; coguionista: 14-19)' -> 'Kieron Gillen'.
+    'Natsiya Prommart es "Vicky" Phawika' -> 'Natsiya Prommart' (se quita el personaje: «es», «como», «as»)."""
+    t = texto.split("(")[0]
+    t = re.split(r'\s+(?:es|como|as)\s+["“«\'A-ZÁÉÍÓÚ]', t)[0]
+    return t.strip()
 
 
 def a_entero(v):
