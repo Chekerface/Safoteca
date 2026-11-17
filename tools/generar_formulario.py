@@ -50,7 +50,20 @@ def relevancia():
     return {k: re.search(rf'{k}:\s*"([^"]+)"', txt).group(1) for k in "ABC"}
 
 
+def sin_repetidos():
+    """Un nombre no puede ser a la vez género y temática: si pasa, no se genera ningún formulario."""
+    def nombres(f):
+        with open(RAIZ / "data" / "mapeos" / f, encoding="utf-8-sig", newline="") as fh:
+            return {r["nombre"].strip().casefold(): r["nombre"].strip() for r in csv.DictReader(fh) if r.get("nombre")}
+    g, t = nombres(ACEPTADAS["genero"]), nombres(ACEPTADAS["tematica"])
+    dobles = sorted(g[x] for x in g.keys() & t.keys())
+    if dobles:
+        sys.exit("ERROR: estos nombres están a la vez en géneros y temáticas aceptados; deja cada uno en una sola "
+                 f"lista y vuelve a ejecutar: {', '.join(dobles)}")
+
+
 def main():
+    sin_repetidos()
     db = sqlite3.connect(DB_DEFECTO)
     datos = {
         "generos": trozos(lista(db, "genero"), "Género"),

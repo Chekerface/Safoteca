@@ -111,13 +111,26 @@ class Plantilla:
                 if r:
                     dest[t].append(r)
                     continue
-                otro = {"tematica": "aviso", "aviso": "tematica"}.get(t)
-                r2 = resolver(x, otro) if otro else None
-                if r2:
-                    dest[otro].append(r2)
-                    self.inc(n, titulo, t, x, f"llegó como {LISTAS_ACEPTADAS[t][1]} y se guarda como {LISTAS_ACEPTADAS[otro][1]} «{r2}» (corregido solo)")
+                for otro in {"tematica": ("genero", "aviso"), "aviso": ("tematica",), "genero": ("tematica",)}[t]:
+                    r2 = resolver(x, otro)
+                    if r2:
+                        dest[otro].append(r2)
+                        self.inc(n, titulo, t, x, f"llegó como {LISTAS_ACEPTADAS[t][1]} y se guarda como {LISTAS_ACEPTADAS[otro][1]} «{r2}» (corregido solo)")
+                        break
                 else:
                     dest[t].append(mapas[t].get(x.lower(), x))
+        # Temáticas que llevan género (Drama médico → Drama…): data/mapeos/tematica_a_genero.csv
+        for tm in list(dest["tematica"]):
+            g = TEMATICA_A_GENERO.get(sin_tildes(tm))
+            if g and g not in dest["genero"]:
+                dest["genero"].append(g)
+                self.inc(n, titulo, "genero", g, f"añadido solo por la temática «{tm}»")
+        # Temáticas que también son avisos (Racismo, Crimen…): la obra recibe el aviso, para quien lo evite
+        for tm in list(dest["tematica"]):
+            av = acept["aviso"].get(sin_tildes(tm))
+            if av and av not in dest["aviso"]:
+                dest["aviso"].append(av)
+                self.inc(n, titulo, "aviso", av, f"añadido solo por la temática «{tm}»")
         return tuple(", ".join(dict.fromkeys(dest[t])) for t in ("genero", "tematica", "aviso"))
 
     def inc(self, n, titulo, campo, valor, problema):
@@ -310,6 +323,14 @@ def sin_tildes(x):
     return "".join(c for c in unicodedata.normalize("NFKD", x) if not unicodedata.combining(c)).casefold().strip()
 
 
+def leer_tematica_a_genero():
+    f = MAPEOS / "tematica_a_genero.csv"
+    if not f.exists():
+        return {}
+    with open(f, encoding="utf-8-sig", newline="") as fh:
+        return {sin_tildes(r["tematica"]): r["genero"].strip() for r in csv.DictReader(fh) if r.get("tematica")}
+
+
 def leer_aceptadas(tabla):
     f = MAPEOS / LISTAS_ACEPTADAS[tabla][0]
     if not f.exists():
@@ -325,6 +346,9 @@ def guardar_aceptadas(tabla, nuevas):
         w = csv.writer(fh)
         w.writerow(["nombre"])
         w.writerows([[n] for n in todas])
+
+
+TEMATICA_A_GENERO = leer_tematica_a_genero()
 
 
 def puerta_etiquetas(db, antes, aceptar, simular):

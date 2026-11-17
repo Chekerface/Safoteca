@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-17T10:17:18+00:00",
+  "generado": "2026-11-17T10:27:15+00:00",
   "total": 325
  },
  "obras": [
@@ -21,15 +21,14 @@
    "final_feliz": true,
    "poster": "130",
    "generos": [
+    "Comedia",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amor",
-    "Comedia",
     "Juventud",
-    "Pareja",
-    "Romance"
+    "Pareja"
    ],
    "avisos": [],
    "actrices": [
@@ -142,7 +141,6 @@
     "Drama"
    ],
    "tematicas": [
-    "Drama",
     "Mala con ganas"
    ],
    "avisos": [],
@@ -185,6 +183,7 @@
    "poster": "380",
    "generos": [
     "Comedia",
+    "Comedia romántica",
     "Romance"
    ],
    "tematicas": [
@@ -192,9 +191,7 @@
     "Adolescencia",
     "Amistad",
     "Autodescubrimiento",
-    "Comedia",
     "Comedia juvenil",
-    "Comedia romántica",
     "De amigas a amantes",
     "Identidad",
     "Romance de instituto",
@@ -254,10 +251,14 @@
     "Thriller"
    ],
    "tematicas": [
-    "Crimen",
-    "Thriller"
+    "Crimen"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Shanika Warren-Markland"
    ],
@@ -298,12 +299,11 @@
    "final_feliz": null,
    "poster": "256",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
-    "Amistad",
     "Comedia",
     "Sitcom"
+   ],
+   "tematicas": [
+    "Amistad"
    ],
    "avisos": [
     {
@@ -373,15 +373,14 @@
    "final_feliz": null,
    "poster": "39",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance",
+    "Thriller"
    ],
    "tematicas": [
     "Asia",
     "Divorcio",
-    "Drama",
-    "Romance",
-    "Soledad",
-    "Thriller"
+    "Soledad"
    ],
    "avisos": [
     {
@@ -431,18 +430,17 @@
    "final_feliz": null,
    "poster": "38",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Autodescubrimiento",
-    "Comedia",
     "Coming of age",
-    "Drama",
     "Identidad",
-    "Juventud",
-    "Romance"
+    "Juventud"
    ],
    "avisos": [
     {
@@ -501,12 +499,11 @@
    "final_feliz": true,
    "poster": "112",
    "generos": [
-    "Comedia Dramática"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia dramática",
-    "Fantasía",
+    "Fantasía"
+   ],
+   "tematicas": [
     "Navidad",
     "Sobrenatural",
     "Vida adulta"
@@ -551,13 +548,12 @@
    "final_feliz": null,
    "poster": "203",
    "generos": [
-    "Documental"
+    "Documental",
+    "Drama"
    ],
    "tematicas": [
     "Amor",
     "Autodescubrimiento",
-    "Documental",
-    "Drama",
     "Identidad",
     "Salir del armario"
    ],
@@ -619,7 +615,6 @@
     "Autodescubrimiento",
     "De época",
     "Diferencia de edad",
-    "Drama",
     "Identidad",
     "Juventud",
     "Pareja",
@@ -629,6 +624,10 @@
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Diferencia de edad",
      "categoria": null
     },
     {
@@ -689,12 +688,11 @@
    "poster": "390",
    "generos": [
     "Acción",
+    "Drama",
     "Fantasía"
    ],
    "tematicas": [
     "Cómic",
-    "Drama",
-    "Fantasía",
     "Marvel",
     "Pareja",
     "Pareja tóxica",
@@ -763,12 +761,11 @@
    "final_feliz": null,
    "poster": "46",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural"
+   ],
+   "tematicas": [
     "Mala con ganas"
    ],
    "avisos": [
@@ -820,12 +817,10 @@
    "final_feliz": true,
    "poster": "198",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Elise Bauman",
@@ -865,12 +860,10 @@
    "final_feliz": null,
    "poster": "98",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Telenovela"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Bárbara López",
@@ -909,7 +902,6 @@
     "Amor",
     "Autodescubrimiento",
     "De época",
-    "Drama",
     "Identidad",
     "Juventud",
     "Pareja",
@@ -978,13 +970,12 @@
    "final_feliz": null,
    "poster": "147",
    "generos": [
-    "Horror"
-   ],
-   "tematicas": [
     "Fantasía",
     "Horror",
-    "Sobrenatural",
     "Terror"
+   ],
+   "tematicas": [
+    "Sobrenatural"
    ],
    "avisos": [],
    "actrices": [
@@ -1026,13 +1017,12 @@
    "final_feliz": false,
    "poster": "211",
    "generos": [
-    "Horror"
-   ],
-   "tematicas": [
     "Fantasía",
     "Horror",
-    "Sobrenatural",
     "Terror"
+   ],
+   "tematicas": [
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -1100,15 +1090,14 @@
    "final_feliz": null,
    "poster": "375",
    "generos": [
-    "Horror"
+    "Fantasía",
+    "Horror",
+    "Terror"
    ],
    "tematicas": [
     "Asesinato",
     "Crimen",
-    "Fantasía",
-    "Horror",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -1283,14 +1272,13 @@
    "final_feliz": null,
    "poster": "80",
    "generos": [
+    "Drama",
+    "Histórico",
     "Romance"
    ],
    "tematicas": [
     "Amor",
-    "De época",
-    "Drama",
-    "Histórico",
-    "Romance"
+    "De época"
    ],
    "avisos": [
     {
@@ -1351,12 +1339,11 @@
    "poster": "395",
    "generos": [
     "Comedia",
+    "Comedia dramática",
     "Drama"
    ],
    "tematicas": [
     "Amor",
-    "Comedia",
-    "Comedia dramática",
     "De enemigas a amantes",
     "Romance en el trabajo",
     "Thai GL",
@@ -1421,10 +1408,8 @@
     "Romance"
    ],
    "tematicas": [
-    "Drama",
     "Erótico",
     "Matrimonio",
-    "Romance",
     "Sexo"
    ],
    "avisos": [
@@ -1481,12 +1466,11 @@
    "final_feliz": null,
    "poster": "304",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Romance"
    ],
    "tematicas": [
-    "Comedia",
     "Comedia absurda",
-    "Romance",
     "Vida adulta"
    ],
    "avisos": [
@@ -1553,16 +1537,15 @@
    "final_feliz": null,
    "poster": "120",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Sitcom"
    ],
    "tematicas": [
     "Autodescubrimiento",
-    "Comedia",
     "Comedia de enredo",
     "Comedia española",
     "Identidad",
     "Salir del armario",
-    "Sitcom",
     "Vecinos"
    ],
    "avisos": [
@@ -1637,20 +1620,19 @@
    "final_feliz": true,
    "poster": "56",
    "generos": [
+    "Animación",
+    "Anime",
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amor",
-    "Animación",
-    "Anime",
     "Diferencia de altura",
-    "Drama",
     "Escuela",
     "Heartwarming",
     "Pareja",
-    "Pareja sana",
-    "Romance"
+    "Pareja sana"
    ],
    "avisos": [],
    "actrices": [],
@@ -1690,17 +1672,16 @@
    "final_feliz": null,
    "poster": "235",
    "generos": [
-    "Comedia"
+    "Ciencia ficción",
+    "Comedia",
+    "Drama",
+    "Fantasía",
+    "Fantástico"
    ],
    "tematicas": [
     "Adolescencia",
     "Adorabilidad Absoluta",
-    "Ciencia ficción",
-    "Comedia",
-    "Drama",
     "Drama adolescente",
-    "Fantasía",
-    "Fantástico",
     "Instituto",
     "Monstruos"
    ],
@@ -1711,6 +1692,10 @@
     },
     {
      "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Adorabilidad absoluta",
      "categoria": null
     },
     {
@@ -1760,13 +1745,12 @@
    "final_feliz": true,
    "poster": "58",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Autismo",
-    "Comedia",
-    "Drama",
     "Familia"
    ],
    "avisos": [
@@ -1813,12 +1797,11 @@
    "final_feliz": false,
    "poster": "79",
    "generos": [
-    "Acción"
+    "Acción",
+    "Suspense"
    ],
    "tematicas": [
-    "Acción",
-    "Espionaje",
-    "Suspense"
+    "Espionaje"
    ],
    "avisos": [
     {
@@ -1891,8 +1874,7 @@
    "tematicas": [
     "Amigas de la infancia",
     "Amistad",
-    "Amor",
-    "Romance"
+    "Amor"
    ],
    "avisos": [],
    "actrices": [
@@ -1938,17 +1920,16 @@
    "final_feliz": true,
    "poster": "261",
    "generos": [
-    "Comedia romántica"
+    "Comedia",
+    "Comedia romántica",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amistad",
     "Autodescubrimiento",
-    "Comedia",
-    "Comedia romántica",
     "Coming of age",
-    "Drama",
     "Identidad",
-    "Romance",
     "Salir del armario",
     "Universidad"
    ],
@@ -1991,14 +1972,13 @@
    "final_feliz": null,
    "poster": "244",
    "generos": [
-    "Acción"
-   ],
-   "tematicas": [
     "Acción",
-    "DC",
     "Drama",
     "Fantasía",
-    "Fantástico",
+    "Fantástico"
+   ],
+   "tematicas": [
+    "DC",
     "Superheroinas"
    ],
    "avisos": [
@@ -2068,13 +2048,12 @@
    "final_feliz": null,
    "poster": "157",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Ciencia ficción",
     "Comedia",
     "Drama",
-    "Fantasía",
+    "Fantasía"
+   ],
+   "tematicas": [
     "Viajes en el tiempo"
    ],
    "avisos": [],
@@ -2108,17 +2087,15 @@
    "final_feliz": null,
    "poster": "88",
    "generos": [
-    "Ciencia Ficción"
-   ],
-   "tematicas": [
     "Ciencia ficción",
     "Comedia",
     "Comedia negra",
     "Drama",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural",
     "Suspense",
     "Terror"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Angustia",
@@ -2170,15 +2147,15 @@
    "final_feliz": false,
    "poster": "224",
    "generos": [
-    "Aventura"
+    "Aventura",
+    "Drama",
+    "Histórico"
    ],
    "tematicas": [
     "Aventuras",
     "Crimen",
     "De época",
     "Delincuencia",
-    "Drama",
-    "Histórico",
     "NSFW",
     "Piratas",
     "Prostitución",
@@ -2187,6 +2164,14 @@
    "avisos": [
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
      "categoria": null
     },
     {
@@ -2199,6 +2184,10 @@
     },
     {
      "nombre": "Maltrato",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
      "categoria": null
     },
     {
@@ -2273,14 +2262,13 @@
    "final_feliz": null,
    "poster": "40",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Asia",
-    "Coming of age",
-    "Drama",
-    "Romance"
+    "Coming of age"
    ],
    "avisos": [],
    "actrices": [
@@ -2324,14 +2312,13 @@
    "final_feliz": false,
    "poster": "222",
    "generos": [
+    "Comedia",
+    "Comedia dramática",
     "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Autodescubrimiento",
-    "Comedia",
-    "Comedia dramática",
-    "Drama",
     "Identidad",
     "Instituto",
     "Salir del armario"
@@ -2386,15 +2373,14 @@
    "final_feliz": null,
    "poster": "81",
    "generos": [
-    "Comedia Dramática"
+    "Animación",
+    "Comedia",
+    "Comedia dramática",
+    "Comedia negra"
    ],
    "tematicas": [
     "Alcoholismo",
     "Amistad",
-    "Animación",
-    "Comedia",
-    "Comedia dramática",
-    "Comedia negra",
     "Consumo de alcohol",
     "Consumo de drogas",
     "Drogodependencia",
@@ -2402,6 +2388,10 @@
     "Furry"
    ],
    "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
     {
      "nombre": "Angustia",
      "categoria": null
@@ -2424,6 +2414,10 @@
     },
     {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -2513,14 +2507,13 @@
    "final_feliz": true,
    "poster": "124",
    "generos": [
+    "Intriga",
     "Suspense"
    ],
    "tematicas": [
     "Cine negro",
     "Erótico",
-    "Intriga",
-    "Mafia",
-    "Suspense"
+    "Mafia"
    ],
    "avisos": [
     {
@@ -2576,13 +2569,12 @@
    "final_feliz": null,
    "poster": "195",
    "generos": [
-    "Comedia romántica"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia romántica",
     "Drama",
-    "Romance",
+    "Romance"
+   ],
+   "tematicas": [
     "Trans"
    ],
    "avisos": [
@@ -2635,18 +2627,25 @@
    "final_feliz": null,
    "poster": "64",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Policíaca"
    ],
    "tematicas": [
     "Amistad",
     "Amor",
-    "Comedia",
     "Crimen",
     "Delincuencia",
-    "Policía",
-    "Policíaca"
+    "Policía"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
     {
      "nombre": "Discriminación",
      "categoria": null
@@ -2673,6 +2672,10 @@
     },
     {
      "nombre": "TCA",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
      "categoria": null
     }
    ],
@@ -2716,19 +2719,18 @@
    "final_feliz": false,
    "poster": "89",
    "generos": [
-    "Fantasía"
-   ],
-   "tematicas": [
     "Acción",
-    "Adolescencia",
-    "Amistad",
     "Drama",
     "Fantasía",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural",
+    "Terror"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Amistad",
     "Juventud",
     "Sobrenatural",
     "Superheroinas",
-    "Terror",
     "Tragedia",
     "Vampiras"
    ],
@@ -2783,14 +2785,13 @@
    "final_feliz": true,
    "poster": "115",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
-    "Comedia",
     "Coming of age",
-    "Enemies to Lovers",
-    "Romance"
+    "Enemies to Lovers"
    ],
    "avisos": [
     {
@@ -2845,13 +2846,12 @@
    "final_feliz": true,
    "poster": "257",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia romántica",
-    "Religión",
     "Romance"
+   ],
+   "tematicas": [
+    "Religión"
    ],
    "avisos": [
     {
@@ -2860,6 +2860,10 @@
     },
     {
      "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     }
    ],
@@ -2903,13 +2907,12 @@
    "final_feliz": null,
    "poster": "31",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
-    "Juventud",
-    "Romance"
+    "Juventud"
    ],
    "avisos": [
     {
@@ -2957,14 +2960,13 @@
    "final_feliz": null,
    "poster": "206",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Autodescubrimiento",
-    "Drama",
     "Identidad",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -3017,12 +3019,11 @@
    "final_feliz": true,
    "poster": "196",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Fantasía",
-    "Terror",
+    "Terror"
+   ],
+   "tematicas": [
     "Vampiras",
     "Webserie"
    ],
@@ -3066,13 +3067,12 @@
    "final_feliz": false,
    "poster": "207",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Fantasía",
     "Fantástico",
-    "Romance",
+    "Romance"
+   ],
+   "tematicas": [
     "Vampiras"
    ],
    "avisos": [
@@ -3125,13 +3125,12 @@
    "final_feliz": true,
    "poster": "92",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
-    "De época",
-    "Drama",
-    "Romance"
+    "De época"
    ],
    "avisos": [
     {
@@ -3184,13 +3183,13 @@
    "final_feliz": true,
    "poster": "51",
    "generos": [
+    "Acción",
+    "Animación",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
-    "Animación",
     "Aventuras",
     "Bisexual",
     "Bisexualidad",
@@ -3199,7 +3198,6 @@
     "Enemies to Lovers",
     "Escuela",
     "Family Friendly",
-    "Fantasía",
     "Misterio",
     "Pareja",
     "Pareja idiota",
@@ -3254,12 +3252,15 @@
     "Drama"
    ],
    "tematicas": [
-    "Drama",
     "Enfermedad"
    ],
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     }
    ],
@@ -3301,14 +3302,13 @@
    "final_feliz": null,
    "poster": "139",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Casanova",
-    "Comedia",
-    "Drama",
     "Homosexualidad",
-    "Romance",
     "Webserie"
    ],
    "avisos": [
@@ -3364,12 +3364,11 @@
    "final_feliz": false,
    "poster": "3",
    "generos": [
-    "Acción"
+    "Acción",
+    "Drama"
    ],
    "tematicas": [
-    "Acción",
-    "Bomberos",
-    "Drama"
+    "Bomberos"
    ],
    "avisos": [
     {
@@ -3434,21 +3433,24 @@
    "final_feliz": null,
    "poster": "148",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance",
+    "Suspense"
    ],
    "tematicas": [
     "Celos",
     "Diferencia de edad",
-    "Drama",
     "Remake",
-    "Romance",
-    "Suspense",
     "Tragedia",
     "Vida adulta"
    ],
    "avisos": [
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Diferencia de edad",
      "categoria": null
     },
     {
@@ -3514,8 +3516,7 @@
    ],
    "tematicas": [
     "Familia",
-    "Navidad",
-    "Romance"
+    "Navidad"
    ],
    "avisos": [],
    "actrices": [
@@ -3558,26 +3559,33 @@
    "final_feliz": null,
    "poster": "298",
    "generos": [
+    "Comedia",
+    "Fantasía",
     "Terror"
    ],
    "tematicas": [
     "Adolescencia",
     "Asesinato",
     "Autodescubrimiento",
-    "Comedia",
     "Crimen",
-    "Fantasía",
     "Humor negro",
     "Identidad",
     "Muñecos",
     "Salir del armario",
     "Slasher",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -3645,7 +3653,6 @@
     "Terror"
    ],
    "tematicas": [
-    "Drama",
     "Thriller psicológico",
     "Trastornos mentales"
    ],
@@ -3734,20 +3741,19 @@
    "final_feliz": true,
    "poster": "54",
    "generos": [
-    "Drama"
+    "Animación",
+    "Anime",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amor",
-    "Animación",
-    "Anime",
     "Celos",
-    "Drama",
     "Enemies to Lovers",
     "Erótico",
     "Escuela",
     "NSFW",
-    "Romance",
     "Roommates",
     "Sexualidad"
    ],
@@ -3802,17 +3808,16 @@
    "final_feliz": null,
    "poster": "35",
    "generos": [
+    "Comedia",
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Autodescubrimiento",
-    "Comedia",
     "Coming of age",
-    "Drama",
-    "Identidad",
-    "Romance"
+    "Identidad"
    ],
    "avisos": [],
    "actrices": [
@@ -3860,22 +3865,29 @@
    "final_feliz": null,
    "poster": "165",
    "generos": [
-    "Drama"
+    "Drama",
+    "Suspense"
    ],
    "tematicas": [
     "Amor",
     "Asesinato",
-    "Crimen",
-    "Drama",
-    "Suspense"
+    "Crimen"
    ],
    "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
     {
      "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -3959,17 +3971,16 @@
    "final_feliz": null,
    "poster": "278",
    "generos": [
-    "Drama"
+    "Drama",
+    "Suspense",
+    "Thriller"
    ],
    "tematicas": [
     "Adolescencia",
     "Chantaje",
-    "Drama",
     "Hacker",
     "Instituto",
     "Internet",
-    "Suspense",
-    "Thriller",
     "Venganza"
    ],
    "avisos": [
@@ -3979,6 +3990,10 @@
     },
     {
      "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje",
      "categoria": null
     },
     {
@@ -4043,14 +4058,13 @@
    "final_feliz": null,
    "poster": "70",
    "generos": [
+    "Comedia",
     "Musical"
    ],
    "tematicas": [
     "Amistad",
     "Amor",
-    "Comedia",
     "Familia",
-    "Musical",
     "Salud Mental",
     "Trastornos mentales"
    ],
@@ -4126,14 +4140,13 @@
    "final_feliz": null,
    "poster": "85",
    "generos": [
-    "Acción"
-   ],
-   "tematicas": [
     "Acción",
     "Animación",
     "Ciencia ficción",
     "Fantasía",
-    "Fantástico",
+    "Fantástico"
+   ],
+   "tematicas": [
     "Robots"
    ],
    "avisos": [
@@ -4173,15 +4186,14 @@
    "final_feliz": true,
    "poster": "251",
    "generos": [
+    "Comedia",
+    "Comedia romántica",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Comedia",
-    "Comedia romántica",
     "Coming of age",
     "Instituto",
-    "Romance",
     "Supporting Mom"
    ],
    "avisos": [],
@@ -4218,11 +4230,10 @@
    "final_feliz": null,
    "poster": "383",
    "generos": [
-    "Reality"
-   ],
-   "tematicas": [
+    "Reality",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Kim Riwon"
@@ -4259,24 +4270,23 @@
    "final_feliz": true,
    "poster": "109",
    "generos": [
-    "Comedia"
+    "Acción",
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
     "Amor",
     "Autodescubrimiento",
-    "Comedia",
     "Cutre",
-    "Drama",
     "Enemies to Lovers",
     "Heartwarming",
     "Identidad",
     "Juventud",
     "Pareja",
     "Pareja sana",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [],
@@ -4320,18 +4330,17 @@
    "final_feliz": null,
    "poster": "59",
    "generos": [
+    "Ciencia ficción",
+    "Drama",
+    "Fantasía",
+    "Suspense",
     "Thriller"
    ],
    "tematicas": [
-    "Ciencia ficción",
     "Crimen",
     "Desapariciones",
-    "Drama",
-    "Fantasía",
     "Secuestros",
     "Sobrenatural",
-    "Suspense",
-    "Thriller",
     "Viajes en el tiempo"
    ],
    "avisos": [
@@ -4394,12 +4403,11 @@
    "final_feliz": null,
    "poster": "143",
    "generos": [
-    "Ciencia Ficción"
+    "Acción",
+    "Ciencia ficción"
    ],
    "tematicas": [
-    "Acción",
     "Aventuras",
-    "Ciencia ficción",
     "Espacio",
     "Mercenarios",
     "Misterio"
@@ -4439,14 +4447,13 @@
    "final_feliz": null,
    "poster": "24",
    "generos": [
+    "Comedia",
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Identidad",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -4499,13 +4506,12 @@
    "final_feliz": null,
    "poster": "151",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
     "Amistad",
-    "Años 80",
-    "Comedia",
-    "Drama"
+    "Años 80"
    ],
    "avisos": [],
    "actrices": [
@@ -4542,7 +4548,6 @@
    ],
    "tematicas": [
     "Casanova",
-    "Comedia",
     "Comedia española",
     "Homosexualidad",
     "Secuela"
@@ -4608,7 +4613,6 @@
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
     "Secuela"
    ],
    "avisos": [
@@ -4654,22 +4658,26 @@
    "final_feliz": null,
    "poster": "299",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Histórico"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Años 90",
-    "Comedia",
     "Comedia de situación",
     "Crimen",
-    "Histórico",
     "IRA",
     "Irlanda",
     "Irlanda del Norte",
     "Terrorismo"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Nicola Coughlan"
    ],
@@ -4709,12 +4717,10 @@
    "final_feliz": null,
    "poster": "260",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Cancelada",
@@ -4777,32 +4783,35 @@
    "final_feliz": null,
    "poster": "55",
    "generos": [
-    "Acción"
+    "Acción",
+    "Animación",
+    "Anime",
+    "Drama",
+    "Fantasía",
+    "Ficción sobrenatural",
+    "Romance"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
     "Bisexual",
     "Bisexualidad",
     "Desamor",
     "Diferencia de altura",
-    "Drama",
     "Escuela",
-    "Fantasía",
-    "Ficción Sobrenatural",
     "Friends to lovers",
     "NSFW",
-    "Romance",
     "Sobrenatural",
     "Tragedia"
    ],
    "avisos": [
     {
      "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
      "categoria": null
     },
     {
@@ -4847,12 +4856,11 @@
    "final_feliz": null,
    "poster": "152",
    "generos": [
+    "Biográfico",
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
-    "Biográfico",
-    "Comedia",
-    "Drama",
     "Feminismo",
     "Literatura",
     "Siglo XIX"
@@ -4896,13 +4904,11 @@
    "final_feliz": null,
    "poster": "258",
    "generos": [
-    "Telenovela"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
     "Telenovela"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Cancelada",
@@ -4947,16 +4953,15 @@
    "final_feliz": null,
    "poster": "91",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
     "Autodescubrimiento",
-    "Drama",
     "Identidad",
     "Religión",
-    "Represión",
-    "Romance"
+    "Represión"
    ],
    "avisos": [
     {
@@ -4981,6 +4986,10 @@
     },
     {
      "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     },
     {
@@ -5036,7 +5045,6 @@
    ],
    "tematicas": [
     "Amistad",
-    "Comedia",
     "Mujeres adultas"
    ],
    "avisos": [
@@ -5097,19 +5105,18 @@
    "final_feliz": null,
    "poster": "254",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Policíaca"
    ],
    "tematicas": [
     "Adolescencia",
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
     "Crimen",
-    "Drama",
     "Enemies to Lovers",
     "Instituto",
-    "Policía",
-    "Policíaca"
+    "Policía"
    ],
    "avisos": [
     {
@@ -5122,6 +5129,10 @@
     },
     {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -5169,13 +5180,12 @@
    "final_feliz": null,
    "poster": "193",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
-    "Amor",
     "Comedia",
     "Drama",
     "Romance"
+   ],
+   "tematicas": [
+    "Amor"
    ],
    "avisos": [],
    "actrices": [
@@ -5223,7 +5233,6 @@
    "tematicas": [
     "Adolescencia",
     "Amor",
-    "Comedia",
     "Comedia absurda",
     "Conspiraciones",
     "Familia encontrada",
@@ -5286,12 +5295,10 @@
    "final_feliz": null,
    "poster": "374",
    "generos": [
-    "Distopía",
     "Drama"
    ],
    "tematicas": [
     "Distopía",
-    "Drama",
     "Represión"
    ],
    "avisos": [
@@ -5409,17 +5416,16 @@
    "final_feliz": null,
    "poster": "488",
    "generos": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
+    "Fantasía",
+    "Fantástico",
     "Romance",
     "Suspense"
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
     "Drama adolescente",
-    "Fantasía",
-    "Fantástico",
     "Lesbiana",
     "Religión"
    ],
@@ -5497,6 +5503,7 @@
    "final_feliz": null,
    "poster": "270",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
@@ -5505,9 +5512,7 @@
     "Amor",
     "Amor de juventud",
     "Divorcio",
-    "Drama",
     "Intercambio de parejas",
-    "Romance",
     "Vida adulta"
    ],
    "avisos": [
@@ -5585,16 +5590,15 @@
    "final_feliz": false,
    "poster": "155",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
     "De época",
-    "Drama",
     "Lesbiana",
     "Lesbianismo",
     "Represión",
-    "Romance",
     "Salud Mental",
     "Soledad",
     "Tragedia",
@@ -5666,18 +5670,17 @@
    "final_feliz": null,
    "poster": "52",
    "generos": [
+    "Acción",
+    "Animación",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
     "Aventuras",
     "Enemies to Lovers",
     "Family Friendly",
-    "Fantasía",
     "Juventud"
    ],
    "avisos": [
@@ -5726,20 +5729,27 @@
    "final_feliz": true,
    "poster": "36",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
     "De época",
     "Discriminación",
     "Discriminación fuerte",
-    "Drama",
-    "Lesbofobia",
-    "Romance"
+    "Lesbofobia"
    ],
    "avisos": [
     {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación fuerte",
+     "categoria": null
+    },
+    {
+     "nombre": "Lesbofobia",
      "categoria": null
     },
     {
@@ -5814,16 +5824,15 @@
    "final_feliz": null,
    "poster": "292",
    "generos": [
-    "Comedia"
+    "Biográfico",
+    "Comedia",
+    "Drama",
+    "Histórico"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
     "Años 40",
-    "Biográfico",
-    "Comedia",
     "Deportes",
-    "Drama",
-    "Histórico",
     "Machismo",
     "Racismo"
    ],
@@ -5842,6 +5851,10 @@
     },
     {
      "nombre": "Lesbofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Racismo",
      "categoria": null
     },
     {
@@ -5901,14 +5914,13 @@
    "final_feliz": null,
    "poster": "57",
    "generos": [
+    "Drama",
+    "Fantasía",
     "Fantástico"
    ],
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Drama",
-    "Fantasía",
-    "Fantástico",
     "Magia"
    ],
    "avisos": [
@@ -5955,12 +5967,11 @@
    "final_feliz": true,
    "poster": "483",
    "generos": [
+    "Comedia",
     "Drama",
     "Romance"
    ],
    "tematicas": [
-    "Comedia",
-    "Drama",
     "Romance en el trabajo",
     "Thai GL"
    ],
@@ -6027,15 +6038,14 @@
    "final_feliz": null,
    "poster": "30",
    "generos": [
-    "Acción"
-   ],
-   "tematicas": [
     "Acción",
-    "Bisexual",
-    "Bisexualidad",
-    "Bomberos",
     "Drama",
     "Romance"
+   ],
+   "tematicas": [
+    "Bisexual",
+    "Bisexualidad",
+    "Bomberos"
    ],
    "avisos": [
     {
@@ -6089,19 +6099,22 @@
    "final_feliz": true,
    "poster": "217",
    "generos": [
+    "Intriga",
+    "Suspense",
     "Thriller"
    ],
    "tematicas": [
     "Adolescencia",
     "Angustia",
-    "Crimen",
-    "Intriga",
-    "Suspense",
-    "Thriller"
+    "Crimen"
    ],
    "avisos": [
     {
      "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
      "categoria": null
     },
     {
@@ -6189,7 +6202,6 @@
     "Amor",
     "Autodescubrimiento",
     "Consumo de drogas",
-    "Drama",
     "Drogodependencia",
     "Identidad",
     "Salud Mental",
@@ -6229,6 +6241,10 @@
     },
     {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -6331,10 +6347,13 @@
     "Thriller"
    ],
    "tematicas": [
-    "Crimen",
-    "Thriller"
+    "Crimen"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Muerte",
      "categoria": null
@@ -6392,14 +6411,13 @@
    "final_feliz": null,
    "poster": "280",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Adopción",
-    "Comedia",
-    "Drama",
-    "Día a día",
+    "Costumbrismo",
     "Familia",
     "Family Friendly",
     "Inclusión",
@@ -6467,16 +6485,16 @@
    "final_feliz": null,
    "poster": "288",
    "generos": [
+    "Fantasía",
+    "Fantástico",
+    "Terror",
     "Thriller"
    ],
    "tematicas": [
     "Adolescencia",
     "Años 70",
     "Años 90",
-    "Fantasía",
-    "Fantástico",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -6583,18 +6601,40 @@
     "Consumo de drogas",
     "Crimen",
     "Diferencias de clase social",
-    "Drama",
     "Drama psicológico",
-    "Drogodependencia",
-    "Intriga"
+    "Drogodependencia"
    ],
    "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
     {
      "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -6658,13 +6698,12 @@
    "final_feliz": true,
    "poster": "142",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
     "Homosexualidad",
-    "Romance",
     "Vida Rural"
    ],
    "avisos": [
@@ -6729,12 +6768,11 @@
    "final_feliz": null,
    "poster": "210",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Drama",
-    "Familia",
-    "Romance"
+    "Familia"
    ],
    "avisos": [
     {
@@ -6803,7 +6841,8 @@
    "poster": "384",
    "generos": [
     "Comedia",
-    "Comedia romántica"
+    "Comedia romántica",
+    "Drama"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
@@ -6811,7 +6850,6 @@
     "Celos",
     "Diferencia de edad",
     "Diferencias de clase social",
-    "Drama",
     "Lesbiana",
     "Protagonista lesbiana",
     "Relaciones",
@@ -6887,15 +6925,14 @@
    "final_feliz": null,
    "poster": "171",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
     "Comedia juvenil",
-    "Drama",
     "Instituto",
     "Trans"
    ],
@@ -6960,13 +6997,12 @@
    "final_feliz": null,
    "poster": "77",
    "generos": [
-    "Drama"
+    "Drama",
+    "Histórico"
    ],
    "tematicas": [
     "Amor",
     "De época",
-    "Drama",
-    "Histórico",
     "Lesbiana",
     "Lesbianismo"
    ],
@@ -7056,12 +7092,10 @@
    "final_feliz": null,
    "poster": "163",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Humberly Gonzalez",
@@ -7101,6 +7135,7 @@
    "final_feliz": true,
    "poster": "44",
    "generos": [
+    "Comedia",
     "Musical"
    ],
    "tematicas": [
@@ -7108,9 +7143,7 @@
     "Amor",
     "Bajo presupuesto",
     "Casanova",
-    "Comedia",
-    "Heartwarming",
-    "Musical"
+    "Heartwarming"
    ],
    "avisos": [],
    "actrices": [
@@ -7161,17 +7194,16 @@
    "final_feliz": true,
    "poster": "262",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Musical"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
     "Autodescubrimiento",
-    "Comedia",
     "Coming of age",
-    "Drama",
     "Identidad",
     "Instituto",
-    "Musical",
     "Salir del armario"
    ],
    "avisos": [
@@ -7240,16 +7272,15 @@
    "final_feliz": true,
    "poster": "239",
    "generos": [
-    "Comedia romántica"
+    "Comedia",
+    "Comedia romántica",
+    "Romance"
    ],
    "tematicas": [
     "Autodescubrimiento",
     "China",
-    "Comedia",
-    "Comedia romántica",
     "Familia",
     "Identidad",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -7310,12 +7341,11 @@
    "final_feliz": false,
    "poster": "188",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Drama",
     "Erótico",
-    "Romance",
     "Sexualidad"
    ],
    "avisos": [
@@ -7380,13 +7410,12 @@
    "final_feliz": null,
    "poster": "286",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
-    "Drama",
     "Lesbiana",
     "Lesbianismo",
     "Stand-up",
@@ -7448,13 +7477,12 @@
    "final_feliz": null,
    "poster": "187",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Amistad",
-    "Drama",
-    "Romance"
+    "Amistad"
    ],
    "avisos": [
     {
@@ -7501,8 +7529,7 @@
    "tematicas": [
     "Amistad",
     "Butch",
-    "Comedia",
-    "Día a día"
+    "Costumbrismo"
    ],
    "avisos": [],
    "actrices": [],
@@ -7540,23 +7567,22 @@
    "final_feliz": null,
    "poster": "53",
    "generos": [
-    "Acción"
+    "Acción",
+    "Animación",
+    "Comedia",
+    "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Amistad",
     "Amor",
-    "Animación",
     "Asesinato",
     "Aventuras",
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
     "Crimen",
     "DC",
     "Delincuencia",
     "Desamor",
-    "Fantasía",
     "Friends to lovers",
     "NSFW",
     "Pandilla",
@@ -7565,6 +7591,22 @@
     "Superheroinas"
    ],
    "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    },
     {
      "nombre": "Gore",
      "categoria": null
@@ -7624,7 +7666,6 @@
    ],
    "tematicas": [
     "De época",
-    "Drama",
     "Prostitución"
    ],
    "avisos": [
@@ -7686,6 +7727,8 @@
    "final_feliz": true,
    "poster": "387",
    "generos": [
+    "Comedia",
+    "Comedia dramática",
     "Drama",
     "Romance"
    ],
@@ -7693,8 +7736,6 @@
     "Amor",
     "Asia",
     "Clase alta",
-    "Comedia",
-    "Comedia dramática",
     "De enemigas a amantes",
     "Erótico-festivo",
     "Riqueza",
@@ -7773,21 +7814,18 @@
    "poster": null,
    "generos": [
     "Acción",
-    "Comedia Dramática",
+    "Comedia",
+    "Comedia dramática",
+    "Comedia romántica",
     "Drama",
     "Policíaca",
     "Romance"
    ],
    "tematicas": [
-    "Acción",
     "Amor",
     "Asesinato",
-    "Comedia",
-    "Comedia dramática",
-    "Comedia romántica",
     "Corrupción policial",
     "Crimen",
-    "Drama",
     "Drama psicológico",
     "Familia",
     "Lesbiana",
@@ -7797,18 +7835,20 @@
     "Pareja",
     "Pareja sana",
     "Policía",
-    "Policíaca",
     "Política",
     "Protagonista lesbiana",
     "Relaciones",
     "Relaciones complicadas",
-    "Romance",
     "Terrorismo",
     "Thai GL",
     "Venganza",
     "Violencia"
    ],
    "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
     {
      "nombre": "Brutalidad policial",
      "categoria": null
@@ -7884,15 +7924,14 @@
    "final_feliz": true,
    "poster": "255",
    "generos": [
-    "Drama"
+    "Drama",
+    "Fantasía",
+    "Thriller"
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
-    "Fantasía",
     "Magia",
-    "Sobrenatural",
-    "Thriller"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -7936,17 +7975,16 @@
    "final_feliz": null,
    "poster": "253",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Autodescubrimiento",
     "Coming of age",
-    "Drama",
     "Homofobia",
     "Identidad",
     "Instituto",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -7956,6 +7994,14 @@
     },
     {
      "nombre": "Acoso escolar",
+     "categoria": null
+    },
+    {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Homofobia",
      "categoria": null
     },
     {
@@ -8004,13 +8050,11 @@
    "final_feliz": null,
    "poster": "213",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Discriminación",
@@ -8053,14 +8097,13 @@
    "final_feliz": null,
    "poster": "230",
    "generos": [
-    "Drama"
+    "Drama",
+    "Policíaca"
    ],
    "tematicas": [
     "Consumo de drogas",
     "Crimen",
-    "Drama",
-    "Policía",
-    "Policíaca"
+    "Policía"
    ],
    "avisos": [
     {
@@ -8077,6 +8120,10 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -8145,12 +8192,14 @@
    "final_feliz": false,
    "poster": "394",
    "generos": [
+    "Acción",
     "Comedia",
+    "Comedia dramática",
     "Drama",
-    "Policíaca"
+    "Policíaca",
+    "Romance"
    ],
    "tematicas": [
-    "Acción",
     "Amor",
     "Antiheroína",
     "Asesinato",
@@ -8158,15 +8207,12 @@
     "Años 80",
     "Años 90",
     "Bajo presupuesto",
-    "Comedia",
     "Comedia absurda",
-    "Comedia dramática",
     "Crimen",
     "De época",
     "Delincuencia",
     "Desamor",
     "Desapariciones",
-    "Drama",
     "Familia",
     "Feminismo",
     "Homosexualidad",
@@ -8178,13 +8224,11 @@
     "Misterio",
     "Mujeres adultas",
     "Policía",
-    "Policíaca",
     "Prisión",
     "Protagonista lesbiana",
     "Relaciones",
     "Relaciones complicadas",
     "Religión",
-    "Romance",
     "Sectas",
     "Secuestros",
     "Superheroinas",
@@ -8205,6 +8249,10 @@
     },
     {
      "nombre": "Delincuencia",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
      "categoria": null
     },
     {
@@ -8288,21 +8336,20 @@
    "final_feliz": true,
    "poster": "49",
    "generos": [
-    "Fantasía"
+    "Animación",
+    "Fantasía",
+    "Ficción sobrenatural"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
     "Aventuras",
     "Bisexual",
     "Bisexualidad",
     "Distopía",
     "Familia",
     "Family Friendly",
-    "Fantasía",
-    "Ficción Sobrenatural",
     "Friends to lovers",
     "Sobrenatural",
     "Subtexto",
@@ -8362,12 +8409,11 @@
    "final_feliz": null,
    "poster": "62",
    "generos": [
-    "Ciencia Ficción"
-   ],
-   "tematicas": [
     "Ciencia ficción",
     "Drama",
-    "Fantasía",
+    "Fantasía"
+   ],
+   "tematicas": [
     "Robots"
    ],
    "avisos": [
@@ -8418,12 +8464,11 @@
    "final_feliz": null,
    "poster": "99",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Ciencia ficción",
     "Drama",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural"
+   ],
+   "tematicas": [
     "Superhéroes",
     "Viajes en el tiempo"
    ],
@@ -8471,13 +8516,11 @@
    "final_feliz": true,
    "poster": "179",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Discriminación",
@@ -8528,14 +8571,17 @@
    "final_feliz": null,
    "poster": "123",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
-    "Comedia",
-    "Crimen",
-    "Drama"
+    "Crimen"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Violencia",
      "categoria": null
@@ -8581,11 +8627,11 @@
    "final_feliz": null,
    "poster": "223",
    "generos": [
+    "Drama",
+    "Suspense",
     "Thriller"
    ],
    "tematicas": [
-    "Drama",
-    "Suspense",
     "Thriller psicológico"
    ],
    "avisos": [
@@ -8650,13 +8696,12 @@
    "final_feliz": null,
    "poster": "266",
    "generos": [
-    "Comedia Dramática"
+    "Comedia",
+    "Comedia dramática"
    ],
    "tematicas": [
     "Adolescencia",
     "Años 60",
-    "Comedia",
-    "Comedia dramática",
     "Familia",
     "Instituto"
    ],
@@ -8726,7 +8771,6 @@
    ],
    "tematicas": [
     "Bajo presupuesto",
-    "Drama",
     "Mala con ganas"
    ],
    "avisos": [
@@ -8779,17 +8823,16 @@
    "final_feliz": null,
    "poster": "133",
    "generos": [
+    "Animación",
+    "Anime",
     "Comedia"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
-    "Comedia",
+    "Costumbrismo",
     "Diferencia de altura",
-    "Día a día",
     "Escuela",
     "Subtexto"
    ],
@@ -8834,12 +8877,11 @@
    "final_feliz": null,
    "poster": "276",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
-    "Thriller",
+    "Thriller"
+   ],
+   "tematicas": [
     "Vampiras"
    ],
    "avisos": [
@@ -8892,15 +8934,14 @@
    "final_feliz": null,
    "poster": "114",
    "generos": [
+    "Comedia",
+    "Drama",
+    "Ficción sobrenatural",
     "Terror"
    ],
    "tematicas": [
     "Amistad",
-    "Comedia",
-    "Drama",
-    "Ficción Sobrenatural",
-    "Miedo",
-    "Terror"
+    "Miedo"
    ],
    "avisos": [
     {
@@ -8973,14 +9014,13 @@
    "final_feliz": false,
    "poster": "225",
    "generos": [
+    "Intriga",
     "Thriller"
    ],
    "tematicas": [
     "Crimen",
     "Erótico",
-    "Intriga",
-    "Mala con ganas",
-    "Thriller"
+    "Mala con ganas"
    ],
    "avisos": [
     {
@@ -9077,7 +9117,7 @@
    "poster": "490",
    "generos": [
     "Acción",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
     "Policíaca",
     "Romance",
@@ -9171,14 +9211,18 @@
    "final_feliz": true,
    "poster": "97",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Comedia negra"
    ],
    "tematicas": [
-    "Comedia",
-    "Comedia negra",
     "Crimen"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Evan Rachel Wood",
     "Gina Rodriguez"
@@ -9217,9 +9261,9 @@
    "final_feliz": true,
    "poster": "489",
    "generos": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural",
     "Policíaca",
     "Romance",
     "Suspense",
@@ -9282,16 +9326,15 @@
    "final_feliz": false,
    "poster": "86",
    "generos": [
+    "Comedia",
+    "Comedia negra",
+    "Drama",
     "Thriller"
    ],
    "tematicas": [
-    "Comedia",
-    "Comedia negra",
     "Crimen",
-    "Drama",
     "Espionaje",
-    "Sicaria",
-    "Thriller"
+    "Sicaria"
    ],
    "avisos": [
     {
@@ -9361,12 +9404,11 @@
    "final_feliz": null,
    "poster": "84",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Drama",
-    "Familia",
-    "Romance"
+    "Familia"
    ],
    "avisos": [],
    "actrices": [
@@ -9407,7 +9449,9 @@
    "final_feliz": false,
    "poster": "192",
    "generos": [
-    "Suspense"
+    "Drama",
+    "Suspense",
+    "Terror"
    ],
    "tematicas": [
     "Alcoholismo",
@@ -9416,12 +9460,17 @@
     "Crimen",
     "De época",
     "Desamor",
-    "Drama",
-    "NSFW",
-    "Suspense",
-    "Terror"
+    "NSFW"
    ],
    "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
     {
      "nombre": "Conductas perjudiciales",
      "categoria": null
@@ -9432,6 +9481,14 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
      "categoria": null
     },
     {
@@ -9517,7 +9574,6 @@
     "Angustia adolescente",
     "Autodescubrimiento",
     "Años 90",
-    "Drama",
     "Drama adolescente",
     "Entorno familiar negativo",
     "Familia encontrada",
@@ -9602,13 +9658,13 @@
    "final_feliz": null,
    "poster": "271",
    "generos": [
+    "Fantasía",
+    "Fantástico",
     "Terror"
    ],
    "tematicas": [
     "Brujería",
     "Familia",
-    "Fantasía",
-    "Fantástico",
     "Thriller psicológico",
     "Vejez"
    ],
@@ -9658,13 +9714,12 @@
    "final_feliz": null,
    "poster": "113",
    "generos": [
-    "Deportes"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Deportes",
-    "Drama",
-    "Feminismo",
-    "Romance"
+    "Feminismo"
    ],
    "avisos": [],
    "actrices": [
@@ -9720,17 +9775,16 @@
    "final_feliz": null,
    "poster": "168",
    "generos": [
+    "Fantasía",
+    "Intriga",
     "Terror"
    ],
    "tematicas": [
     "Años 90",
     "Brujas",
     "Brujería",
-    "Fantasía",
-    "Intriga",
     "Slasher",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -9790,18 +9844,17 @@
    "final_feliz": null,
    "poster": "169",
    "generos": [
+    "Fantasía",
+    "Intriga",
     "Terror"
    ],
    "tematicas": [
     "Años 70",
     "Brujas",
     "Brujería",
-    "Fantasía",
-    "Intriga",
     "Secuela",
     "Slasher",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -9853,18 +9906,17 @@
    "final_feliz": true,
    "poster": "170",
    "generos": [
+    "Fantasía",
+    "Intriga",
     "Terror"
    ],
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Fantasía",
-    "Intriga",
     "Secuela",
     "Siglo XVII",
     "Slasher",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -9925,16 +9977,15 @@
    "final_feliz": null,
    "poster": "73",
    "generos": [
-    "Comedia Dramática"
-   ],
-   "tematicas": [
-    "Autodescubrimiento",
     "Comedia",
     "Comedia dramática",
     "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Autodescubrimiento",
     "Familia",
     "Identidad",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -9997,15 +10048,14 @@
    "final_feliz": null,
    "poster": "68",
    "generos": [
-    "Comedia Dramática"
-   ],
-   "tematicas": [
-    "Celos",
     "Comedia",
     "Comedia dramática",
     "Comedia negra",
-    "De época",
     "Histórico"
+   ],
+   "tematicas": [
+    "Celos",
+    "De época"
    ],
    "avisos": [
     {
@@ -10086,11 +10136,11 @@
    "final_feliz": null,
    "poster": "287",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Homosexualidad",
-    "Romance"
+    "Homosexualidad"
    ],
    "avisos": [
     {
@@ -10146,18 +10196,17 @@
    "final_feliz": true,
    "poster": "48",
    "generos": [
+    "Acción",
+    "Animación",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
-    "Animación",
     "Aventuras",
     "Bisexual",
     "Bisexualidad",
     "Family Friendly",
-    "Fantasía",
     "Friends to lovers",
     "Juventud",
     "Pareja",
@@ -10225,19 +10274,22 @@
    "final_feliz": true,
    "poster": "150",
    "generos": [
+    "Comedia",
     "Musical"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Comedia",
-    "Musical",
     "Religión"
    ],
    "avisos": [
     {
      "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     }
    ],
@@ -10283,12 +10335,11 @@
    "final_feliz": null,
    "poster": "82",
    "generos": [
+    "Biográfico",
     "Drama"
    ],
    "tematicas": [
     "Afroamericanos",
-    "Biográfico",
-    "Drama",
     "Música",
     "Racismo",
     "Teatro"
@@ -10347,15 +10398,14 @@
    "final_feliz": false,
    "poster": "227",
    "generos": [
+    "Fantasía",
     "Terror"
    ],
    "tematicas": [
-    "Fantasía",
     "Muñecos",
     "Secuela",
     "Slasher",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -10431,7 +10481,6 @@
     "Terror"
    ],
    "tematicas": [
-    "Drama",
     "Trastornos mentales"
    ],
    "avisos": [
@@ -10535,17 +10584,20 @@
    "final_feliz": null,
    "poster": "303",
    "generos": [
+    "Acción",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
-    "Fantasía",
     "Religión",
     "Sectas"
    ],
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     },
     {
@@ -10597,12 +10649,11 @@
    "final_feliz": null,
    "poster": "181",
    "generos": [
-    "Terror"
+    "Terror",
+    "Thriller"
    ],
    "tematicas": [
     "Música",
-    "Terror",
-    "Thriller",
     "Thriller psicológico"
    ],
    "avisos": [
@@ -10651,18 +10702,17 @@
    "final_feliz": null,
    "poster": "277",
    "generos": [
-    "Drama"
+    "Drama",
+    "Fantasía",
+    "Intriga",
+    "Terror"
    ],
    "tematicas": [
     "Adolescencia",
     "Cazadores",
-    "Drama",
     "Enemies to Lovers",
-    "Fantasía",
     "Instituto",
-    "Intriga",
     "Sobrenatural",
-    "Terror",
     "Vampiras"
    ],
    "avisos": [
@@ -10734,8 +10784,6 @@
     "Histórico"
    ],
    "tematicas": [
-    "Acción",
-    "Histórico",
     "Realeza",
     "Siglo XVII"
    ],
@@ -10794,18 +10842,21 @@
    "final_feliz": null,
    "poster": "22",
    "generos": [
-    "Fantástico"
+    "Fantasía",
+    "Fantástico",
+    "Intriga"
    ],
    "tematicas": [
     "Bisexual",
     "Bisexualidad",
     "Crimen",
-    "Fantasía",
-    "Fantástico",
-    "Intriga",
     "Sobrenatural"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Infidelidad",
      "categoria": null
@@ -10863,8 +10914,7 @@
     "Fantasía"
    ],
    "tematicas": [
-    "Aventuras",
-    "Fantasía"
+    "Aventuras"
    ],
    "avisos": [
     {
@@ -10920,7 +10970,6 @@
     "Autodescubrimiento",
     "Bisexual",
     "Bisexualidad",
-    "Drama",
     "Erótico",
     "Identidad",
     "Sexualidad"
@@ -11003,12 +11052,11 @@
    "final_feliz": null,
    "poster": "243",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Identidad",
     "Salir del armario",
     "Sexualidad",
@@ -11078,13 +11126,12 @@
    "final_feliz": null,
    "poster": "160",
    "generos": [
-    "Acción"
-   ],
-   "tematicas": [
     "Acción",
     "Fantasía",
     "Fantástico",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural"
+   ],
+   "tematicas": [
     "Soledad"
    ],
    "avisos": [
@@ -11157,13 +11204,11 @@
    "final_feliz": true,
    "poster": "122",
    "generos": [
-    "Thriller"
-   ],
-   "tematicas": [
     "Drama",
     "Telenovela",
     "Thriller"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Eréndira Ibarra",
@@ -11195,12 +11240,11 @@
    "final_feliz": null,
    "poster": "252",
    "generos": [
+    "Comedia",
+    "Drama",
     "Reality"
    ],
    "tematicas": [
-    "Comedia",
-    "Drama",
-    "Reality",
     "Vida"
    ],
    "avisos": [
@@ -11265,13 +11309,12 @@
    "final_feliz": null,
    "poster": "282",
    "generos": [
+    "Acción",
+    "Ciencia ficción",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
-    "Aventuras",
-    "Ciencia ficción",
-    "Fantasía"
+    "Aventuras"
    ],
    "avisos": [
     {
@@ -11328,18 +11371,21 @@
    "final_feliz": null,
    "poster": "305",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Comedia dramática",
+    "Drama"
    ],
    "tematicas": [
     "Amistad",
-    "Comedia",
-    "Comedia dramática",
-    "Drama",
     "Enfermedad"
    ],
    "avisos": [
     {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
      "categoria": null
     }
    ],
@@ -11386,8 +11432,7 @@
    "tematicas": [
     "Adolescencia",
     "Amistad",
-    "Deportes",
-    "Drama"
+    "Deportes"
    ],
    "avisos": [
     {
@@ -11453,12 +11498,10 @@
    "final_feliz": true,
    "poster": "95",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Telenovela"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Julieta Nair Calvo",
@@ -11490,15 +11533,14 @@
    "final_feliz": null,
    "poster": "149",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
     "Amistad",
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Fake dating",
     "Identidad",
     "Salir del armario",
@@ -11584,6 +11626,10 @@
    ],
    "avisos": [
     {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
      "nombre": "Desnudos",
      "categoria": null
     },
@@ -11660,14 +11706,13 @@
    "final_feliz": null,
    "poster": "145",
    "generos": [
+    "Drama",
+    "Fantasía",
     "Fantástico"
    ],
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Drama",
-    "Fantasía",
-    "Fantástico",
     "Hombres lobo",
     "Vampiras"
    ],
@@ -11715,12 +11760,10 @@
    "final_feliz": null,
    "poster": "182",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Anna Akana",
@@ -11760,13 +11803,12 @@
    "final_feliz": true,
    "poster": "263",
    "generos": [
-    "Ciencia Ficción"
+    "Acción",
+    "Ciencia ficción",
+    "Comedia"
    ],
    "tematicas": [
-    "Acción",
     "Amistad",
-    "Ciencia ficción",
-    "Comedia",
     "Comedia absurda",
     "DC",
     "Enemies to Lovers",
@@ -11822,12 +11864,11 @@
    "final_feliz": true,
    "poster": "45",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Día de Acción de Gracias",
     "Familia",
     "Identidad",
@@ -11870,13 +11911,12 @@
    "final_feliz": null,
    "poster": "199",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
-    "Amistad",
     "Comedia",
     "Comedia romántica",
     "Drama"
+   ],
+   "tematicas": [
+    "Amistad"
    ],
    "avisos": [],
    "actrices": [
@@ -11918,7 +11958,8 @@
    "poster": "482",
    "generos": [
     "Drama",
-    "Romance"
+    "Romance",
+    "Terror"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
@@ -11932,7 +11973,6 @@
     "Coming of age",
     "De amigas a amantes",
     "Diferencia de altura",
-    "Drama",
     "Drama adolescente",
     "Drama psicológico",
     "Entrada en la madurez",
@@ -11950,7 +11990,6 @@
     "Romance de instituto",
     "Salir del armario",
     "Soledad",
-    "Terror",
     "Tragedia"
    ],
    "avisos": [
@@ -12043,15 +12082,14 @@
    "final_feliz": null,
    "poster": "76",
    "generos": [
+    "Drama",
+    "Policíaca",
     "Suspense"
    ],
    "tematicas": [
     "Crimen",
     "Delincuencia",
-    "Drama",
-    "Policía",
-    "Policíaca",
-    "Suspense"
+    "Policía"
    ],
    "avisos": [
     {
@@ -12060,6 +12098,14 @@
     },
     {
      "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
      "categoria": null
     },
     {
@@ -12136,7 +12182,6 @@
    "tematicas": [
     "Amistad",
     "Amor",
-    "Drama",
     "Familia"
    ],
    "avisos": [
@@ -12204,10 +12249,17 @@
     "Asesinatos en Serie",
     "Crimen",
     "Supervivencia",
-    "Terror",
     "Venganza"
    ],
    "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Engaños y Mentiras",
      "categoria": null
@@ -12288,12 +12340,11 @@
    "final_feliz": false,
    "poster": "264",
    "generos": [
-    "Ciencia Ficción"
-   ],
-   "tematicas": [
     "Acción",
     "Ciencia ficción",
-    "Drama",
+    "Drama"
+   ],
+   "tematicas": [
     "Guerra",
     "Militarismo",
     "Postapocalíptico",
@@ -12367,12 +12418,11 @@
    "final_feliz": null,
    "poster": "190",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia dramática",
-    "Drama",
+    "Drama"
+   ],
+   "tematicas": [
     "Familia",
     "Pareja"
    ],
@@ -12442,24 +12492,31 @@
    "final_feliz": false,
    "poster": "138",
    "generos": [
-    "Acción"
-   ],
-   "tematicas": [
     "Acción",
-    "Bisexual",
-    "Bisexualidad",
     "Comedia",
     "Comedia dramática",
+    "Policíaca"
+   ],
+   "tematicas": [
+    "Bisexual",
+    "Bisexualidad",
     "Crimen",
     "Delincuencia",
     "Diferencia de altura",
     "Pareja",
     "Policía",
-    "Policíaca",
     "Tragedia",
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
     {
      "nombre": "Gore",
      "categoria": null
@@ -12514,12 +12571,11 @@
    "final_feliz": null,
    "poster": "74",
    "generos": [
+    "Animación",
     "Comedia"
    ],
    "tematicas": [
-    "Animación",
     "Autodescubrimiento",
-    "Comedia",
     "Coming of age",
     "Familia",
     "Family Friendly",
@@ -12567,18 +12623,17 @@
    "final_feliz": true,
    "poster": "238",
    "generos": [
-    "Comedia romántica"
+    "Comedia",
+    "Comedia romántica",
+    "Romance"
    ],
    "tematicas": [
     "Autodescubrimiento",
-    "Comedia",
-    "Comedia romántica",
     "Comida",
     "Escocia",
     "Identidad",
     "India",
     "Música",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -12632,20 +12687,19 @@
    "final_feliz": null,
    "poster": "301",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Autismo",
     "Autodescubrimiento",
     "Coming of age",
-    "Drama",
     "Drama adolescente",
     "Identidad",
     "Instituto",
     "No binarie",
-    "Racismo",
-    "Romance"
+    "Racismo"
    ],
    "avisos": [
     {
@@ -12657,7 +12711,15 @@
      "categoria": null
     },
     {
+     "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
      "nombre": "Intento de abuso sexual",
+     "categoria": null
+    },
+    {
+     "nombre": "Racismo",
      "categoria": null
     },
     {
@@ -12706,14 +12768,13 @@
    "final_feliz": null,
    "poster": "215",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Autodescubrimiento",
     "Coming of age",
-    "Drama",
     "Identidad",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [],
@@ -12757,13 +12818,12 @@
    "final_feliz": null,
    "poster": "241",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia romántica",
-    "Familia",
     "Romance"
+   ],
+   "tematicas": [
+    "Familia"
    ],
    "avisos": [],
    "actrices": [
@@ -12805,18 +12865,17 @@
    "final_feliz": true,
    "poster": "132",
    "generos": [
-    "Fantástico"
-   ],
-   "tematicas": [
-    "Adolescencia",
     "Animación",
     "Anime",
     "Drama",
     "Fantasía",
     "Fantástico",
     "Intriga",
+    "Romance"
+   ],
+   "tematicas": [
+    "Adolescencia",
     "Juventud",
-    "Romance",
     "Sobrenatural"
    ],
    "avisos": [
@@ -12873,13 +12932,13 @@
    "final_feliz": null,
    "poster": "289",
    "generos": [
-    "Reality"
-   ],
-   "tematicas": [
-    "Amistad",
     "Comedia",
     "Drama",
+    "Reality",
     "Romance"
+   ],
+   "tematicas": [
+    "Amistad"
    ],
    "avisos": [
     {
@@ -12943,17 +13002,20 @@
    "final_feliz": null,
    "poster": "135",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amor",
     "Diferencia de edad",
-    "Drama",
-    "Escuela",
-    "Romance"
+    "Escuela"
    ],
    "avisos": [
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
     {
      "nombre": "Pederastia",
      "categoria": null
@@ -13008,13 +13070,10 @@
     "Romance"
    ],
    "tematicas": [
-    "Comedia",
-    "Comedia romántica",
     "Lesbiana",
     "Lesbianismo",
     "Pareja",
     "Protagonista lesbiana",
-    "Romance",
     "Romance en el trabajo",
     "Thai GL",
     "Vida adulta",
@@ -13059,13 +13118,12 @@
    "final_feliz": null,
    "poster": "269",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
-    "Drama",
     "Fake dating",
     "Familia",
     "Maternidad"
@@ -13118,14 +13176,13 @@
    "final_feliz": null,
    "poster": "60",
    "generos": [
-    "Ciencia Ficción"
+    "Acción",
+    "Ciencia ficción",
+    "Drama"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
-    "Ciencia ficción",
     "Cómic",
-    "Drama",
     "Superheroinas",
     "Superhéroes"
    ],
@@ -13168,17 +13225,16 @@
    "final_feliz": null,
    "poster": "106",
    "generos": [
+    "Animación",
+    "Anime",
     "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
+    "Costumbrismo",
     "Diferencia de altura",
-    "Drama",
-    "Día a día",
     "Escuela"
    ],
    "avisos": [],
@@ -13229,7 +13285,6 @@
     "Consumo de alcohol",
     "De amigas a amantes",
     "Diferencias de clase social",
-    "Drama",
     "Mujeres adultas",
     "Relaciones",
     "Relaciones complicadas",
@@ -13305,11 +13360,11 @@
    "final_feliz": true,
    "poster": "265",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
-    "Años 50",
-    "Romance"
+    "Años 50"
    ],
    "avisos": [
     {
@@ -13367,12 +13422,11 @@
    "final_feliz": true,
    "poster": "173",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Adolescencia",
-    "Comedia",
-    "Drama",
     "Juvenil",
     "Mala con ganas"
    ],
@@ -13430,18 +13484,21 @@
    "final_feliz": null,
    "poster": "158",
    "generos": [
+    "Biográfico",
     "Drama"
    ],
    "tematicas": [
     "Alcoholismo",
     "Asesinato",
-    "Biográfico",
     "Consumo de alcohol",
     "Crimen",
-    "Drama",
     "Prostitución"
    ],
    "avisos": [
+    {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
     {
      "nombre": "Angustia",
      "categoria": null
@@ -13451,11 +13508,19 @@
      "categoria": null
     },
     {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
      "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -13488,6 +13553,10 @@
     },
     {
      "nombre": "Padre lgbtfóbico",
+     "categoria": null
+    },
+    {
+     "nombre": "Prostitución",
      "categoria": null
     },
     {
@@ -13542,18 +13611,15 @@
     "Biográfico",
     "Drama",
     "Histórico",
-    "Horror"
+    "Horror",
+    "Terror"
    ],
    "tematicas": [
     "Asesinato",
-    "Biográfico",
     "Crimen",
     "Entorno familiar negativo",
-    "Histórico",
-    "Horror",
     "Inexactitud histórica",
-    "Slasher",
-    "Terror"
+    "Slasher"
    ],
    "avisos": [
     {
@@ -13680,12 +13746,10 @@
    "final_feliz": null,
    "poster": "125",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Hana Kino",
@@ -13720,19 +13784,22 @@
    "final_feliz": true,
    "poster": "32",
    "generos": [
-    "Ciencia Ficción"
+    "Ciencia ficción",
+    "Drama",
+    "Fantasía"
    ],
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Ciencia ficción",
     "Crimen",
-    "Drama",
-    "Fantasía",
     "Militarismo",
     "Terrorismo"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Engaños y Mentiras",
      "categoria": null
@@ -13786,15 +13853,14 @@
    "final_feliz": null,
    "poster": "69",
    "generos": [
+    "Drama",
     "Suspense"
    ],
    "tematicas": [
     "Anticapitalista",
     "Consumo de drogas",
-    "Drama",
     "Drogodependencia",
-    "Soledad",
-    "Suspense"
+    "Soledad"
    ],
    "avisos": [
     {
@@ -13811,6 +13877,10 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -13890,12 +13960,10 @@
    "final_feliz": null,
    "poster": "172",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Chloë Sevigny",
@@ -13931,19 +13999,22 @@
    "final_feliz": false,
    "poster": "221",
    "generos": [
-    "Intriga"
+    "Drama",
+    "Intriga",
+    "Romance",
+    "Thriller"
    ],
    "tematicas": [
     "Angustia",
-    "Drama",
     "Drama psicológico",
-    "Intriga",
-    "Romance",
     "Surrealismo",
-    "Thriller",
     "Thriller psicológico"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Erotismo",
      "categoria": null
@@ -14004,7 +14075,6 @@
     "Amistad",
     "Amor",
     "Autodescubrimiento",
-    "Drama",
     "Identidad",
     "Moda",
     "Relaciones",
@@ -14133,14 +14203,14 @@
    "final_feliz": null,
    "poster": "242",
    "generos": [
-    "Aventura"
+    "Acción",
+    "Aventura",
+    "Drama"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Aventuras",
     "DC",
-    "Drama",
     "Superheroinas"
    ],
    "avisos": [
@@ -14189,13 +14259,12 @@
    "final_feliz": null,
    "poster": "302",
    "generos": [
+    "Acción",
+    "Drama",
     "Policíaca"
    ],
    "tematicas": [
-    "Acción",
-    "Drama",
-    "Policía",
-    "Policíaca"
+    "Policía"
    ],
    "avisos": [
     {
@@ -14243,15 +14312,14 @@
    "final_feliz": null,
    "poster": "177",
    "generos": [
-    "Drama"
+    "Animación",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Animación",
-    "Drama",
     "Juvenil",
-    "Mala con ganas",
-    "Romance"
+    "Mala con ganas"
    ],
    "avisos": [
     {
@@ -14301,7 +14369,6 @@
     "Drama"
    ],
    "tematicas": [
-    "Drama",
     "Drama médico",
     "Hospital",
     "Roommates"
@@ -14360,13 +14427,12 @@
    "final_feliz": null,
    "poster": "121",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
-    "Adolescencia",
     "Drama",
     "Romance",
     "Telenovela"
+   ],
+   "tematicas": [
+    "Adolescencia"
    ],
    "avisos": [],
    "actrices": [
@@ -14399,16 +14465,19 @@
    "final_feliz": null,
    "poster": "218",
    "generos": [
+    "Fantasía",
+    "Intriga",
     "Terror"
    ],
    "tematicas": [
     "Angustia",
-    "Fantasía",
-    "Intriga",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Body Horror",
      "categoria": null
@@ -14481,7 +14550,6 @@
     "Comedia"
    ],
    "tematicas": [
-    "Comedia",
     "Familia"
    ],
    "avisos": [],
@@ -14523,7 +14591,8 @@
    "final_feliz": null,
    "poster": "33",
    "generos": [
-    "Comedia Dramática"
+    "Comedia",
+    "Comedia dramática"
    ],
    "tematicas": [
     "Afroamericanos",
@@ -14532,8 +14601,6 @@
     "Bisexual",
     "Bisexualidad",
     "Butch",
-    "Comedia",
-    "Comedia dramática",
     "Feminismo",
     "Prisión",
     "Trans"
@@ -14690,16 +14757,15 @@
    "final_feliz": null,
    "poster": "104",
    "generos": [
-    "Ciencia Ficción"
-   ],
-   "tematicas": [
     "Acción",
-    "Autodescubrimiento",
     "Ciencia ficción",
     "Drama",
-    "Familia",
-    "Identidad",
     "Intriga"
+   ],
+   "tematicas": [
+    "Autodescubrimiento",
+    "Familia",
+    "Identidad"
    ],
    "avisos": [
     {
@@ -14748,12 +14814,10 @@
    "final_feliz": null,
    "poster": "127",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [],
    "actrices": [
     "Kim Jong-soo",
@@ -14795,17 +14859,16 @@
    "final_feliz": null,
    "poster": "293",
    "generos": [
-    "Ciencia Ficción"
+    "Ciencia ficción",
+    "Drama",
+    "Intriga"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
     "Adolescencia",
     "Amistad",
     "Años 80",
-    "Ciencia ficción",
     "Coming of age",
-    "Drama",
-    "Intriga",
     "Viajes en el tiempo"
    ],
    "avisos": [
@@ -14873,13 +14936,12 @@
    "final_feliz": null,
    "poster": "37",
    "generos": [
-    "Ciencia Ficción"
+    "Ciencia ficción"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Ciencia ficción",
     "Coming of age",
     "Distopía"
    ],
@@ -14960,17 +15022,21 @@
    "final_feliz": null,
    "poster": "291",
    "generos": [
-    "Drama"
+    "Drama",
+    "Intriga",
+    "Terror",
+    "Thriller"
    ],
    "tematicas": [
     "Acoso",
     "Adolescencia",
-    "Intriga",
-    "Slasher",
-    "Terror",
-    "Thriller"
+    "Slasher"
    ],
    "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
     {
      "nombre": "Asesinato",
      "categoria": null
@@ -15040,16 +15106,16 @@
    "final_feliz": true,
    "poster": "397",
    "generos": [
+    "Acción",
+    "Drama",
+    "Intriga",
     "Policíaca",
     "Romance",
     "Suspense"
    ],
    "tematicas": [
-    "Acción",
     "Asesinato",
     "Crimen",
-    "Drama",
-    "Intriga",
     "Mujeres adultas",
     "Policía",
     "Prostitución",
@@ -15063,7 +15129,15 @@
      "categoria": null
     },
     {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
      "nombre": "Brutalidad policial",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -15134,6 +15208,7 @@
    "final_feliz": null,
    "poster": "386",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
@@ -15142,7 +15217,6 @@
     "Celos",
     "Chantaje",
     "Diferencias de clase social",
-    "Drama",
     "Mujeres adultas",
     "Series que parecen fics",
     "Sexo",
@@ -15151,6 +15225,10 @@
     "Vida nocturna"
    ],
    "avisos": [
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
     {
      "nombre": "Conductas perjudiciales",
      "categoria": null
@@ -15219,9 +15297,7 @@
     "Amor",
     "Autodescubrimiento",
     "Diferencias de clase social",
-    "Drama",
     "Homosexualidad",
-    "Romance",
     "Thai GL"
    ],
    "avisos": [
@@ -15293,15 +15369,14 @@
    "final_feliz": null,
    "poster": "240",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia romántica",
+    "Romance"
+   ],
+   "tematicas": [
     "Mitos del Amor Romántico",
     "Poliamor",
     "Protagonista Idiota",
-    "Romance",
     "Trans"
    ],
    "avisos": [],
@@ -15348,12 +15423,11 @@
    "final_feliz": null,
    "poster": "209",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
-    "Comedia",
-    "Crimen",
-    "Drama"
+    "Crimen"
    ],
    "avisos": [
     {
@@ -15366,6 +15440,10 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -15425,13 +15503,12 @@
    "final_feliz": null,
    "poster": "15",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
-    "Amistad",
     "Drama",
     "Intriga",
     "Thriller"
+   ],
+   "tematicas": [
+    "Amistad"
    ],
    "avisos": [
     {
@@ -15489,12 +15566,11 @@
    "final_feliz": null,
    "poster": "66",
    "generos": [
-    "Comedia Dramática"
-   ],
-   "tematicas": [
     "Comedia",
     "Comedia dramática",
-    "Histórico",
+    "Histórico"
+   ],
+   "tematicas": [
     "Militancia",
     "Movimiento por los Derechos civiles"
    ],
@@ -15569,18 +15645,18 @@
    "final_feliz": null,
    "poster": "134",
    "generos": [
-    "Aventura"
+    "Acción",
+    "Animación",
+    "Aventura",
+    "Comedia",
+    "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
-    "Animación",
     "Aventuras",
-    "Comedia",
+    "Costumbrismo",
     "Diferencia de altura",
-    "Día a día",
     "Family Friendly",
-    "Fantasía",
     "Superheroinas"
    ],
    "avisos": [],
@@ -15624,13 +15700,13 @@
    "final_feliz": true,
    "poster": "398",
    "generos": [
+    "Comedia",
+    "Comedia romántica",
     "Romance"
    ],
    "tematicas": [
     "A fuego lento",
     "Adorabilidad Absoluta",
-    "Comedia",
-    "Comedia romántica",
     "De enemigas a amantes",
     "Diferencia de altura",
     "Diferencias de clase social",
@@ -15643,6 +15719,10 @@
    "avisos": [
     {
      "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Adorabilidad absoluta",
      "categoria": null
     },
     {
@@ -15787,12 +15867,11 @@
    "final_feliz": null,
    "poster": "220",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Biográfico",
     "Drama",
-    "Histórico",
+    "Histórico"
+   ],
+   "tematicas": [
     "Siglo XVII"
    ],
    "avisos": [
@@ -15845,16 +15924,15 @@
    "final_feliz": null,
    "poster": "65",
    "generos": [
-    "Drama"
+    "Drama",
+    "Musical"
    ],
    "tematicas": [
     "Amistad",
     "Amor",
     "Celos",
     "Consumo de drogas",
-    "Drama",
     "Drogodependencia",
-    "Musical",
     "Sexualidad",
     "Tragedia",
     "Travestismo"
@@ -15870,6 +15948,10 @@
     },
     {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -15933,13 +16015,12 @@
    "final_feliz": false,
    "poster": "93",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
-    "De época",
-    "Drama",
-    "Romance"
+    "De época"
    ],
    "avisos": [],
    "actrices": [
@@ -15982,20 +16063,27 @@
    "final_feliz": true,
    "poster": "296",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Intriga"
    ],
    "tematicas": [
     "Acoso",
     "Acoso escolar",
     "Adolescencia",
-    "Comedia",
     "Comedia juvenil",
     "Instituto",
-    "Intriga",
     "Machismo",
     "Venganza"
    ],
    "avisos": [
+    {
+     "nombre": "Acoso",
+     "categoria": null
+    },
+    {
+     "nombre": "Acoso escolar",
+     "categoria": null
+    },
     {
      "nombre": "Engaños y Mentiras",
      "categoria": null
@@ -16051,13 +16139,11 @@
    "final_feliz": true,
    "poster": "487",
    "generos": [
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Drama",
     "Fantasía"
    ],
    "tematicas": [
-    "Drama",
-    "Fantasía",
     "Romance en el trabajo",
     "Thai GL"
    ],
@@ -16127,13 +16213,12 @@
    "final_feliz": null,
    "poster": "137",
    "generos": [
-    "Acción"
+    "Acción",
+    "Animación",
+    "Anime"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
-    "Animación",
-    "Anime",
     "Asesinato",
     "Crimen",
     "No heartwarming",
@@ -16142,6 +16227,14 @@
     "WTF?!"
    ],
    "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Gore",
      "categoria": null
@@ -16189,8 +16282,7 @@
    ],
    "tematicas": [
     "Adolescencia",
-    "Cómic",
-    "Drama"
+    "Cómic"
    ],
    "avisos": [
     {
@@ -16244,6 +16336,7 @@
    "final_feliz": true,
    "poster": "110",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
@@ -16253,18 +16346,20 @@
     "Autodescubrimiento",
     "Bisexual",
     "Bisexualidad",
-    "Drama",
     "Identidad",
     "Juventud",
     "Pareja",
     "Pareja sana",
-    "Romance",
     "Salir del armario",
     "Supporting Dad",
     "Supporting Mom",
     "Vida adulta"
    ],
    "avisos": [
+    {
+     "nombre": "Adorabilidad absoluta",
+     "categoria": null
+    },
     {
      "nombre": "Discriminación",
      "categoria": null
@@ -16308,13 +16403,14 @@
    "final_feliz": null,
    "poster": "50",
    "generos": [
-    "Fantasía"
+    "Acción",
+    "Animación",
+    "Fantasía",
+    "Ficción sobrenatural"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amistad",
-    "Animación",
     "Aventuras",
     "Bajo presupuesto",
     "Bisexual",
@@ -16322,9 +16418,7 @@
     "Crimen",
     "Escuela",
     "Familia",
-    "Fantasía",
     "Fascismo",
-    "Ficción Sobrenatural",
     "Friends to lovers",
     "Juventud",
     "Militancia",
@@ -16430,10 +16524,9 @@
     "Amigas de la infancia",
     "Amistad",
     "Amor",
+    "Costumbrismo",
     "Diferencia de altura",
-    "Día a día",
-    "Escuela",
-    "Romance"
+    "Escuela"
    ],
    "avisos": [],
    "actrices": [
@@ -16466,21 +16559,25 @@
    "final_feliz": true,
    "poster": "107",
    "generos": [
+    "Animación",
+    "Anime",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
-    "Animación",
-    "Anime",
+    "Costumbrismo",
     "Desamor",
     "Diferencia de altura",
-    "Día a día",
     "Escuela",
-    "Friends to lovers",
-    "Romance"
+    "Friends to lovers"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Ayahi Takagaki"
    ],
@@ -16510,18 +16607,21 @@
    "final_feliz": false,
    "poster": "216",
    "generos": [
+    "Intriga",
+    "Suspense",
     "Terror"
    ],
    "tematicas": [
     "Angustia",
     "Crimen",
-    "Intriga",
     "Slasher",
-    "Spin-off",
-    "Suspense",
-    "Terror"
+    "Spin-off"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Asesinato",
      "categoria": null
@@ -16589,18 +16689,17 @@
    "final_feliz": null,
    "poster": "273",
    "generos": [
-    "Drama"
+    "Drama",
+    "Suspense",
+    "Thriller"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Crimen",
-    "Drama",
     "Feminismo",
     "Instituto",
-    "Sororidad",
-    "Suspense",
-    "Thriller"
+    "Sororidad"
    ],
    "avisos": [
     {
@@ -16670,16 +16769,15 @@
    "final_feliz": null,
    "poster": "87",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Acción",
-    "Adolescencia",
-    "Autodescubrimiento",
     "Ciencia ficción",
     "Drama",
     "Fantasía",
-    "Ficción Sobrenatural",
+    "Ficción sobrenatural"
+   ],
+   "tematicas": [
+    "Adolescencia",
+    "Autodescubrimiento",
     "Identidad",
     "Juventud",
     "Misterio",
@@ -16741,10 +16839,13 @@
     "Thriller"
    ],
    "tematicas": [
-    "Crimen",
-    "Thriller"
+    "Crimen"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Engaños y Mentiras",
      "categoria": null
@@ -16796,16 +16897,15 @@
    "final_feliz": null,
    "poster": "234",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
-    "Crimen",
     "Drama",
-    "Mafia",
-    "Policía",
     "Policíaca",
     "Suspense",
     "Telenovela"
+   ],
+   "tematicas": [
+    "Crimen",
+    "Mafia",
+    "Policía"
    ],
    "avisos": [
     {
@@ -16871,16 +16971,15 @@
    "final_feliz": null,
    "poster": "274",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
     "Adolescencia",
     "Autodescubrimiento",
-    "Comedia",
     "Comedia sexual",
     "Coming of age",
-    "Drama",
     "Identidad",
     "Instituto",
     "Salir del armario"
@@ -16947,15 +17046,15 @@
    "final_feliz": true,
    "poster": "47",
    "generos": [
+    "Acción",
+    "Animación",
     "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Adolescencia",
     "Amigas de la infancia",
     "Amistad",
     "Amor",
-    "Animación",
     "Aventuras",
     "Bisexual",
     "Bisexualidad",
@@ -16963,7 +17062,6 @@
     "Celos",
     "Enemies to Lovers",
     "Family Friendly",
-    "Fantasía",
     "Friends to lovers",
     "Furry",
     "Heartwarming",
@@ -17033,13 +17131,12 @@
    "final_feliz": null,
    "poster": "204",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Comedia dramática"
    ],
    "tematicas": [
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
-    "Comedia dramática",
     "Familia",
     "Religión"
    ],
@@ -17058,6 +17155,10 @@
     },
     {
      "nombre": "Infidelidad",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     },
     {
@@ -17110,7 +17211,6 @@
    ],
    "tematicas": [
     "Cutre",
-    "Drama",
     "Mala con ganas",
     "PseudoReality Show",
     "Supervivencia"
@@ -17158,7 +17258,6 @@
     "Autodescubrimiento",
     "Bisexual",
     "Bisexualidad",
-    "Drama",
     "Feminismo",
     "Identidad",
     "Religión",
@@ -17206,6 +17305,10 @@
     },
     {
      "nombre": "Racismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     },
     {
@@ -17257,6 +17360,7 @@
    "final_feliz": false,
    "poster": "34",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
@@ -17264,8 +17368,6 @@
     "Amistad",
     "Amor",
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Escuela",
     "Homofobia",
     "Identidad"
@@ -17373,13 +17475,11 @@
    "final_feliz": false,
    "poster": "156",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Drama",
     "Terror",
     "Thriller"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Gore",
@@ -17444,14 +17544,14 @@
    "final_feliz": null,
    "poster": "281",
    "generos": [
-    "Ciencia Ficción"
+    "Acción",
+    "Ciencia ficción",
+    "Thriller"
    ],
    "tematicas": [
-    "Acción",
     "Cómic",
     "Distopía",
-    "Postapocalíptico",
-    "Thriller"
+    "Postapocalíptico"
    ],
    "avisos": [
     {
@@ -17532,9 +17632,7 @@
     "A fuego lento",
     "Adolescencia",
     "Amor",
-    "Comedia",
     "Comedia juvenil",
-    "Comedia romántica",
     "Lesbiana",
     "Mujeres adultas",
     "Pareja",
@@ -17610,14 +17708,14 @@
    "final_feliz": false,
    "poster": "259",
    "generos": [
+    "Fantasía",
+    "Fantástico",
+    "Policíaca",
+    "Romance",
     "Terror"
    ],
    "tematicas": [
-    "Fantasía",
-    "Fantástico",
     "Policía",
-    "Policíaca",
-    "Romance",
     "Vampiras"
    ],
    "avisos": [
@@ -17777,7 +17875,6 @@
     "Autodescubrimiento",
     "Coming of age",
     "Consumo de drogas",
-    "Drama",
     "Drama adolescente",
     "Drogodependencia",
     "Identidad",
@@ -17786,11 +17883,23 @@
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
      "nombre": "Discriminación",
      "categoria": null
     },
     {
      "nombre": "Discriminación leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -17889,13 +17998,12 @@
    "final_feliz": null,
    "poster": "246",
    "generos": [
-    "Ciencia Ficción"
-   ],
-   "tematicas": [
     "Acción",
-    "Aventuras",
     "Ciencia ficción",
     "Drama"
+   ],
+   "tematicas": [
+    "Aventuras"
    ],
    "avisos": [],
    "actrices": [
@@ -17938,16 +18046,16 @@
    "final_feliz": null,
    "poster": "83",
    "generos": [
-    "Aventura"
+    "Acción",
+    "Animación",
+    "Aventura",
+    "Comedia"
    ],
    "tematicas": [
-    "Acción",
     "Amistad",
-    "Animación",
     "Autodescubrimiento",
     "Aventuras",
-    "Comedia",
-    "Día a día",
+    "Costumbrismo",
     "Family Friendly",
     "Identidad",
     "Infancia",
@@ -18021,23 +18129,27 @@
    "final_feliz": true,
    "poster": "105",
    "generos": [
+    "Animación",
+    "Anime",
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
     "Celos",
+    "Costumbrismo",
     "Desamor",
     "Diferencia de altura",
-    "Drama",
-    "Día a día",
-    "Escuela",
-    "Romance"
+    "Escuela"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Ai Shimizu",
     "Hitomi Nabatame",
@@ -18074,12 +18186,11 @@
    "final_feliz": true,
    "poster": "295",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
-    "Drama",
-    "Romance",
     "Webserie"
    ],
    "avisos": [
@@ -18139,12 +18250,10 @@
    "generos": [
     "Acción",
     "Aventura",
-    "Ciencia Ficción"
+    "Ciencia ficción"
    ],
    "tematicas": [
-    "Acción",
     "Aventuras",
-    "Ciencia ficción",
     "DC",
     "Familia",
     "Familia encontrada",
@@ -18193,23 +18302,27 @@
    "final_feliz": null,
    "poster": "136",
    "generos": [
-    "Drama"
+    "Animación",
+    "Anime",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
+    "Costumbrismo",
     "Desamor",
     "Diferencia de altura",
-    "Drama",
-    "Día a día",
-    "Escuela",
-    "Romance"
+    "Escuela"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Ai Takabe",
     "Chiemi Ishimatsu"
@@ -18242,13 +18355,12 @@
    "final_feliz": null,
    "poster": "226",
    "generos": [
+    "Drama",
     "Terror"
    ],
    "tematicas": [
     "Crimen",
-    "Drama",
-    "Slasher",
-    "Terror"
+    "Slasher"
    ],
    "avisos": [
     {
@@ -18336,15 +18448,14 @@
    "final_feliz": null,
    "poster": "178",
    "generos": [
-    "Comedia"
+    "Animación",
+    "Comedia",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Animación",
-    "Comedia",
     "Juvenil",
-    "Mala con ganas",
-    "Romance"
+    "Mala con ganas"
    ],
    "avisos": [
     {
@@ -18387,7 +18498,6 @@
    ],
    "tematicas": [
     "Amistad",
-    "Drama",
     "Feminismo",
     "Moda",
     "Vida adulta"
@@ -18436,11 +18546,10 @@
    "final_feliz": null,
    "poster": "197",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Fantasía"
    ],
    "tematicas": [
-    "Comedia",
-    "Fantasía",
     "Vampiras",
     "Webserie"
    ],
@@ -18490,7 +18599,6 @@
    ],
    "tematicas": [
     "Amor",
-    "Drama",
     "Erótico",
     "Sexualidad"
    ],
@@ -18548,7 +18656,6 @@
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
     "Instituto"
    ],
    "avisos": [
@@ -18613,14 +18720,12 @@
    "final_feliz": true,
    "poster": "42",
    "generos": [
-    "Thriller"
-   ],
-   "tematicas": [
     "Drama",
     "Romance",
     "Suspense",
     "Thriller"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Maltrato",
@@ -18686,17 +18791,16 @@
    "final_feliz": false,
    "poster": "90",
    "generos": [
+    "Drama",
+    "Fantasía",
+    "Intriga",
     "Terror"
    ],
    "tematicas": [
     "Años 80",
-    "Drama",
     "Fantasmas",
-    "Fantasía",
-    "Intriga",
     "Miedo",
-    "Sobrenatural",
-    "Terror"
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -18746,13 +18850,12 @@
    "final_feliz": null,
    "poster": "185",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amistad",
-    "Drama",
     "Relaciones",
-    "Romance",
     "Vida adulta",
     "Vida Sexual"
    ],
@@ -18870,12 +18973,11 @@
    "final_feliz": null,
    "poster": "186",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Amistad",
-    "Drama",
-    "Romance",
     "Secuela",
     "Trans"
    ],
@@ -18958,7 +19060,6 @@
    "poster": "376",
    "generos": [
     "Acción",
-    "Distopía",
     "Drama"
    ],
    "tematicas": [
@@ -19063,24 +19164,27 @@
    "final_feliz": null,
    "poster": "272",
    "generos": [
-    "Drama"
+    "Ciencia ficción",
+    "Drama",
+    "Intriga"
    ],
    "tematicas": [
     "Bisexual",
     "Bisexualidad",
-    "Ciencia ficción",
     "Crimen",
-    "Drama",
     "Fake dating",
     "Gran empresa",
     "Hospital",
-    "Intriga",
     "Policía",
     "Triángulo amoroso"
    ],
    "avisos": [
     {
      "nombre": "Accidente de tráfico",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -19130,15 +19234,14 @@
    "final_feliz": null,
    "poster": "63",
    "generos": [
+    "Comedia",
+    "Fantasía",
     "Terror"
    ],
    "tematicas": [
     "Brujas",
     "Brujería",
-    "Comedia",
-    "Fantasía",
-    "Hombres lobo",
-    "Terror"
+    "Hombres lobo"
    ],
    "avisos": [
     {
@@ -19184,16 +19287,15 @@
    "final_feliz": null,
    "poster": "72",
    "generos": [
+    "Comedia",
+    "Drama",
     "Musical"
    ],
    "tematicas": [
     "Adolescencia",
     "Autodescubrimiento",
-    "Comedia",
-    "Drama",
     "Familia",
     "Identidad",
-    "Musical",
     "Prom",
     "Salir del armario"
    ],
@@ -19280,7 +19382,6 @@
     "Ajedrez",
     "Años 50",
     "Años 60",
-    "Drama",
     "Guerra",
     "Guerra Fría"
    ],
@@ -19323,11 +19424,10 @@
    "final_feliz": null,
    "poster": "200",
    "generos": [
+    "Drama",
     "Thriller"
    ],
    "tematicas": [
-    "Drama",
-    "Thriller",
     "Universidad"
    ],
    "avisos": [
@@ -19382,11 +19482,10 @@
    "final_feliz": null,
    "poster": "279",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
-    "Comedia",
-    "Drama",
     "Familia",
     "Realeza",
     "Riqueza",
@@ -19478,13 +19577,12 @@
    "final_feliz": null,
    "poster": "118",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
     "Ciencia ficción",
     "Drama",
+    "Terror"
+   ],
+   "tematicas": [
     "Pandemia",
-    "Terror",
     "Vampiras"
    ],
    "avisos": [],
@@ -19526,10 +19624,10 @@
    "final_feliz": null,
    "poster": "294",
    "generos": [
+    "Drama",
     "Romance"
    ],
    "tematicas": [
-    "Drama",
     "Fanfic",
     "Webserie"
    ],
@@ -19587,12 +19685,11 @@
    "final_feliz": null,
    "poster": "153",
    "generos": [
-    "Acción"
+    "Acción",
+    "Fantasía"
    ],
    "tematicas": [
-    "Acción",
     "Cómic",
-    "Fantasía",
     "Superhéroes"
    ],
    "avisos": [],
@@ -19634,12 +19731,11 @@
    "final_feliz": null,
    "poster": "116",
    "generos": [
-    "Drama"
+    "Drama",
+    "Intriga"
    ],
    "tematicas": [
     "Adolescencia",
-    "Drama",
-    "Intriga",
     "Supervivencia"
    ],
    "avisos": [
@@ -19694,12 +19790,11 @@
    "final_feliz": null,
    "poster": "180",
    "generos": [
-    "Drama"
-   ],
-   "tematicas": [
-    "Años 50",
     "Drama",
     "Romance"
+   ],
+   "tematicas": [
+    "Años 50"
    ],
    "avisos": [
     {
@@ -19767,12 +19862,11 @@
    "final_feliz": null,
    "poster": "290",
    "generos": [
-    "Drama"
+    "Drama",
+    "Fantasía"
    ],
    "tematicas": [
-    "Drama",
     "Drama psicológico",
-    "Fantasía",
     "Religión",
     "Sobrenatural",
     "Universidad"
@@ -19796,6 +19890,10 @@
     },
     {
      "nombre": "Homofobia",
+     "categoria": null
+    },
+    {
+     "nombre": "Religión",
      "categoria": null
     }
    ],
@@ -19845,12 +19943,19 @@
     "Amistad",
     "Crimen",
     "Delincuencia",
-    "Drama",
     "Feminismo",
     "Friends to lovers",
     "Road Movie"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Delincuencia",
+     "categoria": null
+    },
     {
      "nombre": "Síndrome de la lesbiana muerta",
      "categoria": null
@@ -19904,14 +20009,13 @@
    "final_feliz": null,
    "poster": "194",
    "generos": [
-    "Terror"
+    "Drama",
+    "Terror",
+    "Thriller"
    ],
    "tematicas": [
     "Años 50",
-    "Drama",
-    "Serie de antología",
-    "Terror",
-    "Thriller"
+    "Serie de antología"
    ],
    "avisos": [
     {
@@ -19976,13 +20080,13 @@
    "final_feliz": false,
    "poster": "6",
    "generos": [
-    "Aventura"
+    "Aventura",
+    "Telenovela",
+    "Western"
    ],
    "tematicas": [
     "Aventuras",
-    "De época",
-    "Telenovela",
-    "Western"
+    "De época"
    ],
    "avisos": [
     {
@@ -20033,14 +20137,12 @@
    "poster": "367",
    "generos": [
     "Acción",
-    "Ciencia Ficción",
+    "Ciencia ficción",
     "Comedia",
     "Drama"
    ],
    "tematicas": [
-    "Acción",
     "Amor",
-    "Comedia",
     "Comedia absurda",
     "Familia",
     "Salvar al mundo",
@@ -20099,13 +20201,12 @@
    "final_feliz": null,
    "poster": "164",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Adolescencia",
-    "Años 90",
-    "Comedia",
-    "Drama"
+    "Años 90"
    ],
    "avisos": [
     {
@@ -20159,11 +20260,10 @@
    "final_feliz": null,
    "poster": "285",
    "generos": [
+    "Comedia",
     "Drama"
    ],
    "tematicas": [
-    "Comedia",
-    "Drama",
     "Trans",
     "Vida adulta"
    ],
@@ -20226,14 +20326,13 @@
    "final_feliz": false,
    "poster": "237",
    "generos": [
+    "Comedia",
+    "Comedia dramática",
     "Drama"
    ],
    "tematicas": [
     "Amistad",
     "Años 30",
-    "Comedia",
-    "Comedia dramática",
-    "Drama",
     "Racismo",
     "Vida Rural"
    ],
@@ -20297,13 +20396,12 @@
    "final_feliz": null,
    "poster": "202",
    "generos": [
-    "Biográfico"
+    "Biográfico",
+    "Drama"
    ],
    "tematicas": [
     "Amor",
-    "Biográfico",
     "De época",
-    "Drama",
     "Literatura",
     "Sexualidad"
    ],
@@ -20354,15 +20452,14 @@
    "final_feliz": null,
    "poster": "214",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
     "Autodescubrimiento",
-    "Drama",
     "Identidad",
     "Juvenil",
-    "Romance",
     "Salir del armario"
    ],
    "avisos": [
@@ -20403,15 +20500,19 @@
    "final_feliz": null,
    "poster": "284",
    "generos": [
-    "Drama"
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Diferencia de edad",
-    "Drama",
-    "Romance",
     "Universidad"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Billie Piper",
     "Kaya Scodelario"
@@ -20444,13 +20545,11 @@
    "final_feliz": null,
    "poster": "212",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Drama",
     "Romance"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Discriminación",
@@ -20493,6 +20592,8 @@
    "final_feliz": false,
    "poster": "481",
    "generos": [
+    "Drama",
+    "Intriga",
     "Suspense",
     "Terror",
     "Thriller"
@@ -20501,16 +20602,16 @@
     "Angustia",
     "Celos",
     "Conspiraciones",
-    "Drama",
     "Familia",
-    "Intriga",
     "Navidad",
     "Sectas",
-    "Terror",
-    "Thriller",
     "Thriller psicológico"
    ],
    "avisos": [
+    {
+     "nombre": "Angustia",
+     "categoria": null
+    },
     {
      "nombre": "Autolesión",
      "categoria": null
@@ -20613,20 +20714,19 @@
    "final_feliz": true,
    "poster": "131",
    "generos": [
+    "Comedia",
+    "Drama",
     "Romance"
    ],
    "tematicas": [
     "Amor",
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
-    "Drama",
     "Familia",
     "Matrimonio",
     "Pareja",
     "Pareja tóxica",
     "Poliamor",
-    "Romance",
     "Sexualidad",
     "Vida adulta"
    ],
@@ -20637,6 +20737,10 @@
     },
     {
      "nombre": "Discriminación leve",
+     "categoria": null
+    },
+    {
+     "nombre": "Pareja tóxica",
      "categoria": null
     }
    ],
@@ -20681,14 +20785,13 @@
    "final_feliz": null,
    "poster": "189",
    "generos": [
-    "Drama"
+    "Drama",
+    "Histórico",
+    "Romance"
    ],
    "tematicas": [
     "Amor",
-    "Drama",
     "Feminismo",
-    "Histórico",
-    "Romance",
     "Vida adulta"
    ],
    "avisos": [
@@ -20741,10 +20844,13 @@
    ],
    "tematicas": [
     "Crimen",
-    "Drama",
     "Psicológico"
    ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Discriminación",
      "categoria": null
@@ -20788,8 +20894,7 @@
    ],
    "tematicas": [
     "Familia",
-    "Navidad",
-    "Romance"
+    "Navidad"
    ],
    "avisos": [],
    "actrices": [
@@ -20832,13 +20937,12 @@
    "final_feliz": true,
    "poster": "162",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Aborto",
     "Adolescencia",
-    "Comedia",
-    "Drama",
     "Embarazo adolescente",
     "Road Movie"
    ],
@@ -20897,18 +21001,17 @@
    "final_feliz": null,
    "poster": "126",
    "generos": [
-    "Drama"
+    "Animación",
+    "Anime",
+    "Drama",
+    "Fantasía"
    ],
    "tematicas": [
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
     "Autodescubrimiento",
     "Coming of age",
-    "Drama",
     "Escuela",
-    "Fantasía",
     "Identidad"
    ],
    "avisos": [
@@ -20977,19 +21080,30 @@
    "final_feliz": null,
    "poster": "250",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Alcoholismo",
     "Bisexual",
     "Bisexualidad",
-    "Comedia",
-    "Consumo de alcohol",
-    "Drama"
+    "Consumo de alcohol"
    ],
    "avisos": [
     {
+     "nombre": "Alcoholismo",
+     "categoria": null
+    },
+    {
      "nombre": "Cancelada",
+     "categoria": null
+    },
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
      "categoria": null
     }
    ],
@@ -21028,12 +21142,10 @@
    "final_feliz": true,
    "poster": "94",
    "generos": [
-    "Comedia"
-   ],
-   "tematicas": [
     "Comedia",
     "Telenovela"
    ],
+   "tematicas": [],
    "avisos": [
     {
      "nombre": "Infidelidad",
@@ -21070,17 +21182,20 @@
    "final_feliz": null,
    "poster": "248",
    "generos": [
-    "Policíaca"
-   ],
-   "tematicas": [
-    "Crimen",
     "Intriga",
-    "Policía",
     "Policíaca",
     "Suspense",
     "Thriller"
    ],
+   "tematicas": [
+    "Crimen",
+    "Policía"
+   ],
    "avisos": [
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
     {
      "nombre": "Sangre",
      "categoria": null
@@ -21130,11 +21245,10 @@
    "final_feliz": null,
    "poster": "166",
    "generos": [
+    "Biográfico",
     "Drama"
    ],
    "tematicas": [
-    "Biográfico",
-    "Drama",
     "Feminismo",
     "Lesbiana",
     "Lesbianismo",
@@ -21195,15 +21309,14 @@
    "final_feliz": null,
    "poster": "78",
    "generos": [
+    "Drama",
+    "Histórico",
     "Romance"
    ],
    "tematicas": [
     "Amor",
     "Celos",
     "De época",
-    "Drama",
-    "Histórico",
-    "Romance",
     "Salud Mental",
     "Trastornos mentales"
    ],
@@ -21268,7 +21381,6 @@
     "Amor",
     "Autodescubrimiento",
     "Coming of age",
-    "Drama",
     "Identidad",
     "Lesbiana",
     "Lesbianismo",
@@ -21477,14 +21589,13 @@
    "final_feliz": null,
    "poster": "205",
    "generos": [
-    "Drama"
+    "Drama",
+    "Suspense"
    ],
    "tematicas": [
     "Crimen",
-    "Drama",
     "Familia",
     "Mafia",
-    "Suspense",
     "Tragedia"
    ],
    "avisos": [
@@ -21494,6 +21605,10 @@
     },
     {
      "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -21544,17 +21659,16 @@
    "final_feliz": true,
    "poster": "43",
    "generos": [
-    "Fantástico"
-   ],
-   "tematicas": [
     "Drama",
     "Fantasía",
-    "Fantasía oscura",
     "Fantástico",
     "Intriga",
-    "Sobrenatural",
     "Thriller",
     "Western"
+   ],
+   "tematicas": [
+    "Fantasía oscura",
+    "Sobrenatural"
    ],
    "avisos": [
     {
@@ -21604,17 +21718,17 @@
    "final_feliz": null,
    "poster": "219",
    "generos": [
-    "Aventura"
+    "Acción",
+    "Aventura",
+    "Romance"
    ],
    "tematicas": [
-    "Acción",
     "Anacronismos",
     "Aventuras",
     "Efectos especiales malos",
     "Episodio musical",
     "Inexactitud histórica",
     "Mitología retocada",
-    "Romance",
     "Series que parecen fics",
     "Subtexto",
     "Universos alternativos",
@@ -21685,7 +21799,6 @@
     "Drama"
    ],
    "tematicas": [
-    "Drama",
     "Fascismo",
     "Política"
    ],
@@ -21758,14 +21871,25 @@
    ],
    "tematicas": [
     "Consumo de drogas",
-    "Drama",
     "Drogodependencia",
     "Lesbiana",
     "Lesbianismo"
    ],
    "avisos": [
     {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de drogas",
+     "categoria": null
+    },
+    {
      "nombre": "Discriminación",
+     "categoria": null
+    },
+    {
+     "nombre": "Drogodependencia",
      "categoria": null
     },
     {
@@ -21820,16 +21944,15 @@
     "Comedia",
     "Drama",
     "Horror",
-    "Suspense"
+    "Suspense",
+    "Terror"
    ],
    "tematicas": [
     "Adolescencia",
     "Body Horror",
     "Crimen",
     "Deportes",
-    "Drama",
-    "Drama psicológico",
-    "Terror"
+    "Drama psicológico"
    ],
    "avisos": [
     {
@@ -21845,11 +21968,19 @@
      "categoria": null
     },
     {
+     "nombre": "Body Horror",
+     "categoria": null
+    },
+    {
      "nombre": "Conductas perjudiciales",
      "categoria": null
     },
     {
      "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
      "categoria": null
     },
     {
@@ -21942,14 +22073,13 @@
    "final_feliz": true,
    "poster": "174",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Comedia",
-    "Drama",
-    "Juvenil",
-    "Romance"
+    "Juvenil"
    ],
    "avisos": [
     {
@@ -22002,14 +22132,13 @@
    "final_feliz": true,
    "poster": "176",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Comedia",
-    "Drama",
-    "Juvenil",
-    "Romance"
+    "Juvenil"
    ],
    "avisos": [
     {
@@ -22063,14 +22192,13 @@
    "final_feliz": true,
    "poster": "175",
    "generos": [
-    "Comedia"
+    "Comedia",
+    "Drama",
+    "Romance"
    ],
    "tematicas": [
     "Adolescencia",
-    "Comedia",
-    "Drama",
     "Juvenil",
-    "Romance",
     "Secuela"
    ],
    "avisos": [],
@@ -22119,7 +22247,7 @@
    ],
    "tematicas": [
     "Coming of age",
-    "Día a día",
+    "Costumbrismo",
     "Enfermedad",
     "Familia"
    ],
@@ -22196,8 +22324,7 @@
     "Thriller"
    ],
    "tematicas": [
-    "Redes Sociales",
-    "Thriller"
+    "Redes Sociales"
    ],
    "avisos": [
     {
@@ -22258,23 +22385,27 @@
    "final_feliz": null,
    "poster": "102",
    "generos": [
-    "Comedia"
+    "Animación",
+    "Anime",
+    "Comedia",
+    "Drama"
    ],
    "tematicas": [
     "Adolescencia",
     "Amigas de la infancia",
     "Amistad",
     "Amor",
-    "Animación",
-    "Anime",
-    "Comedia",
+    "Costumbrismo",
     "Desamor",
-    "Drama",
-    "Día a día",
     "Escuela",
     "Family Friendly"
    ],
-   "avisos": [],
+   "avisos": [
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    }
+   ],
    "actrices": [
     "Rumi Ōkubo",
     "Saki Fujita"
@@ -22313,11 +22444,11 @@
    "final_feliz": null,
    "poster": "300",
    "generos": [
-    "Animación"
+    "Animación",
+    "Comedia"
    ],
    "tematicas": [
     "Aventuras",
-    "Comedia",
     "Halloween"
    ],
    "avisos": [],
@@ -22358,16 +22489,15 @@
    "final_feliz": null,
    "poster": "275",
    "generos": [
-    "Drama"
+    "Comedia",
+    "Drama",
+    "Suspense"
    ],
    "tematicas": [
     "Aceptación de la sexualidad",
     "Adolescencia",
-    "Comedia",
     "Crimen",
-    "Drama",
-    "Instituto",
-    "Suspense"
+    "Instituto"
    ],
    "avisos": [
     {
@@ -22491,7 +22621,6 @@
     "Adolescencia",
     "Amor",
     "Familia",
-    "Fantasía",
     "Juventud",
     "Pareja",
     "Pareja sana",
