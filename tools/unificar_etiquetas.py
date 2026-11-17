@@ -103,6 +103,9 @@ OPERACIONES = [
     # ---- Sexta tanda (17 de noviembre de 2026): «Sexo» como grupo; «Sexo implícito» pasa a ser «Sexo»
     ("aviso", "renombrar", "Sexo Explícito", "Sexo explícito"),
     ("aviso", "unir", "Sexo Implícito", "Sexo"),
+    # ---- Séptima tanda (17 de noviembre de 2026): nombres en inglés que usa la comunidad
+    ("tematica", "unir", "De enemigas a amantes", "Enemies to Lovers"),
+    ("tematica", "unir", "A fuego lento", "Slow burn"),
 ]
 
 TABLAS = {"genero": "obra_genero", "tematica": "obra_tematica", "aviso": "obra_aviso"}

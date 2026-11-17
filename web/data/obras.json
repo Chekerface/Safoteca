@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-17T12:12:08+00:00",
+  "generado": "2026-11-17T13:12:00+00:00",
   "total": 325
  },
  "obras": [
@@ -1708,7 +1708,7 @@
    ],
    "tematicas": [
     "Amor",
-    "De enemigas a amantes",
+    "Enemies to Lovers",
     "Romance en el trabajo",
     "Thai GL",
     "Triángulo amoroso"
@@ -1759,18 +1759,19 @@
     398,
     381,
     391,
+    263,
     380,
     399,
     396,
     485,
     487,
+    54,
     397,
     490,
     489,
-    131,
-    378,
-    367,
-    109
+    47,
+    109,
+    115
    ]
   },
   {
@@ -3596,7 +3597,9 @@
     150,
     44,
     398,
+    387,
     399,
+    395,
     263,
     54,
     130,
@@ -3604,9 +3607,7 @@
     131,
     381,
     103,
-    387,
-    47,
-    236
+    47
    ]
   },
   {
@@ -4790,18 +4791,18 @@
     103,
     131,
     47,
+    387,
     398,
     130,
     490,
     384,
+    395,
     381,
     51,
-    263,
     56,
     110,
     109,
-    115,
-    379
+    115
    ]
   },
   {
@@ -5458,13 +5459,13 @@
     131,
     130,
     263,
+    387,
     490,
     399,
     480,
     396,
     380,
-    381,
-    398
+    381
    ]
   },
   {
@@ -6569,12 +6570,12 @@
     490,
     248,
     131,
+    395,
+    387,
     235,
     371,
     76,
     33,
-    71,
-    398,
     394
    ]
   },
@@ -9807,7 +9808,7 @@
     "Amor",
     "Asia",
     "Clase alta",
-    "De enemigas a amantes",
+    "Enemies to Lovers",
     "Erótico-festivo",
     "Riqueza",
     "Sexo",
@@ -9880,13 +9881,13 @@
     381,
     380,
     384,
+    54,
     490,
     397,
     489,
-    487,
-    130,
-    295,
+    115,
     112,
+    109,
     110
    ]
   },
@@ -9981,8 +9982,8 @@
     }
    ],
    "actrices": [
-    "Jessie Natsiya Prommart es \"Vicky\" Phawika Ratchanon",
-    "Tungpang Pattarawadee Laosa es \"Than\" Thara Krahan"
+    "Natsiya Prommart",
+    "Pattarawadee Laosa"
    ],
    "directores": [],
    "donde_ver": [
@@ -14914,7 +14915,9 @@
    "rel": [
     392,
     47,
+    395,
     398,
+    387,
     490,
     51,
     399,
@@ -16531,8 +16534,8 @@
    ],
    "avisos": [],
    "actrices": [
-    "Inthira \"Near\" Thammajaroen",
-    "Jiratchaya \"B Mine\" Komontut"
+    "Inthira Thammajaroen",
+    "Jiratchaya Komontut"
    ],
    "directores": [],
    "donde_ver": [
@@ -19761,15 +19764,14 @@
     "Romance"
    ],
    "tematicas": [
-    "A fuego lento",
     "Adorabilidad Absoluta",
-    "De enemigas a amantes",
     "Diferencia de altura",
     "Diferencias de clase social",
     "Enemies to Lovers",
     "Mujeres adultas",
     "Redes Sociales",
     "Romance en el trabajo",
+    "Slow burn",
     "Thai GL"
    ],
    "avisos": [
@@ -19832,8 +19834,8 @@
     485,
     395,
     263,
-    54,
     105,
+    54,
     397,
     490,
     115,
@@ -22194,7 +22196,6 @@
     "Romance"
    ],
    "tematicas": [
-    "A fuego lento",
     "Adolescencia",
     "Amor",
     "Comedia juvenil",
@@ -22207,6 +22208,7 @@
     "Relación de pareja",
     "Romance de instituto",
     "Romance en el trabajo",
+    "Slow burn",
     "Thai GL",
     "Universidad",
     "Young Adult"
