@@ -30,7 +30,7 @@ if not a.simular:
     copia = COPIAS / f"safoteca_antes_final_feliz_{datetime.now():%Y%m%d_%H%M%S}.db"
     copia.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy(a.db, copia)
-    print("Copia de seguridad:", copia.relative_to(RAIZ))
+    print("Copia de seguridad:", copia)
 filas = db.execute("""SELECT o.id, COALESCE(o.titulo_es, o.titulo_original), o.final_feliz FROM obra o
                       JOIN obra_tematica x ON x.obra_id = o.id WHERE x.tematica_id = ?""", (t[0],)).fetchall()
 nuevas = [f for f in filas if f[2] is None]
