@@ -1,0 +1,68 @@
+#!/usr/bin/env python3
+"""Obras relacionadas: UNA sola fórmula para la ficha de la web y para las páginas de buscadores.
+
+La calcula tools/exportar_json.py y la guarda en obras.json («rel»: ids de las más parecidas, de más a menos).
+La web enseña las 10 primeras que no tengan avisos que la persona evita; las páginas por obra, las 6 primeras.
+
+Cómo puntúa (los números se ajustan aquí, en AJUSTES):
+  * Temáticas en común, según lo raras que son: compartir «Vampiras» (pocas obras) vale mucho; compartir
+    «Adolescencia» (casi 100 obras), poco. Rareza = ln(obras publicadas / obras con esa temática).
+  * Géneros en común, también según su rareza, pero como mucho 3 puntos en total: «Drama» casi no suma y
+    un género muy raro («Western», «Documental») puede llegar a los 3.
+  * Misma dirección y actrices en común suman aparte.
+  * Hay que parecerse en algo concreto: temáticas suficientemente raras, un género muy raro, o la misma
+    directora o actriz. Compartir solo géneros comunes no basta.
+  * Si la obra tiene final feliz, solo se recomiendan obras con final feliz.
+  * Desempates: mismo tipo (serie/película), nivel de relevancia y año.
+"""
+import math
+from collections import Counter
+
+AJUSTES = {
+    "max": 20,                 # cuántas se guardan (la web enseña 10 y las páginas 6, tras quitar las evitadas)
+    "peso_tematica": 1.0,      # multiplica la rareza de cada temática en común
+    "peso_genero": 0.5,        # multiplica la rareza de cada género en común...
+    "tope_generos": 3.0,       # ...con este máximo de puntos entre todos los géneros
+    "genero_raro": 5,          # un género con este nº de obras o menos cuenta como «algo concreto»
+    "minimo_tematicas": 2.5,   # puntos de temáticas para contar como «algo concreto»
+    "direccion": 3.0,          # misma directora/director
+    "actriz": 1.5,             # por actriz en común
+    "mismo_tipo": 0.5,         # serie con serie, película con película
+    "exigir_final_feliz": True,
+}
+REL = {"A": 3, "B": 2, "C": 1}
+
+
+def calcular(obras, ajustes=None):
+    """Devuelve {id: [ids relacionadas]} para una lista de obras con el formato de obras.json."""
+    A = dict(AJUSTES, **(ajustes or {}))
+    n = max(len(obras), 1)
+    df_t = Counter(t for o in obras for t in set(o.get("tematicas") or []))
+    df_g = Counter(g for o in obras for g in set(o.get("generos") or []))
+    rareza = lambda df, x: math.log(n / df[x]) if df[x] else 0.0
+    res = {}
+    for o in obras:
+        tem, gen = set(o.get("tematicas") or []), set(o.get("generos") or [])
+        dirs, acts = set(o.get("directores") or []), set(o.get("actrices") or [])
+        cand = []
+        for c in obras:
+            if c["id"] == o["id"]:
+                continue
+            if A["exigir_final_feliz"] and o.get("final_feliz") is True and c.get("final_feliz") is not True:
+                continue
+            t_com = tem & set(c.get("tematicas") or [])
+            g_com = gen & set(c.get("generos") or [])
+            p_tem = A["peso_tematica"] * sum(rareza(df_t, t) for t in t_com)
+            p_gen = min(A["tope_generos"], A["peso_genero"] * sum(rareza(df_g, g) for g in g_com))
+            p_dir = A["direccion"] if dirs & set(c.get("directores") or []) else 0.0
+            p_act = A["actriz"] * len(acts & set(c.get("actrices") or []))
+            concreto = (p_tem >= A["minimo_tematicas"] or p_dir or p_act
+                        or any(df_g[g] <= A["genero_raro"] for g in g_com))
+            if not concreto:
+                continue
+            mismo = c.get("tipo") == o.get("tipo")
+            pts = p_tem + p_gen + p_dir + p_act + (A["mismo_tipo"] if mismo else 0.0)
+            cand.append((-round(pts, 3), -mismo, -REL.get(c.get("relevancia"), 0), -(c.get("anio") or 0), c["id"]))
+        cand.sort()
+        res[o["id"]] = [x[-1] for x in cand[:A["max"]]]
+    return res

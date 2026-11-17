@@ -36,6 +36,11 @@ def asegurar_esquema(db):
         db.execute("ALTER TABLE obra ADD COLUMN publicada_el TEXT")
         db.execute("UPDATE obra SET publicada_el = creada_el WHERE estado = 'publicada'")
         db.commit()
+    cols = [r[1] for r in db.execute("PRAGMA table_info(obra)")]
+    for c in ("tmdb_id", "fecha_estreno", "fecha_novedad"):   # 17/11/2026: fechas exactas desde TMDB
+        if cols and c not in cols:
+            db.execute(f"ALTER TABLE obra ADD COLUMN {c} TEXT")
+    db.commit()
     db.executescript((RAIZ / "db" / "schema.sql").read_text(encoding="utf-8"))
 
 
