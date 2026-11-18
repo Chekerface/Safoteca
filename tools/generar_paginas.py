@@ -220,6 +220,8 @@ def _poster(o, ancho=300):
 
 
 def coleccion(c, obras, noindex):
+    # Las tarjetas abren la ficha de la web (#/obra/ID). Los buscadores siguen llegando a las páginas por obra
+    # por el sitemap, el índice /obras/ y los datos estructurados de esta página.
     sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
     REL = {"A": 3, "B": 2, "C": 1}
     destacadas = sorted((o for o in sel if o.get("poster")),
@@ -227,10 +229,10 @@ def coleccion(c, obras, noindex):
     marca_ff = c["slug"] != "series-lesbicas-final-feliz"
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
     dest_html = "".join(
-        f'<a class="dest" href="../obra/{o["id"]}/"><span class="pos"><img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</span>'
+        f'<a class="dest" href="../#/obra/{o["id"]}"><span class="pos"><img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</span>'
         f'<span class="dt">{e(o["titulo"])}</span></a>' for o in destacadas)
     items = "".join(
-        f'<li><a href="../obra/{o["id"]}/">'
+        f'<li><a href="../#/obra/{o["id"]}">'
         f'{"<img src=" + chr(34) + _poster(o) + chr(34) + " alt=" + chr(34) + chr(34) + " loading=" + chr(34) + "lazy" + chr(34) + " width=" + chr(34) + "300" + chr(34) + " height=" + chr(34) + "450" + chr(34) + ">" if o.get("poster") else "<span class=" + chr(34) + "sinpos" + chr(34) + "></span>"}'
         f'<span><b>{e(o["titulo"])}</b>{" <i>" + str(o["anio"]) + "</i>" if o.get("anio") else ""}'
         f'{"<small>" + e(recorta(o.get("sinopsis"), 140)) + "</small>" if o.get("sinopsis") else ""}</span></a></li>' for o in sel)
@@ -273,7 +275,7 @@ def coleccion(c, obras, noindex):
 </head>
 <body>
 <header class="cab">
-  <a class="marca" href="../"><img src="../marca/buholira-blanco.svg" alt="" width="26" height="26">la safoteca · colecciones</a>
+  <a class="marca" href="../"><img src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><span>colecciones</span></a>
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -301,7 +303,8 @@ ESTILO_COLECCION = """<style>
 @media (prefers-color-scheme:dark){:root{--tinta:#efeaf8;--suave:#b9b0cf;--papel:#16131d;--sup:#201b2b;--linea:#3a3150;--negro:#0e0b13}}
 *{box-sizing:border-box} body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans)}
 .cab{background:var(--negro);color:#f3eef9;padding:18px 18px 34px}
-.cab .marca{display:inline-flex;align-items:center;gap:8px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
+.cab .marca{display:inline-flex;align-items:flex-end;gap:10px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
+.cab .marca img{height:44px;width:auto} .cab .marca span{padding-bottom:4px;border-left:1px solid #4a3f5c;padding-left:10px}
 .cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
 .cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
 main{max-width:760px;margin:0 auto;padding:0 16px 120px}
