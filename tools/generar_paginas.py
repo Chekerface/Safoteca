@@ -162,35 +162,96 @@ def _avisos(o):
     return {(a["nombre"] if isinstance(a, dict) else a) for a in (o.get("avisos") or [])}
 
 
+SLM = "Síndrome de la lesbiana muerta"
+
 COLECCIONES = [
     {"slug": "series-lesbicas-final-feliz",
      "titulo": "Series lésbicas y bisexuales con final feliz",
+     "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
      "intro": "Series en las que las protagonistas acaban juntas y con una relación sana. "
               "Ojo: esta lista te dice cómo acaban, así que contiene un pequeño destripe.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'serie')} series acaban bien: juntas y con una relación sana."),
      "filtro": lambda o: o["tipo"] == "serie" and o.get("final_feliz") is True},
     {"slug": "series-saficas-tailandesas",
      "titulo": "Series sáficas tailandesas (GL)",
+     "titulo_html": "Series sáficas <em>tailandesas</em> (GL)",
      "intro": "Series tailandesas con protagonistas lesbianas o bisexuales, el llamado «Girls' Love» o GL.",
      "filtro": lambda o: o["tipo"] == "serie" and "Tailandia" in (o.get("pais") or "")},
     {"slug": "peliculas-lesbicas-donde-no-muere-la-lesbiana",
      "titulo": "Películas lésbicas donde no muere la lesbiana",
-     "intro": "Películas sin el «síndrome de la lesbiana muerta» (ese cliché en el que el personaje lésbico o bisexual "
-              "muere en la historia), según los avisos de contenido que hemos revisado.",
-     # solo obras con avisos ya revisados (si no tiene ninguno, no sabemos si lo tendría)
-     "filtro": lambda o: o["tipo"] == "pelicula" and (o.get("avisos") or o.get("final_feliz") is True)
-                         and "Síndrome de la lesbiana muerta" not in _avisos(o)},
+     "titulo_html": "Películas lésbicas donde <em>no muere</em> la lesbiana",
+     "intro": "Películas sin el «síndrome de la lesbiana muerta», ese cliché en el que el personaje lésbico o bisexual "
+              "muere en la historia. Sin destripes: solo te decimos que ella llega viva a los créditos.",
+     "nota": "Empezamos La Safoteca porque estábamos hartas de encariñarnos con un personaje para verlo morir. "
+             "Esta es la lista que nos habría gustado tener.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas no caen en el "
+                                            f"síndrome de la lesbiana muerta. Solo {sum(1 for o in todas if o['tipo'] == 'pelicula' and SLM in _avisos(o))} sí."),
+     "barra": lambda todas: (sum(1 for o in todas if o["tipo"] == "pelicula" and SLM not in _avisos(o)),
+                             sum(1 for o in todas if o["tipo"] == "pelicula" and SLM in _avisos(o)), "viva", "muere"),
+     "grafico_anios": True,
+     # sin el aviso (una película sin ningún aviso está revisada: no tiene nada que avisar)
+     "filtro": lambda o: o["tipo"] == "pelicula" and SLM not in _avisos(o)},
 ]
+
+
+def _grafico_anios(todas):
+    """SVG sin JavaScript: películas del catálogo por año y cuántas tienen el síndrome."""
+    pel = [o for o in todas if o["tipo"] == "pelicula" and o.get("anio") and o["anio"] >= 1985]
+    a0, a1 = 1985, max(o["anio"] for o in pel)
+    tot = [sum(1 for o in pel if o["anio"] == y) for y in range(a0, a1 + 1)]
+    slm = [sum(1 for o in pel if o["anio"] == y and SLM in _avisos(o)) for y in range(a0, a1 + 1)]
+    W, H, iz, ab = 340, 150, 22, 20
+    top = max(tot) or 1
+    x = lambda i: iz + i * (W - iz - 6) / (len(tot) - 1)
+    y = lambda v: 8 + (H - ab - 8) * (1 - v / top)
+    linea = lambda serie: " ".join(f"{x(i):.1f},{y(v):.1f}" for i, v in enumerate(serie))
+    area = f"{x(0):.1f},{y(0):.1f} " + linea(tot) + f" {x(len(tot) - 1):.1f},{y(0):.1f}"
+    marcas = "".join(f'<text x="{x(a - a0):.1f}" y="{H - 4}" text-anchor="middle">{a}</text>' for a in (1990, 2000, 2010, 2020) if a <= a1)
+    ejes = "".join(f'<line x1="{iz}" x2="{W - 6}" y1="{y(v):.1f}" y2="{y(v):.1f}" class="g"/><text x="{iz - 5}" y="{y(v) + 4:.1f}" text-anchor="end">{v}</text>'
+                   for v in range(0, top + 1, 5))
+    puntos = "".join(f'<circle cx="{x(i):.1f}" cy="{y(v):.1f}" r="2.6" class="m"/>' for i, v in enumerate(slm) if v)
+    return f"""<figure class="anios"><svg viewBox="0 0 {W} {H}" role="img" aria-label="Películas del catálogo por año de estreno desde {a0}: el total sube hasta {top}; las que tienen el síndrome de la lesbiana muerta son como mucho {max(slm)} al año.">
+{ejes}<polygon points="{area}" class="a"/><polyline points="{linea(tot)}" class="t"/><polyline points="{linea(slm)}" class="s"/>{puntos}{marcas}</svg>
+<figcaption><span class="ley t"></span>películas del catálogo por año <span class="ley s"></span>con el síndrome de la lesbiana muerta</figcaption></figure>"""
+
+
+def _poster(o, ancho=300):
+    return f'../img/{o["poster"]}_{ancho}.webp' if o.get("poster") else ""
 
 
 def coleccion(c, obras, noindex):
     sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
+    REL = {"A": 3, "B": 2, "C": 1}
+    destacadas = sorted((o for o in sel if o.get("poster")),
+                        key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
+    marca_ff = c["slug"] != "series-lesbicas-final-feliz"
+    etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
+    dest_html = "".join(
+        f'<a class="dest" href="../obra/{o["id"]}/"><span class="pos"><img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</span>'
+        f'<span class="dt">{e(o["titulo"])}</span></a>' for o in destacadas)
     items = "".join(
-        f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}'
-        f'{"<p>" + e(recorta(o.get("sinopsis"), 170)) + "</p>" if o.get("sinopsis") else ""}</li>' for o in sel)
+        f'<li><a href="../obra/{o["id"]}/">'
+        f'{"<img src=" + chr(34) + _poster(o) + chr(34) + " alt=" + chr(34) + chr(34) + " loading=" + chr(34) + "lazy" + chr(34) + " width=" + chr(34) + "300" + chr(34) + " height=" + chr(34) + "450" + chr(34) + ">" if o.get("poster") else "<span class=" + chr(34) + "sinpos" + chr(34) + "></span>"}'
+        f'<span><b>{e(o["titulo"])}</b>{" <i>" + str(o["anio"]) + "</i>" if o.get("anio") else ""}'
+        f'{"<small>" + e(recorta(o.get("sinopsis"), 140)) + "</small>" if o.get("sinopsis") else ""}</span></a></li>' for o in sel)
+    nota = (f'<blockquote class="nota"><p>«{e(c["nota"])}»</p><cite>— el equipo de La Safoteca</cite></blockquote>'
+            if c.get("nota") else "")
+    cifra = ""
+    if c.get("cifra"):
+        n, frase = c["cifra"](obras, sel)
+        cifra = f'<div class="cifra"><span class="num">{n}</span><span>{e(frase)}</span></div>'
+    barra = ""
+    if c.get("barra"):
+        bien, mal, et_b, et_m = c["barra"](obras)
+        tot = bien + mal or 1
+        barra = (f'<div class="barra" role="img" aria-label="{bien} {et_b}, {mal} {et_m}"><span class="b" style="width:{100 * bien / tot:.1f}%"></span>'
+                 f'<span class="m" style="width:{100 * mal / tot:.1f}%"></span></div><p class="ley-b">lila: {et_b} · negro: {et_m}</p>')
+    grafico = _grafico_anios(obras) if c.get("grafico_anios") else ""
     desc = recorta(f'{c["titulo"]}: {len(sel)} títulos en La Safoteca, el catálogo gratuito con avisos de contenido. {c["intro"]}')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": c["titulo"], "numberOfItems": len(sel),
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/obra/{o['id']}/", "name": o["titulo"]}
                               for i, o in enumerate(sel)]}
+    resto = len(sel) - len(destacadas)
     return f"""<!doctype html>
 <html lang="es">
 <head>
@@ -205,22 +266,74 @@ def coleccion(c, obras, noindex):
 <meta property="og:url" content="{DOMINIO}/{c["slug"]}/">
 <meta property="og:image" content="{DOMINIO}/icons/icon-512.png">
 <meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#1d1726">
 <link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-{ESTILO_LISTA}
+{ESTILO_COLECCION}
 </head>
 <body>
-<header><a href="../"><img src="../marca/buholira.svg" alt="">La Safoteca</a></header>
+<header class="cab">
+  <a class="marca" href="../"><img src="../marca/buholira-blanco.svg" alt="" width="26" height="26">la safoteca · colecciones</a>
+  <h1>{c["titulo_html"]}</h1>
+  <p>{e(c["intro"])}</p>
+</header>
 <main>
-<h1>{e(c["titulo"])}</h1>
-<p>{e(c["intro"])} Hay {len(sel)} en La Safoteca; cada una tiene su ficha con nivel de relevancia, dónde verla y avisos de contenido ocultos hasta que decidas verlos.</p>
-<p><a class="boton" href="../">Abrir el catálogo completo</a></p>
-<ul class="tarjetas">{items}</ul>
-<p><a href="../obras/">Todas las series y películas</a></p>
+{nota}
+{cifra}
+{barra}
+{grafico}
+{'<h2>Para empezar esta noche</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
+{'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
+<ul class="lista">{items}</ul>
+<p class="todas"><a href="../obras/">Todas las series y películas</a></p>
 </main>
+<div class="cta"><div><b>Ábrelas en el catálogo</b><small>filtra por plataforma y esconde lo que no quieras ver</small></div>
+<a href="../#/catalogo">Abrir <span aria-hidden="true">→</span></a></div>
 </body>
 </html>
 """
+
+
+ESTILO_COLECCION = """<style>
+:root{--lila:#9c88bb;--negro:#1d1726;--tinta:#1d1726;--suave:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;--claro:#c9bbe0;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+@media (prefers-color-scheme:dark){:root{--tinta:#efeaf8;--suave:#b9b0cf;--papel:#16131d;--sup:#201b2b;--linea:#3a3150;--negro:#0e0b13}}
+*{box-sizing:border-box} body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans)}
+.cab{background:var(--negro);color:#f3eef9;padding:18px 18px 34px}
+.cab .marca{display:inline-flex;align-items:center;gap:8px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
+.cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
+.cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
+main{max-width:760px;margin:0 auto;padding:0 16px 120px}
+.nota{margin:-18px 0 0;background:#fff;color:#1d1726;border:1.5px solid #1d1726;border-radius:4px;padding:14px 16px 12px;transform:rotate(-1deg)}
+.nota p{margin:0;font:italic 17px/1.5 var(--serif)} .nota cite{display:block;margin-top:8px;font:12px var(--mono);color:#5f5675;font-style:normal}
+.cifra{display:flex;align-items:baseline;gap:12px;margin:26px 0 0} .cifra .num{font:400 60px/1 var(--serif)} .cifra span:last-child{color:var(--suave)}
+.barra{display:flex;gap:2px;height:14px;margin:12px 0 0;border-radius:3px;overflow:hidden}
+.barra .b{background:var(--lila)} .barra .m{background:#1d1726} @media (prefers-color-scheme:dark){.barra .m{background:#efeaf8}}
+.ley-b{font:11px var(--mono);color:var(--suave);margin:6px 0 0}
+.anios{margin:22px 0 0} .anios svg{width:100%;height:auto;font:10px var(--mono);fill:var(--suave)}
+.anios .g{stroke:var(--linea)} .anios .a{fill:var(--lila);opacity:.14;stroke:none} .anios .t{fill:none;stroke:var(--lila);stroke-width:2}
+.anios .s{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-dasharray:4 3} .anios .m{fill:var(--tinta)}
+.anios figcaption{font:11px var(--mono);color:var(--suave);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.ley{display:inline-block;width:14px;height:0;border-top:2px solid var(--lila)} .ley.s{border-top:2px dashed var(--tinta)}
+h2{font:400 22px var(--serif);margin:30px 0 12px}
+.dests{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .dest{color:var(--tinta);text-decoration:none;font-size:13px}
+.pos{position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;background:var(--linea)}
+.pos img{width:100%;height:100%;object-fit:cover;display:block}
+.ff{position:absolute;left:5px;bottom:5px;background:#1d1726;color:#fff;font-size:10px;padding:2px 6px;border-radius:2px}
+.dt{display:block;margin-top:5px;line-height:1.3}
+.mas{color:var(--suave);font-size:14px;margin:16px 0 8px}
+.lista{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.lista a{display:flex;gap:12px;align-items:flex-start;background:var(--sup);border:1px solid var(--linea);border-radius:8px;padding:8px;color:var(--tinta);text-decoration:none}
+.lista img,.sinpos{width:52px;height:78px;object-fit:cover;border-radius:3px;flex:none;background:var(--linea)}
+.lista b{font:600 16px var(--serif)} .lista i{font-style:normal;color:var(--suave);font-size:13px;margin-left:4px}
+.lista small{display:block;color:var(--suave);font-size:13.5px;line-height:1.45;margin-top:3px}
+.todas{margin:22px 0 0} .todas a{color:var(--tinta)}
+.cta{position:sticky;bottom:0;display:flex;align-items:center;gap:12px;background:var(--lila);color:#1d1726;padding:12px max(16px,calc(50vw - 364px))}
+.cta div{flex:1} .cta b{display:block;font:400 17px var(--serif)} .cta small{display:block;font-size:12.5px;color:#2b2433}
+.cta a{background:#1d1726;color:#fff;text-decoration:none;padding:11px 16px;border-radius:999px;white-space:nowrap;font-weight:600}
+@media (min-width:640px){.dests{grid-template-columns:repeat(3,minmax(0,170px))}}
+</style>"""
 
 
 ESTILO_LISTA = """<style>
