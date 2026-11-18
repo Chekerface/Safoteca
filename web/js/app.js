@@ -95,6 +95,7 @@
     return {
       q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
       rel: separar(p.get("rel")), final: p.get("final") === "si" ? "si" : "", plat: separar(p.get("plat")), otros: p.get("otros") === "1",
+      act: separar(p.get("act")), dir: separar(p.get("dir")),
       edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
     };
   }
@@ -104,6 +105,8 @@
     if (f.tipo) p.set("tipo", f.tipo);
     if (f.gen.length) p.set("gen", f.gen.join("|"));
     if (f.tem.length) p.set("tem", f.tem.join("|"));
+    if (f.act.length) p.set("act", f.act.join("|"));
+    if (f.dir.length) p.set("dir", f.dir.join("|"));
     if (f.rel.length) p.set("rel", f.rel.join("|"));
     if (f.final) p.set("final", f.final);
     if (f.plat.length) p.set("plat", f.plat.join("|"));
@@ -112,7 +115,7 @@
     if (f.orden !== "az") p.set("orden", f.orden);
     return p.toString();
   }
-  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + (f.final ? 1 : 0) + f.plat.length + (f.edad !== "" ? 1 : 0);
+  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.act.length + f.dir.length + f.rel.length + (f.final ? 1 : 0) + f.plat.length + (f.edad !== "" ? 1 : 0);
 
   function filtrar(f) {
     const q = norm(f.q).trim();
@@ -123,6 +126,8 @@
       if (f.final && o.final_feliz !== true) return false;
       if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
       if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
+      if (f.act.length && !f.act.some((n) => o.actrices.includes(n))) return false;
+      if (f.dir.length && !f.dir.some((n) => o.directores.includes(n))) return false;
       if (f.plat.length && !(o.plataformas || []).some((x) => f.plat.includes(clavePlat(x)) && (f.otros || delPais(x)))) return false;
       if (max !== null) { const n = edadNum(o); if (n !== null && n > max) return false; }
       if (q && !o._h.includes(q)) return false;
@@ -262,6 +267,14 @@
     return `<div class="campo-buscar"><input class="campo" id="${id}" type="search" placeholder="Buscar por título o actriz" value="${esc(valor)}" autocomplete="off" enterkeyhint="search">${boton}</div>`;
   }
 
+  // Filtro por actriz o dirección (se llega desde la ficha): una cajita por nombre para quitarlo
+  function personasActivas(f) {
+    const sin = (clave, n) => { const g = { ...f, [clave]: f[clave].filter((x) => x !== n) }; const qs = paramsDe(g); return "#/catalogo" + (qs ? "?" + qs : ""); };
+    const chip = (clave, etiqueta, n) => `<a class="chip" aria-current="true" href="${sin(clave, n)}" aria-label="Quitar el filtro ${etiqueta} ${esc(n)}">${etiqueta}: ${esc(n)}<span aria-hidden="true" style="margin-left:.45rem">✕</span></a>`;
+    const todos = [...f.act.map((n) => chip("act", "Con", n)), ...f.dir.map((n) => chip("dir", "Dirección", n))];
+    return todos.length ? `<div class="chips" role="group" aria-label="Filtros por persona" style="margin-top:.5rem">${todos.join("")}</div>` : "";
+  }
+
   function vistaCatalogo(f) {
     const tipoChip = (valor, texto) => `<button class="chip" type="button" data-tipo="${valor}" aria-pressed="${f.tipo === valor}">${texto}</button>`;
     return `
@@ -276,6 +289,7 @@
             <option value="az">A–Z</option><option value="recientes">Más recientes</option><option value="relevancia">Nivel de relevancia</option>
           </select>
         </div>
+        <div id="personas">${personasActivas(f)}</div>
         <p class="resumen" id="resumen" aria-live="polite"></p>
       </div>
       ${notaOcultas()}
@@ -307,6 +321,7 @@
     const lista = filtrar(f);
     const n = lista.length;
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
+    const pers = $("#personas"); if (pers) pers.innerHTML = personasActivas(f);
     if (n) pintarPorTandas(lista); else $("#resultados").innerHTML = `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
         <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
@@ -516,6 +531,13 @@
     avisos += `</section>`;
 
     const dato = (k, v) => (v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "");
+    // Actrices y dirección: cajita (con cuántas obras) solo si la persona está en más de una obra; si no, texto
+    const personas = (k, clave, lista, cuenta) => {
+      if (!lista.length) return "";
+      const conMas = lista.filter((n) => (cuenta.get(n) || 0) > 1), resto = lista.filter((n) => (cuenta.get(n) || 0) <= 1);
+      const chips = conMas.map((n) => `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(n)}" aria-label="Ver las ${cuenta.get(n)} obras con ${esc(n)}">${esc(n)} <span class="chip__n">${cuenta.get(n)}</span></a>`).join("");
+      return `<dt>${k}</dt><dd>${chips ? `<div class="chips chips--personas">${chips}</div>` : ""}${resto.length ? esc(resto.join(", ")) : ""}</dd>`;
+    };
     const explica = CFG.textoRelevancia && CFG.textoRelevancia[o.relevancia]
       ? `<details class="explica"><summary>¿Qué significa el nivel ${esc(o.relevancia)}?</summary><p>${esc(CFG.textoRelevancia[o.relevancia])}</p></details>` : "";
     const disp = o.disponible_espana === null ? "" : o.disponible_espana ? "Sí" : "No";
@@ -544,7 +566,7 @@
             ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
           <section class="bloque"><h2>Datos</h2><dl class="dato">
             ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}
-            ${dato("Reparto", o.actrices.join(", "))}${dato("Dirección", o.directores.join(", "))}
+            ${personas("Reparto", "act", o.actrices, E.nAct)}${personas("Dirección", "dir", o.directores, E.nDir)}
           </dl></section>
           ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
         </div>
@@ -1015,6 +1037,8 @@
         _h: norm([o.titulo, o.titulo_original, o.titulo_latam, ...o.actrices, ...o.directores].filter(Boolean).join(" ")),
       }));
       E.porId = new Map(E.obras.map((o) => [o.id, o]));
+      const contar = (campo) => { const m = new Map(); E.obras.forEach((o) => new Set(o[campo]).forEach((n) => m.set(n, (m.get(n) || 0) + 1))); return m; };
+      E.nAct = contar("actrices"); E.nDir = contar("directores");
       E.cargado = true;
       pintar(false);
     } catch {

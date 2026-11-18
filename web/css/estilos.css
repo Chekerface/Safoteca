@@ -506,3 +506,4 @@ textarea.prop-campo { resize: vertical; }
 .prop-info[aria-expanded="true"] { background: var(--violeta); color: var(--boton-texto); }
 .prop-info__texto { flex-basis: 100%; background: var(--suave); border-radius: 10px; padding: .75rem .9rem; font-size: .9rem; line-height: 1.5; }
 .prop-radio legend:has(.prop-info) { display: flex; align-items: center; }
+.chips--personas { margin: .1rem 0 .35rem; }
