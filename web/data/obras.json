@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-17T16:00:46+00:00",
+  "generado": "2026-11-18T16:53:06+00:00",
   "total": 325
  },
  "obras": [
@@ -194,7 +194,9 @@
     "Apinya Sakuljaroensuk",
     "Isabella Lete"
    ],
-   "directores": [],
+   "directores": [
+    "Arunsak Ongla-or"
+   ],
    "donde_ver": [
     "https://seriesgl.com/1448-love-among-us-gl-yuri-sub-espanol/"
    ],
@@ -1015,7 +1017,10 @@
     "Caitlin Stasey",
     "Sianoa Smit-McPhee"
    ],
-   "directores": [],
+   "directores": [
+    "Chris Sivertson",
+    "Lucky McKee"
+   ],
    "donde_ver": [
     "https://tv.apple.com/us/movie/all-cheerleaders-die/umc.cmc.2u796htlfdb5o6fj5zg3go1ez?l=es"
    ],
@@ -1068,7 +1073,9 @@
     "Elise Bauman",
     "Winny Clarke"
    ],
-   "directores": [],
+   "directores": [
+    "Sarah Rotella"
+   ],
    "donde_ver": [
     "https://tv.apple.com/ca/movie/almost-adults/umc.cmc.4xw4z72i23auj5li2qmu8febn"
    ],
@@ -2727,6 +2734,7 @@
    "rel": [
     86,
     81,
+    73,
     97,
     68
    ]
@@ -4682,7 +4690,9 @@
    "actrices": [
     "Natalie Portman"
    ],
-   "directores": [],
+   "directores": [
+    "Darren Aronofsky"
+   ],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/browse/entity-0de850bd-a343-4dd7-86c4-c008cdaca86f"
    ],
@@ -5598,7 +5608,7 @@
    "actrices": [
     "Jodelle Ferland",
     "Melissa O'Neil",
-    "Zoei Palmer"
+    "Zoie Palmer"
    ],
    "directores": [],
    "donde_ver": [],
@@ -5741,7 +5751,9 @@
     "Lauryn Canny",
     "Lola Petticrew"
    ],
-   "directores": [],
+   "directores": [
+    "David Freyne"
+   ],
    "donde_ver": [],
    "plataformas": [],
    "info": [
@@ -6461,6 +6473,7 @@
     247,
     398,
     381,
+    15,
     299,
     64,
     34,
@@ -6473,7 +6486,6 @@
     149,
     33,
     70,
-    399,
     366,
     394,
     199,
@@ -7496,13 +7508,13 @@
     262,
     283,
     301,
-    270,
     82,
     296,
     115,
     379,
     113,
-    482
+    482,
+    100
    ]
   },
   {
@@ -11084,7 +11096,9 @@
     "Troian Bellisario",
     "Yvonne Zima"
    ],
-   "directores": [],
+   "directores": [
+    "Maura Milan"
+   ],
    "donde_ver": [
     "https://vimeo.com/43876576"
    ],
@@ -11634,7 +11648,9 @@
     "Evan Rachel Wood",
     "Gina Rodriguez"
    ],
-   "directores": [],
+   "directores": [
+    "Miranda July"
+   ],
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0MNPCXOTT3XWCVCHILRDTK1BUH"
    ],
@@ -11870,7 +11886,9 @@
     "Frida Liv Mjönes",
     "Ruth Vega Fernández"
    ],
-   "directores": [],
+   "directores": [
+    "Alexandra-Therese Keining"
+   ],
    "donde_ver": [
     "https://tv.apple.com/us/movie/besame/umc.cmc.3fzs6or8gi5c1nqasa2bz1fyj?l=es"
    ],
@@ -12634,7 +12652,7 @@
     "Alison Brie",
     "Aubrey Plaza",
     "Kristen Stewart",
-    "Mckenzie Davis"
+    "Mackenzie Davis"
    ],
    "directores": [
     "Clea DuVall"
@@ -14829,7 +14847,9 @@
     "Anna Akana",
     "Liv Hewson"
    ],
-   "directores": [],
+   "directores": [
+    "Luke Snellin"
+   ],
    "donde_ver": [
     "https://www.netflix.com/es/title/80201542"
    ],
@@ -14960,7 +14980,9 @@
     "Caitlin Mehner",
     "Jenna Laurenzo"
    ],
-   "directores": [],
+   "directores": [
+    "Jenna Laurenzo"
+   ],
    "donde_ver": [
     "https://tv.apple.com/es/movie/l-bomb/umc.cmc.5xnxj8ux3zt81r2bxogeknlz8"
    ],
@@ -15026,7 +15048,9 @@
     "Greer Grammer",
     "Leighton Meester"
    ],
-   "directores": [],
+   "directores": [
+    "Susanna Fogel"
+   ],
    "donde_ver": [
     "https://www.primevideo.com/detail?gti=amzn1.dv.gti.880ed2c8-d06c-4938-bac0-f9a02cdc625a"
    ],
@@ -16189,7 +16213,9 @@
     "Katherine McNamara",
     "Melora Harding"
    ],
-   "directores": [],
+   "directores": [
+    "Stacey N. Harding"
+   ],
    "donde_ver": [
     "https://www.hallmarkchannel.com/love-classified"
    ],
@@ -17607,7 +17633,11 @@
     "Sharon Stone",
     "Vanessa Redgrave"
    ],
-   "directores": [],
+   "directores": [
+    "Anne Heche",
+    "Jane Anderson",
+    "Martha Coolidge"
+   ],
    "donde_ver": [],
    "plataformas": [],
    "info": [
@@ -19549,8 +19579,8 @@
     "Claire Holt",
     "Lindsey Shaw",
     "Miranda Rae Mayo",
-    "Sahy Mitchell",
-    "Sasha Pieterse"
+    "Sasha Pieterse",
+    "Shay Mitchell"
    ],
    "directores": [],
    "donde_ver": [
@@ -19571,6 +19601,8 @@
    "fecha": "2010-06-08",
    "rel": [
     273,
+    232,
+    184,
     293,
     490
    ]
@@ -21249,7 +21281,9 @@
     "Agnes Bruckner",
     "Madeline Zima"
    ],
-   "directores": [],
+   "directores": [
+    "Jamie Babbit"
+   ],
    "donde_ver": [],
    "plataformas": [],
    "info": [
@@ -21261,10 +21295,12 @@
    "rel": [
     117,
     225,
+    115,
     233,
     248,
     86,
     490,
+    292,
     273,
     217,
     385,
@@ -23457,6 +23493,7 @@
     145,
     295,
     294,
+    43,
     118
    ]
   },
@@ -24536,7 +24573,9 @@
     "Danneel Harris",
     "Leighton Meester"
    ],
-   "directores": [],
+   "directores": [
+    "Christian E. Christiansen"
+   ],
    "donde_ver": [
     "https://www.primevideo.com/dp/amzn1.dv.gti.f2b1a379-6082-1b8a-8ac0-b7337ef26eea?autoplay=1&ref_=atv_cf_strg_wb"
    ],
@@ -25414,7 +25453,10 @@
     }
    ],
    "actrices": [],
-   "directores": [],
+   "directores": [
+    "Daniel Kwan",
+    "Daniel Scheinert"
+   ],
    "donde_ver": [
     "https://www.rtve.es/play/videos/cine-internacional/todo-vez-todas-partes/16994723/"
    ],
@@ -26327,7 +26369,9 @@
     "Doona Bae",
     "Jang Hee-jin"
    ],
-   "directores": [],
+   "directores": [
+    "July Jung"
+   ],
    "donde_ver": [],
    "plataformas": [],
    "info": [
@@ -27396,7 +27440,7 @@
     }
    ],
    "actrices": [
-    "Dominique Provost-Chalkley.",
+    "Dominique Provost-Chalkley",
     "Katherine Barrell"
    ],
    "directores": [],
@@ -28241,6 +28285,7 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2018-09-09",
    "rel": [
+    15,
     398,
     232
    ]

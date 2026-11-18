@@ -85,7 +85,7 @@ def detalle(api, tmdb_id):
     if not d:
         return None
     equipo = (d.get("credits") or {}).get("crew") or []
-    direccion = list(dict.fromkeys(p["name"] for p in equipo if p.get("job") == "Director" and p.get("name")))
+    direccion = list(dict.fromkeys((p.get("id"), p["name"]) for p in equipo if p.get("job") == "Director" and p.get("name")))
     reparto = ((d.get("aggregate_credits") or d.get("credits") or {}).get("cast") or [])
     actrices = [(p.get("id"), p.get("name")) for p in sorted(reparto, key=lambda p: p.get("order", 99)) if p.get("gender") == 1][:4]
     if tmdb_id.startswith("tv/"):
@@ -93,7 +93,7 @@ def detalle(api, tmdb_id):
         estreno = d.get("first_air_date")
         return {"fecha_estreno": estreno or None, "fecha_novedad": ultimo or estreno or None,
                 "poster": d.get("poster_path"), "titulo": d.get("name") or d.get("original_name"),
-                "direccion": [c["name"] for c in d.get("created_by") or [] if c.get("name")], "actrices": actrices}
+                "direccion": [(c.get("id"), c["name"]) for c in d.get("created_by") or [] if c.get("name")], "actrices": actrices}
     estreno = d.get("release_date")
     return {"fecha_estreno": estreno or None, "fecha_novedad": estreno or None,
             "poster": d.get("poster_path"), "titulo": d.get("title") or d.get("original_title"), "direccion": direccion, "actrices": actrices}
@@ -232,8 +232,8 @@ def main():
         dir_nueva = []
         if sin_dir and det.get("direccion"):
             from importar_excel import nombre_persona
-            for nombre in det["direccion"][:4]:
-                nombre = nombre_persona(nombre)
+            for pid_tmdb, nombre in det["direccion"][:4]:
+                nombre = nombre_persona(nombre_latino(api, pid_tmdb, nombre))
                 r = db.execute("SELECT id FROM persona WHERE nombre = ?", (nombre,)).fetchone()
                 pid = r[0] if r else db.execute("INSERT INTO persona(nombre) VALUES (?)", (nombre,)).lastrowid
                 db.execute("INSERT OR IGNORE INTO obra_persona(obra_id, persona_id, rol) VALUES (?, ?, 'director')", (o["id"], pid))
