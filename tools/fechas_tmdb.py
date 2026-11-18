@@ -17,6 +17,8 @@ Uso (necesita la variable TMDB_TOKEN con el token de lectura de TMDB):
     python tools/fechas_tmdb.py                      # obras sin tmdb_id o sin fechas (copia de la base antes)
     python tools/fechas_tmdb.py --series-en-emision  # además, pone al día las series que siguen emitiéndose
     python tools/fechas_tmdb.py --posters            # además, póster de TMDB para las obras que no tienen
+    python tools/fechas_tmdb.py --direccion          # además, dirección de TMDB para las películas que no tienen
+    python tools/fechas_tmdb.py --sugerir-actrices   # además, sugiere actrices (sin guardarlas) para las obras sin actrices
     python tools/fechas_tmdb.py --todas              # vuelve a comprobar todas
 Después: python tools/exportar_json.py
 """
@@ -79,17 +81,37 @@ def anio_de(f):
 
 def detalle(api, tmdb_id):
     """{'fecha_estreno', 'fecha_novedad', 'poster', 'titulo'} de «movie/123» o «tv/456»."""
-    d = api.get("/" + tmdb_id)
+    d = api.get("/" + tmdb_id, append_to_response="aggregate_credits" if tmdb_id.startswith("tv/") else "credits")
     if not d:
         return None
+    equipo = (d.get("credits") or {}).get("crew") or []
+    direccion = list(dict.fromkeys(p["name"] for p in equipo if p.get("job") == "Director" and p.get("name")))
+    reparto = ((d.get("aggregate_credits") or d.get("credits") or {}).get("cast") or [])
+    actrices = [(p.get("id"), p.get("name")) for p in sorted(reparto, key=lambda p: p.get("order", 99)) if p.get("gender") == 1][:4]
     if tmdb_id.startswith("tv/"):
         ultimo = (d.get("last_episode_to_air") or {}).get("air_date") or d.get("last_air_date")
         estreno = d.get("first_air_date")
         return {"fecha_estreno": estreno or None, "fecha_novedad": ultimo or estreno or None,
-                "poster": d.get("poster_path"), "titulo": d.get("name") or d.get("original_name")}
+                "poster": d.get("poster_path"), "titulo": d.get("name") or d.get("original_name"),
+                "direccion": [c["name"] for c in d.get("created_by") or [] if c.get("name")], "actrices": actrices}
     estreno = d.get("release_date")
     return {"fecha_estreno": estreno or None, "fecha_novedad": estreno or None,
-            "poster": d.get("poster_path"), "titulo": d.get("title") or d.get("original_title")}
+            "poster": d.get("poster_path"), "titulo": d.get("title") or d.get("original_title"), "direccion": direccion, "actrices": actrices}
+
+
+def no_latino(t):
+    return any(ch.isalpha() and "LATIN" not in unicodedata.name(ch, "") for ch in t or "")
+
+
+def nombre_latino(api, pid, nombre):
+    """Si TMDB da el nombre en otra escritura (tailandés, coreano…), busca su versión en letras latinas."""
+    if not no_latino(nombre) or not pid:
+        return nombre
+    p = api.get(f"/person/{pid}", language="en-US") or {}
+    for n in [p.get("name")] + (p.get("also_known_as") or []):
+        if n and not no_latino(n):
+            return n
+    return nombre
 
 
 def buscar(api, o, enlaces):
@@ -147,6 +169,11 @@ def main():
     ap.add_argument("--todas", action="store_true", help="comprueba todas las obras, no solo las que faltan")
     ap.add_argument("--series-en-emision", action="store_true", help="pone al día fecha_novedad de las series sin año de fin")
     ap.add_argument("--posters", action="store_true", help="póster de TMDB para las obras sin enlace de póster")
+    ap.add_argument("--sugerir-actrices", action="store_true",
+                    help="para las obras sin actrices, sugiere las 4 primeras actrices de TMDB en el informe (NO las guarda: "
+                         "en La Safoteca son las de los personajes sáficos, y eso hay que revisarlo a mano)")
+    ap.add_argument("--direccion", action="store_true",
+                    help="dirección de TMDB para las PELÍCULAS que no tienen (las series no: TMDB solo da quién la creó)")
     a = ap.parse_args()
     token = os.environ.get("TMDB_TOKEN", "").strip()
     if not token:
@@ -170,12 +197,17 @@ def main():
         print("Copia de seguridad:", copia)
 
     obras = db.execute("SELECT * FROM obra WHERE tipo IN ('serie','pelicula') ORDER BY id").fetchall()
-    informe, cambios = [], {"ok": 0, "dudosa": 0, "posters": 0, "actualizadas": 0}
+    informe, sugerencias = [], []
+    cambios = {"ok": 0, "dudosa": 0, "posters": 0, "actualizadas": 0, "direccion": 0, "actrices": 0}
     for o in obras:
         falta = not o["tmdb_id"] or not o["fecha_novedad"] or (MANUAL.get(o["id"]) and MANUAL[o["id"]] != o["tmdb_id"])
         en_emision = a.series_en_emision and o["tipo"] == "serie" and o["tmdb_id"] and not o["anio_fin"]
         sin_poster = a.posters and not (o["poster_origen"] or "").strip()
-        if not (a.todas or falta or en_emision or sin_poster):
+        sin_dir = a.direccion and o["tipo"] == "pelicula" and not db.execute(
+            "SELECT 1 FROM obra_persona WHERE obra_id = ? AND rol = 'director'", (o["id"],)).fetchone()
+        sin_act = a.sugerir_actrices and not db.execute(
+            "SELECT 1 FROM obra_persona WHERE obra_id = ? AND rol = 'actriz'", (o["id"],)).fetchone()
+        if not (a.todas or falta or en_emision or sin_poster or sin_dir or sin_act):
             continue
         titulo = o["titulo_es"] or o["titulo_original"]
         enlaces = [r[0] for r in db.execute("SELECT url FROM obra_enlace WHERE obra_id = ? AND tipo = 'info'", (o["id"],))]
@@ -193,6 +225,20 @@ def main():
         if sin_poster and det["poster"]:
             nuevos["poster_origen"] = POSTER + det["poster"]
             cambios["posters"] += 1
+        sugeridas = [nombre_latino(api, pid, n) for pid, n in det.get("actrices") or []] if sin_act else []
+        if sugeridas:
+            cambios["actrices"] += 1
+            sugerencias.append([o["id"], titulo, o["anio"], tid, ", ".join(sugeridas)])
+        dir_nueva = []
+        if sin_dir and det.get("direccion"):
+            from importar_excel import nombre_persona
+            for nombre in det["direccion"][:4]:
+                nombre = nombre_persona(nombre)
+                r = db.execute("SELECT id FROM persona WHERE nombre = ?", (nombre,)).fetchone()
+                pid = r[0] if r else db.execute("INSERT INTO persona(nombre) VALUES (?)", (nombre,)).lastrowid
+                db.execute("INSERT OR IGNORE INTO obra_persona(obra_id, persona_id, rol) VALUES (?, ?, 'director')", (o["id"], pid))
+                dir_nueva.append(nombre)
+            cambios["direccion"] += 1
         distintos = {k: v for k, v in nuevos.items() if v and v != o[k]}
         if distintos:
             sets = ", ".join(f"{k} = ?" for k in distintos)
@@ -200,7 +246,8 @@ def main():
             cambios["actualizadas"] += 1
         cambios["ok"] += 1
         informe.append([o["id"], titulo, o["anio"], f"ok ({como})", tid, det["fecha_estreno"] or "",
-                        det["fecha_novedad"] or "", f"en TMDB: {det['titulo']}" + (" · póster de TMDB" if "poster_origen" in distintos else "")])
+                        det["fecha_novedad"] or "", f"en TMDB: {det['titulo']}" + (" · póster de TMDB" if "poster_origen" in distintos else "")
+                        + (" · dirección: " + ", ".join(dir_nueva) if dir_nueva else "")])
 
     (RAIZ / "informes").mkdir(exist_ok=True)
     with open(RAIZ / "informes" / "fechas_tmdb.csv", "w", encoding="utf-8-sig", newline="") as fh:
@@ -208,10 +255,19 @@ def main():
         w.writerow(["id", "obra", "año", "resultado", "tmdb", "fecha_estreno", "fecha_novedad", "notas / candidatos"])
         w.writerows(sorted(informe, key=lambda r: (not str(r[3]).startswith("REVISAR"), r[0])))
     print(f"{'SIMULACIÓN · ' if a.simular else ''}Encontradas: {cambios['ok']} · cambiadas: {cambios['actualizadas']} · "
-          f"pósters nuevos: {cambios['posters']} · para revisar: {cambios['dudosa']} · llamadas a TMDB: {api.llamadas}")
+          f"pósters nuevos: {cambios['posters']} · películas con dirección nueva: {cambios['direccion']} · "
+          f"obras con actrices sugeridas: {cambios['actrices']} · para revisar: {cambios['dudosa']} · llamadas a TMDB: {api.llamadas}")
     for r in informe:
         if str(r[3]).startswith("REVISAR"):
             print(f"  - {r[0]} · {r[1]} ({r[2]}): {r[3][9:]}" + (f" → {r[7]}" if r[7] else ""))
+    if sugerencias:
+        with open(RAIZ / "informes" / "actrices_sugeridas.csv", "w", encoding="utf-8-sig", newline="") as fh:
+            w = csv.writer(fh)
+            w.writerow(["id", "obra", "año", "tmdb", "actrices sugeridas (TMDB)", "actrices que quedan (rellenar)"])
+            w.writerows([r + [""] for r in sugerencias])
+        print("Actrices sugeridas (sin guardar, para revisar): informes/actrices_sugeridas.csv")
+        for r in sugerencias:
+            print(f"  · {r[1]} ({r[2]}): {r[4]}")
     print("Detalle: informes/fechas_tmdb.csv")
     if a.simular:
         db.rollback()
