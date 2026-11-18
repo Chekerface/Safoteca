@@ -95,6 +95,7 @@
     return {
       q: p.get("q") || "", tipo: p.get("tipo") || "", gen: separar(p.get("gen")), tem: separar(p.get("tem")),
       rel: separar(p.get("rel")), final: p.get("final") === "si" ? "si" : "", plat: separar(p.get("plat")), otros: p.get("otros") === "1",
+      act: separar(p.get("act")), dir: separar(p.get("dir")),
       edad: p.get("edad") ?? "", orden: p.get("orden") || "az",
     };
   }
@@ -104,6 +105,8 @@
     if (f.tipo) p.set("tipo", f.tipo);
     if (f.gen.length) p.set("gen", f.gen.join("|"));
     if (f.tem.length) p.set("tem", f.tem.join("|"));
+    if (f.act.length) p.set("act", f.act.join("|"));
+    if (f.dir.length) p.set("dir", f.dir.join("|"));
     if (f.rel.length) p.set("rel", f.rel.join("|"));
     if (f.final) p.set("final", f.final);
     if (f.plat.length) p.set("plat", f.plat.join("|"));
@@ -112,7 +115,7 @@
     if (f.orden !== "az") p.set("orden", f.orden);
     return p.toString();
   }
-  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.rel.length + (f.final ? 1 : 0) + f.plat.length + (f.edad !== "" ? 1 : 0);
+  const activos = (f) => (f.q ? 1 : 0) + (f.tipo ? 1 : 0) + f.gen.length + f.tem.length + f.act.length + f.dir.length + f.rel.length + (f.final ? 1 : 0) + f.plat.length + (f.edad !== "" ? 1 : 0);
 
   function filtrar(f) {
     const q = norm(f.q).trim();
@@ -123,6 +126,8 @@
       if (f.final && o.final_feliz !== true) return false;
       if (f.gen.length && !f.gen.some((g) => o.generos.includes(g))) return false;
       if (f.tem.length && !f.tem.some((t) => o.tematicas.includes(t))) return false;
+      if (f.act.length && !f.act.some((n) => o.actrices.includes(n))) return false;
+      if (f.dir.length && !f.dir.some((n) => o.directores.includes(n))) return false;
       if (f.plat.length && !(o.plataformas || []).some((x) => f.plat.includes(clavePlat(x)) && (f.otros || delPais(x)))) return false;
       if (max !== null) { const n = edadNum(o); if (n !== null && n > max) return false; }
       if (q && !o._h.includes(q)) return false;
@@ -188,7 +193,7 @@
   const hoyISO = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
   function campana() {
     const c = CFG.campana;
-    if (!c || !CFG.formularioAltas || !seguro(CFG.formularioAltas)) return null;
+    if (!c || !hayAltas()) return null;
     const hoy = hoyISO();
     if (hoy < c.desde || hoy > c.hasta) return null;
     const hechas = E.obras.filter((o) => o.publicada && o.publicada.slice(0, 10) >= c.desde).length;
@@ -210,14 +215,18 @@
           <progress class="campana__barra" max="${k.c.objetivo}" value="${Math.min(k.hechas, k.c.objetivo)}" aria-label="Obras nuevas conseguidas"></progress>
           <p class="campana__cuenta">${Math.min(k.hechas, k.c.objetivo)} de ${k.c.objetivo} obras nuevas</p>
           <div class="acciones">
-            <a class="boton" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">Añadir una obra ${ICONO.fuera}</a>
+            ${botonAltas("Añadir una obra", "boton")}
             <button class="boton boton--claro" type="button" data-accion="cerrar-campana">Ahora no</button>
           </div>
         </div>
       </aside>`;
   }
-  const enlaceAltas = (texto) => (CFG.formularioAltas && seguro(CFG.formularioAltas)
-    ? `<a class="boton boton--claro" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">${texto} ${ICONO.fuera}</a>` : "");
+  // Si config.js tiene «proponer», las altas van a la pantalla propia #/proponer; si no, al Google Form.
+  const hayAltas = () => !!CFG.proponer || !!(CFG.formularioAltas && seguro(CFG.formularioAltas));
+  const botonAltas = (texto, clase) => CFG.proponer
+    ? `<a class="${clase}" href="#/proponer">${texto}</a>`
+    : `<a class="${clase}" href="${esc(CFG.formularioAltas)}" target="_blank" rel="noopener noreferrer">${texto} ${ICONO.fuera}</a>`;
+  const enlaceAltas = (texto) => (hayAltas() ? botonAltas(texto, "boton boton--claro") : "");
 
   // ---------- Vistas ----------
   function vistaInicio() {
@@ -258,6 +267,14 @@
     return `<div class="campo-buscar"><input class="campo" id="${id}" type="search" placeholder="Buscar por título o actriz" value="${esc(valor)}" autocomplete="off" enterkeyhint="search">${boton}</div>`;
   }
 
+  // Filtro por actriz o dirección (se llega desde la ficha): una cajita por nombre para quitarlo
+  function personasActivas(f) {
+    const sin = (clave, n) => { const g = { ...f, [clave]: f[clave].filter((x) => x !== n) }; const qs = paramsDe(g); return "#/catalogo" + (qs ? "?" + qs : ""); };
+    const chip = (clave, etiqueta, n) => `<a class="chip" aria-current="true" href="${sin(clave, n)}" aria-label="Quitar el filtro ${etiqueta} ${esc(n)}">${etiqueta}: ${esc(n)}<span aria-hidden="true" style="margin-left:.45rem">✕</span></a>`;
+    const todos = [...f.act.map((n) => chip("act", "Con", n)), ...f.dir.map((n) => chip("dir", "Dirección", n))];
+    return todos.length ? `<div class="chips" role="group" aria-label="Filtros por persona" style="margin-top:.5rem">${todos.join("")}</div>` : "";
+  }
+
   function vistaCatalogo(f) {
     const tipoChip = (valor, texto) => `<button class="chip" type="button" data-tipo="${valor}" aria-pressed="${f.tipo === valor}">${texto}</button>`;
     return `
@@ -272,6 +289,7 @@
             <option value="az">A–Z</option><option value="recientes">Más recientes</option><option value="relevancia">Nivel de relevancia</option>
           </select>
         </div>
+        <div id="personas">${personasActivas(f)}</div>
         <p class="resumen" id="resumen" aria-live="polite"></p>
       </div>
       ${notaOcultas()}
@@ -303,10 +321,11 @@
     const lista = filtrar(f);
     const n = lista.length;
     $("#resumen").textContent = n === 1 ? "1 obra" : `${n} obras`;
+    const pers = $("#personas"); if (pers) pers.innerHTML = personasActivas(f);
     if (n) pintarPorTandas(lista); else $("#resultados").innerHTML = `
       <div class="vacio"><p>No hay obras con estos filtros.</p>
         <div class="acciones" style="justify-content:center"><button class="boton" type="button" data-accion="quitar-filtros">${f.q ? "Quitar filtros y búsqueda" : "Quitar filtros"}</button></div>
-        ${CFG.formularioAltas ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
+        ${hayAltas() ? `<p style="margin:1.25rem 0 .5rem">¿No encuentras una serie o película? Propónla y la añadiremos.</p>${enlaceAltas("Añadir una obra")}` : ""}</div>`;
     $$('[data-tipo]').forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.tipo === f.tipo)));
     $("#ordenar").value = f.orden;
     ajustarCabecera();
@@ -512,6 +531,16 @@
     avisos += `</section>`;
 
     const dato = (k, v) => (v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "");
+    // Actrices y dirección: cajita (con cuántas obras) solo si la persona está en más de una obra; si no, texto
+    // Reparto y dirección (en «Explorar»): cajita pulsable con su número si la persona está en más de una obra;
+    // si solo está en esta, cajita gris sin borde que no se pulsa. Mismo orden en que vienen.
+    const personas = (k, clave, lista, cuenta) => {
+      if (!lista.length) return "";
+      const chips = lista.map((n) => (cuenta.get(n) || 0) > 1
+        ? `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(n)}" aria-label="Ver las ${cuenta.get(n)} obras con ${esc(n)}">${esc(n)} <span class="chip__n">${cuenta.get(n)}</span></a>`
+        : `<span class="chip chip--fijo">${esc(n)}</span>`).join("");
+      return `<h3>${k}</h3><div class="chips">${chips}</div>`;
+    };
     const explica = CFG.textoRelevancia && CFG.textoRelevancia[o.relevancia]
       ? `<details class="explica"><summary>¿Qué significa el nivel ${esc(o.relevancia)}?</summary><p>${esc(CFG.textoRelevancia[o.relevancia])}</p></details>` : "";
     const disp = o.disponible_espana === null ? "" : o.disponible_espana ? "Sí" : "No";
@@ -535,13 +564,13 @@
           ${avisos}
           ${o.sinopsis ? `<section class="bloque"><h2>Sinopsis</h2><p>${esc(o.sinopsis)}</p></section>` : ""}
           ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div>${hayFuera ? '<p class="resumen" style="margin-top:.5rem">Los enlaces marcados con otro país pueden no estar disponibles en España.</p>' : ""}${rep && rep.url ? '<p class="resumen" style="margin-top:.5rem">¿Un enlace no funciona? Toca la bandera junto a él para avisarnos.</p>' : ""}</section>` : ""}
-          ${o.generos.length || o.tematicas.length ? `<section class="bloque"><h2>Explorar</h2>
+          ${o.generos.length || o.tematicas.length || o.actrices.length || o.directores.length ? `<section class="bloque"><h2>Explorar</h2>
             ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
-            ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
-          <section class="bloque"><h2>Datos</h2><dl class="dato">
+            ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}
+            ${personas("Reparto", "act", o.actrices, E.nAct)}${personas("Dirección", "dir", o.directores, E.nDir)}</section>` : ""}
+          ${o.pais || o.temporadas || disp ? `<section class="bloque"><h2>Datos</h2><dl class="dato">
             ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}
-            ${dato("Reparto", o.actrices.join(", "))}${dato("Dirección", o.directores.join(", "))}
-          </dl></section>
+          </dl></section>` : ""}
           ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
         </div>
       </article>
@@ -564,9 +593,11 @@
           <p class="resumen" style="margin-bottom:.75rem">${n ? (n === 1 ? "Estás evitando 1 aviso." : `Estás evitando ${n} avisos.`) : "Ahora mismo no evitas ningún aviso."}</p>
           <button class="boton" type="button" data-accion="abrir-evitar">Elegir avisos a evitar</button>
         </section>
-        ${CFG.formularioAltas ? `<section class="bloque" aria-labelledby="a5"><h2 id="a5">Ayúdanos a crecer</h2>
+        ${hayAltas() ? `<section class="bloque" aria-labelledby="a5"><h2 id="a5">Ayúdanos a crecer</h2>
           <p style="margin-bottom:.75rem">¿Falta alguna serie o película con representación lésbica o bisexual? Propónla con un formulario y la revisaremos.</p>
           ${enlaceAltas("Añadir una obra")}</section>` : ""}
+        ${CFG.proponer ? `<section class="bloque" aria-labelledby="a6"><h2 id="a6">Créditos</h2>
+          <p>La pantalla «Proponer una obra» rellena datos con la API de <a class="enlace-suave" href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p></section>` : ""}
         <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
           <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
           <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
@@ -740,6 +771,12 @@
       + t("#/favoritos", ruta === "/favoritos", ICONO.corazon.replace("<svg ", '<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" '), "Favoritos");
   }
 
+  // La pantalla «Proponer una obra» solo se descarga cuando alguien la abre.
+  const cargarProponer = () => (window.SafotecaProponer ? Promise.resolve() : (cargarProponer.p ||= new Promise((ok, mal) => {
+    const s = document.createElement("script"); s.src = "js/proponer.js"; s.onload = ok;
+    s.onerror = () => { cargarProponer.p = null; mal(); }; document.head.appendChild(s);
+  })));
+
   function pintar(arriba = true) {
     const { ruta, p } = rutaActual();
     const vista = $("#vista");
@@ -755,6 +792,11 @@
       vista.innerHTML = vistaFavoritos(p); titulo = "Favoritos"; doc = titulo + " · " + doc;
     } else if (ruta === "/ajustes") {
       vista.innerHTML = vistaAjustes(); titulo = "Ajustes"; doc = titulo + " · " + doc;
+    } else if (ruta === "/proponer" && CFG.proponer) {
+      titulo = "Proponer una obra"; doc = titulo + " · " + doc;
+      vista.innerHTML = '<p class="cargando">Cargando el formulario…</p>';
+      cargarProponer().then(() => window.SafotecaProponer.pintar(vista, { CFG, OBRAS: E.obras }))
+        .catch(() => { vista.innerHTML = '<div class="vacio"><p>No hemos podido cargar el formulario. Comprueba tu conexión.</p></div>'; });
     } else if (ruta.startsWith("/obra/")) {
       const id = parseInt(ruta.split("/")[2], 10);
       vista.innerHTML = vistaObra(id);
@@ -998,6 +1040,8 @@
         _h: norm([o.titulo, o.titulo_original, o.titulo_latam, ...o.actrices, ...o.directores].filter(Boolean).join(" ")),
       }));
       E.porId = new Map(E.obras.map((o) => [o.id, o]));
+      const contar = (campo) => { const m = new Map(); E.obras.forEach((o) => new Set(o[campo]).forEach((n) => m.set(n, (m.get(n) || 0) + 1))); return m; };
+      E.nAct = contar("actrices"); E.nDir = contar("directores");
       E.cargado = true;
       pintar(false);
     } catch {
