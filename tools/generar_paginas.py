@@ -170,12 +170,22 @@ COLECCIONES = [
      "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
      "intro": "Series en las que las protagonistas acaban juntas y con una relación sana. "
               "Ojo: esta lista te dice cómo acaban, así que contiene un pequeño destripe.",
+     "nota": "Durante años, a nosotras nos tocaban los finales tristes. Aquí van las series en las que se quedan juntas, y bien.",
      "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'serie')} series acaban bien: juntas y con una relación sana."),
+     "grafico": lambda todas: _grafico_final_feliz(todas),
+     "titulo_dest": "Para un día de sofá y manta",
      "filtro": lambda o: o["tipo"] == "serie" and o.get("final_feliz") is True},
     {"slug": "series-saficas-tailandesas",
      "titulo": "Series sáficas tailandesas (GL)",
      "titulo_html": "Series sáficas <em>tailandesas</em> (GL)",
      "intro": "Series tailandesas con protagonistas lesbianas o bisexuales, el llamado «Girls' Love» o GL.",
+     "nota": "Nos enganchamos al GL tailandés con GAP y ya no hubo vuelta atrás. Si nunca has visto uno, empieza por aquí.",
+     "cifra": lambda todas, sel: (sum(1 for o in sel if o.get("relevancia") == "A" and o.get("final_feliz") is True),
+                                  f"de {len(sel)} tienen a las protagonistas en el centro de la historia (nivel A) y acaban bien."),
+     "grafico": lambda todas: _grafico_tailandesas(todas),
+     "dato": lambda todas, sel: (f"{sum(1 for o in sel if any(p.get('n') == 'YouTube' for p in o.get('plataformas') or []))} se pueden ver gratis en YouTube."),
+     "titulo_dest": "Para iniciarse",
+     "destacadas": ["GAP THE SERIES", "Queendom", "Enemies with Benefits", "Heart Code", "Denied Love"],
      "filtro": lambda o: o["tipo"] == "serie" and "Tailandia" in (o.get("pais") or "")},
     {"slug": "peliculas-lesbicas-donde-no-muere-la-lesbiana",
      "titulo": "Películas lésbicas donde no muere la lesbiana",
@@ -215,6 +225,45 @@ def _grafico_anios(todas):
 <figcaption><span class="ley t"></span>películas del catálogo por año <span class="ley s"></span>con el síndrome de la lesbiana muerta</figcaption></figure>"""
 
 
+def _barras(filas, aria, unidad=""):
+    """Barras horizontales en SVG sin JavaScript. filas = [(etiqueta, valor, texto_valor)]."""
+    W, alto, iz = 340, 26, 86
+    top = max(v for _, v, _ in filas) or 1
+    H = alto * len(filas) + 4
+    cuerpo = ""
+    for n, (et, v, txt) in enumerate(filas):
+        y = n * alto + 4
+        ancho = max(2, (W - iz - 44) * v / top)
+        cuerpo += (f'<text x="{iz - 8}" y="{y + 15}" text-anchor="end">{et}</text>'
+                   f'<rect x="{iz}" y="{y + 3}" width="{ancho:.1f}" height="16" rx="3" class="t-b"/>'
+                   f'<text x="{iz + ancho + 6:.1f}" y="{y + 15}" class="v">{txt}</text>')
+    return f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">{cuerpo}</svg>'
+
+
+def _grafico_final_feliz(todas):
+    series = [o for o in todas if o["tipo"] == "serie" and o.get("anio")]
+    tramos = [(1990, 2009, "hasta 2009"), (2010, 2014, "2010–2014"), (2015, 2019, "2015–2019"), (2020, 2022, "2020–2022"), (2023, 2100, "2023–hoy")]
+    filas = []
+    for a, b, et in tramos:
+        g = [o for o in series if a <= o["anio"] <= b]
+        if g:
+            pct = round(100 * sum(1 for o in g if o.get("final_feliz") is True) / len(g))
+            filas.append((et, pct, f"{pct} %"))
+    svg = _barras(filas, "Porcentaje de series del catálogo con final feliz según su año de estreno: " +
+                  ", ".join(f"{et} {t}" for et, _, t in filas))
+    return f'<figure class="anios">{svg}<figcaption>series del catálogo con final feliz, según cuándo se estrenaron</figcaption></figure>'
+
+
+def _grafico_tailandesas(todas):
+    th = [o for o in todas if o["tipo"] == "serie" and "Tailandia" in (o.get("pais") or "") and o.get("anio")]
+    if not th:
+        return ""
+    años = range(min(o["anio"] for o in th), max(o["anio"] for o in th) + 1)
+    filas = [(str(a), n, str(n)) for a in años for n in [sum(1 for o in th if o["anio"] == a)]]
+    svg = _barras(filas, "Series tailandesas del catálogo por año de estreno: " + ", ".join(f"{a}: {n}" for a, _, n in filas))
+    return f'<figure class="anios">{svg}<figcaption>series tailandesas del catálogo por año de estreno</figcaption></figure>'
+
+
 def _poster(o, ancho=300):
     return f'../img/{o["poster"]}_{ancho}.webp' if o.get("poster") else ""
 
@@ -224,8 +273,12 @@ def coleccion(c, obras, noindex):
     # por el sitemap, el índice /obras/ y los datos estructurados de esta página.
     sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
     REL = {"A": 3, "B": 2, "C": 1}
-    destacadas = sorted((o for o in sel if o.get("poster")),
-                        key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
+    if c.get("destacadas"):
+        por_titulo = {k: o for o in sel for k in (o["titulo"], o.get("titulo_original"))}
+        destacadas = [por_titulo[t] for t in c["destacadas"] if t in por_titulo and por_titulo[t].get("poster")]
+    else:
+        destacadas = sorted((o for o in sel if o.get("poster")),
+                            key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
     marca_ff = c["slug"] != "series-lesbicas-final-feliz"
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
     # Pocos clics: el póster y el botón abren la ficha de la web (#/obra/ID); el título enlaza la página por obra,
@@ -257,7 +310,8 @@ def coleccion(c, obras, noindex):
         tot = bien + mal or 1
         barra = (f'<div class="barra" role="img" aria-label="{bien} {et_b}, {mal} {et_m}"><span class="b" style="width:{100 * bien / tot:.1f}%"></span>'
                  f'<span class="m" style="width:{100 * mal / tot:.1f}%"></span></div><p class="ley-b">lila: {et_b} · negro: {et_m}</p>')
-    grafico = _grafico_anios(obras) if c.get("grafico_anios") else ""
+    grafico = _grafico_anios(obras) if c.get("grafico_anios") else (c["grafico"](obras) if c.get("grafico") else "")
+    dato = f'<p class="dato">{e(c["dato"](obras, sel))}</p>' if c.get("dato") else ""
     desc = recorta(f'{c["titulo"]}: {len(sel)} títulos en La Safoteca, el catálogo gratuito con avisos de contenido. {c["intro"]}')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": c["titulo"], "numberOfItems": len(sel),
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/obra/{o['id']}/", "name": o["titulo"]}
@@ -293,7 +347,8 @@ def coleccion(c, obras, noindex):
 {cifra}
 {barra}
 {grafico}
-{'<h2>Para empezar esta noche</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
+{dato}
+{'<h2>' + e(c.get("titulo_dest", "Para empezar esta noche")) + '</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
 {'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
 <ul class="lista">{items}</ul>
 <p class="todas"><a href="../obras/">Todas las series y películas</a></p>
@@ -327,6 +382,8 @@ main{max-width:760px;margin:0 auto;padding:0 16px 120px}
 .anios .g{stroke:var(--linea)} .anios .a{fill:var(--lila);opacity:.14;stroke:none} .anios .t{fill:none;stroke:var(--lila);stroke-width:2}
 .anios .s{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-dasharray:4 3} .anios .m{fill:var(--tinta)}
 .anios figcaption{font:11px var(--mono);color:var(--suave);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.anios .t-b{fill:var(--lila)} .anios .v{fill:var(--tinta)}
+.dato{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--lila);background:var(--sup);font:15px var(--serif)}
 .ley{display:inline-block;width:14px;height:0;border-top:2px solid var(--lila)} .ley.s{border-top:2px dashed var(--tinta)}
 h2{font:400 22px var(--serif);margin:30px 0 12px}
 .dests{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .dest{color:var(--tinta);text-decoration:none;font-size:13px}
