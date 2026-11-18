@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-18T16:53:06+00:00",
+  "generado": "2026-11-18T17:29:44+00:00",
   "total": 325
  },
  "obras": [
@@ -1570,7 +1570,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Sarah Paulson"
+   ],
    "directores": [
     "Ryan Murphy"
    ],
@@ -3584,7 +3586,11 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Clea DuVall",
+    "Melanie Lynskey",
+    "Natasha Lyonne"
+   ],
    "directores": [
     "Jamie Babbit"
    ],
@@ -5275,7 +5281,9 @@
     }
    ],
    "actrices": [],
-   "directores": [],
+   "directores": [
+    "Yoshiharu Ashino"
+   ],
    "donde_ver": [],
    "plataformas": [],
    "info": [
@@ -6856,7 +6864,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Samira Wiley"
+   ],
    "directores": [],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/browse/entity-565d8976-9d26-4e63-866c-40f8a137ce5f"
@@ -9548,7 +9558,9 @@
     "Costumbrismo"
    ],
    "avisos": [],
-   "actrices": [],
+   "actrices": [
+    "Jerrie Johnson"
+   ],
    "directores": [],
    "donde_ver": [
     "https://www.primevideo.com/detail/0O43ITM948NBWNOKIOS31XWVW9/ref=atv_dl_rdr?tag=justesejhd-21"
@@ -13325,7 +13337,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Kate Siegel"
+   ],
    "directores": [
     "Mike Flanagan"
    ],
@@ -17861,7 +17875,7 @@
    ],
    "actrices": [],
    "directores": [
-    "Ai Yazawa"
+    "Morio Asaka"
    ],
    "donde_ver": [],
    "plataformas": [],
@@ -18587,9 +18601,9 @@
     53,
     387,
     247,
-    484,
     204,
     394,
+    115,
     150,
     44,
     195,
@@ -22475,7 +22489,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Naomi Ackie"
+   ],
    "directores": [
     "Eva Victor"
    ],
@@ -24167,7 +24183,11 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Bella Ramsey",
+    "Isabela Merced",
+    "Storm Reid"
+   ],
    "directores": [],
    "donde_ver": [
     "https://www.hbomax.com/es/es/show/93ba22b1-833e-47ba-ae94-8ee7b9eefa9a"
@@ -25452,7 +25472,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Stephanie Hsu"
+   ],
    "directores": [
     "Daniel Kwan",
     "Daniel Scheinert"
@@ -26596,8 +26618,7 @@
    ],
    "actrices": [],
    "directores": [
-    "Ikuhara",
-    "Kunihiko"
+    "Kunihiko Ikuhara"
    ],
    "donde_ver": [
     "https://www.primevideo.com/-/es/detail/0JWI741FJRUHGX8G6J55RHURZT"
@@ -26680,7 +26701,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Rebecca Henderson"
+   ],
    "directores": [],
    "donde_ver": [
     "https://www.disneyplus.com/es-es/series/single-drunk-female/6rWP5Hio5Dy7?distributionPartner=google"
@@ -27861,7 +27884,9 @@
      "categoria": null
     }
    ],
-   "actrices": [],
+   "actrices": [
+    "Tawny Cypress"
+   ],
    "directores": [],
    "donde_ver": [
     "https://www.movistarplus.es/series/yellowjackets/ficha?tipo=E&id=1942999"
