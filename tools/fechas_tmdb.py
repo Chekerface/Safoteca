@@ -239,6 +239,7 @@ def main():
                 db.execute("INSERT OR IGNORE INTO obra_persona(obra_id, persona_id, rol) VALUES (?, ?, 'director')", (o["id"], pid))
                 dir_nueva.append(nombre)
             cambios["direccion"] += 1
+            print(f"  + dirección · {o['id']} · {titulo} ({o['anio']}): {' | '.join(dir_nueva)}")
         distintos = {k: v for k, v in nuevos.items() if v and v != o[k]}
         if distintos:
             sets = ", ".join(f"{k} = ?" for k in distintos)
