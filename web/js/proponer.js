@@ -167,15 +167,18 @@
     poner("Sinopsis", d.sinopsis); poner("Directore", d.direccion.join(", ")); poner("Actrices (separadas por comas)", d.actrices.join(", "));
     poner("Póster (enlace de la imagen)", d.poster); poner("Enlace informativo", d.info); poner("Letterboxd (enlace)", d.letterboxd);
     // Géneros de TMDB → los nuestros (los que coinciden por nombre pasan tal cual)
-    const SINON = { "crimen": ["Policíaca"], "misterio": ["Suspense"], "historia": ["Histórico"], "música": ["Musical"],
+    // (18 nov: Aventura y Suspense ya no son géneros: pasan a Acción/Thriller y se marcan como temática)
+    const SINON = { "crimen": ["Policíaca"], "misterio": ["Thriller"], "historia": ["Histórico"], "música": ["Musical"],
       "ciencia ficción y fantasía": ["Ciencia Ficción", "Fantasía"], "sci-fi & fantasy": ["Ciencia Ficción", "Fantasía"],
-      "acción y aventura": ["Acción", "Aventura"], "action & adventure": ["Acción", "Aventura"], "bélica": ["Histórico"], "western": ["Western"] };
-    const g = new Map(LISTAS.generos.map((x) => [norm(x), x]));
+      "aventura": ["Acción"], "acción y aventura": ["Acción"], "action & adventure": ["Acción"], "bélica": ["Histórico"], "western": ["Western"] };
+    const SINON_TEM = { "misterio": ["Suspense"], "aventura": ["Aventura"], "acción y aventura": ["Aventura"], "action & adventure": ["Aventura"] };
+    const g = new Map(LISTAS.generos.map((x) => [norm(x), x])), t = new Map(LISTAS.tematicas.map((x) => [norm(x), x]));
+    const de = (tabla, x) => Object.entries(tabla).find(([k]) => norm(k) === norm(x))?.[1] || [];
     d.generos.forEach((x) => {
-      const cand = [x, ...(Object.entries(SINON).find(([k]) => norm(k) === norm(x))?.[1] || [])];
-      cand.forEach((c) => { const m = g.get(norm(c)); if (m) elegidas.generos.add(m); });
+      [x, ...de(SINON, x)].forEach((c) => { const m = g.get(norm(c)); if (m) elegidas.generos.add(m); });
+      de(SINON_TEM, x).forEach((c) => { const m = t.get(norm(c)); if (m) elegidas.tematicas.add(m); });
     });
-    pintarElegidas("generos");
+    pintarElegidas("generos"); pintarElegidas("tematicas");
     const plat = [...new Set(d.plataformas_es.map((p) => p.replace(/\s+(Standard\s+)?with Ads$/i, "").replace(/\s+Amazon Channel$/i, "")))];
     $("#plataformas").textContent = plat.length ? "En España se puede ver en: " + plat.join(", ") + ". Pega aquí el enlace de la plataforma." : "";
     if (!d.sinopsis) $("#f-sinopsis").placeholder = "TMDB no tiene sinopsis en español: escribe una breve, por favor.";
