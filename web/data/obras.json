@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-17T16:00:46+00:00",
+  "generado": "2026-11-18T16:02:37+00:00",
   "total": 325
  },
  "obras": [
@@ -2727,6 +2727,7 @@
    "rel": [
     86,
     81,
+    73,
     97,
     68
    ]
@@ -5598,7 +5599,7 @@
    "actrices": [
     "Jodelle Ferland",
     "Melissa O'Neil",
-    "Zoei Palmer"
+    "Zoie Palmer"
    ],
    "directores": [],
    "donde_ver": [],
@@ -6461,6 +6462,7 @@
     247,
     398,
     381,
+    15,
     299,
     64,
     34,
@@ -6473,7 +6475,6 @@
     149,
     33,
     70,
-    399,
     366,
     394,
     199,
@@ -12634,7 +12635,7 @@
     "Alison Brie",
     "Aubrey Plaza",
     "Kristen Stewart",
-    "Mckenzie Davis"
+    "Mackenzie Davis"
    ],
    "directores": [
     "Clea DuVall"
@@ -19549,8 +19550,8 @@
     "Claire Holt",
     "Lindsey Shaw",
     "Miranda Rae Mayo",
-    "Sahy Mitchell",
-    "Sasha Pieterse"
+    "Sasha Pieterse",
+    "Shay Mitchell"
    ],
    "directores": [],
    "donde_ver": [
@@ -19571,6 +19572,8 @@
    "fecha": "2010-06-08",
    "rel": [
     273,
+    232,
+    184,
     293,
     490
    ]
@@ -23457,6 +23460,7 @@
     145,
     295,
     294,
+    43,
     118
    ]
   },
@@ -27396,7 +27400,7 @@
     }
    ],
    "actrices": [
-    "Dominique Provost-Chalkley.",
+    "Dominique Provost-Chalkley",
     "Katherine Barrell"
    ],
    "directores": [],
@@ -28241,6 +28245,7 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2018-09-09",
    "rel": [
+    15,
     398,
     232
    ]
