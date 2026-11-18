@@ -168,8 +168,7 @@ COLECCIONES = [
     {"slug": "series-lesbicas-final-feliz",
      "titulo": "Series lésbicas y bisexuales con final feliz",
      "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
-     "intro": "Series en las que las protagonistas acaban juntas y con una relación sana. "
-              "Ojo: esta lista te dice cómo acaban, así que contiene un pequeño destripe.",
+     "intro": "Series en las que las protagonistas acaban juntas y con una relación sana.",
      "nota": "Durante años, a nosotras nos tocaban los finales tristes. Aquí van las series en las que se quedan juntas, y bien.",
      "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'serie')} series acaban bien: juntas y con una relación sana."),
      "grafico": lambda todas: _grafico_final_feliz(todas),
