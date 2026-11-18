@@ -228,14 +228,23 @@ def coleccion(c, obras, noindex):
                         key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
     marca_ff = c["slug"] != "series-lesbicas-final-feliz"
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
+    # Pocos clics: el póster y el botón abren la ficha de la web (#/obra/ID); el título enlaza la página por obra,
+    # que es la que ven los buscadores (Google no sigue lo que va tras «#»).
+    app = lambda o: f'../#/obra/{o["id"]}'
+    estatica = lambda o: f'../obra/{o["id"]}/'
     dest_html = "".join(
-        f'<a class="dest" href="../#/obra/{o["id"]}"><span class="pos"><img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</span>'
-        f'<span class="dt">{e(o["titulo"])}</span></a>' for o in destacadas)
-    items = "".join(
-        f'<li><a href="../#/obra/{o["id"]}">'
-        f'{"<img src=" + chr(34) + _poster(o) + chr(34) + " alt=" + chr(34) + chr(34) + " loading=" + chr(34) + "lazy" + chr(34) + " width=" + chr(34) + "300" + chr(34) + " height=" + chr(34) + "450" + chr(34) + ">" if o.get("poster") else "<span class=" + chr(34) + "sinpos" + chr(34) + "></span>"}'
-        f'<span><b>{e(o["titulo"])}</b>{" <i>" + str(o["anio"]) + "</i>" if o.get("anio") else ""}'
-        f'{"<small>" + e(recorta(o.get("sinopsis"), 140)) + "</small>" if o.get("sinopsis") else ""}</span></a></li>' for o in sel)
+        f'<div class="dest"><a class="pos" href="{app(o)}" aria-label="Abrir {e(o["titulo"])} en La Safoteca">'
+        f'<img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</a>'
+        f'<a class="dt" href="{estatica(o)}">{e(o["titulo"])}</a></div>' for o in destacadas)
+    def tarjeta(o):
+        img = (f'<img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">' if o.get("poster")
+               else '<span class="sinpos"></span>')
+        anio = f' <i>{o["anio"]}</i>' if o.get("anio") else ""
+        sin = f'<small>{e(recorta(o.get("sinopsis"), 140))}</small>' if o.get("sinopsis") else ""
+        return (f'<li><a class="lp" href="{app(o)}" aria-label="Abrir {e(o["titulo"])} en La Safoteca">{img}</a>'
+                f'<div><a class="lt" href="{estatica(o)}"><b>{e(o["titulo"])}</b></a>{anio}{sin}'
+                f'<a class="abrir" href="{app(o)}">Dónde verla y avisos <span aria-hidden="true">→</span></a></div></li>')
+    items = "".join(tarjeta(o) for o in sel)
     nota = (f'<blockquote class="nota"><p>«{e(c["nota"])}»</p><cite>— el equipo de La Safoteca</cite></blockquote>'
             if c.get("nota") else "")
     cifra = ""
@@ -275,7 +284,7 @@ def coleccion(c, obras, noindex):
 </head>
 <body>
 <header class="cab">
-  <a class="marca" href="../"><img src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><span>colecciones</span></a>
+  <a class="marca" href="../"><img src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><span>fragmentos</span></a>
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -327,10 +336,12 @@ h2{font:400 22px var(--serif);margin:30px 0 12px}
 .dt{display:block;margin-top:5px;line-height:1.3}
 .mas{color:var(--suave);font-size:14px;margin:16px 0 8px}
 .lista{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.lista a{display:flex;gap:12px;align-items:flex-start;background:var(--sup);border:1px solid var(--linea);border-radius:8px;padding:8px;color:var(--tinta);text-decoration:none}
-.lista img,.sinpos{width:52px;height:78px;object-fit:cover;border-radius:3px;flex:none;background:var(--linea)}
-.lista b{font:600 16px var(--serif)} .lista i{font-style:normal;color:var(--suave);font-size:13px;margin-left:4px}
+.lista li{display:flex;gap:12px;align-items:flex-start;background:var(--sup);border:1px solid var(--linea);border-radius:8px;padding:8px}
+.lista .lp{flex:none} .lista img,.sinpos{display:block;width:52px;height:78px;object-fit:cover;border-radius:3px;background:var(--linea)}
+.lista .lt{color:var(--tinta);text-decoration:none} .lista b{font:600 16px var(--serif)} .lista i{font-style:normal;color:var(--suave);font-size:13px;margin-left:4px}
 .lista small{display:block;color:var(--suave);font-size:13.5px;line-height:1.45;margin-top:3px}
+.abrir{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;color:#1d1726;background:var(--lila);text-decoration:none;padding:4px 10px;border-radius:999px}
+.dest .dt{color:var(--tinta);text-decoration:none}
 .todas{margin:22px 0 0} .todas a{color:var(--tinta)}
 .cta{position:sticky;bottom:0;display:flex;align-items:center;gap:12px;background:var(--lila);color:#1d1726;padding:12px max(16px,calc(50vw - 364px))}
 .cta div{flex:1} .cta b{display:block;font:400 17px var(--serif)} .cta small{display:block;font-size:12.5px;color:#2b2433}
