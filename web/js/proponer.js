@@ -99,8 +99,8 @@
       </section>
       <section class="prop-grupo">
         <h2 class="prop-h">2 · Busca la serie o película</h2>
-        <p class="prop-ayuda">Pega un enlace de IMDb o de TMDB, o escribe el título. Rellenaremos lo que podamos; lo demás, a mano.</p>
-        <div class="prop-fila"><input id="buscar-obra" class="prop-campo" type="text" placeholder="Enlace o título" autocomplete="off">
+        <p class="prop-ayuda">Escribe el título de la obra que quieres añadir. Rellenaremos lo que podamos; lo demás, a mano.</p>
+        <div class="prop-fila"><input id="buscar-obra" class="prop-campo" type="text" placeholder="Título de la serie o película" autocomplete="off">
           <button class="boton" type="button" id="btn-buscar" ${servicio() ? "" : "disabled"}>Buscar</button></div>
         <div id="resultados" aria-live="polite"></div>
       </section>
