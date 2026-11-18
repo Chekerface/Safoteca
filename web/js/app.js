@@ -532,11 +532,14 @@
 
     const dato = (k, v) => (v ? `<dt>${k}</dt><dd>${esc(v)}</dd>` : "");
     // Actrices y dirección: cajita (con cuántas obras) solo si la persona está en más de una obra; si no, texto
+    // Reparto y dirección (en «Explorar»): cajita pulsable con su número si la persona está en más de una obra;
+    // si solo está en esta, cajita gris sin borde que no se pulsa. Mismo orden en que vienen.
     const personas = (k, clave, lista, cuenta) => {
       if (!lista.length) return "";
-      const conMas = lista.filter((n) => (cuenta.get(n) || 0) > 1), resto = lista.filter((n) => (cuenta.get(n) || 0) <= 1);
-      const chips = conMas.map((n) => `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(n)}" aria-label="Ver las ${cuenta.get(n)} obras con ${esc(n)}">${esc(n)} <span class="chip__n">${cuenta.get(n)}</span></a>`).join("");
-      return `<dt>${k}</dt><dd>${chips ? `<div class="chips chips--personas">${chips}</div>` : ""}${resto.length ? esc(resto.join(", ")) : ""}</dd>`;
+      const chips = lista.map((n) => (cuenta.get(n) || 0) > 1
+        ? `<a class="chip" href="#/catalogo?${clave}=${encodeURIComponent(n)}" aria-label="Ver las ${cuenta.get(n)} obras con ${esc(n)}">${esc(n)} <span class="chip__n">${cuenta.get(n)}</span></a>`
+        : `<span class="chip chip--fijo">${esc(n)}</span>`).join("");
+      return `<h3>${k}</h3><div class="chips">${chips}</div>`;
     };
     const explica = CFG.textoRelevancia && CFG.textoRelevancia[o.relevancia]
       ? `<details class="explica"><summary>¿Qué significa el nivel ${esc(o.relevancia)}?</summary><p>${esc(CFG.textoRelevancia[o.relevancia])}</p></details>` : "";
@@ -561,13 +564,13 @@
           ${avisos}
           ${o.sinopsis ? `<section class="bloque"><h2>Sinopsis</h2><p>${esc(o.sinopsis)}</p></section>` : ""}
           ${lugares ? `<section class="bloque"><h2>Dónde ver</h2><div class="enlaces">${lugares}</div>${hayFuera ? '<p class="resumen" style="margin-top:.5rem">Los enlaces marcados con otro país pueden no estar disponibles en España.</p>' : ""}${rep && rep.url ? '<p class="resumen" style="margin-top:.5rem">¿Un enlace no funciona? Toca la bandera junto a él para avisarnos.</p>' : ""}</section>` : ""}
-          ${o.generos.length || o.tematicas.length ? `<section class="bloque"><h2>Explorar</h2>
+          ${o.generos.length || o.tematicas.length || o.actrices.length || o.directores.length ? `<section class="bloque"><h2>Explorar</h2>
             ${o.generos.length ? `<h3>Géneros</h3><div class="chips">${chipLista("gen", o.generos)}</div>` : ""}
-            ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}</section>` : ""}
-          <section class="bloque"><h2>Datos</h2><dl class="dato">
+            ${o.tematicas.length ? `<h3>Temáticas</h3><div class="chips">${chipLista("tem", o.tematicas)}</div>` : ""}
+            ${personas("Reparto", "act", o.actrices, E.nAct)}${personas("Dirección", "dir", o.directores, E.nDir)}</section>` : ""}
+          ${o.pais || o.temporadas || disp ? `<section class="bloque"><h2>Datos</h2><dl class="dato">
             ${dato("País", o.pais)}${dato("Temporadas", o.temporadas)}${dato("En España", disp)}
-            ${personas("Reparto", "act", o.actrices, E.nAct)}${personas("Dirección", "dir", o.directores, E.nDir)}
-          </dl></section>
+          </dl></section>` : ""}
           ${info || letterboxd ? `<section class="bloque"><h2>Más información</h2>${letterboxd ? `<div class="enlaces">${letterboxd}</div>` : ""}${info ? `<div class="chips">${info}</div>` : ""}</section>` : ""}
         </div>
       </article>
