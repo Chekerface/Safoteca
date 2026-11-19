@@ -30,10 +30,12 @@ from rutas import DB_DEFECTO, COPIAS  # noqa: E402
 MAPEOS = RAIZ / "data" / "mapeos"
 
 # Nombre con la ortografía que queda (solo la primera letra en mayúscula)
-GENERO_SOLO = ["Acción", "Animación", "Anime", "Biográfico", "Ciencia ficción", "Comedia", "Comedia dramática",
-               "Comedia negra", "Comedia romántica", "Documental", "Drama", "Fantasía", "Fantástico",
-               "Ficción sobrenatural", "Histórico", "Horror", "Intriga", "Musical", "Policíaca", "Reality", "Romance",
-               "Sitcom", "Suspense", "Telenovela", "Terror", "Thriller", "Western"]
+# (18 de noviembre: Aventura, Comedia dramática, Comedia negra, Fantástico, Ficción sobrenatural, Horror, Sitcom y
+#  Suspense dejan de ser géneros: lo hace tools/revision_etiquetas_18nov.py)
+GENERO_SOLO = ["Acción", "Animación", "Anime", "Biográfico", "Ciencia ficción", "Comedia",
+               "Comedia romántica", "Documental", "Drama", "Fantasía",
+               "Histórico", "Intriga", "Musical", "Policíaca", "Reality", "Romance",
+               "Telenovela", "Terror", "Thriller", "Western"]
 TEMATICA_SOLO = ["Costumbrismo", "Deportes", "Distopía"]
 UNIR_TEMATICA = {"Día a día": "Costumbrismo"}
 
