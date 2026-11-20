@@ -233,7 +233,7 @@ COLECCIONES = [
      "intro": "Películas de nuestro catálogo que puedes ver en Filmin en España.",
      "nota": "Filmin es donde más cine sáfico de autor encontramos: películas pequeñas, europeas y asiáticas que en otras plataformas no están. Estas son las nuestras.",
      "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Filmin."),
-     "grafico": lambda todas: _grafico_plataformas(todas),
+     "grafico": lambda todas: _grafico_plataformas(todas, "Filmin"),
      "dato": lambda todas, sel: (f"{sum(1 for o in sel if o.get('relevancia') == 'A')} de ellas tienen a las protagonistas en el centro de la historia (nivel A)."),
      "titulo_dest": "Nuestras cinco recomendadas",
      "destacadas": ["Bottoms", "Blue Gate Crossing", "Tove", "Shiva Baby", "Violette"],
@@ -245,14 +245,12 @@ COLECCIONES = [
      "intro": "Películas de nuestro catálogo que puedes ver en Prime Video en España.",
      "nota": "El cine sáfico de Prime son películas muy famosas y muy clásicas para nosotras: marcaron un antes y un después en la comunidad.",
      "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Prime Video."),
-     "grafico": lambda todas: _grafico_plataformas(todas),
+     "grafico": lambda todas: _grafico_plataformas(todas, "Prime Video"),
      "dato": lambda todas, sel: (f"{sum(1 for o in sel if (o.get('anio') or 9999) < 2010)} se estrenaron antes de 2010: los clásicos con los que crecimos."),
      "titulo_dest": "Nuestras cinco recomendadas",
      "destacadas": ["Bound", "Habitación en Roma", "Fucking Åmål", "D.E.B.S", "Saving Face"],
      "nota_dest": "Las dos últimas, D.E.B.S. y Guardando las apariencias (Saving Face), solo están para comprar o alquilar, "
                   "pero son tan importantes para nosotras que las recomendamos encarecidamente.",
-     # Guardando las apariencias (239) está en Prime para comprar o alquilar, pero en la ficha aún no tiene ese enlace
-     "incluir": [239],
      "catalogo": "?tipo=pelicula&plat=Prime%20Video",
      "filtro": lambda o: o["tipo"] == "pelicula" and PRIME_ES(o)},
 ]
@@ -279,17 +277,22 @@ def _grafico_anios(todas):
 <figcaption><span class="ley t"></span>películas del catálogo por año <span class="ley s"></span>con el síndrome de la lesbiana muerta</figcaption></figure>"""
 
 
-def _barras(filas, aria, unidad=""):
-    """Barras horizontales en SVG sin JavaScript. filas = [(etiqueta, valor, texto_valor)]."""
+def _barras(filas, aria, unidad="", resaltar=None):
+    """Barras horizontales en SVG sin JavaScript. filas = [(etiqueta, valor, texto_valor)].
+    Con «resaltar», esa fila va en lila y las demás apagadas; una fila con valor None es «…» (sin barra)."""
     W, alto, iz = 340, 26, 86
-    top = max(v for _, v, _ in filas) or 1
+    top = max(v for _, v, _ in filas if v is not None) or 1
     H = alto * len(filas) + 4
     cuerpo = ""
     for n, (et, v, txt) in enumerate(filas):
         y = n * alto + 4
+        if v is None:
+            cuerpo += f'<text x="{iz - 8}" y="{y + 15}" text-anchor="end">{et}</text>'
+            continue
         ancho = max(2, (W - iz - 44) * v / top)
+        clase = "t-b" if resaltar is None or et == resaltar else "t-b apag"
         cuerpo += (f'<text x="{iz - 8}" y="{y + 15}" text-anchor="end">{et}</text>'
-                   f'<rect x="{iz}" y="{y + 3}" width="{ancho:.1f}" height="16" rx="3" class="t-b"/>'
+                   f'<rect x="{iz}" y="{y + 3}" width="{ancho:.1f}" height="16" rx="3" class="{clase}"/>'
                    f'<text x="{iz + ancho + 6:.1f}" y="{y + 15}" class="v">{txt}</text>')
     return f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">{cuerpo}</svg>'
 
@@ -324,17 +327,22 @@ FILMIN = lambda o: any("filmin" in (p.get("n", "") + p.get("u", "")).lower() for
 PRIME_ES = lambda o: any(p.get("n") == "Prime Video" and p.get("p") in ("ES", "INT") for p in o.get("plataformas") or [])
 
 
-def _grafico_plataformas(todas):
-    """Películas del catálogo que se pueden ver en España, por plataforma (las 6 con más)."""
+def _grafico_plataformas(todas, plataforma):
+    """Películas del catálogo que se pueden ver en España, por plataforma: las 6 con más, con la de la colección
+    resaltada. Si la de la colección no está entre las 6, se ven las 5 primeras, «…» y la de la colección."""
     pelis = [o for o in todas if o["tipo"] == "pelicula"]
     cuenta = {}
     for o in pelis:
         for n in {p.get("n") for p in o.get("plataformas") or [] if p.get("n") and p.get("n") != "Otras" and p.get("p") in ("ES", "INT", None, "")}:
             cuenta[n] = cuenta.get(n, 0) + 1
-    filas = [(n, v, str(v)) for n, v in sorted(cuenta.items(), key=lambda x: -x[1])[:6]]
-    if not filas:
+    orden = sorted(cuenta.items(), key=lambda x: -x[1])
+    if not orden:
         return ""
-    svg = _barras(filas, "Películas del catálogo que se pueden ver en España, por plataforma: " + ", ".join(f"{n}: {v}" for n, v, _ in filas))
+    filas = [(n, v, str(v)) for n, v in orden[:6]]
+    if plataforma in cuenta and plataforma not in [n for n, _, _ in filas]:
+        filas = filas[:5] + [("…", None, "")] + [(plataforma, cuenta[plataforma], str(cuenta[plataforma]))]
+    svg = _barras(filas, "Películas del catálogo que se pueden ver en España, por plataforma: " +
+                  ", ".join(f"{n}: {v}" for n, v, _ in filas if v is not None), resaltar=plataforma)
     return f'<figure class="anios">{svg}<figcaption>películas del catálogo que se pueden ver en España, por plataforma</figcaption></figure>'
 
 
@@ -472,7 +480,7 @@ main{max-width:760px;margin:0 auto;padding:0 16px 120px}
 .anios .g{stroke:var(--linea)} .anios .a{fill:var(--lila);opacity:.14;stroke:none} .anios .t{fill:none;stroke:var(--lila);stroke-width:2}
 .anios .s{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-dasharray:4 3} .anios .m{fill:var(--tinta)}
 .anios figcaption{font:11px var(--mono);color:var(--suave);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
-.anios .t-b{fill:var(--lila)} .anios .v{fill:var(--tinta)}
+.anios .t-b{fill:var(--lila)} .anios .apag{opacity:.35} .anios .v{fill:var(--tinta)}
 .dato{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--lila);background:var(--sup);font:15px var(--serif)}
 .ley{display:inline-block;width:14px;height:0;border-top:2px solid var(--lila)} .ley.s{border-top:2px dashed var(--tinta)}
 h2{font:400 22px var(--serif);margin:30px 0 12px}

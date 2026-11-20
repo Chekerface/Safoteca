@@ -1,4 +1,5 @@
-# Publica la carpeta web/ en GitHub Pages cada vez que cambia en la rama main.
+# Publica la carpeta web/ en GitHub Pages cada vez que cambia en la rama main
+# (o cambia el generador de páginas tools/generar_paginas.py).
 # Requiere activar una vez: Settings → Pages → Build and deployment → Source: GitHub Actions.
 name: Publicar web
 
@@ -8,6 +9,7 @@ on:
     paths:
       - "web/**"
       - ".github/workflows/pages.yml"
+      - "tools/generar_paginas.py"   # páginas por obra, índice y colecciones de Fragmentos (A4)
   workflow_dispatch:
 
 permissions:

@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-19T13:02:02+00:00",
+  "generado": "2026-11-20T14:15:30+00:00",
   "total": 325
  },
  "obras": [
@@ -9355,13 +9355,19 @@
     "Alice Wu"
    ],
    "donde_ver": [
-    "https://soyunarcoiris.com/guardando-las-apariencias-2004-online-aqui/"
+    "https://soyunarcoiris.com/guardando-las-apariencias-2004-online-aqui/",
+    "https://www.primevideo.com/detail/0Q7Q60FBH5HJHZUR0CSEK4XAX0"
    ],
    "plataformas": [
     {
      "n": "Otras",
      "p": "INT",
      "u": "https://soyunarcoiris.com/guardando-las-apariencias-2004-online-aqui/"
+    },
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0Q7Q60FBH5HJHZUR0CSEK4XAX0"
     }
    ],
    "info": [
