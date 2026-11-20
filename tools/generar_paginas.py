@@ -407,6 +407,7 @@ def coleccion(c, obras, noindex):
 {'<h2>' + e(c.get("titulo_dest", "Para empezar esta noche")) + '</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
 {'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
 <ul class="lista">{items}</ul>
+{redes()}
 <p class="todas"><a href="../obras/">Todas las series y películas</a></p>
 </main>
 <div class="cta"><div><b>Ábrelas en el catálogo</b><small>filtra por plataforma y esconde lo que no quieras ver</small></div>
@@ -433,6 +434,10 @@ ESTILO_COLECCION = """<style>
 .col h2{font:400 24px/1.15 var(--serif);margin:0 0 14px} .col h2 em{color:var(--lila)}
 .col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
 .mas a{color:var(--suave)}
+.redes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font:14px var(--sans);margin:18px 0 0}
+.redes span{font:12px var(--mono);color:var(--suave)} .cab .redes span{color:#8f84a3}
+.redes a{display:inline-flex;align-items:center;gap:6px;color:var(--tinta);text-decoration:none} .cab .redes a{color:#f3eef9}
+main .redes{margin:28px 0 0}
 .cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
 .cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
 main{max-width:760px;margin:0 auto;padding:0 16px 120px}
@@ -498,6 +503,15 @@ def cabecera_fragmentos():
             '<a href="../fragmentos/" aria-current="page">Fragmentos</a></nav></div>')
 
 
+def redes():
+    """Enlaces para seguir a La Safoteca (F1 y F2). Iconos genéricos dibujados aquí, no los logotipos de las marcas."""
+    ico = ('<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+           'stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>')
+    return ('<p class="redes"><span>Síguenos</span>'
+            f'<a href="https://www.instagram.com/lasafoteca/" rel="me noopener" target="_blank">{ico}Instagram</a>'
+            f'<a href="https://www.tiktok.com/@lasafoteca" rel="me noopener" target="_blank">{ico}TikTok</a></p>')
+
+
 def portada_fragmentos(obras, noindex):
     """F1 · Página de entrada de Fragmentos: qué es y una tarjeta por colección (título y cita del equipo)."""
     tarjetas = []
@@ -534,6 +548,7 @@ def portada_fragmentos(obras, noindex):
   {cabecera_fragmentos()}
   <h1>Fragmentos</h1>
   <p>Aquí iremos dejando nuestras opiniones, recomendaciones y noticias. Es nuestra forma de que nos conozcáis un poco más.</p>
+  {redes()}
 </header>
 <main>
 <div class="cols">
