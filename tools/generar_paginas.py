@@ -583,7 +583,6 @@ def quienes_somos(obras, noindex):
 
 <h2>Cómo empezó</h2>
 <p>La Safoteca nació en 2021 de la mano de dos amigas de Córdoba que habían crecido con miedo a darle al play. En muchas películas, sobre todo en las clásicas, la chica que se parecía a nosotras acababa muerta, sufriendo abusos o con un final que parecía decirte: «si eres así, no vas a acabar bien».</p>
-<p>Una de ellas, bastante sensible con estas historias, juntó ese deseo de encontrar películas que la hicieran sentir bien consigo misma con su otra pasión: las bases de datos. Trabaja administrándolas, y no hay nada que le guste más que organizar, registrar y archivar todo lo que pueda. Además, había pasado años en foros de yuri y de series, así que su mayor deseo era construir algo que devolver a la comunidad: que otras chicas pudieran encontrar lo que a ella tanto le faltó.</p>
 
 <h2>Por qué todavía hace falta</h2>
 <p>La representación mejora cada año: hay más, es mejor y hay que aguantar menos drama. Ya no hace falta que nos muramos o que suframos abusos para salir en una película. Aun así, creemos que siguen haciendo falta catálogos como este.</p>
@@ -594,7 +593,7 @@ def quienes_somos(obras, noindex):
 
 <h2>Quiénes la hacemos</h2>
 <p>La otra fundadora es una enamorada de las series y del cine; ahora mismo no para de ver series tailandesas, y estamos encantadas de que de Tailandia lleguen cada vez más historias y un montón de comedias románticas. Sin ella esta base de datos habría sido imposible: la mayoría de las series y películas las ha añadido ella.</p>
-<p>Al principio formó parte del equipo Vanessa Figal, autora de cómic, que diseñó nuestro logo y a quien estaremos siempre agradecidas. Sus cómics siempre tienen representación sáfica, así que os recomendamos cualquiera de sus obras. En 2021 colaboraron también otras chicas añadiendo series, películas, libros y cómics.</p>
+<p>Al principio formó parte del equipo <a href="https://www.vanesafigal.com/home">Vanesa Figal</a>, autora de cómic, que diseñó nuestro logo y a quien estaremos siempre agradecidas. Sus cómics siempre tienen representación sáfica, así que os recomendamos cualquiera de sus obras. En 2021 colaboraron también otras chicas añadiendo series, películas, libros y cómics.</p>
 <p>Hoy seguimos las dos fundadoras, aunque ya no las dos en Córdoba: una vive en Torremolinos y la otra sigue en Córdoba. Y el equipo ha crecido: tenemos una especialista en series tailandesas y una especialista en redes sociales que se encarga de la parte gráfica de Instagram.</p>
 
 <h2>Una pausa y una vuelta</h2>
