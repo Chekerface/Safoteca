@@ -192,6 +192,21 @@ def _avisos(o):
 SLM = "Síndrome de la lesbiana muerta"
 
 COLECCIONES = [
+    {"slug": "series-y-peliculas-con-representacion-trans",
+     "titulo": "Series y películas con representación trans",
+     "titulo_html": "Series y películas con representación <em>trans</em>",
+     "antetitulo": "20 de noviembre · Día de la Memoria Trans",
+     "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
+     "nota": "Apoyamos a nuestras hermanas trans y estamos encantadas de que formen parte de nuestro catálogo, en todas las series "
+             "y películas con representación lésbica y bisexual. Lamentamos que solo haya dos series en las que el personaje trans "
+             "sea, además, sáfico: Sense8 y Euphoria.",
+     "cifra": lambda todas, sel: (len(sel), "series y películas de nuestro catálogo tienen representación trans."),
+     "dato": lambda todas, sel: ("Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en "
+                                 "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos. "
+                                 "Queríamos que lo supierais."),
+     "titulo_dest": "Personajes trans y sáficos",
+     "destacadas": ["Sense8", "Euphoria"],
+     "filtro": lambda o: "Trans" in (o.get("tematicas") or [])},
     {"slug": "series-lesbicas-final-feliz",
      "titulo": "Series lésbicas y bisexuales con final feliz",
      "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
@@ -422,6 +437,7 @@ def coleccion(c, obras, noindex):
 <body>
 <header class="cab">
   {cabecera_fragmentos()}
+  {'<p class="ante">' + e(c["antetitulo"]) + '</p>' if c.get("antetitulo") else ''}
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -463,6 +479,7 @@ ESTILO_COLECCION = """<style>
 .col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
 .mas a{color:var(--suave)}
 .nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
+.cab .ante{font:12px var(--mono);letter-spacing:.06em;color:var(--claro);margin:18px 0 -8px}
 .fijada{display:block;font:11px var(--mono);color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
 .col.fija p{margin:0 0 10px;color:var(--suave)}
 .art h2{margin:34px 0 10px} .art p{margin:12px 0 0;font-size:17px;line-height:1.65} .art a{color:var(--tinta)}
