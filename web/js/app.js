@@ -753,6 +753,7 @@
     const izq = $("#btn-izq");
     const filtros = $("#btn-filtros");
     const raiz = ["/", "/catalogo", "/favoritos"].includes(ruta);
+    $("#cabecera").dataset.vista = ruta === "/" ? "inicio" : ruta.split("/")[1] || "inicio";   // para los temas (calabazas solo en el inicio)
     izq.innerHTML = raiz ? ICONO.menu : ICONO.atras;
     izq.setAttribute("aria-label", raiz ? "Ajustes" : "Volver");
     const hayFiltros = ruta === "/" || ruta === "/catalogo";
