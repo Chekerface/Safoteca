@@ -576,7 +576,7 @@ def quienes_somos(obras, noindex):
 <header class="cab">
   {cabecera_fragmentos()}
   <h1>Quiénes <em>somos</em></h1>
-  <p>Un archivo colaborativo de series y películas con representación sáfica. Toma el poder y filtra el contenido que no quieras ver.</p>
+  <p>Nuestra carta de presentación</p>
 </header>
 <main class="art">
 <figure class="img"><img src="../img/fragmentos/logo-lema.webp" alt="Logotipo de La Safoteca con el lema: Archivo colaborativo de contenido audiovisual con representación sáfica. Toma el poder y filtra el contenido que no quieras ver." width="800" height="518"></figure>
