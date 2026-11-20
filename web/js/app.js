@@ -813,8 +813,13 @@
       // va a la derecha, antes del icono de filtros.
       // Con el tema de Navidad el logotipo lleva gorro de Papá Noel (img/tema/); el resto del año, el normal.
       const navidad = document.documentElement.getAttribute("data-tema") === "navidad";
-      tit.innerHTML = `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="La Safoteca">`
-        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt="" aria-hidden="true">`;
+      // El logotipo lleva al Inicio (si ya estás en él, sube arriba del todo).
+      tit.innerHTML = `<a class="cabecera__inicio" href="#/" aria-label="La Safoteca, ir al inicio">`
+        + `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="">`
+        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt=""></a>`;
+      tit.firstChild.addEventListener("click", (ev) => {
+        if (rutaActual().ruta === "/") { ev.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+      });
       pag.hidden = ruta === "/";
       pag.textContent = ruta === "/" ? "" : titulo;
     } else {
