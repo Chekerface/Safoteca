@@ -365,7 +365,7 @@ def coleccion(c, obras, noindex):
 </head>
 <body>
 <header class="cab">
-  <a class="marca" href="../"><img class="t-norm" src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><img class="t-nav" src="../img/tema/logo-navidad-oscuro.webp" alt="La Safoteca" height="44" loading="lazy"><span>fragmentos</span></a>
+  {cabecera_fragmentos()}
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -396,6 +396,14 @@ ESTILO_COLECCION = """<style>
 .cab{background:var(--negro);color:#f3eef9;padding:18px 18px 34px}
 .cab .marca{display:inline-flex;align-items:flex-end;gap:10px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
 .cab .marca img{height:44px;width:auto} .cab .marca span{padding-bottom:4px;border-left:1px solid #4a3f5c;padding-left:10px}
+.cab-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sel{display:flex;gap:16px;font:14px var(--sans)} .sel a{color:#8f84a3;text-decoration:none;padding:6px 0}
+.sel a[aria-current]{color:#f3eef9}
+.cols{display:grid;gap:22px;margin:26px 0 0}
+.col{display:block;color:inherit;text-decoration:none;background:var(--sup);border:1px solid var(--linea);border-radius:10px;padding:16px 16px 14px}
+.col h2{font:400 24px/1.15 var(--serif);margin:0 0 14px} .col h2 em{color:var(--lila)}
+.col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
+.mas a{color:var(--suave)}
 .cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
 .cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
 main{max-width:760px;margin:0 auto;padding:0 16px 120px}
@@ -452,6 +460,63 @@ ul.tarjetas a{font-weight:700} ul.tarjetas p{margin:4px 0 0;color:var(--suave-t)
 </style>"""
 
 
+
+def cabecera_fragmentos():
+    """Logotipo (lleva al catálogo) y el selector «Catálogo · Fragmentos» de la parte de arriba (F1, F2)."""
+    return ('<div class="cab-top"><a class="marca" href="../"><img class="t-norm" src="../marca/logo-horizontal-oscuro.svg" '
+            'alt="La Safoteca" width="86" height="44"><img class="t-nav" src="../img/tema/logo-navidad-oscuro.webp" alt="La Safoteca" '
+            'height="44" loading="lazy"></a><nav class="sel" aria-label="Secciones"><a href="../">Catálogo</a>'
+            '<a href="../fragmentos/" aria-current="page">Fragmentos</a></nav></div>')
+
+
+def portada_fragmentos(obras, noindex):
+    """F1 · Página de entrada de Fragmentos: qué es y una tarjeta por colección (título y cita del equipo)."""
+    tarjetas = []
+    for c in COLECCIONES:
+        sel = [o for o in obras if c["filtro"](o)]
+        ns = sum(1 for o in sel if o["tipo"] == "serie")
+        que = (f"{ns} series" if ns == len(sel) else f"{len(sel)} películas" if ns == 0 else f"{len(sel)} obras")
+        tarjetas.append(f'''<a class="col" href="../{c["slug"]}/"><h2>{c["titulo_html"]}</h2>
+<div class="nota"><p>«{e(c["nota"])}»</p><cite>— el equipo de La Safoteca</cite></div>
+<span class="n">{que} →</span></a>''')
+    desc = ("Fragmentos de La Safoteca: opiniones, recomendaciones y noticias del equipo sobre series y películas "
+            "lésbicas y bisexuales.")
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fragmentos · La Safoteca</title>
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/fragmentos/">
+<meta property="og:title" content="Fragmentos · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{DOMINIO}/fragmentos/">
+<meta property="og:image" content="{DOMINIO}/icons/icon-512.png">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#1d1726">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+{ESTILO_COLECCION}
+{tema_head("../")}
+</head>
+<body>
+<header class="cab">
+  {cabecera_fragmentos()}
+  <h1>Fragmentos</h1>
+  <p>Aquí iremos dejando nuestras opiniones, recomendaciones y noticias. Es nuestra forma de que nos conozcáis un poco más.</p>
+</header>
+<main>
+<div class="cols">
+{"".join(tarjetas)}
+</div>
+<p class="mas"><a href="../obras/">Todas las series y películas</a> · <a href="../">Ir al catálogo</a></p>
+</main>
+</body>
+</html>
+"""
+
+
 def indice(obras, noindex):
     """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
     def lista(tipo):
@@ -489,7 +554,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 <main>
 <h1>Todas las series y películas</h1>
 <p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
-<h2>Colecciones</h2><ul>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
+<h2><a href="../fragmentos/">Fragmentos</a>: colecciones del equipo</h2><ul>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
 <h2>Series ({ns})</h2><ul>{series}</ul>
 <h2>Películas ({np_})</h2><ul>{pelis}</ul>
 </main>
@@ -518,11 +583,15 @@ def main():
         (web / c["slug"]).mkdir(exist_ok=True)
         (web / c["slug"] / "index.html").write_text(coleccion(c, datos["obras"], a.noindex), encoding="utf-8")
         print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o))} obras")
+    (web / "fragmentos").mkdir(exist_ok=True)
+    (web / "fragmentos" / "index.html").write_text(portada_fragmentos(datos["obras"], a.noindex), encoding="utf-8")
+    print(f"Portada de Fragmentos: {web / 'fragmentos' / 'index.html'}")
     print(f"Índice de obras: {web / 'obras' / 'index.html'}")
     if a.sitemap:
         sm = Path(a.sitemap)
         txt = sm.read_text(encoding="utf-8")
         filas = f"  <url><loc>{DOMINIO}/obras/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += f"  <url><loc>{DOMINIO}/fragmentos/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
         filas += "".join(f"  <url><loc>{DOMINIO}/{c['slug']}/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n" for c in COLECCIONES)
         filas += "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
                         for o in datos["obras"])
