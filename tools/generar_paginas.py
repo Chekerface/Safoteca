@@ -42,6 +42,32 @@ def relacionadas(o, todas, n=6):
     return [por_id[i] for i in (o.get("rel") or []) if i in por_id][:n]
 
 
+
+# ---------- Temas de temporada (Navidad, Halloween) también en estas páginas ----------
+# Usan los mismos config.js (fechas) y js/temas.js que la web, así que se activan los mismos días y con la misma
+# vista previa (?tema=navidad / ?tema=normal en la dirección). Solo cambian el logotipo y la decoración.
+def tema_head(pre):
+    return f"""<script src="{pre}config.js"></script><script src="{pre}js/temas.js"></script>
+<style>
+.t-nav{{display:none}} [data-tema="navidad"] .t-nav{{display:block}} [data-tema="navidad"] .t-norm{{display:none}}
+[data-tema="navidad"] body::before{{content:"";position:fixed;z-index:-1;pointer-events:none;top:0;left:0;right:0;height:400px;
+  background:url("{pre}img/tema/copos.webp") 0 0/740px auto repeat-x;opacity:.85;
+  filter:drop-shadow(0 0 1.2px rgb(156 136 187/.95)) drop-shadow(0 0 1px rgb(156 136 187/.6));
+  -webkit-mask:linear-gradient(to bottom,#000 45%,transparent);mask:linear-gradient(to bottom,#000 45%,transparent)}}
+@media (prefers-color-scheme:dark){{[data-tema="navidad"] body::before{{filter:none;opacity:.6}}}}
+:root[data-tema="halloween"]{{--lila:#e8731f;--violeta:#a8400a;--btn:#a8400a;--linea:#f0cba5}}
+@media (prefers-color-scheme:dark){{:root[data-tema="halloween"]{{--lila:#ff8a3d;--violeta:#ffa45c;--btn:#ff8a3d;--linea:#4d3057}}}}
+[data-tema="halloween"] header,[data-tema="halloween"] .cab{{border-bottom:3px solid var(--lila)}}
+</style>"""
+
+
+def cabecera_simple(pre):
+    """Cabecera de las páginas por obra y del índice: búho y nombre; en Navidad, el logotipo con gorro."""
+    return (f'<header><a href="{pre}"><img class="t-norm" src="{pre}marca/buholira.svg" alt=""><span class="t-norm">La Safoteca</span>'
+            f'<picture class="t-nav"><source media="(prefers-color-scheme: dark)" srcset="{pre}img/tema/logo-navidad-oscuro.webp">'
+            f'<img src="{pre}img/tema/logo-navidad.webp" alt="La Safoteca" loading="lazy" style="width:auto;height:40px"></picture></a></header>')
+
+
 def pagina(o, nivel, noindex, todas=()):
     oid, tit = o["id"], o["titulo"]
     url = f"{DOMINIO}/obra/{oid}/"
@@ -107,6 +133,7 @@ def pagina(o, nivel, noindex, todas=()):
 <meta property="og:locale" content="es_ES">
 <link rel="icon" href="../../marca/buholira.svg" type="image/svg+xml">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
+{tema_head("../../")}
 <style>
 :root{{--lila:#9c88bb;--violeta:#5d4a8a;--tinta:#2a2140;--suave-t:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;--btn:#5d4a8a;--btn-t:#fff;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}}
@@ -134,7 +161,7 @@ footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32p
 </style>
 </head>
 <body>
-<header><a href="../../"><img src="../../marca/buholira.svg" alt="">La Safoteca</a></header>
+{cabecera_simple("../../")}
 <main>
   {f'<img class="poster" src="{img}" alt="Póster de {e(tit)}" width="300" height="450">' if img else ''}
   <div class="cuerpo">
@@ -334,10 +361,11 @@ def coleccion(c, obras, noindex):
 <link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
 <script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
 {ESTILO_COLECCION}
+{tema_head("../")}
 </head>
 <body>
 <header class="cab">
-  <a class="marca" href="../"><img src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><span>fragmentos</span></a>
+  <a class="marca" href="../"><img class="t-norm" src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><img class="t-nav" src="../img/tema/logo-navidad-oscuro.webp" alt="La Safoteca" height="44" loading="lazy"><span>fragmentos</span></a>
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -441,6 +469,7 @@ def indice(obras, noindex):
 {'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
 <link rel="canonical" href="{DOMINIO}/obras/">
 <link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+{tema_head("../")}
 <style>
 :root{{--violeta:#5d4a8a;--tinta:#2a2140;--suave-t:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;
   --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}}
@@ -456,7 +485,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 </style>
 </head>
 <body>
-<header><a href="../"><img src="../marca/buholira.svg" alt="">La Safoteca</a></header>
+{cabecera_simple("../")}
 <main>
 <h1>Todas las series y películas</h1>
 <p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
