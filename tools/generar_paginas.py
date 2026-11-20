@@ -197,13 +197,14 @@ COLECCIONES = [
      "titulo_html": "Series y películas con representación <em>trans</em>",
      "antetitulo": "20 de noviembre · Día de la Memoria Trans",
      "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
-     "nota": "Solo dos series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8 y Euphoria.",
+     "nota": "Solo tres series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8, Euphoria y 23.5, "
+             "donde es un personaje secundario.",
      "cifra": lambda todas, sel: (len(sel), "series y películas de nuestro catálogo tienen representación trans."),
      "dato": lambda todas, sel: ("Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en "
                                  "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos."),
      "proponer": True,   # «¿Echas en falta alguna serie o película? Añádela» → formulario de la web
      "titulo_dest": "Personajes trans y sáficos",
-     "destacadas": ["Sense8", "Euphoria"],
+     "destacadas": ["Sense8", "Euphoria", "23.5"],
      "filtro": lambda o: "Trans" in (o.get("tematicas") or [])},
     {"slug": "series-lesbicas-final-feliz",
      "titulo": "Series lésbicas y bisexuales con final feliz",
