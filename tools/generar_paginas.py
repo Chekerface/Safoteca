@@ -227,6 +227,18 @@ COLECCIONES = [
      "grafico_anios": True,
      # sin el aviso (una película sin ningún aviso está revisada: no tiene nada que avisar)
      "filtro": lambda o: o["tipo"] == "pelicula" and SLM not in _avisos(o)},
+    {"slug": "peliculas-lesbicas-filmin",
+     "titulo": "Películas lésbicas y bisexuales en Filmin",
+     "titulo_html": "Películas lésbicas y bisexuales en <em>Filmin</em>",
+     "intro": "Películas de nuestro catálogo que puedes ver en Filmin en España.",
+     "nota": "Filmin es donde más cine sáfico de autor encontramos: películas pequeñas, europeas y asiáticas que en otras plataformas no están. Estas son las nuestras.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Filmin."),
+     "grafico": lambda todas: _grafico_plataformas(todas),
+     "dato": lambda todas, sel: (f"{sum(1 for o in sel if o.get('relevancia') == 'A')} de ellas tienen a las protagonistas en el centro de la historia (nivel A)."),
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["Bottoms", "Blue Gate Crossing", "Tove", "Shiva Baby", "Violette"],
+     "catalogo": "?tipo=pelicula&plat=Filmin",   # el botón «Abrir» llega al catálogo ya filtrado
+     "filtro": lambda o: o["tipo"] == "pelicula" and FILMIN(o)},
 ]
 
 
@@ -288,6 +300,23 @@ def _grafico_tailandesas(todas):
     filas = [(str(a), n, str(n)) for a in años for n in [sum(1 for o in th if o["anio"] == a)]]
     svg = _barras(filas, "Series tailandesas del catálogo por año de estreno: " + ", ".join(f"{a}: {n}" for a, _, n in filas))
     return f'<figure class="anios">{svg}<figcaption>series tailandesas del catálogo por año de estreno</figcaption></figure>'
+
+
+FILMIN = lambda o: any("filmin" in (p.get("n", "") + p.get("u", "")).lower() for p in o.get("plataformas") or [])
+
+
+def _grafico_plataformas(todas):
+    """Películas del catálogo que se pueden ver en España, por plataforma (las 6 con más)."""
+    pelis = [o for o in todas if o["tipo"] == "pelicula"]
+    cuenta = {}
+    for o in pelis:
+        for n in {p.get("n") for p in o.get("plataformas") or [] if p.get("n") and p.get("p") in ("ES", None, "")}:
+            cuenta[n] = cuenta.get(n, 0) + 1
+    filas = [(n, v, str(v)) for n, v in sorted(cuenta.items(), key=lambda x: -x[1])[:6]]
+    if not filas:
+        return ""
+    svg = _barras(filas, "Películas del catálogo que se pueden ver en España, por plataforma: " + ", ".join(f"{n}: {v}" for n, v, _ in filas))
+    return f'<figure class="anios">{svg}<figcaption>películas del catálogo que se pueden ver en España, por plataforma</figcaption></figure>'
 
 
 def _poster(o, ancho=300):
@@ -381,7 +410,7 @@ def coleccion(c, obras, noindex):
 <p class="todas"><a href="../obras/">Todas las series y películas</a></p>
 </main>
 <div class="cta"><div><b>Ábrelas en el catálogo</b><small>filtra por plataforma y esconde lo que no quieras ver</small></div>
-<a href="../#/catalogo">Abrir <span aria-hidden="true">→</span></a></div>
+<a href="../#/catalogo{e(c.get("catalogo", ""))}">Abrir <span aria-hidden="true">→</span></a></div>
 </body>
 </html>
 """
