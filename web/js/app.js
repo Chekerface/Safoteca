@@ -807,18 +807,25 @@
     }
     const tit = $("#titulo-vista");
     const pag = $("#titulo-pagina");
-    if (["/", "/catalogo", "/favoritos"].includes(ruta)) {
+    const conLogo = ["/", "/catalogo", "/favoritos"].includes(ruta) || ruta.startsWith("/obra/");
+    if (conLogo) {
       // En las pestañas principales se muestra siempre el logotipo (claro u oscuro según el tema);
       // en el inicio el h1 accesible ya existe en la vista, y en las otras dos el nombre de la pestaña
       // va a la derecha, antes del icono de filtros.
       // Con el tema de Navidad el logotipo lleva gorro de Papá Noel (img/tema/); el resto del año, el normal.
       const navidad = document.documentElement.getAttribute("data-tema") === "navidad";
-      tit.innerHTML = `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="La Safoteca">`
-        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt="" aria-hidden="true">`;
-      pag.hidden = ruta === "/";
-      pag.textContent = ruta === "/" ? "" : titulo;
+      // El logotipo lleva al Inicio (si ya estás en él, sube arriba del todo).
+      tit.innerHTML = `<a class="cabecera__inicio" href="#/" aria-label="La Safoteca, ir al inicio">`
+        + `<img class="cabecera__logo cabecera__logo--claro" src="${navidad ? "img/tema/logo-navidad.webp" : "marca/logo-horizontal.svg"}" alt="">`
+        + `<img class="cabecera__logo cabecera__logo--oscuro" src="${navidad ? "img/tema/logo-navidad-oscuro.webp" : "marca/logo-horizontal-oscuro.svg"}" alt=""></a>`;
+      tit.firstChild.addEventListener("click", (ev) => {
+        if (rutaActual().ruta === "/") { ev.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+      });
+      const sinNombre = ruta === "/" || ruta.startsWith("/obra/");   // en la ficha: flecha + logo, sin nombre de pestaña
+      pag.hidden = sinNombre;
+      pag.textContent = sinNombre ? "" : titulo;
     } else {
-      tit.textContent = ruta.startsWith("/obra/") ? "" : titulo;
+      tit.textContent = titulo;
       pag.hidden = true; pag.textContent = "";
     }
     document.title = doc;

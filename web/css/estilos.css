@@ -98,6 +98,8 @@ button { cursor: pointer; }
   font: 700 1.125rem/1.1 var(--serif); color: var(--violeta);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+.cabecera__inicio { display: inline-block; max-width: 100%; border-radius: 6px; }
+.cabecera__inicio:focus-visible { outline: 2px solid var(--lila); outline-offset: 2px; }
 .cabecera__logo { display: block; height: 2.5rem; width: auto; max-width: 100%; }
 .cabecera__logo--oscuro { display: none; }
 @media (prefers-color-scheme: dark) {
