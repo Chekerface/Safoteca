@@ -807,7 +807,8 @@
     }
     const tit = $("#titulo-vista");
     const pag = $("#titulo-pagina");
-    if (["/", "/catalogo", "/favoritos"].includes(ruta)) {
+    const conLogo = ["/", "/catalogo", "/favoritos"].includes(ruta) || ruta.startsWith("/obra/");
+    if (conLogo) {
       // En las pestañas principales se muestra siempre el logotipo (claro u oscuro según el tema);
       // en el inicio el h1 accesible ya existe en la vista, y en las otras dos el nombre de la pestaña
       // va a la derecha, antes del icono de filtros.
@@ -820,10 +821,11 @@
       tit.firstChild.addEventListener("click", (ev) => {
         if (rutaActual().ruta === "/") { ev.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }
       });
-      pag.hidden = ruta === "/";
-      pag.textContent = ruta === "/" ? "" : titulo;
+      const sinNombre = ruta === "/" || ruta.startsWith("/obra/");   // en la ficha: flecha + logo, sin nombre de pestaña
+      pag.hidden = sinNombre;
+      pag.textContent = sinNombre ? "" : titulo;
     } else {
-      tit.textContent = ruta.startsWith("/obra/") ? "" : titulo;
+      tit.textContent = titulo;
       pag.hidden = true; pag.textContent = "";
     }
     document.title = doc;
