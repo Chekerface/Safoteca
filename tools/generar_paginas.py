@@ -197,13 +197,11 @@ COLECCIONES = [
      "titulo_html": "Series y películas con representación <em>trans</em>",
      "antetitulo": "20 de noviembre · Día de la Memoria Trans",
      "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
-     "nota": "Apoyamos a nuestras hermanas trans y estamos encantadas de que formen parte de nuestro catálogo, en todas las series "
-             "y películas con representación lésbica y bisexual. Lamentamos que solo haya dos series en las que el personaje trans "
-             "sea, además, sáfico: Sense8 y Euphoria.",
+     "nota": "Solo dos series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8 y Euphoria.",
      "cifra": lambda todas, sel: (len(sel), "series y películas de nuestro catálogo tienen representación trans."),
      "dato": lambda todas, sel: ("Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en "
-                                 "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos. "
-                                 "Queríamos que lo supierais."),
+                                 "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos."),
+     "proponer": True,   # «¿Echas en falta alguna serie o película? Añádela» → formulario de la web
      "titulo_dest": "Personajes trans y sáficos",
      "destacadas": ["Sense8", "Euphoria"],
      "filtro": lambda o: "Trans" in (o.get("tematicas") or [])},
@@ -409,6 +407,9 @@ def coleccion(c, obras, noindex):
                  f'<span class="m" style="width:{100 * mal / tot:.1f}%"></span></div><p class="ley-b">lila: {et_b} · negro: {et_m}</p>')
     grafico = _grafico_anios(obras) if c.get("grafico_anios") else (c["grafico"](obras) if c.get("grafico") else "")
     dato = f'<p class="dato">{e(c["dato"](obras, sel))}</p>' if c.get("dato") else ""
+    if c.get("proponer"):
+        dato += ('<p class="pide">¿Echas en falta alguna serie o película? '
+                 '<a href="../#/proponer">Añádela <span aria-hidden="true">→</span></a></p>')
     desc = recorta(f'{c["titulo"]}: {len(sel)} títulos en La Safoteca, el catálogo gratuito con avisos de contenido. {c["intro"]}')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": c["titulo"], "numberOfItems": len(sel),
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/obra/{o['id']}/", "name": o["titulo"]}
@@ -479,6 +480,7 @@ ESTILO_COLECCION = """<style>
 .col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
 .mas a{color:var(--suave)}
 .nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
+.pide{margin:16px 0 0;font:16px var(--serif)} .pide a{color:var(--tinta);font-weight:700}
 .cab .ante{font:12px var(--mono);letter-spacing:.06em;color:var(--claro);margin:18px 0 -8px}
 .fijada{display:block;font:11px var(--mono);color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
 .col.fija p{margin:0 0 10px;color:var(--suave)}
