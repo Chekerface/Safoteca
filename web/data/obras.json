@@ -1,6 +1,6 @@
 {
  "meta": {
-  "generado": "2026-11-20T15:23:22+00:00",
+  "generado": "2026-11-20T15:34:17+00:00",
   "total": 325
  },
  "obras": [
@@ -21436,6 +21436,7 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2015-06-05",
    "rel": [
+    186,
     104,
     89,
     47,
@@ -21454,7 +21455,6 @@
     71,
     236,
     50,
-    48,
     46
    ]
   },
@@ -24270,6 +24270,7 @@
     "Errol Sack",
     "Haven Everly",
     "Jacqueline Toboni",
+    "Jamie Clayton",
     "Jennifer Beals",
     "Katherine Moennig",
     "Leisha Hailey",
@@ -24300,9 +24301,9 @@
    "fecha": "2019-12-08",
    "rel": [
     185,
+    87,
     75,
     380,
-    87,
     399,
     480,
     103,
