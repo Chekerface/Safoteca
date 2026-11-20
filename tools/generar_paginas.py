@@ -192,6 +192,19 @@ def _avisos(o):
 SLM = "Síndrome de la lesbiana muerta"
 
 COLECCIONES = [
+    {"slug": "series-y-peliculas-con-representacion-trans",
+     "titulo": "Series y películas con representación trans",
+     "titulo_html": "Series y películas con representación <em>trans</em>",
+     "antetitulo": "20 de noviembre · Día de la Memoria Trans",
+     "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
+     "nota": "Solo dos series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8 y Euphoria.",
+     "cifra": lambda todas, sel: (len(sel), "series y películas de nuestro catálogo tienen representación trans."),
+     "dato": lambda todas, sel: ("Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en "
+                                 "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos."),
+     "proponer": True,   # «¿Echas en falta alguna serie o película? Añádela» → formulario de la web
+     "titulo_dest": "Personajes trans y sáficos",
+     "destacadas": ["Sense8", "Euphoria"],
+     "filtro": lambda o: "Trans" in (o.get("tematicas") or [])},
     {"slug": "series-lesbicas-final-feliz",
      "titulo": "Series lésbicas y bisexuales con final feliz",
      "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
@@ -227,6 +240,32 @@ COLECCIONES = [
      "grafico_anios": True,
      # sin el aviso (una película sin ningún aviso está revisada: no tiene nada que avisar)
      "filtro": lambda o: o["tipo"] == "pelicula" and SLM not in _avisos(o)},
+    {"slug": "peliculas-lesbicas-filmin",
+     "titulo": "Películas lésbicas y bisexuales en Filmin",
+     "titulo_html": "Películas lésbicas y bisexuales en <em>Filmin</em>",
+     "intro": "Películas de nuestro catálogo que puedes ver en Filmin en España.",
+     "nota": "Filmin es donde más cine sáfico de autor encontramos: películas pequeñas, europeas y asiáticas que en otras plataformas no están. Estas son las nuestras.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Filmin."),
+     "grafico": lambda todas: _grafico_plataformas(todas, "Filmin"),
+     "dato": lambda todas, sel: (f"{sum(1 for o in sel if o.get('relevancia') == 'A')} de ellas tienen a las protagonistas en el centro de la historia (nivel A)."),
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["Bottoms", "Blue Gate Crossing", "Tove", "Shiva Baby", "Violette"],
+     "catalogo": "?tipo=pelicula&plat=Filmin",   # el botón «Abrir» llega al catálogo ya filtrado
+     "filtro": lambda o: o["tipo"] == "pelicula" and FILMIN(o)},
+    {"slug": "peliculas-lesbicas-prime-video",
+     "titulo": "Películas lésbicas y bisexuales en Prime Video",
+     "titulo_html": "Películas lésbicas y bisexuales en <em>Prime Video</em>",
+     "intro": "Películas de nuestro catálogo que puedes ver en Prime Video en España.",
+     "nota": "El cine sáfico de Prime son películas muy famosas y muy clásicas para nosotras: marcaron un antes y un después en la comunidad.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Prime Video."),
+     "grafico": lambda todas: _grafico_plataformas(todas, "Prime Video"),
+     "dato": lambda todas, sel: (f"{sum(1 for o in sel if (o.get('anio') or 9999) < 2010)} se estrenaron antes de 2010: los clásicos con los que crecimos."),
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["Bound", "Habitación en Roma", "Fucking Åmål", "D.E.B.S", "Saving Face"],
+     "nota_dest": "Las dos últimas, D.E.B.S. y Guardando las apariencias (Saving Face), solo están para comprar o alquilar, "
+                  "pero son tan importantes para nosotras que las recomendamos encarecidamente.",
+     "catalogo": "?tipo=pelicula&plat=Prime%20Video",
+     "filtro": lambda o: o["tipo"] == "pelicula" and PRIME_ES(o)},
 ]
 
 
@@ -251,17 +290,22 @@ def _grafico_anios(todas):
 <figcaption><span class="ley t"></span>películas del catálogo por año <span class="ley s"></span>con el síndrome de la lesbiana muerta</figcaption></figure>"""
 
 
-def _barras(filas, aria, unidad=""):
-    """Barras horizontales en SVG sin JavaScript. filas = [(etiqueta, valor, texto_valor)]."""
+def _barras(filas, aria, unidad="", resaltar=None):
+    """Barras horizontales en SVG sin JavaScript. filas = [(etiqueta, valor, texto_valor)].
+    Con «resaltar», esa fila va en lila y las demás apagadas; una fila con valor None es «…» (sin barra)."""
     W, alto, iz = 340, 26, 86
-    top = max(v for _, v, _ in filas) or 1
+    top = max(v for _, v, _ in filas if v is not None) or 1
     H = alto * len(filas) + 4
     cuerpo = ""
     for n, (et, v, txt) in enumerate(filas):
         y = n * alto + 4
+        if v is None:
+            cuerpo += f'<text x="{iz - 8}" y="{y + 15}" text-anchor="end">{et}</text>'
+            continue
         ancho = max(2, (W - iz - 44) * v / top)
+        clase = "t-b" if resaltar is None or et == resaltar else "t-b apag"
         cuerpo += (f'<text x="{iz - 8}" y="{y + 15}" text-anchor="end">{et}</text>'
-                   f'<rect x="{iz}" y="{y + 3}" width="{ancho:.1f}" height="16" rx="3" class="t-b"/>'
+                   f'<rect x="{iz}" y="{y + 3}" width="{ancho:.1f}" height="16" rx="3" class="{clase}"/>'
                    f'<text x="{iz + ancho + 6:.1f}" y="{y + 15}" class="v">{txt}</text>')
     return f'<svg viewBox="0 0 {W} {H}" role="img" aria-label="{e(aria)}">{cuerpo}</svg>'
 
@@ -290,6 +334,31 @@ def _grafico_tailandesas(todas):
     return f'<figure class="anios">{svg}<figcaption>series tailandesas del catálogo por año de estreno</figcaption></figure>'
 
 
+FILMIN = lambda o: any("filmin" in (p.get("n", "") + p.get("u", "")).lower() for p in o.get("plataformas") or [])
+
+
+PRIME_ES = lambda o: any(p.get("n") == "Prime Video" and p.get("p") in ("ES", "INT") for p in o.get("plataformas") or [])
+
+
+def _grafico_plataformas(todas, plataforma):
+    """Películas del catálogo que se pueden ver en España, por plataforma: las 6 con más, con la de la colección
+    resaltada. Si la de la colección no está entre las 6, se ven las 5 primeras, «…» y la de la colección."""
+    pelis = [o for o in todas if o["tipo"] == "pelicula"]
+    cuenta = {}
+    for o in pelis:
+        for n in {p.get("n") for p in o.get("plataformas") or [] if p.get("n") and p.get("n") != "Otras" and p.get("p") in ("ES", "INT", None, "")}:
+            cuenta[n] = cuenta.get(n, 0) + 1
+    orden = sorted(cuenta.items(), key=lambda x: -x[1])
+    if not orden:
+        return ""
+    filas = [(n, v, str(v)) for n, v in orden[:6]]
+    if plataforma in cuenta and plataforma not in [n for n, _, _ in filas]:
+        filas = filas[:5] + [("…", None, "")] + [(plataforma, cuenta[plataforma], str(cuenta[plataforma]))]
+    svg = _barras(filas, "Películas del catálogo que se pueden ver en España, por plataforma: " +
+                  ", ".join(f"{n}: {v}" for n, v, _ in filas if v is not None), resaltar=plataforma)
+    return f'<figure class="anios">{svg}<figcaption>películas del catálogo que se pueden ver en España, por plataforma</figcaption></figure>'
+
+
 def _poster(o, ancho=300):
     return f'../img/{o["poster"]}_{ancho}.webp' if o.get("poster") else ""
 
@@ -297,7 +366,7 @@ def _poster(o, ancho=300):
 def coleccion(c, obras, noindex):
     # Las tarjetas abren la ficha de la web (#/obra/ID). Los buscadores siguen llegando a las páginas por obra
     # por el sitemap, el índice /obras/ y los datos estructurados de esta página.
-    sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
+    sel = sorted((o for o in obras if c["filtro"](o) or o["id"] in c.get("incluir", ())), key=lambda o: o["titulo"].casefold())
     REL = {"A": 3, "B": 2, "C": 1}
     if c.get("destacadas"):
         por_titulo = {k: o for o in sel for k in (o["titulo"], o.get("titulo_original"))}
@@ -338,6 +407,9 @@ def coleccion(c, obras, noindex):
                  f'<span class="m" style="width:{100 * mal / tot:.1f}%"></span></div><p class="ley-b">lila: {et_b} · negro: {et_m}</p>')
     grafico = _grafico_anios(obras) if c.get("grafico_anios") else (c["grafico"](obras) if c.get("grafico") else "")
     dato = f'<p class="dato">{e(c["dato"](obras, sel))}</p>' if c.get("dato") else ""
+    if c.get("proponer"):
+        dato += ('<p class="pide">¿Echas en falta alguna serie o película? '
+                 '<a href="../#/proponer">Añádela <span aria-hidden="true">→</span></a></p>')
     desc = recorta(f'{c["titulo"]}: {len(sel)} títulos en La Safoteca, el catálogo gratuito con avisos de contenido. {c["intro"]}')
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": c["titulo"], "numberOfItems": len(sel),
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{DOMINIO}/obra/{o['id']}/", "name": o["titulo"]}
@@ -365,7 +437,8 @@ def coleccion(c, obras, noindex):
 </head>
 <body>
 <header class="cab">
-  <a class="marca" href="../"><img class="t-norm" src="../marca/logo-horizontal-oscuro.svg" alt="La Safoteca" width="86" height="44"><img class="t-nav" src="../img/tema/logo-navidad-oscuro.webp" alt="La Safoteca" height="44" loading="lazy"><span>fragmentos</span></a>
+  {cabecera_fragmentos()}
+  {'<p class="ante">' + e(c["antetitulo"]) + '</p>' if c.get("antetitulo") else ''}
   <h1>{c["titulo_html"]}</h1>
   <p>{e(c["intro"])}</p>
 </header>
@@ -376,12 +449,14 @@ def coleccion(c, obras, noindex):
 {grafico}
 {dato}
 {'<h2>' + e(c.get("titulo_dest", "Para empezar esta noche")) + '</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
+{'<p class="nota-dest">' + e(c["nota_dest"]) + '</p>' if c.get("nota_dest") and destacadas else ''}
 {'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
 <ul class="lista">{items}</ul>
+{redes()}
 <p class="todas"><a href="../obras/">Todas las series y películas</a></p>
 </main>
 <div class="cta"><div><b>Ábrelas en el catálogo</b><small>filtra por plataforma y esconde lo que no quieras ver</small></div>
-<a href="../#/catalogo">Abrir <span aria-hidden="true">→</span></a></div>
+<a href="../#/catalogo{e(c.get("catalogo", ""))}">Abrir <span aria-hidden="true">→</span></a></div>
 </body>
 </html>
 """
@@ -396,6 +471,26 @@ ESTILO_COLECCION = """<style>
 .cab{background:var(--negro);color:#f3eef9;padding:18px 18px 34px}
 .cab .marca{display:inline-flex;align-items:flex-end;gap:10px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
 .cab .marca img{height:44px;width:auto} .cab .marca span{padding-bottom:4px;border-left:1px solid #4a3f5c;padding-left:10px}
+.cab-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.sel{display:flex;gap:16px;font:14px var(--sans)} .sel a{color:#8f84a3;text-decoration:none;padding:6px 0}
+.sel a[aria-current]{color:#f3eef9}
+.cols{display:grid;gap:22px;margin:26px 0 0}
+.col{display:block;color:inherit;text-decoration:none;background:var(--sup);border:1px solid var(--linea);border-radius:10px;padding:16px 16px 14px}
+.col h2{font:400 24px/1.15 var(--serif);margin:0 0 14px} .col h2 em{color:var(--lila)}
+.col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
+.mas a{color:var(--suave)}
+.nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
+.pide{margin:16px 0 0;font:16px var(--serif)} .pide a{color:var(--tinta);font-weight:700}
+.cab .ante{font:12px var(--mono);letter-spacing:.06em;color:var(--claro);margin:18px 0 -8px}
+.fijada{display:block;font:11px var(--mono);color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
+.col.fija p{margin:0 0 10px;color:var(--suave)}
+.art h2{margin:34px 0 10px} .art p{margin:12px 0 0;font-size:17px;line-height:1.65} .art a{color:var(--tinta)}
+.art .img{margin:26px 0 0} .art .img img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--linea)}
+.boton-art{display:inline-block;background:var(--lila);color:#1d1726!important;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px;margin-top:6px}
+.redes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font:14px var(--sans);margin:18px 0 0}
+.redes span{font:12px var(--mono);color:var(--suave)} .cab .redes span{color:#8f84a3}
+.redes a{display:inline-flex;align-items:center;gap:6px;color:var(--tinta);text-decoration:none} .cab .redes a{color:#f3eef9}
+main .redes{margin:28px 0 0}
 .cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
 .cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
 main{max-width:760px;margin:0 auto;padding:0 16px 120px}
@@ -409,7 +504,7 @@ main{max-width:760px;margin:0 auto;padding:0 16px 120px}
 .anios .g{stroke:var(--linea)} .anios .a{fill:var(--lila);opacity:.14;stroke:none} .anios .t{fill:none;stroke:var(--lila);stroke-width:2}
 .anios .s{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-dasharray:4 3} .anios .m{fill:var(--tinta)}
 .anios figcaption{font:11px var(--mono);color:var(--suave);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
-.anios .t-b{fill:var(--lila)} .anios .v{fill:var(--tinta)}
+.anios .t-b{fill:var(--lila)} .anios .apag{opacity:.35} .anios .v{fill:var(--tinta)}
 .dato{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--lila);background:var(--sup);font:15px var(--serif)}
 .ley{display:inline-block;width:14px;height:0;border-top:2px solid var(--lila)} .ley.s{border-top:2px dashed var(--tinta)}
 h2{font:400 22px var(--serif);margin:30px 0 12px}
@@ -452,6 +547,144 @@ ul.tarjetas a{font-weight:700} ul.tarjetas p{margin:4px 0 0;color:var(--suave-t)
 </style>"""
 
 
+
+def cabecera_fragmentos():
+    """Logotipo (lleva al catálogo) y el selector «Catálogo · Fragmentos» de la parte de arriba (F1, F2)."""
+    return ('<div class="cab-top"><a class="marca" href="../"><img class="t-norm" src="../marca/logo-horizontal-oscuro.svg" '
+            'alt="La Safoteca" width="86" height="44"><img class="t-nav" src="../img/tema/logo-navidad-oscuro.webp" alt="La Safoteca" '
+            'height="44" loading="lazy"></a><nav class="sel" aria-label="Secciones"><a href="../">Catálogo</a>'
+            '<a href="../fragmentos/" aria-current="page">Fragmentos</a></nav></div>')
+
+
+def redes():
+    """Enlaces para seguir a La Safoteca (F1 y F2). Iconos genéricos dibujados aquí, no los logotipos de las marcas."""
+    ico = ('<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
+           'stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"/></svg>')
+    return ('<p class="redes"><span>Síguenos</span>'
+            f'<a href="https://www.instagram.com/lasafoteca/" rel="me noopener" target="_blank">{ico}Instagram</a>'
+            f'<a href="https://www.tiktok.com/@lasafoteca" rel="me noopener" target="_blank">{ico}TikTok</a></p>')
+
+
+def quienes_somos(obras, noindex):
+    """F2 fijada · «Quiénes somos»: de dónde sale La Safoteca y quiénes la hacen. Siempre lleva de vuelta al catálogo."""
+    pelis = [o for o in obras if o["tipo"] == "pelicula"]
+    vivas = sum(1 for o in pelis if SLM not in _avisos(o))
+    ns = sum(1 for o in obras if o["tipo"] == "serie")
+    desc = ("Quiénes somos: La Safoteca nació en 2021 en Córdoba para encontrar series y películas sáficas sin malos tragos. "
+            "Un archivo colaborativo con avisos de contenido.")
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiénes somos · La Safoteca</title>
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/quienes-somos/">
+<meta property="og:title" content="Quiénes somos · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{DOMINIO}/quienes-somos/">
+<meta property="og:image" content="{DOMINIO}/img/fragmentos/logo-lema.webp">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#1d1726">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+{ESTILO_COLECCION}
+{tema_head("../")}
+</head>
+<body>
+<header class="cab">
+  {cabecera_fragmentos()}
+  <h1>Quiénes <em>somos</em></h1>
+  <p>Nuestra carta de presentación</p>
+</header>
+<main class="art">
+<figure class="img"><img src="../img/fragmentos/logo-lema.webp" alt="Logotipo de La Safoteca con el lema: Archivo colaborativo de contenido audiovisual con representación sáfica. Toma el poder y filtra el contenido que no quieras ver." width="800" height="518"></figure>
+
+<h2>Cómo empezó</h2>
+<p>La Safoteca nació en 2021 de la mano de dos amigas de Córdoba (España) que habían crecido con miedo a darle al play. En muchas películas, sobre todo en las clásicas, la chica que se parecía a nosotras acababa muerta, sufriendo abusos o con un final que parecía decirte: «si eres así, no vas a acabar bien».</p>
+
+<h2>Por qué todavía hace falta</h2>
+<p>La representación mejora cada año: hay más, es mejor y hay que aguantar menos drama. Ya no hace falta que nos muramos o que suframos abusos para salir en una película. Aun así, creemos que siguen haciendo falta catálogos como este.</p>
+<div class="cifra"><span class="num">{vivas}</span><span>de nuestras {len(pelis)} películas no caen en el síndrome de la lesbiana muerta.</span></div>
+{_grafico_anios(obras)}
+<p>Queremos que La Safoteca te sirva para descubrir series y películas a las que dar una oportunidad, y también para ahorrarte esos malos tragos que tantas veces hemos tenido que pasar. Por eso cada ficha tiene <b>avisos de contenido</b>, ocultos para no destripar nada, y puedes elegir qué no quieres ver: esas obras desaparecen del catálogo.</p>
+<p><a class="boton-art" href="../#/catalogo">Explorar las {ns} series y {len(pelis)} películas →</a></p>
+
+<h2>Quiénes la hacemos</h2>
+<p>La idea fue de una de las fundadoras. Muy sensible con estas historias, juntó sus ganas de encontrar películas que la hicieran sentir bien con su pasión por las bases de datos y los años que llevaba participando en foros de yuri y de series. Hoy es quien se encarga de toda la parte informática y de la organización del catálogo.</p>
+<p>La otra fundadora es una enamorada de las series y del cine; ahora mismo no para de ver series tailandesas, y estamos encantadas de que de Tailandia lleguen cada vez más historias y un montón de comedias románticas. Sin ella esta base de datos habría sido imposible: la mayoría de las series y películas las ha añadido ella.</p>
+<p>Al principio formó parte del equipo <a href="https://www.vanesafigal.com/home">Vanesa Figal</a>, autora de cómic, que diseñó nuestro logo y a quien estaremos siempre agradecidas. Sus cómics siempre tienen representación sáfica, así que os recomendamos cualquiera de sus obras. En 2021 colaboraron también otras chicas añadiendo series, películas, libros y cómics.</p>
+<p>Hoy seguimos las dos fundadoras, aunque ya no las dos en Córdoba: una vive en Torremolinos y la otra sigue en Córdoba. Y el equipo ha crecido: tenemos una especialista en series tailandesas y una especialista en redes sociales que se encarga de la parte gráfica de Instagram.</p>
+
+<h2>Una pausa y una vuelta</h2>
+<p>En 2022 tuvimos que dejar el proyecto en pausa: la vida no nos dejaba tiempo para mantener la web, y tal como estaba montada tampoco era eficiente. En 2026 hemos vuelto. Las nuevas herramientas, como la IA para escribir código, y que GitHub permita alojar gratis una web de hasta 1 GB (La Safoteca pesa mucho menos) nos permiten tener una web sencilla y sostenible, que esperamos que nos dure mucho tiempo. Todo el código está a la vista en <a href="https://github.com/Chekerface/Safoteca">nuestro repositorio de GitHub</a>, por si quieres ver cómo está hecho.</p>
+<p>Usamos la IA para programar, pero nunca para el diseño: el logo y todo lo gráfico están hechos con cariño y mimo, a mano.</p>
+
+<h2>Gracias</h2>
+<p>Gracias a todas las que nos habéis apoyado para volver y para mejorar lo que hacemos. La Safoteca mejora con cada cambio gracias a vosotras.</p>
+<figure class="img"><img src="../img/fragmentos/tarjeta.webp" alt="Nuestra tarjeta: Registra series y películas. Construye comunidad. lasafoteca@gmail.com, @lasafoteca, www.lasafoteca.com y un código QR a la web." width="800" height="518" loading="lazy"></figure>
+<p>Escríbenos a <a href="mailto:lasafoteca@gmail.com">lasafoteca@gmail.com</a>.</p>
+{redes()}
+<p class="todas"><a href="../fragmentos/">Fragmentos</a> · <a href="../obras/">Todas las series y películas</a></p>
+</main>
+<div class="cta"><div><b>Entra en el catálogo</b><small>series y películas sáficas, con avisos para que elijas qué ver</small></div>
+<a href="../#/">Abrir <span aria-hidden="true">→</span></a></div>
+</body>
+</html>
+"""
+
+
+def portada_fragmentos(obras, noindex):
+    """F1 · Página de entrada de Fragmentos: qué es y una tarjeta por colección (título y cita del equipo)."""
+    tarjetas = []
+    for c in COLECCIONES:
+        sel = [o for o in obras if c["filtro"](o) or o["id"] in c.get("incluir", ())]
+        ns = sum(1 for o in sel if o["tipo"] == "serie")
+        que = (f"{ns} series" if ns == len(sel) else f"{len(sel)} películas" if ns == 0 else f"{len(sel)} obras")
+        tarjetas.append(f'''<a class="col" href="../{c["slug"]}/"><h2>{c["titulo_html"]}</h2>
+<div class="nota"><p>«{e(c["nota"])}»</p><cite>— el equipo de La Safoteca</cite></div>
+<span class="n">{que} →</span></a>''')
+    desc = ("Fragmentos de La Safoteca: opiniones, recomendaciones y noticias del equipo sobre series y películas "
+            "lésbicas y bisexuales.")
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fragmentos · La Safoteca</title>
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/fragmentos/">
+<meta property="og:title" content="Fragmentos · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{DOMINIO}/fragmentos/">
+<meta property="og:image" content="{DOMINIO}/icons/icon-512.png">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#1d1726">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+{ESTILO_COLECCION}
+{tema_head("../")}
+</head>
+<body>
+<header class="cab">
+  {cabecera_fragmentos()}
+  <h1>Fragmentos</h1>
+  <p>Aquí iremos dejando nuestras opiniones, recomendaciones y noticias. Es nuestra forma de que nos conozcáis un poco más.</p>
+  {redes()}
+</header>
+<main>
+<div class="cols">
+<a class="col fija" href="../quienes-somos/"><span class="fijada">Fijado</span><h2>Quiénes <em>somos</em></h2>
+<p>Cómo nació La Safoteca, por qué todavía hace falta y quiénes la hacemos.</p><span class="n">Leer →</span></a>
+{"".join(tarjetas)}
+</div>
+<p class="mas"><a href="../obras/">Todas las series y películas</a> · <a href="../">Ir al catálogo</a></p>
+</main>
+</body>
+</html>
+"""
+
+
 def indice(obras, noindex):
     """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
     def lista(tipo):
@@ -489,7 +722,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 <main>
 <h1>Todas las series y películas</h1>
 <p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
-<h2>Colecciones</h2><ul>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
+<h2><a href="../fragmentos/">Fragmentos</a>: colecciones del equipo</h2><ul><li><a href="../quienes-somos/">Quiénes somos</a></li>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
 <h2>Series ({ns})</h2><ul>{series}</ul>
 <h2>Películas ({np_})</h2><ul>{pelis}</ul>
 </main>
@@ -517,12 +750,19 @@ def main():
     for c in COLECCIONES:
         (web / c["slug"]).mkdir(exist_ok=True)
         (web / c["slug"] / "index.html").write_text(coleccion(c, datos["obras"], a.noindex), encoding="utf-8")
-        print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o))} obras")
+        print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o) or o['id'] in c.get('incluir', ()))} obras")
+    (web / "quienes-somos").mkdir(exist_ok=True)
+    (web / "quienes-somos" / "index.html").write_text(quienes_somos(datos["obras"], a.noindex), encoding="utf-8")
+    (web / "fragmentos").mkdir(exist_ok=True)
+    (web / "fragmentos" / "index.html").write_text(portada_fragmentos(datos["obras"], a.noindex), encoding="utf-8")
+    print(f"Portada de Fragmentos: {web / 'fragmentos' / 'index.html'}")
     print(f"Índice de obras: {web / 'obras' / 'index.html'}")
     if a.sitemap:
         sm = Path(a.sitemap)
         txt = sm.read_text(encoding="utf-8")
         filas = f"  <url><loc>{DOMINIO}/obras/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += f"  <url><loc>{DOMINIO}/fragmentos/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += f"  <url><loc>{DOMINIO}/quienes-somos/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
         filas += "".join(f"  <url><loc>{DOMINIO}/{c['slug']}/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n" for c in COLECCIONES)
         filas += "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
                         for o in datos["obras"])
