@@ -592,6 +592,7 @@ def quienes_somos(obras, noindex):
 <p><a class="boton-art" href="../#/catalogo">Explorar las {ns} series y {len(pelis)} películas →</a></p>
 
 <h2>Quiénes la hacemos</h2>
+<p>La idea fue de una de las fundadoras. Muy sensible con estas historias, juntó sus ganas de encontrar películas que la hicieran sentir bien con su pasión por las bases de datos y los años que llevaba participando en foros de yuri y de series. Hoy es quien se encarga de toda la parte informática y de la organización del catálogo.</p>
 <p>La otra fundadora es una enamorada de las series y del cine; ahora mismo no para de ver series tailandesas, y estamos encantadas de que de Tailandia lleguen cada vez más historias y un montón de comedias románticas. Sin ella esta base de datos habría sido imposible: la mayoría de las series y películas las ha añadido ella.</p>
 <p>Al principio formó parte del equipo <a href="https://www.vanesafigal.com/home">Vanesa Figal</a>, autora de cómic, que diseñó nuestro logo y a quien estaremos siempre agradecidas. Sus cómics siempre tienen representación sáfica, así que os recomendamos cualquiera de sus obras. En 2021 colaboraron también otras chicas añadiendo series, películas, libros y cómics.</p>
 <p>Hoy seguimos las dos fundadoras, aunque ya no las dos en Córdoba: una vive en Torremolinos y la otra sigue en Córdoba. Y el equipo ha crecido: tenemos una especialista en series tailandesas y una especialista en redes sociales que se encarga de la parte gráfica de Instagram.</p>
