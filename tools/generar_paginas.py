@@ -463,6 +463,11 @@ ESTILO_COLECCION = """<style>
 .col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
 .mas a{color:var(--suave)}
 .nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
+.fijada{display:block;font:11px var(--mono);color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
+.col.fija p{margin:0 0 10px;color:var(--suave)}
+.art h2{margin:34px 0 10px} .art p{margin:12px 0 0;font-size:17px;line-height:1.65} .art a{color:var(--tinta)}
+.art .img{margin:26px 0 0} .art .img img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--linea)}
+.boton-art{display:inline-block;background:var(--lila);color:#1d1726!important;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px;margin-top:6px}
 .redes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font:14px var(--sans);margin:18px 0 0}
 .redes span{font:12px var(--mono);color:var(--suave)} .cab .redes span{color:#8f84a3}
 .redes a{display:inline-flex;align-items:center;gap:6px;color:var(--tinta);text-decoration:none} .cab .redes a{color:#f3eef9}
@@ -541,6 +546,75 @@ def redes():
             f'<a href="https://www.tiktok.com/@lasafoteca" rel="me noopener" target="_blank">{ico}TikTok</a></p>')
 
 
+def quienes_somos(obras, noindex):
+    """F2 fijada · «Quiénes somos»: de dónde sale La Safoteca y quiénes la hacen. Siempre lleva de vuelta al catálogo."""
+    pelis = [o for o in obras if o["tipo"] == "pelicula"]
+    vivas = sum(1 for o in pelis if SLM not in _avisos(o))
+    ns = sum(1 for o in obras if o["tipo"] == "serie")
+    desc = ("Quiénes somos: La Safoteca nació en 2021 en Córdoba para encontrar series y películas sáficas sin malos tragos. "
+            "Un archivo colaborativo con avisos de contenido.")
+    return f"""<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quiénes somos · La Safoteca</title>
+<meta name="description" content="{e(desc)}">
+{'<meta name="robots" content="noindex, nofollow">' if noindex else ''}
+<link rel="canonical" href="{DOMINIO}/quienes-somos/">
+<meta property="og:title" content="Quiénes somos · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:url" content="{DOMINIO}/quienes-somos/">
+<meta property="og:image" content="{DOMINIO}/img/fragmentos/logo-lema.webp">
+<meta property="og:locale" content="es_ES">
+<meta name="theme-color" content="#1d1726">
+<link rel="icon" href="../marca/buholira.svg" type="image/svg+xml">
+{ESTILO_COLECCION}
+{tema_head("../")}
+</head>
+<body>
+<header class="cab">
+  {cabecera_fragmentos()}
+  <h1>Quiénes <em>somos</em></h1>
+  <p>Un archivo colaborativo de series y películas con representación sáfica. Toma el poder y filtra el contenido que no quieras ver.</p>
+</header>
+<main class="art">
+<figure class="img"><img src="../img/fragmentos/logo-lema.webp" alt="Logotipo de La Safoteca con el lema: Archivo colaborativo de contenido audiovisual con representación sáfica. Toma el poder y filtra el contenido que no quieras ver." width="800" height="518"></figure>
+
+<h2>Cómo empezó</h2>
+<p>La Safoteca nació en 2021 de la mano de dos amigas de Córdoba que habían crecido con miedo a darle al play. En muchas películas, sobre todo en las clásicas, la chica que se parecía a nosotras acababa muerta, sufriendo abusos o con un final que parecía decirte: «si eres así, no vas a acabar bien».</p>
+<p>Una de ellas, bastante sensible con estas historias, juntó ese deseo de encontrar películas que la hicieran sentir bien consigo misma con su otra pasión: las bases de datos. Trabaja administrándolas, y no hay nada que le guste más que organizar, registrar y archivar todo lo que pueda. Además, había pasado años en foros de yuri y de series, así que su mayor deseo era construir algo que devolver a la comunidad: que otras chicas pudieran encontrar lo que a ella tanto le faltó.</p>
+
+<h2>Por qué todavía hace falta</h2>
+<p>La representación mejora cada año: hay más, es mejor y hay que aguantar menos drama. Ya no hace falta que nos muramos o que suframos abusos para salir en una película. Aun así, creemos que siguen haciendo falta catálogos como este.</p>
+<div class="cifra"><span class="num">{vivas}</span><span>de nuestras {len(pelis)} películas no caen en el síndrome de la lesbiana muerta.</span></div>
+{_grafico_anios(obras)}
+<p>Queremos que La Safoteca te sirva para descubrir series y películas a las que dar una oportunidad, y también para ahorrarte esos malos tragos que tantas veces hemos tenido que pasar. Por eso cada ficha tiene <b>avisos de contenido</b>, ocultos para no destripar nada, y puedes elegir qué no quieres ver: esas obras desaparecen del catálogo.</p>
+<p><a class="boton-art" href="../#/catalogo">Explorar las {ns} series y {len(pelis)} películas →</a></p>
+
+<h2>Quiénes la hacemos</h2>
+<p>La otra fundadora es una enamorada de las series y del cine; ahora mismo no para de ver series tailandesas, y estamos encantadas de que de Tailandia lleguen cada vez más historias y un montón de comedias románticas. Sin ella esta base de datos habría sido imposible: la mayoría de las series y películas las ha añadido ella.</p>
+<p>Al principio formó parte del equipo Vanessa Figal, autora de cómic, que diseñó nuestro logo y a quien estaremos siempre agradecidas. Sus cómics siempre tienen representación sáfica, así que os recomendamos cualquiera de sus obras. En 2021 colaboraron también otras chicas añadiendo series, películas, libros y cómics.</p>
+<p>Hoy seguimos las dos fundadoras, aunque ya no las dos en Córdoba: una vive en Torremolinos y la otra sigue en Córdoba. Y el equipo ha crecido: tenemos una especialista en series tailandesas y una especialista en redes sociales que se encarga de la parte gráfica de Instagram.</p>
+
+<h2>Una pausa y una vuelta</h2>
+<p>En 2022 tuvimos que dejar el proyecto en pausa: la vida no nos dejaba tiempo para mantener la web, y tal como estaba montada tampoco era eficiente. En 2026 hemos vuelto. Las nuevas herramientas, como la IA para escribir código, y que GitHub permita alojar gratis una web de hasta 1 GB (La Safoteca pesa mucho menos) nos permiten tener una web sencilla y sostenible, que esperamos que nos dure mucho tiempo. Todo el código está a la vista en <a href="https://github.com/Chekerface/Safoteca">nuestro repositorio de GitHub</a>, por si quieres ver cómo está hecho.</p>
+<p>Usamos la IA para programar, pero nunca para el diseño: el logo y todo lo gráfico están hechos con cariño y mimo, a mano.</p>
+
+<h2>Gracias</h2>
+<p>Gracias a todas las que nos habéis apoyado para volver y para mejorar lo que hacemos. La Safoteca mejora con cada cambio gracias a vosotras.</p>
+<figure class="img"><img src="../img/fragmentos/tarjeta.webp" alt="Nuestra tarjeta: Registra series y películas. Construye comunidad. lasafoteca@gmail.com, @lasafoteca, www.lasafoteca.com y un código QR a la web." width="800" height="518" loading="lazy"></figure>
+<p>Escríbenos a <a href="mailto:lasafoteca@gmail.com">lasafoteca@gmail.com</a>.</p>
+{redes()}
+<p class="todas"><a href="../fragmentos/">Fragmentos</a> · <a href="../obras/">Todas las series y películas</a></p>
+</main>
+<div class="cta"><div><b>Entra en el catálogo</b><small>series y películas sáficas, con avisos para que elijas qué ver</small></div>
+<a href="../#/">Abrir <span aria-hidden="true">→</span></a></div>
+</body>
+</html>
+"""
+
+
 def portada_fragmentos(obras, noindex):
     """F1 · Página de entrada de Fragmentos: qué es y una tarjeta por colección (título y cita del equipo)."""
     tarjetas = []
@@ -581,6 +655,8 @@ def portada_fragmentos(obras, noindex):
 </header>
 <main>
 <div class="cols">
+<a class="col fija" href="../quienes-somos/"><span class="fijada">Fijado</span><h2>Quiénes <em>somos</em></h2>
+<p>Cómo nació La Safoteca, por qué todavía hace falta y quiénes la hacemos.</p><span class="n">Leer →</span></a>
 {"".join(tarjetas)}
 </div>
 <p class="mas"><a href="../obras/">Todas las series y películas</a> · <a href="../">Ir al catálogo</a></p>
@@ -627,7 +703,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 <main>
 <h1>Todas las series y películas</h1>
 <p>Las {ns} series y {np_} películas con representación lésbica y bisexual de La Safoteca. Para buscar y filtrar por plataforma, temática o avisos, <a href="../">abre el catálogo</a>.</p>
-<h2><a href="../fragmentos/">Fragmentos</a>: colecciones del equipo</h2><ul>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
+<h2><a href="../fragmentos/">Fragmentos</a>: colecciones del equipo</h2><ul><li><a href="../quienes-somos/">Quiénes somos</a></li>{"".join(f'<li><a href="../{c["slug"]}/">{e(c["titulo"])}</a></li>' for c in COLECCIONES)}</ul>
 <h2>Series ({ns})</h2><ul>{series}</ul>
 <h2>Películas ({np_})</h2><ul>{pelis}</ul>
 </main>
@@ -656,6 +732,8 @@ def main():
         (web / c["slug"]).mkdir(exist_ok=True)
         (web / c["slug"] / "index.html").write_text(coleccion(c, datos["obras"], a.noindex), encoding="utf-8")
         print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o) or o['id'] in c.get('incluir', ()))} obras")
+    (web / "quienes-somos").mkdir(exist_ok=True)
+    (web / "quienes-somos" / "index.html").write_text(quienes_somos(datos["obras"], a.noindex), encoding="utf-8")
     (web / "fragmentos").mkdir(exist_ok=True)
     (web / "fragmentos" / "index.html").write_text(portada_fragmentos(datos["obras"], a.noindex), encoding="utf-8")
     print(f"Portada de Fragmentos: {web / 'fragmentos' / 'index.html'}")
@@ -665,6 +743,7 @@ def main():
         txt = sm.read_text(encoding="utf-8")
         filas = f"  <url><loc>{DOMINIO}/obras/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
         filas += f"  <url><loc>{DOMINIO}/fragmentos/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
+        filas += f"  <url><loc>{DOMINIO}/quienes-somos/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n"
         filas += "".join(f"  <url><loc>{DOMINIO}/{c['slug']}/</loc><lastmod>{datos['meta']['generado'][:10]}</lastmod></url>\n" for c in COLECCIONES)
         filas += "".join(f"  <url><loc>{DOMINIO}/obra/{o['id']}/</loc><lastmod>{(o.get('publicada') or '')[:10] or datos['meta']['generado'][:10]}</lastmod></url>\n"
                         for o in datos["obras"])
