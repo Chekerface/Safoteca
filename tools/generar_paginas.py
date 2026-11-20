@@ -582,7 +582,7 @@ def quienes_somos(obras, noindex):
 <figure class="img"><img src="../img/fragmentos/logo-lema.webp" alt="Logotipo de La Safoteca con el lema: Archivo colaborativo de contenido audiovisual con representación sáfica. Toma el poder y filtra el contenido que no quieras ver." width="800" height="518"></figure>
 
 <h2>Cómo empezó</h2>
-<p>La Safoteca nació en 2021 de la mano de dos amigas de Córdoba que habían crecido con miedo a darle al play. En muchas películas, sobre todo en las clásicas, la chica que se parecía a nosotras acababa muerta, sufriendo abusos o con un final que parecía decirte: «si eres así, no vas a acabar bien».</p>
+<p>La Safoteca nació en 2021 de la mano de dos amigas de Córdoba (España) que habían crecido con miedo a darle al play. En muchas películas, sobre todo en las clásicas, la chica que se parecía a nosotras acababa muerta, sufriendo abusos o con un final que parecía decirte: «si eres así, no vas a acabar bien».</p>
 
 <h2>Por qué todavía hace falta</h2>
 <p>La representación mejora cada año: hay más, es mejor y hay que aguantar menos drama. Ya no hace falta que nos muramos o que suframos abusos para salir en una película. Aun así, creemos que siguen haciendo falta catálogos como este.</p>
