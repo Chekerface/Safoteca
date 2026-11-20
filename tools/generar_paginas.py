@@ -239,6 +239,22 @@ COLECCIONES = [
      "destacadas": ["Bottoms", "Blue Gate Crossing", "Tove", "Shiva Baby", "Violette"],
      "catalogo": "?tipo=pelicula&plat=Filmin",   # el botón «Abrir» llega al catálogo ya filtrado
      "filtro": lambda o: o["tipo"] == "pelicula" and FILMIN(o)},
+    {"slug": "peliculas-lesbicas-prime-video",
+     "titulo": "Películas lésbicas y bisexuales en Prime Video",
+     "titulo_html": "Películas lésbicas y bisexuales en <em>Prime Video</em>",
+     "intro": "Películas de nuestro catálogo que puedes ver en Prime Video en España.",
+     "nota": "El cine sáfico de Prime son películas muy famosas y muy clásicas para nosotras: marcaron un antes y un después en la comunidad.",
+     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Prime Video."),
+     "grafico": lambda todas: _grafico_plataformas(todas),
+     "dato": lambda todas, sel: (f"{sum(1 for o in sel if (o.get('anio') or 9999) < 2010)} se estrenaron antes de 2010: los clásicos con los que crecimos."),
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["Bound", "Habitación en Roma", "Fucking Åmål", "D.E.B.S", "Saving Face"],
+     "nota_dest": "Las dos últimas, D.E.B.S. y Guardando las apariencias (Saving Face), solo están para comprar o alquilar, "
+                  "pero son tan importantes para nosotras que las recomendamos encarecidamente.",
+     # Guardando las apariencias (239) está en Prime para comprar o alquilar, pero en la ficha aún no tiene ese enlace
+     "incluir": [239],
+     "catalogo": "?tipo=pelicula&plat=Prime%20Video",
+     "filtro": lambda o: o["tipo"] == "pelicula" and PRIME_ES(o)},
 ]
 
 
@@ -305,12 +321,15 @@ def _grafico_tailandesas(todas):
 FILMIN = lambda o: any("filmin" in (p.get("n", "") + p.get("u", "")).lower() for p in o.get("plataformas") or [])
 
 
+PRIME_ES = lambda o: any(p.get("n") == "Prime Video" and p.get("p") in ("ES", "INT") for p in o.get("plataformas") or [])
+
+
 def _grafico_plataformas(todas):
     """Películas del catálogo que se pueden ver en España, por plataforma (las 6 con más)."""
     pelis = [o for o in todas if o["tipo"] == "pelicula"]
     cuenta = {}
     for o in pelis:
-        for n in {p.get("n") for p in o.get("plataformas") or [] if p.get("n") and p.get("p") in ("ES", None, "")}:
+        for n in {p.get("n") for p in o.get("plataformas") or [] if p.get("n") and p.get("n") != "Otras" and p.get("p") in ("ES", "INT", None, "")}:
             cuenta[n] = cuenta.get(n, 0) + 1
     filas = [(n, v, str(v)) for n, v in sorted(cuenta.items(), key=lambda x: -x[1])[:6]]
     if not filas:
@@ -326,7 +345,7 @@ def _poster(o, ancho=300):
 def coleccion(c, obras, noindex):
     # Las tarjetas abren la ficha de la web (#/obra/ID). Los buscadores siguen llegando a las páginas por obra
     # por el sitemap, el índice /obras/ y los datos estructurados de esta página.
-    sel = sorted((o for o in obras if c["filtro"](o)), key=lambda o: o["titulo"].casefold())
+    sel = sorted((o for o in obras if c["filtro"](o) or o["id"] in c.get("incluir", ())), key=lambda o: o["titulo"].casefold())
     REL = {"A": 3, "B": 2, "C": 1}
     if c.get("destacadas"):
         por_titulo = {k: o for o in sel for k in (o["titulo"], o.get("titulo_original"))}
@@ -405,6 +424,7 @@ def coleccion(c, obras, noindex):
 {grafico}
 {dato}
 {'<h2>' + e(c.get("titulo_dest", "Para empezar esta noche")) + '</h2><div class="dests">' + dest_html + '</div>' if destacadas else ''}
+{'<p class="nota-dest">' + e(c["nota_dest"]) + '</p>' if c.get("nota_dest") and destacadas else ''}
 {'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
 <ul class="lista">{items}</ul>
 {redes()}
@@ -434,6 +454,7 @@ ESTILO_COLECCION = """<style>
 .col h2{font:400 24px/1.15 var(--serif);margin:0 0 14px} .col h2 em{color:var(--lila)}
 .col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
 .mas a{color:var(--suave)}
+.nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
 .redes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font:14px var(--sans);margin:18px 0 0}
 .redes span{font:12px var(--mono);color:var(--suave)} .cab .redes span{color:#8f84a3}
 .redes a{display:inline-flex;align-items:center;gap:6px;color:var(--tinta);text-decoration:none} .cab .redes a{color:#f3eef9}
@@ -516,7 +537,7 @@ def portada_fragmentos(obras, noindex):
     """F1 · Página de entrada de Fragmentos: qué es y una tarjeta por colección (título y cita del equipo)."""
     tarjetas = []
     for c in COLECCIONES:
-        sel = [o for o in obras if c["filtro"](o)]
+        sel = [o for o in obras if c["filtro"](o) or o["id"] in c.get("incluir", ())]
         ns = sum(1 for o in sel if o["tipo"] == "serie")
         que = (f"{ns} series" if ns == len(sel) else f"{len(sel)} películas" if ns == 0 else f"{len(sel)} obras")
         tarjetas.append(f'''<a class="col" href="../{c["slug"]}/"><h2>{c["titulo_html"]}</h2>
@@ -626,7 +647,7 @@ def main():
     for c in COLECCIONES:
         (web / c["slug"]).mkdir(exist_ok=True)
         (web / c["slug"] / "index.html").write_text(coleccion(c, datos["obras"], a.noindex), encoding="utf-8")
-        print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o))} obras")
+        print(f"Colección /{c['slug']}/: {sum(1 for o in datos['obras'] if c['filtro'](o) or o['id'] in c.get('incluir', ()))} obras")
     (web / "fragmentos").mkdir(exist_ok=True)
     (web / "fragmentos" / "index.html").write_text(portada_fragmentos(datos["obras"], a.noindex), encoding="utf-8")
     print(f"Portada de Fragmentos: {web / 'fragmentos' / 'index.html'}")
