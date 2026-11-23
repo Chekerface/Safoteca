@@ -48,7 +48,7 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Cómic»",
+   "rango": "de «\"Cosas de chicas\"» a «Cómic indie»",
    "opciones": [
     "\"Cosas de chicas\"",
     "Aborto",
@@ -119,15 +119,15 @@ var DATOS = {
     "Costumbrismo",
     "Crimen",
     "Cutre",
-    "Cómic"
+    "Cómic",
+    "Cómic de autor",
+    "Cómic indie"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cómic de autor» a «Inexactitud histórica»",
+   "rango": "de «Cómic infantil» a «Infancia»",
    "opciones": [
-    "Cómic de autor",
-    "Cómic indie",
     "Cómic infantil",
     "Cómic juvenil",
     "Cómic mainstream",
@@ -162,6 +162,7 @@ var DATOS = {
     "Erótico",
     "Erótico-festivo",
     "Escocia",
+    "Escritora",
     "Escuela",
     "Espacio",
     "Espectáculo",
@@ -177,6 +178,7 @@ var DATOS = {
     "Fascismo",
     "Feminismo",
     "Ficción sobrenatural",
+    "Fiestas",
     "Fluidez de género",
     "Friends to lovers",
     "Furry",
@@ -186,6 +188,7 @@ var DATOS = {
     "Hacker",
     "Halloween",
     "Heartwarming",
+    "Heterosexual",
     "Hombres lobo",
     "Homofobia",
     "Homosexualidad",
@@ -195,14 +198,14 @@ var DATOS = {
     "Identidad",
     "Inclusión",
     "India",
-    "Inexactitud histórica"
+    "Inexactitud histórica",
+    "Infancia"
    ]
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Infancia» a «Represión»",
+   "rango": "de «Infidelidad» a «Represión»",
    "opciones": [
-    "Infancia",
     "Infidelidad",
     "Instituto",
     "Intercambio de parejas",
@@ -218,6 +221,7 @@ var DATOS = {
     "Lipstick lesbian",
     "Literatura",
     "Machismo",
+    "Madre soltera",
     "Mafia",
     "Magia",
     "Mainstream USA",
@@ -261,6 +265,8 @@ var DATOS = {
     "Protagonistas con pocas luces",
     "PseudoReality Show",
     "Psicológico",
+    "Pueblo pequeño",
+    "Pérdida de un ser querido",
     "Racismo",
     "Realeza",
     "Realismo mágico",
@@ -288,6 +294,7 @@ var DATOS = {
     "Salir del armario",
     "Salud Mental",
     "Salvar al mundo",
+    "San Valentín",
     "Sectas",
     "Secuela",
     "Secuestros",
@@ -302,7 +309,9 @@ var DATOS = {
     "Slasher",
     "Slow burn",
     "Sobrenatural",
+    "Sobriedad",
     "Soledad",
+    "Soltería",
     "Sororidad",
     "Space opera",
     "Spin-off",
@@ -375,6 +384,7 @@ var DATOS = {
     "Cancelada",
     "Canibalismo",
     "Capacitismo",
+    "Celos",
     "Chantaje",
     "Chantaje emocional",
     "Chistes hirientes",
