@@ -1,6 +1,7 @@
 id,titulo,url
 1,Intersect,"https://m.media-amazon.com/images/M/MV5BMGIzZWI3YzgtZmVhYi00NDcwLWEzNDQtZDcwYzhmMWRlZTEzXkEyXkFqcGdeQXVyNjc2NjkzNTg@._V1_UY1200_CR97,0,630,1200_AL_.jpg"
 3,Chicago Fire (Temporada 1-3),https://pics.filmaffinity.com/Chicago_Fire_Serie_de_TV-225478358-large.jpg
+4,Siberia (1x04),https://image.tmdb.org/t/p/w780/xC89MsXewbmecgZLa1ZCKWskBK2.jpg
 6,Tierra de lobos (Temporada 3),https://www.formulatv.com/images/series/posters/300/364/dest_3.jpg
 15,Pretty little Liars,https://pics.filmaffinity.com/pretty_little_liars_tv_series-510861781-large.jpg
 22,La reina de las sombras,https://pics.filmaffinity.com/lost_girl_tv_series-698867029-large.jpg
@@ -288,6 +289,7 @@ id,titulo,url
 372,Monstruo: la historia de Lizzie Borden,https://image.tmdb.org/t/p/original/57XScX1aYtKi1LvHYFQLPUxVhTG.jpg
 373,La Maldición De Hill House,https://m.media-amazon.com/images/M/MV5BMTU4NzA4MDEwNF5BMl5BanBnXkFtZTgwMTQxODYzNjM@._V1_.jpg
 374,El cuento de la criada,https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p13630185_b_v8_bb.jpg
+375,American Horror Story,https://image.tmdb.org/t/p/w780/yCkPLQ10qKIUgRBXmQVVMF1h96d.jpg
 376,The last of us,https://hips.hearstapps.com/hmg-prod/images/tlou-ellie-1669891230.jpeg
 377,La reina Cristina de Suecia,https://pics.filmaffinity.com/queen_christina-904919779-mmed.jpg
 378,El club de las luchadoras,https://static.filmin.es/images/es/media/59196/4/poster_0_3_1000x1500.jpg
@@ -300,6 +302,7 @@ id,titulo,url
 385,Friendly Rivalry,https://pics.filmaffinity.com/seonuiui_gyeongjaeng-578392313-large.jpg
 386,Pls Love,https://i.mydramalist.com/KpwevJ_4f.jpg
 387,Harmony Secret,https://i.mydramalist.com/ABL82g_4f.jpg
+390,Agatha ¿Quién si no?,https://image.tmdb.org/t/p/w780/nbkbguUUNWQZygVJKjODyELBQk9.jpg
 391,Lucky my Love,https://m.media-amazon.com/images/M/MV5BNzM0OTdhZTItODA4Zi00YTAwLThhNWItMjVkYTYwZTQ3YmQ4XkEyXkFqcGc@._V1_.jpg
 392,Supergirl,http://m.media-amazon.com/images/M/MV5BZGM4MzY3NzYtYjViZS00MmE4LTgxZmMtNTZkNDM5MDIwMDg1XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg
 393,Spring,https://m.media-amazon.com/images/M/MV5BNmVkOTAxMDctYWQzYS00OTFjLWExODEtZDEyNjNlZDEwYTk1XkEyXkFqcGc@._V1_.jpg
@@ -321,3 +324,8 @@ id,titulo,url
 488,El cuerpo,https://image.tmdb.org/t/p/w780/7GGL8WPqFzBSK3DBVuW7MVBna4g.jpg
 489,Khom Khlang,https://image.tmdb.org/t/p/w780/jVHDDRuW3C5X7vZg2jQxFdnGB2X.jpg
 490,Juliet & Juliet,https://image.tmdb.org/t/p/w780/sEDx1wyVpOWlXK2aEp7UYkSGJeN.jpg
+493,The Christmas Writer,https://image.tmdb.org/t/p/w780/tPsh88I7W1IpiHpQBQQQh69QIjK.jpg
+494,Algo de Tiffany’s,https://image.tmdb.org/t/p/w780/tw88GeT26i05R2kjsqY8y6i27rS.jpg
+495,Una Navidad inesperada,https://image.tmdb.org/t/p/w780/6nmXiyMUvAI0SrzZqKSHOcK4pEh.jpg
+496,El club de las fiestas,https://image.tmdb.org/t/p/w780/AnZB38UQOOI40vxcymbsnc6xDlo.jpg
+497,City of Trees,https://image.tmdb.org/t/p/w780/jr7O0eqIKdrirBYsKp4OU961MYZ.jpg
