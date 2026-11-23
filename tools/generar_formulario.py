@@ -58,10 +58,13 @@ def relevancia():
 WEB_JSON = RAIZ / "web" / "data" / "formulario.json"
 
 
-def json_web(db):
-    """Listas para la pantalla «Proponer una obra» de la web (web/data/formulario.json)."""
+def json_web(db, google):
+    """Listas para la pantalla «Proponer una obra» de la web (web/data/formulario.json).
+    La clave «google» lleva las mismas listas partidas en preguntas: el Google Form la lee cada noche
+    (sincronizarListas en crear_formulario.gs) y se pone al día solo."""
     datos = {"generos": lista(db, "genero"), "tematicas": lista(db, "tematica"), "avisos": lista(db, "aviso"),
-             "relevancia": relevancia(), "edades": ["TP", "7", "11", "12", "13", "14", "15", "16", "17", "18"]}
+             "relevancia": relevancia(), "edades": ["TP", "7", "11", "12", "13", "14", "15", "16", "17", "18"],
+             "google": google}
     WEB_JSON.write_text(json.dumps(datos, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(f"Escrito {WEB_JSON.relative_to(RAIZ)} ({WEB_JSON.stat().st_size // 1024} KB)")
 
@@ -81,13 +84,13 @@ def sin_repetidos():
 def main():
     sin_repetidos()
     db = sqlite3.connect(DB_DEFECTO)
-    json_web(db)
     datos = {
         "generos": trozos(lista(db, "genero"), "Género"),
         "tematicas": trozos(lista(db, "tematica"), "Temática"),
         "avisos": trozos(lista(db, "aviso"), "Aviso"),
         "relevancia": relevancia(),
     }
+    json_web(db, {k: datos[k] for k in ("generos", "tematicas", "avisos")})
     plantilla = (RAIZ / "tools" / "formulario" / "plantilla.gs.txt").read_text(encoding="utf-8")
     SALIDA.write_text(plantilla.replace("__DATOS__", json.dumps(datos, ensure_ascii=False, indent=1)), encoding="utf-8")
     print(f"Escrito {SALIDA.relative_to(RAIZ)}: {sum(len(g['opciones']) for g in datos['generos'])} géneros, "

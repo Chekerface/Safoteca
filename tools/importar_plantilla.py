@@ -386,8 +386,8 @@ def puerta_etiquetas(db, antes, aceptar, simular):
             sys.exit("Importación cancelada: no se ha guardado nada.")
     else:
         db.rollback()
-        sys.exit("BLOQUEADO: corrige la plantilla/formulario o vuelve a ejecutar con --aceptar-etiquetas "
-                 "cuando des el okay. No se ha guardado nada.")
+        sys.exit("BLOQUEADO: corrige el formulario o, si las das por buenas, vuelve a lanzar la acción marcando "
+                 "«Aceptar estas etiquetas» (en la terminal: --aceptar-etiquetas). No se ha guardado nada.")
     return {t: v[0] for t, v in raras.items()}
 
 
