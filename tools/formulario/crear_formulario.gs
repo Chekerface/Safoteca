@@ -12,8 +12,11 @@
  * Para cargar las respuestas: en la hoja de respuestas, Archivo → Descargar → Microsoft Excel (.xlsx)
  * y ejecuta `python tools/importar_formulario.py respuestas.xlsx` (con --simular para probar).
  *
- * Si cambia el catálogo (géneros, temáticas o avisos nuevos): genera el script otra vez, pégalo y ejecuta
- * `actualizarListas`: actualiza las opciones del formulario que ya existe, sin perder respuestas.
+ * El formulario se pone al día SOLO: una vez, ejecuta `instalarSincronizacionDiaria`. Desde entonces, cada noche
+ * `sincronizarListas` lee las listas de https://www.lasafoteca.com/data/formulario.json (las que publica la web
+ * al mergear una importación) y cambia las opciones de géneros, temáticas y avisos, sin perder respuestas.
+ * Si algo falla, Google te manda un correo. `actualizarListas` sigue sirviendo para ponerlo al día a mano
+ * con las listas pegadas en este archivo.
  */
 
 var DATOS = {
@@ -546,7 +549,8 @@ function crearFormulario() {
 }
 
 /** Actualiza las opciones de géneros, temáticas y avisos del formulario ya creado (sin tocar nada más ni perder respuestas). */
-function actualizarListas() {
+function actualizarListas(listas) {
+  if (listas && listas.generos) DATOS.generos = listas.generos, DATOS.tematicas = listas.tematicas, DATOS.avisos = listas.avisos;
   var id = PropertiesService.getScriptProperties().getProperty(CLAVE_ID);
   if (!id && URL_EDICION) id = FormApp.openByUrl(URL_EDICION).getId();
   if (!id) throw new Error("No sé qué formulario es: pega su enlace de edición en URL_EDICION (arriba) y vuelve a ejecutar.");
@@ -565,6 +569,36 @@ function actualizarListas() {
     });
   });
   Logger.log("Listas actualizadas: " + cambiados + " preguntas.");
-  if (faltan.length) Logger.log("AVISO: no encuentro estas preguntas en el formulario: " + faltan.join(", ") +
+  if (faltan.length) throw new Error("No encuentro estas preguntas en el formulario: " + faltan.join(", ") +
     ". No se ha cambiado su lista; avisa a Claude.");
+}
+
+var URL_LISTAS = "https://www.lasafoteca.com/data/formulario.json";
+var CLAVE_HUELLA = "HUELLA_LISTAS";
+
+/** Lee las listas que publica la web y, si han cambiado desde la última vez, actualiza el formulario. */
+function sincronizarListas() {
+  var r = UrlFetchApp.fetch(URL_LISTAS + "?t=" + Date.now(), { muteHttpExceptions: true });
+  if (r.getResponseCode() !== 200) throw new Error("La web no devuelve las listas (HTTP " + r.getResponseCode() + ")");
+  var web = JSON.parse(r.getContentText());
+  if (!web.google || !web.google.tematicas) throw new Error("formulario.json no trae la parte «google»: avisa a Claude.");
+  var texto = JSON.stringify(web.google);
+  var huella = Utilities.base64Encode(Utilities.computeDigest(Utilities.DigestAlgorithm.MD5, texto, Utilities.Charset.UTF_8));
+  var props = PropertiesService.getScriptProperties();
+  if (props.getProperty(CLAVE_HUELLA) === huella) { Logger.log("Las listas no han cambiado: nada que hacer."); return; }
+  actualizarListas(web.google);
+  props.setProperty(CLAVE_HUELLA, huella);
+  var n = function (gs) { return gs.reduce(function (s, g) { return s + g.opciones.length; }, 0); };
+  Logger.log("Formulario al día: " + n(web.google.generos) + " géneros, " + n(web.google.tematicas) + " temáticas, " +
+    n(web.google.avisos) + " avisos.");
+}
+
+/** Ejecútala UNA vez: programa sincronizarListas cada noche (entre las 3 y las 4) y la lanza ya. */
+function instalarSincronizacionDiaria() {
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === "sincronizarListas") ScriptApp.deleteTrigger(t);
+  });
+  ScriptApp.newTrigger("sincronizarListas").timeBased().everyDays(1).atHour(3).create();
+  Logger.log("Programado: cada noche entre las 3 y las 4.");
+  sincronizarListas();
 }

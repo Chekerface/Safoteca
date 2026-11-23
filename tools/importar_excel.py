@@ -204,8 +204,12 @@ class Importador:
                             (obra_id, pid, rol))
 
     def vincular_enlaces(self, obra_id, valor, tipo):
+        from limpiar_enlaces import limpiar   # quita rastreo, afiliados e identificadores de quien compartió
         vistos = set()
         for url in URL_RE.findall(limpio(valor) or ""):
+            sucio, url = url, limpiar(url)
+            if url != sucio:
+                print(f"  enlace limpiado (obra {obra_id}): {sucio}  →  {url}")
             if url not in vistos:
                 vistos.add(url)
                 self.db.execute("INSERT INTO obra_enlace (obra_id, tipo, url) VALUES (?,?,?)", (obra_id, tipo, url))
