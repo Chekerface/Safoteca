@@ -1,5 +1,6 @@
 # Publica la carpeta web/ en GitHub Pages cada vez que cambia en la rama main
 # (o cambia el generador de páginas tools/generar_paginas.py).
+# PRE (/uat/) toma de la rama uat el diseño y las funciones, y de main los datos y los pósters.
 # Requiere activar una vez: Settings → Pages → Build and deployment → Source: GitHub Actions.
 name: Publicar web
 
@@ -43,6 +44,11 @@ jobs:
             node --check /tmp/uat/web/js/app.js
             mkdir -p web/uat
             cp -r /tmp/uat/web/. web/uat/
+            # PRE enseña siempre los DATOS de PRO (obras, catálogos, listas del formulario y pósters): de uat solo
+            # se toman el diseño y las funciones. Así un cambio de datos no necesita pasar por uat.
+            cp web/data/obras.json web/data/catalogos.json web/data/formulario.json web/uat/data/
+            find web/img -maxdepth 1 -regextype posix-extended -regex '.*/[0-9]+_(300|600)\.webp' -exec cp {} web/uat/img/ \;
+            echo "PRE usa los datos de PRO ($(python3 -c "import json;print(len(json.load(open('web/data/obras.json'))['obras']))") obras)"
             rm -f web/uat/robots.txt web/uat/sitemap.xml
             # PRE genera sus páginas con su propia versión del script, para poder probar cambios antes de PRO
             python3 /tmp/uat/tools/generar_paginas.py --web web/uat --noindex
