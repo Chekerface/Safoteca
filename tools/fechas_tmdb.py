@@ -18,6 +18,7 @@ Uso (necesita la variable TMDB_TOKEN con el token de lectura de TMDB):
     python tools/fechas_tmdb.py --series-en-emision  # además, pone al día las series que siguen emitiéndose
     python tools/fechas_tmdb.py --posters            # además, póster de TMDB para las obras que no tienen
     python tools/fechas_tmdb.py --direccion          # además, dirección de TMDB para las películas que no tienen
+    python tools/fechas_tmdb.py --desde-id 497       # solo las obras con id mayor que 497 (las recién importadas)
     python tools/fechas_tmdb.py --sugerir-actrices   # además, sugiere actrices (sin guardarlas) para las obras sin actrices
     python tools/fechas_tmdb.py --todas              # vuelve a comprobar todas
 Después: python tools/exportar_json.py
@@ -172,6 +173,8 @@ def main():
     ap.add_argument("--sugerir-actrices", action="store_true",
                     help="para las obras sin actrices, sugiere las 4 primeras actrices de TMDB en el informe (NO las guarda: "
                          "en La Safoteca son las de los personajes sáficos, y eso hay que revisarlo a mano)")
+    ap.add_argument("--desde-id", type=int, default=0,
+                    help="solo las obras con id mayor que este (la importación lo usa para tocar solo las nuevas)")
     ap.add_argument("--direccion", action="store_true",
                     help="dirección de TMDB para las PELÍCULAS que no tienen (las series no: TMDB solo da quién la creó)")
     a = ap.parse_args()
@@ -196,7 +199,7 @@ def main():
         shutil.copy(a.db, copia)
         print("Copia de seguridad:", copia)
 
-    obras = db.execute("SELECT * FROM obra WHERE tipo IN ('serie','pelicula') ORDER BY id").fetchall()
+    obras = db.execute("SELECT * FROM obra WHERE tipo IN ('serie','pelicula') AND id > ? ORDER BY id", (a.desde_id,)).fetchall()
     informe, sugerencias = [], []
     cambios = {"ok": 0, "dudosa": 0, "posters": 0, "actualizadas": 0, "direccion": 0, "actrices": 0}
     for o in obras:
