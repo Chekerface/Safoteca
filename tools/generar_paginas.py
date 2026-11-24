@@ -192,6 +192,24 @@ def _avisos(o):
 SLM = "Síndrome de la lesbiana muerta"
 
 COLECCIONES = [
+    {"slug": "peliculas-lesbicas-navidad",
+     "titulo": "Películas lésbicas y bisexuales de Navidad",
+     "titulo_html": "Películas lésbicas y bisexuales de <em>Navidad</em>",
+     "antetitulo": "Especial Navidad",
+     "intro": "Mantita, turrón y chicas que se enamoran (y algún que otro susto): las películas navideñas de nuestro catálogo.",
+     "nota": "Nosotras también tenemos derecho a pelis empalagosas y a todos los topicazos navideños: el pueblo nevado, "
+             "el jersey feo, el árbol perfecto y el beso bajo el muérdago.",
+     "cifra": lambda todas, sel: (len(sel), "películas navideñas sáficas tenemos en nuestro catálogo."),
+     "dato": lambda todas, sel: (f"Solo {sum(1 for o in sel if o.get('disponible_espana'))} se pueden ver en España. "
+                                 "Las demás no están en ninguna plataforma española: ¡que nos las traigan!"),
+     "proponer": True,
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["El club de las fiestas", "Season of Love", "Under the Christmas Tree", "City of Trees", "Tú no eres Yo"],
+     "nota_dest": "Tú no eres yo es la sorpresa: española, en Filmin y de miedo. Season of Love, Under the Christmas Tree y "
+                  "City of Trees no están en España; son tan malas que seguro que salen baratísimas, así que, plataformas, "
+                  "¡traédnoslas!",
+     "catalogo": "?tipo=pelicula&tem=Navidad",
+     "filtro": lambda o: o["tipo"] == "pelicula" and "Navidad" in (o.get("tematicas") or [])},
     {"slug": "series-y-peliculas-con-representacion-trans",
      "titulo": "Series y películas con representación trans",
      "titulo_html": "Series y películas con representación <em>trans</em>",
