@@ -51,7 +51,7 @@ var DATOS = {
  "tematicas": [
   {
    "titulo": "Temática (parte 1 de 4)",
-   "rango": "de «\"Cosas de chicas\"» a «Cómic indie»",
+   "rango": "de «\"Cosas de chicas\"» a «Cómic mainstream»",
    "opciones": [
     "\"Cosas de chicas\"",
     "Aborto",
@@ -124,16 +124,16 @@ var DATOS = {
     "Cutre",
     "Cómic",
     "Cómic de autor",
-    "Cómic indie"
+    "Cómic indie",
+    "Cómic infantil",
+    "Cómic juvenil",
+    "Cómic mainstream"
    ]
   },
   {
    "titulo": "Temática (parte 2 de 4)",
-   "rango": "de «Cómic infantil» a «Infancia»",
+   "rango": "de «DC» a «IRA»",
    "opciones": [
-    "Cómic infantil",
-    "Cómic juvenil",
-    "Cómic mainstream",
     "DC",
     "De amigas a amantes",
     "De época",
@@ -186,6 +186,7 @@ var DATOS = {
     "Friends to lovers",
     "Furry",
     "Gran empresa",
+    "Guardaespaldas",
     "Guerra",
     "Guerra Fría",
     "Hacker",
@@ -202,18 +203,18 @@ var DATOS = {
     "Inclusión",
     "India",
     "Inexactitud histórica",
-    "Infancia"
-   ]
-  },
-  {
-   "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Infidelidad» a «Represión»",
-   "opciones": [
+    "Infancia",
     "Infidelidad",
     "Instituto",
     "Intercambio de parejas",
     "Internet",
-    "IRA",
+    "IRA"
+   ]
+  },
+  {
+   "titulo": "Temática (parte 3 de 4)",
+   "rango": "de «Irlanda» a «Romance en el trabajo»",
+   "opciones": [
     "Irlanda",
     "Irlanda del Norte",
     "Juvenil",
@@ -246,6 +247,7 @@ var DATOS = {
     "Mujeres adultas",
     "Muñecos",
     "Música",
+    "Naturaleza",
     "Navidad",
     "No binarie",
     "No heartwarming",
@@ -269,6 +271,7 @@ var DATOS = {
     "PseudoReality Show",
     "Psicológico",
     "Pueblo pequeño",
+    "Pérdida de memoria",
     "Pérdida de un ser querido",
     "Racismo",
     "Realeza",
@@ -280,27 +283,30 @@ var DATOS = {
     "Relación de pareja",
     "Religión",
     "Remake",
-    "Represión"
+    "Represión",
+    "Riqueza",
+    "Rivalidad familiar",
+    "Road Movie",
+    "Robots",
+    "Romance de instituto",
+    "Romance en el trabajo"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Riqueza» a «Épica»",
+   "rango": "de «Romcom» a «Épica»",
    "opciones": [
-    "Riqueza",
-    "Road Movie",
-    "Robots",
-    "Romance de instituto",
-    "Romance en el trabajo",
     "Romcom",
     "Roommates",
     "Salir del armario",
     "Salud Mental",
     "Salvar al mundo",
     "San Valentín",
+    "Secretos",
     "Sectas",
     "Secuela",
     "Secuestros",
+    "Segundas oportunidades",
     "Serie Coral",
     "Serie de antología",
     "Series que parecen fics",
@@ -320,9 +326,12 @@ var DATOS = {
     "Spin-off",
     "Stand-up",
     "Subtexto",
+    "Sugar baby",
+    "Sugar mommy",
     "Superheroinas",
     "Superhéroes",
     "Supervivencia",
+    "Suplantación de identidad",
     "Supporting Dad",
     "Supporting Mom",
     "Surrealismo",
@@ -331,6 +340,7 @@ var DATOS = {
     "Tello",
     "Terrorismo",
     "Thai GL",
+    "The 4 elements",
     "Thriller psicológico",
     "TLP",
     "Tragedia",
