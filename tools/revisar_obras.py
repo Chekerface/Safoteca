@@ -30,12 +30,14 @@ def clave(s):
 
 
 def raro(n):
+    if re.search("[\u200b-\u200f\u2060\ufeff]", n) or ":" in n:
+        return "caracteres invisibles o «:»"
     if any(ch.isalpha() and "LATIN" not in unicodedata.name(ch, "") for ch in n):
         return "otra escritura"
     if re.search(r"[()\[\]\"“”«»]|\d", n):
         return "paréntesis, comillas o números"
-    if re.search(r"\s(as|como|es)\s", n, re.I):
-        return "parece llevar el personaje"
+    if re.search(r"\s(as|como|es|y|and)\s", n, re.I):
+        return "parece llevar el personaje o dos nombres"
     return None
 
 

@@ -76,7 +76,8 @@ def nombre_persona(texto):
     """'Kieron Gillen (1-13; coguionista: 14-19)' -> 'Kieron Gillen'.
     'Natsiya Prommart es "Vicky" Phawika' -> 'Natsiya Prommart' (se quita el personaje: «es», «como», «as»).
     'Inthira "Near" Thammajaroen' -> 'Inthira Thammajaroen' (solo el nombre, sin apodos entre comillas)."""
-    t = texto.split("(")[0]
+    t = re.sub("[\u200b\u200c\u200d\u2060\ufeff]", "", texto).split("(")[0]   # caracteres invisibles al copiar de webs
+    t = re.sub(r"^\s*(?:actrices|actores|reparto|elenco)(?:\s+\w+)?\s*:\s*", "", t, flags=re.I)   # 'Actrices principales: X'
     t = re.split(r'\s+(?:es|como|as)\s+["“«\'A-ZÁÉÍÓÚ]', t)[0]
     t = re.sub(r'\s*["“«][^"”»]*["”»]\s*', " ", t)   # apodos entre comillas: 'Inthira "Near" Thammajaroen'
     return re.sub(r"\s+", " ", t).strip()
@@ -193,7 +194,7 @@ class Importador:
             self.db.execute(f"INSERT OR IGNORE INTO {enlace} (obra_id, {col}) VALUES (?, ?)", (obra_id, cid))
 
     def vincular_personas(self, obra_id, valor, rol):
-        for crudo in separar(valor):
+        for crudo in (x for trozo in separar(valor) for x in re.split(r"\s+(?:y|and|&)\s+", trozo)):   # 'A y B' son dos
             nombre = nombre_persona(crudo)
             if not nombre:
                 continue
