@@ -379,6 +379,10 @@ def puerta_etiquetas(db, antes, aceptar, simular):
     print("!" * 70)
     if aceptar:
         print("Aceptadas con --aceptar-etiquetas.")
+    elif simular:
+        # en la simulación no se para: avisa y sigue, para que el resumen enseñe también qué obras entrarían
+        print("(Simulación: sigo para enseñarte el resumen. Al importar, se parará aquí salvo que marques "
+              "«Aceptar estas etiquetas».)")
     elif sys.stdin.isatty():
         r = input("¿Las das por buenas y las añado a las listas aceptadas? Escribe «si» para seguir: ")
         if sin_tildes(r) not in ("si", "s"):
