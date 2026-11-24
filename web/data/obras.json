@@ -1,7 +1,7 @@
 {
  "meta": {
-  "generado": "2026-11-23T13:10:26+00:00",
-  "total": 330
+  "generado": "2026-11-24T11:44:13+00:00",
+  "total": 339
  },
  "obras": [
   {
@@ -158,6 +158,7 @@
     38,
     35,
     109,
+    162,
     120,
     274,
     34,
@@ -166,8 +167,7 @@
     83,
     261,
     149,
-    243,
-    380
+    243
    ]
   },
   {
@@ -219,6 +219,7 @@
    "rel": [
     46,
     1,
+    499,
     225,
     173,
     177,
@@ -308,12 +309,12 @@
     238,
     239,
     251,
+    506,
     176,
     175,
     174,
     115,
-    109,
-    179
+    109
    ]
   },
   {
@@ -479,8 +480,8 @@
     149,
     70,
     81,
+    500,
     380,
-    263,
     366,
     199,
     114
@@ -641,12 +642,88 @@
     251,
     238,
     239,
+    506,
     115,
     482,
     24,
     399,
-    214,
-    480
+    498
+   ]
+  },
+  {
+   "id": 499,
+   "tipo": "pelicula",
+   "titulo": "A Firefighter's Christmas Calendar",
+   "titulo_original": "A Firefighter's Christmas Calendar",
+   "titulo_latam": null,
+   "pais": "Canadá",
+   "anio": 2025,
+   "anio_fin": null,
+   "sinopsis": "Cuando la bombera Dani Reed rescata a una familia justo antes de Navidad, decide recuperar «Holiday Heroes», la campaña benéfica que organizaba su difunta madre, para ayudar a su comunidad. Con el apoyo de su ambiciosa hermana Jackie, de Sasha, una encantadora fotógrafa, y de su padre, Dani encuentra el amor, un propósito y el valor para convertirse en una verdadera líder.",
+   "edad": "TP",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": false,
+   "final_feliz": true,
+   "poster": "499",
+   "generos": [
+    "Comedia romántica",
+    "Romance"
+   ],
+   "tematicas": [
+    "Bomberos",
+    "Cutre",
+    "Familia",
+    "Heartwarming",
+    "Mala con ganas",
+    "Navidad",
+    "Vida adulta"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Holly Deveaux",
+    "Kyana Teresa"
+   ],
+   "directores": [
+    "Mars Horodyski"
+   ],
+   "donde_ver": [
+    "https://www.primevideo.com/detail/0TDK3WITSAYH1NQL0TDUIC247T"
+   ],
+   "plataformas": [
+    {
+     "n": "Prime Video",
+     "p": "INT",
+     "u": "https://www.primevideo.com/detail/0TDK3WITSAYH1NQL0TDUIC247T"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt38856677/"
+   ],
+   "letterboxd": "https://letterboxd.com/tmdb/1580225/",
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2025-12-10",
+   "rel": [
+    497,
+    506,
+    493,
+    496,
+    109,
+    228,
+    229,
+    239,
+    56,
+    110,
+    112,
+    44,
+    391,
+    387,
+    384,
+    131,
+    484,
+    399,
+    47,
+    263
    ]
   },
   {
@@ -699,9 +776,11 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2020-08-21",
    "rel": [
+    506,
     493,
     496,
     170,
+    499,
     497,
     228,
     229,
@@ -712,13 +791,11 @@
     47,
     255,
     484,
+    43,
     391,
     384,
     131,
-    43,
-    49,
-    399,
-    48
+    49
    ]
   },
   {
@@ -893,18 +970,18 @@
     108,
     51,
     399,
+    498,
+    501,
     480,
     396,
-    49,
     384,
     131,
+    505,
+    49,
+    502,
     484,
-    54,
-    105,
     379,
-    110,
-    45,
-    36
+    110
    ]
   },
   {
@@ -999,9 +1076,9 @@
     242,
     277,
     90,
-    134,
     394,
-    367
+    367,
+    290
    ]
   },
   {
@@ -1055,7 +1132,9 @@
     495,
     493,
     496,
+    506,
     497,
+    499,
     228,
     229,
     112,
@@ -1126,6 +1205,7 @@
     96,
     114,
     160,
+    499,
     1,
     225,
     88,
@@ -1315,17 +1395,17 @@
     108,
     51,
     399,
+    498,
     480,
+    501,
     396,
-    49,
     384,
     131,
+    505,
+    49,
     484,
-    54,
-    105,
     379,
-    110,
-    45
+    110
    ]
   },
   {
@@ -1854,6 +1934,10 @@
    "publicada": "2026-11-01 22:45:47",
    "fecha": "2025-10-02",
    "rel": [
+    505,
+    503,
+    502,
+    504,
     384,
     387,
     483,
@@ -1862,18 +1946,14 @@
     381,
     391,
     263,
-    380,
     399,
+    498,
+    501,
     396,
-    485,
     487,
     54,
-    397,
-    490,
-    489,
     109,
-    112,
-    115
+    112
    ]
   },
   {
@@ -1939,11 +2019,15 @@
    "publicada": "2026-11-16 21:37:15",
    "fecha": "2025-05-29",
    "rel": [
-    399,
-    396,
     131,
+    399,
+    498,
+    501,
+    503,
+    396,
     54,
     483,
+    502,
     387,
     484,
     489,
@@ -1954,9 +2038,7 @@
     391,
     381,
     395,
-    487,
-    384,
-    124
+    504
    ]
   },
   {
@@ -2044,13 +2126,13 @@
     138,
     378,
     394,
+    506,
     493,
     496,
     367,
+    499,
     110,
-    112,
-    497,
-    189
+    112
    ]
   },
   {
@@ -2148,6 +2230,7 @@
     149,
     380,
     24,
+    500,
     253,
     128,
     129,
@@ -2155,8 +2238,7 @@
     126,
     297,
     72,
-    140,
-    45
+    140
    ]
   },
   {
@@ -2215,12 +2297,14 @@
    "rel": [
     110,
     109,
+    499,
+    506,
     379,
     496,
-    44,
     105,
     54,
     107,
+    498,
     399,
     480,
     103,
@@ -2230,9 +2314,7 @@
     130,
     381,
     391,
-    398,
-    490,
-    384
+    398
    ]
   },
   {
@@ -2316,13 +2398,13 @@
     262,
     293,
     301,
-    253,
     222,
     378,
     296,
     379,
     251,
-    482
+    482,
+    37
    ]
   },
   {
@@ -2544,24 +2626,24 @@
    "rel": [
     103,
     480,
+    498,
+    502,
     105,
     490,
     399,
-    396,
-    295,
     47,
     49,
+    501,
+    503,
+    396,
+    295,
     380,
     107,
     130,
     131,
     381,
-    261,
-    387,
-    54,
     497,
-    109,
-    36
+    109
    ]
   },
   {
@@ -2631,12 +2713,12 @@
     257,
     384,
     484,
-    399,
     366,
     238,
     239,
     251,
     115,
+    506,
     109
    ]
   },
@@ -2844,18 +2926,18 @@
    "rel": [
     489,
     371,
-    87,
     488,
+    87,
     89,
     86,
     298,
-    99,
     59,
+    99,
     55,
     397,
     248,
-    46,
     192,
+    46,
     481,
     114,
     165,
@@ -2981,6 +3063,7 @@
    "fecha": "2014-01-25",
    "rel": [
     77,
+    504,
     397,
     55,
     219,
@@ -2993,11 +3076,10 @@
     242,
     54,
     61,
-    246,
     80,
     78,
-    377,
     68,
+    377,
     189,
     394
    ]
@@ -3059,8 +3141,8 @@
     482,
     35,
     159,
-    251,
     486,
+    251,
     115,
     37,
     206,
@@ -3139,24 +3221,24 @@
    "rel": [
     45,
     378,
+    204,
     73,
     38,
-    204,
     35,
     109,
     394,
     296,
+    112,
+    68,
     379,
     161,
     159,
-    112,
-    68,
     149,
     243,
     280,
     395,
     305,
-    24
+    33
    ]
   },
   {
@@ -3574,13 +3656,13 @@
     76,
     248,
     302,
+    502,
     33,
     397,
     490,
-    247,
-    232,
-    256,
+    209,
     273,
+    270,
     259,
     394
    ]
@@ -3667,9 +3749,9 @@
     263,
     138,
     489,
-    490,
     288,
     298,
+    490,
     482,
     168
    ]
@@ -3760,7 +3842,7 @@
     484,
     483,
     261,
-    399
+    503
    ]
   },
   {
@@ -3915,8 +3997,8 @@
     130,
     87,
     89,
-    132,
     47,
+    132,
     128,
     129,
     214,
@@ -4000,9 +4082,9 @@
     369,
     222,
     203,
-    45,
     399,
     214,
+    498,
     24
    ]
   },
@@ -4192,13 +4274,16 @@
     110,
     56,
     109,
-    379,
+    498,
+    501,
+    503,
     396,
     295,
     103,
-    131,
     128,
     129,
+    131,
+    502,
     387,
     54,
     105,
@@ -4287,11 +4372,11 @@
     129,
     263,
     32,
-    484,
+    504,
     132,
+    484,
     489,
     490,
-    399,
     56,
     170,
     109
@@ -4512,7 +4597,8 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2012-10-10",
    "rel": [
-    30
+    30,
+    499
    ]
   },
   {
@@ -4601,10 +4687,10 @@
    "fecha": null,
    "rel": [
     42,
-    135,
-    155,
     165,
     223,
+    135,
+    155,
     481,
     482,
     78,
@@ -4614,7 +4700,7 @@
     205,
     497,
     189,
-    493,
+    501,
     284,
     480,
     488,
@@ -4670,8 +4756,10 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2021-12-01",
    "rel": [
+    506,
     493,
     229,
+    499,
     497,
     496,
     239,
@@ -4901,6 +4989,7 @@
     373,
     75,
     71,
+    498,
     480,
     70
    ]
@@ -4979,6 +5068,7 @@
    "rel": [
     105,
     107,
+    503,
     399,
     485,
     480,
@@ -4987,16 +5077,15 @@
     131,
     387,
     398,
-    490,
     395,
+    490,
+    384,
+    505,
     130,
     381,
-    384,
-    49,
     56,
     110,
-    109,
-    115
+    109
    ]
   },
   {
@@ -5082,14 +5171,15 @@
    "fecha": null,
    "rel": [
     496,
+    499,
     493,
+    506,
     109,
     228,
     229,
     110,
     239,
     112,
-    45,
     387,
     480,
     399,
@@ -5097,10 +5187,9 @@
     103,
     131,
     384,
+    502,
     490,
-    484,
-    380,
-    111
+    484
    ]
   },
   {
@@ -5170,6 +5259,7 @@
     251,
     238,
     115,
+    506,
     109,
     193,
     195,
@@ -5179,7 +5269,6 @@
     73,
     215,
     206,
-    110,
     380,
     130,
     381
@@ -5297,8 +5386,8 @@
     192,
     42,
     148,
-    205,
     481,
+    205,
     124,
     100,
     158,
@@ -5404,8 +5493,8 @@
    "fecha": "2020-05-22",
    "rel": [
     76,
-    273,
     59,
+    273,
     69,
     275,
     371,
@@ -5519,10 +5608,10 @@
     106,
     64,
     34,
+    500,
     131,
     133,
     53,
-    81,
     150,
     44,
     65,
@@ -5765,19 +5854,19 @@
     174,
     238,
     239,
+    506,
     115,
     251,
     497,
+    499,
     179,
-    110,
     484,
     387,
     130,
     380,
     381,
     391,
-    398,
-    384
+    398
    ]
   },
   {
@@ -5859,20 +5948,20 @@
     278,
     488,
     157,
-    50,
     489,
     88,
-    273,
+    50,
     255,
+    273,
     293,
     87,
-    275,
     48,
+    275,
     32,
     69,
     288,
+    385,
     371,
-    234,
     205
    ]
   },
@@ -5924,23 +6013,23 @@
     392,
     246,
     282,
-    242,
     87,
+    242,
     51,
     83,
     6,
     219,
     50,
+    489,
+    504,
     47,
     224,
     52,
     48,
-    489,
     484,
     53,
     134,
-    245,
-    49
+    245
    ]
   },
   {
@@ -6006,11 +6095,11 @@
     34,
     399,
     214,
+    498,
     243,
     149,
     380,
     236,
-    75,
     73,
     38,
     35,
@@ -6077,12 +6166,12 @@
     366,
     237,
     199,
-    114,
     293,
     90,
     305,
     149,
     33,
+    500,
     75,
     71,
     61
@@ -6304,15 +6393,15 @@
     298,
     275,
     133,
-    247,
-    232,
-    256,
+    209,
     288,
     273,
     217,
     137,
+    247,
+    232,
+    256,
     164,
-    209,
     51,
     283,
     49,
@@ -6473,15 +6562,15 @@
     126,
     132,
     107,
+    502,
     50,
     48,
     51,
     52,
-    106,
     390,
+    106,
     490,
     489,
-    224,
     56
    ]
   },
@@ -6700,10 +6789,10 @@
     161,
     159,
     238,
-    239,
-    369,
+    498,
     399,
     214,
+    501,
     396,
     24
    ]
@@ -6787,8 +6876,8 @@
     289,
     261,
     33,
-    305,
-    149,
+    399,
+    480,
     366,
     394,
     199,
@@ -6876,21 +6965,21 @@
     302,
     484,
     64,
-    248,
     250,
     269,
     286,
     280,
     395,
+    248,
     397,
     490,
     33,
     131,
+    500,
+    505,
     235,
-    387,
     371,
-    394,
-    222
+    394
    ]
   },
   {
@@ -6964,6 +7053,188 @@
     483,
     139,
     398
+   ]
+  },
+  {
+   "id": 503,
+   "tipo": "serie",
+   "titulo": "El Agua: Los Cuatro Elementos",
+   "titulo_original": "The Water (Saga The 4 Elements)",
+   "titulo_latam": "El Agua: Los Cuatro Elementos",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "【La saga de THE 4 ELEMENTS se centra en las cuatro primas de la familia ‘Watinwanit’ y sus romances.】\n\nThe Water es la 2ª historia de esta saga.\n\nEn medio de una lucha de poder entre el Grupo Watin y el Grupo Watchara, Chonlada, la hija secreta del magnate Pheemdech, es utilizada como peón para sabotear a su rival. Se infiltra en la empresa como recepcionista para acercarse a Apo, una ejecutiva sofisticada y perspicaz (y la jefa). A través de escándalos y crisis que ponen en peligro sus vidas, sus barreras se derrumban, transformando la rivalidad en un amor verdadero.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "503",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Enemies to Lovers",
+    "Espionaje",
+    "Gran empresa",
+    "Lesbiana",
+    "Mujeres adultas",
+    "Rivalidad familiar",
+    "Romance en el trabajo",
+    "Secretos",
+    "Thai GL",
+    "The 4 elements"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Engfa Waraha"
+   ],
+   "directores": [
+    "Kittisak Cheewasatjasakun"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/el-agua-los-cuatro-elementos-2026-2fxxh4am0kx?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/el-agua-los-cuatro-elementos-2026-2fxxh4am0kx?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt36626289/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-03-21",
+   "rel": [
+    502,
+    395,
+    505,
+    504,
+    397,
+    399,
+    498,
+    501,
+    396,
+    480,
+    485,
+    387,
+    483,
+    54,
+    484,
+    490,
+    381,
+    398,
+    391,
+    489
+   ]
+  },
+  {
+   "id": 504,
+   "tipo": "serie",
+   "titulo": "El Aire: Los Cuatro Elementos",
+   "titulo_original": "The Air (Saga The 4 Elements)",
+   "titulo_latam": "El Aire: Los Cuatro Elementos",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "【La saga de THE 4 ELEMENTS se centra en las cuatro primas de la familia ‘Watinwanit’ y sus romances.】\n\nThe Air es la 3ª historia de esta saga.\n\nCuando la princesa Catherine, o Blew, la primera en la línea de sucesión del reino de Madelein, se convierte en el objetivo de un complot de asesinato de alto riesgo y de un traicionero golpe de Estado, se ve incapaz de confiar en nadie. Esto obliga a Lom Wayo, una agente de policía encargada de su protección, a actuar como último baluarte, protegiendo la vida de la princesa con una lealtad inquebrantable.\n\nMientras se ocultan del enemigo, ambas se enfrentan a peligros y situaciones de desafío que las llevan a una intimidad y a unos sentimientos prohibidos que quizá no puedan detenerse. Aunque sabe muy bien que, esta vez, el amor puede ser imposible, el corazón de Lom le exige que proteja a la princesa a toda costa. Cuando el enemigo descubre su escondite, está a punto de librarse una batalla final.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "504",
+   "generos": [
+    "Acción",
+    "Drama",
+    "Policíaca"
+   ],
+   "tematicas": [
+    "Amor imposible",
+    "Aventura",
+    "Clase alta",
+    "Conspiraciones",
+    "Diferencias de clase social",
+    "Guardaespaldas",
+    "Lesbiana",
+    "Política",
+    "Protagonista lesbiana",
+    "Realeza",
+    "Suplantación de identidad",
+    "Thai GL",
+    "The 4 elements"
+   ],
+   "avisos": [
+    {
+     "nombre": "Asesinato",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Crimen",
+     "categoria": null
+    },
+    {
+     "nombre": "Secuestro",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Sarocha Chankimha"
+   ],
+   "directores": [
+    "Kittisak Cheewasatjasakun"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/el-aire-los-cuatro-elementos-2026-z2cvnrjpt9?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/el-aire-los-cuatro-elementos-2026-z2cvnrjpt9?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt36626294/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-05-16",
+   "rel": [
+    502,
+    503,
+    505,
+    395,
+    484,
+    490,
+    384,
+    397,
+    489,
+    47,
+    501,
+    498,
+    396,
+    480,
+    387,
+    392,
+    399,
+    485,
+    487,
+    379
    ]
   },
   {
@@ -7060,13 +7331,13 @@
    "rel": [
     497,
     493,
+    506,
     109,
+    499,
     110,
     45,
     228,
     229,
-    112,
-    56,
     381,
     391,
     398,
@@ -7076,8 +7347,8 @@
     131,
     484,
     399,
-    480,
-    380
+    501,
+    498
    ]
   },
   {
@@ -7161,13 +7432,13 @@
     381,
     391,
     380,
-    384,
     263,
+    505,
+    384,
     130,
     484,
-    395,
-    262,
-    490
+    504,
+    498
    ]
   },
   {
@@ -7396,21 +7667,103 @@
     88,
     59,
     371,
+    505,
     303,
     397,
+    498,
+    501,
+    503,
     236,
     71,
-    484,
+    500,
     381,
     257,
-    391,
-    290,
     42,
     148,
-    91,
-    155,
-    165,
-    223
+    290,
+    91
+   ]
+  },
+  {
+   "id": 505,
+   "tipo": "serie",
+   "titulo": "El Fuego: Los Cuatro Elementos",
+   "titulo_original": "The Fire (Saga The 4 Elements)",
+   "titulo_latam": "El Fuego: Los Cuatro Elementos",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "【La saga de THE 4 ELEMENTS se centra en las cuatro primas de la familia ‘Watinwanit’ y sus romances.】\n\nThe Fire es la 4ª y última historia de esta saga.\n\nFire y Kaprao fueron rivales desde la infancia, pero el destino vuelve a cruzar sus caminos cuando un gran malentendido las enfrenta una vez más. Convencida de que Kaprao solo busca aprovecharse de su familia, Fire convierte su vida en un campo de batalla. Sin embargo, Kaprao no está dispuesta a dejarse intimidar y responde a cada provocación con la misma determinación. Lo que comienza como una guerra de orgullo y constantes enfrentamientos poco a poco da paso a una atracción imposible de ignorar. Pero cuando los sentimientos chocan con la lealtad familiar, Fire deberá enfrentarse a la decisión más difícil de su vida: seguir su deber o luchar por el amor.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "505",
+   "generos": [
+    "Ciencia ficción",
+    "Comedia",
+    "Drama"
+   ],
+   "tematicas": [
+    "Amor",
+    "Amor de juventud",
+    "Amor imposible",
+    "Autodescubrimiento",
+    "Enemies to Lovers",
+    "Entorno familiar negativo",
+    "Lesbiana",
+    "Secretos",
+    "Segundas oportunidades",
+    "Thai GL",
+    "The 4 elements",
+    "Venganza"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Kanteera Wadcharathadsanakul",
+    "Milin Watinthanakit"
+   ],
+   "directores": [
+    "Kittisak Cheewasatjasakun"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/el-fuego-los-cuatro-elementos-2026-28ki6pjn81t?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/el-fuego-los-cuatro-elementos-2026-28ki6pjn81t?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt36626299/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-07-11",
+   "rel": [
+    395,
+    503,
+    504,
+    502,
+    487,
+    263,
+    490,
+    384,
+    387,
+    489,
+    484,
+    381,
+    398,
+    391,
+    380,
+    483,
+    498,
+    501,
+    399,
+    378
    ]
   },
   {
@@ -7505,6 +7858,7 @@
     480,
     185,
     386,
+    498,
     274,
     34,
     275,
@@ -7513,14 +7867,13 @@
     103,
     111,
     131,
+    500,
     187,
     285,
     279,
     387,
-    136,
-    105,
-    110,
-    366
+    502,
+    110
    ]
   },
   {
@@ -7619,11 +7972,11 @@
     159,
     191,
     369,
-    166,
-    202,
-    192,
+    498,
+    501,
+    503,
     480,
-    488
+    500
    ]
   },
   {
@@ -7807,13 +8160,16 @@
     110,
     56,
     109,
-    379,
+    498,
+    501,
+    503,
     396,
     295,
     103,
-    131,
     128,
     129,
+    131,
+    502,
     387,
     54,
     105,
@@ -7913,6 +8269,7 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2022-08-11",
    "rel": [
+    500,
     384,
     371,
     400,
@@ -7931,8 +8288,7 @@
     115,
     113,
     482,
-    237,
-    100
+    237
    ]
   },
   {
@@ -8074,6 +8430,7 @@
    "publicada": "2026-11-16 21:37:15",
    "fecha": "2026-05-03",
    "rel": [
+    498,
     387,
     398,
     391,
@@ -8084,8 +8441,7 @@
     130,
     257,
     399,
-    485,
-    396,
+    503,
     395,
     176,
     175,
@@ -8175,8 +8531,8 @@
     286,
     272,
     254,
-    33,
     110,
+    499,
     161
    ]
   },
@@ -8438,19 +8794,19 @@
    "rel": [
     71,
     236,
+    498,
     243,
     480,
     399,
     149,
     214,
     186,
+    501,
     396,
     131,
     24,
-    87,
-    54,
-    136,
-    105,
+    505,
+    500,
     379,
     161,
     159,
@@ -8548,6 +8904,91 @@
    ]
   },
   {
+   "id": 500,
+   "tipo": "serie",
+   "titulo": "Fairway of Love",
+   "titulo_original": "Fairway of Love",
+   "titulo_latam": "Fairway of Love",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "\"Fairway Of Love\" gira en torno al competitivo y romántico mundo del golf profesional. La historia sigue a una joven y adinerada heredera de un importante imperio del golf cuya vida da un giro inesperado cuando se cruza en el verde con una enigmática golfista. Tras un choque, tanto literal como figurado, durante un torneo, surge una intensa chispa entre ellas. Mientras se enfrentan a la enorme presión de este deporte, a las expectativas familiares y a las rivalidades personales, deben decidir si están dispuestas a arriesgarlo todo por una oportunidad de encontrar el amor verdadero.",
+   "edad": "TP",
+   "relevancia": "A",
+   "temporadas": "1",
+   "disponible_espana": true,
+   "final_feliz": null,
+   "poster": "500",
+   "generos": [
+    "Comedia",
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Comedia de enredo",
+    "Deportes",
+    "Diferencia de altura",
+    "Enemies to Lovers",
+    "Familia",
+    "Lesbiana",
+    "Lesbianismo",
+    "Pareja sana",
+    "Protagonista lesbiana",
+    "Relaciones",
+    "Relación de pareja",
+    "Romance en el trabajo",
+    "Thai GL"
+   ],
+   "avisos": [],
+   "actrices": [
+    "Kittaya Iemnopmanee",
+    "Tanatcha Devahastin"
+   ],
+   "directores": [
+    "Tossaporn Sriwichai"
+   ],
+   "donde_ver": [
+    "https://wetv.vip/es/play/ry6xp1egi7y2f8m/n4102e8gvv3-EP01%3A_Fairway_del_Amor"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://wetv.vip/es/play/ry6xp1egi7y2f8m/n4102e8gvv3-EP01%3A_Fairway_del_Amor"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt45134879/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-09-06",
+   "rel": [
+    131,
+    387,
+    483,
+    498,
+    399,
+    503,
+    501,
+    480,
+    386,
+    396,
+    185,
+    395,
+    286,
+    391,
+    381,
+    398,
+    130,
+    380,
+    484,
+    103
+   ]
+  },
+  {
    "id": 280,
    "tipo": "serie",
    "titulo": "Familia de acogida",
@@ -8634,10 +9075,10 @@
     279,
     171,
     274,
-    304,
     146,
+    304,
+    500,
     61,
-    136,
     222,
     378,
     493,
@@ -8887,18 +9328,18 @@
     69,
     273,
     490,
-    275,
     76,
-    371,
+    275,
+    504,
     59,
+    371,
     218,
     81,
-    484,
     248,
     221,
     481,
-    165,
-    205
+    205,
+    165
    ]
   },
   {
@@ -9058,6 +9499,7 @@
     497,
     493,
     394,
+    499,
     486,
     241,
     239,
@@ -9065,12 +9507,11 @@
     481,
     367,
     495,
+    500,
     131,
     484,
     490,
-    269,
-    58,
-    280
+    269
    ]
   },
   {
@@ -9164,6 +9605,7 @@
    "fecha": "2022-11-19",
    "rel": [
     381,
+    504,
     387,
     483,
     391,
@@ -9174,15 +9616,14 @@
     395,
     257,
     131,
+    505,
     496,
     115,
     109,
     493,
     176,
     175,
-    174,
-    179,
-    251
+    174
    ]
   },
   {
@@ -9378,9 +9819,15 @@
    "rel": [
     224,
     286,
+    498,
+    501,
+    503,
+    500,
+    505,
     384,
-    488,
+    502,
     484,
+    504,
     80,
     78,
     68,
@@ -9389,13 +9836,7 @@
     191,
     189,
     155,
-    166,
-    202,
-    36,
-    93,
-    92,
-    482,
-    192
+    166
    ]
   },
   {
@@ -9504,14 +9945,18 @@
    "fecha": "2014-02-10",
    "rel": [
     150,
+    506,
     493,
     109,
     56,
+    499,
     378,
     366,
     263,
     47,
     490,
+    498,
+    502,
     103,
     105,
     236,
@@ -9607,8 +10052,8 @@
     380,
     399,
     480,
+    498,
     372,
-    396,
     45,
     378,
     109,
@@ -9706,9 +10151,9 @@
     175,
     174,
     179,
+    506,
+    499,
     493,
-    497,
-    110,
     380,
     398,
     391,
@@ -9878,19 +10323,19 @@
     269,
     33,
     131,
-    384,
+    500,
     254,
+    384,
     280,
+    505,
     71,
-    484,
     391,
     138,
-    381,
     387,
     53,
     77,
     171,
-    304,
+    484,
     378,
     204,
     394
@@ -9955,15 +10400,15 @@
     105,
     253,
     301,
-    289,
-    261,
-    490,
-    55,
     51,
     299,
     133,
     49,
-    75
+    490,
+    55,
+    75,
+    71,
+    289
    ]
   },
   {
@@ -10018,17 +10463,17 @@
     232,
     256,
     280,
+    107,
     299,
     64,
     34,
-    107,
     102,
     134,
     289,
     261,
-    305,
-    149,
-    70,
+    47,
+    103,
+    136,
     366,
     199,
     114
@@ -10139,8 +10584,8 @@
     52,
     244,
     390,
-    282,
     83,
+    282,
     138,
     263,
     89,
@@ -10335,16 +10780,16 @@
     484,
     257,
     131,
+    501,
     399,
+    503,
+    498,
     396,
-    485,
     395,
     115,
     109,
     493,
-    496,
-    176,
-    175
+    496
    ]
   },
   {
@@ -10460,6 +10905,8 @@
    "publicada": "2026-11-16 21:37:15",
    "fecha": "2026-02-12",
    "rel": [
+    502,
+    504,
     387,
     483,
     490,
@@ -10473,10 +10920,8 @@
     131,
     489,
     257,
+    498,
     399,
-    480,
-    396,
-    395,
     109,
     239,
     115
@@ -10626,6 +11071,7 @@
     129,
     399,
     214,
+    498,
     274,
     34,
     171,
@@ -10638,8 +11084,7 @@
     215,
     206,
     110,
-    40,
-    91
+    40
    ]
   },
   {
@@ -10801,11 +11246,11 @@
     32,
     86,
     224,
+    372,
+    371,
     394,
     259,
-    101,
-    165,
-    123
+    101
    ]
   },
   {
@@ -10964,11 +11409,11 @@
     36,
     93,
     92,
-    142,
-    113,
     390,
+    502,
     138,
     484,
+    504,
     302,
     254,
     490,
@@ -11060,9 +11505,9 @@
     255,
     54,
     392,
+    489,
     128,
     129,
-    489,
     43,
     131,
     490,
@@ -11362,7 +11807,7 @@
     272,
     32,
     224,
-    275
+    372
    ]
   },
   {
@@ -11538,10 +11983,10 @@
     58,
     395,
     305,
-    146,
     254,
     275,
     138,
+    146,
     144,
     278,
     50,
@@ -11616,6 +12061,7 @@
     493,
     394,
     44,
+    499,
     4,
     178,
     173,
@@ -11864,8 +12310,8 @@
     87,
     55,
     489,
-    34,
     50,
+    34,
     126,
     247,
     232,
@@ -12093,24 +12539,24 @@
    "publicada": "2026-11-16 21:37:15",
    "fecha": "2026-09-05",
    "rel": [
-    489,
     397,
+    502,
+    504,
+    489,
     484,
-    487,
+    505,
+    498,
     399,
+    501,
+    503,
     396,
-    485,
     103,
     131,
-    387,
+    487,
     105,
+    387,
     47,
-    483,
-    54,
-    380,
-    381,
-    398,
-    391,
+    485,
     367,
     109
    ]
@@ -12243,21 +12689,21 @@
     397,
     487,
     484,
+    502,
+    498,
+    504,
+    505,
     399,
+    501,
+    503,
     485,
     396,
     483,
     387,
     398,
     380,
-    391,
-    381,
-    395,
-    384,
-    49,
     42,
-    170,
-    124
+    170
    ]
   },
   {
@@ -12341,6 +12787,7 @@
    "rel": [
     88,
     371,
+    503,
     254,
     275,
     490,
@@ -12350,7 +12797,6 @@
     484,
     273,
     233,
-    298,
     97,
     394,
     68,
@@ -12416,6 +12862,7 @@
     497,
     493,
     394,
+    499,
     486,
     241,
     239,
@@ -12423,12 +12870,11 @@
     481,
     367,
     495,
+    500,
     131,
     484,
     490,
-    269,
-    58,
-    280
+    269
    ]
   },
   {
@@ -12671,19 +13117,19 @@
     378,
     150,
     238,
-    239,
-    366,
     236,
+    498,
     399,
     480,
+    501,
+    503,
     396,
     384,
+    505,
+    504,
     372,
-    484,
-    54,
-    105,
-    128,
-    129
+    502,
+    484
    ]
   },
   {
@@ -12829,6 +13275,7 @@
     166,
     154,
     68,
+    500,
     400,
     71,
     61,
@@ -12925,8 +13372,8 @@
     226,
     216,
     89,
-    57,
     43,
+    57,
     63,
     288,
     298,
@@ -13188,14 +13635,14 @@
     45,
     239,
     238,
-    482,
     204,
+    482,
     24,
     387,
     399,
     214,
-    243,
-    149
+    498,
+    243
    ]
   },
   {
@@ -13469,6 +13916,7 @@
     132,
     107,
     392,
+    504,
     255,
     105,
     484,
@@ -13478,7 +13926,6 @@
     131,
     130,
     128,
-    129,
     56,
     109,
     112
@@ -13561,11 +14008,11 @@
     47,
     103,
     105,
+    498,
+    502,
     399,
     54,
-    395,
-    49,
-    111
+    395
    ]
   },
   {
@@ -13853,6 +14300,7 @@
    "publicada": "2026-10-16 15:03:54",
    "fecha": "2018-10-12",
    "rel": [
+    498,
     480,
     366,
     379
@@ -14079,12 +14527,12 @@
    "rel": [
     90,
     89,
-    196,
     22,
+    196,
     375,
     218,
-    255,
     43,
+    255,
     235,
     87,
     55,
@@ -14175,14 +14623,14 @@
     242,
     143,
     392,
+    504,
     47,
     282,
     51,
     246,
     83,
     6,
-    53,
-    279
+    53
    ]
   },
   {
@@ -14256,8 +14704,8 @@
    "rel": [
     277,
     90,
-    272,
     43,
+    272,
     375,
     47,
     218,
@@ -14343,11 +14791,104 @@
     392,
     83,
     6,
+    504,
     224,
     219,
     300,
-    377,
-    123
+    377
+   ]
+  },
+  {
+   "id": 502,
+   "tipo": "serie",
+   "titulo": "La Tierra: Los Cuatro Elementos",
+   "titulo_original": "The Earth (Saga The 4 Elements)",
+   "titulo_latam": "The Earth (Tierra) Saga The 4 Elements",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "【La saga de THE 4 ELEMENTS se centra en las cuatro primas de la familia ‘Watinwanit’ y sus romances.】\n\nThe Earth es la 1ª historia de esta saga.\n\nRose Thippapha, heredera de la finca Chomjan, regresa de Estados Unidos cuando su padre sufre un accidente y se ve en peligro por culpa de Wasu, un viticultor que pretende arrebatarle sus tierras para sus negocios ilegales. Por suerte, Din Kasama, amiga de la infancia de Rose y dueña de una granja de hortalizas orgánicas, llega para protegerla. Para garantizar su seguridad, ella y Din tendrán que casarse.\n\nAunque solo sea un matrimonio ficticio, su renovada cercanía poco a poco despierta sentimientos auténticos.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "502",
+   "generos": [
+    "Acción",
+    "Drama",
+    "Policíaca",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amigas de la infancia",
+    "Amistad",
+    "Amor",
+    "Diferencia de edad",
+    "Fake dating",
+    "Lesbiana",
+    "Naturaleza",
+    "Thai GL",
+    "The 4 elements"
+   ],
+   "avisos": [
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Sangre",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Lapisara Intarasut",
+    "Panthita Jencharoentham"
+   ],
+   "directores": [
+    "Kittisak Cheewasatjasakun"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/album/la-tierra-los-cuatro-elementos-2026-16vh6ho38tl?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/album/la-tierra-los-cuatro-elementos-2026-16vh6ho38tl?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt36626287/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-01-24",
+   "rel": [
+    504,
+    503,
+    395,
+    505,
+    484,
+    490,
+    397,
+    501,
+    498,
+    480,
+    399,
+    396,
+    489,
+    103,
+    485,
+    387,
+    105,
+    47,
+    381,
+    109
    ]
   },
   {
@@ -14548,10 +15089,10 @@
     381,
     399,
     214,
+    498,
     284,
     274,
     34,
-    87,
     45,
     222,
     73,
@@ -14836,11 +15377,12 @@
    "fecha": "2016-01-05",
    "rel": [
     47,
+    53,
     143,
     392,
-    53,
     219,
     246,
+    504,
     224,
     51,
     52,
@@ -14852,7 +15394,6 @@
     49,
     83,
     6,
-    183,
     377,
     300
    ]
@@ -14923,14 +15464,14 @@
     149,
     81,
     141,
-    75,
+    500,
     222,
     204,
     73,
     394,
-    486,
     112,
     68,
+    486,
     237,
     190,
     151
@@ -15021,13 +15562,13 @@
     107,
     399,
     149,
+    500,
     371,
     292,
     293,
     106,
     183,
-    119,
-    128
+    119
    ]
   },
   {
@@ -15159,10 +15700,10 @@
     399,
     214,
     480,
+    498,
     274,
     34,
     272,
-    136,
     222,
     45,
     38,
@@ -15267,6 +15808,8 @@
     480,
     386,
     399,
+    503,
+    500,
     292,
     371,
     484,
@@ -15277,7 +15820,6 @@
     278,
     253,
     34,
-    232,
     379,
     113,
     394,
@@ -15467,6 +16009,7 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2016-01-21",
    "rel": [
+    505,
     392,
     47,
     395,
@@ -15474,6 +16017,7 @@
     387,
     490,
     399,
+    503,
     54,
     51,
     48,
@@ -15481,7 +16025,9 @@
     109,
     378,
     44,
+    506,
     115,
+    499,
     56
    ]
   },
@@ -15543,18 +16089,18 @@
     110,
     493,
     367,
+    506,
     497,
     236,
     58,
     380,
     399,
+    498,
     131,
     262,
+    505,
     261,
-    484,
-    128,
-    129,
-    396
+    484
    ]
   },
   {
@@ -15775,7 +16321,7 @@
     35,
     221,
     496,
-    399
+    498
    ]
   },
   {
@@ -15875,11 +16421,11 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2012-06-26",
    "rel": [
-    234,
     278,
+    234,
     248,
-    230,
     59,
+    230,
     397,
     254,
     302,
@@ -15889,9 +16435,9 @@
     275,
     69,
     138,
+    385,
     484,
     371,
-    385,
     217,
     205,
     165
@@ -15972,17 +16518,17 @@
     50,
     111,
     52,
+    498,
     270,
     34,
+    500,
     131,
+    502,
     136,
     105,
     126,
     490,
-    484,
-    55,
-    205,
-    65
+    205
    ]
   },
   {
@@ -16099,11 +16645,11 @@
     397,
     53,
     264,
+    505,
     216,
     137,
     385,
-    116,
-    4
+    116
    ]
   },
   {
@@ -16280,16 +16826,16 @@
     109,
     112,
     68,
-    45,
     128,
     129,
     279,
     395,
     305,
     266,
+    33,
+    500,
     131,
-    384,
-    33
+    384
    ]
   },
   {
@@ -16376,8 +16922,8 @@
     302,
     484,
     254,
-    230,
     397,
+    230,
     64,
     53,
     248,
@@ -16544,6 +17090,7 @@
     175,
     174,
     179,
+    506,
     110,
     45,
     380,
@@ -16554,8 +17101,7 @@
     381,
     483,
     387,
-    384,
-    484
+    384
    ]
   },
   {
@@ -16646,6 +17192,7 @@
     129,
     399,
     214,
+    498,
     274,
     34,
     171,
@@ -16658,8 +17205,7 @@
     215,
     206,
     110,
-    40,
-    91
+    40
    ]
   },
   {
@@ -16725,13 +17271,13 @@
     159,
     379,
     161,
+    486,
     238,
     239,
     369,
-    486,
-    251,
     399,
     214,
+    498,
     24
    ]
   },
@@ -16798,14 +17344,14 @@
     174,
     179,
     109,
+    499,
     493,
     398,
     380,
     391,
     130,
     257,
-    381,
-    484
+    381
    ]
   },
   {
@@ -16877,9 +17423,9 @@
    "rel": [
     49,
     108,
+    107,
     128,
     129,
-    107,
     47,
     48,
     399,
@@ -16975,7 +17521,9 @@
     247,
     232,
     256,
+    500,
     399,
+    498,
     480,
     186,
     185,
@@ -16983,8 +17531,6 @@
     149,
     380,
     383,
-    103,
-    111,
     366,
     199,
     38
@@ -17063,17 +17609,17 @@
     161,
     159,
     155,
-    36,
-    93,
-    91,
-    92,
+    501,
     284,
     103,
     54,
     136,
     105,
+    502,
     55,
-    490
+    490,
+    75,
+    71
    ]
   },
   {
@@ -17143,15 +17689,15 @@
     484,
     131,
     496,
+    506,
     251,
     238,
     239,
     115,
     109,
+    499,
     493,
-    176,
-    175,
-    174
+    176
    ]
   },
   {
@@ -17225,14 +17771,14 @@
     138,
     53,
     171,
-    146,
     272,
+    146,
+    500,
+    502,
     55,
-    484,
     204,
     161,
-    45,
-    110
+    45
    ]
   },
   {
@@ -17471,9 +18017,12 @@
    "fecha": "2024-11-26",
    "rel": [
     399,
+    498,
     396,
+    503,
     103,
     131,
+    502,
     105,
     54,
     484,
@@ -17483,13 +18032,10 @@
     398,
     391,
     130,
-    384,
-    111,
     110,
     497,
     56,
-    496,
-    109
+    496
    ]
   },
   {
@@ -17623,6 +18169,7 @@
     176,
     175,
     174,
+    499,
     378,
     162
    ]
@@ -17911,6 +18458,7 @@
    "publicada": "2026-10-16 15:03:54",
    "fecha": "2026-09-17",
    "rel": [
+    505,
     484,
     490,
     397,
@@ -17958,6 +18506,103 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2019-11-14",
    "rel": []
+  },
+  {
+   "id": 501,
+   "tipo": "serie",
+   "titulo": "Moonshadow",
+   "titulo_original": "Moonshadow",
+   "titulo_latam": "Moonshadow",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Tras una dolorosa ruptura, Jan, la dueña de un acogedor bar, cierra su corazón al amor y se centra únicamente en sobrevivir a la sombra de su pasado. Todo cambia cuando Key, una joven y atrevida cantante, irrumpe en su mundo tras un encuentro de una noche y le declara abiertamente que quiere ser su \"sugar baby\".\n\nLo que comienza como un acuerdo puramente físico se transforma en algo más profundo a medida que la calidez de Key empieza a derretir las frías barreras de Jan. Justo cuando sus sentimientos se vuelven innegables, la ex de Jan regresa inesperadamente, poniendo a prueba el frágil vínculo que se está forjando entre ellas.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": "1",
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "501",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amor",
+    "Autodescubrimiento",
+    "Clase alta",
+    "Diferencia de edad",
+    "Lesbiana",
+    "Slow burn",
+    "Sugar baby",
+    "Sugar mommy",
+    "Thai GL"
+   ],
+   "avisos": [
+    {
+     "nombre": "Celos",
+     "categoria": null
+    },
+    {
+     "nombre": "Diferencia de edad",
+     "categoria": null
+    },
+    {
+     "nombre": "Erotismo",
+     "categoria": null
+    },
+    {
+     "nombre": "Vómitos",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Pattraphus Borattasuwan",
+    "Rachanun Mahawan",
+    "Thasorn Klinnium",
+    "Tipnaree Weerawatnodom"
+   ],
+   "directores": [
+    "Kanittha Kwunyoo"
+   ],
+   "donde_ver": [
+    "https://www.iq.com/play/moonshadow-episodio-1-ztjekwcp0o?lang=es_mx"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.iq.com/play/moonshadow-episodio-1-ztjekwcp0o?lang=es_mx"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt39044683/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-08-12",
+   "rel": [
+    396,
+    399,
+    498,
+    503,
+    485,
+    502,
+    387,
+    484,
+    490,
+    483,
+    381,
+    398,
+    391,
+    380,
+    395,
+    489,
+    397,
+    480,
+    110,
+    496
+   ]
   },
   {
    "id": 32,
@@ -18290,6 +18935,7 @@
     368,
     271,
     217,
+    498,
     371,
     385,
     216,
@@ -18521,6 +19167,7 @@
     6,
     244,
     390,
+    504,
     224,
     89,
     219,
@@ -18530,8 +19177,7 @@
     52,
     48,
     53,
-    134,
-    367
+    134
    ]
   },
   {
@@ -18669,14 +19315,14 @@
     176,
     175,
     174,
+    499,
     96,
     46,
     56,
     382,
     1,
     206,
-    31,
-    135
+    31
    ]
   },
   {
@@ -18886,9 +19532,9 @@
     216,
     147,
     211,
-    217,
     288,
     298,
+    217,
     277,
     90,
     22,
@@ -18953,6 +19599,7 @@
     269,
     58,
     280,
+    500,
     131,
     266,
     484,
@@ -18968,8 +19615,7 @@
     394,
     190,
     74,
-    72,
-    495
+    72
    ]
   },
   {
@@ -19149,6 +19795,7 @@
     254,
     380,
     152,
+    500,
     53,
     387,
     247,
@@ -19157,8 +19804,7 @@
     150,
     44,
     112,
-    68,
-    222
+    68
    ]
   },
   {
@@ -19226,19 +19872,19 @@
     71,
     236,
     399,
+    498,
     243,
     214,
     149,
     392,
     24,
+    505,
     484,
-    380,
     367,
     109,
     379,
     161,
-    159,
-    45
+    159
    ]
   },
   {
@@ -19376,9 +20022,9 @@
     399,
     480,
     384,
-    149,
     157,
     59,
+    149,
     292,
     136,
     105,
@@ -19490,11 +20136,11 @@
     215,
     378,
     56,
-    379,
     293,
     490,
     281,
-    263
+    263,
+    505
    ]
   },
   {
@@ -19591,6 +20237,7 @@
     288,
     116,
     273,
+    275,
     480,
     277,
     371,
@@ -19600,8 +20247,7 @@
     168,
     170,
     169,
-    296,
-    382
+    296
    ]
   },
   {
@@ -19708,24 +20354,24 @@
    "publicada": "2026-11-06 11:26:13",
    "fecha": "2024-11-23",
    "rel": [
+    503,
     490,
-    484,
+    502,
     489,
+    484,
+    504,
     399,
     480,
-    485,
-    396,
     217,
     483,
-    387,
+    498,
+    501,
+    485,
+    396,
     398,
     381,
     391,
-    380,
     395,
-    487,
-    384,
-    372,
     124,
     42
    ]
@@ -19812,24 +20458,24 @@
    "rel": [
     399,
     396,
+    503,
     480,
-    485,
+    498,
+    501,
+    500,
     131,
+    485,
     185,
     387,
-    483,
+    502,
     219,
     484,
     397,
     490,
     400,
-    489,
-    398,
-    381,
     40,
     110,
-    39,
-    189
+    39
    ]
   },
   {
@@ -19912,26 +20558,26 @@
    "publicada": "2026-11-01 22:45:47",
    "fecha": "2024-10-19",
    "rel": [
+    501,
     399,
+    498,
     480,
+    503,
     485,
+    502,
     387,
-    483,
     484,
     490,
-    489,
-    397,
+    483,
     398,
     380,
     381,
-    391,
     395,
-    384,
-    487,
+    489,
+    397,
     142,
     110,
-    109,
-    379
+    109
    ]
   },
   {
@@ -20098,6 +20744,7 @@
     64,
     298,
     273,
+    234,
     254,
     86,
     371,
@@ -20108,7 +20755,6 @@
     230,
     272,
     32,
-    224,
     154,
     123,
     97,
@@ -20549,23 +21195,23 @@
    "fecha": null,
    "rel": [
     380,
+    501,
     396,
     480,
-    485,
+    498,
+    503,
     131,
+    485,
     103,
     387,
     483,
     54,
+    502,
     105,
     484,
     397,
     490,
     236,
-    489,
-    381,
-    391,
-    398,
     110,
     497
    ]
@@ -20810,14 +21456,14 @@
     91,
     135,
     110,
-    393,
     68,
+    393,
     189,
     482,
     77,
     224,
     386,
-    396
+    498
    ]
   },
   {
@@ -20901,6 +21547,7 @@
     251,
     380,
     381,
+    505,
     484,
     490,
     480,
@@ -20983,21 +21630,26 @@
    "publicada": "2026-11-16 21:37:15",
    "fecha": "2025-02-05",
    "rel": [
+    505,
     489,
     490,
     399,
+    503,
     395,
-    485,
-    396,
     384,
     483,
-    387,
     397,
-    484,
+    498,
+    501,
+    485,
+    396,
+    504,
+    502,
+    387,
     398,
     391,
     381,
-    380
+    484
    ]
   },
   {
@@ -21232,23 +21884,23 @@
     56,
     496,
     109,
-    497,
     379,
+    497,
     238,
     239,
     251,
+    506,
     493,
     45,
+    499,
     399,
+    498,
     480,
+    501,
     396,
     131,
     103,
-    387,
-    54,
-    105,
-    484,
-    236
+    387
    ]
   },
   {
@@ -21432,21 +22084,21 @@
    "fecha": "2014-01-10",
    "rel": [
     480,
+    498,
     399,
     398,
     111,
     380,
     105,
+    502,
     54,
     130,
     381,
     490,
     107,
-    396,
-    295,
     47,
-    131,
-    387,
+    501,
+    503,
     110,
     497,
     56,
@@ -21510,12 +22162,13 @@
     103,
     47,
     48,
-    399,
     398,
+    399,
     380,
     490,
     111,
     56,
+    506,
     109,
     150
    ]
@@ -21612,18 +22265,113 @@
     298,
     275,
     385,
-    234,
     69,
+    234,
     371,
     233,
     481,
     225,
-    227,
     124,
+    227,
     168,
     170,
     169,
     192
+   ]
+  },
+  {
+   "id": 506,
+   "tipo": "pelicula",
+   "titulo": "Season of Love",
+   "titulo_original": "Season of Love",
+   "titulo_latam": null,
+   "pais": "EE.UU.",
+   "anio": 2019,
+   "anio_fin": null,
+   "sinopsis": "Una película navideña sáfica que sigue a tres parejas muy distintas mientras lidian con sus vidas amorosas, en varias historias ligeramente entrelazadas que transcurren desde justo antes de Navidad hasta Año Nuevo.",
+   "edad": "7",
+   "relevancia": "A",
+   "temporadas": null,
+   "disponible_espana": null,
+   "final_feliz": true,
+   "poster": "506",
+   "generos": [
+    "Comedia",
+    "Comedia romántica",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Autodescubrimiento",
+    "Desamor",
+    "Fiestas",
+    "Heartwarming",
+    "Navidad",
+    "Tello",
+    "Vida adulta"
+   ],
+   "avisos": [
+    {
+     "nombre": "Conductas perjudiciales",
+     "categoria": null
+    },
+    {
+     "nombre": "Consumo de alcohol",
+     "categoria": null
+    },
+    {
+     "nombre": "Desamor",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Elana Krausz",
+    "Emily Goss",
+    "Janelle Marie",
+    "Jessica Clark",
+    "Laur Allen",
+    "Sandra Mae Frank"
+   ],
+   "directores": [
+    "Christin Baker"
+   ],
+   "donde_ver": [
+    "https://www.cinetecagay.com/pelicula/season-of-love-2019-subt-espanol-peliculas-gay-online/"
+   ],
+   "plataformas": [
+    {
+     "n": "Otras",
+     "p": "INT",
+     "u": "https://www.cinetecagay.com/pelicula/season-of-love-2019-subt-espanol-peliculas-gay-online/"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt9887520/"
+   ],
+   "letterboxd": "https://letterboxd.com/tmdb/606243/",
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2019-11-21",
+   "rel": [
+    228,
+    493,
+    499,
+    496,
+    109,
+    497,
+    238,
+    239,
+    229,
+    110,
+    112,
+    44,
+    56,
+    380,
+    391,
+    387,
+    384,
+    261,
+    131,
+    399
    ]
   },
   {
@@ -21987,8 +22735,8 @@
     76,
     275,
     69,
-    248,
     217,
+    248,
     230,
     216,
     397,
@@ -21997,8 +22745,8 @@
     302,
     233,
     489,
-    138,
     278,
+    138,
     484,
     259,
     79
@@ -22200,6 +22948,8 @@
     105,
     263,
     255,
+    502,
+    504,
     484,
     490,
     108,
@@ -22207,8 +22957,6 @@
     392,
     43,
     107,
-    399,
-    480,
     56,
     367,
     109,
@@ -22306,11 +23054,11 @@
     286,
     395,
     305,
-    146,
     138,
     131,
     254,
     257,
+    146,
     53
    ]
   },
@@ -22368,6 +23116,7 @@
     46,
     493,
     109,
+    499,
     208,
     225
    ]
@@ -22487,6 +23236,7 @@
     75,
     236,
     61,
+    498,
     243,
     480,
     399,
@@ -22495,11 +23245,10 @@
     269,
     286,
     214,
+    501,
     396,
     131,
     254,
-    272,
-    24,
     379,
     161,
     159,
@@ -22985,8 +23734,8 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2010-10-28",
    "rel": [
-    394,
     207,
+    394,
     197,
     64,
     234,
@@ -23103,9 +23852,10 @@
    "rel": [
     496,
     379,
+    506,
     493,
-    112,
     497,
+    112,
     110,
     109,
     150,
@@ -23116,6 +23866,7 @@
     131,
     381,
     387,
+    498,
     480,
     399,
     391
@@ -23211,12 +23962,15 @@
    "fecha": "2005-11-04",
    "rel": [
     399,
+    498,
     128,
     129,
     380,
+    501,
     396,
     480,
     262,
+    505,
     261,
     379,
     110,
@@ -23276,6 +24030,7 @@
     369,
     482,
     251,
+    378,
     155,
     36,
     93,
@@ -23283,14 +24038,13 @@
     92,
     135,
     110,
-    378,
     296,
     222,
     80,
     78,
-    189,
-    115,
-    103
+    103,
+    253,
+    301
    ]
   },
   {
@@ -23349,6 +24103,7 @@
     51,
     83,
     6,
+    504,
     224,
     219,
     245,
@@ -23460,8 +24215,8 @@
     50,
     247,
     120,
-    143,
     126,
+    143,
     60,
     34,
     274,
@@ -23533,23 +24288,23 @@
     54,
     107,
     480,
+    498,
     399,
     103,
     47,
+    502,
     490,
     398,
     380,
+    384,
     130,
     381,
-    384,
     49,
     111,
-    51,
-    48,
     56,
     110,
     109,
-    379
+    506
    ]
   },
   {
@@ -23616,24 +24371,25 @@
    "fecha": "2022-08-04",
    "rel": [
     391,
+    498,
+    501,
+    503,
     396,
-    103,
     196,
+    103,
     131,
+    502,
     387,
     54,
     105,
     484,
     490,
     111,
-    128,
-    129,
     36,
     92,
     110,
     56,
-    109,
-    379
+    109
    ]
   },
   {
@@ -23693,11 +24449,17 @@
     263,
     51,
     47,
+    504,
+    505,
     490,
-    48,
     49,
+    48,
     484,
+    502,
     391,
+    498,
+    501,
+    503,
     384,
     381,
     367,
@@ -23768,15 +24530,15 @@
     126,
     133,
     480,
+    498,
     399,
     103,
     47,
+    500,
     370,
     53,
+    502,
     490,
-    75,
-    71,
-    398,
     56,
     135
    ]
@@ -23876,9 +24638,9 @@
    "fecha": "2021-10-14",
    "rel": [
     372,
-    291,
     371,
     375,
+    291,
     298,
     216,
     230,
@@ -23957,12 +24719,12 @@
     105,
     134,
     102,
-    380,
     176,
     175,
     174,
     1,
     225,
+    499,
     46
    ]
   },
@@ -24031,7 +24793,7 @@
     224,
     387,
     87,
-    75,
+    33,
     113,
     166,
     189,
@@ -24181,10 +24943,12 @@
    "publicada": "2026-11-23 13:06:23",
    "fecha": null,
    "rel": [
+    506,
     228,
     496,
     109,
     497,
+    499,
     239,
     229,
     110,
@@ -24192,15 +24956,13 @@
     44,
     45,
     367,
-    366,
     387,
     391,
     131,
     384,
     484,
     399,
-    58,
-    490
+    58
    ]
   },
   {
@@ -24268,19 +25030,17 @@
     124,
     65,
     379,
-    165,
-    155,
-    203,
-    36,
-    93,
-    91,
+    225,
     75,
     71,
     485,
     243,
     131,
     54,
-    87
+    87,
+    128,
+    129,
+    67
    ]
   },
   {
@@ -24661,8 +25421,10 @@
    "rel": [
     186,
     399,
+    498,
     480,
     131,
+    500,
     386,
     61,
     391,
@@ -24671,14 +25433,12 @@
     304,
     384,
     484,
-    130,
     110,
     497,
     496,
     109,
     189,
-    148,
-    482
+    148
    ]
   },
   {
@@ -24774,21 +25534,21 @@
     75,
     380,
     399,
+    498,
     480,
     103,
     33,
+    500,
     119,
+    502,
     136,
     105,
     171,
     285,
     490,
     55,
-    71,
-    61,
     175,
-    195,
-    497
+    195
    ]
   },
   {
@@ -24915,7 +25675,7 @@
     269,
     58,
     280,
-    131,
+    500,
     379,
     190,
     72,
@@ -25003,17 +25763,17 @@
     250,
     286,
     230,
+    503,
     395,
     149,
     254,
     131,
     302,
+    502,
     55,
     484,
     490,
-    138,
-    161,
-    110
+    161
    ]
   },
   {
@@ -25425,12 +26185,12 @@
     376,
     269,
     58,
-    304,
+    504,
     146,
     266,
+    304,
+    500,
     61,
-    391,
-    138,
     366,
     190,
     72,
@@ -25953,15 +26713,15 @@
     273,
     71,
     61,
-    283,
     64,
     49,
     107,
     299,
     209,
+    283,
+    275,
     224,
-    76,
-    152
+    76
    ]
   },
   {
@@ -26042,6 +26802,134 @@
    ]
   },
   {
+   "id": 498,
+   "tipo": "serie",
+   "titulo": "Third Person",
+   "titulo_original": "Third Person",
+   "titulo_latam": "Third Person",
+   "pais": "Tailandia",
+   "anio": 2026,
+   "anio_fin": null,
+   "sinopsis": "Cuatro años después de que un accidente le provocara amnesia, Kris se ha labrado una vida tranquila y estable junto a su pareja, Nadia. Todo parece ir bien hasta que aparece una mujer llamada Sun. La presencia de Sun empieza a desentrañar los hilos sueltos del pasado de Kris, lo que la lleva a preguntarse si la vida que recuerda junto a Nadia es realmente la verdad o solo la versión que le hicieron creer.",
+   "edad": "16",
+   "relevancia": "A",
+   "temporadas": "1",
+   "disponible_espana": true,
+   "final_feliz": true,
+   "poster": "498",
+   "generos": [
+    "Drama",
+    "Romance"
+   ],
+   "tematicas": [
+    "Amistad",
+    "Amor",
+    "Autodescubrimiento",
+    "Drama psicológico",
+    "Identidad",
+    "Lesbiana",
+    "Misterio",
+    "Protagonista lesbiana",
+    "Psicológico",
+    "Pérdida de memoria",
+    "Relaciones",
+    "Relaciones complicadas",
+    "Relación de pareja",
+    "Salud Mental",
+    "Thai GL",
+    "Trastornos mentales"
+   ],
+   "avisos": [
+    {
+     "nombre": "Autolesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje",
+     "categoria": null
+    },
+    {
+     "nombre": "Chantaje emocional",
+     "categoria": null
+    },
+    {
+     "nombre": "Depresión",
+     "categoria": null
+    },
+    {
+     "nombre": "Enfermedad",
+     "categoria": null
+    },
+    {
+     "nombre": "Manipulación",
+     "categoria": null
+    },
+    {
+     "nombre": "Obsesión",
+     "categoria": null
+    },
+    {
+     "nombre": "Pareja tóxica",
+     "categoria": null
+    },
+    {
+     "nombre": "Psicópata",
+     "categoria": null
+    },
+    {
+     "nombre": "Violencia",
+     "categoria": null
+    }
+   ],
+   "actrices": [
+    "Bhapat Ahchariyasripong",
+    "Charada Imraporn",
+    "Nuttacha Ratchayangkanont"
+   ],
+   "directores": [
+    "Arisa Wawwanjit",
+    "Pawis Sowsrion"
+   ],
+   "donde_ver": [
+    "https://youtu.be/jKTTpHZZ_NE"
+   ],
+   "plataformas": [
+    {
+     "n": "YouTube",
+     "p": "INT",
+     "u": "https://youtu.be/jKTTpHZZ_NE"
+    }
+   ],
+   "info": [
+    "https://www.imdb.com/title/tt45114223/"
+   ],
+   "letterboxd": null,
+   "publicada": "2026-11-24 11:43:59",
+   "fecha": "2026-09-12",
+   "rel": [
+    483,
+    399,
+    480,
+    501,
+    503,
+    396,
+    103,
+    131,
+    485,
+    502,
+    387,
+    105,
+    484,
+    489,
+    490,
+    236,
+    381,
+    391,
+    380,
+    110
+   ]
+  },
+  {
    "id": 6,
    "tipo": "serie",
    "titulo": "Tierra de lobos (Temporada 3)",
@@ -26104,20 +26992,20 @@
     51,
     246,
     83,
-    219,
     41,
     128,
     129,
+    219,
     224,
     245,
     49,
+    504,
     47,
     282,
     52,
     50,
     48,
-    53,
-    134
+    53
    ]
   },
   {
@@ -26205,9 +27093,10 @@
     392,
     131,
     47,
+    505,
     58,
     395,
-    384,
+    502,
     49,
     108
    ]
@@ -26605,6 +27494,7 @@
    "fecha": "2015-11-07",
    "rel": [
     399,
+    498,
     24,
     177,
     236,
@@ -26622,8 +27512,7 @@
     38,
     35,
     176,
-    175,
-    174
+    175
    ]
   },
   {
@@ -26672,6 +27561,8 @@
    "publicada": "2026-10-11 22:17:42",
    "fecha": "2012-06-17",
    "rel": [
+    501,
+    502,
     381,
     243,
     384,
@@ -26981,8 +27872,9 @@
    "rel": [
     387,
     399,
-    480,
+    498,
     485,
+    480,
     391,
     130,
     381,
@@ -26997,8 +27889,7 @@
     109,
     497,
     56,
-    367,
-    45
+    367
    ]
   },
   {
@@ -27064,10 +27955,10 @@
     394,
     497,
     148,
+    166,
     493,
     496,
-    166,
-    155,
+    499,
     224,
     386,
     131,
@@ -27139,7 +28030,7 @@
     192,
     394,
     154,
-    205,
+    498,
     226,
     230,
     272,
@@ -27207,7 +28098,9 @@
     494,
     493,
     496,
+    506,
     497,
+    499,
     241,
     239,
     228,
@@ -27217,13 +28110,11 @@
     112,
     205,
     84,
-    210,
-    394,
     269,
     149,
     266,
     484,
-    70
+    502
    ]
   },
   {
@@ -27275,7 +28166,9 @@
    "fecha": "2021-12-19",
    "rel": [
     228,
+    499,
     497,
+    506,
     493,
     496,
     239,
@@ -27651,8 +28544,8 @@
    "fecha": "2021-08-29",
    "rel": [
     397,
-    230,
     217,
+    230,
     254,
     138,
     302,
@@ -27663,8 +28556,8 @@
     234,
     484,
     371,
-    64,
     490,
+    64,
     124,
     481,
     165,
@@ -27756,7 +28649,7 @@
     61,
     286,
     77,
-    384
+    500
    ]
   },
   {
@@ -27835,8 +28728,8 @@
     36,
     93,
     92,
-    189,
     148,
+    189,
     394,
     379,
     202,
@@ -27844,11 +28737,11 @@
     481,
     77,
     224,
+    498,
     480,
     54,
     105,
-    75,
-    71
+    75
    ]
   },
   {
@@ -28022,9 +28915,9 @@
     35,
     394,
     109,
+    498,
     399,
-    480,
-    214
+    480
    ]
   },
   {
@@ -28217,9 +29110,9 @@
     273,
     69,
     275,
+    385,
     234,
     371,
-    385,
     217
    ]
   },
@@ -28370,6 +29263,7 @@
    "fecha": "1995-09-04",
    "rel": [
     386,
+    504,
     47,
     282,
     224,
@@ -28381,14 +29275,13 @@
     50,
     48,
     137,
+    372,
     246,
     83,
     6,
     52,
-    372,
     134,
-    367,
-    377
+    367
    ]
   },
   {
@@ -28465,6 +29358,7 @@
    "rel": [
     50,
     48,
+    504,
     484
    ]
   },
@@ -28555,13 +29449,13 @@
     236,
     286,
     77,
-    384,
-    488,
-    484,
-    391,
-    69,
-    381,
-    385
+    500,
+    498,
+    501,
+    503,
+    504,
+    505,
+    384
    ]
   },
   {
@@ -28701,21 +29595,21 @@
    "rel": [
     88,
     488,
+    500,
     254,
     397,
     490,
     248,
+    86,
     292,
     275,
-    86,
     216,
-    400,
     484,
+    400,
     226,
-    273,
     192,
-    165,
     481,
+    165,
     482,
     223,
     221
@@ -29058,13 +29952,13 @@
     497,
     251,
     37,
+    115,
     236,
     280,
     305,
     136,
     105,
-    293,
-    141
+    293
    ]
   },
   {
@@ -29281,6 +30175,7 @@
     143,
     392,
     6,
+    504,
     282,
     224,
     219
@@ -29431,8 +30326,8 @@
     301,
     270,
     76,
-    280,
     209,
+    280,
     79
    ]
   },
@@ -29506,14 +30401,14 @@
     399,
     131,
     381,
+    498,
     384,
     480,
     391,
     490,
     58,
-    54,
-    103,
-    105
+    255,
+    54
    ]
   }
  ]
