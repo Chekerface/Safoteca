@@ -1,6 +1,6 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "uat-safoteca-app-v83";
-const CACHE_IMG = "uat-safoteca-img";
+const CACHE_APP = "uat-safoteca-app-v84";
+const CACHE_IMG = "uat-safoteca-img-v2";   // subir al cambiar pósters que ya existían (se guardan sin caducar)
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
   "./", "./index.html", "./css/estilos.css", "./css/temas.css", "./js/app.js", "./js/temas.js", "./config.js",
