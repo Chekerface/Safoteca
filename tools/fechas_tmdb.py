@@ -5,6 +5,8 @@ Para cada serie o película guarda en la base de datos (no se enseñan en la web
   tmdb_id        «movie/123» o «tv/456»
   fecha_estreno  estreno (series: primer episodio)
   fecha_novedad  series: último episodio emitido; películas: el estreno. Es la que ordena «Novedades».
+Películas: la fecha es la del estreno en ESPAÑA si TMDB la tiene (cines, digital o TV; no festivales) y, si no,
+la principal de TMDB. Una película que ya tiene fecha no se toca, ni con --todas: solo se rellenan las nuevas.
 
 Cómo encuentra cada obra en TMDB, por este orden:
   1. el tmdb_id que ya tenga (lo trae la pantalla «Proponer una obra»);
@@ -82,7 +84,7 @@ def anio_de(f):
 
 def detalle(api, tmdb_id):
     """{'fecha_estreno', 'fecha_novedad', 'poster', 'titulo'} de «movie/123» o «tv/456»."""
-    d = api.get("/" + tmdb_id, append_to_response="aggregate_credits" if tmdb_id.startswith("tv/") else "credits")
+    d = api.get("/" + tmdb_id, append_to_response="aggregate_credits" if tmdb_id.startswith("tv/") else "credits,release_dates")
     if not d:
         return None
     equipo = (d.get("credits") or {}).get("crew") or []
@@ -95,8 +97,12 @@ def detalle(api, tmdb_id):
         return {"fecha_estreno": estreno or None, "fecha_novedad": ultimo or estreno or None,
                 "poster": d.get("poster_path"), "titulo": d.get("name") or d.get("original_name"),
                 "direccion": [(c.get("id"), c["name"]) for c in d.get("created_by") or [] if c.get("name")], "actrices": actrices}
-    estreno = d.get("release_date")
-    return {"fecha_estreno": estreno or None, "fecha_novedad": estreno or None,
+    # Películas: la fecha de estreno en ESPAÑA si TMDB la tiene (cines, digital o TV; no festivales); si no, la principal.
+    es = next((r for r in (d.get("release_dates") or {}).get("results", []) if r.get("iso_3166_1") == "ES"), None)
+    fechas_es = sorted((x.get("release_date") or "")[:10] for x in (es or {}).get("release_dates", [])
+                       if x.get("type") in (2, 3, 4, 6) and x.get("release_date"))
+    estreno = fechas_es[0] if fechas_es else d.get("release_date")
+    return {"fecha_estreno": estreno or None, "fecha_espana": bool(fechas_es), "fecha_novedad": estreno or None,
             "poster": d.get("poster_path"), "titulo": d.get("title") or d.get("original_title"), "direccion": direccion, "actrices": actrices}
 
 
@@ -225,6 +231,10 @@ def main():
             informe.append([o["id"], titulo, o["anio"], "REVISAR: el id de TMDB no existe", tid, "", "", ""])
             continue
         nuevos = {"tmdb_id": tid, "fecha_estreno": det["fecha_estreno"], "fecha_novedad": det["fecha_novedad"]}
+        # Las películas que ya tienen fecha no se tocan (decisión del 25/11/2026: la fecha española solo para las nuevas)
+        if o["tipo"] == "pelicula" and o["fecha_estreno"]:
+            nuevos.pop("fecha_estreno")
+            nuevos.pop("fecha_novedad")
         if sin_poster and det["poster"]:
             nuevos["poster_origen"] = POSTER + det["poster"]
             cambios["posters"] += 1
@@ -250,7 +260,7 @@ def main():
             cambios["actualizadas"] += 1
         cambios["ok"] += 1
         informe.append([o["id"], titulo, o["anio"], f"ok ({como})", tid, det["fecha_estreno"] or "",
-                        det["fecha_novedad"] or "", f"en TMDB: {det['titulo']}" + (" · póster de TMDB" if "poster_origen" in distintos else "")
+                        det["fecha_novedad"] or "", f"en TMDB: {det['titulo']}" + (" · fecha de España" if det.get("fecha_espana") else "") + (" · póster de TMDB" if "poster_origen" in distintos else "")
                         + (" · dirección: " + ", ".join(dir_nueva) if dir_nueva else "")])
 
     (RAIZ / "informes").mkdir(exist_ok=True)
