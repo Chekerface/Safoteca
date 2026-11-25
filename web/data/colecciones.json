@@ -1,0 +1,146 @@
+{
+ "colecciones": [
+  {
+   "orden": 1,
+   "activa": true,
+   "titulo": "Películas lésbicas y bisexuales de *Navidad*",
+   "slug": "peliculas-lesbicas-navidad",
+   "antetitulo": "Especial Navidad",
+   "intro": "Mantita, turrón y chicas que se enamoran (y algún que otro susto): las películas navideñas de nuestro catálogo.",
+   "nota": "Nosotras también tenemos derecho a pelis empalagosas y a todos los topicazos navideños: el pueblo nevado, el jersey feo, el árbol perfecto y el beso bajo el muérdago.",
+   "tipo": "pelicula",
+   "tematicas": [
+    "Navidad"
+   ],
+   "cifra_numero": "{total}",
+   "cifra_frase": "películas navideñas sáficas tenemos en nuestro catálogo.",
+   "dato": "Solo {en_espana} se pueden ver en España. Las demás no están en ninguna plataforma española: ¡que nos las traigan!",
+   "proponer": true,
+   "titulo_dest": "Nuestras cinco recomendadas",
+   "destacadas": [
+    "El club de las fiestas",
+    "Season of Love",
+    "Under the Christmas Tree",
+    "City of Trees",
+    "Tú no eres Yo"
+   ],
+   "nota_dest": "Tú no eres yo es la sorpresa: española, en Filmin y de miedo. Season of Love, Under the Christmas Tree y City of Trees no están en España; son tan malas que seguro que salen baratísimas, así que, plataformas, ¡traédnoslas!"
+  },
+  {
+   "orden": 2,
+   "activa": true,
+   "titulo": "Series y películas con representación *trans*",
+   "slug": "series-y-peliculas-con-representacion-trans",
+   "antetitulo": "20 de noviembre · Día de la Memoria Trans",
+   "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
+   "nota": "Solo tres series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8, Euphoria y 23.5, donde es un personaje secundario.",
+   "tematicas": [
+    "Trans"
+   ],
+   "cifra_numero": "{total}",
+   "cifra_frase": "series y películas de nuestro catálogo tienen representación trans.",
+   "dato": "Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos.",
+   "proponer": true,
+   "titulo_dest": "Personajes trans y sáficos",
+   "destacadas": [
+    "Sense8",
+    "Euphoria",
+    "23.5"
+   ]
+  },
+  {
+   "orden": 3,
+   "activa": true,
+   "titulo": "Series lésbicas y bisexuales con *final feliz*",
+   "slug": "series-lesbicas-final-feliz",
+   "intro": "Series en las que las protagonistas acaban juntas y con una relación sana.",
+   "nota": "Durante años, a nosotras nos tocaban los finales tristes. Aquí van las series en las que se quedan juntas, y bien.",
+   "tipo": "serie",
+   "final_feliz": true,
+   "cifra_numero": "{total}",
+   "cifra_frase": "de nuestras {series} series acaban bien: juntas y con una relación sana.",
+   "grafico": "final_feliz_series",
+   "titulo_dest": "Para un día de sofá y manta"
+  },
+  {
+   "orden": 4,
+   "activa": true,
+   "titulo": "Series sáficas *tailandesas* (GL)",
+   "slug": "series-saficas-tailandesas",
+   "intro": "Series tailandesas con protagonistas lesbianas o bisexuales, el llamado «Girls' Love» o GL.",
+   "nota": "Nos enganchamos al GL tailandés con GAP y ya no hubo vuelta atrás. Si nunca has visto uno, empieza por aquí.",
+   "tipo": "serie",
+   "pais": "Tailandia",
+   "cifra_numero": "{nivel_a_final_feliz}",
+   "cifra_frase": "de {total} tienen a las protagonistas en el centro de la historia (nivel A) y acaban bien.",
+   "grafico": "tailandesas",
+   "dato": "{gratis_youtube} se pueden ver gratis en YouTube.",
+   "titulo_dest": "Para iniciarse",
+   "destacadas": [
+    "GAP THE SERIES",
+    "Queendom",
+    "Enemies with Benefits",
+    "Heart Code",
+    "Denied Love"
+   ]
+  },
+  {
+   "orden": 5,
+   "activa": true,
+   "titulo": "Películas lésbicas donde *no muere* la lesbiana",
+   "slug": "peliculas-lesbicas-donde-no-muere-la-lesbiana",
+   "intro": "Películas sin el «síndrome de la lesbiana muerta», ese cliché en el que el personaje lésbico o bisexual muere en la historia. Sin destripes: solo te decimos que ella llega viva a los créditos.",
+   "nota": "Empezamos La Safoteca porque estábamos hartas de encariñarnos con un personaje para verlo morir. Esta es la lista que nos habría gustado tener.",
+   "tipo": "pelicula",
+   "sin_aviso": "Síndrome de la lesbiana muerta",
+   "cifra_numero": "{total}",
+   "cifra_frase": "de nuestras {peliculas} películas no caen en el síndrome de la lesbiana muerta. Solo {peliculas_muere} sí.",
+   "grafico": "lesbiana_muerta"
+  },
+  {
+   "orden": 6,
+   "activa": true,
+   "titulo": "Películas lésbicas y bisexuales en *Filmin*",
+   "slug": "peliculas-lesbicas-filmin",
+   "intro": "Películas de nuestro catálogo que puedes ver en Filmin en España.",
+   "nota": "Filmin es donde más cine sáfico de autor encontramos: películas pequeñas, europeas y asiáticas que en otras plataformas no están. Estas son las nuestras.",
+   "tipo": "pelicula",
+   "plataforma": "Filmin",
+   "cifra_numero": "{total}",
+   "cifra_frase": "de nuestras {peliculas} películas están en Filmin.",
+   "grafico": "plataformas",
+   "dato": "{nivel_a} de ellas tienen a las protagonistas en el centro de la historia (nivel A).",
+   "titulo_dest": "Nuestras cinco recomendadas",
+   "destacadas": [
+    "Bottoms",
+    "Blue Gate Crossing",
+    "Tove",
+    "Shiva Baby",
+    "Violette"
+   ]
+  },
+  {
+   "orden": 7,
+   "activa": true,
+   "titulo": "Películas lésbicas y bisexuales en *Prime Video*",
+   "slug": "peliculas-lesbicas-prime-video",
+   "intro": "Películas de nuestro catálogo que puedes ver en Prime Video en España.",
+   "nota": "El cine sáfico de Prime son películas muy famosas y muy clásicas para nosotras: marcaron un antes y un después en la comunidad.",
+   "tipo": "pelicula",
+   "plataforma": "Prime Video",
+   "cifra_numero": "{total}",
+   "cifra_frase": "de nuestras {peliculas} películas están en Prime Video.",
+   "grafico": "plataformas",
+   "dato": "{antes_de_2010} se estrenaron antes de 2010: los clásicos con los que crecimos.",
+   "titulo_dest": "Nuestras cinco recomendadas",
+   "destacadas": [
+    "Bound",
+    "Habitación en Roma",
+    "Fucking Åmål",
+    "D.E.B.S",
+    "Saving Face"
+   ],
+   "nota_dest": "Las dos últimas, D.E.B.S. y Guardando las apariencias (Saving Face), solo están para comprar o alquilar, pero son tan importantes para nosotras que las recomendamos encarecidamente."
+  }
+ ]
+}

@@ -7,3 +7,6 @@ originales/
 informes/
 .venv/
 __pycache__/
+
+# el Excel de las colecciones de Fragmentos sí se guarda (acción «Publicar colecciones»)
+!fragmentos/colecciones.xlsx
