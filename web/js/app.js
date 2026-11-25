@@ -21,12 +21,19 @@
     escribir(k, v) {
       memoria[k] = v;
       try { localStorage.setItem("safoteca." + k, JSON.stringify(v)); } catch { /* sin almacenamiento */ }
+      // con la sesión iniciada, cada cambio de favoritos o listas se sube también a la cuenta (agrupado)
+      if ((k === "favs" || k === "listas") && cuenta && cuenta.cambiado && !aplicandoCuenta) cuenta.cambiado();
     },
     borrar() {
       Object.keys(memoria).forEach((k) => delete memoria[k]);
       try { Object.keys(localStorage).filter((k) => k.startsWith("safoteca.")).forEach((k) => localStorage.removeItem(k)); } catch { /* nada */ }
     },
   };
+
+  // ---------- Cuenta (opcional, Firebase): ver js/cuenta.js ----------
+  // Solo existe si config.js trae «cuentas» con la configuración de Firebase. Si no, todo sigue solo en el dispositivo.
+  const CUENTA = CFG.cuentas && CFG.cuentas.firebase && CFG.cuentas.firebase.apiKey ? CFG.cuentas : null;
+  let cuenta = null, aplicandoCuenta = false;
 
   // ---------- Estado ----------
   const E = {
@@ -598,8 +605,11 @@
           ${enlaceAltas("Añadir una obra")}</section>` : ""}
         ${CFG.proponer ? `<section class="bloque" aria-labelledby="a6"><h2 id="a6">Créditos</h2>
           <p>La pantalla «Proponer una obra» rellena datos con la API de <a class="enlace-suave" href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p></section>` : ""}
+        ${CUENTA ? bloqueCuenta() : ""}
         <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
-          <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
+          <p style="margin-bottom:.75rem">${CUENTA
+            ? "Favoritos y preferencias se guardan en este dispositivo. Si entras con Google, tus favoritos y listas se guardan también en tu cuenta; este botón solo los borra de aquí."
+            : "Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban."}</p>
           <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
         </section>
         <section class="bloque" aria-labelledby="a4"><h2 id="a4">Sobre ${esc(CFG.nombre || "La Safoteca")}</h2>
@@ -608,6 +618,51 @@
           ${CFG.contacto ? `<p style="margin-top:.75rem"><a class="enlace-suave" href="${esc(CFG.contacto)}">Enviar una sugerencia</a></p>` : ""}
         </section>
       </div>`;
+  }
+
+  // ---------- Cuenta: bloque de Ajustes ----------
+  function bloqueCuenta() {
+    const st = cuenta && cuenta.estado;
+    const u = st && st.usuaria;
+    const hace = (iso) => { if (!iso) return ""; const m = Math.round((Date.now() - new Date(iso)) / 60000);
+      return m < 1 ? "ahora mismo" : m < 60 ? `hace ${m} min` : new Date(iso).toLocaleString("es-ES", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); };
+    const recaptcha = CUENTA.recaptcha ? `<p class="resumen" style="margin-top:.75rem;font-size:.8rem">Protegido por reCAPTCHA de Google: se aplican su <a class="enlace-suave" href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">política de privacidad</a> y sus <a class="enlace-suave" href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener">condiciones</a>.</p>` : "";
+    let cuerpo;
+    if (u) {
+      cuerpo = `<p style="margin-bottom:.5rem">Has entrado${u.nombre ? " como <b>" + esc(u.nombre) + "</b>" : ""}. Tus favoritos y listas se guardan en tu cuenta y aparecen en cualquier dispositivo en el que entres.</p>
+        <p class="resumen" id="cuenta-estado" style="margin-bottom:.75rem">${st.sincronizando ? "Sincronizando…" : st.error ? esc(st.error) : st.ultima ? "Sincronizado " + hace(st.ultima) + "." : ""}</p>
+        <div class="botones-fila" style="display:flex;flex-wrap:wrap;gap:.5rem">
+          <button class="boton boton--claro" type="button" data-accion="cuenta-salir">Cerrar sesión</button>
+          <button class="boton boton--claro" type="button" data-accion="cuenta-borrar">Borrar mi cuenta y mis datos</button></div>`;
+    } else {
+      cuerpo = `<p style="margin-bottom:.75rem">Entra con tu cuenta de Google para tener tus favoritos y tus listas en todos tus dispositivos. Es opcional: sin entrar, todo sigue guardándose en este dispositivo.</p>
+        <p class="resumen" style="margin-bottom:.75rem">Solo guardamos tus favoritos y tus listas, con un identificador anónimo. No guardamos tu correo ni tu nombre, y puedes borrarlo todo cuando quieras.</p>
+        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${cuenta === "cargando" ? "Cargando…" : "Entrar con Google"}</button>`;
+    }
+    return `<section class="bloque" id="bloque-cuenta" aria-labelledby="a7"><h2 id="a7">Tu cuenta</h2>${cuerpo}${recaptcha}</section>`;
+  }
+  const repintarCuenta = () => { const b = $("#bloque-cuenta"); if (b && CUENTA) b.outerHTML = bloqueCuenta(); };
+
+  // Descarga js/cuenta.js (y Firebase) solo cuando hace falta.
+  function cargarCuenta() {
+    if (!CUENTA) return Promise.reject(new Error("sin cuentas"));
+    if (cargarCuenta.p) return cargarCuenta.p;
+    const previo = cuenta; cuenta = "cargando"; repintarCuenta();
+    cargarCuenta.p = import(new URL("js/cuenta.js", document.baseURI).href).then((m) => m.crear(CUENTA, {
+      leer: guardar.leer, escribir: guardar.escribir,
+      favs: () => E.favs, listas: () => E.listas,
+      aplicar({ favs, listas }) {
+        aplicandoCuenta = true;
+        try { E.favs = favs; E.listas = listas; guardar.escribir("favs", [...favs]); guardarListas(); }
+        finally { aplicandoCuenta = false; }
+        $$("[data-fav]").forEach((b) => b.setAttribute("aria-pressed", String(E.favs.has(Number(b.dataset.fav)))));
+        if (rutaActual().ruta === "/favoritos") { const y = scrollY; pintar(false); scrollTo(0, y); }
+      },
+      aviso: toast,
+      cambio: repintarCuenta,
+    })).then((c) => { cuenta = c; repintarCuenta(); return c; })
+      .catch((e) => { cuenta = previo; cargarCuenta.p = null; repintarCuenta(); throw e; });
+    return cargarCuenta.p;
   }
 
   // ---------- Hoja de filtros y avisos a evitar ----------
@@ -906,6 +961,22 @@
           acc.textContent = mostrar ? "Ocultar los avisos" : "Ver los avisos";
           break;
         }
+        case "cuenta-entrar":
+          cargarCuenta().then((c) => c.entrar())
+            .catch(() => toast("No hemos podido abrir la ventana de Google. Inténtalo de nuevo."));
+          break;
+        case "cuenta-salir":
+          if (cuenta && cuenta.salir) cuenta.salir().catch(() => toast("No hemos podido cerrar la sesión."));
+          break;
+        case "cuenta-borrar":
+          if (acc.dataset.seguro) {
+            acc.disabled = true; acc.textContent = "Borrando…";
+            cuenta.borrarCuenta().catch(() => { toast("No hemos podido borrar la cuenta. Inténtalo de nuevo."); repintarCuenta(); });
+          } else {
+            acc.dataset.seguro = "1"; acc.textContent = "Pulsa otra vez: se borra todo lo guardado en tu cuenta";
+            setTimeout(() => { if (acc.isConnected) { delete acc.dataset.seguro; acc.textContent = "Borrar mi cuenta y mis datos"; } }, 5000);
+          }
+          break;
         case "borrar-datos":
           if (acc.dataset.seguro) {
             guardar.borrar(); E.favs.clear(); E.evitar.clear(); E.listas = []; E.verAvisos = false; E.introVista = false;
@@ -1053,6 +1124,8 @@
       E.nAct = contar("actrices"); E.nDir = contar("directores");
       E.cargado = true;
       pintar(false);
+      // quien ya entró con su cuenta en este dispositivo: se recupera la sesión sin frenar la primera pintura
+      if (CUENTA && guardar.leer("cuenta", false)) setTimeout(() => cargarCuenta().catch(() => {}), 1200);
     } catch {
       $("#vista").innerHTML = `<div class="vacio"><p>No hemos podido cargar el catálogo. Comprueba tu conexión e inténtalo de nuevo.</p>
         <button class="boton" type="button" id="reintentar">Reintentar</button></div>`;
