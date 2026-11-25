@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.despliegue.outputs.page_url }}
+      url: ${{ steps.primer_intento.outputs.page_url || steps.segundo_intento.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - name: Comprobar que config.js y los datos no están rotos
@@ -76,5 +76,13 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: web
-      - id: despliegue
+      # A veces GitHub tarda en «ver» el paquete recién subido y el despliegue falla con
+      # «No artifacts named github-pages were found». Se espera y se reintenta una vez.
+      - id: primer_intento
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+      - if: steps.primer_intento.outcome == 'failure'
+        run: echo "El despliegue ha fallado; espero 45 s y lo reintento" && sleep 45
+      - id: segundo_intento
+        if: steps.primer_intento.outcome == 'failure'
         uses: actions/deploy-pages@v4
