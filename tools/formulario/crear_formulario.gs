@@ -213,7 +213,7 @@ var DATOS = {
   },
   {
    "titulo": "Temática (parte 3 de 4)",
-   "rango": "de «Irlanda» a «Romance en el trabajo»",
+   "rango": "de «Irlanda» a «Romance de instituto»",
    "opciones": [
     "Irlanda",
     "Irlanda del Norte",
@@ -257,6 +257,7 @@ var DATOS = {
     "Pandilla",
     "Pareja idiota",
     "Pareja sana",
+    "Parodia",
     "Piratas",
     "Poliamor",
     "Policía",
@@ -288,14 +289,14 @@ var DATOS = {
     "Rivalidad familiar",
     "Road Movie",
     "Robots",
-    "Romance de instituto",
-    "Romance en el trabajo"
+    "Romance de instituto"
    ]
   },
   {
    "titulo": "Temática (parte 4 de 4)",
-   "rango": "de «Romcom» a «Épica»",
+   "rango": "de «Romance en el trabajo» a «Épica»",
    "opciones": [
+    "Romance en el trabajo",
     "Romcom",
     "Roommates",
     "Salir del armario",
