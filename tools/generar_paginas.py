@@ -16,6 +16,20 @@ TIPO = {"serie": "Serie", "pelicula": "Película"}
 SCHEMA = {"serie": "TVSeries", "pelicula": "Movie"}
 
 
+TJ_CSS = (".tj{display:inline-grid;place-items:center;min-width:1.35rem;height:1.6rem;padding:0 .2rem;"
+          "font:700 .95rem/1 Georgia,\"Times New Roman\",serif;background:#fff;color:#5d4a8a;border:2px solid #5d4a8a;"
+          "border-radius:3px;vertical-align:middle}.tj-A{background:#5d4a8a;color:#fff}.tj-C{border-style:dashed}"
+          "li .tj{min-width:1.1rem;height:1.3rem;font-size:.8rem;margin-left:.3rem}"
+          ".rel span.tj{font-size:.8rem;color:#5d4a8a}.rel span.tj-A{color:#fff}")
+
+
+def tj(o):
+    """Nivel de relevancia como «tejuelo» pequeño (lila relleno = A, borde = B, borde discontinuo = C)."""
+    r = o.get("relevancia")
+    return (f'<span class="tj tj-{r}" title="Nivel de relevancia {r}" aria-label="Nivel de relevancia {r}">{r}</span>'
+            if r in ("A", "B", "C") else "")
+
+
 def e(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -111,7 +125,7 @@ def pagina(o, nivel, noindex, todas=()):
              if plataformas else "")
     rels = relacionadas(o, todas)
     rel_lista = ("<section class=\"rel\"><h2>Si te gusta, mira también</h2><ul>" + "".join(
-        f'<li><a href="../{x["id"]}/">{e(x["titulo"])}</a> <span>{e(TIPO.get(x["tipo"], ""))}{" · " + str(x["anio"]) if x.get("anio") else ""}</span></li>'
+        f'<li><a href="../{x["id"]}/">{e(x["titulo"])}</a> <span>{e(TIPO.get(x["tipo"], ""))}{" · " + str(x["anio"]) if x.get("anio") else ""}</span>{tj(x)}</li>'
         for x in rels) + "</ul></section>") if rels else ""
     rel = o.get("relevancia")
     rel_html = f'<p class="nivel"><span class="tejuelo">{e(rel)}</span> {e(nivel.get(rel, ""))}</p>' if rel else ""
@@ -158,6 +172,7 @@ dl{{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}} d
 .rel h2{{font:600 20px var(--serif);margin:0 0 8px}} .rel ul{{margin:0;padding-left:18px;display:grid;gap:4px}}
 .rel a{{color:var(--violeta);font-weight:600}} .rel span{{color:var(--suave-t);font-size:14px}}
 footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32px}} footer a{{color:var(--violeta)}}
+{TJ_CSS}
 </style>
 </head>
 <body>
@@ -192,6 +207,24 @@ def _avisos(o):
 SLM = "Síndrome de la lesbiana muerta"
 
 COLECCIONES = [
+    {"slug": "peliculas-lesbicas-navidad",
+     "titulo": "Películas lésbicas y bisexuales de Navidad",
+     "titulo_html": "Películas lésbicas y bisexuales de <em>Navidad</em>",
+     "antetitulo": "Especial Navidad",
+     "intro": "Mantita, turrón y chicas que se enamoran (y algún que otro susto): las películas navideñas de nuestro catálogo.",
+     "nota": "Nosotras también tenemos derecho a pelis empalagosas y a todos los topicazos navideños: el pueblo nevado, "
+             "el jersey feo, el árbol perfecto y el beso bajo el muérdago.",
+     "cifra": lambda todas, sel: (len(sel), "películas navideñas sáficas tenemos en nuestro catálogo."),
+     "dato": lambda todas, sel: (f"Solo {sum(1 for o in sel if o.get('disponible_espana'))} se pueden ver en España. "
+                                 "Las demás no están en ninguna plataforma española: ¡que nos las traigan!"),
+     "proponer": True,
+     "titulo_dest": "Nuestras cinco recomendadas",
+     "destacadas": ["El club de las fiestas", "Season of Love", "Under the Christmas Tree", "City of Trees", "Tú no eres Yo"],
+     "nota_dest": "Tú no eres yo es la sorpresa: española, en Filmin y de miedo. Season of Love, Under the Christmas Tree y "
+                  "City of Trees no están en España; son tan malas que seguro que salen baratísimas, así que, plataformas, "
+                  "¡traédnoslas!",
+     "catalogo": "?tipo=pelicula&tem=Navidad",
+     "filtro": lambda o: o["tipo"] == "pelicula" and "Navidad" in (o.get("tematicas") or [])},
     {"slug": "series-y-peliculas-con-representacion-trans",
      "titulo": "Series y películas con representación trans",
      "titulo_html": "Series y películas con representación <em>trans</em>",
@@ -377,13 +410,15 @@ def coleccion(c, obras, noindex):
                             key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
     marca_ff = c["slug"] != "series-lesbicas-final-feliz"
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
+    # nivel de relevancia como en la web: el «tejuelo» (lila relleno = A, borde = B, borde discontinuo = C)
+    tejuelo = tj
     # Pocos clics: el póster y el botón abren la ficha de la web (#/obra/ID); el título enlaza la página por obra,
     # que es la que ven los buscadores (Google no sigue lo que va tras «#»).
     app = lambda o: f'../#/obra/{o["id"]}'
     estatica = lambda o: f'../obra/{o["id"]}/'
     dest_html = "".join(
         f'<div class="dest"><a class="pos" href="{app(o)}" aria-label="Abrir {e(o["titulo"])} en La Safoteca">'
-        f'<img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{etiqueta(o)}</a>'
+        f'<img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">{tejuelo(o)}{etiqueta(o)}</a>'
         f'<a class="dt" href="{estatica(o)}">{e(o["titulo"])}</a></div>' for o in destacadas)
     def tarjeta(o):
         img = (f'<img src="{_poster(o)}" alt="" loading="lazy" width="300" height="450">' if o.get("poster")
@@ -391,7 +426,7 @@ def coleccion(c, obras, noindex):
         anio = f' <i>{o["anio"]}</i>' if o.get("anio") else ""
         sin = f'<small>{e(recorta(o.get("sinopsis"), 140))}</small>' if o.get("sinopsis") else ""
         return (f'<li><a class="lp" href="{app(o)}" aria-label="Abrir {e(o["titulo"])} en La Safoteca">{img}</a>'
-                f'<div><a class="lt" href="{estatica(o)}"><b>{e(o["titulo"])}</b></a>{anio}{sin}'
+                f'<div><a class="lt" href="{estatica(o)}"><b>{e(o["titulo"])}</b></a>{anio} {tejuelo(o)}{sin}'
                 f'<a class="abrir" href="{app(o)}">Dónde verla y avisos <span aria-hidden="true">→</span></a></div></li>')
     items = "".join(tarjeta(o) for o in sel)
     nota = (f'<blockquote class="nota"><p>«{e(c["nota"])}»</p><cite>— el equipo de La Safoteca</cite></blockquote>'
@@ -453,6 +488,9 @@ def coleccion(c, obras, noindex):
 {'<p class="nota-dest">' + e(c["nota_dest"]) + '</p>' if c.get("nota_dest") and destacadas else ''}
 {'<p class="mas">… y ' + str(resto) + ' más, de la A a la Z ↓</p>' if resto > 0 else ''}
 <ul class="lista">{items}</ul>
+<p class="ley-n"><span class="tj tj-A">A</span> protagonista sáfica y relevante para la historia ·
+<span class="tj tj-B">B</span> principal sin relevancia o secundaria con cierta relevancia ·
+<span class="tj tj-C">C</span> subtexto, poca importancia o sin romance</p>
 {redes()}
 <p class="todas"><a href="../obras/">Todas las series y películas</a></p>
 </main>
@@ -512,6 +550,10 @@ h2{font:400 22px var(--serif);margin:30px 0 12px}
 .dests{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .dest{color:var(--tinta);text-decoration:none;font-size:13px}
 .pos{position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;background:var(--linea)}
 .pos img{width:100%;height:100%;object-fit:cover;display:block}
+.tj{display:inline-grid;place-items:center;min-width:1.35rem;height:1.6rem;padding:0 .2rem;font:700 .95rem/1 Georgia,"Times New Roman",serif;background:#fff;color:#5d4a8a;border:2px solid #5d4a8a;border-radius:3px;vertical-align:middle}
+.tj-A{background:#5d4a8a;color:#fff}.tj-C{border-style:dashed}
+.pos .tj{position:absolute;top:6px;left:6px;box-shadow:0 1px 3px rgb(0 0 0 / .3)}
+.ley-n{font-size:.8rem;color:var(--suave,#6b6577);line-height:1.9;margin:.75rem 0 1.25rem}.ley-n .tj{min-width:1.1rem;height:1.3rem;font-size:.8rem;margin-right:.15rem}
 .ff{position:absolute;left:5px;bottom:5px;background:#1d1726;color:#fff;font-size:10px;padding:2px 6px;border-radius:2px}
 .dt{display:block;margin-top:5px;line-height:1.3}
 .mas{color:var(--suave);font-size:14px;margin:16px 0 8px}
@@ -690,7 +732,7 @@ def indice(obras, noindex):
     """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
     def lista(tipo):
         sel = sorted((o for o in obras if o["tipo"] == tipo), key=lambda o: o["titulo"].casefold())
-        return "".join(f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}</li>' for o in sel), len(sel)
+        return "".join(f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}{tj(o)}</li>' for o in sel), len(sel)
     series, ns = lista("serie")
     pelis, np_ = lista("pelicula")
     return f"""<!doctype html>
@@ -715,6 +757,7 @@ header img{{width:30px;height:30px}}
 main{{max-width:760px;margin:0 auto;padding:20px 16px 48px}}
 h1{{font:600 clamp(26px,6vw,34px)/1.15 var(--serif);margin:0 0 8px}} h2{{font:600 22px var(--serif);margin:28px 0 8px}}
 ul{{padding-left:18px;columns:2 16rem;column-gap:24px}} li{{break-inside:avoid;margin:2px 0}}
+{TJ_CSS}
 a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 </style>
 </head>
