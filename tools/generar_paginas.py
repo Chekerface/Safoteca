@@ -16,6 +16,20 @@ TIPO = {"serie": "Serie", "pelicula": "Película"}
 SCHEMA = {"serie": "TVSeries", "pelicula": "Movie"}
 
 
+TJ_CSS = (".tj{display:inline-grid;place-items:center;min-width:1.35rem;height:1.6rem;padding:0 .2rem;"
+          "font:700 .95rem/1 Georgia,\"Times New Roman\",serif;background:#fff;color:#5d4a8a;border:2px solid #5d4a8a;"
+          "border-radius:3px;vertical-align:middle}.tj-A{background:#5d4a8a;color:#fff}.tj-C{border-style:dashed}"
+          "li .tj{min-width:1.1rem;height:1.3rem;font-size:.8rem;margin-left:.3rem}"
+          ".rel span.tj{font-size:.8rem;color:#5d4a8a}.rel span.tj-A{color:#fff}")
+
+
+def tj(o):
+    """Nivel de relevancia como «tejuelo» pequeño (lila relleno = A, borde = B, borde discontinuo = C)."""
+    r = o.get("relevancia")
+    return (f'<span class="tj tj-{r}" title="Nivel de relevancia {r}" aria-label="Nivel de relevancia {r}">{r}</span>'
+            if r in ("A", "B", "C") else "")
+
+
 def e(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -111,7 +125,7 @@ def pagina(o, nivel, noindex, todas=()):
              if plataformas else "")
     rels = relacionadas(o, todas)
     rel_lista = ("<section class=\"rel\"><h2>Si te gusta, mira también</h2><ul>" + "".join(
-        f'<li><a href="../{x["id"]}/">{e(x["titulo"])}</a> <span>{e(TIPO.get(x["tipo"], ""))}{" · " + str(x["anio"]) if x.get("anio") else ""}</span></li>'
+        f'<li><a href="../{x["id"]}/">{e(x["titulo"])}</a> <span>{e(TIPO.get(x["tipo"], ""))}{" · " + str(x["anio"]) if x.get("anio") else ""}</span>{tj(x)}</li>'
         for x in rels) + "</ul></section>") if rels else ""
     rel = o.get("relevancia")
     rel_html = f'<p class="nivel"><span class="tejuelo">{e(rel)}</span> {e(nivel.get(rel, ""))}</p>' if rel else ""
@@ -158,6 +172,7 @@ dl{{display:grid;grid-template-columns:max-content 1fr;gap:6px 14px;margin:0}} d
 .rel h2{{font:600 20px var(--serif);margin:0 0 8px}} .rel ul{{margin:0;padding-left:18px;display:grid;gap:4px}}
 .rel a{{color:var(--violeta);font-weight:600}} .rel span{{color:var(--suave-t);font-size:14px}}
 footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32px}} footer a{{color:var(--violeta)}}
+{TJ_CSS}
 </style>
 </head>
 <body>
@@ -396,9 +411,7 @@ def coleccion(c, obras, noindex):
     marca_ff = c["slug"] != "series-lesbicas-final-feliz"
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
     # nivel de relevancia como en la web: el «tejuelo» (lila relleno = A, borde = B, borde discontinuo = C)
-    tejuelo = lambda o: (f'<span class="tj tj-{o["relevancia"]}" title="Nivel de relevancia {o["relevancia"]}" '
-                         f'aria-label="Nivel de relevancia {o["relevancia"]}">{o["relevancia"]}</span>'
-                         if o.get("relevancia") in ("A", "B", "C") else "")
+    tejuelo = tj
     # Pocos clics: el póster y el botón abren la ficha de la web (#/obra/ID); el título enlaza la página por obra,
     # que es la que ven los buscadores (Google no sigue lo que va tras «#»).
     app = lambda o: f'../#/obra/{o["id"]}'
@@ -719,7 +732,7 @@ def indice(obras, noindex):
     """Página /obras/ con todas las series y películas enlazadas: así los buscadores llegan a todas las fichas."""
     def lista(tipo):
         sel = sorted((o for o in obras if o["tipo"] == tipo), key=lambda o: o["titulo"].casefold())
-        return "".join(f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}</li>' for o in sel), len(sel)
+        return "".join(f'<li><a href="../obra/{o["id"]}/">{e(o["titulo"])}</a>{" <span>(" + str(o["anio"]) + ")</span>" if o.get("anio") else ""}{tj(o)}</li>' for o in sel), len(sel)
     series, ns = lista("serie")
     pelis, np_ = lista("pelicula")
     return f"""<!doctype html>
@@ -744,6 +757,7 @@ header img{{width:30px;height:30px}}
 main{{max-width:760px;margin:0 auto;padding:20px 16px 48px}}
 h1{{font:600 clamp(26px,6vw,34px)/1.15 var(--serif);margin:0 0 8px}} h2{{font:600 22px var(--serif);margin:28px 0 8px}}
 ul{{padding-left:18px;columns:2 16rem;column-gap:24px}} li{{break-inside:avoid;margin:2px 0}}
+{TJ_CSS}
 a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 </style>
 </head>
