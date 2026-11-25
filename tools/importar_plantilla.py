@@ -120,8 +120,13 @@ class Plantilla:
                 else:
                     dest[t].append(mapas[t].get(x.lower(), x))
         # Temáticas que llevan género (Drama médico → Drama…): data/mapeos/tematica_a_genero.csv
+        # Si la obra es una «Parodia», no: una parodia de slasher no es de terror.
+        parodia = any(sin_tildes(tm) == sin_tildes("Parodia") for tm in dest["tematica"])
         for tm in list(dest["tematica"]):
             g = TEMATICA_A_GENERO.get(sin_tildes(tm))
+            if g and parodia and g not in dest["genero"]:
+                self.inc(n, titulo, "genero", g, f"NO se añade por la temática «{tm}» porque es una parodia")
+                continue
             if g and g not in dest["genero"]:
                 dest["genero"].append(g)
                 self.inc(n, titulo, "genero", g, f"añadido solo por la temática «{tm}»")
