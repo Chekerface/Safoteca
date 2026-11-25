@@ -1,6 +1,6 @@
 rules_version = '2';
 // La Safoteca · reglas de Cloud Firestore para las cuentas (proyecto de Firebase de La Safoteca).
-// Se pegan en la consola de Firebase → Firestore Database → Reglas → Publicar. Guía: retrospectiva técnica, W17.
+// Se pegan en la consola de Firebase → Firestore Database → Reglas → Publicar. Guía: retrospectiva técnica, W16.
 //
 // Principios:
 //   - Sin sesión no se lee ni se escribe nada.

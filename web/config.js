@@ -34,7 +34,7 @@ window.SAFOTECA_CONFIG = {
   // firebase: el bloque «firebaseConfig» de la consola de Firebase (no son claves secretas: lo protegen las reglas).
   // recaptcha: clave de SITIO de reCAPTCHA v3 para App Check (la clave secreta se queda en Firebase, nunca aquí).
   // entorno: "pre" en la rama uat y "pro" en main (los datos de pruebas no se mezclan con los reales).
-  // Guía: retrospectiva técnica, W17 «Cuentas».
+  // Guía: retrospectiva técnica, W16 «Cuentas».
   cuentas: null,
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
   // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).

@@ -9,7 +9,7 @@
      - App Check con reCAPTCHA v3: solo la web de verdad puede leer y escribir (frena robots y abusos).
      - Reglas de seguridad: tools/cuentas/firestore.rules (cada persona solo ve y cambia lo suyo).
 
-   Dónde se guarda (preparado para el futuro; ver retrospectiva técnica, W17):
+   Dónde se guarda (preparado para el futuro; ver retrospectiva técnica, W16):
      entornos/{pro|pre}/usuarias/{uid}/privado/biblioteca   ← favoritos y listas (lo único activo hoy)
      entornos/{pro|pre}/perfiles/{uid}                      ← futuro: alias público para comentarios
      entornos/{pro|pre}/obras/{id}/votos/{uid}              ← futuro: estrellas (una por persona y obra)
