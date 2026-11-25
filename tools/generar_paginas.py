@@ -206,101 +206,44 @@ def _avisos(o):
 
 SLM = "Síndrome de la lesbiana muerta"
 
-COLECCIONES = [
-    {"slug": "peliculas-lesbicas-navidad",
-     "titulo": "Películas lésbicas y bisexuales de Navidad",
-     "titulo_html": "Películas lésbicas y bisexuales de <em>Navidad</em>",
-     "antetitulo": "Especial Navidad",
-     "intro": "Mantita, turrón y chicas que se enamoran (y algún que otro susto): las películas navideñas de nuestro catálogo.",
-     "nota": "Nosotras también tenemos derecho a pelis empalagosas y a todos los topicazos navideños: el pueblo nevado, "
-             "el jersey feo, el árbol perfecto y el beso bajo el muérdago.",
-     "cifra": lambda todas, sel: (len(sel), "películas navideñas sáficas tenemos en nuestro catálogo."),
-     "dato": lambda todas, sel: (f"Solo {sum(1 for o in sel if o.get('disponible_espana'))} se pueden ver en España. "
-                                 "Las demás no están en ninguna plataforma española: ¡que nos las traigan!"),
-     "proponer": True,
-     "titulo_dest": "Nuestras cinco recomendadas",
-     "destacadas": ["El club de las fiestas", "Season of Love", "Under the Christmas Tree", "City of Trees", "Tú no eres Yo"],
-     "nota_dest": "Tú no eres yo es la sorpresa: española, en Filmin y de miedo. Season of Love, Under the Christmas Tree y "
-                  "City of Trees no están en España; son tan malas que seguro que salen baratísimas, así que, plataformas, "
-                  "¡traédnoslas!",
-     "catalogo": "?tipo=pelicula&tem=Navidad",
-     "filtro": lambda o: o["tipo"] == "pelicula" and "Navidad" in (o.get("tematicas") or [])},
-    {"slug": "series-y-peliculas-con-representacion-trans",
-     "titulo": "Series y películas con representación trans",
-     "titulo_html": "Series y películas con representación <em>trans</em>",
-     "antetitulo": "20 de noviembre · Día de la Memoria Trans",
-     "intro": "En el Día de la Memoria Trans reunimos las series y películas de nuestro catálogo con representación trans.",
-     "nota": "Solo tres series de nuestro catálogo tienen un personaje trans que, además, es sáfico: Sense8, Euphoria y 23.5, "
-             "donde es un personaje secundario.",
-     "cifra": lambda todas, sel: (len(sel), "series y películas de nuestro catálogo tienen representación trans."),
-     "dato": lambda todas, sel: ("Jamie Clayton, actriz trans y lesbiana que da vida a Nomi en Sense8, aparece también en "
-                                 "The L Word: Generation Q, pero allí su personaje es cis, así que no la destacamos."),
-     "proponer": True,   # «¿Echas en falta alguna serie o película? Añádela» → formulario de la web
-     "titulo_dest": "Personajes trans y sáficos",
-     "destacadas": ["Sense8", "Euphoria", "23.5"],
-     "filtro": lambda o: "Trans" in (o.get("tematicas") or [])},
-    {"slug": "series-lesbicas-final-feliz",
-     "titulo": "Series lésbicas y bisexuales con final feliz",
-     "titulo_html": "Series lésbicas y bisexuales con <em>final feliz</em>",
-     "intro": "Series en las que las protagonistas acaban juntas y con una relación sana.",
-     "nota": "Durante años, a nosotras nos tocaban los finales tristes. Aquí van las series en las que se quedan juntas, y bien.",
-     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'serie')} series acaban bien: juntas y con una relación sana."),
-     "grafico": lambda todas: _grafico_final_feliz(todas),
-     "titulo_dest": "Para un día de sofá y manta",
-     "filtro": lambda o: o["tipo"] == "serie" and o.get("final_feliz") is True},
-    {"slug": "series-saficas-tailandesas",
-     "titulo": "Series sáficas tailandesas (GL)",
-     "titulo_html": "Series sáficas <em>tailandesas</em> (GL)",
-     "intro": "Series tailandesas con protagonistas lesbianas o bisexuales, el llamado «Girls' Love» o GL.",
-     "nota": "Nos enganchamos al GL tailandés con GAP y ya no hubo vuelta atrás. Si nunca has visto uno, empieza por aquí.",
-     "cifra": lambda todas, sel: (sum(1 for o in sel if o.get("relevancia") == "A" and o.get("final_feliz") is True),
-                                  f"de {len(sel)} tienen a las protagonistas en el centro de la historia (nivel A) y acaban bien."),
-     "grafico": lambda todas: _grafico_tailandesas(todas),
-     "dato": lambda todas, sel: (f"{sum(1 for o in sel if any(p.get('n') == 'YouTube' for p in o.get('plataformas') or []))} se pueden ver gratis en YouTube."),
-     "titulo_dest": "Para iniciarse",
-     "destacadas": ["GAP THE SERIES", "Queendom", "Enemies with Benefits", "Heart Code", "Denied Love"],
-     "filtro": lambda o: o["tipo"] == "serie" and "Tailandia" in (o.get("pais") or "")},
-    {"slug": "peliculas-lesbicas-donde-no-muere-la-lesbiana",
-     "titulo": "Películas lésbicas donde no muere la lesbiana",
-     "titulo_html": "Películas lésbicas donde <em>no muere</em> la lesbiana",
-     "intro": "Películas sin el «síndrome de la lesbiana muerta», ese cliché en el que el personaje lésbico o bisexual "
-              "muere en la historia. Sin destripes: solo te decimos que ella llega viva a los créditos.",
-     "nota": "Empezamos La Safoteca porque estábamos hartas de encariñarnos con un personaje para verlo morir. "
-             "Esta es la lista que nos habría gustado tener.",
-     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas no caen en el "
-                                            f"síndrome de la lesbiana muerta. Solo {sum(1 for o in todas if o['tipo'] == 'pelicula' and SLM in _avisos(o))} sí."),
-     "barra": lambda todas: (sum(1 for o in todas if o["tipo"] == "pelicula" and SLM not in _avisos(o)),
-                             sum(1 for o in todas if o["tipo"] == "pelicula" and SLM in _avisos(o)), "viva", "muere"),
-     "grafico_anios": True,
-     # sin el aviso (una película sin ningún aviso está revisada: no tiene nada que avisar)
-     "filtro": lambda o: o["tipo"] == "pelicula" and SLM not in _avisos(o)},
-    {"slug": "peliculas-lesbicas-filmin",
-     "titulo": "Películas lésbicas y bisexuales en Filmin",
-     "titulo_html": "Películas lésbicas y bisexuales en <em>Filmin</em>",
-     "intro": "Películas de nuestro catálogo que puedes ver en Filmin en España.",
-     "nota": "Filmin es donde más cine sáfico de autor encontramos: películas pequeñas, europeas y asiáticas que en otras plataformas no están. Estas son las nuestras.",
-     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Filmin."),
-     "grafico": lambda todas: _grafico_plataformas(todas, "Filmin"),
-     "dato": lambda todas, sel: (f"{sum(1 for o in sel if o.get('relevancia') == 'A')} de ellas tienen a las protagonistas en el centro de la historia (nivel A)."),
-     "titulo_dest": "Nuestras cinco recomendadas",
-     "destacadas": ["Bottoms", "Blue Gate Crossing", "Tove", "Shiva Baby", "Violette"],
-     "catalogo": "?tipo=pelicula&plat=Filmin",   # el botón «Abrir» llega al catálogo ya filtrado
-     "filtro": lambda o: o["tipo"] == "pelicula" and FILMIN(o)},
-    {"slug": "peliculas-lesbicas-prime-video",
-     "titulo": "Películas lésbicas y bisexuales en Prime Video",
-     "titulo_html": "Películas lésbicas y bisexuales en <em>Prime Video</em>",
-     "intro": "Películas de nuestro catálogo que puedes ver en Prime Video en España.",
-     "nota": "El cine sáfico de Prime son películas muy famosas y muy clásicas para nosotras: marcaron un antes y un después en la comunidad.",
-     "cifra": lambda todas, sel: (len(sel), f"de nuestras {sum(1 for o in todas if o['tipo'] == 'pelicula')} películas están en Prime Video."),
-     "grafico": lambda todas: _grafico_plataformas(todas, "Prime Video"),
-     "dato": lambda todas, sel: (f"{sum(1 for o in sel if (o.get('anio') or 9999) < 2010)} se estrenaron antes de 2010: los clásicos con los que crecimos."),
-     "titulo_dest": "Nuestras cinco recomendadas",
-     "destacadas": ["Bound", "Habitación en Roma", "Fucking Åmål", "D.E.B.S", "Saving Face"],
-     "nota_dest": "Las dos últimas, D.E.B.S. y Guardando las apariencias (Saving Face), solo están para comprar o alquilar, "
-                  "pero son tan importantes para nosotras que las recomendamos encarecidamente.",
-     "catalogo": "?tipo=pelicula&plat=Prime%20Video",
-     "filtro": lambda o: o["tipo"] == "pelicula" and PRIME_ES(o)},
-]
+# Las colecciones (F2) ya no se escriben aquí: viven en web/data/colecciones.json, que se edita con el Excel
+# fragmentos/colecciones.xlsx y la acción «Publicar colecciones» (ver tools/colecciones.py). main() las carga.
+COLECCIONES = []
+
+
+def cargar_colecciones(web):
+    """Convierte cada colección del JSON en lo que usa coleccion(): filtro, cifra, dato, gráfico…"""
+    import colecciones as K
+    graficos = {"plataformas": lambda c: (lambda todas: _grafico_plataformas(todas, c["plataforma"])),
+                "final_feliz_series": lambda c: (lambda todas: _grafico_final_feliz(todas)),
+                "tailandesas": lambda c: (lambda todas: _grafico_tailandesas(todas))}
+    out = []
+    for c in K.leer_json(Path(web) / "data" / "colecciones.json"):
+        if not c.get("activa"):
+            continue
+        d = dict(c)
+        d["slug"] = c.get("slug") or K.slug(c["titulo"])
+        d["titulo_html"] = re.sub(r"\*(.+?)\*", r"<em>\1</em>", e(c["titulo"]))
+        d["titulo"] = c["titulo"].replace("*", "")
+        d["filtro"] = K.filtro(c)
+        d["catalogo"] = K.catalogo(c)
+        d["marca_ff"] = not c.get("final_feliz")      # si todas acaban bien, no hace falta la etiqueta
+        if c.get("cifra_frase") or c.get("cifra_numero"):
+            d["cifra"] = (lambda c: lambda todas, sel: (K.rellenar(c.get("cifra_numero") or "{total}", todas, sel),
+                                                        K.rellenar(c.get("cifra_frase"), todas, sel)))(c)
+        if c.get("dato"):
+            d["dato"] = (lambda c: lambda todas, sel: K.rellenar(c["dato"], todas, sel))(c)
+        g = c.get("grafico")
+        if g == "lesbiana_muerta":
+            d["barra"] = lambda todas: (sum(1 for o in todas if o["tipo"] == "pelicula" and SLM not in _avisos(o)),
+                                        sum(1 for o in todas if o["tipo"] == "pelicula" and SLM in _avisos(o)), "viva", "muere")
+            d["grafico_anios"] = True
+        elif g in graficos:
+            d["grafico"] = graficos[g](c)
+        else:
+            d.pop("grafico", None)
+        out.append(d)
+    return out
 
 
 def _grafico_anios(todas):
@@ -408,7 +351,7 @@ def coleccion(c, obras, noindex):
     else:
         destacadas = sorted((o for o in sel if o.get("poster")),
                             key=lambda o: (-REL.get(o.get("relevancia"), 0), o.get("final_feliz") is not True, -(o.get("anio") or 0)))[:3]
-    marca_ff = c["slug"] != "series-lesbicas-final-feliz"
+    marca_ff = c.get("marca_ff", True)
     etiqueta = lambda o: '<span class="ff">final feliz</span>' if marca_ff and o.get("final_feliz") is True else ""
     # nivel de relevancia como en la web: el «tejuelo» (lila relleno = A, borde = B, borde discontinuo = C)
     tejuelo = tj
@@ -501,75 +444,8 @@ def coleccion(c, obras, noindex):
 """
 
 
-ESTILO_COLECCION = """<style>
-:root{--lila:#9c88bb;--negro:#1d1726;--tinta:#1d1726;--suave:#5f5675;--papel:#fbf9fe;--sup:#fff;--linea:#ddd5ec;--claro:#c9bbe0;
-  --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;--sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
-  --mono:"Roboto Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-@media (prefers-color-scheme:dark){:root{--tinta:#efeaf8;--suave:#b9b0cf;--papel:#16131d;--sup:#201b2b;--linea:#3a3150;--negro:#0e0b13}}
-*{box-sizing:border-box} body{margin:0;background:var(--papel);color:var(--tinta);font:16px/1.55 var(--sans)}
-.cab{background:var(--negro);color:#f3eef9;padding:18px 18px 34px}
-.cab .marca{display:inline-flex;align-items:flex-end;gap:10px;color:var(--claro);text-decoration:none;font:13px var(--mono)}
-.cab .marca img{height:44px;width:auto} .cab .marca span{padding-bottom:4px;border-left:1px solid #4a3f5c;padding-left:10px}
-.cab-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.sel{display:flex;gap:16px;font:14px var(--sans)} .sel a{color:#8f84a3;text-decoration:none;padding:6px 0}
-.sel a[aria-current]{color:#f3eef9}
-.cols{display:grid;gap:22px;margin:26px 0 0}
-.col{display:block;color:inherit;text-decoration:none;background:var(--sup);border:1px solid var(--linea);border-radius:10px;padding:16px 16px 14px}
-.col h2{font:400 24px/1.15 var(--serif);margin:0 0 14px} .col h2 em{color:var(--lila)}
-.col .nota{margin:0 0 12px;transform:rotate(-.6deg)} .col .n{font:13px var(--mono);color:var(--suave)}
-.mas a{color:var(--suave)}
-.nota-dest{margin:12px 0 0;font:italic 15px/1.5 var(--serif);color:var(--suave)}
-.pide{margin:16px 0 0;font:16px var(--serif)} .pide a{color:var(--tinta);font-weight:700}
-.cab .ante{font:12px var(--mono);letter-spacing:.06em;color:var(--claro);margin:18px 0 -8px}
-.fijada{display:block;font:11px var(--mono);color:var(--suave);text-transform:uppercase;letter-spacing:.08em;margin:0 0 6px}
-.col.fija p{margin:0 0 10px;color:var(--suave)}
-.art h2{margin:34px 0 10px} .art p{margin:12px 0 0;font-size:17px;line-height:1.65} .art a{color:var(--tinta)}
-.art .img{margin:26px 0 0} .art .img img{display:block;width:100%;height:auto;border-radius:8px;border:1px solid var(--linea)}
-.boton-art{display:inline-block;background:var(--lila);color:#1d1726!important;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px;margin-top:6px}
-.redes{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font:14px var(--sans);margin:18px 0 0}
-.redes span{font:12px var(--mono);color:var(--suave)} .cab .redes span{color:#8f84a3}
-.redes a{display:inline-flex;align-items:center;gap:6px;color:var(--tinta);text-decoration:none} .cab .redes a{color:#f3eef9}
-main .redes{margin:28px 0 0}
-.cab h1{font:400 clamp(30px,8vw,46px)/1.05 var(--serif);margin:18px 0 0;max-width:760px}
-.cab h1 em{color:var(--lila)} .cab p{color:var(--claro);margin:12px 0 0;max-width:640px}
-main{max-width:760px;margin:0 auto;padding:0 16px 120px}
-.nota{margin:-18px 0 0;background:#fff;color:#1d1726;border:1.5px solid #1d1726;border-radius:4px;padding:14px 16px 12px;transform:rotate(-1deg)}
-.nota p{margin:0;font:italic 17px/1.5 var(--serif)} .nota cite{display:block;margin-top:8px;font:12px var(--mono);color:#5f5675;font-style:normal}
-.cifra{display:flex;align-items:baseline;gap:12px;margin:26px 0 0} .cifra .num{font:400 60px/1 var(--serif)} .cifra span:last-child{color:var(--suave)}
-.barra{display:flex;gap:2px;height:14px;margin:12px 0 0;border-radius:3px;overflow:hidden}
-.barra .b{background:var(--lila)} .barra .m{background:#1d1726} @media (prefers-color-scheme:dark){.barra .m{background:#efeaf8}}
-.ley-b{font:11px var(--mono);color:var(--suave);margin:6px 0 0}
-.anios{margin:22px 0 0} .anios svg{width:100%;height:auto;font:10px var(--mono);fill:var(--suave)}
-.anios .g{stroke:var(--linea)} .anios .a{fill:var(--lila);opacity:.14;stroke:none} .anios .t{fill:none;stroke:var(--lila);stroke-width:2}
-.anios .s{fill:none;stroke:var(--tinta);stroke-width:1.6;stroke-dasharray:4 3} .anios .m{fill:var(--tinta)}
-.anios figcaption{font:11px var(--mono);color:var(--suave);display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
-.anios .t-b{fill:var(--lila)} .anios .apag{opacity:.35} .anios .v{fill:var(--tinta)}
-.dato{margin:18px 0 0;padding:10px 12px;border-left:3px solid var(--lila);background:var(--sup);font:15px var(--serif)}
-.ley{display:inline-block;width:14px;height:0;border-top:2px solid var(--lila)} .ley.s{border-top:2px dashed var(--tinta)}
-h2{font:400 22px var(--serif);margin:30px 0 12px}
-.dests{display:grid;grid-template-columns:repeat(3,1fr);gap:10px} .dest{color:var(--tinta);text-decoration:none;font-size:13px}
-.pos{position:relative;display:block;aspect-ratio:2/3;border-radius:4px;overflow:hidden;background:var(--linea)}
-.pos img{width:100%;height:100%;object-fit:cover;display:block}
-.tj{display:inline-grid;place-items:center;min-width:1.35rem;height:1.6rem;padding:0 .2rem;font:700 .95rem/1 Georgia,"Times New Roman",serif;background:#fff;color:#5d4a8a;border:2px solid #5d4a8a;border-radius:3px;vertical-align:middle}
-.tj-A{background:#5d4a8a;color:#fff}.tj-C{border-style:dashed}
-.pos .tj{position:absolute;top:6px;left:6px;box-shadow:0 1px 3px rgb(0 0 0 / .3)}
-.ley-n{font-size:.8rem;color:var(--suave,#6b6577);line-height:1.9;margin:.75rem 0 1.25rem}.ley-n .tj{min-width:1.1rem;height:1.3rem;font-size:.8rem;margin-right:.15rem}
-.ff{position:absolute;left:5px;bottom:5px;background:#1d1726;color:#fff;font-size:10px;padding:2px 6px;border-radius:2px}
-.dt{display:block;margin-top:5px;line-height:1.3}
-.mas{color:var(--suave);font-size:14px;margin:16px 0 8px}
-.lista{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-.lista li{display:flex;gap:12px;align-items:flex-start;background:var(--sup);border:1px solid var(--linea);border-radius:8px;padding:8px}
-.lista .lp{flex:none} .lista img,.sinpos{display:block;width:52px;height:78px;object-fit:cover;border-radius:3px;background:var(--linea)}
-.lista .lt{color:var(--tinta);text-decoration:none} .lista b{font:600 16px var(--serif)} .lista i{font-style:normal;color:var(--suave);font-size:13px;margin-left:4px}
-.lista small{display:block;color:var(--suave);font-size:13.5px;line-height:1.45;margin-top:3px}
-.abrir{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;color:#1d1726;background:var(--lila);text-decoration:none;padding:4px 10px;border-radius:999px}
-.dest .dt{color:var(--tinta);text-decoration:none}
-.todas{margin:22px 0 0} .todas a{color:var(--tinta)}
-.cta{position:sticky;bottom:0;display:flex;align-items:center;gap:12px;background:var(--lila);color:#1d1726;padding:12px max(16px,calc(50vw - 364px))}
-.cta div{flex:1} .cta b{display:block;font:400 17px var(--serif)} .cta small{display:block;font-size:12.5px;color:#2b2433}
-.cta a{background:#1d1726;color:#fff;text-decoration:none;padding:11px 16px;border-radius:999px;white-space:nowrap;font-weight:600}
-@media (min-width:640px){.dests{grid-template-columns:repeat(3,minmax(0,170px))}}
-</style>"""
+# Estilos de Fragmentos (portada, colecciones y Quiénes somos): web/css/fragmentos.css, un CSS normal.
+ESTILO_COLECCION = '<link rel="stylesheet" href="../css/fragmentos.css">'
 
 
 ESTILO_LISTA = """<style>
@@ -782,6 +658,7 @@ def main():
     ap.add_argument("--sitemap", help="sitemap.xml al que añadir las páginas (solo PRO)")
     a = ap.parse_args()
     web = Path(a.web)
+    COLECCIONES[:] = cargar_colecciones(web)
     datos = json.loads((web / "data" / "obras.json").read_text(encoding="utf-8"))
     nivel = niveles(web)
     for o in datos["obras"]:

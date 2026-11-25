@@ -1,0 +1,108 @@
+# Publica las colecciones de Fragmentos desde el Excel, sin tocar código.
+#
+#   1. Descarga (o abre) fragmentos/colecciones.xlsx: una fila por colección; la hoja «Ayuda» explica cada columna.
+#   2. Súbelo a la rama main con el mismo nombre: Code → carpeta fragmentos → Add file → Upload files → Commit.
+#   3. Actions → «Publicar colecciones» → Run workflow:
+#        - destino «PRE»: lo comprueba y lo publica en www.lasafoteca.com/uat/ (unos 2 minutos).
+#        - destino «PRO»: lo comprueba y abre el PR a la web; al mergearlo se publica en www.lasafoteca.com.
+#      Si hay un error (una temática mal escrita, una recomendada que no existe…), no publica nada y el
+#      resumen dice la fila y la columna que hay que corregir.
+#   4. Para empezar desde lo que hay publicado: lanza la acción con destino «Solo descargar el Excel» y bájalo
+#      del apartado «Artifacts» del resumen.
+name: Publicar colecciones
+
+on:
+  workflow_dispatch:
+    inputs:
+      destino:
+        description: "Dónde publicar"
+        type: choice
+        options: ["PRE (pruebas)", "PRO (abre el PR)", "Solo descargar el Excel"]
+        default: "PRE (pruebas)"
+
+permissions:
+  contents: write        # guardar el JSON en uat o en la rama del PR
+  pull-requests: write   # abrir el PR a main
+  actions: write         # lanzar «Publicar web»
+
+concurrency:
+  group: colecciones
+  cancel-in-progress: false
+
+jobs:
+  colecciones:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      DESTINO: ${{ inputs.destino }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install openpyxl
+
+      - name: Excel con las colecciones publicadas
+        if: startsWith(inputs.destino, 'Solo')
+        run: |
+          python tools/colecciones.py --a-excel colecciones.xlsx
+          echo "Descarga **colecciones.xlsx** en «Artifacts», al final de esta página." >> "$GITHUB_STEP_SUMMARY"
+      - if: startsWith(inputs.destino, 'Solo')
+        uses: actions/upload-artifact@v4
+        with:
+          name: colecciones
+          path: colecciones.xlsx
+
+      - name: Comprobar el Excel
+        if: ${{ !startsWith(inputs.destino, 'Solo') }}
+        run: |
+          test -f fragmentos/colecciones.xlsx || { echo "::error::No encuentro fragmentos/colecciones.xlsx en main. Súbelo primero."; exit 1; }
+          set -o pipefail
+          python tools/colecciones.py --de-excel fragmentos/colecciones.xlsx --salida /tmp/colecciones.json 2>&1 | tee /tmp/resultado.txt \
+            || { { echo "### No se ha publicado nada"; echo '```'; cat /tmp/resultado.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"; exit 1; }
+          # prueba de verdad: genera las páginas con el JSON nuevo en una copia
+          cp -r web /tmp/prueba && cp /tmp/colecciones.json /tmp/prueba/data/colecciones.json
+          python tools/generar_paginas.py --web /tmp/prueba --noindex | grep -E "^Colección" | tee -a /tmp/resultado.txt
+          { echo "### Colecciones"; echo '```'; cat /tmp/resultado.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publicar en PRE
+        if: startsWith(inputs.destino, 'PRE')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898733+github-actions[bot]@users.noreply.github.com"
+          git checkout -B uat origin/uat
+          cp /tmp/colecciones.json web/data/colecciones.json
+          if git diff --quiet; then echo "Las colecciones de PRE ya estaban así." >> "$GITHUB_STEP_SUMMARY"
+          else
+            git add web/data/colecciones.json
+            git commit -m "Colecciones de Fragmentos desde el Excel (PRE)"
+            git push origin uat
+          fi
+          gh workflow run pages.yml --ref main
+          echo "Publicando en PRE: en unos 2 minutos, en https://www.lasafoteca.com/uat/fragmentos/" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Abrir el PR a PRO
+        if: startsWith(inputs.destino, 'PRO')
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898733+github-actions[bot]@users.noreply.github.com"
+          cp /tmp/colecciones.json web/data/colecciones.json
+          if git diff --quiet; then echo "PRO ya tiene estas colecciones: no hay nada que subir." >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+          RAMA="colecciones-$(date +%Y%m%d-%H%M)"
+          git checkout -b "$RAMA"
+          git add web/data/colecciones.json
+          git commit -m "Colecciones de Fragmentos desde el Excel"
+          git push origin "$RAMA"
+          PESO=$(du -sm web | cut -f1)
+          { echo "Colecciones de Fragmentos desde \`fragmentos/colecciones.xlsx\`, con la acción «Publicar colecciones»."
+            echo "Solo cambia \`web/data/colecciones.json\`; las páginas se generan al publicar."
+            echo; echo '```'; cat /tmp/resultado.txt; echo '```'
+            echo; echo "**Peso:** carpeta web ${PESO} MB (límite de GitHub Pages: 1 GB por sitio, 100 MB por archivo)."; } > /tmp/cuerpo.md
+          if URL=$(gh pr create --base main --head "$RAMA" --title "Colecciones de Fragmentos (desde el Excel)" --body-file /tmp/cuerpo.md); then
+            echo "PR abierto: $URL" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "GitHub no deja a la acción abrir el PR. Ábrelo tú aquí: https://github.com/${{ github.repository }}/compare/main...$RAMA?expand=1" >> "$GITHUB_STEP_SUMMARY"
+          fi
