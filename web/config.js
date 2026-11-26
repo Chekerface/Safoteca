@@ -35,7 +35,18 @@ window.SAFOTECA_CONFIG = {
   // recaptcha: clave de SITIO de reCAPTCHA v3 para App Check (la clave secreta se queda en Firebase, nunca aquí).
   // entorno: "pre" en la rama uat y "pro" en main (los datos de pruebas no se mezclan con los reales).
   // Guía: retrospectiva técnica, W16 «Cuentas».
-  cuentas: null,
+  cuentas: {
+    firebase: {
+      apiKey: "AIzaSyBog9z9ARp-TGAUo38agxyPcr6r2wMdgsY",
+      authDomain: "lasafoteca-e3680.firebaseapp.com",
+      projectId: "lasafoteca-e3680",
+      storageBucket: "lasafoteca-e3680.firebasestorage.app",
+      messagingSenderId: "963227097109",
+      appId: "1:963227097109:web:cdca30d6268112143c961c",
+    },
+    recaptcha: null,   // pendiente: clave de SITIO de reCAPTCHA v3 (App Check)
+    entorno: "pre",
+  },
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
   // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).
   // Para una campaña nueva, cambia "id" (así vuelve a salir a quien cerró la anterior), las fechas y el objetivo.

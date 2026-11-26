@@ -19,7 +19,7 @@
    Al entrar por primera vez en un dispositivo se JUNTAN las dos copias (no se pierde nada). Después, si la copia
    de la cuenta es más nueva (otro dispositivo) y aquí no hay cambios sin subir, se usa la de la cuenta. */
 
-const V = "10.12.2"; // versión fija del SDK de Firebase (gstatic)
+const V = "13.4.0"; // versión fija del SDK de Firebase (gstatic)
 const URL_SDK = (m) => `https://www.gstatic.com/firebasejs/${V}/firebase-${m}.js`;
 
 export async function crear(cfg, g) {
