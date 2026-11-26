@@ -534,3 +534,16 @@ textarea.prop-campo { resize: vertical; }
 .cuenta-botones { display: grid; gap: .5rem; }
 .cuenta-botones .boton { width: 100%; }
 .cuenta-botones__borrar { color: var(--alerta-texto); border-color: var(--alerta-texto); }
+
+/* Compartir una ficha: icono junto al título y hoja con las opciones (ordenador) */
+.ficha__titular { display: flex; align-items: flex-start; gap: .5rem; }
+.ficha__titular .ficha__titulo { flex: 1; min-width: 0; }
+.ficha__compartir { flex: none; display: grid; place-items: center; width: 44px; height: 44px; margin: -.3rem -.4rem 0 0; border: 0; border-radius: 50%; background: transparent; color: var(--violeta); cursor: pointer; }
+.ficha__compartir:hover { background: var(--suave); }
+.ficha__compartir:focus-visible { outline: 2px solid var(--lila); outline-offset: 2px; }
+.compartir__mensaje { margin-bottom: 1rem; padding: .75rem 1rem; border-radius: 12px; background: var(--suave); }
+.compartir__mensaje span { font-size: .85rem; color: var(--tinta-suave); word-break: break-all; }
+.compartir { display: grid; grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr)); gap: .5rem; }
+.compartir__opcion { display: grid; justify-items: center; gap: .4rem; padding: .9rem .5rem; border: 1px solid var(--linea); border-radius: 12px; background: var(--superficie); color: var(--tinta); text-decoration: none; font: inherit; font-size: .9rem; cursor: pointer; }
+.compartir__opcion svg { width: 26px; height: 26px; color: var(--violeta); }
+.compartir__opcion:hover { border-color: var(--lila); }
