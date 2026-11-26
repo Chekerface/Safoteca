@@ -112,15 +112,17 @@ export async function crear(cfg, g) {
 
   return {
     estado,
-    async entrar() {
+    // Ventana emergente de Google. Tiene que abrirse EN EL MISMO TOQUE (sin esperas antes): si no, el móvil la
+    // bloquea. Por eso la app descarga Firebase en un primer toque y abre Google en el segundo.
+    // No se usa la redirección: con el dominio de Firebase (firebaseapp.com) distinto de lasafoteca.com, los
+    // navegadores móviles (Safari, Chrome) pierden la sesión al volver y no se entra.
+    entrar() {
       const p = new A.GoogleAuthProvider();
       p.setCustomParameters({ prompt: "select_account" });
-      try { await A.signInWithPopup(auth, p); }
-      catch (e) {
-        if (e && e.code === "auth/popup-blocked") return A.signInWithRedirect(auth, p);
+      return A.signInWithPopup(auth, p).catch((e) => {
         if (e && (e.code === "auth/popup-closed-by-user" || e.code === "auth/cancelled-popup-request")) return;
         throw e;
-      }
+      });
     },
     async salir() {
       await A.signOut(auth);

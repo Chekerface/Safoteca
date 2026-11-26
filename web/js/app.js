@@ -637,7 +637,7 @@
     } else {
       cuerpo = `<p style="margin-bottom:.75rem">Entra con tu cuenta de Google para tener tus favoritos y tus listas en todos tus dispositivos. Es opcional: sin entrar, todo sigue guardándose en este dispositivo.</p>
         <p class="resumen" style="margin-bottom:.75rem">Solo guardamos tus favoritos y tus listas, con un identificador anónimo. No guardamos tu correo ni tu nombre, y puedes borrarlo todo cuando quieras.</p>
-        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${cuenta === "cargando" ? "Cargando…" : "Entrar con Google"}</button>`;
+        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${textoEntrar()}</button>`;
     }
     return `<section class="bloque" id="bloque-cuenta" aria-labelledby="a7"><h2 id="a7">Tu cuenta</h2>${cuerpo}${recaptcha}</section>`;
   }
@@ -654,11 +654,11 @@
       const estado = st.sincronizando ? "Sincronizando…" : st.error ? "No se ha podido sincronizar" : "Guardados en tu cuenta";
       html = `<div class="cuenta-tarjeta">${fotoCuenta(u)}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div>
         <button class="boton-texto enlace-suave cuenta-tarjeta__enlace" type="button" data-accion="cuenta-hoja">Gestionar</button></div>`;
-    } else if (cuenta === "cargando" || guardar.leer("cuenta", false)) {
+    } else if (guardar.leer("cuenta", false) && !(cuenta && cuenta.entrar)) {
       html = `<div class="cuenta-tarjeta"><div class="cuenta-tarjeta__texto"><span>Cargando tu cuenta…</span></div></div>`;
     } else {
       html = `<div class="cuenta-aviso"><p><b>¿No quieres perder tus favoritos?</b> Ahora solo están en este dispositivo: si borras los datos del navegador o cambias de móvil, se pierden. Entra con Google y los tendrás en todos tus dispositivos.</p>
-        <button class="boton" type="button" data-accion="cuenta-entrar">Entrar con Google</button>
+        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${textoEntrar()}</button>
         <p class="resumen">Solo guardamos tus favoritos y tus listas, sin tu correo ni tu nombre.</p></div>`;
     }
     return `<div id="aviso-cuenta">${html}</div>`;
@@ -704,6 +704,20 @@
       else h.close();   // ha cerrado sesión o borrado la cuenta
     }
   };
+
+  function errorEntrar(e) {
+    const c = (e && e.code) || "";
+    const m = {
+      "auth/popup-blocked": "Tu navegador ha bloqueado la ventana de Google. Permite las ventanas emergentes para lasafoteca.com y vuelve a pulsar.",
+      "auth/unauthorized-domain": "Este dominio no está autorizado para entrar con Google (falta en Firebase → Authentication → Dominios autorizados).",
+      "auth/network-request-failed": "No hay conexión. Inténtalo de nuevo cuando tengas internet.",
+      "auth/operation-not-supported-in-this-environment": "Este navegador no permite entrar con Google. Prueba a abrir la web en Safari o Chrome.",
+      "auth/web-storage-unsupported": "Este navegador bloquea el almacenamiento que necesita Google. Prueba a abrir la web en Safari o Chrome, fuera del modo privado.",
+    }[c];
+    toast(m || `No hemos podido entrar con Google${c ? " (" + c + ")" : ""}. Inténtalo de nuevo.`);
+    console.warn("[cuenta]", e);
+  }
+  const textoEntrar = () => (cuenta === "cargando" ? "Preparando…" : cuenta && cuenta.entrar ? "Continuar con Google" : "Entrar con Google");
 
   // Descarga js/cuenta.js (y Firebase) solo cuando hace falta.
   function cargarCuenta() {
@@ -1024,8 +1038,10 @@
           break;
         }
         case "cuenta-entrar":
-          cargarCuenta().then((c) => c.entrar())
-            .catch(() => toast("No hemos podido abrir la ventana de Google. Inténtalo de nuevo."));
+          // Con Firebase ya descargado, Google se abre en este mismo toque (si no, el móvil bloquea la ventana).
+          if (cuenta && cuenta.entrar) { cuenta.entrar().catch(errorEntrar); break; }
+          cargarCuenta().then(() => toast("Listo: pulsa «Continuar con Google»"))
+            .catch(() => toast("No hemos podido conectar con Google. Comprueba tu conexión e inténtalo de nuevo."));
           break;
         case "cuenta-hoja":
           if (conSesion()) abrirHojaCuenta(); else location.hash = "#/ajustes";
