@@ -30,6 +30,14 @@ def tj(o):
             if r in ("A", "B", "C") else "")
 
 
+# Estadísticas (GoatCounter, anónimas y sin cookies): solo en las páginas de PRO; PRE (noindex) no cuenta.
+GOATCOUNTER = '<script data-goatcounter="https://lasafoteca.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>'
+
+
+def contador(noindex):
+    return "" if noindex else GOATCOUNTER
+
+
 def e(s):
     return html.escape(str(s or ""), quote=True)
 
@@ -194,6 +202,7 @@ footer{{text-align:center;color:var(--suave-t);font-size:14px;padding:0 16px 32p
   </div>
 </main>
 <footer>La Safoteca: catálogo gratuito de series y películas con representación lésbica y bisexual, con avisos de contenido.<br><a href="../../">Ir al catálogo</a> · <a href="../../obras/">Todas las series y películas</a></footer>
+{contador(noindex)}
 </body>
 </html>
 """
@@ -439,6 +448,7 @@ def coleccion(c, obras, noindex):
 </main>
 <div class="cta"><div><b>Ábrelas en el catálogo</b><small>filtra por plataforma y esconde lo que no quieras ver</small></div>
 <a href="../#/catalogo{e(c.get("catalogo", ""))}">Abrir <span aria-hidden="true">→</span></a></div>
+{contador(noindex)}
 </body>
 </html>
 """
@@ -548,6 +558,7 @@ def quienes_somos(obras, noindex):
 </main>
 <div class="cta"><div><b>Entra en el catálogo</b><small>series y películas sáficas, con avisos para que elijas qué ver</small></div>
 <a href="../#/">Abrir <span aria-hidden="true">→</span></a></div>
+{contador(noindex)}
 </body>
 </html>
 """
@@ -599,6 +610,7 @@ def portada_fragmentos(obras, noindex):
 </div>
 <p class="mas"><a href="../obras/">Todas las series y películas</a> · <a href="../">Ir al catálogo</a></p>
 </main>
+{contador(noindex)}
 </body>
 </html>
 """
@@ -646,6 +658,7 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 <h2>Series ({ns})</h2><ul>{series}</ul>
 <h2>Películas ({np_})</h2><ul>{pelis}</ul>
 </main>
+{contador(noindex)}
 </body>
 </html>
 """
