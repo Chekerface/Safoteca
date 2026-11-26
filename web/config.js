@@ -14,6 +14,8 @@ window.SAFOTECA_CONFIG = {
   // { tipo: "novedades" } muestra las 10 obras con el año de estreno más reciente (se calcula sola, no se elige a mano).
   portada: [
     { tipo: "novedades" },
+    // «mas»: tarjeta «+» al final del carrusel que lleva al catálogo con ese filtro (aquí: Navidad y niveles A o B)
+    { titulo: "Manta y café 🥐 🎄 🎁", ids: [92, 496, 506, 229, 497, 481], mas: "#/catalogo?tem=Navidad&rel=A%7CB" },   // Carol + las 5 recomendadas de la colección de Navidad
     { titulo: "Las cuatro de Letterboxd", ids: [93, 42, 221, 154] },   // las 4 películas mejor puntuadas en Letterboxd (oct. 2026): Retrato de una mujer en llamas 4,43 · The Handmaiden 4,39 · Mulholland Drive 4,26 · Thelma y Louise 4,23
     { titulo: "No te romperán el corazón 💖 🛡️", ids: [110, 150, 238, 237, 109, 115] },       // Imagine Me & You, La llamada, Nina's Heavenly Delights, Fried Green Tomatoes, D.E.B.S., But I'm a Cheerleader
     { titulo: "Series a las que dar una oportunidad", ids: [236, 152, 47, 53, 77] }        // South of Nowhere, Dickinson, She-Ra, Harley Quinn, Gentleman Jack
