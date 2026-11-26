@@ -61,6 +61,7 @@
     lupa: svg('<circle cx="11" cy="11" r="6.500"/><path d="M16 16l4.500 4.500"/>'),
     cerrar: svg('<path d="M6 6l12 12M18 6L6 18"/>'),
     bandera: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>', 'width="18" height="18"'),
+    compartir: svg('<circle cx="18" cy="5" r="2.600"/><circle cx="6" cy="12" r="2.600"/><circle cx="18" cy="19" r="2.600"/><path d="M8.300 10.700l7.400-4.200M8.300 13.300l7.400 4.200"/>', 'width="22" height="22"'),
     fuera: svg('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', 'width="18" height="18"'),
   };
 
@@ -501,6 +502,35 @@
     });
   }
 
+  // ---------- Compartir una ficha ----------
+  // Enlace /c/ID/ (vista previa con póster en los chats; lleva a la ficha de la app, #/obra/ID). En el móvil se abre el menú de compartir del propio teléfono
+  // (WhatsApp, Instagram, Telegram, Copiar…); en el ordenador, nuestra hoja con WhatsApp, Telegram, Correo y Copiar enlace.
+  function compartirObra(id) {
+    const o = E.porId.get(id); if (!o) return;
+    // /c/<id>/: página mínima con título y póster para la vista previa de WhatsApp, que lleva al momento a la ficha
+    // ?ref=compartir: para saber (en las estadísticas) cuánta gente llega por enlaces compartidos
+    const url = location.origin + location.pathname.replace(/[^/]*$/, "") + "c/" + id + "/?ref=compartir";
+    const que = o.tipo === "serie" ? "esta serie" : o.tipo === "pelicula" ? "esta película" : "esta obra";
+    const texto = `¡Ey! Descubre ${que} en La Safoteca: ${o.titulo}`;
+    const movil = window.matchMedia && matchMedia("(pointer: coarse)").matches;
+    if (navigator.share && movil) { navigator.share({ title: o.titulo + " · La Safoteca", text: texto, url }).catch(() => {}); return; }
+    const enc = encodeURIComponent;
+    const opcion = (href, icono, nombre) => `<a class="compartir__opcion" href="${esc(href)}" target="_blank" rel="noopener">${icono}<span>${nombre}</span></a>`;
+    const h = hoja();
+    h.innerHTML = `<div class="hoja__cabecera"><h2 id="hoja-titulo">Compartir</h2><button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
+      <div class="hoja__cuerpo">
+        <p class="compartir__mensaje">${esc(texto)}<br><span>${esc(url)}</span></p>
+        <div class="compartir">
+          ${opcion("https://wa.me/?text=" + enc(texto + " " + url), svg('<path d="M4 20l1.300-3.900A8 8 0 1 1 8 19z"/>'), "WhatsApp")}
+          ${opcion("https://t.me/share/url?url=" + enc(url) + "&text=" + enc(texto), svg('<path d="M21 4L3 11l6 2.500L11.500 20 15 15l5 4z"/>'), "Telegram")}
+          ${opcion("mailto:?subject=" + enc(o.titulo + " · La Safoteca") + "&body=" + enc(texto + "\n" + url), svg('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>'), "Correo")}
+          <button class="compartir__opcion" type="button" data-accion="copiar-enlace" data-url="${esc(url)}">${svg('<rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/>')}<span>Copiar enlace</span></button>
+        </div>
+      </div>`;
+    h.dataset.modo = "compartir";
+    if (!h.open) h.showModal();
+  }
+
   function vistaObra(id) {
     const o = E.porId.get(id);
     if (!o) return `<h1 class="solo-lectores">Ficha no encontrada</h1><div class="vacio"><p>No hemos encontrado esta ficha.</p><a class="boton" href="#/catalogo">Ver el catálogo</a></div>`;
@@ -558,7 +588,8 @@
         <div class="ficha__portada">${poster(o, true)}${corazon(o)}</div>
         <div class="ficha__resto">
           <header>
-            <h1 class="ficha__titulo">${esc(o.titulo)}</h1>
+            <div class="ficha__titular"><h1 class="ficha__titulo">${esc(o.titulo)}</h1>
+              <button class="ficha__compartir" type="button" data-accion="compartir-obra" data-id="${o.id}" aria-label="Compartir ${esc(o.titulo)}">${ICONO.compartir}</button></div>
             ${o.titulo_original && o.titulo_original !== o.titulo ? `<p class="ficha__original">${esc(o.titulo_original)}</p>` : ""}
             <div class="ficha__datos">
               ${tejuelo(o.relevancia, true)}
@@ -1028,6 +1059,13 @@
           refrescarNota(); ajustarCabecera();
           if (hoja().open) abrirHoja("filtros");
           break;
+        case "compartir-obra": compartirObra(Number(acc.dataset.id)); break;
+        case "copiar-enlace": {
+          const url = acc.dataset.url;
+          const hecho = () => { toast("Enlace copiado"); if (hoja().open) hoja().close(); };
+          if (navigator.clipboard) navigator.clipboard.writeText(url).then(hecho, () => toast(url)); else toast(url);
+          break;
+        }
         case "alternar-avisos": {
           const caja = $("#avisos-contenido"); const resumen = $("#avisos-resumen");
           const mostrar = caja.hidden;

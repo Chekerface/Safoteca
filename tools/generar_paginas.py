@@ -651,6 +651,38 @@ a{{color:var(--violeta)}} li span{{color:var(--suave-t);font-size:14px}}
 """
 
 
+def pagina_compartir(o):
+    """/c/<id>/: página mínima para COMPARTIR una ficha. Solo lleva lo que leen WhatsApp, Telegram o Instagram
+    para la vista previa (título, descripción y póster) y manda al momento a la ficha de la app (#/obra/<id>).
+    No se indexa: para los buscadores ya están las páginas /obra/<id>/."""
+    que = {"serie": "Serie", "pelicula": "Película"}.get(o["tipo"], "Obra")
+    tit = f"{o['titulo']}" + (f" ({o['anio']})" if o.get("anio") else "")
+    sin = " ".join((o.get("sinopsis") or "").split())
+    desc = f"{que} con representación lésbica o bisexual en La Safoteca." + (f" {sin[:150]}…" if len(sin) > 150 else (f" {sin}" if sin else ""))
+    img = f"{DOMINIO}/img/{o['poster']}_600.webp" if o.get("poster") else f"{DOMINIO}/icons/icon-512.png"
+    destino = f"../../#/obra/{o['id']}"
+    return f"""<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<title>{e(tit)} · La Safoteca</title>
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{e(desc)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="La Safoteca">
+<meta property="og:title" content="{e(tit)} · La Safoteca">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:image" content="{e(img)}">
+<meta property="og:image:width" content="600"><meta property="og:image:height" content="900">
+<meta property="og:locale" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta http-equiv="refresh" content="0; url={destino}">
+<script>location.replace("../../" + location.search + "#/obra/{o['id']}")</script>
+</head><body style="font-family:system-ui,sans-serif;padding:2rem;text-align:center">
+<p><a href="{destino}">Abrir «{e(o['titulo'])}» en La Safoteca</a></p>
+</body></html>
+"""
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--web", required=True, help="carpeta de la web (web o web/uat)")
@@ -666,6 +698,11 @@ def main():
         d.mkdir(parents=True, exist_ok=True)
         (d / "index.html").write_text(pagina(o, nivel, a.noindex, datos["obras"]), encoding="utf-8")
     print(f"Páginas por obra: {len(datos['obras'])} en {web / 'obra'}")
+    for o in datos["obras"]:
+        d = web / "c" / str(o["id"])
+        d.mkdir(parents=True, exist_ok=True)
+        (d / "index.html").write_text(pagina_compartir(o), encoding="utf-8")
+    print(f"Páginas para compartir: {len(datos['obras'])} en {web / 'c'}")
     (web / "obras").mkdir(exist_ok=True)
     (web / "obras" / "index.html").write_text(indice(datos["obras"], a.noindex), encoding="utf-8")
     for c in COLECCIONES:
