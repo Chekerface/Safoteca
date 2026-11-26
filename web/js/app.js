@@ -623,11 +623,12 @@
   }
 
   // ---------- Compartir una ficha ----------
-  // Enlace a la ficha dentro de la app (#/obra/ID). En el móvil se abre el menú de compartir del propio teléfono
+  // Enlace /c/ID/ (vista previa con póster en los chats; lleva a la ficha de la app, #/obra/ID). En el móvil se abre el menú de compartir del propio teléfono
   // (WhatsApp, Instagram, Telegram, Copiar…); en el ordenador, nuestra hoja con WhatsApp, Telegram, Correo y Copiar enlace.
   function compartirObra(id) {
     const o = E.porId.get(id); if (!o) return;
-    const url = location.origin + location.pathname + "#/obra/" + id;
+    // /c/<id>/: página mínima con título y póster para la vista previa de WhatsApp, que lleva al momento a la ficha
+    const url = location.origin + location.pathname.replace(/[^/]*$/, "") + "c/" + id + "/";
     const que = o.tipo === "serie" ? "esta serie" : o.tipo === "pelicula" ? "esta película" : "esta obra";
     const texto = `¡Ey! Mira ${que} en La Safoteca: ${o.titulo}`;
     const movil = window.matchMedia && matchMedia("(pointer: coarse)").matches;
