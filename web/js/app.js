@@ -651,13 +651,9 @@
     const u = st && st.usuaria;
     let html;
     if (u) {
-      const inicial = esc((u.nombre || "?").trim().charAt(0).toUpperCase());
-      const foto = u.foto && /^https:\/\//.test(u.foto)
-        ? `<img class="cuenta-tarjeta__foto" src="${esc(u.foto)}" alt="" referrerpolicy="no-referrer" width="44" height="44">`
-        : `<span class="cuenta-tarjeta__foto cuenta-tarjeta__foto--letra" aria-hidden="true">${inicial}</span>`;
       const estado = st.sincronizando ? "Sincronizando…" : st.error ? "No se ha podido sincronizar" : "Guardados en tu cuenta";
-      html = `<div class="cuenta-tarjeta">${foto}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div>
-        <a class="enlace-suave cuenta-tarjeta__enlace" href="#/ajustes">Gestionar</a></div>`;
+      html = `<div class="cuenta-tarjeta">${fotoCuenta(u)}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div>
+        <button class="boton-texto enlace-suave cuenta-tarjeta__enlace" type="button" data-accion="cuenta-hoja">Gestionar</button></div>`;
     } else if (cuenta === "cargando" || guardar.leer("cuenta", false)) {
       html = `<div class="cuenta-tarjeta"><div class="cuenta-tarjeta__texto"><span>Cargando tu cuenta…</span></div></div>`;
     } else {
@@ -667,10 +663,46 @@
     }
     return `<div id="aviso-cuenta">${html}</div>`;
   }
+  function fotoCuenta(u, tam = 44) {
+    const inicial = esc((u.nombre || "?").trim().charAt(0).toUpperCase());
+    return u.foto && /^https:\/\//.test(u.foto)
+      ? `<img class="cuenta-tarjeta__foto" src="${esc(u.foto)}" alt="" referrerpolicy="no-referrer" width="${tam}" height="${tam}" style="width:${tam}px;height:${tam}px">`
+      : `<span class="cuenta-tarjeta__foto cuenta-tarjeta__foto--letra" aria-hidden="true" style="width:${tam}px;height:${tam}px">${inicial}</span>`;
+  }
+  // Hoja «Tu cuenta» (sube desde abajo, como «Guardar en…»): estado y botones de la cuenta.
+  // FUTURO (W16): cuando haya estrellas o comentarios, añadir aquí una fila «Ver mi actividad» que lleve a una
+  // pantalla propia (#/cuenta) con el alias, las estrellas y los comentarios de la persona.
+  function cuerpoHojaCuenta() {
+    const st = cuenta && cuenta.estado, u = st && st.usuaria;
+    if (!u) return "";
+    const hace = (iso) => { if (!iso) return ""; const m = Math.round((Date.now() - new Date(iso)) / 60000);
+      return m < 1 ? "ahora mismo" : m < 60 ? `hace ${m} min` : new Date(iso).toLocaleString("es-ES", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); };
+    const estado = st.sincronizando ? "Sincronizando…" : st.error ? esc(st.error) : st.ultima ? "Sincronizado " + hace(st.ultima) + "." : "";
+    return `<div class="cuenta-tarjeta cuenta-tarjeta--hoja">${fotoCuenta(u, 52)}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div></div>
+      <p class="resumen" style="margin:.75rem 0 1rem">Tus favoritos y tus listas se guardan en tu cuenta y aparecen en cualquier dispositivo en el que entres. Solo guardamos eso, sin tu correo ni tu nombre.</p>
+      <div class="cuenta-botones">
+        <button class="boton boton--claro" type="button" data-accion="cuenta-sincronizar">Sincronizar ahora</button>
+        <button class="boton boton--claro" type="button" data-accion="cuenta-salir">Cerrar sesión</button>
+        <button class="boton boton--claro cuenta-botones__borrar" type="button" data-accion="cuenta-borrar">Borrar mi cuenta y mis datos</button>
+      </div>`;
+  }
+  function abrirHojaCuenta() {
+    const h = hoja();
+    h.innerHTML = `<div class="hoja__cabecera"><h2 id="hoja-titulo">Tu cuenta</h2><button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
+      <div class="hoja__cuerpo" id="hoja-cuenta">${cuerpoHojaCuenta()}</div>
+      <div class="hoja__pie"><button class="boton" type="button" data-accion="cerrar-hoja">Listo</button></div>`;
+    h.dataset.modo = "cuenta";
+    if (!h.open) h.showModal();
+  }
   const repintarCuenta = () => {
     if (!CUENTA) return;
     const b = $("#bloque-cuenta"); if (b) b.outerHTML = bloqueCuenta();
     const a = $("#aviso-cuenta"); if (a) a.outerHTML = avisoCuenta();
+    const h = hoja();
+    if (h && h.open && h.dataset.modo === "cuenta") {
+      if (conSesion()) { const c = $("#hoja-cuenta"); if (c && !c.querySelector("[data-seguro]")) c.innerHTML = cuerpoHojaCuenta(); }
+      else h.close();   // ha cerrado sesión o borrado la cuenta
+    }
   };
 
   // Descarga js/cuenta.js (y Firebase) solo cuando hace falta.
@@ -994,6 +1026,12 @@
         case "cuenta-entrar":
           cargarCuenta().then((c) => c.entrar())
             .catch(() => toast("No hemos podido abrir la ventana de Google. Inténtalo de nuevo."));
+          break;
+        case "cuenta-hoja":
+          if (conSesion()) abrirHojaCuenta(); else location.hash = "#/ajustes";
+          break;
+        case "cuenta-sincronizar":
+          if (cuenta && cuenta.sincronizar) cuenta.sincronizar();
           break;
         case "cuenta-salir":
           if (cuenta && cuenta.salir) cuenta.salir().catch(() => toast("No hemos podido cerrar la sesión."));

@@ -89,6 +89,9 @@ export async function crear(cfg, g) {
         estado.ultima = new Date().toISOString(); g.escribir("cuenta.ultima", estado.ultima);
       } else if (!nube || pendiente || primeraVez) {
         await subir(u.uid);
+      } else {
+        // ya estaban iguales
+        estado.ultima = new Date().toISOString(); g.escribir("cuenta.ultima", estado.ultima);
       }
       g.escribir("cuenta.uid", u.uid);
     } catch (e) {

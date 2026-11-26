@@ -530,3 +530,7 @@ textarea.prop-campo { resize: vertical; }
 .cuenta-tarjeta__texto b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .cuenta-tarjeta__texto span { font-size: .85rem; color: var(--tinta-suave); }
 .cuenta-tarjeta__enlace { flex: none; font-size: .9rem; }
+.cuenta-tarjeta--hoja { margin: 0; box-shadow: none; }
+.cuenta-botones { display: grid; gap: .5rem; }
+.cuenta-botones .boton { width: 100%; }
+.cuenta-botones__borrar { color: var(--alerta-texto); border-color: var(--alerta-texto); }
