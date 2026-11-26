@@ -61,7 +61,7 @@
     lupa: svg('<circle cx="11" cy="11" r="6.500"/><path d="M16 16l4.500 4.500"/>'),
     cerrar: svg('<path d="M6 6l12 12M18 6L6 18"/>'),
     bandera: svg('<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>', 'width="18" height="18"'),
-    compartir: svg('<path d="M12 3v12M7.500 7.500L12 3l4.500 4.500M5 12v7a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-7"/>', 'width="22" height="22"'),
+    compartir: svg('<circle cx="18" cy="5" r="2.600"/><circle cx="6" cy="12" r="2.600"/><circle cx="18" cy="19" r="2.600"/><path d="M8.300 10.700l7.400-4.200M8.300 13.300l7.400 4.200"/>', 'width="22" height="22"'),
     fuera: svg('<path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>', 'width="18" height="18"'),
   };
 

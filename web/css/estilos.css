@@ -538,7 +538,7 @@ textarea.prop-campo { resize: vertical; }
 /* Compartir una ficha: icono junto al título y hoja con las opciones (ordenador) */
 .ficha__titular { display: flex; align-items: flex-start; gap: .5rem; }
 .ficha__titular .ficha__titulo { flex: 1; min-width: 0; }
-.ficha__compartir { flex: none; display: grid; place-items: center; width: 44px; height: 44px; margin: -.3rem -.4rem 0 0; border: 0; border-radius: 50%; background: transparent; color: var(--violeta); cursor: pointer; }
+.ficha__compartir { flex: none; display: grid; place-items: center; width: 44px; height: 44px; margin: -.3rem -.4rem 0 0; border: 0; border-radius: 50%; background: transparent; color: var(--lila); cursor: pointer; }
 .ficha__compartir:hover { background: var(--suave); }
 .ficha__compartir:focus-visible { outline: 2px solid var(--lila); outline-offset: 2px; }
 .compartir__mensaje { margin-bottom: 1rem; padding: .75rem 1rem; border-radius: 12px; background: var(--suave); }
