@@ -50,6 +50,12 @@ jobs:
             find web/img -maxdepth 1 -regextype posix-extended -regex '.*/[0-9]+_(300|600)\.webp' -exec cp {} web/uat/img/ \;
             echo "PRE usa los datos de PRO ($(python3 -c "import json;print(len(json.load(open('web/data/obras.json'))['obras']))") obras)"
             rm -f web/uat/robots.txt web/uat/sitemap.xml
+            # PRE siempre al día: cada publicación pone ?v=<versión de uat> a los archivos de código, así ni el
+            # navegador ni la red de GitHub (que guarda copias hasta 10 minutos) pueden servir uno viejo.
+            V=$(git rev-parse --short FETCH_HEAD)
+            sed -i -E "s#(src|href)=\"(config\.js|js/[a-z]+\.js|css/[a-z]+\.css)\"#\1=\"\2?v=$V\"#g" web/uat/index.html
+            sed -i -E "s#\"js/(cuenta|proponer)\.js\"#\"js/\1.js?v=$V\"#g" web/uat/js/app.js
+            echo "PRE: archivos de código con ?v=$V"
             # PRE genera sus páginas con su propia versión del script, para poder probar cambios antes de PRO
             python3 /tmp/uat/tools/generar_paginas.py --web web/uat --noindex
             echo "Versión de pruebas añadida en /uat/"
