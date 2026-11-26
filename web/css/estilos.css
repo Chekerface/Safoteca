@@ -106,11 +106,12 @@ button { cursor: pointer; }
   .cabecera__logo--claro { display: none; }
   .cabecera__logo--oscuro { display: block; }
 }
-/* «Catálogo · Fragmentos» (solo en el Inicio): dos palabras, la sección actual en el color del texto y la otra apagada */
-.cabecera__secciones { flex: none; display: flex; gap: 1rem; margin-left: auto; margin-right: .25rem; font: .9rem/1 var(--sans); }
-.cabecera__secciones[hidden] { display: none; }
-.cabecera__secciones a { color: var(--tinta-suave); opacity: .75; text-decoration: none; padding: .6rem 0; }
-.cabecera__secciones a[aria-current] { color: var(--tinta); opacity: 1; }
+/* «Catálogo · Fragmentos» (F1): fila centrada bajo la cabecera en Inicio, Series y películas y Favoritos.
+   La sección actual en el color del texto y la otra apagada. */
+.secciones { display: flex; justify-content: center; gap: 1.5rem; padding: .35rem 1rem .1rem; font: .9rem/1 var(--sans); }
+.secciones[hidden] { display: none; }
+.secciones a { color: var(--tinta-suave); opacity: .75; text-decoration: none; padding: .5rem 0; }
+.secciones a[aria-current] { color: var(--tinta); opacity: 1; }
 .cabecera__boton {
   position: relative;
   display: grid; place-items: center;

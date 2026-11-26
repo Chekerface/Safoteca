@@ -808,7 +808,7 @@
     const izq = $("#btn-izq");
     const filtros = $("#btn-filtros");
     const raiz = ["/", "/catalogo", "/favoritos"].includes(ruta);
-    $("#secciones").hidden = ruta !== "/";   // «Catálogo · Fragmentos» solo en el Inicio (F1)
+    $("#secciones").hidden = !raiz;   // «Catálogo · Fragmentos», centrado, en Inicio, Series y películas y Favoritos (F1)
     $("#cabecera").dataset.vista = ruta === "/" ? "inicio" : ruta.split("/")[1] || "inicio";   // para los temas (calabazas solo en el inicio)
     izq.innerHTML = raiz ? ICONO.menu : ICONO.atras;
     izq.setAttribute("aria-label", raiz ? "Ajustes" : "Volver");
