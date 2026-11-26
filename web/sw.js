@@ -1,5 +1,5 @@
 // Service worker: la web funciona sin conexión y se actualiza sola cuando hay red (en PRE, siempre la última versión).
-const CACHE_APP = "uat-safoteca-app-v95";
+const CACHE_APP = "uat-safoteca-app-v96";
 const CACHE_IMG = "uat-safoteca-img-v2";   // subir al cambiar pósters que ya existían (se guardan sin caducar)
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
@@ -49,7 +49,11 @@ const ES_PRE = self.location.pathname.includes("/uat/");
 async function siempreRed(req) {
   const cache = await caches.open(CACHE_APP);
   try {
-    const res = await fetch(req, { cache: req.url.includes("/img/") ? "default" : "no-store" });
+    // Una navegación (abrir la página) no admite opciones: se pide por su dirección. Si se le pasaran, el navegador
+    // da error y se serviría la copia guardada (vieja).
+    const res = req.mode === "navigate"
+      ? await fetch(req.url, { cache: "no-store", credentials: "same-origin" })
+      : await fetch(req, { cache: req.url.includes("/img/") ? "default" : "no-store" });
     if (res.ok) cache.put(req, res.clone());
     return res;
   } catch (err) {
