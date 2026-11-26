@@ -44,7 +44,7 @@ window.SAFOTECA_CONFIG = {
       messagingSenderId: "963227097109",
       appId: "1:963227097109:web:cdca30d6268112143c961c",
     },
-    recaptcha: null,   // pendiente: clave de SITIO de reCAPTCHA v3 (App Check)
+    recaptcha: "6Ld5zTMuAAAAADey_LNn-F3B8ciODKVBoIxXsqcX",   // clave de SITIO de reCAPTCHA v3 (pública); la secreta está en Firebase
     entorno: "pre",
   },
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
