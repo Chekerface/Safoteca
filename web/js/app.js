@@ -171,7 +171,9 @@
       ${meta(o)}
     </article>`;
   const rejilla = (lista) => `<div class="rejilla">${lista.map(tarjeta).join("")}</div>`;
-  const carrusel = (lista) => `<div class="carrusel">${lista.map(tarjeta).join("")}</div>`;
+  // «mas»: tarjeta final con un «+» que lleva al catálogo ya filtrado (opcional, en config.js → portada).
+  const carrusel = (lista, mas) => `<div class="carrusel">${lista.map(tarjeta).join("")}${mas
+    ? `<a class="tarjeta tarjeta--mas" href="${esc(mas)}" aria-label="Ver más en el catálogo"><span class="tarjeta--mas__signo" aria-hidden="true">+</span><span>Ver más</span></a>` : ""}</div>`;
 
   // ---- Obras relacionadas ----
   // La lista viene calculada en obras.json («rel», de más a menos parecida) con la misma fórmula que las páginas
@@ -243,13 +245,16 @@
     // Novedades: por la fecha exacta de estreno (TMDB) si la tiene; si no, por el año
     const clave = (o) => o.fecha || `${o.anio_fin || o.anio}-00-00`;
     const nov = [...v].filter((o) => o.anio).sort((a, b) => clave(b).localeCompare(clave(a)) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
-    const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
-    const seccion = (id, titulo, lista, href) => (lista.length ? `
+    // «tema»: el grupo solo sale mientras esté activo ese tema de temporada (mismas fechas que config.js → temas)
+    const temaActivo = document.documentElement.getAttribute("data-tema");
+    const grupos = (Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }])
+      .filter((g) => !g.tema || g.tema === temaActivo);
+    const seccion = (id, titulo, lista, href, mas) => (lista.length ? `
       <section class="seccion" aria-labelledby="${id}">
         <div class="seccion__cabecera">
           <h2 class="seccion__titulo" id="${id}">${titulo}</h2>
           ${href ? `<a class="enlace-suave" href="${href}">Ver todo</a>` : ""}
-        </div>${carrusel(lista)}
+        </div>${carrusel(lista, mas)}
       </section>` : "");
     const intro = E.introVista ? "" : `
       <aside class="nota" aria-label="Cómo funcionan los avisos">
@@ -264,7 +269,7 @@
     return `<h1 class="solo-lectores">La Safoteca</h1>${buscador}${intro}${tarjetaCampana()}${notaOcultas()}
       ${grupos.map((g, i) => (g.tipo === "novedades"
         ? seccion("s-novedades", "Novedades", nov, "#/catalogo?orden=recientes")
-        : seccion("s-grupo-" + i, esc(g.titulo), (g.ids || []).map((id) => v.find((o) => o.id === id)).filter(Boolean), ""))).join("")}`;
+        : seccion("s-grupo-" + i, esc(g.titulo), (g.ids || []).map((id) => v.find((o) => o.id === id)).filter(Boolean), "", g.mas))).join("")}`;
   }
 
   // Campo de búsqueda con lupa (Inicio) o con una x para borrar el texto (catálogo).
