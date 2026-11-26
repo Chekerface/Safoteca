@@ -394,13 +394,13 @@
     if (!obras.length) {
       return `${cab}${acciones}<div class="vacio"><p>${lista ? "Esta lista está vacía. Abre una ficha y pulsa «Añadir a una lista»." : "Aún no has guardado nada. Toca el corazón de una ficha para verla aquí."}</p>
         <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
-        <p class="resumen">Tus favoritos y tus listas se guardan solo en este dispositivo.</p>`;
+        ${CUENTA ? avisoCuenta() : '<p class="resumen">Tus favoritos y tus listas se guardan solo en este dispositivo.</p>'}`;
     }
     const tarjetas = lista
       ? obras.map((o) => tarjeta(o).replace("</article>", `<button class="boton-texto enlace-suave tarjeta__quitar" type="button" data-la="quitar-obra" data-id="${esc(lista.id)}" data-obra="${o.id}">Quitar de la lista</button></article>`)).join("")
       : obras.map(tarjeta).join("");
     return `${cab}${acciones}${filtroTipo}${notaOcultas()}
-      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} en este dispositivo.</p><div class="rejilla">${tarjetas}</div>`;
+      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} ${conSesion() ? "en tu cuenta" : "en este dispositivo"}.</p><div class="rejilla">${tarjetas}</div>${avisoCuenta()}`;
   }
 
   function abrirHojaListas(modo, ctx = {}) {
@@ -641,7 +641,37 @@
     }
     return `<section class="bloque" id="bloque-cuenta" aria-labelledby="a7"><h2 id="a7">Tu cuenta</h2>${cuerpo}${recaptcha}</section>`;
   }
-  const repintarCuenta = () => { const b = $("#bloque-cuenta"); if (b && CUENTA) b.outerHTML = bloqueCuenta(); };
+  // Favoritos: abajo del todo, para que la parte de arriba (favoritos y listas) siga igual.
+  //  - sin sesión: aviso «para no perder tus favoritos, entra con Google» y el botón;
+  //  - con sesión: tarjeta con la foto y el nombre de Google y el estado de la sincronización.
+  const conSesion = () => !!(cuenta && cuenta.estado && cuenta.estado.usuaria);
+  function avisoCuenta() {
+    if (!CUENTA) return "";
+    const st = cuenta && cuenta.estado;
+    const u = st && st.usuaria;
+    let html;
+    if (u) {
+      const inicial = esc((u.nombre || "?").trim().charAt(0).toUpperCase());
+      const foto = u.foto && /^https:\/\//.test(u.foto)
+        ? `<img class="cuenta-tarjeta__foto" src="${esc(u.foto)}" alt="" referrerpolicy="no-referrer" width="44" height="44">`
+        : `<span class="cuenta-tarjeta__foto cuenta-tarjeta__foto--letra" aria-hidden="true">${inicial}</span>`;
+      const estado = st.sincronizando ? "Sincronizando…" : st.error ? "No se ha podido sincronizar" : "Guardados en tu cuenta";
+      html = `<div class="cuenta-tarjeta">${foto}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div>
+        <a class="enlace-suave cuenta-tarjeta__enlace" href="#/ajustes">Gestionar</a></div>`;
+    } else if (cuenta === "cargando" || guardar.leer("cuenta", false)) {
+      html = `<div class="cuenta-tarjeta"><div class="cuenta-tarjeta__texto"><span>Cargando tu cuenta…</span></div></div>`;
+    } else {
+      html = `<div class="cuenta-aviso"><p><b>¿No quieres perder tus favoritos?</b> Ahora solo están en este dispositivo: si borras los datos del navegador o cambias de móvil, se pierden. Entra con Google y los tendrás en todos tus dispositivos.</p>
+        <button class="boton" type="button" data-accion="cuenta-entrar">Entrar con Google</button>
+        <p class="resumen">Solo guardamos tus favoritos y tus listas, sin tu correo ni tu nombre.</p></div>`;
+    }
+    return `<div id="aviso-cuenta">${html}</div>`;
+  }
+  const repintarCuenta = () => {
+    if (!CUENTA) return;
+    const b = $("#bloque-cuenta"); if (b) b.outerHTML = bloqueCuenta();
+    const a = $("#aviso-cuenta"); if (a) a.outerHTML = avisoCuenta();
+  };
 
   // Descarga js/cuenta.js (y Firebase) solo cuando hace falta.
   function cargarCuenta() {
