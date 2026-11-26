@@ -676,7 +676,7 @@ def pagina_compartir(o):
 <meta property="og:locale" content="es_ES">
 <meta name="twitter:card" content="summary_large_image">
 <meta http-equiv="refresh" content="0; url={destino}">
-<script>location.replace("{destino}")</script>
+<script>location.replace("../../" + location.search + "#/obra/{o['id']}")</script>
 </head><body style="font-family:system-ui,sans-serif;padding:2rem;text-align:center">
 <p><a href="{destino}">Abrir «{e(o['titulo'])}» en La Safoteca</a></p>
 </body></html>

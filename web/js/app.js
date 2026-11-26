@@ -501,9 +501,10 @@
   function compartirObra(id) {
     const o = E.porId.get(id); if (!o) return;
     // /c/<id>/: página mínima con título y póster para la vista previa de WhatsApp, que lleva al momento a la ficha
-    const url = location.origin + location.pathname.replace(/[^/]*$/, "") + "c/" + id + "/";
+    // ?ref=compartir: para saber (en las estadísticas) cuánta gente llega por enlaces compartidos
+    const url = location.origin + location.pathname.replace(/[^/]*$/, "") + "c/" + id + "/?ref=compartir";
     const que = o.tipo === "serie" ? "esta serie" : o.tipo === "pelicula" ? "esta película" : "esta obra";
-    const texto = `¡Ey! Mira ${que} en La Safoteca: ${o.titulo}`;
+    const texto = `¡Ey! Descubre ${que} en La Safoteca: ${o.titulo}`;
     const movil = window.matchMedia && matchMedia("(pointer: coarse)").matches;
     if (navigator.share && movil) { navigator.share({ title: o.titulo + " · La Safoteca", text: texto, url }).catch(() => {}); return; }
     const enc = encodeURIComponent;
