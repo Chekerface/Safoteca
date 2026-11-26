@@ -1,0 +1,82 @@
+rules_version = '2';
+// La Safoteca · reglas de Cloud Firestore para las cuentas (proyecto de Firebase de La Safoteca).
+// Se pegan en la consola de Firebase → Firestore Database → Reglas → Publicar. Guía: retrospectiva técnica, W16.
+//
+// Principios:
+//   - Sin sesión no se lee ni se escribe nada.
+//   - Cada persona solo lee y cambia lo suyo (su uid). Nadie puede leer los datos de otra.
+//   - Tamaños limitados para que nadie pueda llenar la base de datos.
+//   - Dos entornos separados: «pro» (www.lasafoteca.com) y «pre» (www.lasafoteca.com/uat/).
+//   - App Check (reCAPTCHA v3) se activa aparte, en la consola: Firestore solo acepta peticiones de la web de verdad.
+//
+// Lo que está ACTIVO hoy: favoritos y listas (usuarias/{uid}/privado/biblioteca).
+// Lo que está PREPARADO pero APAGADO: perfiles públicos, estrellas y comentarios. Cada bloque tiene debajo,
+// comentada, una versión lista para encender cuando se decida hacer la funcionalidad.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function entornoValido(e) { return e in ['pro', 'pre']; }
+    function conSesion() { return request.auth != null; }
+    function esElla(uid) { return conSesion() && request.auth.uid == uid; }
+
+    // ---------- ACTIVO: favoritos y listas ----------
+    match /entornos/{e}/usuarias/{uid}/privado/biblioteca {
+      allow read, delete: if entornoValido(e) && esElla(uid);
+      allow create, update: if entornoValido(e) && esElla(uid) && bibliotecaValida(request.resource.data);
+    }
+    function bibliotecaValida(d) {
+      return d.keys().hasOnly(['v', 'rev', 'favs', 'listas', 'actualizado'])
+        && d.v is int && d.rev is int
+        && d.favs is list && d.favs.size() <= 2000
+        && d.listas is list && d.listas.size() <= 200
+        && d.actualizado == request.time;
+    }
+
+    // ---------- PREPARADO (apagado): perfil público, para firmar comentarios con un alias ----------
+    match /entornos/{e}/perfiles/{uid} {
+      allow read, write: if false;
+      // Para encenderlo:
+      // allow read: if entornoValido(e);
+      // allow create, update: if entornoValido(e) && esElla(uid)
+      //   && request.resource.data.keys().hasOnly(['alias', 'creado'])
+      //   && request.resource.data.alias is string && request.resource.data.alias.size() >= 2
+      //   && request.resource.data.alias.size() <= 30;
+      // allow delete: if entornoValido(e) && esElla(uid);
+    }
+
+    // ---------- PREPARADO (apagado): estrellas, un voto por persona y obra ----------
+    // El id del documento ES el uid: así nadie puede votar dos veces la misma obra.
+    match /entornos/{e}/obras/{obra}/votos/{uid} {
+      allow read, write: if false;
+      // Para encenderlo:
+      // allow read: if entornoValido(e);
+      // allow create, update: if entornoValido(e) && esElla(uid)
+      //   && request.resource.data.keys().hasOnly(['estrellas', 'actualizado'])
+      //   && request.resource.data.estrellas is int
+      //   && request.resource.data.estrellas >= 1 && request.resource.data.estrellas <= 5
+      //   && request.resource.data.actualizado == request.time;
+      // allow delete: if entornoValido(e) && esElla(uid);
+    }
+
+    // ---------- PREPARADO (apagado): comentarios ----------
+    match /entornos/{e}/obras/{obra}/comentarios/{comentario} {
+      allow read, write: if false;
+      // Para encenderlo (moderadoras: añade sus uid a la lista de esModeradora):
+      // function esModeradora() { return conSesion() && request.auth.uid in ['UID_DE_CARMEN']; }
+      // allow read: if entornoValido(e) && (resource.data.estado == 'visible' || esModeradora());
+      // allow create: if entornoValido(e) && conSesion()
+      //   && request.resource.data.keys().hasOnly(['uid', 'alias', 'texto', 'creado', 'estado'])
+      //   && request.resource.data.uid == request.auth.uid
+      //   && request.resource.data.texto is string && request.resource.data.texto.size() <= 1000
+      //   && request.resource.data.estado == 'visible' && request.resource.data.creado == request.time;
+      // allow delete: if entornoValido(e) && (esElla(resource.data.uid) || esModeradora());
+      // allow update: if entornoValido(e) && esModeradora()
+      //   && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['estado']);
+    }
+
+    // Todo lo demás, cerrado.
+    match /{todo=**} {
+      allow read, write: if false;
+    }
+  }
+}

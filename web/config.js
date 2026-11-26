@@ -30,6 +30,23 @@ window.SAFOTECA_CONFIG = {
   // servicio: URL de la aplicación web de Apps Script (tools/formulario/proponer_obra.gs).
   // clientId: ID de cliente OAuth de Google Cloud para «Entrar con Google». Vacíos = pantalla en pruebas.
   proponer: { servicio: "https://script.google.com/macros/s/AKfycbzcICGH8caFcHjPpJs83w8u7uUKCX-BA0ok0MFD4VkokYP9UNwPK6COjjT0xWrilfB_/exec", clientId: "963227097109-tgn6p1hm3l6u197pvvd1et2kik41pmna.apps.googleusercontent.com" },
+  // Cuentas (opcional): guardar favoritos y listas con Google (Firebase, plan gratuito). null = sin cuentas.
+  // firebase: el bloque «firebaseConfig» de la consola de Firebase (no son claves secretas: lo protegen las reglas).
+  // recaptcha: clave de SITIO de reCAPTCHA v3 para App Check (la clave secreta se queda en Firebase, nunca aquí).
+  // entorno: "pre" en la rama uat y "pro" en main (los datos de pruebas no se mezclan con los reales).
+  // Guía: retrospectiva técnica, W16 «Cuentas».
+  cuentas: {
+    firebase: {
+      apiKey: "AIzaSyBog9z9ARp-TGAUo38agxyPcr6r2wMdgsY",
+      authDomain: "lasafoteca-e3680.firebaseapp.com",
+      projectId: "lasafoteca-e3680",
+      storageBucket: "lasafoteca-e3680.firebasestorage.app",
+      messagingSenderId: "963227097109",
+      appId: "1:963227097109:web:cdca30d6268112143c961c",
+    },
+    recaptcha: "6Ld5zTMuAAAAADey_LNn-F3B8ciODKVBoIxXsqcX",   // clave de SITIO de reCAPTCHA v3 (pública); la secreta está en Firebase
+    entorno: "pro",
+  },
   // Campaña con barra de progreso en el Inicio. Se muestra solo entre "desde" y "hasta" (AAAA-MM-DD).
   // La barra cuenta las obras publicadas desde la fecha "desde" (se calcula sola, no se edita a mano).
   // Para una campaña nueva, cambia "id" (así vuelve a salir a quien cerró la anterior), las fechas y el objetivo.
