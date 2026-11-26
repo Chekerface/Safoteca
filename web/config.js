@@ -54,6 +54,9 @@ window.SAFOTECA_CONFIG = {
   // Botón «avisar de un enlace roto» en las fichas. Se rellena con el bloque que escribe el script
   // tools/formulario/reportar_enlaces.gs al ejecutarlo; mientras sea null el botón no aparece.
   reporteEnlaces: { url: "https://docs.google.com/forms/d/e/1FAIpQLSd21ZYeq0VawPGXW_RAt1R-Pgg6dCYQZMHxrPwxp0c4lwjfJg/viewform", campos: { id: "entry.1329433313", obra: "entry.1547440425", plataforma: "entry.110345365", enlace: "entry.682423969" }},
+  // Estadísticas de visitas anónimas, sin cookies (GoatCounter). Solo cuentan en la web oficial, nunca en PRE.
+  // Panel: https://lasafoteca.goatcounter.com · null = sin estadísticas.
+  estadisticas: "https://lasafoteca.goatcounter.com/count",
   // Opcional: enlace o correo para sugerencias (por ejemplo "mailto:..." o una URL).
   contacto: "",
   // Obras relacionadas: se calculan al exportar los datos (tools/relacionadas.py, donde están los pesos).

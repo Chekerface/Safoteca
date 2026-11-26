@@ -647,6 +647,7 @@
           <p>${esc(CFG.lema || "")}</p>
           ${E.meta.total ? `<p class="resumen" style="margin-top:.5rem">${E.meta.total} obras${fecha ? ", datos del " + fecha : ""}.</p>` : ""}
           ${CFG.contacto ? `<p style="margin-top:.75rem"><a class="enlace-suave" href="${esc(CFG.contacto)}">Enviar una sugerencia</a></p>` : ""}
+          ${CFG.estadisticas ? `<p class="resumen" style="margin-top:.75rem">Contamos las visitas de forma anónima, sin cookies ni datos personales, para saber qué se consulta más (con <a class="enlace-suave" href="https://www.goatcounter.com/" target="_blank" rel="noopener">GoatCounter</a>).</p>` : ""}
         </section>
       </div>`;
   }
@@ -940,6 +941,27 @@
     s.onerror = () => { cargarProponer.p = null; mal(); }; document.head.appendChild(s);
   })));
 
+  // ---------- Estadísticas de visitas (GoatCounter: anónimas, sin cookies) ----------
+  // Solo en la web oficial: PRE (/uat/) y las pruebas en local no cuentan. Cada pantalla de la app cuenta como una
+  // página (/obra/229, /catalogo, /favoritos…). GoatCounter lee solo el ?ref= de la dirección (instagram, compartir…).
+  const CONTAR = !!CFG.estadisticas && /(^|\.)lasafoteca\.com$/.test(location.hostname) && !location.pathname.startsWith("/uat/");
+  let ultimaContada = "";
+  function contarVisita(ruta, p) {
+    if (!CONTAR) return;
+    const path = ruta === "/favoritos" && p.has("ids") ? "/favoritos/compartida" : ruta;   // sin filtros ni ids
+    if (path === ultimaContada) return;
+    ultimaContada = path;
+    const enviar = () => window.goatcounter && window.goatcounter.count && window.goatcounter.count({ path, title: document.title });
+    if (window.goatcounter && window.goatcounter.count) { enviar(); return; }
+    if (contarVisita.cargando) { contarVisita.pendiente = enviar; return; }
+    contarVisita.cargando = true; contarVisita.pendiente = enviar;
+    window.goatcounter = { no_onload: true };
+    const s = document.createElement("script");
+    s.async = true; s.src = "https://gc.zgo.at/count.js"; s.dataset.goatcounter = CFG.estadisticas;
+    s.onload = () => contarVisita.pendiente && contarVisita.pendiente();
+    document.head.appendChild(s);
+  }
+
   function pintar(arriba = true) {
     const { ruta, p } = rutaActual();
     const vista = $("#vista");
@@ -992,6 +1014,7 @@
       pag.hidden = true; pag.textContent = "";
     }
     document.title = doc;
+    contarVisita(ruta, p);
     pintarTabs(ruta);
     ajustarCabecera();
     pintarFlotante();
