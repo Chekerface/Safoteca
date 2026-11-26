@@ -1,5 +1,5 @@
-// Service worker: la web funciona sin conexión y se actualiza sola cuando hay red.
-const CACHE_APP = "uat-safoteca-app-v91";
+// Service worker: la web funciona sin conexión y se actualiza sola cuando hay red (en PRE, siempre la última versión).
+const CACHE_APP = "uat-safoteca-app-v92";
 const CACHE_IMG = "uat-safoteca-img-v2";   // subir al cambiar pósters que ya existían (se guardan sin caducar)
 const ACTUALES = [CACHE_APP, CACHE_IMG];
 const PRECARGA = [
@@ -43,11 +43,28 @@ async function primeroCache(req) {
   return res;
 }
 
+// PRE (/uat/) va SIEMPRE a la red y sin la caché del navegador: así se ve cada despliegue al momento.
+// La copia guardada solo se usa si no hay conexión. PRO (sin /uat/) sigue como siempre: rápido y sin conexión.
+const ES_PRE = self.location.pathname.includes("/uat/");
+async function siempreRed(req) {
+  const cache = await caches.open(CACHE_APP);
+  try {
+    const res = await fetch(req, { cache: req.url.includes("/img/") ? "default" : "no-store" });
+    if (res.ok) cache.put(req, res.clone());
+    return res;
+  } catch (err) {
+    const guardada = await cache.match(req, { ignoreSearch: true }) || (req.mode === "navigate" && await cache.match("./index.html"));
+    if (guardada) return guardada;
+    throw err;
+  }
+}
+
 self.addEventListener("fetch", (e) => {
   const req = e.request;
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
+  if (ES_PRE && !url.pathname.includes("/equipo/") && !url.pathname.includes("/obra/")) { e.respondWith(siempreRed(req)); return; }
   if (url.pathname.includes("/equipo/")) return;   // el tablero del equipo va siempre a la red
   if (url.pathname.includes("/obra/")) return;     // páginas por obra (para buscadores): siempre de la red
   if (url.pathname.includes("/img/")) e.respondWith(primeroCache(req));
