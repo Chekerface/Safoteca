@@ -245,7 +245,10 @@
     // Novedades: por la fecha exacta de estreno (TMDB) si la tiene; si no, por el año
     const clave = (o) => o.fecha || `${o.anio_fin || o.anio}-00-00`;
     const nov = [...v].filter((o) => o.anio).sort((a, b) => clave(b).localeCompare(clave(a)) || b.anio - a.anio || (b.publicada || "").localeCompare(a.publicada || "") || az(a, b)).slice(0, 10);
-    const grupos = Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }];
+    // «tema»: el grupo solo sale mientras esté activo ese tema de temporada (mismas fechas que config.js → temas)
+    const temaActivo = document.documentElement.getAttribute("data-tema");
+    const grupos = (Array.isArray(CFG.portada) && CFG.portada.length ? CFG.portada : [{ tipo: "novedades" }])
+      .filter((g) => !g.tema || g.tema === temaActivo);
     const seccion = (id, titulo, lista, href, mas) => (lista.length ? `
       <section class="seccion" aria-labelledby="${id}">
         <div class="seccion__cabecera">
