@@ -508,3 +508,22 @@ textarea.prop-campo { resize: vertical; }
 .prop-info__texto { flex-basis: 100%; background: var(--suave); border-radius: 10px; padding: .75rem .9rem; font-size: .9rem; line-height: 1.5; }
 .prop-radio legend:has(.prop-info) { display: flex; align-items: center; }
 .chip--fijo { background: var(--suave, #efe9f6); border-color: transparent; color: var(--tinta-suave); cursor: default; }
+
+/* Cuentas: el sello de reCAPTCHA (App Check) se oculta; el aviso obligatorio va en Ajustes → Tu cuenta */
+.grecaptcha-badge { visibility: hidden; }
+
+/* Cuentas (W16): aviso y tarjeta al final de Favoritos */
+.cuenta-aviso { margin: 1.5rem 0 .5rem; padding: 1rem; border-radius: 12px; background: var(--suave); }
+.cuenta-aviso p { margin-bottom: .75rem; max-width: 38rem; }
+.cuenta-aviso .resumen { margin: .6rem 0 0; font-size: .85rem; }
+.cuenta-tarjeta { display: flex; align-items: center; gap: .75rem; margin: 1.5rem 0 .5rem; padding: .75rem 1rem; border-radius: 12px; background: var(--superficie); border: 1px solid var(--linea); box-shadow: var(--sombra); }
+.cuenta-tarjeta__foto { flex: none; width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.cuenta-tarjeta__foto--letra { display: grid; place-items: center; background: var(--lila); color: #fff; font: 700 1.1rem/1 var(--sans); }
+.cuenta-tarjeta__texto { flex: 1; min-width: 0; display: grid; gap: .1rem; }
+.cuenta-tarjeta__texto b { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cuenta-tarjeta__texto span { font-size: .85rem; color: var(--tinta-suave); }
+.cuenta-tarjeta__enlace { flex: none; font-size: .9rem; }
+.cuenta-tarjeta--hoja { margin: 0; box-shadow: none; }
+.cuenta-botones { display: grid; gap: .5rem; }
+.cuenta-botones .boton { width: 100%; }
+.cuenta-botones__borrar { color: var(--alerta-texto); border-color: var(--alerta-texto); }

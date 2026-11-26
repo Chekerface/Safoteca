@@ -21,12 +21,19 @@
     escribir(k, v) {
       memoria[k] = v;
       try { localStorage.setItem("safoteca." + k, JSON.stringify(v)); } catch { /* sin almacenamiento */ }
+      // con la sesión iniciada, cada cambio de favoritos o listas se sube también a la cuenta (agrupado)
+      if ((k === "favs" || k === "listas") && cuenta && cuenta.cambiado && !aplicandoCuenta) cuenta.cambiado();
     },
     borrar() {
       Object.keys(memoria).forEach((k) => delete memoria[k]);
       try { Object.keys(localStorage).filter((k) => k.startsWith("safoteca.")).forEach((k) => localStorage.removeItem(k)); } catch { /* nada */ }
     },
   };
+
+  // ---------- Cuenta (opcional, Firebase): ver js/cuenta.js ----------
+  // Solo existe si config.js trae «cuentas» con la configuración de Firebase. Si no, todo sigue solo en el dispositivo.
+  const CUENTA = CFG.cuentas && CFG.cuentas.firebase && CFG.cuentas.firebase.apiKey ? CFG.cuentas : null;
+  let cuenta = null, aplicandoCuenta = false;
 
   // ---------- Estado ----------
   const E = {
@@ -387,13 +394,13 @@
     if (!obras.length) {
       return `${cab}${acciones}<div class="vacio"><p>${lista ? "Esta lista está vacía. Abre una ficha y pulsa «Añadir a una lista»." : "Aún no has guardado nada. Toca el corazón de una ficha para verla aquí."}</p>
         <a class="boton" href="#/catalogo">Explorar series y películas</a></div>
-        <p class="resumen">Tus favoritos y tus listas se guardan solo en este dispositivo.</p>`;
+        ${CUENTA ? avisoCuenta() : '<p class="resumen">Tus favoritos y tus listas se guardan solo en este dispositivo.</p>'}`;
     }
     const tarjetas = lista
       ? obras.map((o) => tarjeta(o).replace("</article>", `<button class="boton-texto enlace-suave tarjeta__quitar" type="button" data-la="quitar-obra" data-id="${esc(lista.id)}" data-obra="${o.id}">Quitar de la lista</button></article>`)).join("")
       : obras.map(tarjeta).join("");
     return `${cab}${acciones}${filtroTipo}${notaOcultas()}
-      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} en este dispositivo.</p><div class="rejilla">${tarjetas}</div>`;
+      <p class="resumen" style="margin-bottom:1rem">${textoObras(obras.length)} ${lista ? "en esta lista" : (obras.length === 1 ? "guardada" : "guardadas")} ${conSesion() ? "en tu cuenta" : "en este dispositivo"}.</p><div class="rejilla">${tarjetas}</div>${avisoCuenta()}`;
   }
 
   function abrirHojaListas(modo, ctx = {}) {
@@ -598,8 +605,11 @@
           ${enlaceAltas("Añadir una obra")}</section>` : ""}
         ${CFG.proponer ? `<section class="bloque" aria-labelledby="a6"><h2 id="a6">Créditos</h2>
           <p>La pantalla «Proponer una obra» rellena datos con la API de <a class="enlace-suave" href="https://www.themoviedb.org/" target="_blank" rel="noopener">TMDB</a>. This product uses the TMDB API but is not endorsed or certified by TMDB.</p></section>` : ""}
+        ${CUENTA ? bloqueCuenta() : ""}
         <section class="bloque" aria-labelledby="a3"><h2 id="a3">Tus datos</h2>
-          <p style="margin-bottom:.75rem">Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban.</p>
+          <p style="margin-bottom:.75rem">${CUENTA
+            ? "Favoritos y preferencias se guardan en este dispositivo. Si entras con Google, tus favoritos y listas se guardan también en tu cuenta; este botón solo los borra de aquí."
+            : "Favoritos y preferencias se guardan solo en este dispositivo. No tenemos cuentas ni servidores que los reciban."}</p>
           <button class="boton boton--claro" type="button" data-accion="borrar-datos">Borrar favoritos y preferencias</button>
         </section>
         <section class="bloque" aria-labelledby="a4"><h2 id="a4">Sobre ${esc(CFG.nombre || "La Safoteca")}</h2>
@@ -608,6 +618,127 @@
           ${CFG.contacto ? `<p style="margin-top:.75rem"><a class="enlace-suave" href="${esc(CFG.contacto)}">Enviar una sugerencia</a></p>` : ""}
         </section>
       </div>`;
+  }
+
+  // ---------- Cuenta: bloque de Ajustes ----------
+  function bloqueCuenta() {
+    const st = cuenta && cuenta.estado;
+    const u = st && st.usuaria;
+    const hace = (iso) => { if (!iso) return ""; const m = Math.round((Date.now() - new Date(iso)) / 60000);
+      return m < 1 ? "ahora mismo" : m < 60 ? `hace ${m} min` : new Date(iso).toLocaleString("es-ES", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); };
+    const recaptcha = CUENTA.recaptcha ? `<p class="resumen" style="margin-top:.75rem;font-size:.8rem">Protegido por reCAPTCHA de Google: se aplican su <a class="enlace-suave" href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">política de privacidad</a> y sus <a class="enlace-suave" href="https://policies.google.com/terms?hl=es" target="_blank" rel="noopener">condiciones</a>.</p>` : "";
+    let cuerpo;
+    if (u) {
+      cuerpo = `<p style="margin-bottom:.5rem">Has entrado${u.nombre ? " como <b>" + esc(u.nombre) + "</b>" : ""}. Tus favoritos y listas se guardan en tu cuenta y aparecen en cualquier dispositivo en el que entres.</p>
+        <p class="resumen" id="cuenta-estado" style="margin-bottom:.75rem">${st.sincronizando ? "Sincronizando…" : st.error ? esc(st.error) : st.ultima ? "Sincronizado " + hace(st.ultima) + "." : ""}</p>
+        <div class="botones-fila" style="display:flex;flex-wrap:wrap;gap:.5rem">
+          <button class="boton boton--claro" type="button" data-accion="cuenta-salir">Cerrar sesión</button>
+          <button class="boton boton--claro" type="button" data-accion="cuenta-borrar">Borrar mi cuenta y mis datos</button></div>`;
+    } else {
+      cuerpo = `<p style="margin-bottom:.75rem">Entra con tu cuenta de Google para tener tus favoritos y tus listas en todos tus dispositivos. Es opcional: sin entrar, todo sigue guardándose en este dispositivo.</p>
+        <p class="resumen" style="margin-bottom:.75rem">Solo guardamos tus favoritos y tus listas, con un identificador anónimo. No guardamos tu correo ni tu nombre, y puedes borrarlo todo cuando quieras.</p>
+        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${textoEntrar()}</button>`;
+    }
+    return `<section class="bloque" id="bloque-cuenta" aria-labelledby="a7"><h2 id="a7">Tu cuenta</h2>${cuerpo}${recaptcha}</section>`;
+  }
+  // Favoritos: abajo del todo, para que la parte de arriba (favoritos y listas) siga igual.
+  //  - sin sesión: aviso «para no perder tus favoritos, entra con Google» y el botón;
+  //  - con sesión: tarjeta con la foto y el nombre de Google y el estado de la sincronización.
+  const conSesion = () => !!(cuenta && cuenta.estado && cuenta.estado.usuaria);
+  function avisoCuenta() {
+    if (!CUENTA) return "";
+    const st = cuenta && cuenta.estado;
+    const u = st && st.usuaria;
+    let html;
+    if (u) {
+      const estado = st.sincronizando ? "Sincronizando…" : st.error ? "No se ha podido sincronizar" : "Guardados en tu cuenta";
+      html = `<div class="cuenta-tarjeta">${fotoCuenta(u)}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div>
+        <button class="boton-texto enlace-suave cuenta-tarjeta__enlace" type="button" data-accion="cuenta-hoja">Gestionar</button></div>`;
+    } else if (guardar.leer("cuenta", false) && !(cuenta && cuenta.entrar)) {
+      html = `<div class="cuenta-tarjeta"><div class="cuenta-tarjeta__texto"><span>Cargando tu cuenta…</span></div></div>`;
+    } else {
+      html = `<div class="cuenta-aviso"><p><b>¿No quieres perder tus favoritos?</b> Ahora solo están en este dispositivo: si borras los datos del navegador o cambias de móvil, se pierden. Entra con Google y los tendrás en todos tus dispositivos.</p>
+        <button class="boton" type="button" data-accion="cuenta-entrar" ${cuenta === "cargando" ? "disabled" : ""}>${textoEntrar()}</button>
+        <p class="resumen">Solo guardamos tus favoritos y tus listas, sin tu correo ni tu nombre.</p></div>`;
+    }
+    return `<div id="aviso-cuenta">${html}</div>`;
+  }
+  function fotoCuenta(u, tam = 44) {
+    const inicial = esc((u.nombre || "?").trim().charAt(0).toUpperCase());
+    return u.foto && /^https:\/\//.test(u.foto)
+      ? `<img class="cuenta-tarjeta__foto" src="${esc(u.foto)}" alt="" referrerpolicy="no-referrer" width="${tam}" height="${tam}" style="width:${tam}px;height:${tam}px">`
+      : `<span class="cuenta-tarjeta__foto cuenta-tarjeta__foto--letra" aria-hidden="true" style="width:${tam}px;height:${tam}px">${inicial}</span>`;
+  }
+  // Hoja «Tu cuenta» (sube desde abajo, como «Guardar en…»): estado y botones de la cuenta.
+  // FUTURO (W16): cuando haya estrellas o comentarios, añadir aquí una fila «Ver mi actividad» que lleve a una
+  // pantalla propia (#/cuenta) con el alias, las estrellas y los comentarios de la persona.
+  function cuerpoHojaCuenta() {
+    const st = cuenta && cuenta.estado, u = st && st.usuaria;
+    if (!u) return "";
+    const hace = (iso) => { if (!iso) return ""; const m = Math.round((Date.now() - new Date(iso)) / 60000);
+      return m < 1 ? "ahora mismo" : m < 60 ? `hace ${m} min` : new Date(iso).toLocaleString("es-ES", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" }); };
+    const estado = st.sincronizando ? "Sincronizando…" : st.error ? esc(st.error) : st.ultima ? "Sincronizado " + hace(st.ultima) + "." : "";
+    return `<div class="cuenta-tarjeta cuenta-tarjeta--hoja">${fotoCuenta(u, 52)}<div class="cuenta-tarjeta__texto"><b>${esc(u.nombre || "Tu cuenta")}</b><span>${estado}</span></div></div>
+      <p class="resumen" style="margin:.75rem 0 1rem">Tus favoritos y tus listas se guardan en tu cuenta y aparecen en cualquier dispositivo en el que entres. Solo guardamos eso, sin tu correo ni tu nombre.</p>
+      <div class="cuenta-botones">
+        <button class="boton boton--claro" type="button" data-accion="cuenta-sincronizar">Sincronizar ahora</button>
+        <button class="boton boton--claro" type="button" data-accion="cuenta-salir">Cerrar sesión</button>
+        <button class="boton boton--claro cuenta-botones__borrar" type="button" data-accion="cuenta-borrar">Borrar mi cuenta y mis datos</button>
+      </div>`;
+  }
+  function abrirHojaCuenta() {
+    const h = hoja();
+    h.innerHTML = `<div class="hoja__cabecera"><h2 id="hoja-titulo">Tu cuenta</h2><button class="boton boton--claro" type="button" data-accion="cerrar-hoja">Cerrar</button></div>
+      <div class="hoja__cuerpo" id="hoja-cuenta">${cuerpoHojaCuenta()}</div>
+      <div class="hoja__pie"><button class="boton" type="button" data-accion="cerrar-hoja">Listo</button></div>`;
+    h.dataset.modo = "cuenta";
+    if (!h.open) h.showModal();
+  }
+  const repintarCuenta = () => {
+    if (!CUENTA) return;
+    const b = $("#bloque-cuenta"); if (b) b.outerHTML = bloqueCuenta();
+    const a = $("#aviso-cuenta"); if (a) a.outerHTML = avisoCuenta();
+    const h = hoja();
+    if (h && h.open && h.dataset.modo === "cuenta") {
+      if (conSesion()) { const c = $("#hoja-cuenta"); if (c && !c.querySelector("[data-seguro]")) c.innerHTML = cuerpoHojaCuenta(); }
+      else h.close();   // ha cerrado sesión o borrado la cuenta
+    }
+  };
+
+  function errorEntrar(e) {
+    const c = (e && e.code) || "";
+    const m = {
+      "auth/popup-blocked": "Tu navegador ha bloqueado la ventana de Google. Permite las ventanas emergentes para lasafoteca.com y vuelve a pulsar.",
+      "auth/unauthorized-domain": "Este dominio no está autorizado para entrar con Google (falta en Firebase → Authentication → Dominios autorizados).",
+      "auth/network-request-failed": "No hay conexión. Inténtalo de nuevo cuando tengas internet.",
+      "auth/operation-not-supported-in-this-environment": "Este navegador no permite entrar con Google. Prueba a abrir la web en Safari o Chrome.",
+      "auth/web-storage-unsupported": "Este navegador bloquea el almacenamiento que necesita Google. Prueba a abrir la web en Safari o Chrome, fuera del modo privado.",
+    }[c];
+    toast(m || `No hemos podido entrar con Google${c ? " (" + c + ")" : ""}. Inténtalo de nuevo.`);
+    console.warn("[cuenta]", e);
+  }
+  const textoEntrar = () => (cuenta === "cargando" ? "Preparando…" : cuenta && cuenta.entrar ? "Continuar con Google" : "Entrar con Google");
+
+  // Descarga js/cuenta.js (y Firebase) solo cuando hace falta.
+  function cargarCuenta() {
+    if (!CUENTA) return Promise.reject(new Error("sin cuentas"));
+    if (cargarCuenta.p) return cargarCuenta.p;
+    const previo = cuenta; cuenta = "cargando"; repintarCuenta();
+    cargarCuenta.p = import(new URL("js/cuenta.js", document.baseURI).href).then((m) => m.crear(CUENTA, {
+      leer: guardar.leer, escribir: guardar.escribir,
+      favs: () => E.favs, listas: () => E.listas,
+      aplicar({ favs, listas }) {
+        aplicandoCuenta = true;
+        try { E.favs = favs; E.listas = listas; guardar.escribir("favs", [...favs]); guardarListas(); }
+        finally { aplicandoCuenta = false; }
+        $$("[data-fav]").forEach((b) => b.setAttribute("aria-pressed", String(E.favs.has(Number(b.dataset.fav)))));
+        if (rutaActual().ruta === "/favoritos") { const y = scrollY; pintar(false); scrollTo(0, y); }
+      },
+      aviso: toast,
+      cambio: repintarCuenta,
+    })).then((c) => { cuenta = c; repintarCuenta(); return c; })
+      .catch((e) => { cuenta = previo; cargarCuenta.p = null; repintarCuenta(); throw e; });
+    return cargarCuenta.p;
   }
 
   // ---------- Hoja de filtros y avisos a evitar ----------
@@ -905,6 +1036,30 @@
           acc.textContent = mostrar ? "Ocultar los avisos" : "Ver los avisos";
           break;
         }
+        case "cuenta-entrar":
+          // Con Firebase ya descargado, Google se abre en este mismo toque (si no, el móvil bloquea la ventana).
+          if (cuenta && cuenta.entrar) { cuenta.entrar().catch(errorEntrar); break; }
+          cargarCuenta().then(() => toast("Listo: pulsa «Continuar con Google»"))
+            .catch(() => toast("No hemos podido conectar con Google. Comprueba tu conexión e inténtalo de nuevo."));
+          break;
+        case "cuenta-hoja":
+          if (conSesion()) abrirHojaCuenta(); else location.hash = "#/ajustes";
+          break;
+        case "cuenta-sincronizar":
+          if (cuenta && cuenta.sincronizar) cuenta.sincronizar();
+          break;
+        case "cuenta-salir":
+          if (cuenta && cuenta.salir) cuenta.salir().catch(() => toast("No hemos podido cerrar la sesión."));
+          break;
+        case "cuenta-borrar":
+          if (acc.dataset.seguro) {
+            acc.disabled = true; acc.textContent = "Borrando…";
+            cuenta.borrarCuenta().catch(() => { toast("No hemos podido borrar la cuenta. Inténtalo de nuevo."); repintarCuenta(); });
+          } else {
+            acc.dataset.seguro = "1"; acc.textContent = "Pulsa otra vez: se borra todo lo guardado en tu cuenta";
+            setTimeout(() => { if (acc.isConnected) { delete acc.dataset.seguro; acc.textContent = "Borrar mi cuenta y mis datos"; } }, 5000);
+          }
+          break;
         case "borrar-datos":
           if (acc.dataset.seguro) {
             guardar.borrar(); E.favs.clear(); E.evitar.clear(); E.listas = []; E.verAvisos = false; E.introVista = false;
@@ -1052,6 +1207,8 @@
       E.nAct = contar("actrices"); E.nDir = contar("directores");
       E.cargado = true;
       pintar(false);
+      // quien ya entró con su cuenta en este dispositivo: se recupera la sesión sin frenar la primera pintura
+      if (CUENTA && guardar.leer("cuenta", false)) setTimeout(() => cargarCuenta().catch(() => {}), 1200);
     } catch {
       $("#vista").innerHTML = `<div class="vacio"><p>No hemos podido cargar el catálogo. Comprueba tu conexión e inténtalo de nuevo.</p>
         <button class="boton" type="button" id="reintentar">Reintentar</button></div>`;
