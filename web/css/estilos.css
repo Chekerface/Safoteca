@@ -180,6 +180,10 @@ button { cursor: pointer; }
 .carrusel::-webkit-scrollbar-thumb { background: var(--lila); border-radius: 999px; }
 .carrusel::-webkit-scrollbar-thumb:hover { background: var(--violeta); }
 .carrusel > .tarjeta { flex: 0 0 auto; width: clamp(8.5rem, 42vw, 11.5rem); scroll-snap-align: start; }
+/* Carrusel de la portada: tarjeta final «+» que lleva al catálogo filtrado */
+.carrusel > .tarjeta--mas { display: grid; place-content: center; justify-items: center; gap: .5rem; aspect-ratio: 2 / 3; align-self: start; border: 2px dashed var(--lila); border-radius: 12px; color: var(--violeta); text-decoration: none; font-weight: 700; background: var(--superficie); }
+.tarjeta--mas__signo { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--violeta); color: #fff; font: 400 2rem/1 var(--sans); }
+.carrusel > .tarjeta--mas:hover, .carrusel > .tarjeta--mas:focus-visible { border-style: solid; }
 
 .rejilla {
   display: grid; gap: 1.25rem .875rem;
