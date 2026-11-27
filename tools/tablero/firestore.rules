@@ -5,9 +5,9 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // tareas e hitos: leer y escribir con la clave
+    // tareas, hitos y series por añadir: leer y escribir con la clave
     match /equipos/{clave}/{col}/{id} {
-      allow read, write: if clave == 'CLAVE_DEL_EQUIPO' && col in ['tareas', 'hitos'];
+      allow read, write: if clave == 'CLAVE_DEL_EQUIPO' && col in ['tareas', 'hitos', 'series'];
     }
     // copias diarias: se pueden crear y leer, pero nunca cambiar ni borrar
     match /equipos/{clave}/copias/{dia} {
