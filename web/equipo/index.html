@@ -167,7 +167,6 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
 .prueba a{color:inherit}
 #mas,#fab,.solo-movil{display:none}
 @media (max-width:699px){
-  .no-movil{display:none}
   body{padding-inline:max(12px,env(safe-area-inset-left,0px)) max(12px,env(safe-area-inset-right,0px));padding-bottom:96px}
   header{position:sticky;top:0;z-index:10;background:var(--bg);padding:8px 0;margin-bottom:8px;gap:8px;flex-wrap:nowrap}
   h1{font-size:16px} h1 small{display:none}
@@ -230,6 +229,10 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
 .series li.hecha .circ{background:var(--ok);border-color:var(--ok)}
 .series .t{flex:1;min-width:0}
 .series li.hecha .t{text-decoration:line-through;color:var(--muted)}
+.series .t .m{display:block;font:500 11px var(--f-mono);color:var(--muted);text-decoration:none}
+.series .filtros{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.series .fchip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:6px 12px;font:600 13px var(--f-body);color:var(--muted)}
+.series .fchip[aria-pressed="true"]{background:var(--strong);border-color:var(--strong);color:var(--bg)}
 .series .quien{display:flex;align-items:center;gap:6px;font:500 12px var(--f-mono);color:var(--muted);white-space:nowrap}
 .series .quien img{width:22px;height:22px;border-radius:50%;object-fit:cover}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
@@ -253,7 +256,7 @@ input[type=text],input[type=date],select,textarea{background:var(--bg);border:1p
   <div class="tabs" role="tablist">
     <button role="tab" id="tab-tablero" aria-selected="true">Tablero</button>
     <button role="tab" id="tab-calendario" aria-selected="false">Calendario</button>
-    <button role="tab" id="tab-series" aria-selected="false" aria-label="Series por añadir">Series<span class="no-movil"> por añadir</span></button>
+    <button role="tab" id="tab-series" aria-selected="false" >A Añadir</button>
   </div>
   <button class="btn" id="mas" aria-label="Más opciones" aria-expanded="false">⋯</button>
   <div class="fila">
@@ -301,16 +304,16 @@ const PERFILES = {
 };
 const MAX_PERSONAS = 2;
 
-/* Series por añadir (pestaña «Series por añadir»). La lista se mantiene aquí: al abrir el tablero se crean en
-   Firebase las que falten, sin tocar nunca las que ya existen (así no se pierde quién las tachó).
-   El estado (tachada, quién y cuándo) vive en Firebase: equipos/<clave>/series/<id>. */
-const SERIES_POR_ANADIR = {
-  2026: ["Oxytoxin","Built in Love","Love on Hire","AI Girl","In Love Forever","Love Beyond Dreams","Chasing Love","Fulfill",
-         "Shades","Hometown Romance","Broken of Love","My Only Sunshine","Play Park","Frozen Valentine","I Wanna Be Sup'tar","Be My Angel"],
-  2025: ["Us","I'm Your Moon","B-Friend","Whale Store xoxo","Only You","Roller Coaster","Poisonous Love","Player","Dangerous Queen",
-         "Unlimited Love","My Safe Zone","ClaireBell","Runaway","Like a Palette","MuTeLuv: Hello, is this Luck?","(Your) Apple","Buy My Boss","Remain"],
-  2024: ["Blank","Blank, temporada 2","The Secret of Us","Affair","Reverse 4 You","Apple My Love"],
-};
+/* Obras por añadir (pestaña «A Añadir»). La lista se mantiene aquí, en grupos de tipo + categoría + año.
+   Al abrir el tablero se crean en Firebase las que falten y se corrigen su tipo o categoría si cambian aquí,
+   sin tocar nunca si están tachadas, quién ni cuándo. El estado vive en Firebase: equipos/<clave>/series/<id>. */
+const POR_ANADIR = [
+  { tipo:"serie", categoria:"Thai GL", anio:2026, titulos:["Oxytoxin","Built in Love","Love on Hire","AI Girl","In Love Forever","Love Beyond Dreams",
+      "Chasing Love","Fulfill","Shades","Hometown Romance","Broken of Love","My Only Sunshine","Play Park","Frozen Valentine","I Wanna Be Sup'tar","Be My Angel"] },
+  { tipo:"serie", categoria:"Thai GL", anio:2025, titulos:["Us","I'm Your Moon","B-Friend","Whale Store xoxo","Only You","Roller Coaster","Poisonous Love",
+      "Player","Dangerous Queen","Unlimited Love","My Safe Zone","ClaireBell","Runaway","Like a Palette","MuTeLuv: Hello, is this Luck?","(Your) Apple","Buy My Boss","Remain"] },
+  { tipo:"serie", categoria:"Thai GL", anio:2024, titulos:["Blank","Blank, temporada 2","The Secret of Us","Affair","Reverse 4 You","Apple My Love"] },
+];
 
 const MESES = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
 const DIAS = ["L","M","X","J","V","S","D"];
@@ -322,7 +325,7 @@ const REPITE = { unico:"Una sola vez", semanal:"Cada semana", mensual:"Cada mes"
    tareas/<id>: { titulo, componente, columna ("Ideas" o una de COLUMNAS), carril, inicio, bloqueada, motivo, creada, personas[], hito }
    hitos/<id>:  { titulo, fecha, repite, hasta, color, tarea, archivado, archivadoEl }
    ===================================================================== */
-let series = [], seriesError = "", seriesCargadas = false;
+let series = [], seriesError = "", seriesCargadas = false, filtroTipo = "", filtroCat = "";
 let db = null, tareas = [], hitos = [], vista = "tablero", anio = new Date().getFullYear(), diaSel = null;
 
 const $ = s => document.querySelector(s);
@@ -934,15 +937,20 @@ const pintar = () => vista==="tablero" ? pintarTablero() : vista==="series" ? pi
    SERIES POR AÑADIR
    series/<id>: { titulo, anio, hecha, por, el }   (id = año + título, sin espacios ni símbolos)
    ===================================================================== */
-const idSerie = (anio, titulo) => `${anio}-${titulo.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`;
+const idSerie = (anio, titulo, tipo) => `${tipo==="pelicula"?"p-":""}${anio}-${titulo.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}`;
 let creandoSeries = false;
 async function crearSeriesQueFaltan(){
   if(creandoSeries || seriesError || !fsdb) return;
-  const hay = new Set(series.map(s=>s.id));
-  const faltan = Object.entries(SERIES_POR_ANADIR).flatMap(([a,l]) => l.map(t => [idSerie(a,t), {titulo:t, anio:Number(a), hecha:false, por:"", el:""}])).filter(([id]) => !hay.has(id));
-  if(!faltan.length) return;
+  const hay = Object.fromEntries(series.map(s=>[s.id, s]));
+  const cambios = [];
+  for(const g of POR_ANADIR) for(const t of g.titulos){
+    const id = idSerie(g.anio, t, g.tipo), ya = hay[id];
+    if(!ya) cambios.push([id, {titulo:t, anio:g.anio, tipo:g.tipo, categoria:g.categoria, hecha:false, por:"", el:""}]);
+    else if(ya.tipo!==g.tipo || ya.categoria!==g.categoria) cambios.push([id, {...sinId(ya), tipo:g.tipo, categoria:g.categoria}]);
+  }
+  if(!cambios.length) return;
   creandoSeries = true;
-  try { const lote = writeBatch(fsdb); faltan.forEach(([id,v]) => lote.set(doc(fsdb, ruta("series"), id), v)); await lote.commit(); }
+  try { const lote = writeBatch(fsdb); cambios.forEach(([id,v]) => lote.set(doc(fsdb, ruta("series"), id), v)); await lote.commit(); }
   catch(e){ /* sin permiso todavía o sin red: se reintenta en la próxima carga */ }
   creandoSeries = false;
 }
@@ -952,20 +960,36 @@ function pintarSeries(){
     v.innerHTML = `<div class="series"><div class="nota">Esta lista todavía no se puede abrir: falta permitir «series» en las reglas de Firebase (${esc(seriesError)}). El tablero y el calendario funcionan igual.</div></div>`;
     return;
   }
+  const cats = [...new Set(series.map(s=>s.categoria).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"es"));
+  if(filtroCat && !cats.includes(filtroCat)) filtroCat = "";
+  const vistas = series.filter(s => (!filtroTipo || (s.tipo||"serie")===filtroTipo) && (!filtroCat || s.categoria===filtroCat));
   const porAnio = {};
-  series.forEach(s => (porAnio[s.anio||0] ||= []).push(s));
+  vistas.forEach(s => (porAnio[s.anio||0] ||= []).push(s));
   const anios = Object.keys(porAnio).map(Number).sort((a,b)=>b-a);
+  const chip = (grupo, valor, texto) => { const on = (grupo==="tipo"?filtroTipo:filtroCat)===valor;
+    return `<button class="fchip" data-filtro-${grupo}="${esc(valor)}" aria-pressed="${on}">${esc(texto)}</button>`; };
   const fila = s => { const p = PERFILES[s.por];
     return `<li class="${s.hecha?"hecha":""}"><button class="circ" data-serie="${esc(s.id)}" aria-pressed="${!!s.hecha}" aria-label="${s.hecha?"Quitar tachado":"Marcar como rellenada"}: ${esc(s.titulo)}">${s.hecha?"✓":""}</button>
-      <span class="t">${esc(s.titulo)}</span>
+      <span class="t">${esc(s.titulo)}<span class="m">${(s.tipo||"serie")==="pelicula"?"Película":"Serie"}${s.categoria?" · "+esc(s.categoria):""}</span></span>
       ${s.hecha?`<span class="quien">${p?`<img src="${p.foto}" alt="">${esc(p.nombre)}`:""}${s.el?` · ${corta(s.el)}`:""}</span>`:""}</li>`; };
-  const hechas = series.filter(s=>s.hecha).length;
+  const hechas = vistas.filter(s=>s.hecha).length;
   v.innerHTML = `<div class="series">
-    <div class="nota">Series que quedan por meter en el formulario. Cuando rellenes una, pulsa su círculo y elige quién eres: se tacha para todo el equipo. ${hechas} de ${series.length} rellenadas.</div>
+    <div class="nota">Obras que quedan por meter en el formulario. Cuando rellenes una, pulsa su círculo y elige quién eres: se tacha para todo el equipo.</div>
+    <div class="filtros">${chip("tipo","","Todo")}${chip("tipo","pelicula","Películas")}${chip("tipo","serie","Series")}</div>
+    ${cats.length ? `<div class="filtros">${chip("cat","","Todas las categorías")}${cats.map(c=>chip("cat",c,c)).join("")}</div>` : ""}
+    <div class="nota">${hechas} de ${vistas.length} rellenadas${filtroTipo||filtroCat?" con este filtro":""}.</div>
     ${anios.map(a => { const l = porAnio[a].sort((x,y)=>x.titulo.localeCompare(y.titulo,"es",{sensitivity:"base"}));
-      return `<h2>${a||"Sin año"} <span class="r">${l.filter(s=>s.hecha).length}/${l.length}</span></h2><ul>${l.map(fila).join("")}</ul>`; }).join("") || `<div class="vacio">Cargando la lista…</div>`}
+      return `<h2>${a||"Sin año"} <span class="r">${l.filter(s=>s.hecha).length}/${l.length}</span></h2><ul>${l.map(fila).join("")}</ul>`; }).join("")
+      || `<div class="vacio">${series.length ? "No hay obras con este filtro." : "Cargando la lista…"}</div>`}
   </div>`;
 }
+document.addEventListener("click", e => {
+  const b = e.target.closest?.("[data-filtro-tipo],[data-filtro-cat]"); if(!b) return;
+  if("filtroTipo" in b.dataset) filtroTipo = b.dataset.filtroTipo; else filtroCat = b.dataset.filtroCat;
+  try { localStorage.setItem("tablero-equipo-filtros", JSON.stringify({filtroTipo, filtroCat})); } catch(_) {}
+  pintar();
+});
+try { ({filtroTipo="", filtroCat=""} = JSON.parse(localStorage.getItem("tablero-equipo-filtros")||"{}")); } catch(_) {}
 let ultimaPersona = ""; try { ultimaPersona = localStorage.getItem("tablero-equipo-quien") || ""; } catch(_) {}
 function marcarSerie(id){
   const s = series.find(x=>x.id===id); if(!s) return;
