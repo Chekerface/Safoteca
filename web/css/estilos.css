@@ -551,8 +551,3 @@ textarea.prop-campo { resize: vertical; }
 .compartir__opcion { display: grid; justify-items: center; gap: .4rem; padding: .9rem .5rem; border: 1px solid var(--linea); border-radius: 12px; background: var(--superficie); color: var(--tinta); text-decoration: none; font: inherit; font-size: .9rem; cursor: pointer; }
 .compartir__opcion svg { width: 26px; height: 26px; color: var(--violeta); }
 .compartir__opcion:hover { border-color: var(--lila); }
-
-/* Carrusel de la portada: tarjeta final «+» que lleva al catálogo filtrado */
-.carrusel > .tarjeta--mas { display: grid; place-content: center; justify-items: center; gap: .5rem; aspect-ratio: 2 / 3; align-self: start; border: 2px dashed var(--lila); border-radius: 12px; color: var(--violeta); text-decoration: none; font-weight: 700; background: var(--superficie); }
-.tarjeta--mas__signo { display: grid; place-items: center; width: 3rem; height: 3rem; border-radius: 50%; background: var(--violeta); color: #fff; font: 400 2rem/1 var(--sans); }
-.carrusel > .tarjeta--mas:hover, .carrusel > .tarjeta--mas:focus-visible { border-style: solid; }
